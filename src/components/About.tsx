@@ -1,11 +1,11 @@
-import { Shield, Zap, Target } from "lucide-react";
+import { Lightbulb, Zap, Target } from "lucide-react";
 
 const About = () => {
   const highlights = [
     {
-      icon: Shield,
-      title: "Self-Custody Advocate",
-      description: "Passionate about Bitcoin self-sovereignty and helping people secure their digital assets."
+      icon: Lightbulb,
+      title: "Strategic Thinker",
+      description: "Passionate about technology and helping companies communicate their value clearly."
     },
     {
       icon: Target,
@@ -27,7 +27,7 @@ const About = () => {
           <div className="text-center mb-16">
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4">
-              Product Storyteller & <span className="text-gradient">Bitcoin Enthusiast</span>
+              Product Storyteller & <span className="text-gradient">Tech Enthusiast</span>
             </h2>
           </div>
           
@@ -35,10 +35,10 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a product marketing leader with a decade of experience helping startups, agencies, and tech companies grow through compelling product stories. Currently leading product marketing at <span className="text-primary font-semibold">Trezor</span>, the pioneer in Bitcoin hardware security.
+                I'm a product marketing leader with a decade of experience helping startups, agencies, and tech companies grow through compelling product stories. Currently leading product marketing at <span className="text-primary font-semibold">Trezor</span>, a pioneer in hardware security solutions.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Originally from Finland, I've called Prague home since 2016. Beyond work, I'm a self-custody maximalist who believes in sound money, tech, and the power of memes to spread important ideas.
+                Originally from Finland, I've called Prague home since 2016. I'm passionate about technology, security, and the power of clear communication to drive product adoption.
               </p>
               <div className="flex items-center gap-4 pt-4">
                 <a 
@@ -77,8 +77,8 @@ const About = () => {
                   <div className="text-sm text-muted-foreground mt-1">Languages</div>
                 </div>
                 <div className="text-center p-4">
-                  <div className="text-4xl font-bold text-gradient">∞</div>
-                  <div className="text-sm text-muted-foreground mt-1">Bitcoin Conviction</div>
+                  <div className="text-4xl font-bold text-gradient">50+</div>
+                  <div className="text-sm text-muted-foreground mt-1">Product Launches</div>
                 </div>
               </div>
             </div>

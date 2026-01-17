@@ -4,56 +4,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Lauri Hänninen Personal Site - Dark Bitcoin/Crypto-Inspired Design System */
+/* Lauri Hänninen Personal Site - Clean Neutral Light Design System */
 
 @layer base {
   :root {
-    /* Dark mode by default - crypto aesthetic */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
+    /* Light neutral palette */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 15%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
 
-    /* Bitcoin orange as primary */
-    --primary: 30 100% 50%;
-    --primary-foreground: 0 0% 2%;
+    /* Sophisticated slate blue as primary */
+    --primary: 220 60% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 220 10% 94%;
+    --secondary-foreground: 220 15% 25%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 220 10% 92%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 30 100% 50%;
-    --accent-foreground: 0 0% 2%;
+    --accent: 220 60% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 30 100% 50%;
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 220 60% 45%;
 
     --radius: 0.75rem;
 
     /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(30 100% 50%) 0%, hsl(35 100% 60%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(30 100% 50% / 0.15) 0%, transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(220 60% 45%) 0%, hsl(240 50% 55%) 100%);
+    --gradient-light: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(220 10% 96%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 10% 98%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(220 60% 45% / 0.08) 0%, transparent 70%);
 
     /* Shadows */
-    --shadow-glow: 0 0 60px hsl(30 100% 50% / 0.2);
-    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
-    --shadow-card-hover: 0 8px 40px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 60px hsl(220 60% 45% / 0.1);
+    --shadow-card: 0 4px 24px hsl(220 20% 20% / 0.08);
+    --shadow-card-hover: 0 8px 40px hsl(220 20% 20% / 0.12);
   }
 
   .dark {
-    --background: 0 0% 4%;
+    --background: 220 15% 10%;
     --foreground: 0 0% 95%;
   }
 }

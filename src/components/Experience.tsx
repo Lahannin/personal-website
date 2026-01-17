@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const experiences = [
   {
     company: "Trezor",
@@ -54,12 +56,18 @@ const Experience = () => {
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4">
               Career <span className="text-gradient">Journey</span>
             </h2>
-          </div>
+          </motion.div>
           
           {/* Timeline */}
           <div className="relative">
@@ -67,8 +75,12 @@ const Experience = () => {
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
             
             {experiences.map((exp, index) => (
-              <div 
+              <motion.div 
                 key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
                   index % 2 === 0 ? 'md:flex-row-reverse' : ''
                 }`}
@@ -109,7 +121,7 @@ const Experience = () => {
                 
                 {/* Spacer for alternating layout */}
                 <div className="hidden md:block flex-1" />
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

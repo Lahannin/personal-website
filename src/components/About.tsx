@@ -1,4 +1,5 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
+import { motion } from "framer-motion";
 
 const About = () => {
   const highlights = [
@@ -24,16 +25,28 @@ const About = () => {
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4">
               Product Storyteller & <span className="text-gradient">Tech Enthusiast</span>
             </h2>
-          </div>
+          </motion.div>
           
           {/* Bio */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <div className="space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a product marketing leader with a decade of experience helping startups, agencies, and tech companies grow through compelling product stories. Currently leading product marketing at <span className="text-primary font-semibold">Trezor</span>, a pioneer in hardware security solutions.
               </p>
@@ -59,10 +72,16 @@ const About = () => {
                   LinkedIn
                 </a>
               </div>
-            </div>
+            </motion.div>
             
             {/* Stats card */}
-            <div className="border-gradient rounded-2xl p-8">
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="border-gradient rounded-2xl p-8"
+            >
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-4">
                   <div className="text-4xl font-bold text-gradient">10+</div>
@@ -81,14 +100,18 @@ const About = () => {
                   <div className="text-sm text-muted-foreground mt-1">Product Launches</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
           
           {/* Highlights */}
           <div className="grid md:grid-cols-3 gap-6">
             {highlights.map((item, index) => (
-              <div 
+              <motion.div 
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -96,7 +119,7 @@ const About = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

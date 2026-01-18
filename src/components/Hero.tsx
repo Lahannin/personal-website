@@ -3,19 +3,29 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
-      {/* Soft gradient orbs */}
-      <div className="absolute top-20 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute bottom-20 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/20 blur-3xl" />
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/20">
       <div className="container relative z-10 px-6">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-secondary border-4 border-background shadow-lg overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center text-muted-foreground text-4xl font-semibold">
+                LH
+              </div>
+            </div>
+          </motion.div>
+          
           {/* Status badge */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-8"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-sm text-muted-foreground">Product Marketing Lead at Trezor</span>

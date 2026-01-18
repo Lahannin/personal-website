@@ -18,18 +18,18 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Vibrant blue primary */
-    --primary: 217 91% 60%;
+    /* Formica Navy Blue F7969 */
+    --primary: 217 46% 21%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 20%;
+    --secondary-foreground: 217 46% 21%;
 
     --muted: 210 40% 94%;
-    --muted-foreground: 215 20% 45%;
+    --muted-foreground: 217 30% 40%;
 
-    /* Softer blue accent */
-    --accent: 199 89% 48%;
+    /* Lighter navy accent */
+    --accent: 217 46% 35%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -37,20 +37,20 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --ring: 217 46% 21%;
 
     --radius: 0.75rem;
 
-    /* Modern gradients with blue tones */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(199 89% 48%) 100%);
+    /* Modern gradients with navy tones */
+    --gradient-primary: linear-gradient(135deg, hsl(217 46% 21%) 0%, hsl(217 46% 35%) 100%);
     --gradient-light: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 40% 96%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(217 91% 60% / 0.12) 0%, transparent 70%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(217 46% 21% / 0.1) 0%, transparent 70%);
 
     /* Refined shadows */
-    --shadow-glow: 0 0 80px hsl(217 91% 60% / 0.15);
-    --shadow-card: 0 4px 24px hsl(217 50% 20% / 0.06);
-    --shadow-card-hover: 0 12px 48px hsl(217 50% 20% / 0.1);
+    --shadow-glow: 0 0 80px hsl(217 46% 21% / 0.12);
+    --shadow-card: 0 4px 24px hsl(217 46% 21% / 0.06);
+    --shadow-card-hover: 0 12px 48px hsl(217 46% 21% / 0.1);
   }
 
   .dark {

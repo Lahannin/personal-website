@@ -1,119 +1,145 @@
 import { motion } from "framer-motion";
 
-const experiences = [
+interface Role {
+  title: string;
+  period: string;
+  description: string;
+  highlights: string[];
+  current?: boolean;
+}
+
+interface Company {
+  name: string;
+  location: string;
+  roles: Role[];
+}
+
+const companies: Company[] = [
   {
-    company: "Trezor",
-    role: "Product Marketing Lead",
-    period: "July 2024 – Present",
+    name: "Trezor",
     location: "Prague, Czechia",
-    description: "Lead product marketing initiatives including go-to-market strategy, positioning, messaging, and global launches.",
-    highlights: [
-      "Build and scale a team covering product marketing, technical writing, and copywriting",
-      "Partner cross-functionally with Marketing, Product, Design, and Research teams",
-      "Identify customer segments and growth opportunities through market and competitive insights"
-    ],
-    current: true
+    roles: [
+      {
+        title: "Product Marketing Lead",
+        period: "July 2024 – Present",
+        description: "Lead product marketing initiatives including go-to-market strategy, positioning, messaging, and global launches.",
+        highlights: [
+          "Build and scale a team covering product marketing, technical writing, and copywriting",
+          "Partner cross-functionally with Marketing, Product, Design, and Research teams",
+          "Identify customer segments and growth opportunities through market and competitive insights"
+        ],
+        current: true
+      },
+      {
+        title: "Senior Product Marketing Manager",
+        period: "September 2023 – June 2024",
+        description: "Founded the product marketing function as the first Product Marketer.",
+        highlights: [
+          "Built positioning, messaging, and go-to-market frameworks",
+          "Led global launches including two Tier 1 hardware and software launches"
+        ]
+      }
+    ]
   },
   {
-    company: "Trezor",
-    role: "Senior Product Marketing Manager",
-    period: "September 2023 – June 2024",
+    name: "Product Marketing Alliance",
     location: "Prague, Czechia",
-    description: "Founded the product marketing function as the first Product Marketer.",
-    highlights: [
-      "Built positioning, messaging, and go-to-market frameworks",
-      "Led global launches including two Tier 1 hardware and software launches"
-    ],
-    current: false
+    roles: [
+      {
+        title: "Chapter Lead",
+        period: "November 2023 – Present",
+        description: "Founded the first PMA chapter in the Czech Republic.",
+        highlights: [
+          "Built and grew a local product marketing community"
+        ],
+        current: true
+      },
+      {
+        title: "Brand Ambassador",
+        period: "March 2023 – November 2023",
+        description: "Represented PMA globally, driving engagement and community growth.",
+        highlights: []
+      }
+    ]
   },
   {
-    company: "Product Marketing Alliance",
-    role: "Chapter Lead",
-    period: "November 2023 – Present",
+    name: "GoodData",
     location: "Prague, Czechia",
-    description: "Founded the first PMA chapter in the Czech Republic.",
-    highlights: [
-      "Built and grew a local product marketing community",
-      "Previously Brand Ambassador (March–November 2023), representing PMA globally"
-    ],
-    current: true
+    roles: [
+      {
+        title: "Senior Technical Product Marketing Manager",
+        period: "September 2022 – September 2023",
+        description: "Defined positioning and messaging for the analytics platform.",
+        highlights: [
+          "Increased trial adoption through product and UX collaboration",
+          "Coordinated global launches and improved inbound leads",
+          "Created technical content including demos, webinars, and articles"
+        ]
+      },
+      {
+        title: "Product Marketing Manager",
+        period: "January 2021 – August 2022",
+        description: "Led marketing for a cloud-native analytics platform across AWS, GCP, Azure, and on-prem.",
+        highlights: [
+          "Produced demos, eBooks, videos, and articles",
+          "Executed go-to-market campaigns for features and upgrades",
+          "Led analyst relations with Gartner, Forrester, and others"
+        ]
+      }
+    ]
   },
   {
-    company: "GoodData",
-    role: "Senior Technical Product Marketing Manager",
-    period: "September 2022 – September 2023",
+    name: "Wunderman Thompson",
     location: "Prague, Czechia",
-    description: "Defined positioning and messaging for the analytics platform.",
-    highlights: [
-      "Increased trial adoption through product and UX collaboration",
-      "Coordinated global launches and improved inbound leads",
-      "Created technical content including demos, webinars, and articles"
-    ],
-    current: false
+    roles: [
+      {
+        title: "Web Tagging Team Lead",
+        period: "October 2019 – December 2020",
+        description: "Managed a web tagging team and improved QA processes.",
+        highlights: [
+          "Oversaw analytics tagging across Ford's global web properties",
+          "Liaised between Ford of Europe and national sales companies"
+        ]
+      },
+      {
+        title: "Lead Management Specialist",
+        period: "March 2019 – October 2019",
+        description: "Led lead management across five Ford of Europe markets.",
+        highlights: [
+          "Improved lead performance with some markets exceeding 105% growth",
+          "Supported rollout of Microsoft Dynamics to 1,200+ users"
+        ]
+      },
+      {
+        title: "Implementation Project Manager",
+        period: "May 2017 – February 2019",
+        description: "Led onboarding in 12 markets.",
+        highlights: [
+          "Reduced reporting time by over 90% through automation",
+          "Maintained high customer satisfaction"
+        ]
+      }
+    ]
   },
   {
-    company: "GoodData",
-    role: "Product Marketing Manager",
-    period: "January 2021 – August 2022",
+    name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
-    description: "Led marketing for a cloud-native analytics platform across AWS, GCP, Azure, and on-prem.",
-    highlights: [
-      "Produced demos, eBooks, videos, and articles",
-      "Executed go-to-market campaigns for features and upgrades",
-      "Led analyst relations with Gartner, Forrester, and others"
-    ],
-    current: false
-  },
-  {
-    company: "Wunderman Thompson",
-    role: "Web Tagging Team Lead",
-    period: "October 2019 – December 2020",
-    location: "Prague, Czechia",
-    description: "Managed a web tagging team and improved QA processes.",
-    highlights: [
-      "Oversaw analytics tagging across Ford's global web properties",
-      "Liaised between Ford of Europe and national sales companies"
-    ],
-    current: false
-  },
-  {
-    company: "Wunderman Thompson",
-    role: "Lead Management Specialist",
-    period: "March 2019 – October 2019",
-    location: "Prague, Czechia",
-    description: "Led lead management across five Ford of Europe markets.",
-    highlights: [
-      "Improved lead performance with some markets exceeding 105% growth",
-      "Supported rollout of Microsoft Dynamics to 1,200+ users"
-    ],
-    current: false
-  },
-  {
-    company: "Wunderman Thompson",
-    role: "Implementation Project Manager",
-    period: "May 2017 – February 2019",
-    location: "Prague, Czechia",
-    description: "Led onboarding in 12 markets.",
-    highlights: [
-      "Reduced reporting time by over 90% through automation",
-      "Maintained high customer satisfaction"
-    ],
-    current: false
-  },
-  {
-    company: "SQN (Sinequanon)",
-    role: "Client Delivery Specialist",
-    period: "April 2016 – May 2017",
-    location: "Prague, Czechia",
-    description: "Managed delivery of client programs.",
-    highlights: [
-      "Improved implementation speed and efficiency"
-    ],
-    current: false
+    roles: [
+      {
+        title: "Client Delivery Specialist",
+        period: "April 2016 – May 2017",
+        description: "Managed delivery of client programs.",
+        highlights: [
+          "Improved implementation speed and efficiency"
+        ]
+      }
+    ]
   }
 ];
 
 const Experience = () => {
+  const hasCurrent = (company: Company) => company.roles.some(role => role.current);
+
   return (
     <section id="experience" className="py-24 md:py-32 relative bg-secondary/20">
       <div className="container px-6">
@@ -137,7 +163,7 @@ const Experience = () => {
             {/* Timeline line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
             
-            {experiences.map((exp, index) => (
+            {companies.map((company, index) => (
               <motion.div 
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
@@ -150,7 +176,7 @@ const Experience = () => {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
-                  {exp.current && (
+                  {hasCurrent(company) && (
                     <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-50" />
                   )}
                 </div>
@@ -158,27 +184,44 @@ const Experience = () => {
                 {/* Content */}
                 <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
                   <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                        {exp.period}
-                      </span>
-                      {exp.current && (
-                        <span className="text-xs text-green-500 bg-green-500/10 px-2 py-1 rounded">
+                    {/* Company header */}
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <h3 className="text-xl font-bold">{company.name}</h3>
+                      {hasCurrent(company) && (
+                        <span className="text-xs text-green-600 bg-green-500/10 px-2 py-1 rounded">
                           Current
                         </span>
                       )}
                     </div>
-                    <h3 className="text-xl font-bold mb-1">{exp.company}</h3>
-                    <p className="text-primary font-medium mb-3">{exp.role}</p>
-                    <p className="text-muted-foreground text-sm mb-4">{exp.description}</p>
-                    <ul className="space-y-2">
-                      {exp.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary mt-1">→</span>
-                          {highlight}
-                        </li>
+                    <p className="text-sm text-muted-foreground mb-5">{company.location}</p>
+                    
+                    {/* Roles */}
+                    <div className="space-y-5">
+                      {company.roles.map((role, roleIndex) => (
+                        <div 
+                          key={roleIndex} 
+                          className={`${roleIndex > 0 ? 'pt-5 border-t border-border/50' : ''}`}
+                        >
+                          <div className="flex flex-wrap items-center gap-2 mb-2">
+                            <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
+                              {role.period}
+                            </span>
+                          </div>
+                          <p className="text-primary font-semibold mb-2">{role.title}</p>
+                          <p className="text-muted-foreground text-sm mb-3">{role.description}</p>
+                          {role.highlights.length > 0 && (
+                            <ul className="space-y-1.5">
+                              {role.highlights.map((highlight, i) => (
+                                <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                  <span className="text-primary mt-0.5">→</span>
+                                  {highlight}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
                 

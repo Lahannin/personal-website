@@ -4,47 +4,110 @@ const experiences = [
   {
     company: "Trezor",
     role: "Product Marketing Lead",
-    period: "2023 - Present",
-    description: "Leading product marketing function, go-to-market strategy, and global launches for the world's first hardware wallet company.",
+    period: "July 2024 – Present",
+    location: "Prague, Czechia",
+    description: "Lead product marketing initiatives including go-to-market strategy, positioning, messaging, and global launches.",
     highlights: [
-      "Founded and established product marketing function as first PMM",
-      "Led 2x Tier 1 global product launches (hardware and software)",
-      "Designed core positioning, messaging, and GTM frameworks"
+      "Build and scale a team covering product marketing, technical writing, and copywriting",
+      "Partner cross-functionally with Marketing, Product, Design, and Research teams",
+      "Identify customer segments and growth opportunities through market and competitive insights"
     ],
     current: true
   },
   {
+    company: "Trezor",
+    role: "Senior Product Marketing Manager",
+    period: "September 2023 – June 2024",
+    location: "Prague, Czechia",
+    description: "Founded the product marketing function as the first Product Marketer.",
+    highlights: [
+      "Built positioning, messaging, and go-to-market frameworks",
+      "Led global launches including two Tier 1 hardware and software launches"
+    ],
+    current: false
+  },
+  {
     company: "Product Marketing Alliance",
     role: "Chapter Lead",
-    period: "2023 - Present",
-    description: "Founded the first PMA chapter in Czech Republic, building a community for local product marketers.",
+    period: "November 2023 – Present",
+    location: "Prague, Czechia",
+    description: "Founded the first PMA chapter in the Czech Republic.",
     highlights: [
-      "Growing an active network through events and knowledge sharing",
-      "Professional development initiatives for PMM community"
+      "Built and grew a local product marketing community",
+      "Previously Brand Ambassador (March–November 2023), representing PMA globally"
     ],
     current: true
   },
   {
     company: "GoodData",
     role: "Senior Technical Product Marketing Manager",
-    period: "2021 - 2023",
-    description: "Led product marketing for cloud-native analytics platform across AWS, GCP, Azure, and on-premises.",
+    period: "September 2022 – September 2023",
+    location: "Prague, Czechia",
+    description: "Defined positioning and messaging for the analytics platform.",
     highlights: [
-      "Defined positioning and messaging strategies for analytics platform",
-      "Coordinated global product launches improving brand awareness",
-      "Partnered with C-level on Gartner and Forrester analyst relations"
+      "Increased trial adoption through product and UX collaboration",
+      "Coordinated global launches and improved inbound leads",
+      "Created technical content including demos, webinars, and articles"
+    ],
+    current: false
+  },
+  {
+    company: "GoodData",
+    role: "Product Marketing Manager",
+    period: "January 2021 – August 2022",
+    location: "Prague, Czechia",
+    description: "Led marketing for a cloud-native analytics platform across AWS, GCP, Azure, and on-prem.",
+    highlights: [
+      "Produced demos, eBooks, videos, and articles",
+      "Executed go-to-market campaigns for features and upgrades",
+      "Led analyst relations with Gartner, Forrester, and others"
     ],
     current: false
   },
   {
     company: "Wunderman Thompson",
     role: "Web Tagging Team Lead",
-    period: "2017 - 2020",
-    description: "Managed analytics implementation across Ford's global web properties and 22 national portals.",
+    period: "October 2019 – December 2020",
+    location: "Prague, Czechia",
+    description: "Managed a web tagging team and improved QA processes.",
     highlights: [
-      "Led team of web tagging specialists with process improvements",
-      "Supported Microsoft Dynamics rollout, training 1,200+ users",
-      "Drove 105%+ lead performance growth in top markets"
+      "Oversaw analytics tagging across Ford's global web properties",
+      "Liaised between Ford of Europe and national sales companies"
+    ],
+    current: false
+  },
+  {
+    company: "Wunderman Thompson",
+    role: "Lead Management Specialist",
+    period: "March 2019 – October 2019",
+    location: "Prague, Czechia",
+    description: "Led lead management across five Ford of Europe markets.",
+    highlights: [
+      "Improved lead performance with some markets exceeding 105% growth",
+      "Supported rollout of Microsoft Dynamics to 1,200+ users"
+    ],
+    current: false
+  },
+  {
+    company: "Wunderman Thompson",
+    role: "Implementation Project Manager",
+    period: "May 2017 – February 2019",
+    location: "Prague, Czechia",
+    description: "Led onboarding in 12 markets.",
+    highlights: [
+      "Reduced reporting time by over 90% through automation",
+      "Maintained high customer satisfaction"
+    ],
+    current: false
+  },
+  {
+    company: "SQN (Sinequanon)",
+    role: "Client Delivery Specialist",
+    period: "April 2016 – May 2017",
+    location: "Prague, Czechia",
+    description: "Managed delivery of client programs.",
+    highlights: [
+      "Improved implementation speed and efficiency"
     ],
     current: false
   }

@@ -8,48 +8,49 @@
 
 @layer base {
   :root {
-    /* Light neutral palette */
-    --background: 0 0% 98%;
-    --foreground: 220 15% 15%;
+    /* Light palette with blue accents */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Sophisticated slate blue as primary */
-    --primary: 220 60% 45%;
+    /* Vibrant blue primary */
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 10% 94%;
-    --secondary-foreground: 220 15% 25%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 20%;
 
-    --muted: 220 10% 92%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 20% 45%;
 
-    --accent: 220 60% 45%;
+    /* Softer blue accent */
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 10% 88%;
-    --input: 220 10% 88%;
-    --ring: 220 60% 45%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 60% 45%) 0%, hsl(240 50% 55%) 100%);
-    --gradient-light: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(220 10% 96%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 10% 98%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(220 60% 45% / 0.08) 0%, transparent 70%);
+    /* Modern gradients with blue tones */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(199 89% 48%) 100%);
+    --gradient-light: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 40% 96%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(217 91% 60% / 0.12) 0%, transparent 70%);
 
-    /* Shadows */
-    --shadow-glow: 0 0 60px hsl(220 60% 45% / 0.1);
-    --shadow-card: 0 4px 24px hsl(220 20% 20% / 0.08);
-    --shadow-card-hover: 0 8px 40px hsl(220 20% 20% / 0.12);
+    /* Refined shadows */
+    --shadow-glow: 0 0 80px hsl(217 91% 60% / 0.15);
+    --shadow-card: 0 4px 24px hsl(217 50% 20% / 0.06);
+    --shadow-card-hover: 0 12px 48px hsl(217 50% 20% / 0.1);
   }
 
   .dark {

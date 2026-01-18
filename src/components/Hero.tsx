@@ -3,15 +3,10 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background glow effect */}
-      <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-30"
-        style={{ background: 'var(--gradient-glow)' }}
-      />
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+      {/* Soft gradient orbs */}
+      <div className="absolute top-20 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl" />
+      <div className="absolute bottom-20 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/20 blur-3xl" />
       
       <div className="container relative z-10 px-6">
         <div className="max-w-4xl mx-auto text-center">

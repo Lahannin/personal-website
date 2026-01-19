@@ -43,11 +43,6 @@ const educationData = [
     degree: "Non-Degree Studies",
     field: "Work and Organizational Psychology",
   },
-  {
-    institution: "Oulu Business School, University of Oulu",
-    degree: "Bachelor of Science (B.Sc.)",
-    field: "Economics and Business Administration",
-  },
 ];
 
 const Skills = () => {

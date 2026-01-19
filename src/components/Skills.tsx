@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { GraduationCap } from "lucide-react";
 
 const skills = {
   core: [
@@ -26,6 +27,29 @@ const skills = {
   ]
 };
 
+const educationData = [
+  {
+    institution: "Oulu Business School, University of Oulu",
+    degree: "Master of Science (M.Sc.)",
+    field: "Economics and Business Administration",
+  },
+  {
+    institution: "University of Helsinki",
+    degree: "Non-Degree Studies",
+    field: "Computer Science",
+  },
+  {
+    institution: "University of Eastern Finland",
+    degree: "Non-Degree Studies",
+    field: "Work and Organizational Psychology",
+  },
+  {
+    institution: "Oulu Business School, University of Oulu",
+    degree: "Bachelor of Science (B.Sc.)",
+    field: "Economics and Business Administration",
+  },
+];
+
 const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32 relative">
@@ -41,7 +65,7 @@ const Skills = () => {
           >
             <span className="mono text-primary text-sm tracking-wider">SKILLS</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4">
-              Expertise & <span className="text-gradient">Certifications</span>
+              Expertise & <span className="text-gradient">Education</span>
             </h2>
           </motion.div>
           
@@ -109,7 +133,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="card-gradient border border-border rounded-2xl p-8"
+            className="card-gradient border border-border rounded-2xl p-8 mb-8"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary" />
@@ -131,20 +155,37 @@ const Skills = () => {
               ))}
             </div>
           </motion.div>
-          
-          {/* Education note */}
+
+          {/* Education */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="card-gradient border border-border rounded-2xl p-8"
           >
-            <p className="text-muted-foreground">
-              <span className="font-semibold text-foreground">M.Sc. Economics & Business Administration</span>
-              <span className="mx-2">•</span>
-              University of Oulu, Finland
-            </p>
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+              <GraduationCap className="w-5 h-5 text-primary" />
+              Education
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {educationData.map((edu, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                >
+                  <h4 className="text-sm font-semibold text-foreground mb-0.5">
+                    {edu.institution}
+                  </h4>
+                  <p className="text-primary text-sm font-medium">{edu.degree}</p>
+                  <p className="text-muted-foreground text-sm">{edu.field}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

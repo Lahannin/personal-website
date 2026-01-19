@@ -26,7 +26,7 @@ const educationData = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-secondary/30">
+    <section id="education" className="py-12 bg-secondary/30">
       <div className="container px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,26 +35,26 @@ const Education = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="flex items-center gap-3 mb-12">
-            <GraduationCap className="w-6 h-6 text-primary" />
-            <h2 className="text-3xl md:text-4xl font-bold">Education</h2>
+          <div className="flex items-center gap-2 mb-6">
+            <GraduationCap className="w-5 h-5 text-primary" />
+            <h2 className="text-2xl md:text-3xl font-bold">Education</h2>
           </div>
 
-          <div className="grid gap-6">
+          <div className="grid sm:grid-cols-2 gap-4">
             {educationData.map((edu, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-background border border-border rounded-xl p-6 hover:border-primary/30 transition-colors"
+                className="bg-background border border-border rounded-lg p-4 hover:border-primary/30 transition-colors"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-1">
+                <h3 className="text-sm font-semibold text-foreground mb-0.5">
                   {edu.institution}
                 </h3>
-                <p className="text-primary font-medium">{edu.degree}</p>
-                <p className="text-muted-foreground">{edu.field}</p>
+                <p className="text-primary text-sm font-medium">{edu.degree}</p>
+                <p className="text-muted-foreground text-sm">{edu.field}</p>
               </motion.div>
             ))}
           </div>

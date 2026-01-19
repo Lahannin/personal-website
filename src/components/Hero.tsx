@@ -1,5 +1,6 @@
 import { ArrowDown, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
@@ -14,9 +15,11 @@ const Hero = () => {
             className="mb-8"
           >
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-secondary border-4 border-background shadow-lg overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground text-4xl font-semibold">
-                LH
-              </div>
+              <img 
+                src={profilePhoto} 
+                alt="Lauri Hänninen" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
           

@@ -163,7 +163,7 @@ const Skills = () => {
               <GraduationCap className="w-5 h-5 text-primary" />
               Education
             </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
               {educationData.map((edu, index) => (
                 <motion.div
                   key={index}

@@ -40,16 +40,16 @@ const About = () => {
           </motion.div>
           
           {/* Bio with Photo */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center mb-20">
             {/* Profile Photo */}
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="flex justify-center md:justify-end"
+              className="flex justify-center"
             >
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-secondary border-4 border-primary/20 shadow-2xl overflow-hidden">
+              <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-secondary border-4 border-primary/20 shadow-2xl overflow-hidden flex-shrink-0">
                 <img 
                   src={profilePhoto} 
                   alt="Lauri Hänninen" 

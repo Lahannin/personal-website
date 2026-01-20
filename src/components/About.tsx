@@ -1,5 +1,6 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const About = () => {
   const highlights = [
@@ -38,13 +39,31 @@ const About = () => {
             </h2>
           </motion.div>
           
-          {/* Bio */}
+          {/* Bio with Photo */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+            {/* Profile Photo */}
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
+              className="flex justify-center md:justify-end"
+            >
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-secondary border-4 border-primary/20 shadow-2xl overflow-hidden">
+                <img 
+                  src={profilePhoto} 
+                  alt="Lauri Hänninen" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Bio Text */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -73,35 +92,35 @@ const About = () => {
                 </a>
               </div>
             </motion.div>
-            
-            {/* Stats card */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="border-gradient rounded-2xl p-8"
-            >
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4">
-                  <div className="text-4xl font-bold text-gradient">10+</div>
-                  <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
-                </div>
-                <div className="text-center p-4">
-                  <div className="text-4xl font-bold text-gradient">5+</div>
-                  <div className="text-sm text-muted-foreground mt-1">Certifications</div>
-                </div>
-                <div className="text-center p-4">
-                  <div className="text-4xl font-bold text-gradient">4</div>
-                  <div className="text-sm text-muted-foreground mt-1">Languages</div>
-                </div>
-                <div className="text-center p-4">
-                  <div className="text-4xl font-bold text-gradient">50+</div>
-                  <div className="text-sm text-muted-foreground mt-1">Product Launches</div>
-                </div>
-              </div>
-            </motion.div>
           </div>
+          
+          {/* Stats card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="border-gradient rounded-2xl p-8 mb-16"
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center p-4">
+                <div className="text-4xl font-bold text-gradient">10+</div>
+                <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-4xl font-bold text-gradient">5+</div>
+                <div className="text-sm text-muted-foreground mt-1">Certifications</div>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-4xl font-bold text-gradient">4</div>
+                <div className="text-sm text-muted-foreground mt-1">Languages</div>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-4xl font-bold text-gradient">50+</div>
+                <div className="text-sm text-muted-foreground mt-1">Product Launches</div>
+              </div>
+            </div>
+          </motion.div>
           
           {/* Highlights */}
           <div className="grid md:grid-cols-3 gap-6">

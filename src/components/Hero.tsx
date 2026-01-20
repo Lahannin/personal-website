@@ -1,27 +1,11 @@
 import { ArrowDown, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/20">
       <div className="container relative z-10 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Profile Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-secondary border-4 border-background shadow-lg overflow-hidden">
-              <img 
-                src={profilePhoto} 
-                alt="Lauri Hänninen" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
           
           {/* Status badge */}
           <motion.div 

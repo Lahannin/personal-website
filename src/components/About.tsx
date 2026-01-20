@@ -49,7 +49,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-secondary border-4 border-primary/20 shadow-2xl overflow-hidden flex-shrink-0">
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-secondary border-4 border-primary/20 shadow-2xl overflow-hidden flex-shrink-0">
                 <img 
                   src={profilePhoto} 
                   alt="Lauri Hänninen" 

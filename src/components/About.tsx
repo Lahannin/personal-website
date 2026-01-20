@@ -96,19 +96,19 @@ const About = () => {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center p-4">
-                <div className="text-4xl font-bold text-gradient">10+</div>
+                <div className="text-4xl font-bold text-primary">10+</div>
                 <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
               </div>
               <div className="text-center p-4">
-                <div className="text-4xl font-bold text-gradient">5+</div>
+                <div className="text-4xl font-bold text-primary">5+</div>
                 <div className="text-sm text-muted-foreground mt-1">Certifications</div>
               </div>
               <div className="text-center p-4">
-                <div className="text-4xl font-bold text-gradient">4</div>
+                <div className="text-4xl font-bold text-primary">4</div>
                 <div className="text-sm text-muted-foreground mt-1">Languages</div>
               </div>
               <div className="text-center p-4">
-                <div className="text-4xl font-bold text-gradient">50+</div>
+                <div className="text-4xl font-bold text-primary">50+</div>
                 <div className="text-sm text-muted-foreground mt-1">Product Launches</div>
               </div>
             </div>

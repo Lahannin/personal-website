@@ -26,7 +26,7 @@ const companies: Company[] = [
     roles: [
       {
         title: "Product Marketing Lead",
-        period: "July 2024 – Present",
+        period: "07/2024 – Present",
         description:
           "Lead product marketing initiatives including go-to-market strategy, positioning, messaging, and global launches.",
         highlights: [
@@ -38,7 +38,7 @@ const companies: Company[] = [
       },
       {
         title: "Senior Product Marketing Manager",
-        period: "September 2023 – June 2024",
+        period: "09/2023 – 06/2024",
         description: "Founded the product marketing function as the first Product Marketer.",
         highlights: [
           "Built positioning, messaging, and go-to-market frameworks",
@@ -56,14 +56,14 @@ const companies: Company[] = [
     roles: [
       {
         title: "Chapter Lead",
-        period: "November 2023 – Present",
+        period: "11/2023 – Present",
         description: "Founded the first PMA chapter in the Czech Republic.",
         highlights: ["Built and grew a local product marketing community"],
         current: true,
       },
       {
         title: "Brand Ambassador",
-        period: "March 2023 – November 2023",
+        period: "03/2023 – 11/2023",
         description: "Represented PMA globally, driving engagement and community growth.",
         highlights: [],
       },
@@ -78,7 +78,7 @@ const companies: Company[] = [
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
-        period: "September 2022 – September 2023",
+        period: "09/2022 – 09/2023",
         description: "Defined positioning and messaging for the analytics platform.",
         highlights: [
           "Increased trial adoption through product and UX collaboration",
@@ -88,7 +88,7 @@ const companies: Company[] = [
       },
       {
         title: "Product Marketing Manager",
-        period: "January 2021 – August 2022",
+        period: "01/2021 – 08/2022",
         description: "Led marketing for a cloud-native analytics platform across AWS, GCP, Azure, and on-prem.",
         highlights: [
           "Produced demos, eBooks, videos, and articles",
@@ -107,7 +107,7 @@ const companies: Company[] = [
     roles: [
       {
         title: "Web Tagging Team Lead",
-        period: "October 2019 – December 2020",
+        period: "10/2019 – 12/2020",
         description: "Managed a web tagging team and improved QA processes.",
         highlights: [
           "Oversaw analytics tagging across Ford's global web properties",
@@ -116,7 +116,7 @@ const companies: Company[] = [
       },
       {
         title: "Lead Management Specialist",
-        period: "March 2019 – October 2019",
+        period: "02/2019 – 10/2019",
         description: "Led lead management across five Ford of Europe markets.",
         highlights: [
           "Improved lead performance with some markets exceeding 105% growth",
@@ -125,7 +125,7 @@ const companies: Company[] = [
       },
       {
         title: "Implementation Project Manager",
-        period: "May 2017 – February 2019",
+        period: "05/2017 – 02/2019",
         description: "Led onboarding in 12 markets.",
         highlights: ["Reduced reporting time by over 90% through automation", "Maintained high customer satisfaction"],
       },
@@ -139,7 +139,7 @@ const companies: Company[] = [
     roles: [
       {
         title: "Client Delivery Specialist",
-        period: "April 2016 – May 2017",
+        period: "04/2016 – 05/2017",
         description: "Managed delivery of client programs.",
         highlights: ["Improved implementation speed and efficiency"],
       },

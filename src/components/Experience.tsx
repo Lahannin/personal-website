@@ -18,7 +18,7 @@ interface Company {
 
 const companies: Company[] = [
   {
-    name: "Trezor Company",
+    name: "Trezor",
     location: "Prague, Czechia",
     description:
       "The original hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",

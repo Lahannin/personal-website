@@ -32,16 +32,19 @@ const educationData = [
     institution: "Oulu Business School, University of Oulu",
     degree: "Master of Science (M.Sc.)",
     field: "Economics and Business Administration",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/University_of_Oulu_logo.svg/1200px-University_of_Oulu_logo.svg.png",
   },
   {
     institution: "University of Helsinki",
     degree: "Non-Degree Studies",
     field: "Computer Science",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/University_of_Helsinki.svg/1200px-University_of_Helsinki.svg.png",
   },
   {
     institution: "University of Eastern Finland",
     degree: "Non-Degree Studies",
     field: "Work and Organizational Psychology",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/University_of_Eastern_Finland_logo.svg/1200px-University_of_Eastern_Finland_logo.svg.png",
   },
 ];
 
@@ -173,11 +176,20 @@ const Skills = () => {
                   viewport={{ once: true }}
                   className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
                 >
-                  <h4 className="text-sm font-semibold text-foreground mb-0.5">
-                    {edu.institution}
-                  </h4>
-                  <p className="text-primary text-sm font-medium">{edu.degree}</p>
-                  <p className="text-muted-foreground text-sm">{edu.field}</p>
+                  <div className="flex items-start gap-3">
+                    <img 
+                      src={edu.logo} 
+                      alt={`${edu.institution} logo`}
+                      className="w-10 h-10 object-contain"
+                    />
+                    <div>
+                      <h4 className="text-sm font-semibold text-foreground mb-0.5">
+                        {edu.institution}
+                      </h4>
+                      <p className="text-primary text-sm font-medium">{edu.degree}</p>
+                      <p className="text-muted-foreground text-sm">{edu.field}</p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>

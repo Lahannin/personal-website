@@ -11,6 +11,8 @@ interface Role {
 interface Company {
   name: string;
   location: string;
+  description?: string;
+  logo: string;
   roles: Role[];
 }
 
@@ -18,6 +20,8 @@ const companies: Company[] = [
   {
     name: "Trezor",
     location: "Prague, Czechia",
+    description: "The original hardware wallet – pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Trezor_logo.svg/512px-Trezor_logo.svg.png",
     roles: [
       {
         title: "Product Marketing Lead",
@@ -44,6 +48,8 @@ const companies: Company[] = [
   {
     name: "Product Marketing Alliance",
     location: "Prague, Czechia",
+    description: "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
+    logo: "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/f9lmsmoxkqpldcwquhfq",
     roles: [
       {
         title: "Chapter Lead",
@@ -65,6 +71,8 @@ const companies: Company[] = [
   {
     name: "GoodData",
     location: "Prague, Czechia",
+    description: "A leading analytics platform enabling businesses to build and embed customizable BI dashboards at scale.",
+    logo: "https://avatars.githubusercontent.com/u/400184?s=280&v=4",
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
@@ -91,6 +99,8 @@ const companies: Company[] = [
   {
     name: "Wunderman Thompson",
     location: "Prague, Czechia",
+    description: "A global creative agency combining creativity and technology to deliver marketing solutions for top brands.",
+    logo: "https://logowik.com/content/uploads/images/wunderman-thompson5765.logowik.com.webp",
     roles: [
       {
         title: "Web Tagging Team Lead",
@@ -124,6 +134,8 @@ const companies: Company[] = [
   {
     name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
+    description: "A boutique agency specializing in customer experience and marketing automation solutions.",
+    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGaKiO4Tc_3Cg/company-logo_200_200/company-logo_200_200/0/1630541427281/sinequanon_sa_logo?e=2147483647&v=beta&t=GnNPlq5h_hU9k5HNy3x3xE3RQ3yJd3h3jGnM8h3h3h3",
     roles: [
       {
         title: "Client Delivery Specialist",
@@ -185,15 +197,31 @@ const Experience = () => {
                 <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
                   <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg">
                     {/* Company header */}
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
-                      <h3 className="text-xl font-bold">{company.name}</h3>
-                      {hasCurrent(company) && (
-                        <span className="text-xs text-green-600 bg-green-500/10 px-2 py-1 rounded">
-                          Current
-                        </span>
-                      )}
+                    <div className="flex items-center gap-4 mb-4">
+                      <img 
+                        src={company.logo} 
+                        alt={`${company.name} logo`}
+                        className="w-12 h-12 rounded-lg object-contain bg-white p-1"
+                      />
+                      <div>
+                        <div className="flex flex-wrap items-center gap-3">
+                          <h3 className="text-xl font-bold">{company.name}</h3>
+                          {hasCurrent(company) && (
+                            <span className="text-xs text-green-600 bg-green-500/10 px-2 py-1 rounded">
+                              Current
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground">{company.location}</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-5">{company.location}</p>
+                    
+                    {/* Company description - only show for last role context */}
+                    {company.description && (
+                      <p className="text-sm text-muted-foreground italic mb-5 pb-5 border-b border-border/50">
+                        {company.description}
+                      </p>
+                    )}
                     
                     {/* Roles */}
                     <div className="space-y-5">
@@ -208,12 +236,17 @@ const Experience = () => {
                             </span>
                           </div>
                           <p className="text-primary font-semibold mb-2">{role.title}</p>
-                          <p className="text-muted-foreground text-sm mb-3">{role.description}</p>
+                          <ul className="space-y-1.5 mb-3">
+                            <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <span className="text-primary mt-0.5">•</span>
+                              {role.description}
+                            </li>
+                          </ul>
                           {role.highlights.length > 0 && (
                             <ul className="space-y-1.5">
                               {role.highlights.map((highlight, i) => (
                                 <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                  <span className="text-primary mt-0.5">→</span>
+                                  <span className="text-primary mt-0.5">•</span>
                                   {highlight}
                                 </li>
                               ))}

@@ -1,13 +1,19 @@
-import { Mail, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
+import { Linkedin, Send, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 const Contact = () => {
   const links = [
     {
-      icon: Mail,
-      label: "Email",
-      value: "lahannin@gmail.com",
-      href: "mailto:lahannin@gmail.com"
+      icon: Send,
+      label: "Telegram",
+      value: "@lahannin",
+      href: "https://t.me/lahannin"
     },
     {
       icon: Linkedin,
@@ -16,10 +22,10 @@ const Contact = () => {
       href: "https://linkedin.com/in/laurihanninen"
     },
     {
-      icon: Twitter,
-      label: "X (Twitter)",
+      icon: XIcon,
+      label: "X",
       value: "@Lahannin",
-      href: "https://twitter.com/Lahannin"
+      href: "https://x.com/Lahannin"
     }
   ];
 

@@ -8,7 +8,7 @@ const skills = {
     "Product Positioning",
     "Messaging Frameworks",
     "Product Launches",
-    "Product-Led Growth"
+    "Product-Led Growth",
   ],
   technical: [
     "SaaS & Cloud Platforms",
@@ -16,15 +16,16 @@ const skills = {
     "Analytics & Data",
     "B2B & B2C",
     "AI/ML Applications",
-    "Security & Privacy"
+    "Security & Privacy",
   ],
   certifications: [
     { name: "Go-to-Market Certified | Masters", org: "PMA" },
-    { name: "Product-Led Growth Fundamentals", org: "PMA" },
-    { name: "B2B Messaging Certification", org: "PMA" },
-    { name: "Product Management Basics", org: "PMA" },
-    { name: "Elements of AI", org: "University of Helsinki" }
-  ]
+    { name: "Product Marketing Certified | Core", org: "PMA" },
+    { name: "Product-Led Growth Fundamentals", org: "ProductLed" },
+    { name: "B2B Messaging Certification", org: "Wynter" },
+    { name: "Product Management Basics", org: "Pendo" },
+    { name: "Elements of AI", org: "University of Helsinki" },
+  ],
 };
 
 const educationData = [
@@ -54,7 +55,7 @@ const Skills = () => {
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -66,10 +67,10 @@ const Skills = () => {
               Expertise & <span className="text-gradient">Education</span>
             </h2>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Core Skills */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -82,7 +83,7 @@ const Skills = () => {
               </h3>
               <div className="flex flex-wrap gap-3">
                 {skills.core.map((skill, index) => (
-                  <motion.span 
+                  <motion.span
                     key={index}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -95,9 +96,9 @@ const Skills = () => {
                 ))}
               </div>
             </motion.div>
-            
+
             {/* Technical Skills */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -110,7 +111,7 @@ const Skills = () => {
               </h3>
               <div className="flex flex-wrap gap-3">
                 {skills.technical.map((skill, index) => (
-                  <motion.span 
+                  <motion.span
                     key={index}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -124,9 +125,9 @@ const Skills = () => {
               </div>
             </motion.div>
           </div>
-          
+
           {/* Certifications */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -139,7 +140,7 @@ const Skills = () => {
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {skills.certifications.map((cert, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +156,7 @@ const Skills = () => {
           </motion.div>
 
           {/* Education */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -177,15 +178,9 @@ const Skills = () => {
                   className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
                 >
                   <div className="flex items-start gap-3">
-                    <img 
-                      src={edu.logo} 
-                      alt={`${edu.institution} logo`}
-                      className="w-10 h-10 object-contain"
-                    />
+                    <img src={edu.logo} alt={`${edu.institution} logo`} className="w-10 h-10 object-contain" />
                     <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-0.5">
-                        {edu.institution}
-                      </h4>
+                      <h4 className="text-sm font-semibold text-foreground mb-0.5">{edu.institution}</h4>
                       <p className="text-primary text-sm font-medium">{edu.degree}</p>
                       <p className="text-muted-foreground text-sm">{edu.field}</p>
                     </div>

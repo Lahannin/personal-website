@@ -47,7 +47,7 @@ const educationData = [
     institution: "University of Eastern Finland",
     degree: "Non-Degree Studies",
     field: "Work and Organizational Psychology",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/University_of_Eastern_Finland_logo.svg/1200px-University_of_Eastern_Finland_logo.svg.png",
+    logo: "https://i.ibb.co/398GD7x2/university-of-eastern-finland-logo.jpg",
   },
 ];
 

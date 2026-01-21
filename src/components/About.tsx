@@ -96,7 +96,7 @@ const About = () => {
                 </div>
                 <div className="text-center p-4">
                   <div className="text-4xl font-bold text-gradient">4+</div>
-                  <div className="text-sm text-muted-foreground mt-1">Years managing</div>
+                  <div className="text-sm text-muted-foreground mt-1">Years in management</div>
                 </div>
                 <div className="text-center p-4">
                   <div className="text-4xl font-bold text-gradient">50+</div>

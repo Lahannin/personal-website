@@ -99,8 +99,8 @@ const About = () => {
                   <div className="text-sm text-muted-foreground mt-1">Product Launches</div>
                 </div>
                 <div className="text-center p-4">
-                  <div className="text-4xl font-bold text-gradient">5+</div>
-                  <div className="text-sm text-muted-foreground mt-1">industries Expertise</div>
+                  <div className="text-4xl font-bold text-gradient">5</div>
+                  <div className="text-sm text-muted-foreground mt-1">Industries Expertise</div>
                 </div>
               </div>
             </motion.div>

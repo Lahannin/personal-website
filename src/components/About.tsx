@@ -56,25 +56,6 @@ const About = () => {
                 Originally from Finland, I've called Prague home since 2016. I'm passionate about technology, security,
                 and the power of clear communication to drive product adoption.
               </p>
-              <div className="flex items-center gap-4 pt-4">
-                <a
-                  href="https://twitter.com/Lahannin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mono text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  @Lahannin
-                </a>
-                <span className="text-border">•</span>
-                <a
-                  href="https://linkedin.com/in/laurihanninen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mono text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </div>
             </motion.div>
 
             {/* Stats card */}

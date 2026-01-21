@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/", // ✅ REQUIRED for GitHub Pages with custom domain
+  base: "/personal-website/", // ✅ THIS FIXES THE WHITE PAGE
 
   server: {
     host: "::",

@@ -21,7 +21,7 @@ const companies: Company[] = [
     name: "Trezor",
     location: "Prague, Czechia",
     description:
-      "The original hardware wallet – pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
+      "The original hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
     logo: "https://asset.brandfetch.io/idL3JqVTes/idmQH8pGsT.png",
     roles: [
       {
@@ -134,7 +134,7 @@ const companies: Company[] = [
   {
     name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
-    description: "Switzerland-based startup transforming workplace culture with AI- and data-powered solutions.",
+    description: "A boutique agency specializing in customer experience and marketing automation solutions.",
     logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGaKiO4Tc_3Cg/company-logo_200_200/company-logo_200_200/0/1630541427281?e=1747872000&v=beta&t=JYs9k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9k",
     roles: [
       {

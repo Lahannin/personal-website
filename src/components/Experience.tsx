@@ -1,9 +1,4 @@
 import { motion } from "framer-motion";
-import trezorLogo from "@/assets/logos/trezor-logo.png";
-import pmaLogo from "@/assets/logos/pma-logo.png";
-import gooddataLogo from "@/assets/logos/gooddata-logo.png";
-import wundermanLogo from "@/assets/logos/wunderman-thompson-logo.png";
-import sqnLogo from "@/assets/logos/sqn-logo.png";
 
 interface Role {
   title: string;
@@ -26,7 +21,7 @@ const companies: Company[] = [
     name: "Trezor",
     location: "Prague, Czechia",
     description: "The original hardware wallet – pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
-    logo: trezorLogo,
+    logo: "https://asset.brandfetch.io/idL3JqVTes/idmQH8pGsT.png",
     roles: [
       {
         title: "Product Marketing Lead",
@@ -54,7 +49,7 @@ const companies: Company[] = [
     name: "Product Marketing Alliance",
     location: "Prague, Czechia",
     description: "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
-    logo: pmaLogo,
+    logo: "https://asset.brandfetch.io/idOV0ACqHl/idJvQbJWr-.svg",
     roles: [
       {
         title: "Chapter Lead",
@@ -77,7 +72,7 @@ const companies: Company[] = [
     name: "GoodData",
     location: "Prague, Czechia",
     description: "A leading analytics platform enabling businesses to build and embed customizable BI dashboards at scale.",
-    logo: gooddataLogo,
+    logo: "https://asset.brandfetch.io/idnlQPc4sF/idRlmBhK8C.svg",
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
@@ -105,7 +100,7 @@ const companies: Company[] = [
     name: "Wunderman Thompson",
     location: "Prague, Czechia",
     description: "A global creative agency combining creativity and technology to deliver marketing solutions for top brands.",
-    logo: wundermanLogo,
+    logo: "https://asset.brandfetch.io/idQ2sWDYmd/idlB2fJIPK.svg",
     roles: [
       {
         title: "Web Tagging Team Lead",
@@ -140,7 +135,7 @@ const companies: Company[] = [
     name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
     description: "A boutique agency specializing in customer experience and marketing automation solutions.",
-    logo: sqnLogo,
+    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGaKiO4Tc_3Cg/company-logo_200_200/company-logo_200_200/0/1630541427281?e=1747872000&v=beta&t=JYs9k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9k",
     roles: [
       {
         title: "Client Delivery Specialist",

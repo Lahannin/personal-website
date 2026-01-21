@@ -1,4 +1,9 @@
 import { motion } from "framer-motion";
+import trezorLogo from "@/assets/logos/trezor-logo.png";
+import pmaLogo from "@/assets/logos/pma-logo.png";
+import gooddataLogo from "@/assets/logos/gooddata-logo.png";
+import wundermanLogo from "@/assets/logos/wunderman-thompson-logo.png";
+import sqnLogo from "@/assets/logos/sqn-logo.png";
 
 interface Role {
   title: string;
@@ -21,7 +26,7 @@ const companies: Company[] = [
     name: "Trezor",
     location: "Prague, Czechia",
     description: "The original hardware wallet – pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Trezor_logo.svg/512px-Trezor_logo.svg.png",
+    logo: trezorLogo,
     roles: [
       {
         title: "Product Marketing Lead",
@@ -49,7 +54,7 @@ const companies: Company[] = [
     name: "Product Marketing Alliance",
     location: "Prague, Czechia",
     description: "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
-    logo: "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/f9lmsmoxkqpldcwquhfq",
+    logo: pmaLogo,
     roles: [
       {
         title: "Chapter Lead",
@@ -72,7 +77,7 @@ const companies: Company[] = [
     name: "GoodData",
     location: "Prague, Czechia",
     description: "A leading analytics platform enabling businesses to build and embed customizable BI dashboards at scale.",
-    logo: "https://avatars.githubusercontent.com/u/400184?s=280&v=4",
+    logo: gooddataLogo,
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
@@ -100,7 +105,7 @@ const companies: Company[] = [
     name: "Wunderman Thompson",
     location: "Prague, Czechia",
     description: "A global creative agency combining creativity and technology to deliver marketing solutions for top brands.",
-    logo: "https://logowik.com/content/uploads/images/wunderman-thompson5765.logowik.com.webp",
+    logo: wundermanLogo,
     roles: [
       {
         title: "Web Tagging Team Lead",
@@ -135,7 +140,7 @@ const companies: Company[] = [
     name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
     description: "A boutique agency specializing in customer experience and marketing automation solutions.",
-    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGaKiO4Tc_3Cg/company-logo_200_200/company-logo_200_200/0/1630541427281/sinequanon_sa_logo?e=2147483647&v=beta&t=GnNPlq5h_hU9k5HNy3x3xE3RQ3yJd3h3jGnM8h3h3h3",
+    logo: sqnLogo,
     roles: [
       {
         title: "Client Delivery Specialist",

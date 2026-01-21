@@ -22,7 +22,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "The original hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
-    logo: "https://asset.brandfetch.io/idL3JqVTes/idmQH8pGsT.png",
+    logo: "https://i.ibb.co/k6c7pGgx/trezor-logo.jpg",
     roles: [
       {
         title: "Product Marketing Lead",
@@ -52,7 +52,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
-    logo: "https://asset.brandfetch.io/idOV0ACqHl/idJvQbJWr-.svg",
+    logo: "https://i.ibb.co/bjq1Hx0P/product-marketing-alliance-logo.jpg",
     roles: [
       {
         title: "Chapter Lead",
@@ -74,7 +74,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "A leading analytics platform enabling businesses to build and embed customizable BI dashboards at scale.",
-    logo: "https://asset.brandfetch.io/idnlQPc4sF/idRlmBhK8C.svg",
+    logo: "https://i.ibb.co/gFz2sFSs/gooddata-logo.jpg",
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
@@ -103,7 +103,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "A global creative agency combining creativity and technology to deliver marketing solutions for top brands.",
-    logo: "https://asset.brandfetch.io/idQ2sWDYmd/idlB2fJIPK.svg",
+    logo: "https://i.ibb.co/5gCqRQr2/wunderman-thompson-logo.jpg",
     roles: [
       {
         title: "Web Tagging Team Lead",
@@ -135,7 +135,7 @@ const companies: Company[] = [
     name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
     description: "Swiss-based PeopleTech startup transforming workplace culture with AI- and data-powered solutions.",
-    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGaKiO4Tc_3Cg/company-logo_200_200/company-logo_200_200/0/1630541427281?e=1747872000&v=beta&t=JYs9k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9J8k9k",
+    logo: "https://i.ibb.co/yF0gRHpn/new-sqn-logo.png",
     roles: [
       {
         title: "Client Delivery Specialist",

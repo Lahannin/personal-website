@@ -21,10 +21,12 @@ const skills = {
   certifications: [
     { name: "Go-to-Market Certified | Masters", org: "PMA" },
     { name: "Product Marketing Certified | Core", org: "PMA" },
-    { name: "Product-Led Growth Fundamentals", org: "ProductLed" },
-    { name: "B2B Messaging Certification", org: "Wynter" },
-    { name: "Product Management Basics", org: "Pendo" },
+    { name: "Product-Led Growth", org: "ProductLed" },
+    { name: "B2B Messaging", org: "Wynter" },
+    { name: "Product Management Certified", org: "Pendo" },
+    { name: "Product-Led Certified", org: "Pendo" },
     { name: "Elements of AI", org: "University of Helsinki" },
+    { name: "PRINCE2", org: "TAYLLOR & COX" },
   ],
 };
 

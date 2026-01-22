@@ -2,7 +2,8 @@ name: Deploy Personal Website to GitHub Pages
 
 on:
   push:
-    branches: [main]  # Change if your default branch is different
+    branches:
+      - main   # Change if your default branch is different
 
 permissions:
   contents: read
@@ -10,25 +11,35 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+      # Checkout the repo
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      # Setup Node.js
+      - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 18
 
-      - name: Install dependencies
-        run: npm ci
+      # Install dependencies
+      - run: npm install
 
-      - name: Build
-        run: npm run build
+      # Build the Vite project
+      - run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      # Upload the dist folder as artifact for deployment
+      - uses: actions/upload-pages-artifact@v3
         with:
-          branch: gh-pages      # This is where the built site will live
-          folder: dist          # Folder to deploy
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+
+    steps:
+      # Deploy the uploaded artifact to GitHub Pages
+      - uses: actions/deploy-pages@v4

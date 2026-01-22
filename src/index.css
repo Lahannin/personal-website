@@ -95,15 +95,17 @@
   .border-gradient {
     position: relative;
     background: var(--gradient-card);
+    border: 1px solid hsl(217 46% 21% / 0.15);
+    box-shadow: 0 4px 20px hsl(217 46% 21% / 0.05);
   }
 
   .border-gradient::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -1px;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, hsl(217 46% 21% / 0.3), transparent 50%);
+    background: linear-gradient(135deg, hsl(217 46% 21% / 0.25) 0%, transparent 60%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;

@@ -4,7 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/personal-website/", // ✅ THIS FIXES THE WHITE PAGE
+  // Only use base path for production (GitHub Pages), not for preview
+  base: mode === "production" ? "/personal-website/" : "/",
 
   server: {
     host: "::",

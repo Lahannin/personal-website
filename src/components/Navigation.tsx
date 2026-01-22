@@ -28,6 +28,11 @@ const Navigation = () => {
     >
       <div className="container px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <a href="#" className="font-bold text-lg">
+            <span className="text-gradient"></span>
+          </a>
+
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (

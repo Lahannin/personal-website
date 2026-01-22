@@ -4,8 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Only use base path for production (GitHub Pages), not for preview
-  base: mode === "production" ? "/personal-website/" : "/",
+  // Use root path for custom domain
+  base: "/",
 
   server: {
     host: "::",

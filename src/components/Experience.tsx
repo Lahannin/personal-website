@@ -151,7 +151,7 @@ const Experience = () => {
   const hasCurrent = (company: Company) => company.roles.some((role) => role.current);
 
   return (
-    <section id="experience" className="py-24 md:py-32 relative bg-section-dark text-section-dark-foreground">
+    <section id="experience" className="py-24 md:py-32 relative bg-secondary/20">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
@@ -162,16 +162,16 @@ const Experience = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="mono text-white/80 text-sm tracking-wider">EXPERIENCE</span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-4 text-white">
-              Career <span className="text-white/70">Journey</span>
+            <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
+            <h2 className="text-3xl md:text-5xl font-bold mt-4">
+              Career <span className="text-gradient">Journey</span>
             </h2>
           </motion.div>
 
           {/* Timeline */}
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/20 md:-translate-x-px" />
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
             {companies.map((company, index) => (
               <motion.div
@@ -185,15 +185,15 @@ const Experience = () => {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-white -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
+                <div className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
                   {hasCurrent(company) && (
-                    <div className="absolute inset-0 rounded-full bg-white animate-ping opacity-50" />
+                    <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-50" />
                   )}
                 </div>
 
                 {/* Content */}
                 <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="bg-white border border-white/20 rounded-xl p-6 hover:border-white/40 transition-all hover:shadow-lg">
+                  <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg">
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img
@@ -203,7 +203,7 @@ const Experience = () => {
                       />
                       <div>
                         <div className="flex flex-wrap items-center gap-3">
-                          <h3 className="text-xl font-bold text-foreground">{company.name}</h3>
+                          <h3 className="text-xl font-bold">{company.name}</h3>
                           {hasCurrent(company) && (
                             <span className="text-xs text-green-600 bg-green-500/10 px-2 py-1 rounded">Current</span>
                           )}

@@ -30,7 +30,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 md:py-32 relative bg-section-dark text-section-dark-foreground">
+    <section id="contact" className="py-24 md:py-32 relative">
       <div className="container px-6">
         <div className="max-w-3xl mx-auto text-center">
           {/* Section header */}
@@ -40,11 +40,11 @@ const Contact = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <span className="mono text-white/80 text-sm tracking-wider">CONTACT</span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6 text-white">
-              Let's <span className="text-white/70">Connect</span>
+            <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
+            <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
+              Let's <span className="text-gradient">Connect</span>
             </h2>
-            <p className="text-lg text-white/70 mb-12">
+            <p className="text-lg text-muted-foreground mb-12">
               Looking to collaborate on product marketing or just want to say hello? 
               I'm always happy to connect with fellow product enthusiasts.
             </p>
@@ -69,11 +69,11 @@ const Contact = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="group p-6 bg-white rounded-xl hover:shadow-lg transition-all"
+                className="group p-6 border-gradient rounded-xl hover:border-primary/50 transition-all"
               >
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <link.icon className="w-5 h-5 text-primary" />
-                  <span className="font-semibold text-foreground">{link.label}</span>
+                  <span className="font-semibold">{link.label}</span>
                   <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
                 <p className="mono text-sm text-muted-foreground">{link.value}</p>
@@ -87,9 +87,9 @@ const Contact = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border"
           >
-            <span className="mono text-xs text-white/70">Let's build something great together</span>
+            <span className="mono text-xs text-muted-foreground">Let's build something great together</span>
           </motion.div>
         </div>
       </div>

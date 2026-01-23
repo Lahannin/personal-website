@@ -150,14 +150,37 @@ const companies: Company[] = [
 const Experience = () => {
   const hasCurrent = (company: Company) => company.roles.some((role) => role.current);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
+      },
+    },
+  };
+
   return (
     <section id="experience" className="py-24 md:py-32 relative bg-secondary/20">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
@@ -169,34 +192,53 @@ const Experience = () => {
           </motion.div>
 
           {/* Timeline */}
-          <div className="relative">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="relative"
+          >
             {/* Timeline line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
             {companies.map((company, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={itemVariants}
                 className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10"
+                >
                   {hasCurrent(company) && (
-                    <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-50" />
+                    <motion.div
+                      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="absolute inset-0 rounded-full bg-primary"
+                    />
                   )}
-                </div>
+                </motion.div>
 
                 {/* Content */}
                 <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    transition={{ duration: 0.3 }}
+                    className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+                  >
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
-                      <img
+                      <motion.img
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
                         src={company.logo}
                         alt={`${company.name} logo`}
                         className="w-12 h-12 rounded-lg object-contain bg-white p-1"
@@ -205,7 +247,13 @@ const Experience = () => {
                         <div className="flex flex-wrap items-center gap-3">
                           <h3 className="text-xl font-bold">{company.name}</h3>
                           {hasCurrent(company) && (
-                            <span className="text-xs text-green-600 bg-green-500/10 px-2 py-1 rounded">Current</span>
+                            <motion.span
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              className="text-xs text-green-600 bg-green-500/10 px-2 py-1 rounded"
+                            >
+                              Current
+                            </motion.span>
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground">{company.location}</p>
@@ -222,7 +270,14 @@ const Experience = () => {
                     {/* Roles */}
                     <div className="space-y-5">
                       {company.roles.map((role, roleIndex) => (
-                        <div key={roleIndex} className={`${roleIndex > 0 ? "pt-5 border-t border-border/50" : ""}`}>
+                        <motion.div
+                          key={roleIndex}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: roleIndex * 0.1 }}
+                          className={`${roleIndex > 0 ? "pt-5 border-t border-border/50" : ""}`}
+                        >
                           <div className="flex flex-wrap items-center gap-2 mb-2">
                             <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
                               {role.period}
@@ -238,24 +293,31 @@ const Experience = () => {
                           {role.highlights.length > 0 && (
                             <ul className="space-y-1.5">
                               {role.highlights.map((highlight, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <motion.li
+                                  key={i}
+                                  initial={{ opacity: 0, x: -5 }}
+                                  whileInView={{ opacity: 1, x: 0 }}
+                                  viewport={{ once: true }}
+                                  transition={{ delay: i * 0.05 }}
+                                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                                >
                                   <span className="text-primary mt-0.5">•</span>
                                   {highlight}
-                                </li>
+                                </motion.li>
                               ))}
                             </ul>
                           )}
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Spacer for alternating layout */}
                 <div className="hidden md:block flex-1" />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

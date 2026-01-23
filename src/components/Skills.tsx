@@ -52,14 +52,49 @@ const educationData = [
 ];
 
 const Skills = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const tagVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
+      },
+    },
+  };
+
   return (
     <section id="skills" className="py-24 md:py-32 relative">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
@@ -73,114 +108,155 @@ const Skills = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Core Skills */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="border-gradient rounded-2xl p-8"
+              whileHover={{ y: -4 }}
+              className="border-gradient rounded-2xl p-8 card-hover"
             >
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="w-2 h-2 rounded-full bg-primary"
+                />
                 Core Competencies
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3"
+              >
                 {skills.core.map((skill, index) => (
                   <motion.span
                     key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="px-4 py-2 bg-secondary rounded-lg text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    variants={tagVariants}
+                    whileHover={{ y: -3, scale: 1.05 }}
+                    className="skill-tag px-4 py-2 bg-secondary rounded-lg text-sm font-medium border border-transparent cursor-default"
                   >
                     {skill}
                   </motion.span>
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Technical Skills */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 30, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="border-gradient rounded-2xl p-8"
+              whileHover={{ y: -4 }}
+              className="border-gradient rounded-2xl p-8 card-hover"
             >
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  className="w-2 h-2 rounded-full bg-primary"
+                />
                 Technical Domains
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3"
+              >
                 {skills.technical.map((skill, index) => (
                   <motion.span
                     key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="px-4 py-2 bg-secondary rounded-lg text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    variants={tagVariants}
+                    whileHover={{ y: -3, scale: 1.05 }}
+                    className="skill-tag px-4 py-2 bg-secondary rounded-lg text-sm font-medium border border-transparent cursor-default"
                   >
                     {skill}
                   </motion.span>
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           </div>
 
           {/* Certifications */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="card-gradient border border-border rounded-2xl p-8 mb-8"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-primary" />
+              <motion.span
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                className="w-2 h-2 rounded-full bg-primary"
+              />
               Certifications
             </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
               {skills.certifications.map((cert, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                  variants={cardVariants}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-all duration-300 cursor-default"
                 >
                   <p className="font-medium text-sm mb-1">{cert.name}</p>
                   <p className="mono text-xs text-muted-foreground">{cert.org}</p>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Education */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="card-gradient border border-border rounded-2xl p-8"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-primary" />
+              <motion.div
+                whileHover={{ rotate: 15 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <GraduationCap className="w-5 h-5 text-primary" />
+              </motion.div>
               Education
             </h3>
-            <div className="grid md:grid-cols-3 gap-4">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid md:grid-cols-3 gap-4"
+            >
               {educationData.map((edu, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                  variants={cardVariants}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-all duration-300"
                 >
                   <div className="flex items-start gap-3">
-                    <img src={edu.logo} alt={`${edu.institution} logo`} className="w-10 h-10 object-contain" />
+                    <motion.img
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      src={edu.logo}
+                      alt={`${edu.institution} logo`}
+                      className="w-10 h-10 object-contain rounded"
+                    />
                     <div>
                       <h4 className="text-sm font-semibold text-foreground mb-0.5">{edu.institution}</h4>
                       <p className="text-primary text-sm font-medium">{edu.degree}</p>
@@ -189,7 +265,7 @@ const Skills = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

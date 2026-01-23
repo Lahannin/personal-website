@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/lauri-hanninen-logo.avif";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,8 +30,8 @@ const Navigation = () => {
       <div className="container px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="font-bold text-lg">
-            <span className="text-gradient"></span>
+          <a href="#" className="flex items-center">
+            <img src={logo} alt="Lauri Hänninen" className="h-8 md:h-10 w-auto" />
           </a>
 
           {/* Desktop nav */}

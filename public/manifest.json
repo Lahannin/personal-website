@@ -1,0 +1,21 @@
+{
+  "name": "Lauri Hänninen",
+  "short_name": "Lauri H",
+  "description": "Product Marketing Lead at Trezor. 10+ years helping startups and tech companies grow through compelling product stories.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#1a2744",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

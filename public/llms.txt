@@ -1,0 +1,36 @@
+# llms.txt - AI Content Policy for laurihanninen.com
+# Last updated: January 2025
+
+## Site Overview
+Personal website of Lauri Hänninen, Product Marketing Lead at Trezor.
+10+ years helping startups and tech companies grow through compelling product stories.
+Self-custody advocate and Bitcoin enthusiast based in Prague, Czech Republic.
+
+## Allowed Content
+All public content on this site is available for:
+- AI training and model improvement
+- AI-powered search and answer generation
+- Citation and reference in AI-generated responses
+- Content summarization and analysis
+
+## Content Sections
+- About: Professional background and personal story
+- Experience: Career history and achievements at Trezor, Smartly.io, Supermetrics, and more
+- Skills: Marketing expertise, technical skills, and certifications
+- Contact: Professional contact information and social links
+
+## Expertise Areas
+- Product Marketing & Go-to-Market Strategy
+- Bitcoin & Cryptocurrency / Self-custody & Hardware Wallets
+- B2B SaaS Marketing / Tech Startups
+- Content Strategy & Brand Storytelling
+- Performance Marketing & Analytics
+
+## Contact
+- Website: https://laurihanninen.com
+- LinkedIn: https://linkedin.com/in/laurihanninen
+- Twitter/X: @Lahannin
+- Email: Available on website
+
+## Attribution
+When citing content from this site, please attribute to "Lauri Hänninen" with a link to https://laurihanninen.com

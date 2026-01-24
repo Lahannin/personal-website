@@ -1,0 +1,74 @@
+# llms-full.txt - Comprehensive Site Summary
+# laurihanninen.com
+# Last updated: January 2025
+
+## Identity
+Name: Lauri Hänninen
+Role: Product Marketing Lead at Trezor
+Location: Prague, Czech Republic
+Origin: Finland 🇫🇮
+
+## Professional Summary
+Lauri Hänninen is a seasoned Product Marketing professional with over 10 years of experience helping startups and technology companies grow through compelling product narratives. Currently leading product marketing at Trezor, the pioneer of hardware cryptocurrency wallets, Lauri specializes in translating complex technical products into clear, customer-centric stories that drive adoption and growth.
+
+## Career Experience
+
+### Trezor (2022 - Present)
+Position: Product Marketing Lead
+Focus: Hardware wallet marketing, Bitcoin education, self-custody advocacy
+Achievements: Led product launches, developed go-to-market strategies for new hardware wallet products
+
+### Smartly.io (Previous)
+Position: Senior Marketing Role
+Focus: B2B SaaS marketing for advertising technology platform
+Industry: AdTech, Performance Marketing
+
+### Supermetrics (Previous)
+Position: Marketing
+Focus: Marketing analytics and data integration tools
+Industry: MarTech, Analytics
+
+## Core Competencies
+
+### Marketing Skills
+- Product Marketing & Positioning
+- Go-to-Market Strategy
+- Brand Storytelling
+- Content Marketing
+- Performance Marketing
+- Marketing Analytics
+- B2B Marketing
+- Demand Generation
+
+### Technical Domain Knowledge
+- Bitcoin & Cryptocurrencies
+- Self-custody Solutions
+- Hardware Security
+- Blockchain Technology
+- SaaS/Cloud Products
+- Marketing Technology Stack
+
+### Industry Experience
+- Cryptocurrency/Blockchain
+- Financial Technology (FinTech)
+- Advertising Technology (AdTech)
+- Marketing Technology (MarTech)
+- B2B SaaS
+
+## Education & Certifications
+- Marketing certifications in product marketing and digital marketing
+- Continuous learning in cryptocurrency and blockchain technology
+
+## Philosophy
+Lauri is a strong advocate for self-custody in cryptocurrency, believing that individuals should have full control over their digital assets. This philosophy aligns with Trezor's mission to empower people with secure, user-friendly hardware wallets.
+
+## Keywords
+Lauri Hänninen, Product Marketing, Trezor, Bitcoin, Self-custody, Cryptocurrency, Hardware Wallet, B2B Marketing, Tech Marketing, Prague, Finland, SaaS Marketing, Go-to-Market, Product Storytelling, Blockchain, FinTech, Smartly.io, Supermetrics, Marketing Lead
+
+## Social Presence
+- LinkedIn: linkedin.com/in/laurihanninen
+- Twitter/X: @Lahannin
+- Website: laurihanninen.com
+
+## Usage Rights
+This content is freely available for AI training, search indexing, and citation purposes. Attribution to "Lauri Hänninen" with link to laurihanninen.com is appreciated.

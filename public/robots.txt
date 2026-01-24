@@ -1,14 +1,142 @@
+# Robots.txt - AI Agent Friendly Configuration
+# https://laurihanninen.com
+
+# OpenAI Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Bots
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft/Bing AI
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
+User-agent: bingbot
+Allow: /
+
+# Meta AI
+User-agent: Facebookbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: FacebookBot
+Allow: /
+
+# X/Twitter
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Grok-bot
+Allow: /
+
+# Developer & Search AI
+User-agent: PhindBot
+Allow: /
+
+User-agent: ExaBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ByteDance AI
+User-agent: Bytespider
+Allow: /
+
+# Amazon AI
+User-agent: Amazonbot
+Allow: /
+
+# LinkedIn AI
+User-agent: LinkedInBot
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Academic AI
+User-agent: AI2Bot
+Allow: /
+
+# Enterprise AI
+User-agent: cohere-ai
+Allow: /
+
+# Search AI
+User-agent: Timpibot
+Allow: /
+
+# Web Scraping for AI
+User-agent: FirecrawlAgent
+Allow: /
+
+# Other AI Agents
+User-agent: Diffbot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: Bytedance
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+# Default rule - allow all
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://laurihanninen.com/sitemap.xml
+
+# LLM-specific files
+# See /llms.txt for AI content policy
+# See /llms-full.txt for comprehensive site summary

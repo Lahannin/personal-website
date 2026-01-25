@@ -1,4 +1,4 @@
-import { ArrowDown, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import profilePhoto from "@/assets/profile-photo.png";
 
@@ -97,18 +97,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <span className="mono text-xs opacity-60">Scroll</span>
-            <ArrowDown className="w-4 h-4 animate-bounce" />
-          </div>
-        </motion.div>
       </div>
     </section>
   );

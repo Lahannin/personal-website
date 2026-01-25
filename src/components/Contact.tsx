@@ -1,4 +1,4 @@
-import { Linkedin, Send, ArrowUpRight } from "lucide-react";
+import { Linkedin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
 const XIcon = ({ className }: { className?: string }) => (
@@ -69,7 +69,6 @@ const Contact = () => {
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <link.icon className="w-5 h-5 text-primary" />
                   <span className="font-semibold">{link.label}</span>
-                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
                 <p className="mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">{link.value}</p>
               </a>

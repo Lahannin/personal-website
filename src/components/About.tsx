@@ -5,8 +5,8 @@ const About = () => {
   const highlights = [
     {
       icon: Lightbulb,
-      title: "Strategic Thinker",
-      description: "Passionate about technology and helping companies communicate their value clearly.",
+      title: "Technology Advocate",
+      description: "Passionate about technology, connecting product and marketing to make ideas happen.",
     },
     {
       icon: Target,

@@ -1,4 +1,4 @@
-import { Linkedin, Send } from "lucide-react";
+import { Linkedin, Send, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const XIcon = ({ className }: { className?: string }) => (
@@ -56,18 +56,22 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center justify-center gap-6 mb-12"
+            className="grid sm:grid-cols-3 gap-4 mb-12"
           >
             {links.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                target="_blank"
+                target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                aria-label={link.label}
-                className="group p-4 border-gradient rounded-xl hover:border-primary/50 transition-colors"
+                className="group p-6 border-gradient rounded-xl hover:border-primary/50 transition-colors"
               >
-                <link.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <link.icon className="w-5 h-5 text-primary" />
+                  <span className="font-semibold">{link.label}</span>
+                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <p className="mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">{link.value}</p>
               </a>
             ))}
           </motion.div>

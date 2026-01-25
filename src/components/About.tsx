@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: Target,
       title: "Product & Marketing Expert",
-      description: "10+ years of experience across SaaS, hardware, marketing, tech, and startup sectors",
+      description: "10+ years of experience across SaaS, hardware, marketing agency, and startup sectors",
     },
     {
       icon: Zap,

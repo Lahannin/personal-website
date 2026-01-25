@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/lauri-hanninen-logo.avif";
+import logoIcon from "@/assets/logo-icon.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +32,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img src={logo} alt="Lauri Hänninen" className="h-8 md:h-10 w-auto" />
+            <img src={logoIcon} alt="Lauri Hänninen" className="h-8 w-8 md:h-9 md:w-9" />
           </a>
 
           {/* Desktop nav */}

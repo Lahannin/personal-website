@@ -49,7 +49,7 @@ const About = () => {
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I’m a product marketing leader with 10 years of experience working with startups, agencies, and tech companies. I help teams focus on what truly matters in their products and communicate it in a way people can actually understand. I currently lead product marketing at{" "}
-                <span className="text-primary font-semibold">Trezor</span>, the pioneer in bitcoin & crypto hardware security.
+                <span className="text-primary font-semibold">Trezor</span>, the pioneer & leader in crypto hardware security.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Originally from Finland, I've called Prague home since 2016. I care about open-source technology and self-sovereignty, and I strongly believe that clear, honest communication beats hyped messaging when it comes to earning trust and driving adoption.

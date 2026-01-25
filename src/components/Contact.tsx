@@ -10,10 +10,10 @@ const XIcon = ({ className }: { className?: string }) => (
 const Contact = () => {
   const links = [
     {
-      icon: Send,
+      icon: XIcon,
       label: "",
-      value: "@lahannin",
-      href: "https://t.me/lahannin"
+      value: "@Lahannin",
+      href: "https://x.com/Lahannin"
     },
     {
       icon: Linkedin,
@@ -22,10 +22,10 @@ const Contact = () => {
       href: "https://linkedin.com/in/laurihanninen"
     },
     {
-      icon: XIcon,
+      icon: Send,
       label: "",
-      value: "@Lahannin",
-      href: "https://x.com/Lahannin"
+      value: "@lahannin",
+      href: "https://t.me/lahannin"
     }
   ];
 

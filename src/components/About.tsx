@@ -48,13 +48,11 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a product marketing leader with a decade of experience helping startups, agencies, and tech
-                companies grow through compelling product stories. Currently leading product marketing at{" "}
-                <span className="text-primary font-semibold">Trezor</span>, a pioneer in hardware security solutions.
+                I’m a product marketing leader with 10 years of experience working with startups, agencies, and tech companies. I help teams focus on what truly matters in their products and communicate it in a way people can actually understand. I currently lead product marketing at{" "}
+                <span className="text-primary font-semibold">Trezor</span>, the pioneer in bitcoin & crypto hardware security.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Originally from Finland, I've called Prague home since 2016. I'm passionate about technology, security,
-                and the power of clear communication to drive product adoption.
+                Originally from Finland, I've called Prague home since 2016. I care about technology and self-sovereignty, and I strongly believe that clear, honest communication beats clever messaging when it comes to earning trust and driving adoption.
               </p>
             </motion.div>
 

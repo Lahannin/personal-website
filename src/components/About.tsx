@@ -69,7 +69,7 @@ const About = () => {
                   { value: "25+", label: "Product Launches" },    
                   { value: "10+", label: "Years Experience" },
                   { value: "5+", label: "Years in Management" },
-                  { value: "5", label: "Industries Expertise" },
+                  { value: "5+", label: "Markets & Industries" },
                 ].map((stat, index) => (
                   <div key={index} className="text-center p-4 rounded-lg hover:bg-secondary/50 transition-colors">
                     <div className="text-4xl font-bold text-gradient">{stat.value}</div>

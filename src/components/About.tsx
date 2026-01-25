@@ -6,12 +6,12 @@ const About = () => {
     {
       icon: Lightbulb,
       title: "Technology Advocate",
-      description: "Passionate about technology, connecting product and marketing to make ideas happen.",
+      description: "Passionate about technology and connecting product & marketing to make ideas happen.",
     },
     {
       icon: Target,
       title: "Product & Marketing Expert",
-      description: "10+ years of experience across SaaS, hardware, marketing agency, and startup sectors",
+      description: "10+ years of experience across SaaS, hardware, marketing agency, and startup sectors.",
     },
     {
       icon: Zap,

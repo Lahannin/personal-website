@@ -52,7 +52,7 @@ const About = () => {
                 <span className="text-primary font-semibold">Trezor</span>, the pioneer in bitcoin & crypto hardware security.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Originally from Finland, I've called Prague home since 2016. I care about open-source technology and self-sovereignty, and I strongly believe that clear, honest communication beats clever messaging when it comes to earning trust and driving adoption.
+                Originally from Finland, I've called Prague home since 2016. I care about open-source technology and self-sovereignty, and I strongly believe that clear, honest communication beats hyped messaging when it comes to earning trust and driving adoption.
               </p>
             </motion.div>
 

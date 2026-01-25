@@ -68,9 +68,9 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-6">
                 {[
+                  { value: "25+", label: "Product Launches" },    
                   { value: "10+", label: "Years Experience" },
                   { value: "5+", label: "Years in Management" },
-                  { value: "50+", label: "Product Launches" },
                   { value: "5", label: "Industries Expertise" },
                 ].map((stat, index) => (
                   <div key={index} className="text-center p-4 rounded-lg hover:bg-secondary/50 transition-colors">

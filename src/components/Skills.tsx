@@ -83,11 +83,11 @@ const Skills = () => {
                 <span className="w-2 h-2 rounded-full bg-primary" />
                 Core Competencies
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
                 {skills.core.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-secondary rounded-lg text-sm font-medium border border-transparent hover:border-primary/30 transition-colors"
+                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 transition-colors text-center md:text-left"
                   >
                     {skill}
                   </span>
@@ -107,11 +107,11 @@ const Skills = () => {
                 <span className="w-2 h-2 rounded-full bg-primary" />
                 Technical Domains
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
                 {skills.technical.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-secondary rounded-lg text-sm font-medium border border-transparent hover:border-primary/30 transition-colors"
+                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 transition-colors text-center md:text-left"
                   >
                     {skill}
                   </span>
@@ -132,14 +132,14 @@ const Skills = () => {
               <span className="w-2 h-2 rounded-full bg-primary" />
               Certifications
             </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
               {skills.certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                  className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
                 >
-                  <p className="font-medium text-sm mb-1">{cert.name}</p>
-                  <p className="mono text-xs text-muted-foreground">{cert.org}</p>
+                  <p className="font-medium text-xs md:text-sm mb-1">{cert.name}</p>
+                  <p className="mono text-[10px] md:text-xs text-muted-foreground">{cert.org}</p>
                 </div>
               ))}
             </div>

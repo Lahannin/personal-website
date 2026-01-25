@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: Target,
       title: "Product & Marketing Expert",
-      description: "10+ years of professional experience across SaaS, hardware, marketing, tech, and startup sectors",
+      description: "10+ years of experience across SaaS, hardware, marketing, tech, and startup sectors",
     },
     {
       icon: Zap,
@@ -73,10 +73,7 @@ const About = () => {
                   { value: "50+", label: "Product Launches" },
                   { value: "5", label: "Industries Expertise" },
                 ].map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 rounded-lg hover:bg-secondary/50 transition-colors"
-                  >
+                  <div key={index} className="text-center p-4 rounded-lg hover:bg-secondary/50 transition-colors">
                     <div className="text-4xl font-bold text-gradient">{stat.value}</div>
                     <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
                   </div>

@@ -11,7 +11,7 @@ const Quote = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-relaxed">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed">
             "Product marketing is telling the story of what makes you different and why it matters."
           </p>
         </motion.blockquote>

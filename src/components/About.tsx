@@ -66,7 +66,7 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: "25+", label: "Product Launches" },    
+                  { value: "25+", label: "Launches & GTMs" },    
                   { value: "10+", label: "Years Experience" },
                   { value: "5+", label: "Years in Management" },
                   { value: "5+", label: "Markets & Industries" },

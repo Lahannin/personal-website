@@ -19,8 +19,8 @@ const skills = {
     "Security & Privacy",
   ],
   certifications: [
-    { name: "Go-to-Market Certified | Masters", org: "PMA" },
-    { name: "Product Marketing Certified | Core", org: "PMA" },
+    { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance" },
+    { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance" },
     { name: "Product-Led Growth", org: "ProductLed" },
     { name: "B2B Messaging", org: "Wynter" },
     { name: "Product Management Certified", org: "Pendo" },
@@ -164,11 +164,7 @@ const Skills = () => {
                   className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
                 >
                   <div className="flex items-start gap-3">
-                    <img
-                      src={edu.logo}
-                      alt={`${edu.institution} logo`}
-                      className="w-10 h-10 object-contain rounded"
-                    />
+                    <img src={edu.logo} alt={`${edu.institution} logo`} className="w-10 h-10 object-contain rounded" />
                     <div>
                       <h4 className="text-sm font-semibold text-foreground mb-0.5">{edu.institution}</h4>
                       <p className="text-primary text-sm font-medium">{edu.degree}</p>

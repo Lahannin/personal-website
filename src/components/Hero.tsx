@@ -63,7 +63,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            Turning complex products into clear, customer-centric narratives that drive adoption and growth.
+            Turning complex products into clear, compelling stories that customers love.
           </motion.p>
 
           {/* Location */}

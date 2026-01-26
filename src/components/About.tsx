@@ -48,10 +48,10 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I’m a product marketer who believes clarity is the ultimate competitive advantage. I’m curious about how things work and enjoy breaking down complexity into simple, understandable ideas.
+                I’m a product marketer who believes clarity is the ultimate competitive advantage. My curiosity drives me to explore how things work and turn complex ideas into something people can easily understand.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My background in Business, Computer Science, and Psychology helps me understand both the technology behind a product and the people using it. I see my work in product marketing as a form of teaching: digging into the details and guiding users toward what makes a product unique and why it matters.
+                My background in Business, Computer Science, and Psychology helps me connect with both the technology behind a product and the people using it. I see marketing as a form of teaching: digging into the details and making it clear what makes a product different.
               </p>
             </motion.div>
 

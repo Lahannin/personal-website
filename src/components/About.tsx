@@ -51,7 +51,7 @@ const About = () => {
                 I’m a product marketer who believes clarity is the ultimate competitive advantage. I love exploring how things work and helping people have that “AHA” moment when complex ideas click.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My background in business and technology lets me connect with both the product and the people using it. I see marketing as a form of teaching: digging into the details and showing users what makes a product worth choosing.
+                My background in business and technology lets me connect with both the product and the people using it. I see marketing as teaching, aiming to help people realize why a product truly matters.
               </p>
             </motion.div>
 

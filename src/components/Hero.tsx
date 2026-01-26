@@ -79,17 +79,17 @@ const Hero = () => {
           {/* CTA buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-row items-center justify-center gap-3 sm:gap-4"
           >
             <a
               href="#about"
-              className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:opacity-90 transition-opacity text-sm sm:text-base"
             >
               Learn More
             </a>
             <a
               href="#contact"
-              className="px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg border border-border hover:bg-secondary/80 transition-colors"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg border border-border hover:bg-secondary/80 transition-colors text-sm sm:text-base"
             >
               Get in Touch
             </a>

@@ -165,14 +165,14 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="min-h-screen py-24 md:py-32 relative bg-secondary/20">
+    <section id="experience" className="py-24 md:py-32 relative bg-secondary/20">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
@@ -192,7 +192,7 @@ const Experience = () => {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
                   index % 2 === 0 ? "md:flex-row-reverse" : ""

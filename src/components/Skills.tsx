@@ -53,14 +53,14 @@ const educationData = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="min-h-screen py-24 md:py-32 relative">
+    <section id="skills" className="py-24 md:py-32 relative">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
@@ -75,7 +75,7 @@ const Skills = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
               className="border-gradient rounded-2xl p-8"
             >
@@ -99,7 +99,7 @@ const Skills = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="border-gradient rounded-2xl p-8"
             >
@@ -124,7 +124,7 @@ const Skills = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
             className="card-gradient border border-border rounded-2xl p-8 mb-8"
           >
@@ -149,7 +149,7 @@ const Skills = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
             className="card-gradient border border-border rounded-2xl p-8"
           >

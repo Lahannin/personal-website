@@ -30,14 +30,14 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="min-h-screen py-24 md:py-32 relative overflow-hidden flex items-center">
+    <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
             <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
@@ -54,7 +54,7 @@ const Contact = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="grid sm:grid-cols-3 gap-4 mb-12"
           >

@@ -45,7 +45,7 @@ const Hero = () => {
           {/* Status badge */}
           <motion.div variants={itemVariants}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-6">
-              <span className="text-sm text-muted-foreground">Personal Website</span>
+              <span className="text-sm text-muted-foreground">Product Marketing Leader</span>
             </div>
           </motion.div>
 

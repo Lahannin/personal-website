@@ -1,7 +1,31 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
-const Quote = () => {
+interface QuoteProps {
+  onAnimationComplete?: () => void;
+  onAnimationStart?: () => void;
+}
+
+const Quote = ({ onAnimationComplete, onAnimationStart }: QuoteProps) => {
   const words = "Product marketing is telling the story of what makes you different and why it matters.".split(" ");
+  const [hasStarted, setHasStarted] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-40%" });
+
+  useEffect(() => {
+    if (isInView && !hasStarted) {
+      setHasStarted(true);
+      onAnimationStart?.();
+      
+      // Calculate total animation time: delayChildren + (staggerChildren * words.length) + word animation duration
+      const totalTime = 0.2 + (0.08 * words.length) + 0.5;
+      const timeout = setTimeout(() => {
+        onAnimationComplete?.();
+      }, totalTime * 1000);
+      
+      return () => clearTimeout(timeout);
+    }
+  }, [isInView, hasStarted, onAnimationStart, onAnimationComplete, words.length]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,13 +56,12 @@ const Quote = () => {
   };
 
   return (
-    <section className="h-screen flex items-center justify-center bg-secondary/30 snap-start">
+    <section ref={ref} className="h-screen flex items-center justify-center bg-secondary/30 snap-start">
       <div className="container px-6">
         <motion.blockquote
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          animate={isInView ? "visible" : "hidden"}
           className="max-w-3xl mx-auto text-center"
         >
           <p className="text-2xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed">

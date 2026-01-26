@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 interface Role {
   title: string;
   period: string;
@@ -148,7 +149,20 @@ const companies: Company[] = [
 ];
 
 const Experience = () => {
+  const [expandedRoles, setExpandedRoles] = useState<Record<string, boolean>>({});
   const hasCurrent = (company: Company) => company.roles.some((role) => role.current);
+
+  const toggleRole = (companyIndex: number, roleIndex: number) => {
+    const key = `${companyIndex}-${roleIndex}`;
+    setExpandedRoles((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  const isRoleExpanded = (companyIndex: number, roleIndex: number) => {
+    return expandedRoles[`${companyIndex}-${roleIndex}`] ?? false;
+  };
 
   return (
     <section id="experience" className="py-24 md:py-32 relative bg-secondary/20">
@@ -222,39 +236,72 @@ const Experience = () => {
                     )}
 
                     {/* Roles */}
-                    <div className="space-y-5">
-                      {company.roles.map((role, roleIndex) => (
-                        <div
-                          key={roleIndex}
-                          className={`${roleIndex > 0 ? "pt-5 border-t border-border/50" : ""}`}
-                        >
-                          <div className="flex flex-wrap items-center gap-2 mb-2">
-                            <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                              {role.period}
-                            </span>
-                          </div>
-                          <p className="text-primary font-semibold mb-2">{role.title}</p>
-                          <ul className="space-y-1.5 mb-3">
-                            <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <span className="text-primary mt-0.5">•</span>
-                              {role.description}
-                            </li>
-                          </ul>
-                          {role.highlights.length > 0 && (
-                            <ul className="space-y-1.5">
-                              {role.highlights.map((highlight, i) => (
-                                <li
-                                  key={i}
-                                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                    <div className="space-y-3">
+                      {company.roles.map((role, roleIndex) => {
+                        const isExpanded = isRoleExpanded(index, roleIndex);
+                        return (
+                          <div
+                            key={roleIndex}
+                            className={`${roleIndex > 0 ? "pt-3 border-t border-border/50" : ""}`}
+                          >
+                            <button
+                              onClick={() => toggleRole(index, roleIndex)}
+                              className="w-full text-left flex items-center justify-between gap-2 group"
+                            >
+                              <div className="flex-1">
+                                <div className="flex flex-wrap items-center gap-2 mb-1">
+                                  <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
+                                    {role.period}
+                                  </span>
+                                </div>
+                                <p className="text-primary font-semibold group-hover:text-primary/80 transition-colors">
+                                  {role.title}
+                                </p>
+                              </div>
+                              <motion.div
+                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                              >
+                                <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                              </motion.div>
+                            </button>
+                            
+                            <AnimatePresence>
+                              {isExpanded && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="overflow-hidden"
                                 >
-                                  <span className="text-primary mt-0.5">•</span>
-                                  {highlight}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      ))}
+                                  <div className="pt-3">
+                                    <ul className="space-y-1.5 mb-3">
+                                      <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                                        <span className="text-primary mt-0.5">•</span>
+                                        {role.description}
+                                      </li>
+                                    </ul>
+                                    {role.highlights.length > 0 && (
+                                      <ul className="space-y-1.5">
+                                        {role.highlights.map((highlight, i) => (
+                                          <li
+                                            key={i}
+                                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                                          >
+                                            <span className="text-primary mt-0.5">•</span>
+                                            {highlight}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

@@ -9,15 +9,15 @@ const Quote = () => {
     offset: ["start start", "end start"]
   });
 
-  // Fade out and slight parallax as About covers
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  // Reveal on scroll down, then fade out as About covers
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.3, 1], [40, 0, -30]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 1], [0.95, 1, 0.97]);
 
   return (
     <section 
       ref={sectionRef}
-      className="sticky top-0 z-0 h-[60vh] md:h-[70vh] flex items-center justify-center bg-secondary/30"
+      className="sticky top-0 z-0 h-screen flex items-center justify-center bg-secondary/30"
     >
       <div className="container px-6">
         <motion.blockquote

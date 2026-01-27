@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 relative z-10 bg-background rounded-t-[2rem] shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.12)] -mt-[10vh]">
+    <section id="about" className="py-24 md:py-32 relative z-10 bg-background rounded-t-[2rem]">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}

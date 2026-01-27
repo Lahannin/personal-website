@@ -9,13 +9,15 @@ const Quote = () => {
     offset: ["start start", "end start"]
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  // Fade out and slight parallax as About covers
+  const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.6, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.97]);
 
   return (
-    <div ref={containerRef} className="relative h-[50vh] md:h-[60vh]">
-      <section className="sticky top-0 h-[50vh] md:h-[60vh] flex items-center bg-secondary/30 overflow-hidden">
+    <div ref={containerRef} className="relative h-[70vh] md:h-[80vh]">
+      {/* Sticky container that pins the quote */}
+      <div className="sticky top-0 h-screen flex items-center justify-center bg-secondary/30">
         <div className="container px-6">
           <motion.blockquote
             style={{ opacity, y, scale }}
@@ -26,7 +28,7 @@ const Quote = () => {
             </p>
           </motion.blockquote>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

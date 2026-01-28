@@ -38,7 +38,15 @@ const Hero = () => {
           {/* Profile Photo */}
           <motion.div variants={itemVariants} className="mb-8">
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-secondary border-4 border-background shadow-lg overflow-hidden">
-              <img src={profilePhoto} alt="Lauri Hänninen" className="w-full h-full object-cover" />
+              <img 
+                src={profilePhoto} 
+                alt="Lauri Hänninen - Product Marketing Lead" 
+                className="w-full h-full object-cover"
+                width={160}
+                height={160}
+                loading="eager"
+                fetchPriority="high"
+              />
             </div>
           </motion.div>
 
@@ -70,8 +78,8 @@ const Hero = () => {
             variants={itemVariants}
             className="flex items-center justify-center gap-2 text-muted-foreground mb-12"
           >
-            <MapPin className="w-4 h-4" />
-            <span className="mono text-sm">Prague, Czechia 🇨🇿</span>
+            <MapPin className="w-4 h-4" aria-hidden="true" />
+            <span className="mono text-sm"><span className="sr-only">Location: </span>Prague, Czechia 🇨🇿</span>
             <span className="mx-2 text-border">•</span>
             <span className="mono text-sm">Finnish origins 🇫🇮</span>
           </motion.div>

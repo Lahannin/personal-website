@@ -154,7 +154,7 @@ const Skills = () => {
             className="card-gradient border border-border rounded-2xl p-8"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-primary" />
+              <GraduationCap className="w-5 h-5 text-primary" aria-hidden="true" />
               Education
             </h3>
             <div className="grid md:grid-cols-3 gap-4">
@@ -164,7 +164,15 @@ const Skills = () => {
                   className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
                 >
                   <div className="flex items-start gap-3">
-                    <img src={edu.logo} alt={`${edu.institution} logo`} className="w-10 h-10 object-contain rounded" />
+                    <img 
+                      src={edu.logo} 
+                      alt={`${edu.institution} logo`} 
+                      className="w-10 h-10 object-contain rounded"
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div>
                       <h4 className="text-sm font-semibold text-foreground mb-0.5">{edu.institution}</h4>
                       <p className="text-primary text-sm font-medium">{edu.degree}</p>

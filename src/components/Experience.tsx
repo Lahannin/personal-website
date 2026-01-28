@@ -214,12 +214,16 @@ const Experience = () => {
                         src={company.logo}
                         alt={`${company.name} logo`}
                         className="w-12 h-12 rounded-lg object-contain bg-white p-1"
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div>
                         <div className="flex flex-wrap items-center gap-3">
                           <h3 className="text-xl font-bold">{company.name}</h3>
                           {hasCurrent(company) && (
-                            <span className="text-xs text-green-600 bg-green-500/10 px-2 py-1 rounded">
+                            <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">
                               Current
                             </span>
                           )}
@@ -262,7 +266,7 @@ const Experience = () => {
                                 animate={{ rotate: isExpanded ? 180 : 0 }}
                                 transition={{ duration: 0.2 }}
                               >
-                                <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                                <ChevronDown className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
                               </motion.div>
                             </button>
                             

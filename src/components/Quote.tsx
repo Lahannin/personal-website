@@ -9,13 +9,13 @@ const Quote = () => {
     offset: ["start start", "end start"]
   });
 
-  // Phase 1 (0-0.25): Quote reveals - starts hidden, becomes visible
-  // Phase 2 (0.25-0.45): Quote stays fully visible
-  // Phase 3 (0.45-0.65): Quote fades out completely
-  // Phase 4 (0.65-1): Empty space before About arrives
-  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.45, 0.65], [0, 1, 1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.25, 0.65], [60, 0, -50]);
-  const scale = useTransform(scrollYProgress, [0, 0.25, 0.65], [0.9, 1, 0.92]);
+  // Phase 1 (0-0.2): Quote reveals quickly
+  // Phase 2 (0.2-0.55): Quote stays fully visible (extended)
+  // Phase 3 (0.55-0.75): Quote fades out completely
+  // Phase 4 (0.75-1): Empty space before About arrives
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.55, 0.75], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.75], [60, 0, -50]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.75], [0.9, 1, 0.92]);
   
   // Background transition: secondary/30 → background
   const bgOpacity = useTransform(scrollYProgress, [0.5, 0.85], [0, 1]);

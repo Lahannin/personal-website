@@ -9,20 +9,19 @@ const Quote = () => {
     offset: ["start start", "end start"]
   });
 
-  // Start visible, fade out as About slides over
-  const opacity = useTransform(scrollYProgress, [0.5, 1], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  // Phase 1 (0-0.35): Quote reveals - starts hidden, becomes visible
+  // Phase 2 (0.35-0.65): Quote stays fully visible
+  // Phase 3 (0.65-1): Quote fades out as About slides over
+  const opacity = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.35, 1], [60, 0, -40]);
+  const scale = useTransform(scrollYProgress, [0, 0.35, 1], [0.9, 1, 0.95]);
 
   return (
-    <div ref={sectionRef} className="relative h-[200vh]">
+    <div ref={sectionRef} className="relative h-[250vh]">
       {/* Sticky quote that pins while scrolling through the container */}
       <div className="sticky top-0 h-screen flex items-center justify-center bg-secondary/30 z-0">
         <div className="container px-6">
           <motion.blockquote
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             style={{ opacity, y, scale }}
             className="max-w-3xl mx-auto text-center"
           >

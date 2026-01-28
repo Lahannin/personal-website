@@ -16,12 +16,21 @@ const Quote = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.25, 0.45, 0.65], [0, 1, 1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.25, 0.65], [60, 0, -50]);
   const scale = useTransform(scrollYProgress, [0, 0.25, 0.65], [0.9, 1, 0.92]);
+  
+  // Background transition: secondary/30 → background
+  const bgOpacity = useTransform(scrollYProgress, [0.5, 0.85], [0, 1]);
 
   return (
     <div ref={sectionRef} className="relative h-[250vh]">
       {/* Sticky quote that pins while scrolling through the container */}
       <div className="sticky top-0 h-screen flex items-center justify-center bg-secondary/30 z-0">
-        <div className="container px-6">
+        {/* Gradient overlay that fades in as quote disappears */}
+        <motion.div 
+          style={{ opacity: bgOpacity }}
+          className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-background/80 to-background"
+        />
+        
+        <div className="container px-6 relative z-10">
           <motion.blockquote
             style={{ opacity, y, scale }}
             className="max-w-3xl mx-auto text-center"

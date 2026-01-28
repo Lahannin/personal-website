@@ -65,9 +65,10 @@ const Contact = () => {
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
                 className="group p-6 border-gradient rounded-xl hover:border-primary/50 transition-colors"
+                aria-label={`Connect on ${link.value}`}
               >
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <link.icon className="w-5 h-5 text-primary" />
+                  <link.icon className="w-5 h-5 text-primary" aria-hidden="true" />
                   <span className="font-semibold">{link.label}</span>
                 </div>
                 <p className="mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">{link.value}</p>

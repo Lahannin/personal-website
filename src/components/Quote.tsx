@@ -9,12 +9,13 @@ const Quote = () => {
     offset: ["start start", "end start"]
   });
 
-  // Phase 1 (0-0.35): Quote reveals - starts hidden, becomes visible
-  // Phase 2 (0.35-0.65): Quote stays fully visible
-  // Phase 3 (0.65-1): Quote fades out as About slides over
-  const opacity = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [0, 1, 1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.35, 1], [60, 0, -40]);
-  const scale = useTransform(scrollYProgress, [0, 0.35, 1], [0.9, 1, 0.95]);
+  // Phase 1 (0-0.25): Quote reveals - starts hidden, becomes visible
+  // Phase 2 (0.25-0.45): Quote stays fully visible
+  // Phase 3 (0.45-0.65): Quote fades out completely
+  // Phase 4 (0.65-1): Empty space before About arrives
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.45, 0.65], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.25, 0.65], [60, 0, -50]);
+  const scale = useTransform(scrollYProgress, [0, 0.25, 0.65], [0.9, 1, 0.92]);
 
   return (
     <div ref={sectionRef} className="relative h-[250vh]">

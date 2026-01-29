@@ -157,7 +157,7 @@ const Skills = () => {
               <GraduationCap className="w-5 h-5 text-primary" aria-hidden="true" />
               Education
             </h3>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid gap-4">
               {educationData.map((edu, index) => (
                 <div
                   key={index}
@@ -166,8 +166,8 @@ const Skills = () => {
                   <div className="flex items-start gap-3">
                     <img 
                       src={edu.logo} 
-                      alt={`${edu.institution} logo`} 
-                      className="w-10 h-10 object-contain rounded"
+                      alt="" 
+                      className="w-10 h-10 object-contain rounded flex-shrink-0"
                       width={40}
                       height={40}
                       loading="lazy"

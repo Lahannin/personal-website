@@ -36,27 +36,27 @@ const Navigation = () => {
           <div className="w-8 md:w-9" />
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
               >
                 {link.label}
               </a>
             ))}
-          </div>
+          </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - 44px minimum touch target */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="md:hidden p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
+            {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
 
@@ -71,20 +71,21 @@ const Navigation = () => {
               transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden border-t border-border"
             >
-              <div className="py-4">
-                <div className="flex flex-col gap-2">
+              <nav className="py-4" aria-label="Mobile navigation">
+                <ul className="flex flex-col gap-1" role="list">
                   {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors py-3 px-2 rounded-lg hover:bg-secondary/50"
-                    >
-                      {link.label}
-                    </a>
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block text-base text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors py-3 px-4 rounded-lg hover:bg-secondary/50 min-h-[44px] flex items-center"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
                   ))}
-                </div>
-              </div>
+                </ul>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>

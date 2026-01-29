@@ -76,6 +76,16 @@
   ::selection {
     @apply bg-primary/30 text-foreground;
   }
+
+  /* Visible focus states for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  /* Remove default focus outline when using focus-visible */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 @layer components {

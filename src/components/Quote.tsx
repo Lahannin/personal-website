@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Quote as QuoteIcon } from "lucide-react";
 
 const Quote = () => {
   return (
@@ -9,11 +10,23 @@ const Quote = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-3xl mx-auto text-center relative"
         >
-          <p className="text-2xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed">
+          <QuoteIcon 
+            className="absolute -top-4 left-0 md:-left-8 text-primary/15 -scale-x-100" 
+            size={48} 
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
+          <p className="text-2xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed px-8">
             Product marketing is telling the story of what makes you different and why it matters.
           </p>
+          <QuoteIcon 
+            className="absolute -bottom-4 right-0 md:-right-8 text-primary/15" 
+            size={48} 
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
         </motion.blockquote>
       </div>
     </section>

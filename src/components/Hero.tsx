@@ -1,6 +1,5 @@
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   const containerVariants = {
@@ -35,20 +34,6 @@ const Hero = () => {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Profile Photo */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-secondary border-4 border-background shadow-lg overflow-hidden">
-              <img 
-                src={profilePhoto} 
-                alt="Lauri Hänninen - Product Marketing Lead" 
-                className="w-full h-full object-cover"
-                width={160}
-                height={160}
-                loading="eager"
-                fetchPriority="high"
-              />
-            </div>
-          </motion.div>
 
           {/* Status badge */}
           <motion.div variants={itemVariants}>

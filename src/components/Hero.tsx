@@ -34,6 +34,15 @@ const Hero = () => {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
+          {/* Decorative gradient orb */}
+          <motion.div variants={itemVariants} className="mb-8">
+            <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/30 blur-xl animate-pulse-slow" />
+              <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                <div className="w-3/4 h-3/4 rounded-full bg-gradient-to-br from-primary-foreground/20 to-transparent" />
+              </div>
+            </div>
+          </motion.div>
 
           {/* Status badge */}
           <motion.div variants={itemVariants}>

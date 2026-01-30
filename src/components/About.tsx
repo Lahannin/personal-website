@@ -1,5 +1,6 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const About = () => {
   const highlights = [
@@ -55,26 +56,23 @@ const About = () => {
               </p>
             </motion.div>
 
-            {/* Stats card */}
+            {/* Profile photo */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="border-gradient rounded-2xl p-8"
+              className="flex items-center justify-center"
             >
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { value: "25+", label: "Launches & GTMs" },    
-                  { value: "10+", label: "Years Experience" },
-                  { value: "5+", label: "Years in Management" },
-                  { value: "5+", label: "Markets & Industries" },
-                ].map((stat, index) => (
-                  <div key={index} className="text-center p-4 rounded-lg hover:bg-secondary/50 transition-colors">
-                    <div className="text-4xl font-bold text-gradient">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-                  </div>
-                ))}
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary border-4 border-border shadow-lg overflow-hidden">
+                <img 
+                  src={profilePhoto} 
+                  alt="Lauri Hänninen" 
+                  className="w-full h-full object-cover"
+                  width={320}
+                  height={320}
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>

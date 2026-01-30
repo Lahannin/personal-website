@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import logoHero from "@/assets/logo-hero.png";
 
 const Hero = () => {
   const containerVariants = {
@@ -34,13 +35,17 @@ const Hero = () => {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Decorative gradient orb */}
+          {/* Logo icon */}
           <motion.div variants={itemVariants} className="mb-8">
-            <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/30 blur-xl animate-pulse-slow" />
-              <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
-                <div className="w-3/4 h-3/4 rounded-full bg-gradient-to-br from-primary-foreground/20 to-transparent" />
-              </div>
+            <div className="w-20 h-20 md:w-24 md:h-24 mx-auto shadow-lg rounded-lg overflow-hidden">
+              <img 
+                src={logoHero} 
+                alt="" 
+                className="w-full h-full object-cover"
+                width={96}
+                height={96}
+                loading="eager"
+              />
             </div>
           </motion.div>
 

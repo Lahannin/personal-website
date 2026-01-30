@@ -1,6 +1,5 @@
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import logoHero from "@/assets/logo-hero.png";
 
 const Hero = () => {
   const containerVariants = {
@@ -35,19 +34,6 @@ const Hero = () => {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Logo icon */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <div className="w-20 h-20 md:w-24 md:h-24 mx-auto shadow-lg rounded-lg overflow-hidden">
-              <img 
-                src={logoHero} 
-                alt="" 
-                className="w-full h-full object-cover"
-                width={96}
-                height={96}
-                loading="eager"
-              />
-            </div>
-          </motion.div>
 
           {/* Status badge */}
           <motion.div variants={itemVariants}>

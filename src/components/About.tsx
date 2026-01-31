@@ -35,7 +35,7 @@ const About = () => {
           >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4">
-              Bridging the gap between<span className="text-gradient">Product and Marketing</span>
+              Bridging the gap between<br /><span className="text-gradient">Product and Marketing</span>
             </h2>
           </motion.div>
 

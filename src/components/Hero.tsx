@@ -97,11 +97,11 @@ const Hero = () => {
             variants={itemVariants}
             className="mt-16"
           >
-            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
-              <img src={logo1} alt="Partner logo" className="h-12 md:h-16" />
-              <img src={logo2} alt="Partner logo" className="h-12 md:h-16" />
-              <img src={logo3} alt="Partner logo" className="h-12 md:h-16" />
-              <img src={logo4} alt="Partner logo" className="h-12 md:h-16" />
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+              <img src={logo1} alt="Partner logo" className="h-16 md:h-20" />
+              <img src={logo2} alt="Partner logo" className="h-16 md:h-20" />
+              <img src={logo3} alt="Partner logo" className="h-16 md:h-20" />
+              <img src={logo4} alt="Partner logo" className="h-16 md:h-20" />
             </div>
           </motion.div>
         </motion.div>

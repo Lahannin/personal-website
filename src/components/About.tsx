@@ -35,7 +35,7 @@ const About = () => {
           >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4">
-              Product Storyteller & <span className="text-gradient">Tech Enthusiast</span>
+              Bridging the gap between<span className="text-gradient">Product and Marketing</span>
             </h2>
           </motion.div>
 
@@ -49,10 +49,13 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-               I’m a product marketer who believes clarity is the ultimate competitive advantage. I love figuring out how things work and helping people have that “AHA” moment when complex ideas click.
+              I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My background in business and technology lets me connect with both the product and the people using it. I see product marketing as a form of teaching, helping people realize why a product truly matters.
+               My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it’s for, and why anyone should care.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+               My focus is on practical outcomes. I cut through the noise to get to what the product actually does and why it matters.
               </p>
             </motion.div>
 

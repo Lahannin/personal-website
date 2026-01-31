@@ -53,7 +53,7 @@ const educationData = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 md:py-32 relative">
+    <section id="skills" aria-labelledby="skills-heading" className="py-24 md:py-32 relative">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
@@ -65,7 +65,7 @@ const Skills = () => {
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">SKILLS</span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-4">
+            <h2 id="skills-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Expertise & <span className="text-gradient">Education</span>
             </h2>
           </motion.div>

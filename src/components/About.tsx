@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 relative z-10 bg-background">
+    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 relative z-10 bg-background">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
@@ -34,7 +34,7 @@ const About = () => {
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-4">
+            <h2 id="about-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Bridging the gap between<br /><span className="text-gradient">Product and Marketing</span>
             </h2>
           </motion.div>
@@ -70,11 +70,12 @@ const About = () => {
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary border-4 border-border shadow-lg overflow-hidden">
                 <img 
                   src={profilePhoto} 
-                  alt="Lauri Hänninen" 
+                  alt="Lauri Hänninen - Product Marketing Lead at Trezor, based in Prague" 
                   className="w-full h-full object-cover"
                   width={320}
                   height={320}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </motion.div>

@@ -95,14 +95,13 @@ const Hero = () => {
           {/* Partner logos */}
           <motion.div
             variants={itemVariants}
-            className="mt-16 pt-8 border-t border-border/50"
+            className="mt-16"
           >
-            <p className="text-sm text-muted-foreground mb-6">Trusted by leading companies</p>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-              <img src={logo1} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={logo2} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={logo3} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={logo4} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+              <img src={logo1} alt="Partner logo" className="h-12 md:h-16" />
+              <img src={logo2} alt="Partner logo" className="h-12 md:h-16" />
+              <img src={logo3} alt="Partner logo" className="h-12 md:h-16" />
+              <img src={logo4} alt="Partner logo" className="h-12 md:h-16" />
             </div>
           </motion.div>
         </motion.div>

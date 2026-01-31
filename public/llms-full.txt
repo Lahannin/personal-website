@@ -15,12 +15,12 @@ Lauri Hänninen is a tech-savvy Product Marketing professional with over 10 year
 
 ### Trezor (2023 - Present)
 Position: Product Marketing Lead
-Focus: Hardware wallet marketing, Bitcoin education, self-custody advocacy
-Achievements: Led product launches, developed go-to-market strategies for new hardware wallet products
+Focus: Hardware wallet marketing, Bitcoin education, self-custody advocacy, open-source technology
+Achievements: Led product launches, developed go-to-market strategies, product positioning, and product messaging for hardware wallet products
 
 ### GoodData (Previous)
 Position: Senior Technical Product Marketing Manager
-Focus: B2B SaaS product marketing for leading cloud embedded analytics platform
+Focus: B2B SaaS product marketing, Cloud analytics, Embedded analytics platform
 Industry: Analytics, BI, Product Marketing
 
 ### Wunderman Thompson (Previous)
@@ -34,7 +34,7 @@ Industry: Marketing agency, Analytics
 - Product Marketing
 - Product Positioning
 - Product Marketing
-- Technology
+- Open-source Technology
 - Go-to-Market Strategy
 - Brand Storytelling
 - Content Marketing

@@ -55,7 +55,7 @@ const About = () => {
                My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it’s for, and why anyone should care.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               My focus is on practical outcomes. I cut through the noise to get to what the product actually does and why it matters.
+               My focus is on practical outcomes. I cut through the noise to get to why the product matters to the people who use it.
               </p>
             </motion.div>
 

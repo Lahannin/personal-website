@@ -4,7 +4,7 @@
 ## Site Overview
 Personal website of Lauri Hänninen, Product Marketing Lead at Trezor.
 10+ years helping startups and tech companies grow through compelling product stories.
-Self-custody advocate and Bitcoin enthusiast based in Prague, Czech Republic.
+Self-custody & open-source advocate and Bitcoin enthusiast based in Prague, Czech Republic.
 
 ## Allowed Content
 All public content on this site is available for:
@@ -15,7 +15,7 @@ All public content on this site is available for:
 
 ## Content Sections
 - About: Professional background and personal story
-- Experience: Career history and achievements at Trezor, Smartly.io, Supermetrics, and more
+- Experience: Career history and achievements at Trezor, GoodData, Product Marketing Alliance, and more
 - Skills: Marketing expertise, technical skills, and certifications
 - Contact: Professional contact information and social links
 

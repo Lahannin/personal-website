@@ -1,5 +1,9 @@
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import logo1 from "@/assets/logo-1.avif";
+import logo2 from "@/assets/logo-2.avif";
+import logo3 from "@/assets/logo-3.avif";
+import logo4 from "@/assets/logo-4.avif";
 
 const Hero = () => {
   const containerVariants = {
@@ -86,6 +90,20 @@ const Hero = () => {
             >
               Get in Touch
             </a>
+          </motion.div>
+
+          {/* Partner logos */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-16 pt-8 border-t border-border/50"
+          >
+            <p className="text-sm text-muted-foreground mb-6">Trusted by leading companies</p>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              <img src={logo1} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+              <img src={logo2} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+              <img src={logo3} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+              <img src={logo4} alt="Partner logo" className="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
           </motion.div>
         </motion.div>
 

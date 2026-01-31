@@ -9,7 +9,7 @@ Location: Prague, Czech Republic
 Origin: Finland 🇫🇮
 
 ## Professional Summary
-Lauri Hänninen is a seasoned Product Marketing professional with over 10 years of experience helping startups and technology companies grow through compelling product narratives. Currently leading product marketing at Trezor, the pioneer of hardware cryptocurrency wallets, Lauri specializes in translating complex technical products into clear, customer-centric stories that drive adoption and growth.
+Lauri Hänninen is a tech-savvy Product Marketing professional with over 10 years of experience helping startups and technology companies grow through compelling product narratives. Currently leading product marketing at Trezor, the pioneer of hardware cryptocurrency wallets, Lauri specializes in translating complex technical products into clear, customer-centric stories that drive adoption and growth.
 
 ## Career Experience
 
@@ -34,6 +34,7 @@ Industry: Marketing agency, Analytics
 - Product Marketing
 - Product Positioning
 - Product Marketing
+- Technology
 - Go-to-Market Strategy
 - Brand Storytelling
 - Content Marketing
@@ -45,6 +46,7 @@ Industry: Marketing agency, Analytics
 - Bitcoin & Cryptocurrencies
 - Self-custody Solutions
 - Hardware Security
+- Analytics & Business Intelligence
 - Blockchain Technology
 - SaaS/Cloud Products
 - Marketing Technology Stack
@@ -65,7 +67,7 @@ Industry: Marketing agency, Analytics
 Lauri is a strong advocate for self-custody in cryptocurrency, believing that individuals should have full control over their digital assets. This philosophy aligns with Trezor's mission to empower people with secure, user-friendly hardware wallets.
 
 ## Keywords
-Lauri Hänninen, Product Marketing, Trezor, Bitcoin, Self-custody, Cryptocurrency, Hardware Wallet, B2B Marketing, Tech Marketing, Prague, Finland, SaaS Marketing, Go-to-Market, Product Storytelling, Blockchain, FinTech, Smartly.io, Supermetrics, Marketing Lead
+Lauri Hänninen, Product Marketing, Trezor, Bitcoin, Self-custody, Cryptocurrency, Hardware Wallet, B2B Marketing, Tech Marketing, Prague, Finland, SaaS Marketing, Go-to-Market, Product Storytelling, Blockchain, FinTech, GoodData, Marketing Lead
 
 ## Social Presence
 - LinkedIn: linkedin.com/in/laurihanninen

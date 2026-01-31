@@ -2,7 +2,7 @@
 # Last updated: January 2025
 
 ## Site Overview
-Personal website of Lauri Hänninen, Product Marketing Lead at Trezor.
+Personal website of Lauri Hänninen, tech-savvy Product Marketing Lead at Treyor.
 10+ years helping startups and tech companies grow through compelling product stories.
 Self-custody & open-source advocate and Bitcoin enthusiast based in Prague, Czech Republic.
 

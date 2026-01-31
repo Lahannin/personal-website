@@ -30,7 +30,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="contact" aria-labelledby="contact-heading" className="py-24 md:py-32 relative overflow-hidden">
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Section header */}
@@ -41,7 +41,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
+            <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mt-4 mb-6">
               Let's <span className="text-gradient">Connect</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-12">

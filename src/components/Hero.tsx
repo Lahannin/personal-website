@@ -30,7 +30,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/20">
+    <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/20">
       <div className="container relative z-10 px-6">
         <motion.div
           variants={containerVariants}
@@ -48,6 +48,7 @@ const Hero = () => {
 
           {/* Name */}
           <motion.h1
+            id="hero-heading"
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
           >
@@ -96,12 +97,14 @@ const Hero = () => {
           <motion.div
             variants={itemVariants}
             className="mt-16"
+            role="img"
+            aria-label="Logos of companies I've worked with"
           >
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              <img src={logo1} alt="Partner logo" className="h-16 md:h-20" />
-              <img src={logo2} alt="Partner logo" className="h-16 md:h-20" />
-              <img src={logo3} alt="Partner logo" className="h-16 md:h-20" />
-              <img src={logo4} alt="Partner logo" className="h-16 md:h-20" />
+              <img src={logo1} alt="Trezor - Hardware wallet company" className="h-16 md:h-20" width={80} height={80} loading="eager" />
+              <img src={logo2} alt="GoodData - Analytics platform" className="h-16 md:h-20" width={80} height={80} loading="eager" />
+              <img src={logo3} alt="Product Marketing Alliance" className="h-16 md:h-20" width={80} height={80} loading="eager" />
+              <img src={logo4} alt="Wunderman Thompson - Creative agency" className="h-16 md:h-20" width={80} height={80} loading="eager" />
             </div>
           </motion.div>
         </motion.div>

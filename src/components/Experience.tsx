@@ -165,7 +165,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-24 md:py-32 relative bg-secondary/20">
+    <section id="experience" aria-labelledby="experience-heading" className="py-24 md:py-32 relative bg-secondary/20">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
@@ -177,7 +177,7 @@ const Experience = () => {
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-4">
+            <h2 id="experience-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Career <span className="text-gradient">Journey</span>
             </h2>
           </motion.div>

@@ -11,17 +11,17 @@ interface Article {
 
 const articles: Article[] = [
   {
+    title: "ABC of Product Marketing: Positioning, Messaging, and Copy Explained",
+    description: "Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!",
+    url: "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
+    date: "Apr 2023",
+  },
+  {
     title: "What Is Analytics as Code?",
     description: "Use software engineering best practices for agile, efficient, and scalable analytics processes with analytics as code.",
     url: "https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49",
     date: "Aug 2023",
     publication: "GoodData Developers",
-  },
-  {
-    title: "ABC of Product Marketing: Positioning, Messaging, and Copy Explained",
-    description: "Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!",
-    url: "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
-    date: "Apr 2023",
   },
   {
     title: "Headless BI: Metric Standardization in Action",
@@ -62,13 +62,6 @@ const articles: Article[] = [
     description: "Integrating PostgreSQL, one of the most popular open-source databases, with GoodData allows you to build powerful headless BI applications.",
     url: "https://lahannin.medium.com/build-a-headless-bi-stack-on-top-of-postgresql-1a297422f38c",
     date: "Jun 2021",
-    publication: "GoodData Developers",
-  },
-  {
-    title: "Embedded Analytics: GD.UI with a Product Marketer",
-    description: "GoodData.UI makes for a seamless and flexible embedded analytics experience. Even in the hands of a product marketer.",
-    url: "https://lahannin.medium.com/embedded-analytics-gd-ui-with-a-product-marketer-bea7ed65cdaf",
-    date: "Apr 2021",
     publication: "GoodData Developers",
   },
 ];

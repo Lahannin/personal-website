@@ -50,20 +50,6 @@ const articles: Article[] = [
     date: "Jan 2022",
     publication: "GoodData Developers",
   },
-  {
-    title: "DashboardView: Advanced Embedded Analytics",
-    description: "Advance embedded analytics with the DashboardView React component — fast and easy setup, great performance, and seamless interactivity.",
-    url: "https://lahannin.medium.com/dashboardview-advanced-embedded-analytics-8778d224be46",
-    date: "Jun 2021",
-    publication: "GoodData Developers",
-  },
-  {
-    title: "Build a Headless BI Stack on Top of PostgreSQL",
-    description: "Integrating PostgreSQL, one of the most popular open-source databases, with GoodData allows you to build powerful headless BI applications.",
-    url: "https://lahannin.medium.com/build-a-headless-bi-stack-on-top-of-postgresql-1a297422f38c",
-    date: "Jun 2021",
-    publication: "GoodData Developers",
-  },
 ];
 
 const Articles = () => {

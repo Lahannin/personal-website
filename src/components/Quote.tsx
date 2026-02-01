@@ -13,16 +13,16 @@ const Quote = () => {
           className="max-w-3xl mx-auto text-center relative"
         >
           <QuoteIcon 
-            className="absolute -top-2 left-0 md:-left-6 text-primary/15 -scale-x-100" 
+            className="hidden md:block absolute -top-2 -left-6 text-primary/15 -scale-x-100" 
             size={32} 
             strokeWidth={1.5}
             aria-hidden="true"
           />
-          <p className="text-2xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed px-8">
+          <p className="text-xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed px-4 md:px-8">
             Product marketing is telling the story of what makes you different and why it matters.
           </p>
           <QuoteIcon 
-            className="absolute -bottom-2 right-0 md:-right-6 text-primary/15" 
+            className="hidden md:block absolute -bottom-2 -right-6 text-primary/15" 
             size={32} 
             strokeWidth={1.5}
             aria-hidden="true"

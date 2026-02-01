@@ -198,15 +198,15 @@ const Experience = () => {
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
+                {/* Timeline dot - hidden on mobile */}
+                <div className="hidden md:block absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
                   {hasCurrent(company) && (
                     <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-25" />
                   )}
                 </div>
 
                 {/* Content */}
-                <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
+                <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
                   <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">

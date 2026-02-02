@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
+import gooddataLogo from "@/assets/gooddata-logo.jpg";
+import trezorLogo from "@/assets/trezor-logo.jpg";
 
 interface Product {
   name: string;
   description: string;
   url?: string;
+  logo?: string;
 }
 
 interface ProductCategory {
@@ -22,11 +25,13 @@ const categories: ProductCategory[] = [
         name: "GoodData Cloud",
         description: "A fully managed, API-first analytics platform combining BI, AI, and Analytics Lake. Enables businesses to build custom data applications with AI-assisted analytics.",
         url: "https://www.gooddata.com/",
+        logo: gooddataLogo,
       },
       {
         name: "GoodData.CN",
         description: "Self-hosted version of GoodData Cloud. Scalable microservices architecture deployable in containers alongside data in public/private cloud or on-premises.",
         url: "https://www.gooddata.com/",
+        logo: gooddataLogo,
       },
     ],
   },
@@ -38,11 +43,13 @@ const categories: ProductCategory[] = [
         name: "Trezor Safe 5",
         description: "Hardware wallet with vibrant color touchscreen and haptic feedback for everyday crypto security.",
         url: "https://trezor.io/trezor-safe-5",
+        logo: trezorLogo,
       },
       {
         name: "Trezor Safe 7",
         description: "The hardware wallet that redefines crypto security forever — radically transparent, fully wireless, and quantum-ready.",
         url: "https://trezor.io/trezor-safe-7",
+        logo: trezorLogo,
       },
     ],
   },
@@ -54,6 +61,7 @@ const categories: ProductCategory[] = [
         name: "Trezor Expert",
         description: "Personalized onboarding service with one-on-one video guidance for setting up your hardware wallet and learning security best practices.",
         url: "https://trezor.io/trezor-expert",
+        logo: trezorLogo,
       },
     ],
   },
@@ -113,15 +121,30 @@ const Products = () => {
                       transition={{ duration: 0.3, delay: productIndex * 0.05 }}
                       className="group card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg"
                     >
-                      <h4 className="text-lg font-semibold text-primary group-hover:text-primary/80 transition-colors mb-2">
-                        {product.name}
-                        <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          ↗
-                        </span>
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {product.description}
-                      </p>
+                      <div className="flex items-start gap-4">
+                        {product.logo && (
+                          <img
+                            src={product.logo}
+                            alt={`${product.name} logo`}
+                            className="w-12 h-12 rounded-lg object-contain bg-white p-1 flex-shrink-0"
+                            width={48}
+                            height={48}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-lg font-semibold text-primary group-hover:text-primary/80 transition-colors mb-2">
+                            {product.name}
+                            <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                              ↗
+                            </span>
+                          </h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {product.description}
+                          </p>
+                        </div>
+                      </div>
                     </motion.a>
                   ))}
                 </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Monitor, Cpu, Headset, Rocket, Play } from "lucide-react";
+import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
 import gooddataLogo from "@/assets/gooddata-logo.jpg";
 import trezorLogo from "@/assets/trezor-logo.jpg";
 
@@ -8,7 +8,6 @@ interface Product {
   description: string;
   url?: string;
   logo?: string;
-  videoId?: string;
 }
 
 interface ProductCategory {
@@ -51,7 +50,6 @@ const categories: ProductCategory[] = [
         description: "The hardware wallet that redefines crypto security forever — radically transparent, fully wireless, and quantum-ready.",
         url: "https://trezor.io/trezor-safe-7",
         logo: trezorLogo,
-        videoId: "NYJHD7MNlTM",
       },
     ],
   },
@@ -68,113 +66,6 @@ const categories: ProductCategory[] = [
     ],
   },
 ];
-
-const ProductCard = ({ product, productIndex }: { product: Product; productIndex: number }) => {
-  if (product.videoId) {
-    // Featured product with video - spans full width
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3, delay: productIndex * 0.05 }}
-        className="md:col-span-2 card-gradient border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all hover:shadow-lg"
-      >
-        <div className="grid md:grid-cols-2 gap-0">
-          {/* Video embed */}
-          <div className="relative aspect-video md:aspect-auto">
-            <iframe
-              src={`https://www.youtube.com/embed/${product.videoId}`}
-              title={`${product.name} launch video`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-              loading="lazy"
-            />
-          </div>
-          
-          {/* Product info */}
-          <a
-            href={product.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-6 flex flex-col justify-center"
-          >
-            <div className="flex items-start gap-4">
-              {product.logo && (
-                <img
-                  src={product.logo}
-                  alt={`${product.name} logo`}
-                  className="w-12 h-12 rounded-lg object-contain bg-white p-1 flex-shrink-0"
-                  width={48}
-                  height={48}
-                  loading="lazy"
-                  decoding="async"
-                />
-              )}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded flex items-center gap-1">
-                    <Play className="w-3 h-3" />
-                    Launch Video
-                  </span>
-                </div>
-                <h4 className="text-lg font-semibold text-primary group-hover:text-primary/80 transition-colors mb-2">
-                  {product.name}
-                  <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    ↗
-                  </span>
-                </h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </motion.div>
-    );
-  }
-
-  // Standard product card
-  return (
-    <motion.a
-      href={product.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.3, delay: productIndex * 0.05 }}
-      className="group card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg"
-    >
-      <div className="flex items-start gap-4">
-        {product.logo && (
-          <img
-            src={product.logo}
-            alt={`${product.name} logo`}
-            className="w-12 h-12 rounded-lg object-contain bg-white p-1 flex-shrink-0"
-            width={48}
-            height={48}
-            loading="lazy"
-            decoding="async"
-          />
-        )}
-        <div className="flex-1 min-w-0">
-          <h4 className="text-lg font-semibold text-primary group-hover:text-primary/80 transition-colors mb-2">
-            {product.name}
-            <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              ↗
-            </span>
-          </h4>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {product.description}
-          </p>
-        </div>
-      </div>
-    </motion.a>
-  );
-};
 
 const Products = () => {
   return (
@@ -219,11 +110,42 @@ const Products = () => {
                 {/* Products grid */}
                 <div className="grid md:grid-cols-2 gap-4">
                   {category.products.map((product, productIndex) => (
-                    <ProductCard
+                    <motion.a
                       key={product.name}
-                      product={product}
-                      productIndex={productIndex}
-                    />
+                      href={product.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: productIndex * 0.05 }}
+                      className="group card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg"
+                    >
+                      <div className="flex items-start gap-4">
+                        {product.logo && (
+                          <img
+                            src={product.logo}
+                            alt={`${product.name} logo`}
+                            className="w-12 h-12 rounded-lg object-contain bg-white p-1 flex-shrink-0"
+                            width={48}
+                            height={48}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-lg font-semibold text-primary group-hover:text-primary/80 transition-colors mb-2">
+                            {product.name}
+                            <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                              ↗
+                            </span>
+                          </h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {product.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.a>
                   ))}
                 </div>
               </motion.div>

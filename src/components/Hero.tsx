@@ -1,11 +1,22 @@
 import { MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import logo1 from "@/assets/logo-1.avif";
 import logo2 from "@/assets/logo-2.avif";
 import logo3 from "@/assets/logo-3.avif";
 import logo4 from "@/assets/logo-4.avif";
 
 const Hero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,8 +41,23 @@ const Hero = () => {
   };
 
   return (
-    <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/20">
-      <div className="container relative z-10 px-6">
+    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Parallax background layer */}
+      <motion.div 
+        style={{ y: backgroundY }}
+        className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20"
+      />
+      
+      {/* Subtle floating shapes for depth */}
+      <motion.div 
+        style={{ y: backgroundY }}
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+      >
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
+      </motion.div>
+
+      <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -108,8 +134,7 @@ const Hero = () => {
             </div>
           </motion.div>
         </motion.div>
-
-      </div>
+      </motion.div>
     </section>
   );
 };

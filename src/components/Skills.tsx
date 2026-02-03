@@ -85,12 +85,17 @@ const Skills = () => {
               </h3>
               <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
                 {skills.core.map((skill, index) => (
-                  <span
+                  <motion.span
                     key={index}
-                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 transition-colors text-center md:text-left"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 hover:bg-primary/10 transition-colors text-center md:text-left cursor-default"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
@@ -109,12 +114,17 @@ const Skills = () => {
               </h3>
               <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
                 {skills.technical.map((skill, index) => (
-                  <span
+                  <motion.span
                     key={index}
-                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 transition-colors text-center md:text-left"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 hover:bg-primary/10 transition-colors text-center md:text-left cursor-default"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
@@ -134,13 +144,18 @@ const Skills = () => {
             </h3>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
               {skills.certifications.map((cert, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.04 }}
+                  whileHover={{ y: -3, boxShadow: "0 10px 30px -10px hsl(var(--primary) / 0.2)" }}
+                  className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors cursor-default"
                 >
                   <p className="font-medium text-xs md:text-sm mb-1">{cert.name}</p>
                   <p className="mono text-[10px] md:text-xs text-muted-foreground">{cert.org}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>

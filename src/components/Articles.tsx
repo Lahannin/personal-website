@@ -82,11 +82,12 @@ const Articles = () => {
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-lg"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -5, scale: 1.01 }}
+                className="group card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
@@ -107,10 +108,16 @@ const Articles = () => {
                       {article.description}
                     </p>
                   </div>
-                  <ExternalLink 
-                    className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" 
-                    aria-hidden="true" 
-                  />
+                  <motion.div
+                    className="flex-shrink-0 mt-1"
+                    whileHover={{ rotate: -45 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <ExternalLink 
+                      className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
+                      aria-hidden="true" 
+                    />
+                  </motion.div>
                 </div>
               </motion.a>
             ))}

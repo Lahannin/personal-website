@@ -31,13 +31,6 @@ const Contact = () => {
 
   return (
     <section id="contact" aria-labelledby="contact-heading" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Rich gradient background */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(220_20%_97%)_0%,hsl(220_25%_96%)_50%,hsl(220_20%_98%)_100%)]" />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-1/4 w-80 h-80 bg-[radial-gradient(ellipse,hsl(172_66%_50%/0.06),transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[radial-gradient(ellipse,hsl(12_76%_61%/0.05),transparent_70%)] pointer-events-none" />
-      
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Section header */}
@@ -47,7 +40,7 @@ const Contact = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <span className="mono text-[hsl(12_76%_61%)] text-sm tracking-wider font-medium">CONTACT</span>
+            <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
             <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mt-4 mb-6">
               Let's <span className="text-gradient">Connect</span>
             </h2>
@@ -76,7 +69,7 @@ const Contact = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="group p-6 min-h-[100px] bg-white rounded-2xl shadow-lg border border-border/50 hover:border-primary/30 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all"
+                className="group p-6 min-h-[100px] border-gradient rounded-xl hover:border-primary/50 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
                 aria-label={`Connect on ${link.value}`}
               >
                 <motion.div 
@@ -84,12 +77,10 @@ const Contact = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <link.icon className="w-5 h-5 text-primary" aria-hidden="true" />
-                  </div>
+                  <link.icon className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-semibold">{link.label}</span>
                 </motion.div>
-                <p className="mono text-sm text-muted-foreground group-hover:text-primary transition-colors">{link.value}</p>
+                <p className="mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">{link.value}</p>
               </motion.a>
             ))}
           </motion.div>
@@ -100,10 +91,10 @@ const Contact = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white shadow-lg border border-border/50"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border"
           >
-            <span className="w-2 h-2 rounded-full bg-[hsl(172_66%_50%)] animate-pulse" />
-            <span className="mono text-xs text-muted-foreground font-medium">Let's build something great together</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <span className="mono text-xs text-muted-foreground">Let's build something great together</span>
           </motion.div>
         </div>
       </div>

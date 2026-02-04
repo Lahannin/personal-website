@@ -52,9 +52,9 @@ const products: Product[] = [
 ];
 
 const categoryConfig = {
-  software: { icon: Monitor, label: "Software", color: "from-[hsl(217_46%_21%/0.15)] to-[hsl(200_60%_50%/0.1)]", badge: "bg-[hsl(217_46%_21%/0.1)] text-primary" },
-  hardware: { icon: Cpu, label: "Hardware", color: "from-[hsl(12_76%_61%/0.15)] to-[hsl(25_80%_55%/0.1)]", badge: "bg-[hsl(12_76%_61%/0.1)] text-[hsl(12_76%_61%)]" },
-  services: { icon: Headset, label: "Services", color: "from-[hsl(172_66%_50%/0.15)] to-[hsl(190_70%_45%/0.1)]", badge: "bg-[hsl(172_66%_50%/0.1)] text-[hsl(172_66%_50%)]" },
+  software: { icon: Monitor, label: "Software", color: "from-blue-500/20 to-cyan-500/20" },
+  hardware: { icon: Cpu, label: "Hardware", color: "from-orange-500/20 to-amber-500/20" },
+  services: { icon: Headset, label: "Services", color: "from-purple-500/20 to-pink-500/20" },
 };
 
 const Products = () => {
@@ -91,14 +91,10 @@ const Products = () => {
 
   return (
     <section id="products" aria-labelledby="products-heading" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Rich gradient background */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(220_25%_96%)_0%,hsl(220_20%_97%)_50%,hsl(0_0%_100%)_100%)]" />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       
-      {/* Decorative accent elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[radial-gradient(ellipse,hsl(12_76%_61%/0.08),transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[radial-gradient(ellipse,hsl(172_66%_50%/0.06),transparent_70%)] pointer-events-none" />
-      
-      <div className="container px-6 relative z-10">
+      <div className="container px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <motion.div
@@ -108,7 +104,7 @@ const Products = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="mono text-[hsl(12_76%_61%)] text-sm tracking-wider font-medium">PRODUCT LAUNCHES</span>
+            <span className="mono text-primary text-sm tracking-wider">PRODUCT LAUNCHES</span>
             <h2 id="products-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Products I've <span className="text-gradient">Launched</span>
             </h2>
@@ -180,10 +176,10 @@ const Products = () => {
                           <div className="relative p-8 md:p-10">
                             {/* Category badge */}
                             <div className="flex items-center gap-2 mb-6">
-                              <div className={`p-2 rounded-lg ${categoryConfig[product.category].badge}`}>
+                              <div className="p-2 rounded-lg bg-primary/10 text-primary">
                                 <CategoryIcon className="w-4 h-4" />
                               </div>
-                              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                              <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                                 {categoryConfig[product.category].label}
                               </span>
                             </div>

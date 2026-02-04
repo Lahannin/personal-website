@@ -8,8 +8,8 @@
 
 @layer base {
   :root {
-    /* Light palette with blue accents */
-    --background: 210 40% 98%;
+    /* Refined light palette with rich navy + warm coral accents */
+    --background: 220 20% 97%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
@@ -22,35 +22,42 @@
     --primary: 217 46% 21%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
+    --secondary: 220 25% 94%;
     --secondary-foreground: 217 46% 21%;
 
-    --muted: 210 40% 94%;
-    --muted-foreground: 217 30% 40%;
+    --muted: 220 20% 92%;
+    --muted-foreground: 217 25% 45%;
 
-    /* Lighter navy accent */
-    --accent: 217 46% 35%;
+    /* Warm coral accent for visual pop */
+    --accent: 12 76% 61%;
     --accent-foreground: 0 0% 100%;
+
+    /* Teal for success/highlights */
+    --highlight: 172 66% 50%;
+    --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
     --ring: 217 46% 21%;
 
     --radius: 0.75rem;
 
-    /* Modern gradients with navy tones */
-    --gradient-primary: linear-gradient(135deg, hsl(217 46% 21%) 0%, hsl(217 46% 35%) 100%);
-    --gradient-light: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 40% 96%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(217 46% 21% / 0.1) 0%, transparent 70%);
+    /* Rich gradients for visual depth */
+    --gradient-primary: linear-gradient(135deg, hsl(217 46% 21%) 0%, hsl(217 50% 32%) 50%, hsl(217 46% 21%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(12 76% 61%) 0%, hsl(25 80% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 30% 96%) 0%, hsl(220 25% 94%) 50%, hsl(220 20% 97%) 100%);
+    --gradient-section-alt: linear-gradient(180deg, hsl(220 25% 94%) 0%, hsl(220 20% 97%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 25% 98%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(217 46% 21% / 0.15) 0%, transparent 70%);
 
-    /* Refined shadows */
-    --shadow-glow: 0 0 80px hsl(217 46% 21% / 0.12);
-    --shadow-card: 0 4px 24px hsl(217 46% 21% / 0.06);
-    --shadow-card-hover: 0 12px 48px hsl(217 46% 21% / 0.1);
+    /* Refined shadows with more depth */
+    --shadow-glow: 0 0 100px hsl(217 46% 21% / 0.15);
+    --shadow-card: 0 4px 30px hsl(217 46% 21% / 0.08);
+    --shadow-card-hover: 0 20px 60px hsl(217 46% 21% / 0.15);
+    --shadow-accent: 0 8px 30px hsl(12 76% 61% / 0.25);
   }
 
   .dark {

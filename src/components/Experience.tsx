@@ -165,8 +165,15 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="py-24 md:py-32 relative bg-secondary/20">
-      <div className="container px-6">
+    <section id="experience" aria-labelledby="experience-heading" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Rich gradient background */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(220_25%_94%)_0%,hsl(220_20%_97%)_50%,hsl(220_25%_95%)_100%)]" />
+      
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[radial-gradient(ellipse,hsl(217_46%_21%/0.04),transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[radial-gradient(ellipse,hsl(12_76%_61%/0.04),transparent_70%)] pointer-events-none" />
+      
+      <div className="container px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <motion.div
@@ -176,7 +183,7 @@ const Experience = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
+            <span className="mono text-[hsl(172_66%_50%)] text-sm tracking-wider font-medium">EXPERIENCE</span>
             <h2 id="experience-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Career <span className="text-gradient">Journey</span>
             </h2>
@@ -207,7 +214,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                  <div className="bg-white border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:border-primary/20 transition-all">
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img

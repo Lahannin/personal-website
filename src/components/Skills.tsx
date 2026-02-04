@@ -53,8 +53,15 @@ const educationData = [
 
 const Skills = () => {
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="py-24 md:py-32 relative">
-      <div className="container px-6">
+    <section id="skills" aria-labelledby="skills-heading" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Rich gradient background */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(220_25%_95%)_0%,hsl(0_0%_100%)_50%,hsl(220_25%_96%)_100%)]" />
+      
+      {/* Decorative elements */}
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[radial-gradient(ellipse,hsl(172_66%_50%/0.06),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-[radial-gradient(ellipse,hsl(12_76%_61%/0.04),transparent_70%)] pointer-events-none" />
+      
+      <div className="container px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <motion.div
@@ -64,7 +71,7 @@ const Skills = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="mono text-primary text-sm tracking-wider">SKILLS</span>
+            <span className="mono text-[hsl(172_66%_50%)] text-sm tracking-wider font-medium">SKILLS</span>
             <h2 id="skills-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Expertise & <span className="text-gradient">Education</span>
             </h2>
@@ -77,10 +84,10 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
-              className="border-gradient rounded-2xl p-8"
+              className="bg-white rounded-2xl p-8 shadow-lg border border-border/50"
             >
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+                <span className="w-3 h-3 rounded-full bg-[hsl(12_76%_61%)]" />
                 Core Competencies
               </h3>
               <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
@@ -92,7 +99,7 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 hover:bg-primary/10 transition-colors text-center md:text-left cursor-default"
+                    className="px-3 py-1.5 md:px-4 md:py-2 bg-[hsl(220_25%_96%)] rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-[hsl(12_76%_61%/0.3)] hover:bg-[hsl(12_76%_61%/0.08)] transition-all text-center md:text-left cursor-default"
                   >
                     {skill}
                   </motion.span>
@@ -106,10 +113,10 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="border-gradient rounded-2xl p-8"
+              className="bg-white rounded-2xl p-8 shadow-lg border border-border/50"
             >
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
+                <span className="w-3 h-3 rounded-full bg-[hsl(172_66%_50%)]" />
                 Technical Domains
               </h3>
               <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
@@ -121,7 +128,7 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 hover:bg-primary/10 transition-colors text-center md:text-left cursor-default"
+                    className="px-3 py-1.5 md:px-4 md:py-2 bg-[hsl(220_25%_96%)] rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-[hsl(172_66%_50%/0.3)] hover:bg-[hsl(172_66%_50%/0.08)] transition-all text-center md:text-left cursor-default"
                   >
                     {skill}
                   </motion.span>
@@ -136,10 +143,10 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="card-gradient border border-border rounded-2xl p-8 mb-8"
+            className="bg-white border border-border/50 rounded-2xl p-8 mb-8 shadow-lg"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span className="w-3 h-3 rounded-full bg-primary" />
               Certifications
             </h3>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
@@ -150,10 +157,10 @@ const Skills = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.04 }}
-                  whileHover={{ y: -3, boxShadow: "0 10px 30px -10px hsl(var(--primary) / 0.2)" }}
-                  className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors cursor-default"
+                  whileHover={{ y: -3, boxShadow: "0 10px 30px -10px hsl(217 46% 21% / 0.15)" }}
+                  className="p-3 md:p-4 bg-[hsl(220_25%_97%)] rounded-xl border border-border/50 hover:border-primary/30 transition-all cursor-default"
                 >
-                  <p className="font-medium text-xs md:text-sm mb-1">{cert.name}</p>
+                  <p className="font-semibold text-xs md:text-sm mb-1">{cert.name}</p>
                   <p className="mono text-[10px] md:text-xs text-muted-foreground">{cert.org}</p>
                 </motion.div>
               ))}
@@ -166,17 +173,17 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="card-gradient border border-border rounded-2xl p-8"
+            className="bg-white border border-border/50 rounded-2xl p-8 shadow-lg"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-primary" aria-hidden="true" />
+              <GraduationCap className="w-6 h-6 text-[hsl(12_76%_61%)]" aria-hidden="true" />
               Education
             </h3>
             <div className="grid gap-4">
               {educationData.map((edu, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                  className="p-4 bg-[hsl(220_25%_97%)] rounded-xl border border-border/50 hover:border-primary/20 transition-all"
                 >
                   <div className="flex items-start gap-3">
                     <img 

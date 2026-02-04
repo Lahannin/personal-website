@@ -54,8 +54,14 @@ const articles: Article[] = [
 
 const Articles = () => {
   return (
-    <section id="articles" aria-labelledby="articles-heading" className="py-24 md:py-32 bg-secondary/20">
-      <div className="container px-6">
+    <section id="articles" aria-labelledby="articles-heading" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Rich gradient background */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(0_0%_100%)_0%,hsl(220_25%_96%)_50%,hsl(220_20%_97%)_100%)]" />
+      
+      {/* Decorative elements */}
+      <div className="absolute top-1/3 right-0 w-80 h-80 bg-[radial-gradient(ellipse,hsl(217_46%_21%/0.05),transparent_70%)] pointer-events-none" />
+      
+      <div className="container px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <motion.div
@@ -65,7 +71,7 @@ const Articles = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="mono text-primary text-sm tracking-wider">WRITING</span>
+            <span className="mono text-[hsl(217_46%_21%)] text-sm tracking-wider font-medium">WRITING</span>
             <h2 id="articles-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Featured <span className="text-gradient">Articles</span>
             </h2>
@@ -87,16 +93,16 @@ const Articles = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 whileHover={{ y: -5, scale: 1.01 }}
-                className="group card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-xl"
+                className="group bg-white border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:border-primary/20 transition-all"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
+                      <span className="mono text-xs font-semibold text-[hsl(12_76%_61%)] bg-[hsl(12_76%_61%/0.1)] px-2.5 py-1 rounded-md">
                         {article.date}
                       </span>
                       {article.publication && (
-                        <span className="text-xs text-muted-foreground">
+                        <span className="text-xs font-medium text-muted-foreground bg-muted/50 px-2 py-1 rounded-md">
                           {article.publication}
                         </span>
                       )}

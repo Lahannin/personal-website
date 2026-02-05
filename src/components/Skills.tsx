@@ -53,7 +53,13 @@ const educationData = [
 
 const Skills = () => {
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="py-24 md:py-32 relative">
+    <section id="skills" aria-labelledby="skills-heading" className="py-24 md:py-32 relative overflow-hidden bg-secondary/10">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-20 right-1/4 w-[400px] h-[300px] bg-primary/5 rounded-[50%_50%_40%_60%/40%_60%_50%_50%] blur-3xl" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+      
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
@@ -62,7 +68,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="text-center md:text-right mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">SKILLS</span>
             <h2 id="skills-heading" className="text-3xl md:text-5xl font-bold mt-4">
@@ -70,14 +76,14 @@ const Skills = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
             {/* Core Skills */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
-              className="border-gradient rounded-2xl p-8"
+              className="border-gradient rounded-2xl p-6 md:p-8 md:rotate-[-0.5deg] hover:rotate-0 transition-transform"
             >
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary" />
@@ -106,7 +112,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="border-gradient rounded-2xl p-8"
+              className="border-gradient rounded-2xl p-6 md:p-8 md:rotate-[0.5deg] hover:rotate-0 transition-transform"
             >
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary" />
@@ -136,7 +142,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="card-gradient border border-border rounded-2xl p-8 mb-8"
+            className="card-gradient border border-border rounded-2xl p-6 md:p-8 mb-8"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary" />
@@ -166,7 +172,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="card-gradient border border-border rounded-2xl p-8"
+            className="card-gradient border border-border rounded-2xl p-6 md:p-8 md:ml-auto md:max-w-xl"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <GraduationCap className="w-5 h-5 text-primary" aria-hidden="true" />

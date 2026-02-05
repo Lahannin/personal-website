@@ -22,7 +22,11 @@ const About = () => {
   ];
 
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 relative z-10 bg-background">
+    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 relative z-10 bg-background overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-secondary/30 to-transparent pointer-events-none" />
+      <div className="absolute bottom-20 -left-32 w-64 h-64 bg-primary/5 rounded-[40%_60%_55%_45%/55%_45%_50%_50%] blur-3xl pointer-events-none" />
+      
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
@@ -31,22 +35,22 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="mb-16 md:text-left"
           >
-            <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
-            <h2 id="about-heading" className="text-3xl md:text-5xl font-bold mt-4">
+            <span className="mono text-primary text-sm tracking-wider block text-center md:text-left">ABOUT</span>
+            <h2 id="about-heading" className="text-3xl md:text-5xl font-bold mt-4 text-center md:text-left">
               Bridging the gap between<br /><span className="text-gradient">Product and Marketing</span>
             </h2>
           </motion.div>
 
           {/* Bio */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid md:grid-cols-5 gap-8 md:gap-12 items-start mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
-              className="space-y-6"
+              className="space-y-6 md:col-span-3 order-2 md:order-1"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
               I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
@@ -65,24 +69,28 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-center justify-center"
+              className="flex items-start justify-center md:justify-end md:col-span-2 order-1 md:order-2"
             >
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary border-4 border-border shadow-lg overflow-hidden">
+              <div className="relative">
+                {/* Decorative frame offset */}
+                <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-primary/20" />
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl bg-secondary border border-border shadow-lg overflow-hidden relative z-10">
                 <img 
                   src={profilePhoto} 
                   alt="Lauri Hänninen - Product Marketing Lead at Trezor, based in Prague" 
                   className="w-full h-full object-cover"
-                  width={320}
-                  height={320}
+                  width={256}
+                  height={256}
                   loading="lazy"
                   decoding="async"
                 />
+                </div>
               </div>
             </motion.div>
           </div>
 
           {/* Highlights */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6 md:-mx-4">
             {highlights.map((item, index) => (
               <motion.div
                 key={index}
@@ -90,7 +98,10 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-colors group"
+                whileHover={{ y: -6, rotate: index === 1 ? 0 : (index === 0 ? -1 : 1) }}
+                className={`card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-colors group ${
+                  index === 1 ? "md:-mt-4" : ""
+                }`}
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-6 h-6 text-primary" />

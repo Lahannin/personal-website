@@ -165,28 +165,36 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="py-24 md:py-32 relative bg-secondary/20">
-      <div className="container px-6">
-        <div className="max-w-4xl mx-auto">
+    <section id="experience" aria-labelledby="experience-heading" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-40 -left-32 w-[500px] h-[500px] bg-secondary/40 rounded-[40%_60%_60%_40%/50%_40%_60%_50%] blur-3xl" />
+        <div className="absolute bottom-40 -right-32 w-[400px] h-[400px] bg-primary/5 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-3xl" />
+      </div>
+      
+      <div className="container px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="mb-16 md:flex md:items-end md:gap-12"
           >
-            <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
-            <h2 id="experience-heading" className="text-3xl md:text-5xl font-bold mt-4">
-              Career <span className="text-gradient">Journey</span>
-            </h2>
+            <div className="text-center md:text-left flex-1">
+              <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
+              <h2 id="experience-heading" className="text-3xl md:text-5xl font-bold mt-4">
+                Career <span className="text-gradient">Journey</span>
+              </h2>
+            </div>
+            <p className="hidden md:block text-muted-foreground text-sm max-w-xs text-right">
+              10+ years across startups, agencies, and global tech companies
+            </p>
           </motion.div>
 
           {/* Timeline */}
-          <div className="relative">
-            {/* Timeline line - hidden on mobile */}
-            <div className="hidden md:block absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
+          <div className="relative grid md:grid-cols-2 gap-6 md:gap-8">
             {companies.map((company, index) => (
               <motion.div
                 key={index}
@@ -194,47 +202,38 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+                className={`${index === 0 ? "md:col-span-2 md:max-w-2xl" : ""}`}
               >
-                {/* Timeline dot - hidden on mobile */}
-                <div className="hidden md:block absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
-                  {hasCurrent(company) && (
-                    <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-25" />
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                  <motion.div 
+                    whileHover={{ y: -4 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                    className={`h-full card-gradient border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors ${
+                      index === 0 ? "bg-gradient-to-br from-primary/5 to-transparent" : ""
+                    }`}
+                  >
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
+                      {hasCurrent(company) && (
+                        <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-primary animate-pulse" />
+                      )}
                       <img
                         src={company.logo}
                         alt={`${company.name} logo`}
-                        className="w-12 h-12 rounded-lg object-contain bg-white p-1"
+                        className="w-11 h-11 rounded-xl object-contain bg-white p-1 shadow-sm"
                         width={48}
                         height={48}
                         loading="lazy"
                         decoding="async"
                       />
                       <div>
-                        <div className="flex flex-wrap items-center gap-3">
-                          <h3 className="text-xl font-bold">{company.name}</h3>
-                          {hasCurrent(company) && (
-                            <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                              Current
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-sm text-muted-foreground">{company.location}</p>
+                        <h3 className="text-lg font-bold">{company.name}</h3>
+                        <p className="text-xs text-muted-foreground">{company.location}</p>
                       </div>
                     </div>
 
                     {/* Company description */}
                     {company.description && (
-                      <p className="text-sm text-muted-foreground italic mb-5 pb-5 border-b border-border/50">
+                      <p className="text-sm text-muted-foreground mb-5 pb-5 border-b border-border/50">
                         {company.description}
                       </p>
                     )}
@@ -307,11 +306,7 @@ const Experience = () => {
                         );
                       })}
                     </div>
-                  </div>
-                </div>
-
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block flex-1" />
+                  </motion.div>
               </motion.div>
             ))}
           </div>

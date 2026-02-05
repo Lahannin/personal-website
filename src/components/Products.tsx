@@ -90,26 +90,34 @@ const Products = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="products" aria-labelledby="products-heading" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="products" aria-labelledby="products-heading" className="py-24 md:py-32 relative overflow-hidden bg-secondary/20">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Diagonal slice */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-background" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
+        {/* Organic blob */}
+        <div className="absolute top-1/2 -right-40 w-[400px] h-[400px] bg-primary/5 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] blur-3xl" />
+        <div className="absolute bottom-20 -left-20 w-[300px] h-[300px] bg-accent/5 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-3xl" />
+      </div>
       
-      <div className="container px-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="container px-6 relative z-10">
+        <div className="max-w-6xl mx-auto pt-8">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="mb-16 md:flex md:items-end md:justify-between md:gap-8"
           >
-            <span className="mono text-primary text-sm tracking-wider">PRODUCT LAUNCHES</span>
-            <h2 id="products-heading" className="text-3xl md:text-5xl font-bold mt-4">
-              Products I've <span className="text-gradient">Launched</span>
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Key products and features I've brought to market through strategic positioning, messaging, and go-to-market execution.
+            <div className="text-center md:text-left">
+              <span className="mono text-primary text-sm tracking-wider">PRODUCT LAUNCHES</span>
+              <h2 id="products-heading" className="text-3xl md:text-5xl font-bold mt-4">
+                Products I've <span className="text-gradient">Launched</span>
+              </h2>
+            </div>
+            <p className="text-muted-foreground mt-4 md:mt-0 max-w-md text-center md:text-right text-sm md:text-base">
+              Key products and features I've brought to market through strategic positioning and go-to-market execution.
             </p>
           </motion.div>
 
@@ -248,12 +256,12 @@ const Products = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-16 text-center"
+            className="mt-16 flex justify-center md:justify-end"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary/5 border border-primary/20">
+            <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-background/80 backdrop-blur-sm border border-border shadow-lg">
               <Rocket className="w-5 h-5 text-primary" />
               <span className="text-muted-foreground">
-                Plus <span className="font-semibold text-foreground">20+ other feature launches</span> across software, hardware, and services
+                Plus <span className="font-semibold text-foreground">20+ feature launches</span>
               </span>
             </div>
           </motion.div>

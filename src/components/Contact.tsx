@@ -30,31 +30,23 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-br from-background via-background to-secondary/30">
-      {/* Decorative blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 -left-20 w-[350px] h-[350px] bg-primary/5 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-[250px] h-[250px] bg-accent/5 rounded-[40%_60%_55%_45%/55%_45%_50%_50%] blur-3xl" />
-      </div>
-      
+    <section id="contact" aria-labelledby="contact-heading" className="py-24 md:py-32 relative overflow-hidden">
       <div className="container px-6 relative z-10">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="text-center md:text-left md:flex md:items-end md:justify-between md:gap-8 mb-12"
           >
-            <div>
-              <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
-              <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mt-4">
-                Let's <span className="text-gradient">Connect</span>
-              </h2>
-            </div>
-            <p className="text-muted-foreground mt-4 md:mt-0 max-w-sm text-center md:text-right">
-              Looking to collaborate or just want to say hello?
+            <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
+            <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mt-4 mb-6">
+              Let's <span className="text-gradient">Connect</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-12">
+              Looking to collaborate on product marketing or just want to say hello? 
+              I'm always happy to connect with fellow product enthusiasts.
             </p>
           </motion.div>
           
@@ -64,7 +56,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col sm:flex-row gap-4 mb-12"
+            className="grid sm:grid-cols-3 gap-4 mb-12"
           >
             {links.map((link, index) => (
               <motion.a
@@ -76,10 +68,8 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02, rotate: index === 1 ? 0 : (index === 0 ? -1 : 1) }}
-                className={`group flex-1 p-6 border-gradient rounded-2xl hover:border-primary/50 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all ${
-                  index === 1 ? "sm:-mt-2" : ""
-                }`}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="group p-6 min-h-[100px] border-gradient rounded-xl hover:border-primary/50 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
                 aria-label={`Connect on ${link.value}`}
               >
                 <motion.div 
@@ -101,12 +91,10 @@ const Contact = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex justify-center md:justify-end"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="mono text-xs text-muted-foreground">Let's build something great together</span>
-            </div>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <span className="mono text-xs text-muted-foreground">Let's build something great together</span>
           </motion.div>
         </div>
       </div>

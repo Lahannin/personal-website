@@ -16,7 +16,6 @@ const Hero = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const blobRotate = useTransform(scrollYProgress, [0, 1], [0, 45]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,26 +50,24 @@ const Hero = () => {
       
       {/* Subtle floating shapes for depth */}
       <motion.div 
-        style={{ y: backgroundY, rotate: blobRotate }}
+        style={{ y: backgroundY }}
         className="absolute inset-0 overflow-hidden pointer-events-none"
       >
-        {/* Organic blob shapes */}
-        <div className="absolute top-[10%] -left-20 w-[500px] h-[400px] bg-primary/5 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-3xl" />
-        <div className="absolute bottom-[20%] -right-32 w-[450px] h-[350px] bg-primary/4 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent/3 rounded-[50%_50%_40%_60%/40%_60%_50%_50%] blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
       </motion.div>
 
-      <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6 pt-20">
+      <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto text-center"
         >
 
           {/* Status badge */}
-          <motion.div variants={itemVariants} className="flex justify-center md:justify-start md:ml-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/70 backdrop-blur-sm border border-border mb-6">
+          <motion.div variants={itemVariants}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-6">
               <span className="text-sm text-muted-foreground">Tech-Savvy Product Marketer</span>
             </div>
           </motion.div>
@@ -79,15 +76,15 @@ const Hero = () => {
           <motion.h1
             id="hero-heading"
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-center md:text-left md:-ml-1"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
           >
-            Lauri<br className="md:hidden" /> <span className="text-gradient">Hänninen</span>
+            Lauri <span className="text-gradient">Hänninen</span>
           </motion.h1>
 
           {/* Tagline */}
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-muted-foreground max-w-xl mb-8 text-center md:text-left md:ml-2"
+            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
             Turning complex products into clear, compelling stories that customers love.
           </motion.p>
@@ -95,7 +92,7 @@ const Hero = () => {
           {/* Location */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground mb-12 md:ml-2"
+            className="flex items-center justify-center gap-2 text-muted-foreground mb-12"
           >
             <MapPin className="w-4 h-4" aria-hidden="true" />
             <span className="mono text-sm"><span className="sr-only">Location: </span>Prague, Czechia 🇨🇿</span>
@@ -106,7 +103,7 @@ const Hero = () => {
           {/* CTA buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-row items-center justify-center md:justify-start gap-3 sm:gap-4 md:ml-2"
+            className="flex flex-row items-center justify-center gap-3 sm:gap-4"
           >
             <a
               href="#about"
@@ -125,17 +122,15 @@ const Hero = () => {
           {/* Partner logos */}
           <motion.div
             variants={itemVariants}
-            className="mt-20 md:mt-24 relative"
+            className="mt-16"
             role="img"
             aria-label="Logos of companies I've worked with"
           >
-            {/* Decorative line */}
-            <div className="hidden md:block absolute -left-20 top-1/2 w-16 h-px bg-gradient-to-r from-transparent to-border" />
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-8 md:gap-12 lg:gap-16 md:ml-2">
-              <motion.img whileHover={{ scale: 1.1, y: -4 }} transition={{ type: "spring", stiffness: 400 }} src={logo1} alt="Trezor - Hardware wallet company" className="h-14 md:h-16 lg:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" width={80} height={80} loading="eager" />
-              <motion.img whileHover={{ scale: 1.1, y: -4 }} transition={{ type: "spring", stiffness: 400 }} src={logo2} alt="GoodData - Analytics platform" className="h-14 md:h-16 lg:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" width={80} height={80} loading="eager" />
-              <motion.img whileHover={{ scale: 1.1, y: -4 }} transition={{ type: "spring", stiffness: 400 }} src={logo3} alt="Product Marketing Alliance" className="h-14 md:h-16 lg:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" width={80} height={80} loading="eager" />
-              <motion.img whileHover={{ scale: 1.1, y: -4 }} transition={{ type: "spring", stiffness: 400 }} src={logo4} alt="Wunderman Thompson - Creative agency" className="h-14 md:h-16 lg:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" width={80} height={80} loading="eager" />
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+              <img src={logo1} alt="Trezor - Hardware wallet company" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
+              <img src={logo2} alt="GoodData - Analytics platform" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
+              <img src={logo3} alt="Product Marketing Alliance" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
+              <img src={logo4} alt="Wunderman Thompson - Creative agency" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
             </div>
           </motion.div>
         </motion.div>

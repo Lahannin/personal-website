@@ -8,6 +8,7 @@ import Skills from "@/components/Skills";
 import Articles from "@/components/Articles";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
   return (
@@ -25,11 +26,17 @@ const Index = () => {
         <main id="main-content">
           <Hero />
           <Quote />
+          <SectionDivider variant="dots" />
           <About />
+          <SectionDivider variant="fade" />
           <Products />
+          <SectionDivider variant="line" />
           <Experience />
+          <SectionDivider variant="dots" />
           <Skills />
+          <SectionDivider variant="fade" />
           <Articles />
+          <SectionDivider variant="line" />
           <Contact />
         </main>
         <Footer />

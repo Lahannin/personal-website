@@ -105,7 +105,6 @@ const Products = () => {
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">PRODUCT LAUNCHES</span>
-            <div className="w-8 h-px bg-primary/30 mx-auto mt-3" />
             <h2 id="products-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Products I've <span className="text-gradient">Launched</span>
             </h2>

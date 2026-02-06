@@ -66,7 +66,6 @@ const Articles = () => {
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">WRITING</span>
-            <div className="w-8 h-px bg-primary/30 mx-auto mt-3" />
             <h2 id="articles-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Featured <span className="text-gradient">Articles</span>
             </h2>

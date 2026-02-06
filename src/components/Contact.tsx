@@ -41,7 +41,6 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
-            <div className="w-8 h-px bg-primary/30 mx-auto mt-3" />
             <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mt-4 mb-6">
               Let's <span className="text-gradient">Connect</span>
             </h2>

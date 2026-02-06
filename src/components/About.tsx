@@ -34,7 +34,6 @@ const About = () => {
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
-            <div className="w-8 h-px bg-primary/30 mx-auto mt-3" />
             <h2 id="about-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Bridging the gap between<br /><span className="text-gradient">Product and Marketing</span>
             </h2>

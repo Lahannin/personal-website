@@ -1,34 +1,31 @@
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 
-const skills = {
-  core: [
-    "Product Marketing",
-    "Go-to-Market Strategy",
-    "Product Positioning",
-    "Messaging Frameworks",
-    "Product Launches",
-    "Product-Led Growth",
-  ],
-  technical: [
-    "SaaS & Cloud Platforms",
-    "Hardware Products",
-    "Analytics & Data",
-    "B2B & B2C",
-    "AI/ML Applications",
-    "Security & Privacy",
-  ],
-  certifications: [
-    { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance" },
-    { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance" },
-    { name: "Product-Led Growth", org: "ProductLed" },
-    { name: "B2B Messaging", org: "Wynter" },
-    { name: "Product Management Certified", org: "Pendo" },
-    { name: "Product-Led Certified", org: "Pendo" },
-    { name: "Elements of AI", org: "University of Helsinki" },
-    { name: "PRINCE2", org: "TAYLLOR & COX" },
-  ],
-};
+const allSkills = [
+  "Product Marketing",
+  "Go-to-Market Strategy",
+  "Product Positioning",
+  "Messaging Frameworks",
+  "Product Launches",
+  "Product-Led Growth",
+  "SaaS & Cloud Platforms",
+  "Hardware Products",
+  "Analytics & Data",
+  "B2B & B2C",
+  "AI/ML Applications",
+  "Security & Privacy",
+];
+
+const certifications = [
+  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance" },
+  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance" },
+  { name: "Product-Led Growth", org: "ProductLed" },
+  { name: "B2B Messaging", org: "Wynter" },
+  { name: "Product Management Certified", org: "Pendo" },
+  { name: "Product-Led Certified", org: "Pendo" },
+  { name: "Elements of AI", org: "University of Helsinki" },
+  { name: "PRINCE2", org: "TAYLLOR & COX" },
+];
 
 const educationData = [
   {
@@ -70,95 +67,72 @@ const Skills = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Core Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
-              className="border-gradient rounded-2xl p-8"
-            >
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                Core Competencies
-              </h3>
-              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
-                {skills.core.map((skill, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 hover:bg-primary/10 transition-colors text-center md:text-left cursor-default"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Technical Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="border-gradient rounded-2xl p-8"
-            >
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                Technical Domains
-              </h3>
-              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
-                {skills.technical.map((skill, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="px-3 py-1.5 md:px-4 md:py-2 bg-secondary rounded-lg text-xs md:text-sm font-medium border border-transparent hover:border-primary/30 hover:bg-primary/10 transition-colors text-center md:text-left cursor-default"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Certifications */}
+          {/* Skills as flowing inline text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="card-gradient border border-border rounded-2xl p-8 mb-8"
+            className="mb-16 text-center"
           >
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-primary" />
-              Certifications
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+              {allSkills.map((skill, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.04 }}
+                  className="inline"
+                >
+                  <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">
+                    {skill}
+                  </span>
+                  {index < allSkills.length - 1 && (
+                    <span className="text-primary/40 mx-2 md:mx-3">·</span>
+                  )}
+                </motion.span>
+              ))}
+            </p>
+          </motion.div>
+
+          {/* Divider */}
+          <div className="w-12 h-px bg-border mx-auto mb-16" />
+
+          {/* Certifications as a clean list */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="mb-16"
+          >
+            <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8">
+              CERTIFICATIONS
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-              {skills.certifications.map((cert, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 max-w-3xl mx-auto">
+              {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.04 }}
-                  whileHover={{ y: -3, boxShadow: "0 10px 30px -10px hsl(var(--primary) / 0.2)" }}
-                  className="p-3 md:p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors cursor-default"
+                  className="group cursor-default"
                 >
-                  <p className="font-medium text-xs md:text-sm mb-1">{cert.name}</p>
-                  <p className="mono text-[10px] md:text-xs text-muted-foreground">{cert.org}</p>
+                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
+                    {cert.name}
+                  </p>
+                  <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
+                    {cert.org}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+
+          {/* Divider */}
+          <div className="w-12 h-px bg-border mx-auto mb-16" />
 
           {/* Education */}
           <motion.div
@@ -166,35 +140,36 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="card-gradient border border-border rounded-2xl p-8"
           >
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-primary" aria-hidden="true" />
-              Education
+            <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8 flex items-center justify-center gap-2">
+              <GraduationCap className="w-4 h-4" aria-hidden="true" />
+              EDUCATION
             </h3>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
               {educationData.map((edu, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="p-4 bg-secondary/50 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.08 }}
+                  className="text-center group"
                 >
-                  <div className="flex items-start gap-3">
-                    <img 
-                      src={edu.logo} 
-                      alt="" 
-                      className="w-10 h-10 object-contain rounded flex-shrink-0"
-                      width={40}
-                      height={40}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-0.5">{edu.institution}</h4>
-                      <p className="text-primary text-sm font-medium">{edu.degree}</p>
-                      <p className="text-muted-foreground text-sm">{edu.field}</p>
-                    </div>
-                  </div>
-                </div>
+                  <img
+                    src={edu.logo}
+                    alt=""
+                    className="w-10 h-10 object-contain rounded mx-auto mb-3 grayscale group-hover:grayscale-0 transition-all duration-300"
+                    width={40}
+                    height={40}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <h4 className="text-sm font-semibold text-foreground mb-0.5 leading-snug">
+                    {edu.institution}
+                  </h4>
+                  <p className="text-primary text-sm font-medium">{edu.degree}</p>
+                  <p className="text-muted-foreground text-xs">{edu.field}</p>
+                </motion.div>
               ))}
             </div>
           </motion.div>

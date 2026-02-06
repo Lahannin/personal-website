@@ -177,6 +177,7 @@ const Experience = () => {
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
+            <div className="w-8 h-px bg-primary/30 mx-auto mt-3" />
             <h2 id="experience-heading" className="text-3xl md:text-5xl font-bold mt-4">
               Career <span className="text-gradient">Journey</span>
             </h2>

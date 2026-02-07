@@ -3,7 +3,7 @@ import { Quote as QuoteIcon } from "lucide-react";
 
 const Quote = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary/30">
+    <section className="py-20 md:py-24 bg-background">
       <div className="container px-6">
         <motion.blockquote
           initial={{ opacity: 0, y: 30 }}

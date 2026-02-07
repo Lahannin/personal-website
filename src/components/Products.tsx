@@ -107,7 +107,10 @@ const Products = () => {
   }, [emblaApi, resetAutoplay]);
 
   return (
-    <section id="products" aria-labelledby="products-heading" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="products" aria-labelledby="products-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30">
+      {/* Top/bottom gradient fades */}
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       

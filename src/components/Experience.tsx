@@ -165,7 +165,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="py-24 md:py-32 relative bg-secondary/20">
+    <section id="experience" aria-labelledby="experience-heading" className="py-28 md:py-36 relative bg-background">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}

@@ -54,7 +54,7 @@ const articles: Article[] = [
 
 const Articles = () => {
   return (
-    <section id="articles" aria-labelledby="articles-heading" className="py-24 md:py-32 bg-secondary/20">
+    <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}

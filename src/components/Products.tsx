@@ -64,6 +64,7 @@ const Products = () => {
     skipSnaps: false,
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [progressKey, setProgressKey] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
@@ -74,6 +75,7 @@ const Products = () => {
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
+    setProgressKey((k) => k + 1);
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
@@ -240,19 +242,29 @@ const Products = () => {
               </div>
             </div>
 
-            {/* Dot indicators */}
-            <div className="flex justify-center gap-2 mt-8">
+            {/* Dot indicators with progress */}
+            <div className="flex justify-center items-center gap-2 mt-8">
               {products.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => scrollTo(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === selectedIndex 
-                      ? "bg-primary w-8" 
-                      : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  className={`relative h-2 rounded-full transition-all duration-300 overflow-hidden ${
+                    index === selectedIndex
+                      ? "w-8 bg-primary/20"
+                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
                   }`}
                   aria-label={`Go to product ${index + 1}`}
-                />
+                >
+                  {index === selectedIndex && (
+                    <motion.div
+                      key={progressKey}
+                      className="absolute inset-y-0 left-0 bg-primary rounded-full"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 5, ease: "linear" }}
+                    />
+                  )}
+                </button>
               ))}
             </div>
           </motion.div>

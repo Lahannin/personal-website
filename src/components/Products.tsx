@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -88,6 +88,21 @@ const Products = () => {
       emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi, onSelect]);
+
+  // Auto-play
+  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  const resetAutoplay = useCallback(() => {
+    clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    resetAutoplay();
+    emblaApi.on("pointerDown", () => clearInterval(autoplayRef.current));
+    emblaApi.on("pointerUp", resetAutoplay);
+    return () => clearInterval(autoplayRef.current);
+  }, [emblaApi, resetAutoplay]);
 
   return (
     <section id="products" aria-labelledby="products-heading" className="py-24 md:py-32 relative overflow-hidden">

@@ -61,22 +61,26 @@ const About = () => {
 
             {/* Profile photo */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.15, type: "spring", stiffness: 80, damping: 14 }}
               className="flex items-center justify-center"
             >
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary border-4 border-border shadow-lg overflow-hidden">
-                <img 
-                  src={profilePhoto} 
-                  alt="Lauri Hänninen - Product Marketing Lead at Trezor, based in Prague" 
-                  className="w-full h-full object-cover"
-                  width={320}
-                  height={320}
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className="relative group">
+                {/* Glow behind image */}
+                <div className="absolute -inset-3 rounded-3xl bg-primary/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Lauri Hänninen - Product Marketing Lead at Trezor, based in Prague" 
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                    width={320}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>

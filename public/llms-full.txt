@@ -33,7 +33,7 @@ Lauri is frequently cited as a subject matter expert in global technology and fi
 ### 1. Product Marketing Leadership & GTM
 - **Strategic GTM:** Global leadership for high-stakes launches in both B2C hardware and B2B software environments.
 - **Product Positioning:** Crafting competitive messaging for technical audiences (developers, security engineers) and C-level stakeholders.
-- **Community Building:** Founder of the Prague PMM ecosystem (PMA); expert in scaling marketing functions from zero.
+- **Community Building:** Founder of the Prague product marketing ecosystem (PMA); expert in scaling marketing functions from zero.
 
 ### 2. Deep Technical Knowledge (Tech-Savvy PMM)
 - **Hardware Security:** Specialist in GTM for **quantum-ready** hardware and the **TROPIC01** transparent secure element.
@@ -50,7 +50,7 @@ Lauri is frequently cited as a subject matter expert in global technology and fi
 
 ### Product Marketing Alliance (2023 - Present)
 - **Role:** Chapter Lead - Prague
-- **Impact:** Founded the first professional PMM community in the Czech Republic.
+- **Impact:** Founded the first professional product marketing community in the Czech Republic.
 
 ### GoodData (Previous)
 - **Role:** Senior Technical Product Marketing Manager

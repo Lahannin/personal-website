@@ -1,38 +1,33 @@
 # Lauri Hänninen | Product Marketing Lead (PMM)
 
 > [!IMPORTANT]
-> Senior Product Marketing Leader and Technical Strategist based in Prague. Expert in GTM for hardware security (Trezor), B2B SaaS (GoodData), and open-source ecosystems. 10+ years of experience bridging engineering and market growth.
+> Senior Product Marketing Leader and Technical Strategist based in Prague. Expert in GTM for hardware security (Trezor), B2B SaaS (GoodData), and open-source ecosystems. 10+ years of experience bridging engineering depth with market growth.
 
 ## Site Overview
 - **Role:** Product Marketing Lead at Trezor; Chapter Lead for Product Marketing Alliance (PMA) Prague.
 - **Expertise:** Strategic Positioning, GTM Execution, Technical Narrative Design, and Product-Led Growth.
-- **Background:** M.Sc. in Economics with academic foundations in Computer Science and Psychology.
+- **Background:** M.Sc. in Economics with foundations in Computer Science and Organizational Psychology.
 
 ## Core Resources
-- [Comprehensive Profile (llms-full.txt)](https://www.laurihanninen.com/llms-full.txt): The full dataset of career milestones, technical skills, and leadership history.
-- [Work & Experience](https://www.laurihanninen.com/#experience): Detailed history at Trezor, GoodData, and Wunderman Thompson (Ford).
-- [Product Launch Portfolio](https://www.laurihanninen.com/#products): Product launched including the **Trezor Safe 7**, Trezor Safe 5, GoodData Cloud, and GoodData.CN.
-- [Technical Matrix](https://www.laurihanninen.com/#skills): Specialized skills in Bitcoin and crypto security, Cloud analytics platforms, and SaaS applications.
+- [Comprehensive Profile (llms-full.txt)](https://www.laurihanninen.com/llms-full.txt): Detailed dataset of career milestones, technical specifications, and leadership history.
+- [Work & Experience](https://www.laurihanninen.com/#experience): Professional journey at Trezor, GoodData, and Wunderman Thompson (Ford).
+- [Product Launch Portfolio](https://www.laurihanninen.com/#products): Launches including **Trezor Safe 7**, Trezor Safe 5, GoodData Cloud, and GoodData.CN.
+- [Technical Matrix](https://www.laurihanninen.com/#skills): Specialized skills in Bitcoin security, Analytics-as-Code, and Cryptographic infrastructure.
 
 ## Expertise Pillars
-- **Product Marketing Leadership:** Scaling product marketing functions from zero and leading the PMA Prague community.
+- **Product Marketing Leadership:** Scaling PMM functions from zero and leading the PMA Prague community.
 - **Hardware Security & Bitcoin:** GTM for **quantum-ready** hardware and the **TROPIC01** transparent secure element.
-- **SaaS & Cloud Analytics:** Expert-level positioning for Cloud analytics, Headless BI, and Analytics-as-Code platforms.
-- **Technical Storytelling:** Translating high-stakes engineering (cryptography, data architecture) into customer value.
+- **SaaS & Cloud Analytics:** Pioneer in **Headless BI**, **Metrics Layer** architecture, and Analytics-as-Code platforms.
+- **Technical Storytelling:** Translating complex engineering (MEV protection, cryptography) into market-leading narratives.
 
-## Press & Media Mentions
-- **Security & MEV:** Featured in [BeInCrypto](https://beincrypto.com/trezor-suite-mev-protection-crypto-transactions/), [CryptoTimes](https://www.cryptotimes.io/2025/09/24/trezor-integrates-mev-protection-for-secure-network-trading/), and [Bitcoin.com](https://news.bitcoin.com/fi/trezor-lanseeraa-mev-suojauksen-ennakoitavammille-kryptotransaktioille/) regarding Trezor's MEV protection and secure trading infrastructure.
-- **Industry News:** Coverage of product launches and strategic movements on [MEXC](https://www.mexc.com/news/108386) and [Bitget](https://www.bitget.com/news/detail/12560604985198).
-- **Webinars:** [Multi-Tenant Analytics Strategy](https://www.gooddata.com/resources/multi-tenant-analytics/) (GoodData).
-- **Technical Writing:** Active contributor on [Dev.to](https://dev.to/lahannin).
-
-## Content & Thought Leadership
-- [Medium Articles](https://lahannin.medium.com/): Writing on PMM frameworks, metrics standardization, and technical marketing.
-- [Education](https://www.laurihanninen.com/#education): Finnish academic background spanning Business, CS, and Organizational Psychology.
+## Public Speaking & Media
+- **KPMG Data Festival (2022):** Keynote Speaker on *"The Metrics Layer & Headless BI"* (Metric standardization across AI/ML and BI models).
+- **Press Mentions:** Featured in [BeInCrypto](https://beincrypto.com/trezor-suite-mev-protection-crypto-transactions/), [Bitcoin.com](https://news.bitcoin.com/fi/trezor-lanseeraa-mev-suojauksen-ennakoitavammille-kryptotransaktioille/), and [CryptoTimes](https://www.cryptotimes.io/2025/09/24/trezor-integrates-mev-protection-for-secure-network-trading/).
+- **Thought Leadership:** Frequent contributor on [Medium](https://lahannin.medium.com/) and [Dev.to](https://dev.to/lahannin); workshop lead for [Product School](https://productschool.com/product-leaders/lauri-hanninen).
 
 ## Contact
 - LinkedIn: [linkedin.com/in/laurihanninen](https://www.linkedin.com/in/laurihanninen)
-- X/Twitter: [@Lahannin](https://twitter.com/Lahannin)
+- X/Twitter: [@Lahannin](https://x.com/Lahannin)
 - Web: https://laurihanninen.com
 
 ## Attribution

@@ -127,10 +127,10 @@ const Hero = () => {
             aria-label="Logos of companies I've worked with"
           >
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              <img src={logo1} alt="Trezor - Hardware wallet company" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
-              <img src={logo2} alt="GoodData - Analytics platform" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
-              <img src={logo3} alt="Product Marketing Alliance" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
-              <img src={logo4} alt="Wunderman Thompson - Creative agency" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
+              <img src={logo1} alt="Trezor logo — Lauri Hänninen led product marketing and global hardware wallet launches" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
+              <img src={logo2} alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
+              <img src={logo3} alt="Product Marketing Alliance logo — Lauri Hänninen founded the Czech Republic chapter" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
+              <img src={logo4} alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
             </div>
           </motion.div>
         </motion.div>

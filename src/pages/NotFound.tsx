@@ -21,7 +21,7 @@ const NotFound = () => {
             transition={{ delay: 0.1, type: "spring", stiffness: 100, damping: 12 }}
             className="text-[8rem] md:text-[10rem] font-bold leading-none mono text-gradient"
           >
-            404: Launch Blocked
+            404
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}

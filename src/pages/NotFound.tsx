@@ -27,9 +27,17 @@ const NotFound = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-lg text-muted-foreground mt-2 mb-10"
+            className="text-lg text-muted-foreground mt-2 mb-2"
           >
-            This page doesn't exist.
+            This page has no positioning, no messaging, and no audience.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.5 }}
+            className="text-sm text-muted-foreground/70 italic mb-10"
+          >
+            It never made it past the go-to-market review.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}

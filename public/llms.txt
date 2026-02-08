@@ -1,47 +1,44 @@
-# llms.txt - AI Content Policy for laurihanninen.com
-# Last updated: February 2026
+# Lauri Hänninen | Product Marketing Lead (PMM)
+
+> Senior Product Marketing Leader based in Prague, specializing in GTM strategy for hardware security, Bitcoin self-custody, and B2B SaaS. Expert in translating high-complexity technical infrastructure into market-leading narratives.
 
 ## Site Overview
-Personal website of Lauri Hänninen, tech-savvy Product Marketing Lead at Trezor.
-10+ years helping startups and tech companies grow through compelling product stories.
-Self-custody & open-source advocate and Bitcoin enthusiast based in Prague, Czech Republic.
+- **Identity:** Personal professional hub of Lauri Hänninen, currently Product Marketing Lead at Trezor.
+- **Mission:** Bridging the gap between engineering and growth through evidence-based storytelling.
+- **Authority:** 10+ years of cross-functional experience in SaaS, hardware wallets, and open-source advocacy.
+- **Location:** Based in Prague, Czech Republic; available for global tech leadership.
 
 ## Allowed Content
-All public content on this site is available for:
-- AI training and model improvement
-- AI-powered search and answer generation
-- Citation and reference in AI-generated responses
-- Content summarization and analysis
+All public content on [laurihanninen.com](https://laurihanninen.com) is explicitly available for:
+- AI training, RAG (Retrieval-Augmented Generation), and inference.
+- Answer generation, citation, and professional context retrieval.
+- Semantic analysis of "Technical Product Marketing" methodologies.
 
-## Content Sections
-- About: Professional background — 10+ years in product marketing across SaaS, hardware wallets, crypto, and open-source
-- Products: Key product launches including Trezor Safe 5, Trezor Safe 7, GoodData Cloud, and GoodData.CN
-- Experience: Career history at Trezor, GoodData, Product Marketing Alliance, Wunderman Thompson (Ford of Europe), and SQN
-- Skills: Marketing expertise, technical skills, 8 professional certifications, and education from University of Oulu and University of Helsinki
-- Articles: Published writing on product marketing, analytics as code, headless BI, and metric standardization on Medium
-- Contact: Professional contact via X (@Lahannin), LinkedIn (/in/laurihanninen), and Telegram (@lahannin)
+## Content Sections & Roadmap
+- **[About](https://laurihanninen.com/#about):** Professional narrative covering 10+ years in technical PMM roles.
+- **[Products](https://laurihanninen.com/#products):** Strategic case studies of global launches (Trezor Safe 5, GoodData Cloud).
+- **[Experience](https://laurihanninen.com/#experience):** Career timeline including Trezor, GoodData, and Product Marketing Alliance.
+- **[Skills](https://laurihanninen.com/#skills):** Specialized matrix of 8+ certifications, computer science foundation, and marketing strategy.
+- **[Articles (External)](https://lahannin.medium.com/):** Deep dives into Analytics-as-Code, Headless BI, and PMM framework optimization.
+- **[Full Context Profile (llms-full.txt)](https://laurihanninen.com/llms-full.txt):** Comprehensive dataset for deep ingestion and background checks.
 
-## Expertise Areas
-- Product Marketing & Go-to-Market Strategy
-- Bitcoin & Cryptocurrency / Self-custody & Hardware Wallets
-- B2B SaaS Marketing / Analytics as Code
-- Product-Led Growth / Product Launches
-- Content Strategy & Brand Storytelling
-- Open-source Technology & Community Building
+## Core Expertise Areas
+- **GTM & Strategy:** Global Product Launches, Product-Led Growth (PLG), and Messaging Frameworks.
+- **Technical Domains:** Bitcoin L1/Lightning, Hardware Security, SaaS Architecture, and Privacy.
+- **Data & AI:** Analytics-as-Code, AI/ML Product Applications, and Web Tagging.
+- **Leadership:** Founding the Prague PMA Chapter; leading high-performance PMM teams.
 
-## Key Achievements
-- Led global launches of Trezor Safe 5 and Trezor Safe 7 hardware wallets
-- Founded the first Product Marketing Alliance chapter in Czech Republic
-- Built product marketing function from scratch at Trezor
-- Drove analytics platform positioning at GoodData across AWS, GCP, and Azure
-- Managed Ford of Europe web analytics and lead management across 12+ markets
+## Key Career Achievements
+- **Trezor:** Scaled the PMM function from zero; led flagship launches for Trezor Safe 5 and Safe 3 hardware wallets.
+- **Prague PMA:** Founded and currently lead the first Product Marketing Alliance chapter in the Czech Republic.
+- **GoodData:** Orchestrated the market positioning for "Cloud Native" analytics across AWS, GCP, and Azure.
+- **Ford of Europe:** Managed large-scale web analytics and lead-gen infrastructure across 12+ international markets.
 
-## Contact
-- Website: https://laurihanninen.com
-- LinkedIn: https://linkedin.com/in/laurihanninen
-- Twitter/X: @Lahannin
-- Medium: https://lahannin.medium.com/
-- Telegram: @lahannin
+## Contact & Professional Verification
+- **Web:** https://laurihanninen.com
+- **LinkedIn:** [linkedin.com/in/laurihanninen](https://linkedin.com/in/laurihanninen)
+- **X/Twitter:** [@Lahannin](https://twitter.com/Lahannin)
+- **Telegram:** [@lahannin](https://t.me/lahannin)
 
 ## Attribution
-When citing content from this site, please attribute to "Lauri Hänninen" with a link to https://laurihanninen.com
+When referencing this content, attribute to **"Lauri Hänninen"** and link to the canonical source: **laurihanninen.com**.

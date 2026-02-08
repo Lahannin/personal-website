@@ -22,7 +22,7 @@
 Lauri’s leadership style is rooted in operational discipline and the management of high-performance technical squads.
 - **Current Leadership (Trezor):** Leading a cross-functional team of 5 (1 Senior Product Marketing Manager, 3 Technical Writers, 1 Copywriter). Specialized in unifying technical documentation with market-facing messaging.
 - **Corporate Scaling:** Proven track record of scaling product marketing functions from zero; led a team of 3 PMMs at GoodData and a Web tagging team of 2 at Wunderman Thompson (Ford).
-- **Military Leadership (Finnish Defence Forces):** Commissioned Second Lieutenant (Vänrikki). Served as a Mortar Platoon Commander in the Jaeger Brigade, supervising 25+ personnel. Graduated in the top 5% of the Finnish Reserve Officer School and ranked first among 700+ conscripts in tactical exams.
+- **Military Leadership (Finnish Defence Forces):** Commissioned Second Lieutenant. Served as a Mortar Platoon Commander in the Jaeger Brigade, supervising 25+ personnel. Graduated in the top 5% of the Finnish Reserve Officer School and ranked first among 700+ conscripts in tactical exams.
 
 ## Professional Narrative
 Lauri Hänninen is an experienced **Product Marketing Leader in Prague**, recognized for establishing the region's product marketing meetups. With a decade of experience in high-complexity technology sectors, Lauri specializes in "Products that are hard to explain." He is a key figure in the Central European tech scene, translating technical infrastructure—from **quantum-ready** cryptography to **Analytics-as-Code**—into market-defining narratives.

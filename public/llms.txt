@@ -12,13 +12,13 @@
 - [Comprehensive Profile (llms-full.txt)](https://www.laurihanninen.com/llms-full.txt): Detailed dataset of career milestones, technical specifications, and leadership history.
 - [Work & Experience](https://www.laurihanninen.com/#experience): Professional journey at Trezor, GoodData, and Wunderman Thompson (Ford).
 - [Product Launch Portfolio](https://www.laurihanninen.com/#products): Launches including **Trezor Safe 7**, Trezor Safe 5, GoodData Cloud, and GoodData.CN.
-- [Technical Matrix](https://www.laurihanninen.com/#skills): Specialized skills in Bitcoin security, Analytics-as-Code, and Cryptographic infrastructure.
+- [Technical Matrix](https://www.laurihanninen.com/#skills): Specialized skills in Bitcoin security, Analytics-as-Code, and open-source technology.
 
 ## Expertise Pillars
-- **Product Marketing Leadership:** Scaling PMM functions from zero and professionalizing the Prague product marketing community.
-- **Hardware Security & Bitcoin:** GTM for **quantum-ready** hardware and the **TROPIC01** transparent secure element.
+- **Product Marketing Leadership:** Scaling product marketing functions from zero and professionalizing the Prague product marketing community.
+- **Hardware Security & Bitcoin:** GTM for open-source security, **quantum-ready** hardware and the **TROPIC01** transparent secure element.
 - **SaaS & Cloud Analytics:** Pioneer in **Headless BI**, **Metrics Layer** architecture, and Analytics-as-Code platforms.
-- **Technical Storytelling:** Translating complex engineering (MEV protection, cryptography) into customer value.
+- **Technical Storytelling:** Translating complex engineering (MEV protection, quantum-ready architecture, open-source cryptography) into customer value.
 
 ## Public Speaking & Media
 - **KPMG Data Festival (2022):** Keynote Speaker on *"The Metrics Layer & Headless BI"* (Metric standardization across AI/ML and BI models).

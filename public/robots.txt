@@ -9,9 +9,7 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 
 # --- AI & SEARCH BOT PERMISSIONS ---
-# OpenAI, Anthropic, Perplexity, Google-Extended, Applebot, etc.
-# (Consolidating your list for efficiency)
-
+# Consolidated permissions for major LLM and Agentic crawlers
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot
@@ -19,6 +17,7 @@ User-agent: ClaudeBot
 User-agent: Claude-Web
 User-agent: anthropic-ai
 User-agent: PerplexityBot
+User-agent: Grok-bot        # Added for xAI / Twitter / X.com
 User-agent: Google-Extended
 User-agent: Applebot
 User-agent: Applebot-Extended
@@ -35,10 +34,11 @@ User-agent: Googlebot
 User-agent: Bingbot
 User-agent: Slurp
 User-agent: DuckDuckBot
+User-agent: Twitterbot
 Allow: /
 
 # --- SPECIFIC DISALLOWS ---
-# Prevent AI from crawling build artifacts or private assets
+# Prevent AI from wasting crawl budget on build artifacts or private assets
 Disallow: /dist/
 Disallow: /node_modules/
 Disallow: /private/
@@ -48,4 +48,4 @@ Sitemap: https://laurihanninen.com/sitemap.xml
 
 # --- AI CONTENT POLICY ---
 # See /llms.txt for machine-readable content policy
-# See /llms-full.txt for the comprehensive professional narrative
+# See /llms-full.txt for the comprehensive technical professional narrative

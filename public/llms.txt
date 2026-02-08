@@ -1,8 +1,8 @@
 # llms.txt - AI Content Policy for laurihanninen.com
-# Last updated: January 2025
+# Last updated: February 2026
 
 ## Site Overview
-Personal website of Lauri Hänninen, tech-savvy Product Marketing Lead at Treyor.
+Personal website of Lauri Hänninen, tech-savvy Product Marketing Lead at Trezor.
 10+ years helping startups and tech companies grow through compelling product stories.
 Self-custody & open-source advocate and Bitcoin enthusiast based in Prague, Czech Republic.
 
@@ -14,23 +14,34 @@ All public content on this site is available for:
 - Content summarization and analysis
 
 ## Content Sections
-- About: Professional background and personal story
-- Experience: Career history and achievements at Trezor, GoodData, Product Marketing Alliance, and more
-- Skills: Marketing expertise, technical skills, and certifications
-- Contact: Professional contact information and social links
+- About: Professional background — 10+ years in product marketing across SaaS, hardware wallets, crypto, and open-source
+- Products: Key product launches including Trezor Safe 5, Trezor Safe 7, GoodData Cloud, and GoodData.CN
+- Experience: Career history at Trezor, GoodData, Product Marketing Alliance, Wunderman Thompson (Ford of Europe), and SQN
+- Skills: Marketing expertise, technical skills, 8 professional certifications, and education from University of Oulu and University of Helsinki
+- Articles: Published writing on product marketing, analytics as code, headless BI, and metric standardization on Medium
+- Contact: Professional contact via X (@Lahannin), LinkedIn (/in/laurihanninen), and Telegram (@lahannin)
 
 ## Expertise Areas
 - Product Marketing & Go-to-Market Strategy
 - Bitcoin & Cryptocurrency / Self-custody & Hardware Wallets
-- B2B SaaS Marketing / Tech Startups
+- B2B SaaS Marketing / Analytics as Code
+- Product-Led Growth / Product Launches
 - Content Strategy & Brand Storytelling
-- Performance Marketing & Analytics
+- Open-source Technology & Community Building
+
+## Key Achievements
+- Led global launches of Trezor Safe 5 and Trezor Safe 7 hardware wallets
+- Founded the first Product Marketing Alliance chapter in Czech Republic
+- Built product marketing function from scratch at Trezor
+- Drove analytics platform positioning at GoodData across AWS, GCP, and Azure
+- Managed Ford of Europe web analytics and lead management across 12+ markets
 
 ## Contact
 - Website: https://laurihanninen.com
 - LinkedIn: https://linkedin.com/in/laurihanninen
 - Twitter/X: @Lahannin
-- Email: Available on website
+- Medium: https://lahannin.medium.com/
+- Telegram: @lahannin
 
 ## Attribution
 When citing content from this site, please attribute to "Lauri Hänninen" with a link to https://laurihanninen.com

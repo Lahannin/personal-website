@@ -3,7 +3,7 @@ import { Quote as QuoteIcon } from "lucide-react";
 
 const Quote = () => {
   return (
-    <section className="py-20 md:py-24 bg-background">
+    <section className="py-20 md:py-24 bg-background" aria-label="Quote by Lauri Hänninen on product marketing">
       <div className="container px-6">
         <motion.blockquote
           initial={{ opacity: 0, y: 30 }}

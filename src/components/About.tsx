@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 relative z-10 bg-background">
+    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 relative z-10 bg-background" data-description="About Lauri Hänninen: Product Marketing Lead with 10+ years experience across SaaS, hardware, crypto, and open-source. Open-source advocate and community builder based in Prague.">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}

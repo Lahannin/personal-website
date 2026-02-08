@@ -77,49 +77,53 @@ const Articles = () => {
           {/* Articles grid */}
           <div className="grid gap-6 md:grid-cols-2">
             {articles.map((article, index) => (
-              <motion.a
+              <motion.article
                 key={index}
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 whileHover={{ y: -5, scale: 1.01 }}
-                className="group card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-xl"
+                data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                        {article.date}
-                      </span>
-                      {article.publication && (
-                        <span className="text-xs text-muted-foreground">
-                          {article.publication}
-                        </span>
-                      )}
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-xl h-full"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <time className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded" dateTime={article.date}>
+                          {article.date}
+                        </time>
+                        {article.publication && (
+                          <span className="text-xs text-muted-foreground">
+                            {article.publication}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2">
+                        {article.description}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {article.description}
-                    </p>
+                    <motion.div
+                      className="flex-shrink-0 mt-1"
+                      whileHover={{ rotate: -45 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <ExternalLink 
+                        className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
+                        aria-hidden="true" 
+                      />
+                    </motion.div>
                   </div>
-                  <motion.div
-                    className="flex-shrink-0 mt-1"
-                    whileHover={{ rotate: -45 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <ExternalLink 
-                      className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
-                      aria-hidden="true" 
-                    />
-                  </motion.div>
-                </div>
-              </motion.a>
+                </a>
+              </motion.article>
             ))}
           </div>
 

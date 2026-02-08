@@ -50,7 +50,7 @@ const educationData = [
 
 const Skills = () => {
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="py-28 md:py-36 relative bg-secondary/30">
+    <section id="skills" aria-labelledby="skills-heading" className="py-28 md:py-36 relative bg-secondary/30" data-description="Lauri Hänninen's professional skills, certifications from Product Marketing Alliance and others, and education from University of Oulu and University of Helsinki">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       <div className="container px-6">
@@ -159,7 +159,7 @@ const Skills = () => {
                 >
                   <img
                     src={edu.logo}
-                    alt=""
+                    alt={`${edu.institution} logo — Lauri Hänninen's ${edu.degree} in ${edu.field}`}
                     className="w-10 h-10 object-contain rounded mx-auto mb-3 grayscale group-hover:grayscale-0 transition-all duration-300"
                     width={40}
                     height={40}

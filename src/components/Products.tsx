@@ -177,6 +177,7 @@ const Products = () => {
                           href={product.url}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-description={`Product launched by Lauri Hänninen: ${product.name} — ${product.description}`}
                           initial={{ opacity: 0.5, scale: 0.95 }}
                           animate={{ 
                             opacity: isActive ? 1 : 0.5, 
@@ -215,7 +216,7 @@ const Products = () => {
                                 >
                                   <img
                                     src={product.logo}
-                                    alt={`${product.name} logo`}
+                                    alt={`Lauri Hänninen — ${product.name} product launch`}
                                     className="w-16 h-16 md:w-20 md:h-20 rounded-xl object-contain bg-white p-2 shadow-lg"
                                     width={80}
                                     height={80}

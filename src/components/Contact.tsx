@@ -30,7 +30,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30">
+    <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30" data-description="Contact Lauri Hänninen via X (@Lahannin), LinkedIn (/in/laurihanninen), or Telegram (@lahannin)">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">

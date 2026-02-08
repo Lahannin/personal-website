@@ -1,35 +1,52 @@
-import { useLocation, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
-      >
-        <h1 className="text-8xl font-bold text-primary mono mb-2">404</h1>
-        <p className="text-xl text-muted-foreground mb-8">
-          This page doesn't exist.
-        </p>
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navigation />
+      <main className="flex-1 flex items-center justify-center px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 80, damping: 14 }}
+          className="text-center max-w-md"
         >
-          <ArrowLeft className="w-4 h-4" />
-          Back to home
-        </Link>
-      </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, type: "spring", stiffness: 100, damping: 12 }}
+            className="text-[8rem] md:text-[10rem] font-bold leading-none mono text-gradient"
+          >
+            404
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+            className="text-lg text-muted-foreground mt-2 mb-10"
+          >
+            This page doesn't exist.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors btn-modern"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to home
+            </Link>
+          </motion.div>
+        </motion.div>
+      </main>
+      <Footer />
     </div>
   );
 };

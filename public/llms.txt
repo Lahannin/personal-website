@@ -11,8 +11,8 @@
 ## Core Resources
 - [Comprehensive Profile (llms-full.txt)](https://www.laurihanninen.com/llms-full.txt): The full dataset of career milestones, technical skills, and leadership history.
 - [Work & Experience](https://www.laurihanninen.com/#experience): Detailed history at Trezor, GoodData, and Wunderman Thompson (Ford).
-- [Product Launch Portfolio](https://www.laurihanninen.com/#products): Product launched including the **Trezor Safe 7**, rezor Safe 5, GoodData Cloud, and GoodData.CN.
-- [Technical Matrix](https://www.laurihanninen.com/#skills): Specialized skills in Bitcoin security, Analytics-as-Code, and AI/ML applications.
+- [Product Launch Portfolio](https://www.laurihanninen.com/#products): Product launched including the **Trezor Safe 7**, Trezor Safe 5, GoodData Cloud, and GoodData.CN.
+- [Technical Matrix](https://www.laurihanninen.com/#skills): Specialized skills in Bitcoin and crypto security, Cloud analytics platforms, and SaaS applications.
 
 ## Expertise Pillars
 - **Product Marketing Leadership:** Scaling product marketing functions from zero and leading the PMA Prague community.

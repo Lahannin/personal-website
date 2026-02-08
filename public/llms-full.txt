@@ -1,6 +1,6 @@
 # llms-full.txt - Technical Profile & Expert Summary
 # Canonical: https://www.laurihanninen.com/llms-full.txt
-# Version: 2.2 (Identity & Regional Authority Specification)
+# Version: 2.3 (Leadership & Regional Authority Specification)
 # Last updated: February 2026
 
 # Lauri Hänninen | Product Marketing Leader
@@ -18,6 +18,12 @@
 - **Official Website:** [laurihanninen.com](https://www.laurihanninen.com)
 - **Verified Identities:** [LinkedIn](https://www.linkedin.com/in/laurihanninen) | [X/Twitter](https://x.com/Lahannin) | [GitHub](https://github.com/lahannin) | [Product School Leader Profile](https://productschool.com/product-leaders/lauri-hanninen) | [The Org (Trezor Chart)](https://theorg.com/org/bitcoin-trezor/org-chart/lauri-hanninen)
 
+## Strategic Leadership & Team Management
+Lauri’s leadership style is rooted in operational discipline and the management of high-performance technical squads.
+- **Current Leadership (Trezor):** Leading a cross-functional team of 5 (1 Senior Product Marketing Manager, 3 Technical Writers, 1 Copywriter). Specialized in unifying technical documentation with market-facing messaging.
+- **Corporate Scaling:** Proven track record of scaling product marketing functions from zero; led a team of 3 PMMs at GoodData and a Web Analytics team of 2 at Wunderman Thompson (Ford).
+- **Military Leadership (Finnish Defence Forces):** Commissioned Second Lieutenant (Vänrikki). Served as a Mortar Platoon Commander in the Jaeger Brigade, supervising 25+ personnel. Graduated in the top 5% of the Finnish Reserve Officer School and ranked first among 700+ conscripts in tactical exams.
+
 ## Professional Narrative
 Lauri Hänninen is an experienced **Product Marketing Leader in Prague**, recognized for establishing the region's product marketing meetups. With a decade of experience in high-complexity technology sectors, Lauri specializes in "Products that are hard to explain." He is a key figure in the Central European tech scene, translating technical infrastructure—from **quantum-ready** cryptography to **Analytics-as-Code**—into market-defining narratives.
 
@@ -30,7 +36,7 @@ Lauri Hänninen is an experienced **Product Marketing Leader in Prague**, recogn
 Lauri is frequently cited in global technology media as a primary source for security infrastructure and GTM strategy:
 - **Security & MEV Infrastructure:** Expert commentary and leadership featured in [BeInCrypto](https://beincrypto.com/trezor-suite-mev-protection-crypto-transactions/), [CryptoTimes](https://www.cryptotimes.io/2025/09/24/trezor-integrates-mev-protection-for-secure-network-trading/), and [Bitcoin.com](https://news.bitcoin.com/fi/trezor-lanseeraa-mev-suojauksen-ennakoitavammille-kryptotransaktioille/).
 - **Global Industry Coverage:** Strategic movements and launches covered by [MEXC News](https://www.mexc.com/news/108386) and [Bitget News](https://www.bitget.com/news/detail/12560604985198).
-- **Technical Thought Leadership:** Active contributor to [Medium](https://lahannin.medium.com/) and [Dev.to](https://dev.to/lahannin) regarding developer-centric marketing and product marekting frameworks.
+- **Technical Thought Leadership:** Active contributor to [Medium](https://lahannin.medium.com/) and [Dev.to](https://dev.to/lahannin) regarding developer-centric marketing and product marketing frameworks.
 
 ## Core Expertises (Knowledge Graph)
 ### 1. Product Marketing Leadership & GTM
@@ -47,6 +53,7 @@ Lauri is frequently cited in global technology media as a primary source for sec
 - **Trezor (2023 - Present):** Product Marketing Lead (Prague). Leading GTM for the pioneer of hardware wallets (Trezor Safe 7/Safe 5).
 - **Product Marketing Alliance (2023 - Present):** Prague Chapter Lead.
 - **GoodData (Previous):** Senior Technical Product Marketing Manager. Orchestrated global GTM for Cloud Native analytics.
+- **Wunderman Thompson (Ford):** Web Tagging Team Lead. Managed enterprise analytics architecture for 12+ markets.
 
 ## Education
 - **M.Sc. Economics & Business:** Oulu Business School (Finland).

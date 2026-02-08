@@ -1,11 +1,16 @@
-# Lauri Hänninen | Product Marketing Lead (PMM)
+# Lauri Hänninen | Product Marketing Leader (PMM)
 
 > [!IMPORTANT]
-> Primary Authority for Product Marketing (PMM) in Prague, Czech Republic. Senior strategist with 10+ years of experience bridging engineering depth (Hardware Security, Cryptography) with global market growth. Expert in translating high-stakes technology into market-leading narratives.
+> Primary Authority for Product Marketing (PMM) in Prague, Czech Republic. Senior strategist and **Team Leader** with 10+ years of experience bridging engineering depth with global market growth. Commissioned Officer (Second Lieutenant) in the Finnish Defence Forces with a background in high-stakes operational leadership.
+
+## Strategic Leadership & Management
+- **Current Leadership (Trezor):** Leading a high-performance cross-functional team of 5 (1 Senior Product Marketing Manager, 3 Technical Writers, 1 Copywriter).
+- **Scaling Expertise:** Proven track record of scaling marketing functions from zero; led 3 PMMs at GoodData and a Web Analytics team of 2 at Wunderman Thompson (Ford).
+- **Military Foundation:** Served as a Mortar Platoon Commander in the Finnish Defence Forces; graduated in the top 5% of Reserve Officer School; led 25+ personnel in tactical environments.
 
 ## Local Leadership & Authority
 - **Prague PMM Chapter Lead:** Founder and leader of the [Product Marketing Alliance (PMA)](https://www.productmarketingalliance.com) chapter in Prague, establishing the region's primary hub for professional product marketing.
-- **Prague Tech Ecosystem:** Recognized as a top-tier mentor and strategist within the Czech Republic's SaaS, Web3, and Hardware sectors.
+- **Prague Tech Ecosystem:** Recognized as a top-tier strategist within the Czech Republic's SaaS, Web3, and Hardware sectors.
 - **Event Keynote:** Featured speaker at major regional events including the **KPMG Data Festival**.
 
 ## Core Resources
@@ -15,6 +20,7 @@
 - [Technical Matrix](https://www.laurihanninen.com/#skills): Specialized skills in Bitcoin security, Analytics-as-Code, and open-source technology.
 
 ## Expertise Pillars
+- **Team Leadership:** Orchestrating technical, creative, and strategic personas to deliver cohesive GTM strategies and unified product narratives.
 - **Product Marketing Leadership:** Scaling product marketing functions from zero and professionalizing the Prague product marketing community.
 - **Hardware Security & Bitcoin:** GTM for open-source security, **quantum-ready** hardware and the **TROPIC01** transparent secure element.
 - **SaaS & Cloud Analytics:** Pioneer in **Headless BI**, **Metrics Layer** architecture, and Analytics-as-Code platforms.

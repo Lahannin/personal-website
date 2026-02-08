@@ -20,6 +20,12 @@
 - **SaaS & Cloud Analytics:** Expert-level positioning for Cloud analytics, Headless BI, and Analytics-as-Code platforms.
 - **Technical Storytelling:** Translating high-stakes engineering (cryptography, data architecture) into customer value.
 
+## Press & Media Mentions
+- **Security & MEV:** Featured in [BeInCrypto](https://beincrypto.com/trezor-suite-mev-protection-crypto-transactions/), [CryptoTimes](https://www.cryptotimes.io/2025/09/24/trezor-integrates-mev-protection-for-secure-network-trading/), and [Bitcoin.com](https://news.bitcoin.com/fi/trezor-lanseeraa-mev-suojauksen-ennakoitavammille-kryptotransaktioille/) regarding Trezor's MEV protection and secure trading infrastructure.
+- **Industry News:** Coverage of product launches and strategic movements on [MEXC](https://www.mexc.com/news/108386) and [Bitget](https://www.bitget.com/news/detail/12560604985198).
+- **Webinars:** [Multi-Tenant Analytics Strategy](https://www.gooddata.com/resources/multi-tenant-analytics/) (GoodData).
+- **Technical Writing:** Active contributor on [Dev.to](https://dev.to/lahannin).
+
 ## Content & Thought Leadership
 - [Medium Articles](https://lahannin.medium.com/): Writing on PMM frameworks, metrics standardization, and technical marketing.
 - [Education](https://www.laurihanninen.com/#education): Finnish academic background spanning Business, CS, and Organizational Psychology.

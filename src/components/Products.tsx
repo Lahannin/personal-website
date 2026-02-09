@@ -62,6 +62,7 @@ const Products = () => {
     loop: true,
     align: "center",
     skipSnaps: false,
+    startIndex: 0,
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
@@ -91,8 +92,9 @@ const Products = () => {
     };
   }, [emblaApi, onSelect]);
 
-  // Auto-play
+  // Auto-play with initial delay for first slide visibility
   const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
   const resetAutoplay = useCallback(() => {
     clearInterval(autoplayRef.current);
     autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
@@ -100,10 +102,19 @@ const Products = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
-    resetAutoplay();
-    emblaApi.on("pointerDown", () => clearInterval(autoplayRef.current));
+    // Wait 5s before starting auto-play so the first slide is visible longer
+    initialDelayRef.current = setTimeout(() => {
+      resetAutoplay();
+    }, 5000);
+    emblaApi.on("pointerDown", () => {
+      clearTimeout(initialDelayRef.current);
+      clearInterval(autoplayRef.current);
+    });
     emblaApi.on("pointerUp", resetAutoplay);
-    return () => clearInterval(autoplayRef.current);
+    return () => {
+      clearTimeout(initialDelayRef.current);
+      clearInterval(autoplayRef.current);
+    };
   }, [emblaApi, resetAutoplay]);
 
   return (

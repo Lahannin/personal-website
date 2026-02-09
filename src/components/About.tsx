@@ -38,60 +38,62 @@ const About = () => {
             </h2>
           </motion.div>
 
-          {/* Bio */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto space-y-6 mb-20 text-center"
-          >
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it's for, and why anyone should care.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My focus is on practical outcomes. I cut through the noise to get to why the product matters to the people who use it.
-            </p>
-          </motion.div>
-
-          {/* Did You Know? - Military background */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="card-gradient border border-border rounded-xl p-8 mb-20 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold">Did you know?</h3>
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Before tech, Lauri served as a <span className="text-foreground font-medium">Mortar Platoon Commander</span> in Finland's Jaeger Brigade, directly supervising 25+ personnel. Commissioned as a <span className="text-foreground font-medium">Second Lieutenant</span> upon completion of service.
+          {/* Bio + Did You Know side by side */}
+          <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+              className="space-y-6"
+            >
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
               </p>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
-                  <Award className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <p className="text-sm text-muted-foreground">Top 5% graduate of the Finnish Reserve Officer School</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it's for, and why anyone should care.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                My focus is on practical outcomes. I cut through the noise to get to why the product matters to the people who use it.
+              </p>
+            </motion.div>
+
+            {/* Did You Know? - Military background */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.15, type: "spring", stiffness: 80, damping: 14 }}
+              className="card-gradient border border-border rounded-xl p-6 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Did you know?</h3>
                 </div>
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
-                  <Star className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <p className="text-sm text-muted-foreground">Ranked 1st among 700+ conscripts in tactical exams</p>
-                </div>
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
-                  <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <p className="text-sm text-muted-foreground">Honorary Mortar Officer, Class II/08 for outstanding leadership</p>
+                <p className="text-muted-foreground leading-relaxed mb-5 text-sm">
+                  Before tech, Lauri served as a <span className="text-foreground font-medium">Mortar Platoon Commander</span> in Finland's Jaeger Brigade, supervising 25+ personnel. Commissioned as a <span className="text-foreground font-medium">Second Lieutenant</span>.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
+                    <Award className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <p className="text-sm text-muted-foreground">Top 5% graduate of the Finnish Reserve Officer School</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
+                    <Star className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <p className="text-sm text-muted-foreground">Ranked 1st among 700+ conscripts in tactical exams</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
+                    <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <p className="text-sm text-muted-foreground">Honorary Mortar Officer, Class II/08 for outstanding leadership</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* Highlights */}
           <div className="grid md:grid-cols-3 gap-6">

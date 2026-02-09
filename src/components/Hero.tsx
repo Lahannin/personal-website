@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import profilePhoto from "@/assets/profile-photo.png";
 import logo1 from "@/assets/logo-1.avif";
 import logo2 from "@/assets/logo-2.avif";
 import logo3 from "@/assets/logo-3.avif";
@@ -64,6 +65,24 @@ const Hero = () => {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
+
+          {/* Profile photo */}
+          <motion.div variants={itemVariants} className="flex justify-center mb-8">
+            <div className="relative group">
+              <div className="absolute -inset-3 rounded-full bg-primary/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                <img 
+                  src={profilePhoto} 
+                  alt="Lauri Hänninen - Product Marketing Lead at Trezor, based in Prague" 
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                  width={144}
+                  height={144}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </motion.div>
 
           {/* Status badge */}
           <motion.div variants={itemVariants}>

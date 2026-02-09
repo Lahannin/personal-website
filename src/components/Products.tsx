@@ -195,14 +195,32 @@ const Products = () => {
                           
                           {/* Content */}
                           <div className="relative p-8 md:p-10">
-                            {/* Category badge */}
-                            <div className="flex items-center gap-2 mb-6">
+                            {/* Category badge + logo row */}
+                            <div className="flex items-center gap-3 mb-6">
                               <div className="p-2 rounded-lg bg-primary/10 text-primary">
                                 <CategoryIcon className="w-4 h-4" />
                               </div>
                               <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                                 {categoryConfig[product.category].label}
                               </span>
+                              {product.logo && (
+                                <motion.div
+                                  initial={{ scale: 0.8 }}
+                                  animate={{ scale: isActive ? 1 : 0.9 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="flex-shrink-0 ml-auto md:hidden"
+                                >
+                                  <img
+                                    src={product.logo}
+                                    alt={`Lauri Hänninen — ${product.name} product launch`}
+                                    className="w-10 h-10 rounded-lg object-contain bg-white p-1.5 shadow-md"
+                                    width={40}
+                                    height={40}
+                                    loading="lazy"
+                                    decoding="async"
+                                  />
+                                </motion.div>
+                              )}
                             </div>
 
                             {/* Product info */}
@@ -212,12 +230,12 @@ const Products = () => {
                                   initial={{ scale: 0.8 }}
                                   animate={{ scale: isActive ? 1 : 0.9 }}
                                   transition={{ duration: 0.3 }}
-                                  className="flex-shrink-0"
+                                  className="flex-shrink-0 hidden md:block"
                                 >
                                   <img
                                     src={product.logo}
                                     alt={`Lauri Hänninen — ${product.name} product launch`}
-                                    className="w-16 h-16 md:w-20 md:h-20 rounded-xl object-contain bg-white p-2 shadow-lg"
+                                    className="w-20 h-20 rounded-xl object-contain bg-white p-2 shadow-lg"
                                     width={80}
                                     height={80}
                                     loading="lazy"

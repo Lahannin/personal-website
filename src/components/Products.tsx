@@ -198,7 +198,7 @@ const Products = () => {
                           className={`group block relative overflow-hidden rounded-2xl border transition-all duration-300 ${
                             isActive 
                               ? "border-primary/30 shadow-2xl shadow-primary/10" 
-                              : "border-border/50"
+                              : "border-border/50 shadow-md"
                           }`}
                         >
                           {/* Category gradient background */}

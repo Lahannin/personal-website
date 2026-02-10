@@ -120,7 +120,7 @@ const Skills = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.04 }}
-                  className="group cursor-default"
+                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
                 >
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
                     {cert.name}

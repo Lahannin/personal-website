@@ -1,5 +1,6 @@
-import { Lightbulb, Zap, Target, Shield, Award, Star } from "lucide-react";
+import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const About = () => {
   const highlights = [
@@ -38,8 +39,8 @@ const About = () => {
             </h2>
           </motion.div>
 
-          {/* Bio + Did You Know side by side */}
-          <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
+          {/* Bio */}
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,48 +49,37 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
+              I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it's for, and why anyone should care.
+               My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it’s for, and why anyone should care.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My focus is on practical outcomes. I cut through the noise to get to why the product matters to the people who use it.
+               My focus is on practical outcomes. I cut through the noise to get to why the product matters to the people who use it.
               </p>
             </motion.div>
 
-            {/* Did You Know? - Military background */}
+            {/* Profile photo */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.15, type: "spring", stiffness: 80, damping: 14 }}
-              className="card-gradient border border-border rounded-xl p-6 relative overflow-hidden"
+              transition={{ duration: 0.7, delay: 0.15, type: "spring", stiffness: 80, damping: 14 }}
+              className="flex items-center justify-center"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Shield className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Did you know?</h3>
-                </div>
-                <p className="text-muted-foreground leading-relaxed mb-5 text-sm">
-                  Before tech, Lauri served as a <span className="text-foreground font-medium">Mortar Platoon Commander</span> in Finland's Jaeger Brigade, supervising 25+ personnel. Commissioned as a <span className="text-foreground font-medium">Second Lieutenant</span>.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
-                    <Award className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <p className="text-sm text-muted-foreground">Top 5% graduate of the Finnish Reserve Officer School</p>
-                  </div>
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
-                    <Star className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <p className="text-sm text-muted-foreground">Ranked 1st among 700+ conscripts in tactical exams</p>
-                  </div>
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50">
-                    <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <p className="text-sm text-muted-foreground">Honorary Mortar Officer, Class II/08 for outstanding leadership</p>
-                  </div>
+              <div className="relative group">
+                {/* Glow behind image */}
+                <div className="absolute -inset-3 rounded-3xl bg-primary/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Lauri Hänninen - Product Marketing Lead at Trezor, based in Prague" 
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                    width={320}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
             </motion.div>

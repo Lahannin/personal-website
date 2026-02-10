@@ -90,7 +90,7 @@ const Articles = () => {
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all hover:shadow-xl h-full"
+                  className="group block card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl h-full"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">

@@ -207,7 +207,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 transition-colors" data-description={`Lauri Hänninen's role at ${company.name}: ${company.roles.map(r => r.title).join(', ')}. ${company.description || ''}`}>
+                  <div className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 hover:-translate-y-1 hover:shadow-lg transition-all duration-300" data-description={`Lauri Hänninen's role at ${company.name}: ${company.roles.map(r => r.title).join(', ')}. ${company.description || ''}`}>
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img

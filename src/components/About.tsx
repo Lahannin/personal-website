@@ -94,7 +94,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card-gradient border border-border rounded-xl p-6 hover:border-primary/30 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group"
+                className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-6 h-6 text-primary" />

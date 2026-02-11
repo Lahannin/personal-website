@@ -27,10 +27,10 @@ const About = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
@@ -42,10 +42,10 @@ const About = () => {
           {/* Bio */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4 }}
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -61,10 +61,10 @@ const About = () => {
 
             {/* Profile photo */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: 0.15, type: "spring", stiffness: 80, damping: 14 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               className="flex items-center justify-center"
             >
               <div className="relative group">
@@ -90,10 +90,10 @@ const About = () => {
             {highlights.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.3, delay: index * 0.08 }}
                 className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">

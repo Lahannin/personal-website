@@ -59,10 +59,10 @@ const Articles = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">WRITING</span>
@@ -79,10 +79,10 @@ const Articles = () => {
             {articles.map((article, index) => (
               <motion.article
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <a

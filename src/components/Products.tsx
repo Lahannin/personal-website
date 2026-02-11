@@ -129,10 +129,10 @@ const Products = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">PRODUCT LAUNCHES</span>
@@ -146,10 +146,10 @@ const Products = () => {
 
           {/* Carousel */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
             {/* Navigation arrows */}
@@ -304,10 +304,10 @@ const Products = () => {
 
           {/* Additional launches callout */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="mt-16 text-center"
           >
             <div className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary/5 border border-primary/20">

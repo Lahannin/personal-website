@@ -57,10 +57,10 @@ const Skills = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
             <span className="mono text-primary text-sm tracking-wider">SKILLS</span>
@@ -71,10 +71,10 @@ const Skills = () => {
 
           {/* Skills as flowing inline text */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
             className="mb-16 text-center"
           >
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
@@ -84,7 +84,7 @@ const Skills = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.04 }}
+                  transition={{ duration: 0.2, delay: index * 0.02 }}
                   className="inline"
                 >
                   <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">
@@ -103,10 +103,10 @@ const Skills = () => {
 
           {/* Certifications as a clean list */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
             className="mb-16"
           >
             <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8">
@@ -116,10 +116,10 @@ const Skills = () => {
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 8 }}
+                  initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.04 }}
+                  transition={{ duration: 0.2, delay: index * 0.02 }}
                   className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
                 >
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
@@ -138,10 +138,10 @@ const Skills = () => {
 
           {/* Education */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
           >
             <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8 flex items-center justify-center gap-2">
               <GraduationCap className="w-4 h-4" aria-hidden="true" />
@@ -151,10 +151,10 @@ const Skills = () => {
               {educationData.map((edu, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.08 }}
+                  transition={{ duration: 0.2, delay: index * 0.05 }}
                   className="text-center group"
                 >
                   <img

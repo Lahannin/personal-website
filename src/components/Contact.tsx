@@ -36,10 +36,10 @@ const Contact = () => {
         <div className="max-w-3xl mx-auto text-center">
           {/* Section header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
           >
             <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
             <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mt-4 mb-6">
@@ -53,10 +53,10 @@ const Contact = () => {
           
           {/* Contact links */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="grid sm:grid-cols-3 gap-4 mb-12"
           >
             {links.map((link, index) => (
@@ -65,10 +65,10 @@ const Contact = () => {
                 href={link.href}
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.08 }}
                 className="group p-6 min-h-[100px] border-gradient rounded-xl shadow-md hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300"
                 aria-label={`Connect on ${link.value}`}
               >

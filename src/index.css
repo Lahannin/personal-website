@@ -81,6 +81,13 @@
     }
   }
 
+  /* Force GPU compositing for animated elements to prevent flickering */
+  [style*="opacity"], [style*="transform"] {
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;

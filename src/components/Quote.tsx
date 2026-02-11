@@ -6,10 +6,10 @@ const Quote = () => {
     <section className="py-20 md:py-24 bg-background" aria-label="Quote by Lauri Hänninen on product marketing">
       <div className="container px-6">
         <motion.blockquote
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.4 }}
           className="max-w-3xl mx-auto text-center relative"
         >
           <QuoteIcon 

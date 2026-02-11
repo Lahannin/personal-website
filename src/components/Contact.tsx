@@ -69,7 +69,6 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
                 className="group p-6 min-h-[100px] border-gradient rounded-xl shadow-md hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300"
                 aria-label={`Connect on ${link.value}`}
               >

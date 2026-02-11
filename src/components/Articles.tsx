@@ -83,7 +83,6 @@ const Articles = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                whileHover={{ y: -5, scale: 1.01 }}
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <a

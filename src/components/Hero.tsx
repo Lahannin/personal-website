@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import logo1 from "@/assets/logo-1.avif";
 import logo2 from "@/assets/logo-2.avif";
 import logo3 from "@/assets/logo-3.avif";
@@ -8,13 +9,17 @@ import logo4 from "@/assets/logo-4.avif";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const isMobile = useIsMobile();
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"]
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  // Disable parallax on mobile for performance
+  const disableParallax = isMobile || prefersReducedMotion;
+  const backgroundY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "30%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "15%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const containerVariants = {

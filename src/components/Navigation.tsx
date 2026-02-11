@@ -38,7 +38,7 @@ const Navigation = () => {
           <div className="w-8 md:w-9" />
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+          <div className="hidden md:flex items-center gap-1" role="navigation" aria-label="Desktop navigation">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -48,7 +48,7 @@ const Navigation = () => {
                 {link.label}
               </a>
             ))}
-          </nav>
+            </div>
 
           {/* Mobile menu button - 44px minimum touch target */}
           <button

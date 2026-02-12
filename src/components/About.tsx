@@ -72,11 +72,13 @@ const About = () => {
               role="img"
               aria-label="Logos of companies I've worked with"
             >
-              <div className="grid grid-cols-2 gap-8 items-center justify-items-center">
-                <img src={logo1} alt="Trezor logo — Lauri Hänninen led product marketing and global hardware wallet launches" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
-                <img src={logo2} alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
-                <img src={logo3} alt="Product Marketing Alliance logo — Lauri Hänninen founded the Czech Republic chapter" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
-                <img src={logo4} alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
+              <div className="card-gradient border border-border rounded-2xl p-8 shadow-md">
+                <div className="grid grid-cols-2 gap-10 items-center justify-items-center">
+                  <img src={logo1} alt="Trezor logo — Lauri Hänninen led product marketing and global hardware wallet launches" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
+                  <img src={logo2} alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
+                  <img src={logo3} alt="Product Marketing Alliance logo — Lauri Hänninen founded the Czech Republic chapter" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
+                  <img src={logo4} alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
+                </div>
               </div>
             </motion.div>
           </div>

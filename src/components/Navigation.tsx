@@ -29,7 +29,7 @@ const Navigation = () => {
         role="navigation"
         aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
+          isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-background/80 backdrop-blur-lg md:bg-transparent md:backdrop-blur-none"
         }`}
       >
       <div className="container px-6">

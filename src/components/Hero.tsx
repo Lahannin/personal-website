@@ -2,10 +2,7 @@ import { MapPin } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import logo1 from "@/assets/logo-1.avif";
-import logo2 from "@/assets/logo-2.avif";
-import logo3 from "@/assets/logo-3.avif";
-import logo4 from "@/assets/logo-4.avif";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -16,7 +13,6 @@ const Hero = () => {
     offset: ["start start", "end start"]
   });
 
-  // Disable parallax on mobile for performance
   const disableParallax = isMobile || prefersReducedMotion;
   const backgroundY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "30%"]);
   const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "15%"]);
@@ -47,13 +43,11 @@ const Hero = () => {
 
   return (
     <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax background layer */}
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20"
       />
       
-      {/* Subtle floating shapes for depth */}
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 overflow-hidden pointer-events-none"
@@ -70,10 +64,20 @@ const Hero = () => {
           className="max-w-4xl mx-auto text-center"
         >
 
-          {/* Status badge */}
-          <motion.div variants={itemVariants}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-6">
-              <span className="text-sm text-muted-foreground">Tech-Savvy Product Marketer</span>
+          {/* Profile photo */}
+          <motion.div variants={itemVariants} className="flex justify-center mb-8">
+            <div className="relative group">
+              <div className="absolute -inset-3 rounded-full bg-primary/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                <img 
+                  src={profilePhoto} 
+                  alt="Lauri Hänninen - Product Marketing Lead" 
+                  className="w-full h-full object-cover"
+                  width={160}
+                  height={160}
+                  loading="eager"
+                />
+              </div>
             </div>
           </motion.div>
 
@@ -91,7 +95,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            Turning complex products into clear, compelling stories that customers love.
+            Tech-savvy Product Marketer turning complex products into clear, compelling stories that customers love.
           </motion.p>
 
           {/* Location */}
@@ -122,21 +126,6 @@ const Hero = () => {
             >
               Get in Touch
             </a>
-          </motion.div>
-
-          {/* Partner logos */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-16"
-            role="img"
-            aria-label="Logos of companies I've worked with"
-          >
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              <img src={logo1} alt="Trezor logo — Lauri Hänninen led product marketing and global hardware wallet launches" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
-              <img src={logo2} alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
-              <img src={logo3} alt="Product Marketing Alliance logo — Lauri Hänninen founded the Czech Republic chapter" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
-              <img src={logo4} alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="eager" />
-            </div>
           </motion.div>
         </motion.div>
       </motion.div>

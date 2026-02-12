@@ -1,6 +1,9 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import profilePhoto from "@/assets/profile-photo.png";
+import logo1 from "@/assets/logo-1.avif";
+import logo2 from "@/assets/logo-2.avif";
+import logo3 from "@/assets/logo-3.avif";
+import logo4 from "@/assets/logo-4.avif";
 
 const About = () => {
   const highlights = [
@@ -52,35 +55,28 @@ const About = () => {
               I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it’s for, and why anyone should care.
+               My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it's for, and why anyone should care.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                My focus is on practical outcomes. I cut through the noise to get to why the product matters to the people who use it.
               </p>
             </motion.div>
 
-            {/* Profile photo */}
+            {/* Partner logos */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: 0.1 }}
               className="flex items-center justify-center"
+              role="img"
+              aria-label="Logos of companies I've worked with"
             >
-              <div className="relative group">
-                {/* Glow behind image */}
-                <div className="absolute -inset-3 rounded-3xl bg-primary/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-500">
-                  <img 
-                    src={profilePhoto} 
-                    alt="Lauri Hänninen - Product Marketing Lead at Trezor, based in Prague" 
-                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                    width={320}
-                    height={320}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+              <div className="grid grid-cols-2 gap-8 items-center justify-items-center">
+                <img src={logo1} alt="Trezor logo — Lauri Hänninen led product marketing and global hardware wallet launches" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
+                <img src={logo2} alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
+                <img src={logo3} alt="Product Marketing Alliance logo — Lauri Hänninen founded the Czech Republic chapter" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
+                <img src={logo4} alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-16 md:h-20 w-auto object-contain" width={80} height={80} loading="lazy" />
               </div>
             </motion.div>
           </div>

@@ -313,7 +313,7 @@ const Products = () => {
             <div className="inline-flex items-center gap-3 px-6 py-4 rounded-full bg-primary/5 border border-primary/20">
               <Rocket className="w-5 h-5 text-primary" />
               <span className="text-muted-foreground">
-                Plus <span className="font-semibold text-foreground">20+ other feature launches</span> across software, hardware, and services
+                Plus <span className="font-semibold text-foreground">countless other feature launches</span> across software, hardware, and services
               </span>
             </div>
           </motion.div>

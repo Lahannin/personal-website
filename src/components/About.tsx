@@ -58,7 +58,7 @@ const About = () => {
                Currently, I lead product marketing at Trezor, working across hardware and crypto security. Before that, I spent years in the analytics space at GoodData and building the product marketing community in Prague.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               I’m a Finn by birth, a tech nerd by choice, and a believer in open-source code that give people their freedom back.
+               I’m a tech enthusiast at heart and a firm believer in open-source code that gives people their freedom back.
               </p>
             </motion.div>
 

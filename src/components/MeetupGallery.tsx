@@ -1,13 +1,7 @@
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { X } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 import meetup1 from "@/assets/meetup-1.jpg";
 import meetup2 from "@/assets/meetup-2.jpg";
 import meetup3 from "@/assets/meetup-3.jpg";
@@ -27,12 +21,74 @@ const photos = [
 ];
 
 const MeetupGallery = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+    skipSnaps: false,
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [progressKey, setProgressKey] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
 
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setProgressKey((k) => k + 1);
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  // Auto-play with initial delay
+  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
+  const resetAutoplay = useCallback(() => {
+    clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    initialDelayRef.current = setTimeout(() => {
+      resetAutoplay();
+    }, 5000);
+    emblaApi.on("pointerDown", () => {
+      clearTimeout(initialDelayRef.current);
+      clearInterval(autoplayRef.current);
+    });
+    emblaApi.on("pointerUp", resetAutoplay);
+    return () => {
+      clearTimeout(initialDelayRef.current);
+      clearInterval(autoplayRef.current);
+    };
+  }, [emblaApi, resetAutoplay]);
+
   return (
-    <section id="meetups" aria-labelledby="meetups-heading" className="py-24 md:py-32 relative z-10 bg-secondary/30">
+    <section id="meetups" aria-labelledby="meetups-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30">
+      {/* Top/bottom gradient fades */}
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
+          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,38 +105,95 @@ const MeetupGallery = () => {
             </p>
           </motion.div>
 
+          {/* Carousel */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.4, delay: 0.1 }}
+            className="relative"
           >
-            <Carousel
-              opts={{ align: "start", loop: true }}
-              className="w-full"
+            {/* Navigation arrows */}
+            <button
+              onClick={scrollPrev}
+              disabled={!canScrollPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:border-primary/50 hover:bg-primary/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed -translate-x-1/2 md:translate-x-0"
+              aria-label="Previous photo"
             >
-              <CarouselContent className="-ml-4">
-                {photos.map((photo, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[33.333%]">
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </button>
+
+            <button
+              onClick={scrollNext}
+              disabled={!canScrollNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:border-primary/50 hover:bg-primary/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed translate-x-1/2 md:translate-x-0"
+              aria-label="Next photo"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </button>
+
+            {/* Carousel viewport */}
+            <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
+              <div className="flex">
+                {photos.map((photo, index) => {
+                  const isActive = index === selectedIndex;
+                  return (
                     <div
-                      className="rounded-xl overflow-hidden border border-border shadow-md hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                      onClick={() => setSelectedPhoto(index)}
+                      key={index}
+                      className="flex-[0_0_100%] min-w-0 md:flex-[0_0_70%] lg:flex-[0_0_55%] px-4"
                     >
-                      <img
-                        src={photo.src}
-                        alt={photo.alt}
-                        className="w-full aspect-[4/3] object-cover"
-                        loading="lazy"
-                      />
+                      <motion.div
+                        initial={{ opacity: 0.5, scale: 0.95 }}
+                        animate={{
+                          opacity: isActive ? 1 : 0.5,
+                          scale: isActive ? 1 : 0.95,
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className={`rounded-2xl overflow-hidden border cursor-pointer transition-all duration-300 ${
+                          isActive
+                            ? "border-primary/30 shadow-2xl shadow-primary/10"
+                            : "border-border/50 shadow-md"
+                        }`}
+                        onClick={() => setSelectedPhoto(index)}
+                      >
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          className="w-full aspect-[4/3] object-cover"
+                          loading="lazy"
+                        />
+                      </motion.div>
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-2 mt-8">
-                <CarouselPrevious className="static translate-y-0 h-10 w-10" />
-                <CarouselNext className="static translate-y-0 h-10 w-10" />
+                  );
+                })}
               </div>
-            </Carousel>
+            </div>
+
+            {/* Dot indicators with progress */}
+            <div className="flex justify-center items-center gap-2 mt-8">
+              {photos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollTo(index)}
+                  className={`relative h-2 rounded-full transition-all duration-300 overflow-hidden ${
+                    index === selectedIndex
+                      ? "w-8 bg-primary/20"
+                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  }`}
+                  aria-label={`Go to photo ${index + 1}`}
+                >
+                  {index === selectedIndex && (
+                    <motion.div
+                      key={progressKey}
+                      className="absolute inset-y-0 left-0 bg-primary rounded-full"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 5, ease: "linear" }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

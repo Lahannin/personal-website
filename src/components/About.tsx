@@ -38,7 +38,7 @@ const About = () => {
           >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
             <h2 id="about-heading" className="text-3xl md:text-5xl font-bold mt-4">
-              Product marketing for things<br /><span className="text-gradient">that are hard to describe</span>
+              Product marketing for things<span className="text-gradient">that are hard to describe</span>
             </h2>
           </motion.div>
 

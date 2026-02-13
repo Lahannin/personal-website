@@ -38,7 +38,7 @@ const About = () => {
           >
             <span className="mono text-primary text-sm tracking-wider">ABOUT</span>
             <h2 id="about-heading" className="text-3xl md:text-5xl font-bold mt-4">
-              Bridging the gap between<br /><span className="text-gradient">Product and Marketing</span>
+              Product marketing for things<br /><span className="text-gradient">that are hard to describe</span>
             </h2>
           </motion.div>
 
@@ -52,13 +52,13 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-              I thrive on products that are hard to explain. The kind that demand real thinking before they can be understood.
+              I like products that are difficult to explain—the kind that require a bit of thinking before they click. My job is to take that complexity and make it something people actually understand.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               My role is to bring structure to chaos. Drawing on experience across fast-moving startups and global agencies, I help teams align on the essentials: what the product is, who it's for, and why anyone should care.
+               Currently, I lead product marketing at Trezor, working across hardware and crypto security. Before that, I spent years in the analytics space at GoodData and building the PMM community in Prague.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               My focus is on practical outcomes. I cut through the noise to get to why the product matters to the people who use it.
+               I’m a Finn by birth, a tech nerd by choice, and a believer in open-source tools that give people their freedom back.
               </p>
             </motion.div>
 

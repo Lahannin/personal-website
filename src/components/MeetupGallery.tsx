@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import meetup1 from "@/assets/meetup-1.jpg";
 import meetup2 from "@/assets/meetup-2.jpg";
 import meetup3 from "@/assets/meetup-3.jpg";
@@ -42,29 +49,39 @@ const MeetupGallery = () => {
             </p>
           </motion.div>
 
-          {/* Masonry-style gallery */}
-          <div className="columns-2 md:columns-3 gap-4 space-y-4">
-            {photos.map((photo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="break-inside-avoid cursor-pointer group"
-                onClick={() => setSelectedPhoto(index)}
-              >
-                <div className="rounded-xl overflow-hidden border border-border shadow-md group-hover:shadow-xl group-hover:border-primary/30 transition-all duration-300">
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {photos.map((photo, index) => (
+                  <CarouselItem key={index} className="pl-4 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[33.333%]">
+                    <div
+                      className="rounded-xl overflow-hidden border border-border shadow-md hover:shadow-xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                      onClick={() => setSelectedPhoto(index)}
+                    >
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        className="w-full aspect-[4/3] object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-2 mt-8">
+                <CarouselPrevious className="static translate-y-0 h-10 w-10" />
+                <CarouselNext className="static translate-y-0 h-10 w-10" />
+              </div>
+            </Carousel>
+          </motion.div>
         </div>
       </div>
 

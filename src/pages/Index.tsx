@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Quote from "@/components/Quote";
 import About from "@/components/About";
+import MeetupGallery from "@/components/MeetupGallery";
 import Experience from "@/components/Experience";
 import Products from "@/components/Products";
 import Skills from "@/components/Skills";
@@ -26,6 +27,7 @@ const Index = () => {
           <Hero />
           <Quote />
           <About />
+          <MeetupGallery />
           <Products />
           <Experience />
           <Skills />

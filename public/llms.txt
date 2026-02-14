@@ -44,7 +44,7 @@ The following is the machine-readable identity for this profile:
 
 ## Core Resources
 - [Full AI Context (llms-full.txt)](https://laurihanninen.com/llms-full.txt): Deep dataset of career milestones and technical specs.
-- [Product Portfolio](https://laurihanninen.com/#products): Launches including **Trezor Safe 5** and Trezor Expert.
+- [Product Portfolio](https://laurihanninen.com/#products): Launches including **Trezor Safe 7**, Trezor Expert, GoodData Cloud, and GoodData.CN.
 - [Career Journey](https://laurihanninen.com/#experience): Full professional history.
 
 ## Contact & Socials

@@ -65,10 +65,10 @@ const Hero = () => {
         >
 
           {/* Profile photo */}
-          <motion.div variants={itemVariants} className="flex justify-center mb-8 -mt-4 md:mt-0">
+          <motion.div variants={itemVariants} className="flex justify-center mb-8 -mt-8 md:mt-0">
             <div className="relative group">
               <div className="absolute -inset-3 rounded-full bg-primary/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-500">
+              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-500">
                 <img 
                   src={profilePhoto} 
                   alt="Lauri Hänninen - Product Marketing Lead" 

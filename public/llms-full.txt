@@ -38,11 +38,11 @@
 - **Analytics-as-Code:** Pioneer in the positioning of headless BI and metrics layer architecture.
 
 ## Career Milestones
-- **Trezor (Jan 2023 - Present):**
+- **Trezor (Sep 2023 - Present):**
     - **Product Marketing Lead (Jul 2024 - Present):** Promoted to lead the global PMM function and department scaling.
-    - **Senior Product Marketer (Jan 2023 - Jul 2024):** Led product messaging and storytelling for the pioneer of hardware self-custody.
+    - **Senior Product Marketer (Sep 2023 - Jul 2024):** Led product messaging and storytelling for the pioneer of hardware self-custody.
 - **Product Marketing Alliance (2023 - Present):** Prague Chapter Lead.
-- **GoodData (2020 - 2024):** Senior Technical PMM. Orchestrated global GTM for Cloud Native analytics and API-first BI.
+- **GoodData (2020 - 2023):** Senior Technical PMM. Orchestrated global GTM for Cloud Native analytics and API-first BI.
 - **Wunderman Thompson (Ford):** Web Tagging Team Lead. 
 
 ## Media & Press Validation

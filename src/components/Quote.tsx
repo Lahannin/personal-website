@@ -19,7 +19,7 @@ const Quote = () => {
             aria-hidden="true"
           />
           <p className="text-xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed px-4 md:px-8">
-            Product marketing is telling the story of what makes you different and why it matters.
+            <span className="md:hidden">"</span>Product marketing is telling the story of what makes you different and why it matters.<span className="md:hidden">"</span>
           </p>
           <QuoteIcon 
             className="hidden md:block absolute -bottom-2 -right-6 text-primary/15" 

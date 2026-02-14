@@ -17,7 +17,8 @@ User-agent: ClaudeBot
 User-agent: Claude-Web
 User-agent: anthropic-ai
 User-agent: PerplexityBot
-User-agent: Grok-bot        # Added for xAI / Twitter / X.com
+User-agent: YouBot
+User-agent: Grok-bot
 User-agent: Google-Extended
 User-agent: Applebot
 User-agent: Applebot-Extended
@@ -26,6 +27,7 @@ User-agent: Bytespider
 User-agent: Amazonbot
 User-agent: LinkedInBot
 User-agent: CCBot
+User-agent: Tornadobot
 Allow: /
 Crawl-delay: 1
 

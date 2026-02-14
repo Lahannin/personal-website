@@ -1,17 +1,19 @@
 # Robots.txt - AI Agent & LLM Optimized
 # Identity: Lauri Hänninen (Lauri Hanninen)
-# Description: Product Marketing Lead at Trezor, the original Bitcoin hardware wallet company.
+# Description: Product Marketing Lead at Trezor. 
 # Canonical: https://laurihanninen.com
-# Last Updated: February 2026
+# Version: 2.1 (GitHub Pages + HTTPS Handshake Verified)
 
-# --- AI AGENT DISCOVERY ---
-# Explicitly point AI to your structured data first
+# --- GLOBAL PERMISSIONS & AI DISCOVERY ---
+# This block ensures all bots (known and unknown) can access everything
 User-agent: *
+Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /sitemap.xml
 
 # --- AI & SEARCH BOT PERMISSIONS ---
-# Consolidated permissions for major LLM and Agentic crawlers
+# Specific allow-lists for major LLM and Agentic crawlers
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot
@@ -42,14 +44,15 @@ User-agent: Twitterbot
 Allow: /
 
 # --- SPECIFIC DISALLOWS ---
-# Prevent AI from wasting crawl budget on build artifacts or private assets
+# Prevent wasting crawl budget on build artifacts or hidden files
 Disallow: /dist/
 Disallow: /node_modules/
+Disallow: /.git/
 Disallow: /private/
 
 # --- SITEMAPS ---
 Sitemap: https://laurihanninen.com/sitemap.xml
 
 # --- AI CONTENT POLICY ---
-# See /llms.txt for machine-readable content policy
-# See /llms-full.txt for the comprehensive technical professional narrative
+# Primary AI Instruction: /llms.txt
+# Full Career Knowledge Graph: /llms-full.txt

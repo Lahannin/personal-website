@@ -63,8 +63,8 @@ const Skills = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="mono text-primary text-sm tracking-wider">SKILLS</span>
-            <h2 id="skills-heading" className="text-3xl md:text-5xl font-bold mt-4">
+            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">SKILLS</span>
+            <h2 id="skills-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-tight">
               Expertise & <span className="text-gradient">Education</span>
             </h2>
           </motion.div>

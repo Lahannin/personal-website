@@ -65,8 +65,8 @@ const Articles = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="mono text-primary text-sm tracking-wider">WRITING</span>
-            <h2 id="articles-heading" className="text-3xl md:text-5xl font-bold mt-4">
+            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">WRITING</span>
+            <h2 id="articles-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-tight">
               Featured <span className="text-gradient">Articles</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
@@ -89,7 +89,7 @@ const Articles = () => {
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block card-gradient border border-border rounded-xl p-6 shadow-md hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl h-full"
+                  className="group block card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">

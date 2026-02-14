@@ -41,8 +41,8 @@ const Contact = () => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
           >
-            <span className="mono text-primary text-sm tracking-wider">CONTACT</span>
-            <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mt-4 mb-6">
+            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">CONTACT</span>
+            <h2 id="contact-heading" className="text-4xl md:text-6xl font-black mt-4 mb-6 tracking-tight">
               Let's <span className="text-gradient">Connect</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-12">
@@ -69,7 +69,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.08 }}
-                className="group p-6 min-h-[100px] border-gradient rounded-xl shadow-md hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300"
+                className="group p-6 min-h-[100px] border-gradient rounded-xl shadow-md hover:border-highlight/50 hover:-translate-y-2 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300"
                 aria-label={`Connect on ${link.value}`}
               >
                 <motion.div 

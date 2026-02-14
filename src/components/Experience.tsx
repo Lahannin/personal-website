@@ -176,8 +176,8 @@ const Experience = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="mono text-primary text-sm tracking-wider">EXPERIENCE</span>
-            <h2 id="experience-heading" className="text-3xl md:text-5xl font-bold mt-4">
+            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">EXPERIENCE</span>
+            <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-tight">
               Career <span className="text-gradient">Journey</span>
             </h2>
           </motion.div>
@@ -207,7 +207,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300" data-description={`Lauri Hänninen's role at ${company.name}: ${company.roles.map(r => r.title).join(', ')}. ${company.description || ''}`}>
+                  <div className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" data-description={`Lauri Hänninen's role at ${company.name}: ${company.roles.map(r => r.title).join(', ')}. ${company.description || ''}`}>
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img

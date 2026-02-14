@@ -1,4 +1,6 @@
 # Robots.txt - AI Agent & LLM Optimized
+# Identity: Lauri Hänninen (Lauri Hanninen)
+# Description: Product Marketing Lead at Trezor, the original Bitcoin hardware wallet company.
 # Canonical: https://laurihanninen.com
 # Last Updated: February 2026
 

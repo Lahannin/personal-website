@@ -9,7 +9,6 @@ import Skills from "@/components/Skills";
 import Articles from "@/components/Articles";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import ScrollFadeSection from "@/components/ScrollFadeSection";
 
 const Index = () => {
   return (
@@ -26,14 +25,14 @@ const Index = () => {
         <Navigation />
         <main id="main-content">
           <Hero />
-          <ScrollFadeSection><Quote /></ScrollFadeSection>
-          <ScrollFadeSection><About /></ScrollFadeSection>
-          <ScrollFadeSection><MeetupGallery /></ScrollFadeSection>
-          <ScrollFadeSection><Products /></ScrollFadeSection>
-          <ScrollFadeSection><Experience /></ScrollFadeSection>
-          <ScrollFadeSection><Skills /></ScrollFadeSection>
-          <ScrollFadeSection><Articles /></ScrollFadeSection>
-          <ScrollFadeSection><Contact /></ScrollFadeSection>
+          <Quote />
+          <About />
+          <MeetupGallery />
+          <Products />
+          <Experience />
+          <Skills />
+          <Articles />
+          <Contact />
         </main>
         <Footer />
       </div>

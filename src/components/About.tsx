@@ -10,7 +10,7 @@ const About = () => {
     {
       icon: Lightbulb,
       title: "Open-Source Advocate",
-      description: "Passionate about open-source technology and building tools that give people freedom.",
+      description: "Passionate about open-source technology and building tools that set people free.",
     },
     {
       icon: Target,

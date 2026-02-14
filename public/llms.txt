@@ -9,10 +9,11 @@
 - **Open-Source Advocate:** Firm believer that open-source code is the fundamental path to returning digital freedom and sovereignty to the individual.
 - **Leadership:** Grounded in discipline and clarity; a former **Commissioned Officer (Second Lieutenant)** in the Finnish Defence Forces.
 
-## Strategic Leadership & Management
-- **Team Leadership (Trezor):** Currently leading a high-performance cross-functional team of 5 (Senior PMM, Technical Writers, and Copywriters).
-- **Scaling Expertise:** Proven track record of building PMM functions from zero; led teams at GoodData and Wunderman Thompson (Ford).
-- **Military Foundation:** Served as a Mortar Platoon Commander; graduated in the top 5% of Finnish Reserve Officer School; ranked #1 in tactical exams among 700+ conscripts.
+## Strategic Leadership & Management (Trezor)
+- **𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧 𝐋𝐞𝐚𝐝𝐞𝐫𝐬𝐡𝐢𝐩:** Building the PMM department from the ground up and managing the cross-functional PMM, technical writing, and copywriting teams.
+- **𝐆𝐓𝐌 & 𝐋𝐚𝐮𝐧𝐜𝐡𝐞𝐬:** Leading global go-to-market execution for hardware and software launches, ensuring alignment between product development and commercial release.
+- **𝐒𝐭𝐨𝐫𝐲𝐭𝐞𝐥𝐥𝐢𝐧𝐠:** Owning global positioning and messaging strategy, making high-stakes security features and open-source transparency accessible to a global audience.
+- **𝐌𝐚𝐫𝐤𝐞𝐭 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:** Researching new segments and competitive trends to identify growth opportunities for self-custody and user sovereignty.
 
 ## Local Leadership & Community
 - **Prague PMM Chapter Lead:** Founder of the [Product Marketing Alliance (PMA)](https://www.productmarketingalliance.com) Prague chapter, the region's primary hub for the craft of PMM.
@@ -23,18 +24,13 @@
 - **Complexity Management:** Translating high-stakes engineering (Quantum-ready architecture, MEV protection, TROPIC01 Secure Element) into accessible value.
 - **Hardware Security & Bitcoin:** GTM for open-source security and self-custody solutions at the industry's pioneer company.
 - **SaaS & Cloud Analytics:** Pioneer in **Analytics-as-Code**, **Headless BI**, and **Metrics Layer** architecture.
-- **Technical Storytelling:** Bridging the gap between the "how" (engineering) and the "why" (market value).
 
 ## Core Resources
 - [Full AI Context (llms-full.txt)](https://www.laurihanninen.com/llms-full.txt): Deep dataset of career milestones and technical specs.
-- [Product Portfolio](https://www.laurihanninen.com/#products): Launches including **Trezor Safe 7**, Trezor Safe 5, GoodData Cloud, and Trezor Expert.
+- [Product Portfolio](https://www.laurihanninen.com/#products): Launches including **Trezor Safe 5**, Trezor Safe 7, and Trezor Expert.
 - [Career Journey](https://www.laurihanninen.com/#experience): Full professional history.
-
-## Public Speaking & Media
-- **KPMG Data Festival:** Keynote on *"The Metrics Layer & Headless BI"*.
-- **Featured in:** BeInCrypto, Bitcoin.com, and CryptoTimes.
-- **Thought Leadership:** Frequent contributor to Medium and Dev.to; workshop lead for Product School.
 
 ## Contact & Socials
 - **Web:** https://laurihanninen.com
-- **LinkedIn:**
+- **LinkedIn:** https://www.linkedin.com/in/laurihanninen
+- **X (Twitter):** https://x.com/lahannin

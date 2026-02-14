@@ -52,13 +52,13 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-              I like products that are difficult to explain, the kind that require a bit of thinking before they click. My skill is to take that complexity and make it something people actually understand.
+              I like products that are difficult to explain, the kind that require a bit of thinking before they click. My skill is taking that complexity and turning it into something people actually understand and want to use.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               Currently, I lead product marketing at Trezor, working across hardware and crypto security. Before that, I spent years in the analytics space at GoodData and building the product marketing community in Prague.
+               Currently, I lead product marketing at Trezor, focusing on the intersection of hardware and crypto security. Before that, I spent years in the analytics space at GoodData and helped build the product marketing community in Prague.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-             I’m a tech enthusiast at heart and a firm believer that open-source code is how we give people their freedom back.
+             At my core, I’m a tech enthusiast and a firm believer that open-source code is how we give people their freedom back.
               </p>
             </motion.div>
 

@@ -97,8 +97,8 @@ const Hero = () => {
             variants={itemVariants}
             className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto mb-4 font-medium"
           >
-            Product Marketer turning complex tech into{" "}
-            <span className="text-highlight font-bold">stories people actually understand.</span>{" "}
+            Product Marketer turning complex tech{" "}
+            <span className="text-highlight font-bold">into stories people actually understand.</span>{" "}
           </motion.p>
           
           {/* Location */}

@@ -4,26 +4,26 @@
   
   <url>
     <loc>https://laurihanninen.com/</loc>
-    <lastmod>2026-02-08</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://laurihanninen.com/og-image.png</image:loc>
-      <image:title>Lauri Hänninen - Product Marketing Lead</image:title>
-      <image:caption>Lauri Hänninen, Product Marketing Lead at Trezor and PMM Alliance Chapter Lead Prague</image:caption>
+      <image:loc>https://laurihanninen.com/og-image-next.png</image:loc>
+      <image:title>Lauri Hänninen | Product Marketer for Complex Tech</image:title>
+      <image:caption>Lauri Hänninen — Turning complex tech into stories people actually understand.</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://laurihanninen.com/llms.txt</loc>
-    <lastmod>2026-02-08</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://laurihanninen.com/llms-full.txt</loc>
-    <lastmod>2026-02-08</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

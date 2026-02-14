@@ -52,7 +52,7 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-              I love products that are difficult to explain, the kind that require a bit of thinking before they click. My skill is taking that complexity and turning it into something people actually understand and want to use.
+              I love products that are difficult to explain, the kind that require a bit of thinking before they click. My skill is taking that complexity and turning it into something people actually understand.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                Currently, I lead product marketing at Trezor, the original Bitcoin hardware wallet company, focusing on the intersection of hardware and crypto security. Before Trezor, I spent years in the analytics space at GoodData and helped build the product marketing community in Prague.

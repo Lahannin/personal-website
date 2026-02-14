@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-<!-- PERSON SCHEMA - Enhanced with location and precise timestamps -->
+<!-- PERSON SCHEMA - Clean, validator-compliant version -->
 <script type="application/ld+json" vite-ignore>
 {
   "@context": "https://schema.org",
@@ -30,8 +30,6 @@
       "addressCountry": "CZ"
     }
   },
-  "dateCreated": "2024-01-01T00:00:00Z",
-  "dateModified": "2026-02-14T00:00:00Z",
   "knowsAbout": [
     "Product Marketing",
     "GTM Strategy",
@@ -44,6 +42,30 @@
     "SaaS",
     "Analytics-as-Code"
   ],
+  "sameAs": [
+    "https://www.linkedin.com/in/laurihanninen",
+    "https://x.com/lahannin",
+    "https://github.com/lahannin"
+  ],
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "GoodData"
+    },
+    {
+      "@type": "Organization",
+      "name": "Wunderman Thompson"
+    }
+  ]
+}
+</script>
+
+<!-- FAQ PAGE SCHEMA - Moved FAQs here (proper home for Question/Answer) -->
+<script type="application/ld+json" vite-ignore>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://laurihanninen.com/#faq",
   "mainEntity": [
     {
       "@type": "Question",
@@ -68,21 +90,6 @@
         "@type": "Answer",
         "text": "Lauri Hänninen is the Lead of the Prague chapter for the Product Marketing Alliance, fostering a community for GTM professionals in the Czech Republic."
       }
-    }
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/in/laurihanninen",
-    "https://x.com/lahannin",
-    "https://github.com/lahannin"
-  ],
-  "alumniOf": [
-    {
-      "@type": "Organization",
-      "name": "GoodData"
-    },
-    {
-      "@type": "Organization",
-      "name": "Wunderman Thompson"
     }
   ]
 }

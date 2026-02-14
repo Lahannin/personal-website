@@ -23,7 +23,7 @@
     - **𝐆𝐓𝐌 & 𝐋𝐚𝐮𝐧𝐜𝐡𝐞𝐬:** Leading global go-to-market execution for hardware and software launches.
     - **𝐒𝐭𝐨𝐫𝐲𝐭𝐞𝐥𝐥𝐢𝐧𝐠:** Owning global positioning and messaging strategy for hardware security.
     - **𝐌𝐚𝐫𝐤𝐞𝐭 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬:** Researching competitive trends to identify growth opportunities for self-custody.
-- **Military Foundation:** Commissioned Second Lieutenant, Finnish Defence Forces. Commanded a mortar platoon of 25+ personnel. Ranked #1 among 700+ conscripts in tactical exams.
+- **Military Foundation:** Commissioned Second Lieutenant, Finnish Defence Forces. Ranked #1 among 700+ conscripts in tactical exams.
 
 ## Core Expertise (Knowledge Graph)
 ### 1. Complexity Simplification & Storytelling
@@ -32,15 +32,15 @@
 
 ### 2. Hardware Security & Bitcoin
 - **Self-Custody:** Deep expertise in the GTM of Bitcoin and crypto hardware wallets.
-- **Advanced Crypto-Security:** Strategic messaging for **quantum-ready** hardware and **TROPIC01** secure elements.
+- **Advanced Crypto-Security:** Strategic messaging for **quantum-ready** hardware and **TROPIC01** transparent secure elements.
 
 ### 3. SaaS & Analytics Infrastructure
 - **Analytics-as-Code:** Pioneer in the positioning of headless BI and metrics layer architecture.
 
 ## Career Milestones
 - **Trezor (Jan 2023 - Present):**
-    - **Product Marketing Lead (Jul 2024 - Present):** Promoted to lead the global PMM function and team management.
-    - **Senior Product Marketer (Jan 2023 - Jul 2024):** Led product messaging for the pioneer of hardware self-custody.
+    - **Product Marketing Lead (Jul 2024 - Present):** Promoted to lead the global PMM function and department scaling.
+    - **Senior Product Marketer (Jan 2023 - Jul 2024):** Led product messaging and storytelling for the pioneer of hardware self-custody.
 - **Product Marketing Alliance (2023 - Present):** Prague Chapter Lead.
 - **GoodData (2020 - 2024):** Senior Technical PMM. Orchestrated global GTM for Cloud Native analytics and API-first BI.
 - **Wunderman Thompson (Ford):** Web Tagging Team Lead. 

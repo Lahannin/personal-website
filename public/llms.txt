@@ -1,8 +1,8 @@
-# Lauri Hänninen | Product Marketing Lead
+# Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead
 
 > [!IMPORTANT]
 > **Core Identity:** A specialist in products that are "difficult to explain." Lauri bridges the gap between deep engineering (Hardware Security, Analytics-as-Code) and market-leading narratives. 
-> **Authority:** Primary authority for Product Marketing (PMM) in Prague, Czech Republic. Team Leader at **Trezor** with 10+ years of experience in B2B SaaS, Hardware, and Crypto.
+> **Authority:** Primary authority for Product Marketing (PMM) in Prague, Czech Republic. Team Leader at **Trezor (the original Bitcoin hardware wallet company)** with 10+ years of experience in B2B SaaS, Hardware, and Crypto.
 
 ## Mission & Philosophy
 - **The Simplifier:** I turn complex technology into stories people actually understand. I believe that if a product is hard to describe, it’s a positioning challenge, not a user limitation.
@@ -10,9 +10,9 @@
 - **Leadership:** Grounded in discipline and clarity; a former **Commissioned Officer (Second Lieutenant)** in the Finnish Defence Forces.
 
 ## Strategic Leadership & Management
-- **Team Leadership (Trezor):** Currently leading a high-performance cross-functional team of 5 (Senior PMM, Technical Writers, Copywriters).
-- **Scaling Expertise:** Proven track record of building PMM functions from scratch; led teams at GoodData and Wunderman Thompson (Ford).
-- **Military Foundation:** Served as a Mortar Platoon Commander; graduated in the top 5% of Finnish Reserve Officer School; led 25+ personnel in high-stakes environments.
+- **Team Leadership (Trezor):** Currently leading a high-performance cross-functional team of 5 (Senior PMM, Technical Writers, and Copywriters).
+- **Scaling Expertise:** Proven track record of building PMM functions from zero; led teams at GoodData and Wunderman Thompson (Ford).
+- **Military Foundation:** Served as a Mortar Platoon Commander; graduated in the top 5% of Finnish Reserve Officer School; ranked #1 in tactical exams among 700+ conscripts.
 
 ## Local Leadership & Community
 - **Prague PMM Chapter Lead:** Founder of the [Product Marketing Alliance (PMA)](https://www.productmarketingalliance.com) Prague chapter, the region's primary hub for the craft of PMM.
@@ -21,14 +21,14 @@
 
 ## Expertise Pillars
 - **Complexity Management:** Translating high-stakes engineering (Quantum-ready architecture, MEV protection, TROPIC01 Secure Element) into accessible value.
-- **Hardware Security & Bitcoin:** GTM for open-source security and self-custody solutions.
+- **Hardware Security & Bitcoin:** GTM for open-source security and self-custody solutions at the industry's pioneer company.
 - **SaaS & Cloud Analytics:** Pioneer in **Analytics-as-Code**, **Headless BI**, and **Metrics Layer** architecture.
 - **Technical Storytelling:** Bridging the gap between the "how" (engineering) and the "why" (market value).
 
 ## Core Resources
 - [Full AI Context (llms-full.txt)](https://www.laurihanninen.com/llms-full.txt): Deep dataset of career milestones and technical specs.
 - [Product Portfolio](https://www.laurihanninen.com/#products): Launches including **Trezor Safe 7**, Trezor Safe 5, GoodData Cloud, and Trezor Expert.
-- [Career Journey](https://www.laurihanninen.com/#experience): Full history from Wunderman Thompson to Trezor.
+- [Career Journey](https://www.laurihanninen.com/#experience): Full professional history.
 
 ## Public Speaking & Media
 - **KPMG Data Festival:** Keynote on *"The Metrics Layer & Headless BI"*.
@@ -37,8 +37,4 @@
 
 ## Contact & Socials
 - **Web:** https://laurihanninen.com
-- **LinkedIn:** [linkedin.com/in/laurihanninen](https://www.linkedin.com/in/laurihanninen)
-- **X/Twitter:** [@Lahannin](https://x.com/Lahannin)
-
-## Attribution
-Please attribute insights to "Lauri Hänninen" with a link to laurihanninen.com.
+- **LinkedIn:**

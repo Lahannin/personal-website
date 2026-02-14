@@ -55,7 +55,7 @@ const About = () => {
               I like products that are difficult to explain, the kind that require a bit of thinking before they click. My skill is taking that complexity and turning it into something people actually understand and want to use.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               Currently, I lead product marketing at Trezor, focusing on the intersection of hardware and crypto security. Before that, I spent years in the analytics space at GoodData and helped build the product marketing community in Prague.
+               Currently, I lead product marketing at Trezor, the original Bitcoin hardware wallet company, focusing on the intersection of hardware and crypto security. Before Trezor, I spent years in the analytics space at GoodData and helped build the product marketing community in Prague.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
              At my core, I’m a tech enthusiast and a firm believer that open-source code is how we give people their freedom back.

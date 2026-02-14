@@ -30,7 +30,7 @@ const Navigation = () => {
         role="navigation"
         aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-background/80 backdrop-blur-lg md:bg-transparent md:backdrop-blur-none"
+          isScrolled ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm" : "bg-background/80 backdrop-blur-lg md:bg-transparent md:backdrop-blur-none"
         }`}
       >
       <div className="container px-6">
@@ -38,20 +38,20 @@ const Navigation = () => {
           {/* Spacer for layout balance */}
           <div className="w-8 md:w-9" />
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1" role="navigation" aria-label="Desktop navigation">
+          {/* Desktop nav — uppercase, tighter, bolder */}
+          <div className="hidden md:flex items-center gap-0.5" role="navigation" aria-label="Desktop navigation">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
+                className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
               >
                 {link.label}
               </a>
             ))}
             </div>
 
-          {/* Mobile menu button - 44px minimum touch target */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
@@ -81,7 +81,7 @@ const Navigation = () => {
                       <a
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block text-base text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors py-3 px-4 rounded-lg hover:bg-secondary/50 min-h-[44px] flex items-center"
+                        className="block text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors py-3 px-4 rounded-lg hover:bg-secondary/50 min-h-[44px] flex items-center"
                       >
                         {link.label}
                       </a>

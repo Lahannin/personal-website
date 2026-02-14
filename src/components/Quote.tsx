@@ -1,32 +1,25 @@
 import { motion } from "framer-motion";
-import { Quote as QuoteIcon } from "lucide-react";
 
 const Quote = () => {
   return (
-    <section className="py-20 md:py-24 bg-background" aria-label="Quote by Lauri Hänninen on product marketing">
-      <div className="container px-6">
+    <section className="py-24 md:py-32 bg-primary relative overflow-hidden" aria-label="Quote by Lauri Hänninen on product marketing">
+      {/* Dramatic background accents */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-highlight/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-highlight/5 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="container px-6 relative z-10">
         <motion.blockquote
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.4 }}
-          className="max-w-3xl mx-auto text-center relative"
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto text-center"
         >
-          <QuoteIcon 
-            className="hidden md:block absolute -top-2 -left-6 text-primary/15 -scale-x-100" 
-            size={32} 
-            strokeWidth={1.5}
-            aria-hidden="true"
-          />
-          <p className="text-xl md:text-3xl lg:text-4xl font-medium italic text-foreground leading-relaxed px-4 md:px-8">
-            <span className="md:hidden">"</span>Product marketing is telling the story of what makes you different and why it matters.<span className="md:hidden">"</span>
+          <p className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight tracking-tight">
+            <span className="md:hidden">"</span>Product marketing is telling the story of what makes you <span className="text-highlight">different</span> and why it <span className="text-highlight">matters</span>.<span className="md:hidden">"</span>
           </p>
-          <QuoteIcon 
-            className="hidden md:block absolute -bottom-2 -right-6 text-primary/15" 
-            size={32} 
-            strokeWidth={1.5}
-            aria-hidden="true"
-          />
         </motion.blockquote>
       </div>
     </section>

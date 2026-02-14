@@ -8,49 +8,55 @@
 
 @layer base {
   :root {
-    /* Light palette with blue accents */
+    /* Bold palette — high contrast navy with electric highlights */
     --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --foreground: 222 47% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 222 47% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 222 47% 8%;
 
-    /* Formica Navy Blue F7969 */
-    --primary: 217 46% 21%;
+    /* Deep navy — punchy and confident */
+    --primary: 217 55% 18%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96%;
-    --secondary-foreground: 217 46% 21%;
+    --secondary-foreground: 217 55% 18%;
 
     --muted: 210 40% 94%;
-    --muted-foreground: 217 30% 40%;
+    --muted-foreground: 217 25% 42%;
 
-    /* Lighter navy accent */
-    --accent: 217 46% 35%;
+    /* Electric highlight accent */
+    --accent: 217 55% 30%;
     --accent-foreground: 0 0% 100%;
+
+    /* Hot highlight for rebel touches */
+    --highlight: 15 90% 55%;
+    --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 46% 21%;
+    --border: 214 25% 88%;
+    --input: 214 25% 88%;
+    --ring: 217 55% 18%;
 
     --radius: 0.75rem;
 
-    /* Modern gradients with navy tones */
-    --gradient-primary: linear-gradient(135deg, hsl(217 46% 21%) 0%, hsl(217 46% 35%) 100%);
+    /* Aggressive gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 55% 18%) 0%, hsl(217 55% 30%) 50%, hsl(15 90% 55%) 100%);
     --gradient-light: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 40% 96%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(217 46% 21% / 0.1) 0%, transparent 70%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(15 90% 55% / 0.08) 0%, hsl(217 55% 18% / 0.06) 50%, transparent 70%);
+    --gradient-rebel: linear-gradient(135deg, hsl(15 90% 55%) 0%, hsl(350 85% 50%) 100%);
 
-    /* Refined shadows */
-    --shadow-glow: 0 0 80px hsl(217 46% 21% / 0.12);
-    --shadow-card: 0 4px 24px hsl(217 46% 21% / 0.06);
-    --shadow-card-hover: 0 12px 48px hsl(217 46% 21% / 0.1);
+    /* Dramatic shadows */
+    --shadow-glow: 0 0 100px hsl(217 55% 18% / 0.18);
+    --shadow-card: 0 6px 30px hsl(217 55% 18% / 0.08);
+    --shadow-card-hover: 0 20px 60px hsl(217 55% 18% / 0.15);
+    --shadow-highlight: 0 8px 40px hsl(15 90% 55% / 0.2);
   }
 
   .dark {
@@ -125,8 +131,8 @@
   .border-gradient {
     position: relative;
     background: var(--gradient-card);
-    border: 1px solid hsl(217 46% 21% / 0.15);
-    box-shadow: 0 4px 20px hsl(217 46% 21% / 0.05);
+    border: 1px solid hsl(217 55% 18% / 0.15);
+    box-shadow: 0 6px 30px hsl(217 55% 18% / 0.06);
   }
 
   .border-gradient::before {
@@ -135,12 +141,25 @@
     inset: -1px;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, hsl(217 46% 21% / 0.25) 0%, transparent 60%);
+    background: linear-gradient(135deg, hsl(15 90% 55% / 0.3) 0%, hsl(217 55% 18% / 0.2) 40%, transparent 70%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+  }
+
+  .text-highlight {
+    color: hsl(var(--highlight));
+  }
+
+  .bg-highlight {
+    background-color: hsl(var(--highlight));
+  }
+
+  .text-gradient-rebel {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-rebel);
   }
 
   .mono {
@@ -165,13 +184,13 @@
     transform: translateX(100%);
   }
 
-  /* Magnetic hover effect for cards */
+  /* Magnetic hover effect for cards — more aggressive */
   .card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
   .card-hover:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.01);
     box-shadow: var(--shadow-card-hover);
   }
 

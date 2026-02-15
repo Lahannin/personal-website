@@ -1,42 +1,40 @@
+/* 1. RESET & BASE: Ensures the browser doesn't add unexpected spacing */
+:root {
+  background-color: #ffffff; /* Or your dark-mode equivalent */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  /* 'swap' ensures system fonts fill the gap while Inter loads */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. ROOT ALIGNMENT: Matches your Static Shell exactly to prevent 'jumps' */
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* If your Shell has text-align: left, make sure this matches! */
+  text-align: left; 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* 3. PERFORMANCE OPTIMIZATION: Hardware accelerate only what is needed */
+.main-content {
+  will-change: transform, opacity;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 4. UTILITY: Responsive Image containment for your profile photo */
+.profile-photo {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  /* Ensures no layout shift before the image arrives */
+  background-color: #f1f5f9; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* Delete the .logo, @keyframes logo-spin, and .card classes 
+   unless you are specifically using them in your design. */

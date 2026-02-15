@@ -2,8 +2,6 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import gooddataLogo from "@/assets/gooddata-logo.jpg";
-import trezorLogo from "@/assets/trezor-logo.jpg";
 
 interface Product {
   name: string;
@@ -18,35 +16,35 @@ const products: Product[] = [
     name: "GoodData Cloud",
     description: "A fully managed, API-first analytics platform combining BI, AI, and Analytics Lake. Enables businesses to build custom data applications with AI-assisted analytics.",
     url: "https://www.gooddata.com/",
-    logo: gooddataLogo,
+    logo: "/gooddata-logo.jpg",
     category: "software",
   },
   {
     name: "GoodData.CN",
     description: "Self-hosted version of GoodData Cloud. Scalable microservices architecture deployable in containers alongside data in public/private cloud or on-premises.",
     url: "https://www.gooddata.com/",
-    logo: gooddataLogo,
+    logo: "/gooddata-logo.jpg",
     category: "software",
   },
   {
     name: "Trezor Safe 5",
     description: "Hardware wallet with vibrant color touchscreen and haptic feedback for everyday crypto security.",
     url: "https://trezor.io/trezor-safe-5",
-    logo: trezorLogo,
+    logo: "/trezor-logo.jpg",
     category: "hardware",
   },
   {
     name: "Trezor Safe 7",
     description: "The hardware wallet that redefines crypto security forever — radically transparent, fully wireless, and quantum-ready.",
     url: "https://trezor.io/trezor-safe-7",
-    logo: trezorLogo,
+    logo: "/trezor-logo.jpg",
     category: "hardware",
   },
   {
     name: "Trezor Expert",
     description: "Personalized onboarding service with one-on-one video guidance for setting up your hardware wallet and learning security best practices.",
     url: "https://trezor.io/trezor-expert",
-    logo: trezorLogo,
+    logo: "/trezor-logo.jpg",
     category: "services",
   },
 ];
@@ -102,7 +100,6 @@ const Products = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
-    // Wait 5s before starting auto-play so the first slide is visible longer
     initialDelayRef.current = setTimeout(() => {
       resetAutoplay();
     }, 5000);
@@ -223,7 +220,7 @@ const Products = () => {
                                 >
                                   <img
                                     src={product.logo}
-                                    alt={`Lauri Hänninen — ${product.name} product launch`}
+                                    alt={`${product.name} logo — product launched by Lauri Hänninen`}
                                     className="w-10 h-10 rounded-lg object-contain bg-white p-1.5 shadow-md"
                                     width={40}
                                     height={40}
@@ -245,7 +242,7 @@ const Products = () => {
                                 >
                                   <img
                                     src={product.logo}
-                                    alt={`Lauri Hänninen — ${product.name} product launch`}
+                                    alt={`${product.name} logo — product launched by Lauri Hänninen`}
                                     className="w-20 h-20 rounded-xl object-contain bg-white p-2 shadow-lg"
                                     width={80}
                                     height={80}

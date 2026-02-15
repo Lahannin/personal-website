@@ -23,7 +23,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "The original hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
-    logo: "https://i.ibb.co/k6c7pGgx/trezor-logo.jpg",
+    logo: "/trezor-experience-logo.jpg",
     roles: [
       {
         title: "Product Marketing Lead",
@@ -53,7 +53,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
-    logo: "https://i.ibb.co/bjq1Hx0P/product-marketing-alliance-logo.jpg",
+    logo: "/product-marketing-alliance-experience-logo.jpg",
     roles: [
       {
         title: "Chapter Lead",
@@ -75,7 +75,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "A leading analytics platform enabling businesses to build and embed customizable BI dashboards at scale.",
-    logo: "https://i.ibb.co/gFz2sFSs/gooddata-logo.jpg",
+    logo: "/gooddata-experience-logo.jpg",
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
@@ -104,7 +104,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "A global creative agency combining creativity and technology to deliver marketing solutions for top brands.",
-    logo: "https://i.ibb.co/5gCqRQr2/wunderman-thompson-logo.jpg",
+    logo: "/wunderman-thompson-experience-logo.jpg",
     roles: [
       {
         title: "Web Tagging Team Lead",
@@ -136,7 +136,7 @@ const companies: Company[] = [
     name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
     description: "Swiss-based PeopleTech startup transforming workplace culture with AI- and data-powered solutions.",
-    logo: "https://i.ibb.co/yF0gRHpn/new-sqn-logo.png",
+    logo: "/sqn-sinequanon-logo.png",
     roles: [
       {
         title: "Client Delivery Specialist",

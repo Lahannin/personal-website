@@ -32,19 +32,19 @@ const educationData = [
     institution: "Oulu Business School, University of Oulu",
     degree: "Master of Science (M.Sc.)",
     field: "Economics and Business Administration",
-    logo: "https://i.ibb.co/XxGphrgW/university-of-oulu-logo.jpg",
+    logo: "/university-of-oulu-logo.jpg",
   },
   {
     institution: "University of Helsinki",
     degree: "Non-Degree Studies",
     field: "Computer Science",
-    logo: "https://i.ibb.co/gMdN7mnq/1631300517673.jpg",
+    logo: "/university-of-helsinki-logo.jpg",
   },
   {
     institution: "University of Eastern Finland",
     degree: "Non-Degree Studies",
     field: "Work and Organizational Psychology",
-    logo: "https://i.ibb.co/398GD7x2/university-of-eastern-finland-logo.jpg",
+    logo: "/university-of-eastern-finland-logo.jpg",
   },
 ];
 

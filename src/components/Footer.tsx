@@ -18,10 +18,6 @@ const Footer = () => {
             <p className="mono text-sm text-muted-foreground">
               © {currentYear} Lauri Hänninen
             </p>
-            {/* Fail-safe text for bots that miss the link header */}
-            <span className="text-[10px] text-muted-foreground/50 uppercase tracking-widest mono">
-              Machine-Readable: /llms.txt
-            </span>
           </div>
 
           <nav aria-label="Footer navigation">

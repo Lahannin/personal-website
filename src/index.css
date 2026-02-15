@@ -72,6 +72,7 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   /* Respect reduced motion preference */
@@ -87,8 +88,8 @@
     }
   }
 
-  /* Force GPU compositing for animated elements to prevent flickering */
-  [style*="opacity"], [style*="transform"] {
+  /* MOBILE OPTIMIZATION: Hardware acceleration only for key hero elements */
+  .hero-animate {
     will-change: transform, opacity;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -96,19 +97,19 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    /* Explicit background color for instant FCP */
+    background-color: hsl(210 40% 98%);
   }
 
   ::selection {
     @apply bg-primary/30 text-foreground;
   }
 
-  /* Visible focus states for accessibility */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-primary;
   }
 
-  /* Remove default focus outline when using focus-visible */
   :focus:not(:focus-visible) {
     outline: none;
   }
@@ -166,25 +167,15 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  /* Modern button styles */
   .btn-modern {
     @apply relative overflow-hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-modern::before {
-    content: '';
-    @apply absolute inset-0;
-    background: linear-gradient(135deg, transparent 0%, hsl(217 46% 21% / 0.1) 50%, transparent 100%);
-    transform: translateX(-100%);
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-modern:hover::before {
     transform: translateX(100%);
   }
 
-  /* Magnetic hover effect for cards — more aggressive */
   .card-hover {
     transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
@@ -194,7 +185,6 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  /* Underline animation for links */
   .link-underline {
     @apply relative;
   }
@@ -212,12 +202,10 @@
     transform-origin: left;
   }
 
-  /* Glow pulse for status indicators */
   .glow-pulse {
     animation: glowPulse 2s ease-in-out infinite;
   }
 
-  /* Shimmer effect for loading states */
   .shimmer {
     background: linear-gradient(
       90deg,
@@ -229,26 +217,13 @@
     animation: shimmer 1.5s ease-in-out infinite;
   }
 
-  /* Icon bounce on hover */
   .icon-bounce:hover svg {
     animation: iconBounce 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Skill tag hover */
   .skill-tag {
     @apply relative overflow-hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .skill-tag::before {
-    content: '';
-    @apply absolute inset-0 bg-primary/10;
-    transform: translateY(100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .skill-tag:hover::before {
-    transform: translateY(0);
   }
 
   .skill-tag:hover {
@@ -258,32 +233,26 @@
 }
 
 @layer utilities {
+  /* PERFORMANCE: Faster animations for Mobile 4G */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
-  .animate-pulse-slow {
-    animation: pulse 4s ease-in-out infinite;
-  }
-
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.4s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+    /* Reduced distance (15px) for smoother mobile paint */
+    animation: slideUp 0.5s ease-out forwards;
   }
 
   .animate-scale-in {
-    animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .animate-blur-in {
-    animation: blurIn 0.8s ease-out forwards;
-  }
-
-  .animate-stagger {
-    animation: staggerFade 0.6s ease-out forwards;
+    animation: blurIn 0.6s ease-out forwards;
   }
 
   @keyframes float {
@@ -298,11 +267,11 @@
 
   @keyframes slideUp {
     from { 
-      opacity: 0;
-      transform: translateY(30px);
+      opacity: 0; 
+      transform: translateY(15px);
     }
     to { 
-      opacity: 1;
+      opacity: 1; 
       transform: translateY(0);
     }
   }
@@ -310,7 +279,7 @@
   @keyframes scaleIn {
     from {
       opacity: 0;
-      transform: scale(0.9);
+      transform: scale(0.96);
     }
     to {
       opacity: 1;
@@ -321,8 +290,8 @@
   @keyframes blurIn {
     from {
       opacity: 0;
-      filter: blur(10px);
-      transform: translateY(20px);
+      filter: blur(8px);
+      transform: translateY(10px);
     }
     to {
       opacity: 1;
@@ -331,23 +300,12 @@
     }
   }
 
-  @keyframes staggerFade {
-    from {
-      opacity: 0;
-      transform: translateY(20px) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
   @keyframes glowPulse {
     0%, 100% {
-      box-shadow: 0 0 0 0 hsl(142 76% 36% / 0.4);
+      box-shadow: 0 0 0 0 hsl(217 55% 18% / 0.2);
     }
     50% {
-      box-shadow: 0 0 0 8px hsl(142 76% 36% / 0);
+      box-shadow: 0 0 0 8px hsl(217 55% 18% / 0);
     }
   }
 
@@ -358,23 +316,15 @@
 
   @keyframes iconBounce {
     0%, 100% { transform: translateY(0); }
-    25% { transform: translateY(-4px); }
-    50% { transform: translateY(0); }
-    75% { transform: translateY(-2px); }
-  }
-
-  @keyframes scrollIndicator {
-    0%, 100% { 
-      opacity: 1;
-      transform: translateY(0);
-    }
-    50% { 
-      opacity: 0.5;
-      transform: translateY(8px);
-    }
+    50% { transform: translateY(-3px); }
   }
 
   .animate-scroll-indicator {
     animation: scrollIndicator 2s ease-in-out infinite;
+  }
+  
+  @keyframes scrollIndicator {
+    0%, 100% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0.5; transform: translateY(6px); }
   }
 }

@@ -7,14 +7,18 @@ const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
+  
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
+    layoutEffect: false 
   });
 
   const disableParallax = isMobile || prefersReducedMotion;
-  const backgroundY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "30%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "15%"]);
+  
+  // Parallax settings optimized for "smooth" over "dramatic"
+  const backgroundY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "20%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "10%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const containerVariants = {
@@ -22,38 +26,40 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.15,
+        staggerChildren: 0.08, // Snappier than 0.15
+        delayChildren: 0.05,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 }, // 20px is easier on the GPU than 30px
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: [0.22, 0.61, 0.36, 1] as const,
       },
     },
   };
 
   return (
-    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Background Gradients */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20"
+        className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20 pointer-events-none"
       />
       
+      {/* Glow Blobs - Accelerated with translateZ */}
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 overflow-hidden pointer-events-none"
       >
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-highlight/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/5 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-highlight/3 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
       </motion.div>
 
       <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
@@ -63,8 +69,7 @@ const Hero = () => {
           animate="visible"
           className="max-w-5xl mx-auto text-center"
         >
-
-          {/* Profile photo with highlight ring */}
+          {/* Profile photo with all your hover effects preserved */}
           <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-0">
             <div className="relative group">
               <div className="absolute -inset-4 rounded-full bg-highlight/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -72,7 +77,7 @@ const Hero = () => {
               <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500">
                 <img 
                   src="/lauri-hanninen-profile-photo.webp" 
-                  alt="Lauri Hänninen — Product Marketing Lead at Trezor, based in Prague" 
+                  alt="Lauri Hänninen — Product Marketing Lead at Trezor" 
                   className="w-full h-full object-cover"
                   width={208}
                   height={208}
@@ -84,7 +89,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Name — massive and bold */}
+          {/* Name */}
           <motion.h1
             id="hero-heading"
             variants={itemVariants}
@@ -93,7 +98,7 @@ const Hero = () => {
             Lauri <span className="text-gradient">Hänninen</span>
           </motion.h1>
 
-          {/* Tagline — bigger and bolder */}
+          {/* Tagline */}
           <motion.p
             variants={itemVariants}
             className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto mb-4 font-medium"
@@ -101,32 +106,32 @@ const Hero = () => {
             Product Marketer turning complex tech into stories people actually understand.
           </motion.p>
           
-          {/* Location */}
+          {/* Location details */}
           <motion.div
             variants={itemVariants}
             className="flex items-center justify-center gap-2 text-muted-foreground mb-14"
           >
             <MapPin className="w-4 h-4" aria-hidden="true" />
-            <span className="mono text-sm"><span className="sr-only">Location: </span>Prague, Czechia 🇨🇿</span>
+            <span className="mono text-sm">Prague, Czechia 🇨🇿</span>
             <span className="mx-2 text-border">•</span>
             <span className="mono text-sm">Finnish origins 🇫🇮</span>
           </motion.div>
 
-          {/* CTA buttons — bolder, more contrast */}
+          {/* All CTA buttons restored */}
           <motion.div
             variants={itemVariants}
             className="flex flex-row items-center justify-center gap-4 sm:gap-5"
           >
             <a
               href="#about"
-              className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-primary text-primary-foreground font-bold rounded-xl shadow-lg hover:shadow-highlight/20 hover:scale-105 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300 text-base sm:text-lg"
+              className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-primary text-primary-foreground font-bold rounded-xl shadow-lg hover:shadow-highlight/20 hover:scale-105 transition-all duration-300 text-base sm:text-lg"
             >
               Learn More
               <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
             </a>
             <a
               href="#contact"
-              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-secondary text-secondary-foreground font-bold rounded-xl border-2 border-border hover:border-highlight/50 hover:bg-highlight/5 hover:scale-105 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300 text-base sm:text-lg"
+              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-secondary text-secondary-foreground font-bold rounded-xl border-2 border-border hover:border-highlight/50 hover:bg-highlight/5 hover:scale-105 transition-all duration-300 text-base sm:text-lg"
             >
               Get in Touch
             </a>

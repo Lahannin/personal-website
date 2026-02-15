@@ -1,3 +1,6 @@
+Index fixed · HTML
+Copy
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -119,6 +122,62 @@
       }
     }
   ]
+}
+</script>
+
+<!-- WEBSITE SCHEMA - Establishes site identity and relationships -->
+<script type="application/ld+json" vite-ignore>
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://laurihanninen.com/#website",
+  "url": "https://laurihanninen.com",
+  "name": "Lauri Hänninen - Product Marketing Lead",
+  "description": "Professional profile and portfolio for Lauri Hänninen, specializing in GTM strategy for complex technology",
+  "author": {
+    "@id": "https://laurihanninen.com/#person"
+  },
+  "inLanguage": "en-US",
+  "copyrightYear": 2024
+}
+</script>
+
+<!-- WEB PAGE SCHEMA - Fixed version using WebPage instead of ProfilePage -->
+<script type="application/ld+json" vite-ignore>
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://laurihanninen.com/#webpage",
+  "url": "https://laurihanninen.com",
+  "name": "Lauri Hänninen - Product Marketing Lead",
+  "description": "Professional profile of Lauri Hänninen, Product Marketing Lead at Trezor, specializing in hardware security and open-source GTM",
+  "about": {
+    "@id": "https://laurihanninen.com/#person"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://laurihanninen.com/profile-photo.png"
+  },
+  "dateModified": "2026-02-14T00:00:00Z",
+  "datePublished": "2024-01-01T00:00:00Z",
+  "inLanguage": "en-US",
+  "isPartOf": {
+    "@id": "https://laurihanninen.com/#website"
+  }
+}
+</script>
+
+<!-- BREADCRUMB SCHEMA - Navigation context for search engines -->
+<script type="application/ld+json" vite-ignore>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Lauri Hänninen",
+    "item": "https://laurihanninen.com"
+  }]
 }
 </script>
 

@@ -4,7 +4,6 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import fs from "fs";
 
-// Plugin to copy index.html as 404.html for GitHub Pages SPA support
 function copy404Plugin(): Plugin {
   return {
     name: "copy-404",
@@ -26,7 +25,29 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     hmr: { overlay: false },
   },
-  plugins: [react(), mode === "development" && componentTagger(), copy404Plugin()].filter(Boolean),
+  plugins: [
+    react(), 
+    mode === "development" && componentTagger(), 
+    copy404Plugin()
+  ].filter(Boolean),
+  build: {
+    // 1. Inlines small CSS files directly into HTML (removes a network request)
+    assetsInlineLimit: 14336, // 14kb - covers your 13.3kb CSS file
+    
+    // 2. Optimization: Ensure the polyfill chunk doesn't create its own chain
+    modulePreload: {
+      polyfill: true,
+    },
+    
+    rollupOptions: {
+      output: {
+        // 3. Keep chunks consistent to help Cloudflare caching
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
+    },
+  },
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },

@@ -70,10 +70,10 @@ const About = () => {
             >
               <div className="card-gradient border border-border rounded-2xl p-8 shadow-md">
                 <div className="grid grid-cols-2 gap-10 items-center justify-items-center">
-                  <img src="/trezor-logo.avif" alt="Trezor logo — Lauri Hänninen leads product marketing for Bitcoin hardware wallets" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
-                  <img src="/gooddata-logo.avif" alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
-                  <img src="/product-marketing-alliance-logo.avif" alt="Product Marketing Alliance logo — Lauri Hänninen founded the Prague PMM chapter in the Czech Republic" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
-                  <img src="/wunderman-thompson-logo.avif" alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
+                  <img src="/product-led-certified.avif" alt="Product Led certificate" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
+                  <img src="/product-marketing-certified.avif" alt="Product Marketing Core certificate" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
+                  <img src="/product-marketing-ambassador.avif" alt="Product Marketing Ambassador logo — Lauri Hänninen founded the Prague PMM chapter in the Czech Republic" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
+                  <img src="/product-led-fundamentals-certified.avif" alt="Product Led Fundamentals Certificate" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
                 </div>
               </div>
             </motion.div>

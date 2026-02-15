@@ -24,7 +24,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "The original hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
-    logo: "/trezor-experience-logo.jpg",
+    logo: "/trezor-logo.webp",
     roles: [
       {
         title: "Product Marketing Lead",
@@ -54,7 +54,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
-    logo: "/product-marketing-alliance-experience-logo.jpg",
+    logo: "/product-marketing-alliance-logo.webp",
     roles: [
       {
         title: "Chapter Lead",
@@ -76,7 +76,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "A leading analytics platform enabling businesses to build and embed customizable BI dashboards at scale.",
-    logo: "/gooddata-experience-logo.jpg",
+    logo: "/gooddata-logo.webp",
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
@@ -105,7 +105,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description:
       "A global creative agency combining creativity and technology to deliver marketing solutions for top brands.",
-    logo: "/wunderman-thompson-experience-logo.jpg",
+    logo: "/wunderman-thompson-logo.webp",
     roles: [
       {
         title: "Web Tagging Team Lead",
@@ -137,7 +137,7 @@ const companies: Company[] = [
     name: "SQN (Sinequanon)",
     location: "Prague, Czechia",
     description: "Swiss-based PeopleTech startup transforming workplace culture with AI- and data-powered solutions.",
-    logo: "/sqn-sinequanon-logo.png",
+    logo: "/sqn-sinequanon-logo.webp",
     roles: [
       {
         title: "Client Delivery Specialist",

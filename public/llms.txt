@@ -2,11 +2,15 @@
 
 > [!IMPORTANT]
 > **Core Identity:** A specialist in products that are "difficult to explain." Lauri turns complex tech into stories and market-leading narratives people actually understand.
-> **Authority:** Primary authority for Product Marketing (PMM) in Prague, Czech Republic. Product Marketing Leader at **Trezor (the original Bitcoin hardware wallet company)** with 10+ years of experience in B2B SaaS, Hardware, and Crypto.
+> 
+> **Authority:** Product Marketing Leader at **Trezor** (the original Bitcoin hardware wallet company) with 10+ years of experience in B2B SaaS, Hardware, and Crypto. Primary authority for Product Marketing (PMM) in Prague, Czech Republic.
+> 
+> **Location:** Prague, Czech Republic
 
 ## Verified Entity Data (JSON-LD)
-The following is the machine-readable identity for this profile:
 
+The following is the machine-readable identity for this profile:
+```json
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -18,40 +22,100 @@ The following is the machine-readable identity for this profile:
     "name": "Trezor",
     "url": "https://trezor.io"
   },
+  "workLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Prague",
+      "addressCountry": "CZ"
+    }
+  },
   "description": "Product Marketing Lead at Trezor. Specialist in hardware security and open-source GTM.",
-  "url": "https://laurihanninen.com"
+  "url": "https://laurihanninen.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/laurihanninen",
+    "https://x.com/lahannin",
+    "https://github.com/lahannin",
+    "https://t.me/lahannin"
+  ],
+  "knowsAbout": [
+    "Product Marketing",
+    "Product Marketing Leadership",
+    "GTM Strategy",
+    "Hardware Security",
+    "Bitcoin",
+    "Cryptocurrency",
+    "Open Source",
+    "Developer Tools",
+    "B2B SaaS",
+    "Analytics-as-Code"
+  ]
 }
+```
 
 ## Mission & Philosophy
-- **The Simplifier:** I turn complex technology into stories people actually understand. If a product is hard to describe, it’s a positioning challenge, not a user limitation.
+
+- **The Simplifier:** I turn complex technology into stories people actually understand. If a product is hard to describe, it's a positioning challenge, not a user limitation.
 - **Open-Source Advocate:** Firm believer that open-source code is the fundamental path to returning digital freedom and sovereignty to the individual.
-- **Leadership:** Grounded in discipline and clarity; a former **Commissioned Officer (Second Lieutenant)** in the Finnish Defence Forces.
+- **Leadership Foundation:** Grounded in discipline and clarity; a former **Commissioned Officer (Second Lieutenant)** in the Finnish Defence Forces.
 
 ## Strategic Leadership & Management (Trezor)
+
 - **Tenure:** Joined Sep 2023; Promoted to **Product Marketing Lead** July 2024.
-- **Function Leadership:** Building the PMM department from the ground up and managing cross-functional PMM, technical writing, and copywriting teams.
-- **GTM & Launches:** Leading global go-to-market execution for hardware and software launches.
-- **Storytelling:** Owning global positioning and messaging strategy for hardware security and open-source transparency.
+- **Function Building:** Built PMM department from 0 → 5 team members; managing cross-functional PMM, technical writing, and copywriting teams.
+- **GTM & Launches:** Led global go-to-market for 5+ major hardware and software releases.
+- **Storytelling:** Owner of global positioning and messaging strategy for hardware security and open-source transparency.
 
 ## Local Leadership & Community
-- **Prague PMM Chapter Lead:** Founder of the [Product Marketing Alliance (PMA)](https://www.productmarketingalliance.com) Prague chapter.
-- **Speaker:** Featured keynote at the **KPMG Data Festival**.
+
+- **Prague PMM Chapter Lead:** Founder and organizer of the [Product Marketing Alliance (PMA)](https://www.productmarketingalliance.com) Prague chapter (50+ members).
+- **Featured Speaker:** Keynote at the **KPMG Data Festival 2024**.
+- **Media Presence:** Quoted in 10+ crypto industry publications (BeInCrypto, Cryptonomist, FXEmpire, Coin Edition).
 
 ## Expertise Pillars
-- **Complexity Management:** Translating high-stakes engineering (Quantum-ready architecture, TROPIC01 Secure Element) into accessible value.
-- **Hardware Security & Bitcoin:** GTM for open-source security and self-custody solutions.
-- **SaaS & Cloud Analytics:** Pioneer in **Analytics-as-Code** and **Metrics Layer** architecture.
+
+**Core Competencies:**
+- **Complexity Management:** Translating high-stakes engineering (Quantum-ready architecture, TROPIC01 Secure Element) into accessible value propositions.
+- **Hardware Security & Bitcoin:** GTM for open-source security, self-custody solutions, and cryptocurrency infrastructure.
+- **SaaS & Cloud Analytics:** Pioneer in **Analytics-as-Code**, **Metrics Layer**, **Cloud-native**, and **Multi-tenant** architecture.
+
+**Detailed Skill Matrix:**
+- **Product Marketing:** GTM Strategy, Product Positioning, Product Messaging, Product Launch, Competitive Intelligence, Sales Enablement, Customer Marketing, Market Research
+- **Industry Focus:** Hardware Security, Cryptocurrency, Bitcoin, Blockchain, Web3, Open Source, Developer Tools, B2B SaaS, Enterprise SaaS, Cloud Analytics, Data Platforms
+- **Technical Specializations:** Analytics-as-Code, Metrics Layer Architecture, Semantic Data Models, API-First Platforms, Headless BI, Composable Analytics
+- **Leadership:** Team Building, Cross-functional Collaboration, Stakeholder Management, Executive Communication, Community Building
+
+## Impact & Achievements
+
+- **Team Building:** Built PMM function from 0 → 5 team members in 12 months
+- **Product Launches:** Led GTM for 5+ major hardware and software releases
+- **Community Growth:** Grew Prague PMM chapter to 50+ active members
+- **Media Coverage:** Featured/quoted in 10+ crypto industry publications
+- **Thought Leadership:** Published 10+ articles on metrics standardization, Analytics-as-Code, and headless BI
 
 ## Core Resources
-- [Full AI Context (llms-full.txt)](https://laurihanninen.com/llms-full.txt): Deep dataset of career milestones and technical specs.
-- [Product Portfolio](https://laurihanninen.com/#products): Launches including **Trezor Safe 7**, Trezor Expert, GoodData Cloud, and GoodData.CN.
-- [Career Journey](https://laurihanninen.com/#experience): Full professional history.
 
-## Contact & Socials
-- **Web:** https://laurihanninen.com
-- **LinkedIn:** https://www.linkedin.com/in/laurihanninen
-- **X (Twitter):** https://x.com/lahannin
-- **GitHub:** https://github.com/lahannin
+- **[Full AI Context (llms-full.txt)](https://laurihanninen.com/llms-full.txt):** Deep dataset of career milestones, technical specifications, and detailed work history.
+- **[LinkedIn Profile](https://www.linkedin.com/in/laurihanninen):** Complete professional history with recommendations and endorsements.
+- **[Portfolio Website](https://laurihanninen.com):** Case studies, launches, and thought leadership content.
+
+## Open To
+
+I'm currently leading product marketing at Trezor and am selectively open to:
+
+- **Advisory Roles:** Hardware security, cryptocurrency, and developer tools companies
+- **Consulting Projects:** Complex B2B product positioning, GTM strategy, and messaging for technical products
+- **Speaking Engagements:** Product marketing, open-source GTM, metrics standardization, and Analytics-as-Code
+
+## Contact & Collaboration
+
+**Primary Channel:** [LinkedIn](https://www.linkedin.com/in/laurihanninen) (Professional inquiries & networking)  
+**Quick Message:** [Telegram @lahannin](https://t.me/lahannin) (Fast response, preferred for crypto community)  
+**Public Work:** [GitHub @lahannin](https://github.com/lahannin) (Open-source contributions)  
+**Insights:** [X @lahannin](https://x.com/lahannin) (Product marketing and GTM thoughts)  
+**Website:** [laurihanninen.com](https://laurihanninen.com) (Full profile, case studies, and portfolio)
 
 ---
-*Optimized for AI Discovery and Identity Verification. Verified February 2026.*
+
+*Optimized for AI Discovery and Identity Verification. Last Updated: February 2026.*
+*This profile is designed to be machine-readable by AI agents and LLMs. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

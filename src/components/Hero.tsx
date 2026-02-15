@@ -2,7 +2,7 @@ import { MapPin, ArrowDown } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import profilePhoto from "@/assets/profile-photo.png";
+import profilePhoto from "@/assets/profile-photo.webp";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -78,6 +78,8 @@ const Hero = () => {
                   width={208}
                   height={208}
                   loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
                 />
               </div>
             </div>

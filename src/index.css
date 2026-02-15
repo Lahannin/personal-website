@@ -1,58 +1,38 @@
-/* Fonts loaded via index.html with preconnect for performance */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Lauri Hänninen Personal Site - Clean Neutral Light Design System */
-
 @layer base {
   :root {
-    /* Bold palette — high contrast navy with electric highlights */
     --background: 210 40% 98%;
     --foreground: 222 47% 8%;
-
     --card: 0 0% 100%;
     --card-foreground: 222 47% 8%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 8%;
-
-    /* Deep navy — punchy and confident */
     --primary: 217 55% 18%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 210 40% 96%;
     --secondary-foreground: 217 55% 18%;
-
     --muted: 210 40% 94%;
     --muted-foreground: 217 25% 42%;
-
-    /* Electric highlight accent */
     --accent: 217 55% 30%;
     --accent-foreground: 0 0% 100%;
-
-    /* Hot highlight for rebel touches */
     --highlight: 15 90% 55%;
     --highlight-foreground: 0 0% 100%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 214 25% 88%;
     --input: 214 25% 88%;
     --ring: 217 55% 18%;
-
     --radius: 0.75rem;
 
-    /* Aggressive gradients */
     --gradient-primary: linear-gradient(135deg, hsl(217 55% 18%) 0%, hsl(217 55% 30%) 50%, hsl(15 90% 55%) 100%);
     --gradient-light: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 40% 96%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
     --gradient-glow: radial-gradient(ellipse at center, hsl(15 90% 55% / 0.08) 0%, hsl(217 55% 18% / 0.06) 50%, transparent 70%);
     --gradient-rebel: linear-gradient(135deg, hsl(15 90% 55%) 0%, hsl(350 85% 50%) 100%);
 
-    /* Dramatic shadows */
     --shadow-glow: 0 0 100px hsl(217 55% 18% / 0.18);
     --shadow-card: 0 6px 30px hsl(217 55% 18% / 0.08);
     --shadow-card-hover: 0 20px 60px hsl(217 55% 18% / 0.15);
@@ -73,13 +53,12 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* PERFORMANCE: Prevents layout jump when scrollbar appears */
+    scrollbar-gutter: stable; 
   }
 
-  /* Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
@@ -88,30 +67,24 @@
     }
   }
 
-  /* MOBILE OPTIMIZATION: Hardware acceleration only for key hero elements */
+  /* GPU Acceleration for Hero only - prevents flickering on mobile */
   .hero-animate {
     will-change: transform, opacity;
-    -webkit-backface-visibility: hidden;
+    transform: translateZ(0); 
     backface-visibility: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    /* Explicit background color for instant FCP */
-    background-color: hsl(210 40% 98%);
+    /* PERFORMANCE: Explicit color prevents white flash during Cloudflare handshake */
+    background-color: hsl(210 40% 98%); 
+    /* PERFORMANCE: Ensures text is readable even if font is loading */
+    text-rendering: optimizeLegibility; 
   }
 
   ::selection {
     @apply bg-primary/30 text-foreground;
-  }
-
-  :focus-visible {
-    @apply outline-2 outline-offset-2 outline-primary;
-  }
-
-  :focus:not(:focus-visible) {
-    outline: none;
   }
 }
 
@@ -133,7 +106,6 @@
     position: relative;
     background: var(--gradient-card);
     border: 1px solid hsl(217 55% 18% / 0.15);
-    box-shadow: 0 6px 30px hsl(217 55% 18% / 0.06);
   }
 
   .border-gradient::before {
@@ -150,30 +122,9 @@
     pointer-events: none;
   }
 
-  .text-highlight {
-    color: hsl(var(--highlight));
-  }
-
-  .bg-highlight {
-    background-color: hsl(var(--highlight));
-  }
-
-  .text-gradient-rebel {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-rebel);
-  }
-
-  .mono {
-    font-family: 'JetBrains Mono', monospace;
-  }
-
   .btn-modern {
     @apply relative overflow-hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-modern:hover::before {
-    transform: translateX(100%);
   }
 
   .card-hover {
@@ -185,23 +136,7 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  .link-underline {
-    @apply relative;
-  }
-
-  .link-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .link-underline:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
+  /* PERFORMANCE: Use standard CSS for common animations to reduce JS execution */
   .glow-pulse {
     animation: glowPulse 2s ease-in-out infinite;
   }
@@ -216,48 +151,15 @@
     background-size: 200% 100%;
     animation: shimmer 1.5s ease-in-out infinite;
   }
-
-  .icon-bounce:hover svg {
-    animation: iconBounce 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .skill-tag {
-    @apply relative overflow-hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .skill-tag:hover {
-    @apply text-primary border-primary/30;
-    transform: translateY(-2px);
-  }
 }
 
 @layer utilities {
-  /* PERFORMANCE: Faster animations for Mobile 4G */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
   .animate-fade-in {
     animation: fadeIn 0.4s ease-out forwards;
   }
 
   .animate-slide-up {
-    /* Reduced distance (15px) for smoother mobile paint */
     animation: slideUp 0.5s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  .animate-blur-in {
-    animation: blurIn 0.6s ease-out forwards;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
   }
 
   @keyframes fadeIn {
@@ -276,47 +178,14 @@
     }
   }
 
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.96);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes blurIn {
-    from {
-      opacity: 0;
-      filter: blur(8px);
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateY(0);
-    }
-  }
-
   @keyframes glowPulse {
-    0%, 100% {
-      box-shadow: 0 0 0 0 hsl(217 55% 18% / 0.2);
-    }
-    50% {
-      box-shadow: 0 0 0 8px hsl(217 55% 18% / 0);
-    }
+    0%, 100% { box-shadow: 0 0 0 0 hsl(217 55% 18% / 0.2); }
+    50% { box-shadow: 0 0 0 8px hsl(217 55% 18% / 0); }
   }
 
   @keyframes shimmer {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
-  }
-
-  @keyframes iconBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
   }
 
   .animate-scroll-indicator {

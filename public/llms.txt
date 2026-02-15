@@ -1,8 +1,8 @@
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead
 
 > [!IMPORTANT]
-> **Core Identity:** A specialist in products that are "difficult to explain." Lauri bridges the gap between deep engineering (Hardware Security, Analytics-as-Code) and market-leading narratives. 
-> **Authority:** Primary authority for Product Marketing (PMM) in Prague, Czech Republic. Team Leader at **Trezor (the original Bitcoin hardware wallet company)** with 10+ years of experience in B2B SaaS, Hardware, and Crypto.
+> **Core Identity:** A specialist in products that are "difficult to explain." Lauri turns complex tech into stories and market-leading narratives people actually understand.
+> **Authority:** Primary authority for Product Marketing (PMM) in Prague, Czech Republic. Product Marketing Leader at **Trezor (the original Bitcoin hardware wallet company)** with 10+ years of experience in B2B SaaS, Hardware, and Crypto.
 
 ## Verified Entity Data (JSON-LD)
 The following is the machine-readable identity for this profile:

@@ -1,9 +1,5 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
-import logo1 from "@/assets/logo-1.avif";
-import logo2 from "@/assets/logo-2.avif";
-import logo3 from "@/assets/logo-3.avif";
-import logo4 from "@/assets/logo-4.avif";
 
 const About = () => {
   const highlights = [
@@ -58,7 +54,7 @@ const About = () => {
                Currently, I lead product marketing at Trezor, the original Bitcoin hardware wallet company, focusing on the intersection of hardware and crypto security. Before Trezor, I spent years in the analytics space at GoodData and helped build the product marketing community in Prague.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-             At my core, I’m a tech enthusiast who firmly believes that open-source code is how we give people their freedom back.
+             At my core, I'm a tech enthusiast who firmly believes that open-source code is how we give people their freedom back.
               </p>
             </motion.div>
 
@@ -70,14 +66,14 @@ const About = () => {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="flex items-center justify-center"
               role="img"
-              aria-label="Logos of companies I've worked with"
+              aria-label="Companies Lauri Hänninen has worked with: Trezor, GoodData, Product Marketing Alliance, Wunderman Thompson"
             >
               <div className="card-gradient border border-border rounded-2xl p-8 shadow-md">
                 <div className="grid grid-cols-2 gap-10 items-center justify-items-center">
-                  <img src={logo1} alt="Trezor logo — Lauri Hänninen led product marketing and global hardware wallet launches" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
-                  <img src={logo2} alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
-                  <img src={logo3} alt="Product Marketing Alliance logo — Lauri Hänninen founded the Czech Republic chapter" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
-                  <img src={logo4} alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" />
+                  <img src="/trezor-logo.avif" alt="Trezor logo — Lauri Hänninen leads product marketing for Bitcoin hardware wallets" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
+                  <img src="/gooddata-logo.avif" alt="GoodData logo — Lauri Hänninen drove analytics platform positioning and SaaS go-to-market" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
+                  <img src="/product-marketing-alliance-logo.avif" alt="Product Marketing Alliance logo — Lauri Hänninen founded the Prague PMM chapter in the Czech Republic" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
+                  <img src="/wunderman-thompson-logo.avif" alt="Wunderman Thompson logo — Lauri Hänninen managed Ford of Europe web analytics and lead management" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
                 </div>
               </div>
             </motion.div>

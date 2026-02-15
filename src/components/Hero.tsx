@@ -2,7 +2,6 @@ import { MapPin, ArrowDown } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import profilePhoto from "@/assets/profile-photo.webp";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -72,8 +71,8 @@ const Hero = () => {
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-highlight/40 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500">
                 <img 
-                  src={profilePhoto} 
-                  alt="Lauri Hänninen - Product Marketing Lead" 
+                  src="/lauri-hanninen-profile-photo.webp" 
+                  alt="Lauri Hänninen — Product Marketing Lead at Trezor, based in Prague" 
                   className="w-full h-full object-cover"
                   width={208}
                   height={208}

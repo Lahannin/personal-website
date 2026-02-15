@@ -2,22 +2,15 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import meetup1 from "@/assets/meetup-1.jpg";
-import meetup2 from "@/assets/meetup-2.jpg";
-import meetup3 from "@/assets/meetup-3.jpg";
-import meetup4 from "@/assets/meetup-4.jpg";
-import meetup5 from "@/assets/meetup-5.jpg";
-import meetup6 from "@/assets/meetup-6.jpg";
-import meetup7 from "@/assets/meetup-7.jpg";
 
 const photos = [
-  { src: meetup1, alt: "Product Marketing Alliance Prague meetup dinner" },
-  { src: meetup2, alt: "PMA Prague Christmas meetup" },
-  { src: meetup3, alt: "Product marketing community gathering in Prague" },
-  { src: meetup4, alt: "PMA Prague meetup group photo" },
-  { src: meetup5, alt: "Product marketing dinner meetup" },
-  { src: meetup6, alt: "PMA Prague community dinner event" },
-  { src: meetup7, alt: "PMA Prague meetup at a café" },
+  { src: "/product-marketing-meetup-1.jpg", alt: "Lauri Hänninen at Product Marketing Alliance Prague meetup dinner" },
+  { src: "/product-marketing-meetup-2.jpg", alt: "Lauri Hänninen hosting PMA Prague Christmas meetup" },
+  { src: "/product-marketing-meetup-3.jpg", alt: "Lauri Hänninen at product marketing community gathering in Prague" },
+  { src: "/product-marketing-meetup-4.jpg", alt: "Lauri Hänninen's PMA Prague meetup group photo" },
+  { src: "/product-marketing-meetup-5.jpg", alt: "Lauri Hänninen at product marketing dinner meetup in Prague" },
+  { src: "/product-marketing-meetup-6.jpg", alt: "Lauri Hänninen's PMA Prague community dinner event" },
+  { src: "/product-marketing-meetup-7.jpg", alt: "Lauri Hänninen's PMA Prague meetup at a café" },
 ];
 
 const MeetupGallery = () => {
@@ -161,6 +154,7 @@ const MeetupGallery = () => {
                           alt={photo.alt}
                           className="w-full aspect-[4/3] object-cover"
                           loading="lazy"
+                          decoding="async"
                         />
                       </motion.div>
                     </div>

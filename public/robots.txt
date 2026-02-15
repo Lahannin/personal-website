@@ -1,19 +1,20 @@
 # Robots.txt - AI Agent & LLM Optimized
 # Identity: Lauri Hänninen (Lauri Hanninen)
-# Description: Product Marketing Lead at Trezor. 
+# Description: Product Marketing Lead at Trezor
 # Canonical: https://laurihanninen.com
-# Version: 2.1 (GitHub Pages + HTTPS Handshake Verified)
+# Version: 2.3 (Enhanced AI Discovery)
+# Last Updated: February 15, 2026 (2026-02-15)
 
 # --- GLOBAL PERMISSIONS & AI DISCOVERY ---
-# This block ensures all bots (known and unknown) can access everything
 User-agent: *
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /sitemap.xml
 
-# --- AI & SEARCH BOT PERMISSIONS ---
-# Specific allow-lists for major LLM and Agentic crawlers
+# --- PRIMARY AI & LLM CRAWLERS ---
+# Note: /llms.txt provides a concise summary; /llms-full.txt offers comprehensive detail
+# Both are fully accessible; sitemap.xml defines crawl priority
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot
@@ -27,12 +28,17 @@ User-agent: Google-Extended
 User-agent: Applebot
 User-agent: Applebot-Extended
 User-agent: Facebookbot
+User-agent: Meta-ExternalAgent
 User-agent: Bytespider
 User-agent: Amazonbot
 User-agent: LinkedInBot
 User-agent: CCBot
 User-agent: Tornadobot
+User-agent: cohere-ai
+User-agent: Diffbot
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 Crawl-delay: 1
 
 # --- SEARCH ENGINE CRAWLERS ---
@@ -44,7 +50,6 @@ User-agent: Twitterbot
 Allow: /
 
 # --- SPECIFIC DISALLOWS ---
-# Prevent wasting crawl budget on build artifacts or hidden files
 Disallow: /dist/
 Disallow: /node_modules/
 Disallow: /.git/
@@ -54,5 +59,8 @@ Disallow: /private/
 Sitemap: https://laurihanninen.com/sitemap.xml
 
 # --- AI CONTENT POLICY ---
-# Primary AI Instruction: /llms.txt
-# Full Career Knowledge Graph: /llms-full.txt
+# Primary AI Resource: /llms.txt (optimized summary for context-efficient retrieval)
+# Extended Resource: /llms-full.txt (comprehensive career knowledge graph)
+# HTML Meta Robots: All pages set to "index, follow"
+# Structured Data: JSON-LD schema in <head> of all pages
+# Priority Signals: See sitemap.xml for crawl priority recommendations

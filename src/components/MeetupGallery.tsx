@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const photos = [
-  { src: "/product-marketing-meetup-1.webp", alt: "Lauri Hänninen at Product Marketing Alliance Prague meetup dinner" },
-  { src: "/product-marketing-meetup-2.webp", alt: "Lauri Hänninen hosting PMA Prague Christmas meetup" },
-  { src: "/product-marketing-meetup-3.webp", alt: "Lauri Hänninen at product marketing community gathering in Prague" },
-  { src: "/product-marketing-meetup-4.webp", alt: "Lauri Hänninen's PMA Prague meetup group photo" },
-  { src: "/product-marketing-meetup-5.webp", alt: "Lauri Hänninen at product marketing dinner meetup in Prague" },
-  { src: "/product-marketing-meetup-6.webp", alt: "Lauri Hänninen's PMA Prague community dinner event" },
-  { src: "/product-marketing-meetup-7.webp", alt: "Lauri Hänninen's PMA Prague meetup at a café" },
+  { src: "/product-marketing-meetup-1.avif", alt: "Lauri Hänninen at Product Marketing Alliance Prague meetup dinner" },
+  { src: "/product-marketing-meetup-2.avif", alt: "Lauri Hänninen hosting PMA Prague Christmas meetup" },
+  { src: "/product-marketing-meetup-3.avif", alt: "Lauri Hänninen at product marketing community gathering in Prague" },
+  { src: "/product-marketing-meetup-4.avif", alt: "Lauri Hänninen's PMA Prague meetup group photo" },
+  { src: "/product-marketing-meetup-5.avif", alt: "Lauri Hänninen at product marketing dinner meetup in Prague" },
+  { src: "/product-marketing-meetup-6.avif", alt: "Lauri Hänninen's PMA Prague community dinner event" },
+  { src: "/product-marketing-meetup-7.avif", alt: "Lauri Hänninen's PMA Prague meetup at a café" },
 ];
 
 const MeetupGallery = () => {

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+
 interface Role {
   title: string;
   period: string;
@@ -184,7 +185,7 @@ const Experience = () => {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Timeline line - hidden on mobile */}
+            {/* Timeline line */}
             <div className="hidden md:block absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
             {companies.map((company, index) => (
@@ -198,7 +199,7 @@ const Experience = () => {
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Timeline dot - hidden on mobile */}
+                {/* Timeline dot */}
                 <div className="hidden md:block absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
                   {hasCurrent(company) && (
                     <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-25" />
@@ -207,16 +208,19 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 hover:-translate-y-2 hover:shadow-xl transition-all duration-300" data-description={`Lauri Hänninen's role at ${company.name}: ${company.roles.map(r => r.title).join(', ')}. ${company.description || ''}`}>
+                  <div className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img
                         src={company.logo}
-                        alt={`${company.name} logo — Lauri Hänninen's experience as ${company.roles[0].title}`}
+                        alt={`${company.name} logo`}
                         className="w-12 h-12 rounded-lg object-contain bg-white p-1"
                         width={48}
                         height={48}
-                        loading="lazy"
+                        /* PERFORMANCE: Eager load top items, Lazy load the rest */
+                        loading={index < 1 ? "eager" : "lazy"}
+                        /* PERFORMANCE: High priority for the first logo visible on mobile */
+                        {...(index < 1 ? { fetchpriority: "high" } : {})}
                         decoding="async"
                       />
                       <div>

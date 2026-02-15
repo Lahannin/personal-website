@@ -310,7 +310,14 @@ Lauri's unique positioning: **making the difficult-to-explain, understandable.**
 
 ### Thought Leadership Content
 **Personal Blog:** [Medium @lahannin](https://lahannin.medium.com/)
-- 10+ published articles on product marketing, analytics, and data strategy
+**Featured Articles:**
+- "ABC of Product Marketing: Positioning, Messaging, and Copy Explained"
+- "What Is Analytics as Code?"
+- "Headless BI: Metric Standardization in Action"
+- "Analytics as Code: Managing Analytics Solutions Like Any Other Software"
+- "Headless BI x Data Lakehouse"
+- "Build a Headless BI Stack on Top of PostgreSQL"
+
 - Topics: Metrics standardization, Analytics-as-Code, headless BI, semantic modeling, Product Positioning and Messaging.
 
 **Developer Content:** [Dev.to @lahannin](https://dev.to/lahannin)

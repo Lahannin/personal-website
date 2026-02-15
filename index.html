@@ -181,51 +181,6 @@ Copy
 }
 </script>
 
-<!-- WEBSITE SCHEMA - Establishes site identity and relationships -->
-<script type="application/ld+json" vite-ignore>
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://laurihanninen.com/#website",
-  "url": "https://laurihanninen.com",
-  "name": "Lauri Hänninen - Product Marketing Lead",
-  "description": "Professional profile and portfolio for Lauri Hänninen, specializing in GTM strategy for complex technology",
-  "author": {
-    "@id": "https://laurihanninen.com/#person"
-  },
-  "inLanguage": "en-US",
-  "copyrightYear": 2024
-}
-</script>
-
-<!-- PROFILE PAGE SCHEMA - Signals this is a professional profile -->
-<script type="application/ld+json" vite-ignore>
-{
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "@id": "https://laurihanninen.com/#webpage",
-  "mainEntity": {
-    "@id": "https://laurihanninen.com/#person"
-  },
-  "dateModified": "2026-02-14T00:00:00Z",
-  "datePublished": "2024-01-01T00:00:00Z",
-  "inLanguage": "en-US"
-}
-</script>
-
-<!-- BREADCRUMB SCHEMA - Navigation context for search engines -->
-<script type="application/ld+json" vite-ignore>
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Lauri Hänninen",
-    "item": "https://laurihanninen.com"
-  }]
-}
-</script>
 
 <title>Lauri Hänninen | Product Marketer for complex tech</title>
 <meta name="description" content="Turning complex tech into stories people actually understand. PMM Lead at Trezor, the original bitcoin hardware wallet company." />
@@ -247,7 +202,9 @@ Copy
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://laurihanninen.com" />

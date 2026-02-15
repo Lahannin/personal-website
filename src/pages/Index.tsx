@@ -1,9 +1,8 @@
 import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Footer from "@/components/Footer"; // Import normally to reduce network overhead
 
-// Lazy load the heavy content sections
+// 1. Move Footer back to a lazy import
 const Quote = lazy(() => import("@/components/Quote"));
 const About = lazy(() => import("@/components/About"));
 const MeetupGallery = lazy(() => import("@/components/MeetupGallery"));
@@ -12,6 +11,7 @@ const Products = lazy(() => import("@/components/Products"));
 const Skills = lazy(() => import("@/components/Skills"));
 const Articles = lazy(() => import("@/components/Articles"));
 const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer")); 
 
 const Index = () => {
   return (
@@ -26,10 +26,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <main id="main-content">
-          {/* Hero is outside Suspense. 
-             This ensures the browser sees your LCP (Largest Contentful Paint) 
-             immediately without waiting for the lazy-loading "handshake."
-          */}
+          {/* Hero stays outside Suspense for maximum LCP performance */}
           <Hero />
 
           <Suspense fallback={<div className="h-40" />}>
@@ -41,9 +38,10 @@ const Index = () => {
             <Skills />
             <Articles />
             <Contact />
+            {/* 2. Move Footer inside Suspense so it doesn't block the main thread */}
+            <Footer />
           </Suspense>
         </main>
-        <Footer />
       </div>
     </>
   );

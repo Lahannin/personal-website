@@ -34,9 +34,7 @@ const Navigation = () => {
         }`}
       >
       <div className="container px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Spacer for layout balance */}
-          <div className="w-8 md:w-9" />
+        <div className="flex items-center justify-end h-16 md:h-20">
 
           {/* Desktop nav — uppercase, tighter, bolder */}
           <div className="hidden md:flex items-center gap-0.5" role="navigation" aria-label="Desktop navigation">

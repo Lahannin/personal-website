@@ -14,17 +14,24 @@ const photos = [
   { src: "/about-gallery/gooddata.avif", alt: "Lauri Hänninen at GoodData" },
 ];
 
-// Masonry layout: 3 columns with varying aspect ratios for visual interest
-const colAssignments: [number[], number[], number[]] = [
-  [0, 3, 6],  // col 1
-  [1, 4, 7],  // col 2
-  [2, 5, 8],  // col 3
-];
-
-const aspectRatios = [
-  "aspect-[3/4]", "aspect-square", "aspect-[4/3]",
-  "aspect-square", "aspect-[3/4]", "aspect-square",
-  "aspect-[4/3]", "aspect-square", "aspect-[3/4]",
+// Balanced masonry: each column sums to ~same height ratio
+// Col 1: 4/5 + 1/1 + 3/4 ≈ 2.55   Col 2: 1/1 + 4/5 + 1/1 ≈ 2.8   Col 3: 3/4 + 1/1 + 4/5 ≈ 2.55
+const columns: { photoIdx: number; aspect: string }[][] = [
+  [
+    { photoIdx: 0, aspect: "aspect-[5/4]" },
+    { photoIdx: 3, aspect: "aspect-square" },
+    { photoIdx: 6, aspect: "aspect-[4/3]" },
+  ],
+  [
+    { photoIdx: 1, aspect: "aspect-square" },
+    { photoIdx: 4, aspect: "aspect-[5/4]" },
+    { photoIdx: 7, aspect: "aspect-square" },
+  ],
+  [
+    { photoIdx: 2, aspect: "aspect-[4/3]" },
+    { photoIdx: 5, aspect: "aspect-square" },
+    { photoIdx: 8, aspect: "aspect-[5/4]" },
+  ],
 ];
 
 const AboutGallery = () => {
@@ -33,9 +40,9 @@ const AboutGallery = () => {
   return (
     <>
       <div className="grid grid-cols-3 gap-2.5">
-        {colAssignments.map((col, colIdx) => (
+        {columns.map((col, colIdx) => (
           <div key={colIdx} className="flex flex-col gap-2.5">
-            {col.map((photoIdx, i) => (
+            {col.map(({ photoIdx, aspect }, i) => (
               <motion.div
                 key={photoIdx}
                 initial={{ opacity: 0, y: 12 }}
@@ -48,7 +55,7 @@ const AboutGallery = () => {
                 <img
                   src={photos[photoIdx].src}
                   alt={photos[photoIdx].alt}
-                  className={`w-full ${aspectRatios[photoIdx]} object-cover group-hover:scale-105 transition-transform duration-500`}
+                  className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
                   loading="lazy"
                   decoding="async"
                 />

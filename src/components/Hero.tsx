@@ -11,7 +11,6 @@ const Hero = () => {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
-    layoutEffect: false 
   });
 
   const disableParallax = isMobile || prefersReducedMotion;

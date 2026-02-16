@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { X } from "lucide-react";
+import { useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const photos = [
   { src: "/about-gallery/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
@@ -36,6 +36,8 @@ const columns: { photoIdx: number; aspect: string }[][] = [
 
 const AboutGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
+  const goNext = useCallback(() => setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null), []);
+  const goPrev = useCallback(() => setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null), []);
 
   return (
     <>
@@ -65,29 +67,49 @@ const AboutGallery = () => {
         ))}
       </div>
 
-      {selectedPhoto !== null && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-foreground/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
-          onClick={() => setSelectedPhoto(null)}
-        >
-          <button
+      <AnimatePresence>
+        {selectedPhoto !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-foreground/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
             onClick={() => setSelectedPhoto(null)}
-            className="absolute top-6 right-6 text-background hover:text-primary transition-colors"
-            aria-label="Close lightbox"
           >
-            <X className="w-8 h-8" />
-          </button>
-          <img
-            src={photos[selectedPhoto].src}
-            alt={photos[selectedPhoto].alt}
-            className="max-w-full max-h-[90vh] rounded-xl object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </motion.div>
-      )}
+            <button
+              onClick={() => setSelectedPhoto(null)}
+              className="absolute top-6 right-6 text-background hover:text-primary transition-colors z-10"
+              aria-label="Close lightbox"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/20 hover:bg-background/40 text-background transition-colors z-10"
+              aria-label="Previous photo"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/20 hover:bg-background/40 text-background transition-colors z-10"
+              aria-label="Next photo"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+            <motion.img
+              key={selectedPhoto}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.2 }}
+              src={photos[selectedPhoto].src}
+              alt={photos[selectedPhoto].alt}
+              className="max-w-full max-h-[90vh] rounded-xl object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

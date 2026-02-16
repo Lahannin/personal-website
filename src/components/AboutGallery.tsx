@@ -14,64 +14,50 @@ const photos = [
   { src: "/about-gallery/gooddata.avif", alt: "Lauri Hänninen at GoodData" },
 ];
 
+// Masonry layout: 3 columns with varying aspect ratios for visual interest
+const colAssignments: [number[], number[], number[]] = [
+  [0, 3, 6],  // col 1
+  [1, 4, 7],  // col 2
+  [2, 5, 8],  // col 3
+];
+
+const aspectRatios = [
+  "aspect-[3/4]", "aspect-square", "aspect-[4/3]",
+  "aspect-square", "aspect-[3/4]", "aspect-square",
+  "aspect-[4/3]", "aspect-square", "aspect-[3/4]",
+];
+
 const AboutGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
 
-  // Show 4 photos in a 2x2 grid, cycle through on hover for delight
-  const displayPhotos = photos.slice(0, 4);
-
   return (
     <>
-      <div className="grid grid-cols-2 gap-3">
-        {displayPhotos.map((photo, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.3, delay: index * 0.08 }}
-            className="rounded-xl overflow-hidden border border-border cursor-pointer hover:border-primary/40 hover:shadow-xl transition-all duration-300 group"
-            onClick={() => setSelectedPhoto(index)}
-          >
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-              decoding="async"
-              width={300}
-              height={300}
-            />
-          </motion.div>
+      <div className="grid grid-cols-3 gap-2.5">
+        {colAssignments.map((col, colIdx) => (
+          <div key={colIdx} className="flex flex-col gap-2.5">
+            {col.map((photoIdx, i) => (
+              <motion.div
+                key={photoIdx}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.3, delay: (colIdx * 0.06) + (i * 0.08) }}
+                className="rounded-xl overflow-hidden border border-border cursor-pointer hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                onClick={() => setSelectedPhoto(photoIdx)}
+              >
+                <img
+                  src={photos[photoIdx].src}
+                  alt={photos[photoIdx].alt}
+                  className={`w-full ${aspectRatios[photoIdx]} object-cover group-hover:scale-105 transition-transform duration-500`}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </motion.div>
+            ))}
+          </div>
         ))}
       </div>
 
-      {/* Additional photos row */}
-      <div className="grid grid-cols-5 gap-2 mt-3">
-        {photos.slice(4).map((photo, index) => (
-          <motion.div
-            key={index + 4}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.3, delay: index * 0.06 }}
-            className="rounded-lg overflow-hidden border border-border cursor-pointer hover:border-primary/40 hover:shadow-lg transition-all duration-300 group"
-            onClick={() => setSelectedPhoto(index + 4)}
-          >
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-              decoding="async"
-              width={120}
-              height={120}
-            />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Lightbox */}
       {selectedPhoto !== null && (
         <motion.div
           initial={{ opacity: 0 }}

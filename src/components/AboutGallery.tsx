@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const photos = [
-  { src: "/about-gallery/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
   { src: "/about-gallery/podcast-trezor.avif", alt: "Lauri Hänninen podcast about Trezor and hardware wallets" },
+  { src: "/about-gallery/trezor-safe-7-quiz.avif", alt: "Lauri Hänninen at Trezor Safe 7 quiz" },
   { src: "/about-gallery/btc-prague-panel.avif", alt: "Lauri Hänninen panel discussion at BTC Prague" },
   { src: "/about-gallery/eth-milan.avif", alt: "Lauri Hänninen at ETH Milan conference" },
   { src: "/about-gallery/btc-prague-satoshilabs.avif", alt: "Lauri Hänninen with SatoshiLabs at BTC Prague" },
-  { src: "/about-gallery/trezor-safe-7-quiz.avif", alt: "Lauri Hänninen at Trezor Safe 7 quiz" },
+  { src: "/about-gallery/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
   { src: "/about-gallery/ethcc-8.avif", alt: "Lauri Hänninen at ETHCC 8 conference" },
   { src: "/about-gallery/tbd-interview.avif", alt: "Lauri Hänninen interview at TBD event" },
   { src: "/about-gallery/gooddata.avif", alt: "Lauri Hänninen at GoodData" },

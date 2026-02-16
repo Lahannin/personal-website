@@ -10,7 +10,7 @@ const photos = [
   { src: "/about-gallery/btc-prague-satoshilabs.avif", alt: "Lauri Hänninen with SatoshiLabs at BTC Prague" },
   { src: "/about-gallery/ethcc-conference.avif", alt: "Lauri Hänninen showcasing products at ETHCC conference" },
   { src: "/about-gallery/ethcc-8.avif", alt: "Lauri Hänninen at ETHCC 8 conference" },
-  { src: "/about-gallery/tbd-interview.avif", alt: "Lauri Hänninen interview at TBD event" },
+  { src: "/about-gallery/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
   { src: "/about-gallery/gooddata.avif", alt: "Lauri Hänninen at GoodData" },
 ];
 

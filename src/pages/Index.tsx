@@ -3,7 +3,6 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 
 // 1. Move Footer back to a lazy import
-const Quote = lazy(() => import("@/components/Quote"));
 const About = lazy(() => import("@/components/About"));
 const MeetupGallery = lazy(() => import("@/components/MeetupGallery"));
 const Experience = lazy(() => import("@/components/Experience"));
@@ -30,7 +29,6 @@ const Index = () => {
           <Hero />
 
           <Suspense fallback={<div className="h-40" />}>
-            <Quote />
             <About />
             <MeetupGallery />
             <Products />

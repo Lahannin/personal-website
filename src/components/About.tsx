@@ -35,7 +35,7 @@ const About = () => {
           >
             <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">ABOUT</span>
             <h2 id="about-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-tight">
-              Product marketing for things <span className="hidden md:inline"><br /></span><span className="text-gradient">that are hard to describe</span>
+              Product marketer for things <span className="hidden md:inline"><br /></span><span className="text-gradient">that are hard to describe</span>
             </h2>
           </motion.div>
 

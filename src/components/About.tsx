@@ -55,7 +55,7 @@ const About = () => {
                Currently, I lead product marketing at Trezor, the original Bitcoin hardware wallet company, focusing on the intersection of hardware and crypto security. Before Trezor, I spent years in the analytics space at GoodData, the  leading AI-powered cloud analytics platform, and helped build the product marketing community here in Prague.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-             At my core, I'm a tech enthusiast who firmly believes that open-source code is how we give people their freedom back.
+             At my core, I'm a tech enthusiast who firmly believes that open-source code is how we take back control.
               </p>
             </motion.div>
 

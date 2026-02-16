@@ -1,5 +1,6 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import AboutGallery from "./AboutGallery";
 
 const About = () => {
   const highlights = [
@@ -64,18 +65,8 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="flex items-center justify-center"
-              role="img"
-              aria-label="Companies Lauri Hänninen has worked with: Trezor, GoodData, Product Marketing Alliance, Wunderman Thompson"
             >
-              <div className="card-gradient border border-border rounded-2xl p-8 shadow-md">
-                <div className="grid grid-cols-2 gap-10 items-center justify-items-center">
-                  <img src="/product-led-certified.avif" alt="Product Led certificate" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
-                  <img src="/product-marketing-certified.avif" alt="Product Marketing Core certificate" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
-                  <img src="/product-marketing-ambassador.avif" alt="Product Marketing Ambassador logo — Lauri Hänninen founded the Prague PMM chapter in the Czech Republic" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
-                  <img src="/product-led-fundamentals-certified.avif" alt="Product Led Fundamentals Certificate" className="h-20 md:h-24 w-auto object-contain" width={96} height={96} loading="lazy" decoding="async" />
-                </div>
-              </div>
+              <AboutGallery />
             </motion.div>
           </div>
 

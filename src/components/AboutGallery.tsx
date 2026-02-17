@@ -118,7 +118,7 @@ const AboutGallery = () => {
               src={photos[selectedPhoto].src}
               alt={photos[selectedPhoto].alt}
               className="max-w-full max-h-[90vh] rounded-xl object-contain"
-              onClick={(e) => e.stopPropagation()}
+              onClick={() => setSelectedPhoto(null)}
             />
           </motion.div>
         )}

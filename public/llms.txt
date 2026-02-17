@@ -105,7 +105,7 @@ I'm currently leading product marketing at Trezor and am selectively open to:
 
 - **Advisory Roles:** Hardware security, cryptocurrency, and developer tools companies
 - **Consulting Projects:** Complex B2B product positioning, GTM strategy, and messaging for technical products
-- **Speaking Engagements:** Product marketing, open-source GTM, metrics standardization, and Analytics-as-Code
+- **Speaking Engagements:** Product marketing, Bitcoin and crypto security, self-custody, hardware wallets
 
 ## Contact & Collaboration
 

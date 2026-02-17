@@ -31,16 +31,17 @@ export default defineConfig(({ mode }) => ({
     copy404Plugin()
   ].filter(Boolean),
   build: {
-    assetsInlineLimit: 14336, // Inlines CSS if < 14kb
+    // 1. Inlines small CSS files directly into HTML (removes a network request)
+    assetsInlineLimit: 14336, // 14kb - covers your 13.3kb CSS file
+    
+    // 2. Optimization: Ensure the polyfill chunk doesn't create its own chain
     modulePreload: {
       polyfill: true,
     },
+    
     rollupOptions: {
       output: {
-        // LOCK FILENAMES: No more random hashes like -Cpv0o0Ut
-        entryFileNames: `assets/[name].js`,
-        chunkFileNames: `assets/[name].js`,
-        assetFileNames: `assets/[name].[ext]`,
+        // 3. Keep chunks consistent to help Cloudflare caching
         manualChunks: {
           vendor: ['react', 'react-dom'],
         },

@@ -31,17 +31,13 @@ export default defineConfig(({ mode }) => ({
     copy404Plugin()
   ].filter(Boolean),
   build: {
-    // 1. Inlines small CSS files directly into HTML (removes a network request)
-    assetsInlineLimit: 14336, // 14kb - covers your 13.3kb CSS file
-    
-    // 2. Optimization: Ensure the polyfill chunk doesn't create its own chain
+    // This handles the "Network Dependency Tree" automatically
     modulePreload: {
       polyfill: true,
     },
-    
     rollupOptions: {
+      // Let Vite handle the names automatically (standard behavior)
       output: {
-        // 3. Keep chunks consistent to help Cloudflare caching
         manualChunks: {
           vendor: ['react', 'react-dom'],
         },

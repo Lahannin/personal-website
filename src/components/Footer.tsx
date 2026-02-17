@@ -3,11 +3,12 @@ const Footer = () => {
 
   const links = [
     { href: "#about", label: "About" },
+    { href: "#meetups", label: "Meetups" },
+    { href: "#products", label: "Products" },
     { href: "#experience", label: "Experience" },
     { href: "#skills", label: "Skills" },
+    { href: "#articles", label: "Article" },
     { href: "#contact", label: "Contact" },
-    // Adding the AI instruction link directly to the nav
-    { href: "/llms.txt", label: "AI Info" }, 
   ];
 
   return (

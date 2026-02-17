@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -40,6 +40,17 @@ const AboutGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const goNext = useCallback(() => setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null), []);
   const goPrev = useCallback(() => setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null), []);
+
+  useEffect(() => {
+    if (selectedPhoto === null) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") goNext();
+      else if (e.key === "ArrowLeft") goPrev();
+      else if (e.key === "Escape") setSelectedPhoto(null);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [selectedPhoto, goNext, goPrev]);
 
   return (
     <>

@@ -6,6 +6,7 @@ interface Role {
   title: string;
   period: string;
   description: string;
+  summary?: string;
   highlights: string[];
   current?: boolean;
 }
@@ -30,21 +31,23 @@ const companies: Company[] = [
         title: "Product Marketing Lead",
         period: "07/2024 – Present",
         description:
-          "Lead product marketing initiatives including go-to-market strategy, positioning, messaging, and global launches.",
+          "Leading the product marketing function and building the strategy to make crypto security understandable for everyone.",
         highlights: [
-          "Build and scale a team covering product marketing, technical writing, and copywriting",
-          "Partner cross-functionally with Marketing, Product, Design, and Research teams",
-          "Identify customer segments and growth opportunities through market and competitive insights",
+          "Function Leadership: Built the Product marketing department from the ground up, now managing a team of product marketers, technical writers, and copywriters.",
+          "GTM & Launches: Leading global go-to-market execution for hardware and software launches, ensuring alignment between product development and commercial release.",
+          "Storytelling: Owning global positioning and messaging strategy, making high-stakes security features and open-source transparency accessible to a global audience.",
+          "Market Analysis: Researching new segments and competitive trends to help find growth opportunities for self-custody.",
         ],
         current: true,
       },
       {
         title: "Senior Product Marketing Manager",
         period: "09/2023 – 06/2024",
-        description: "Founded the product marketing function as the first Product Marketer.",
+        description: "",
         highlights: [
-          "Built positioning, messaging, and go-to-market frameworks",
-          "Led global launches including two Tier 1 hardware and software launches",
+          "Founding PMM: Joined as the first product marketer to build the function from scratch.",
+          "Frameworks: Created the company's first standardized processes for positioning, messaging, and launches.",
+          "Major Launches: Led two Tier 1 global launches across both hardware and software categories.",
         ],
       },
     ],
@@ -59,15 +62,21 @@ const companies: Company[] = [
       {
         title: "Chapter Lead",
         period: "11/2023 – Present",
-        description: "Founded the first PMA chapter in the Czech Republic.",
-        highlights: ["Built and grew a local product marketing community"],
+        description: "",
+        highlights: [
+          "Community Building: Founded the first PMA chapter in the Czech Republic, building a network for local product marketers.",
+          "Events & Growth: Organizing initiatives to share knowledge and elevate the craft of PMM in the Prague tech scene.",
+        ],
         current: true,
       },
       {
         title: "Brand Ambassador",
         period: "03/2023 – 11/2023",
-        description: "Represented PMA globally, driving engagement and community growth.",
-        highlights: [],
+        description: "",
+        highlights: [
+          "Community Outreach: Helped grow the PMA's footprint in the CEE region by sharing insights and connecting with the global PMM community.",
+          "Content & Engagement: Contributed to discussions and professional initiatives to help elevate the craft of product marketing.",
+        ],
       },
     ],
   },
@@ -81,21 +90,22 @@ const companies: Company[] = [
       {
         title: "Senior Technical Product Marketing Manager",
         period: "09/2022 – 09/2023",
-        description: "Defined positioning and messaging for the analytics platform.",
+        summary: "I was responsible for making GoodData's cloud analytics platform and API-first architecture make sense to both developers and business buyers.",
+        description: "",
         highlights: [
-          "Increased trial adoption through product and UX collaboration",
-          "Coordinated global launches and improved inbound leads",
-          "Created technical content including demos, webinars, and articles",
+          "Messaging: Defined the positioning and messaging strategies to help the GoodData platform stand out in a crowded market.",
+          "Technical Content: Created the demos, webinars, and articles that explained \"Analytics as Code\" and \"API-first analytics\" to both developers and executives.",
+          "User Adoption: Worked with the Product and UX teams to improve the trial experience and increase inbound lead volume.",
         ],
       },
       {
         title: "Product Marketing Manager",
         period: "01/2021 – 08/2022",
-        description: "Led marketing for a cloud-native analytics platform across AWS, GCP, Azure, and on-prem.",
+        description: "",
         highlights: [
-          "Produced demos, eBooks, videos, and articles",
-          "Executed go-to-market campaigns for features and upgrades",
-          "Led analyst relations with Gartner, Forrester, and others",
+          "Cloud-Native Launch: Led product marketing for GoodData's new self-hosted analytics platform across AWS, GCP, and Azure.",
+          "Analyst Relations: Worked with C-level leadership to deliver product briefings and demos to firms like Gartner and Forrester.",
+          "Demand Gen: Created the eBooks, videos, and campaign assets that fueled the product's initial growth phase.",
         ],
       },
     ],
@@ -110,26 +120,33 @@ const companies: Company[] = [
       {
         title: "Web Tagging Team Lead",
         period: "10/2019 – 12/2020",
-        description: "Managed a web tagging team and improved QA processes.",
+        summary: "I managed the daily operations of the web tagging team, making sure data collection was accurate across Ford's global web properties and 22 national portals.",
+        description: "",
         highlights: [
-          "Oversaw analytics tagging across Ford's global web properties",
-          "Liaised between Ford of Europe and national sales companies",
+          "Team Operations: Managed a specialist team and our internal QA processes for analytics tags.",
+          "Stakeholder Management: Acted as the main contact for Ford of Europe to handle digital tagging and technical compliance.",
+          "Media Compliance: Reviewed media plans to ensure all digital assets met our technical and tracking standards.",
         ],
       },
       {
         title: "Lead Management Specialist",
         period: "02/2019 – 10/2019",
-        description: "Led lead management across five Ford of Europe markets.",
+        description: "",
         highlights: [
-          "Improved lead performance with some markets exceeding 105% growth",
-          "Supported rollout of Microsoft Dynamics to 1,200+ users",
+          "Performance Growth: Optimized lead management for over 450 dealerships, with top markets seeing growth exceed 105%.",
+          "System Rollout: Supported the European launch of a Microsoft Dynamics lead system, including training for over 1,200 users.",
+          "Data Analysis: Partnered with local markets to analyze performance and implement specific improvement plans.",
         ],
       },
       {
         title: "Implementation Project Manager",
         period: "05/2017 – 02/2019",
-        description: "Led onboarding in 12 markets.",
-        highlights: ["Reduced reporting time by over 90% through automation", "Maintained high customer satisfaction"],
+        description: "",
+        highlights: [
+          "Market Onboarding: Oversaw the rollout of the Lead Management Service Desk across 12 European markets.",
+          "Process Automation: Built a semi-automated reporting process that cut preparation time by over 90%.",
+          "Client Relations: Managed review meetings with stakeholders to share project progress and market performance insights.",
+        ],
       },
     ],
   },
@@ -142,8 +159,14 @@ const companies: Company[] = [
       {
         title: "Client Delivery Specialist",
         period: "04/2016 – 05/2017",
-        description: "Managed delivery of client programs.",
-        highlights: ["Improved implementation speed and efficiency"],
+        summary: "I worked at a PeopleTech startup to help launch and manage AI-driven tools focused on workplace culture.",
+        description: "",
+        highlights: [
+          "Program Launches: Collaborated with senior management to launch over 25 client programs, personally leading 5 of our key accounts.",
+          "Process Improvement: Developed new workflows and functionalities that made our implementation faster and more user-friendly.",
+          "Standardization: Found opportunities to automate manual tasks, which reduced errors and helped the team scale.",
+          "Data & Support: Analyzed client data to make sure the programs were actually delivering results.",
+        ],
       },
     ],
   },
@@ -163,6 +186,29 @@ const Experience = () => {
 
   const isRoleExpanded = (companyIndex: number, roleIndex: number) => {
     return expandedRoles[`${companyIndex}-${roleIndex}`] ?? false;
+  };
+
+  const renderHighlight = (highlight: string, i: number) => {
+    const colonIndex = highlight.indexOf(":");
+    if (colonIndex === -1) {
+      return (
+        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+          <span className="text-primary mt-0.5">•</span>
+          <span>{highlight}</span>
+        </li>
+      );
+    }
+    const label = highlight.slice(0, colonIndex);
+    const rest = highlight.slice(colonIndex + 1);
+    return (
+      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+        <span className="text-primary mt-0.5">•</span>
+        <span>
+          <strong className="text-foreground font-semibold">{label}:</strong>
+          {rest}
+        </span>
+      </li>
+    );
   };
 
   return (
@@ -217,9 +263,7 @@ const Experience = () => {
                         className="w-12 h-12 rounded-lg object-contain bg-white p-1"
                         width={48}
                         height={48}
-                        /* PERFORMANCE: Eager load top items, Lazy load the rest */
                         loading={index < 1 ? "eager" : "lazy"}
-                        /* PERFORMANCE: High priority for the first logo visible on mobile */
                         {...(index < 1 ? { fetchpriority: "high" } : {})}
                         decoding="async"
                       />
@@ -284,23 +328,19 @@ const Experience = () => {
                                   className="overflow-hidden"
                                 >
                                   <div className="pt-3">
-                                    <ul className="space-y-1.5 mb-3">
-                                      <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                                        <span className="text-primary mt-0.5">•</span>
+                                    {role.summary && (
+                                      <p className="text-sm text-muted-foreground mb-3 italic">
+                                        {role.summary}
+                                      </p>
+                                    )}
+                                    {role.description && (
+                                      <p className="text-sm text-muted-foreground mb-3">
                                         {role.description}
-                                      </li>
-                                    </ul>
+                                      </p>
+                                    )}
                                     {role.highlights.length > 0 && (
                                       <ul className="space-y-1.5">
-                                        {role.highlights.map((highlight, i) => (
-                                          <li
-                                            key={i}
-                                            className="flex items-start gap-2 text-sm text-muted-foreground"
-                                          >
-                                            <span className="text-primary mt-0.5">•</span>
-                                            {highlight}
-                                          </li>
-                                        ))}
+                                        {role.highlights.map(renderHighlight)}
                                       </ul>
                                     )}
                                   </div>

@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -50,9 +50,9 @@ const products: Product[] = [
 ];
 
 const categoryConfig = {
-  software: { icon: Monitor, label: "Software", color: "from-blue-500/20 to-cyan-500/20" },
-  hardware: { icon: Cpu, label: "Hardware", color: "from-orange-500/20 to-amber-500/20" },
-  services: { icon: Headset, label: "Services", color: "from-purple-500/20 to-pink-500/20" },
+  software: { icon: Monitor, label: "Software", accent: "hsl(var(--primary))" },
+  hardware: { icon: Cpu, label: "Hardware", accent: "hsl(var(--highlight))" },
+  services: { icon: Headset, label: "Services", accent: "hsl(var(--primary))" },
 };
 
 const Products = () => {
@@ -180,92 +180,71 @@ const Products = () => {
                       key={product.name}
                       className="flex-[0_0_100%] min-w-0 md:flex-[0_0_80%] lg:flex-[0_0_60%] px-4"
                     >
-                      <AnimatePresence mode="wait">
-                        <motion.a
-                          href={product.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          data-description={`Product launched by Lauri Hänninen: ${product.name} — ${product.description}`}
-                          initial={{ opacity: 0.5, scale: 0.95 }}
-                          animate={{ 
-                            opacity: isActive ? 1 : 0.5, 
-                            scale: isActive ? 1 : 0.95,
-                          }}
-                          transition={{ duration: 0.3 }}
-                          className={`group block relative overflow-hidden rounded-2xl border transition-all duration-300 ${
-                            isActive 
-                              ? "border-primary/30 shadow-2xl shadow-primary/10" 
-                              : "border-border/50 shadow-md"
-                          }`}
-                        >
-                          {/* Category gradient background */}
-                          <div className={`absolute inset-0 bg-gradient-to-br ${categoryConfig[product.category].color} opacity-50`} />
-                          
-                          {/* Content */}
-                          <div className="relative p-8 md:p-10">
-                            {/* Category badge + logo row */}
-                            <div className="flex items-center gap-3 mb-6">
-                              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                                <CategoryIcon className="w-4 h-4" />
-                              </div>
-                              <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                                {categoryConfig[product.category].label}
-                              </span>
-                              {product.logo && (
-                                <motion.div
-                                  initial={{ scale: 0.8 }}
-                                  animate={{ scale: isActive ? 1 : 0.9 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="flex-shrink-0 ml-auto md:hidden"
-                                >
-                                  <img
-                                    src={product.logo}
-                                    alt={`${product.name} logo — product launched by Lauri Hänninen`}
-                                    className="w-10 h-10 rounded-lg object-contain bg-white p-1.5 shadow-md"
-                                    width={40}
-                                    height={40}
-                                    loading="lazy"
-                                    decoding="async"
-                                  />
-                                </motion.div>
-                              )}
-                            </div>
+                      <motion.a
+                        href={product.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-description={`Product launched by Lauri Hänninen: ${product.name} — ${product.description}`}
+                        initial={{ opacity: 0.5, scale: 0.95 }}
+                        animate={{
+                          opacity: isActive ? 1 : 0.5,
+                          scale: isActive ? 1 : 0.95,
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="group block relative overflow-hidden will-change-transform"
+                      >
+                        {/* Angled accent bar */}
+                        <div
+                          className="absolute -left-2 top-4 bottom-4 w-1.5 rounded-full transition-all duration-500 group-hover:h-full group-hover:top-0 group-hover:bottom-0"
+                          style={{ backgroundColor: categoryConfig[product.category].accent }}
+                        />
 
-                            {/* Product info */}
-                            <div className="flex items-start gap-5">
-                              {product.logo && (
-                                <motion.div
-                                  initial={{ scale: 0.8 }}
-                                  animate={{ scale: isActive ? 1 : 0.9 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="flex-shrink-0 hidden md:block"
-                                >
-                                  <img
-                                    src={product.logo}
-                                    alt={`${product.name} logo — product launched by Lauri Hänninen`}
-                                    className="w-20 h-20 rounded-xl object-contain bg-white p-2 shadow-lg"
-                                    width={80}
-                                    height={80}
-                                    loading="lazy"
-                                    decoding="async"
-                                  />
-                                </motion.div>
-                              )}
-                              <div className="flex-1 min-w-0">
-                                <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors mb-3">
-                                  {product.name}
-                                  <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-primary">
-                                    ↗
-                                  </span>
-                                </h3>
-                                <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                                  {product.description}
-                                </p>
-                              </div>
-                            </div>
+                        {/* Main content — no box, just open space */}
+                        <div className="relative pl-8 pr-4 py-8 md:py-10">
+                          {/* Category label — raw, uppercase, mono */}
+                          <div className="flex items-center gap-3 mb-5">
+                            <CategoryIcon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                            <span className="mono text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] group-hover:text-foreground transition-colors">
+                              {categoryConfig[product.category].label}
+                            </span>
+                            {product.logo && (
+                              <img
+                                src={product.logo}
+                                alt={`${product.name} logo`}
+                                className="w-8 h-8 rounded-lg object-contain bg-white/80 p-1 shadow-sm ml-auto opacity-60 group-hover:opacity-100 transition-opacity"
+                                width={32}
+                                height={32}
+                                loading="lazy"
+                                decoding="async"
+                              />
+                            )}
                           </div>
-                        </motion.a>
-                      </AnimatePresence>
+
+                          {/* Product name — big, bold, dramatic */}
+                          <h3 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4 leading-[1.1] group-hover:translate-x-2 transition-transform duration-300">
+                            {product.name}
+                            <span
+                              className="inline-block ml-3 text-lg opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300"
+                              style={{ color: categoryConfig[product.category].accent }}
+                            >
+                              ↗
+                            </span>
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-muted-foreground leading-relaxed text-base md:text-lg max-w-lg">
+                            {product.description}
+                          </p>
+
+                          {/* Bottom accent line that expands on hover */}
+                          <div className="mt-6 h-px bg-border relative overflow-hidden">
+                            <div
+                              className="absolute inset-y-0 left-0 w-0 group-hover:w-full transition-all duration-700 ease-out"
+                              style={{ backgroundColor: categoryConfig[product.category].accent }}
+                            />
+                          </div>
+                        </div>
+                      </motion.a>
                     </div>
                   );
                 })}

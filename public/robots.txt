@@ -39,7 +39,6 @@ User-agent: Diffbot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Crawl-delay: 1
 
 # --- SEARCH ENGINE CRAWLERS ---
 User-agent: Googlebot

@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
 
           <nav aria-label="Footer navigation">
-            <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+            <div className="grid grid-cols-4 gap-x-2 gap-y-0 text-center sm:flex sm:items-center sm:gap-6 sm:flex-wrap sm:justify-center">
               {links.map((link) => (
                 <a
                   key={link.href}

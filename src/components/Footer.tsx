@@ -9,7 +9,7 @@ const Footer = () => {
     { href: "#skills", label: "Skills" },
     { href: "#articles", label: "Articles" },
     { href: "#contact", label: "Contact" },
-    { href: "/llms.txt", label: "llms.txt" },
+    { href: "/llms.txt", label: "llms.txt", hidden: true },
   ];
 
   return (
@@ -26,15 +26,21 @@ const Footer = () => {
 
           <nav aria-label="Footer navigation">
             <div className="grid grid-cols-4 gap-x-2 gap-y-0 text-center sm:flex sm:items-center sm:gap-6 sm:flex-wrap sm:justify-center">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2 min-h-[44px] flex items-center"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {links.map((link) =>
+                'hidden' in link && link.hidden ? (
+                  <a key={link.href} href={link.href} className="sr-only" tabIndex={-1} aria-hidden="true">
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2 min-h-[44px] flex items-center"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </div>
           </nav>
 

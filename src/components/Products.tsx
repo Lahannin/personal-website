@@ -74,9 +74,18 @@ const Products = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+  // Auto-play with initial delay for first slide visibility
+  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
+  const resetAutoplay = useCallback(() => {
+    clearTimeout(initialDelayRef.current);
+    clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+  }, [emblaApi]);
+
+  const scrollPrev = useCallback(() => { emblaApi?.scrollPrev(); resetAutoplay(); }, [emblaApi, resetAutoplay]);
+  const scrollNext = useCallback(() => { emblaApi?.scrollNext(); resetAutoplay(); }, [emblaApi, resetAutoplay]);
+  const scrollTo = useCallback((index: number) => { emblaApi?.scrollTo(index); resetAutoplay(); }, [emblaApi, resetAutoplay]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -96,15 +105,6 @@ const Products = () => {
       emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi, onSelect]);
-
-  // Auto-play with initial delay for first slide visibility
-  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
-  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
-  const resetAutoplay = useCallback(() => {
-    clearInterval(autoplayRef.current);
-    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
-  }, [emblaApi]);
-
   useEffect(() => {
     if (!emblaApi) return;
     initialDelayRef.current = setTimeout(() => {
@@ -114,7 +114,6 @@ const Products = () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     });
-    emblaApi.on("pointerUp", resetAutoplay);
     return () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);

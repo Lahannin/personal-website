@@ -74,9 +74,33 @@ const Products = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+  // --- AUTOPLAY LOGIC ---
+  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
+
+  const resetAutoplay = useCallback(() => {
+    clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+  }, [emblaApi]);
+
+  // --- NAVIGATION (WITH RESET) ---
+  const scrollPrev = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollPrev();
+    resetAutoplay();
+  }, [emblaApi, resetAutoplay]);
+
+  const scrollNext = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollNext();
+    resetAutoplay();
+  }, [emblaApi, resetAutoplay]);
+
+  const scrollTo = useCallback((index: number) => {
+    if (!emblaApi) return;
+    emblaApi.scrollTo(index);
+    resetAutoplay();
+  }, [emblaApi, resetAutoplay]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -91,47 +115,33 @@ const Products = () => {
     onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
 
-  // Auto-play with initial delay for first slide visibility
-  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
-  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
-  const resetAutoplay = useCallback(() => {
-    clearInterval(autoplayRef.current);
-    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
     initialDelayRef.current = setTimeout(() => {
       resetAutoplay();
     }, 5000);
+
     emblaApi.on("pointerDown", () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     });
     emblaApi.on("pointerUp", resetAutoplay);
+
     return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     };
-  }, [emblaApi, resetAutoplay]);
+  }, [emblaApi, onSelect, resetAutoplay]);
 
   return (
     <section id="products" aria-labelledby="products-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30">
-      {/* Top/bottom gradient fades */}
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +158,6 @@ const Products = () => {
             </p>
           </motion.div>
 
-          {/* Carousel */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +165,6 @@ const Products = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
-            {/* Navigation arrows */}
             <button
               onClick={scrollPrev}
               disabled={!canScrollPrev}
@@ -175,7 +183,6 @@ const Products = () => {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
 
-            {/* Carousel viewport */}
             <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
               <div className="flex">
                 {products.map((product, index) => {
@@ -191,7 +198,6 @@ const Products = () => {
                         href={product.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        data-description={`Product launched by Lauri Hänninen: ${product.name} — ${product.description}`}
                         initial={{ opacity: 0.4, scale: 0.88, y: 10 }}
                         animate={{
                           opacity: isActive ? 1 : 0.4,
@@ -201,28 +207,24 @@ const Products = () => {
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="group block relative overflow-hidden will-change-transform rounded-2xl"
                       >
-                        {/* Glass card background */}
-                        <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-all duration-500" />
+                        {/* 1. FIXED: Changed transition-all to specific transition-colors to avoid non-composited animation warnings */}
+                        <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-colors duration-500" />
                         
-                        {/* Gradient shimmer on hover */}
                         <div 
                           className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                           style={{ background: `linear-gradient(135deg, transparent 40%, ${categoryConfig[product.category].accent}08 60%, transparent 80%)` }}
                         />
 
-                        {/* Accent glow behind card */}
                         <div
                           className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"
                           style={{ background: `radial-gradient(ellipse at 30% 50%, ${categoryConfig[product.category].accent}15, transparent 70%)` }}
                         />
 
-                        {/* Main content */}
                         <div className="relative p-8 md:p-10">
-                          {/* Top row: category + logo */}
                           <div className="flex items-center justify-between mb-8">
                             <div className="flex items-center gap-3">
                               <div 
-                                className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                                className="w-8 h-8 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                                 style={{ backgroundColor: `${categoryConfig[product.category].accent}15` }}
                               >
                                 <CategoryIcon className="w-4 h-4 transition-colors duration-300" style={{ color: categoryConfig[product.category].accent }} />
@@ -244,7 +246,6 @@ const Products = () => {
                             )}
                           </div>
 
-                          {/* Product name */}
                           <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground tracking-tight mb-5 leading-[1.05] group-hover:translate-x-1 transition-transform duration-500 ease-out">
                             {product.name}
                             <span
@@ -255,12 +256,10 @@ const Products = () => {
                             </span>
                           </h3>
 
-                          {/* Description */}
                           <p className="text-muted-foreground leading-relaxed text-base md:text-lg max-w-lg">
                             {product.description}
                           </p>
 
-                          {/* Bottom accent line */}
                           <div className="mt-8 h-[2px] rounded-full bg-border/50 relative overflow-hidden">
                             <div
                               className="absolute inset-y-0 left-0 w-0 group-hover:w-full rounded-full transition-all duration-700 ease-out"
@@ -275,7 +274,6 @@ const Products = () => {
               </div>
             </div>
 
-            {/* Dot indicators with progress */}
             <div className="flex justify-center items-center gap-2 mt-8">
               {products.map((_, index) => (
                 <button
@@ -302,7 +300,6 @@ const Products = () => {
             </div>
           </motion.div>
 
-          {/* Additional launches callout */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

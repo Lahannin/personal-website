@@ -95,7 +95,6 @@ const MeetupGallery = () => {
 
   // --- VIEW-TRIGGERED AUTOPLAY ---
   useEffect(() => {
-    // Only start the 5-second timer once the user scrolls to this section
     if (!emblaApi || !isInView) return;
 
     initialDelayRef.current = setTimeout(() => {
@@ -217,7 +216,8 @@ const MeetupGallery = () => {
                   }`}
                   aria-label={`Go to photo ${index + 1}`}
                 >
-                  {index === selectedIndex && (
+                  {/* TWEAK: Progress bar only exists when slide is active AND section is in view */}
+                  {index === selectedIndex && isInView && (
                     <motion.div
                       key={progressKey}
                       className="absolute inset-y-0 left-0 bg-primary rounded-full"

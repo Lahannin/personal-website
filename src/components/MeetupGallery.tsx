@@ -25,9 +25,17 @@ const MeetupGallery = () => {
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
+  const resetAutoplay = useCallback(() => {
+    clearTimeout(initialDelayRef.current);
+    clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+  }, [emblaApi]);
+
+  const scrollPrev = useCallback(() => { emblaApi?.scrollPrev(); resetAutoplay(); }, [emblaApi, resetAutoplay]);
+  const scrollNext = useCallback(() => { emblaApi?.scrollNext(); resetAutoplay(); }, [emblaApi, resetAutoplay]);
+  const scrollTo = useCallback((index: number) => { emblaApi?.scrollTo(index); resetAutoplay(); }, [emblaApi, resetAutoplay]);
 
   const goNextPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null), []);
   const goPrevPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null), []);
@@ -53,24 +61,6 @@ const MeetupGallery = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
-
-  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
-  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
-  const resetAutoplay = useCallback(() => {
-    clearInterval(autoplayRef.current);
-    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
     initialDelayRef.current = setTimeout(() => {
       resetAutoplay();
     }, 5000);
@@ -78,7 +68,6 @@ const MeetupGallery = () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     });
-    emblaApi.on("pointerUp", resetAutoplay);
     return () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);

@@ -64,7 +64,6 @@ const categoryConfig = {
 
 const Products = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  // Detects when the section is at least 100px into the viewport
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -79,16 +78,18 @@ const Products = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  // --- AUTOPLAY LOGIC ---
+  // --- AUTOPLAY LOGIC (UPDATED TO 7S) ---
   const autoplayRef = useRef<ReturnType<typeof setInterval>>();
   const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
 
   const resetAutoplay = useCallback(() => {
     clearInterval(autoplayRef.current);
-    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+    autoplayRef.current = setInterval(() => {
+      if (emblaApi) emblaApi.scrollNext();
+    }, 7000); // 7 seconds
   }, [emblaApi]);
 
-  // --- NAVIGATION WRAPPERS (FOR RESET) ---
+  // --- NAVIGATION WRAPPERS ---
   const scrollPrev = useCallback(() => {
     if (!emblaApi) return;
     emblaApi.scrollPrev();
@@ -110,7 +111,7 @@ const Products = () => {
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setProgressKey((k) => k + 1); // Triggers dot animation reset
+    setProgressKey((k) => k + 1);
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
@@ -126,13 +127,14 @@ const Products = () => {
     };
   }, [emblaApi, onSelect]);
 
-  // --- TRIGGER AUTOPLAY ONLY WHEN IN VIEW ---
+  // --- TRIGGER AUTOPLAY ONLY WHEN IN VIEW (UPDATED TO 7S) ---
   useEffect(() => {
     if (!emblaApi || !isInView) return;
 
     initialDelayRef.current = setTimeout(() => {
+      emblaApi.scrollNext();
       resetAutoplay();
-    }, 5000);
+    }, 7000); // 7 seconds
 
     emblaApi.on("pointerDown", () => {
       clearTimeout(initialDelayRef.current);
@@ -182,7 +184,6 @@ const Products = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
-            {/* Arrows */}
             <button
               onClick={scrollPrev}
               disabled={!canScrollPrev}
@@ -201,7 +202,6 @@ const Products = () => {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
 
-            {/* Viewport */}
             <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
               <div className="flex">
                 {products.map((product, index) => {
@@ -226,7 +226,6 @@ const Products = () => {
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="group block relative overflow-hidden will-change-transform rounded-2xl"
                       >
-                        {/* Background with specific transition to avoid non-composited warning */}
                         <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-colors duration-500" />
                         
                         <div 
@@ -288,7 +287,7 @@ const Products = () => {
               </div>
             </div>
 
-            {/* Dots */}
+            {/* SYNCED DOTS (UPDATED TO 7S) */}
             <div className="flex justify-center items-center gap-2 mt-8">
               {products.map((_, index) => (
                 <button
@@ -301,13 +300,13 @@ const Products = () => {
                   }`}
                   aria-label={`Go to product ${index + 1}`}
                 >
-                  {index === selectedIndex && (
+                  {index === selectedIndex && isInView && (
                     <motion.div
                       key={progressKey}
                       className="absolute inset-y-0 left-0 bg-primary rounded-full"
                       initial={{ width: "0%" }}
                       animate={{ width: "100%" }}
-                      transition={{ duration: 5, ease: "linear" }}
+                      transition={{ duration: 7, ease: "linear" }} // 7 seconds
                     />
                   )}
                 </button>

@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -14,11 +14,16 @@ const photos = [
 ];
 
 const MeetupGallery = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  // Only trigger once the section is 100px into the viewport
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
     skipSnaps: false,
   });
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -72,7 +77,7 @@ const MeetupGallery = () => {
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setProgressKey((k) => k + 1); // Triggers progress bar animation reset
+    setProgressKey((k) => k + 1);
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
@@ -82,13 +87,21 @@ const MeetupGallery = () => {
     onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    
-    // Initial Autoplay Setup
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  // --- VIEW-TRIGGERED AUTOPLAY ---
+  useEffect(() => {
+    // Only start the 5-second timer once the user scrolls to this section
+    if (!emblaApi || !isInView) return;
+
     initialDelayRef.current = setTimeout(() => {
       resetAutoplay();
     }, 5000);
 
-    // Pause on interaction
     emblaApi.on("pointerDown", () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
@@ -96,15 +109,18 @@ const MeetupGallery = () => {
     emblaApi.on("pointerUp", resetAutoplay);
 
     return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     };
-  }, [emblaApi, onSelect, resetAutoplay]);
+  }, [emblaApi, resetAutoplay, isInView]);
 
   return (
-    <section id="meetups" aria-labelledby="meetups-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30">
+    <section 
+      ref={sectionRef} 
+      id="meetups" 
+      aria-labelledby="meetups-heading" 
+      className="py-28 md:py-36 relative overflow-hidden bg-secondary/30"
+    >
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
@@ -134,7 +150,6 @@ const MeetupGallery = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
-            {/* Nav Arrows */}
             <button
               onClick={scrollPrev}
               disabled={!canScrollPrev}
@@ -153,7 +168,6 @@ const MeetupGallery = () => {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
 
-            {/* Carousel Viewport */}
             <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
               <div className="flex">
                 {photos.map((photo, index) => {
@@ -191,7 +205,6 @@ const MeetupGallery = () => {
               </div>
             </div>
 
-            {/* Dots */}
             <div className="flex justify-center items-center gap-2 mt-8">
               {photos.map((_, index) => (
                 <button
@@ -220,7 +233,6 @@ const MeetupGallery = () => {
         </div>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selectedPhoto !== null && (
           <motion.div

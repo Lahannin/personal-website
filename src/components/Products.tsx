@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -63,12 +63,17 @@ const categoryConfig = {
 };
 
 const Products = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  // Detects when the section is at least 100px into the viewport
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true,
     align: "center",
     skipSnaps: false,
     startIndex: 0,
   });
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -83,7 +88,7 @@ const Products = () => {
     autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
   }, [emblaApi]);
 
-  // --- NAVIGATION (WITH RESET) ---
+  // --- NAVIGATION WRAPPERS (FOR RESET) ---
   const scrollPrev = useCallback(() => {
     if (!emblaApi) return;
     emblaApi.scrollPrev();
@@ -105,7 +110,7 @@ const Products = () => {
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setProgressKey((k) => k + 1);
+    setProgressKey((k) => k + 1); // Triggers dot animation reset
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
@@ -115,6 +120,15 @@ const Products = () => {
     onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  // --- TRIGGER AUTOPLAY ONLY WHEN IN VIEW ---
+  useEffect(() => {
+    if (!emblaApi || !isInView) return;
 
     initialDelayRef.current = setTimeout(() => {
       resetAutoplay();
@@ -127,15 +141,18 @@ const Products = () => {
     emblaApi.on("pointerUp", resetAutoplay);
 
     return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     };
-  }, [emblaApi, onSelect, resetAutoplay]);
+  }, [emblaApi, resetAutoplay, isInView]);
 
   return (
-    <section id="products" aria-labelledby="products-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30">
+    <section 
+      ref={sectionRef} 
+      id="products" 
+      aria-labelledby="products-heading" 
+      className="py-28 md:py-36 relative overflow-hidden bg-secondary/30"
+    >
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
@@ -165,6 +182,7 @@ const Products = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
+            {/* Arrows */}
             <button
               onClick={scrollPrev}
               disabled={!canScrollPrev}
@@ -183,6 +201,7 @@ const Products = () => {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
 
+            {/* Viewport */}
             <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
               <div className="flex">
                 {products.map((product, index) => {
@@ -207,17 +226,12 @@ const Products = () => {
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="group block relative overflow-hidden will-change-transform rounded-2xl"
                       >
-                        {/* 1. FIXED: Changed transition-all to specific transition-colors to avoid non-composited animation warnings */}
+                        {/* Background with specific transition to avoid non-composited warning */}
                         <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-colors duration-500" />
                         
                         <div 
                           className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                           style={{ background: `linear-gradient(135deg, transparent 40%, ${categoryConfig[product.category].accent}08 60%, transparent 80%)` }}
-                        />
-
-                        <div
-                          className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"
-                          style={{ background: `radial-gradient(ellipse at 30% 50%, ${categoryConfig[product.category].accent}15, transparent 70%)` }}
                         />
 
                         <div className="relative p-8 md:p-10">
@@ -274,6 +288,7 @@ const Products = () => {
               </div>
             </div>
 
+            {/* Dots */}
             <div className="flex justify-center items-center gap-2 mt-8">
               {products.map((_, index) => (
                 <button

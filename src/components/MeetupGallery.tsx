@@ -25,10 +25,35 @@ const MeetupGallery = () => {
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+  // --- AUTOPLAY LOGIC ---
+  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
 
+  const resetAutoplay = useCallback(() => {
+    clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+  }, [emblaApi]);
+
+  // --- NAVIGATION (WITH AUTOPLAY RESET) ---
+  const scrollPrev = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollPrev();
+    resetAutoplay();
+  }, [emblaApi, resetAutoplay]);
+
+  const scrollNext = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollNext();
+    resetAutoplay();
+  }, [emblaApi, resetAutoplay]);
+
+  const scrollTo = useCallback((index: number) => {
+    if (!emblaApi) return;
+    emblaApi.scrollTo(index);
+    resetAutoplay();
+  }, [emblaApi, resetAutoplay]);
+
+  // --- LIGHTBOX NAVIGATION ---
   const goNextPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null), []);
   const goPrevPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null), []);
 
@@ -43,10 +68,11 @@ const MeetupGallery = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, [selectedPhoto, goNextPhoto, goPrevPhoto]);
 
+  // --- CAROUSEL EVENTS ---
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setProgressKey((k) => k + 1);
+    setProgressKey((k) => k + 1); // Triggers progress bar animation reset
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
@@ -56,34 +82,26 @@ const MeetupGallery = () => {
     onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
-
-  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
-  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
-  const resetAutoplay = useCallback(() => {
-    clearInterval(autoplayRef.current);
-    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
+    
+    // Initial Autoplay Setup
     initialDelayRef.current = setTimeout(() => {
       resetAutoplay();
     }, 5000);
+
+    // Pause on interaction
     emblaApi.on("pointerDown", () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     });
     emblaApi.on("pointerUp", resetAutoplay);
+
     return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
     };
-  }, [emblaApi, resetAutoplay]);
+  }, [emblaApi, onSelect, resetAutoplay]);
 
   return (
     <section id="meetups" aria-labelledby="meetups-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30">
@@ -116,6 +134,7 @@ const MeetupGallery = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
+            {/* Nav Arrows */}
             <button
               onClick={scrollPrev}
               disabled={!canScrollPrev}
@@ -134,6 +153,7 @@ const MeetupGallery = () => {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
 
+            {/* Carousel Viewport */}
             <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
               <div className="flex">
                 {photos.map((photo, index) => {
@@ -150,7 +170,6 @@ const MeetupGallery = () => {
                           scale: isActive ? 1 : 0.95,
                         }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        /* Removed transition-all and added will-change-transform to fix Lighthouse audit */
                         className={`rounded-2xl overflow-hidden border cursor-pointer will-change-transform ${
                           isActive
                             ? "border-primary/30 shadow-2xl shadow-primary/10"
@@ -172,6 +191,7 @@ const MeetupGallery = () => {
               </div>
             </div>
 
+            {/* Dots */}
             <div className="flex justify-center items-center gap-2 mt-8">
               {photos.map((_, index) => (
                 <button
@@ -200,6 +220,7 @@ const MeetupGallery = () => {
         </div>
       </div>
 
+      {/* Lightbox */}
       <AnimatePresence>
         {selectedPhoto !== null && (
           <motion.div

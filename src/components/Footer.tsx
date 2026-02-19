@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
 
           <nav aria-label="Footer navigation">
-            <div className="grid grid-cols-4 gap-x-2 gap-y-0 text-center sm:flex sm:items-center sm:gap-6 sm:flex-wrap sm:justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-0 sm:gap-x-6">
               {links.map((link) =>
                 'hidden' in link && link.hidden ? (
                   <a key={link.href} href={link.href} className="sr-only" tabIndex={-1} aria-hidden="true">

@@ -185,46 +185,63 @@ const Products = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-description={`Product launched by Lauri Hänninen: ${product.name} — ${product.description}`}
-                        initial={{ opacity: 0.5, scale: 0.95 }}
+                        initial={{ opacity: 0.4, scale: 0.88, y: 10 }}
                         animate={{
-                          opacity: isActive ? 1 : 0.5,
-                          scale: isActive ? 1 : 0.95,
+                          opacity: isActive ? 1 : 0.4,
+                          scale: isActive ? 1 : 0.88,
+                          y: isActive ? 0 : 10,
                         }}
-                        transition={{ duration: 0.3 }}
-                        className="group block relative overflow-hidden will-change-transform"
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="group block relative overflow-hidden will-change-transform rounded-2xl"
                       >
-                        {/* Angled accent bar */}
-                        <div
-                          className="absolute -left-2 top-4 bottom-4 w-1.5 rounded-full transition-all duration-500 group-hover:h-full group-hover:top-0 group-hover:bottom-0"
-                          style={{ backgroundColor: categoryConfig[product.category].accent }}
+                        {/* Glass card background */}
+                        <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-all duration-500" />
+                        
+                        {/* Gradient shimmer on hover */}
+                        <div 
+                          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                          style={{ background: `linear-gradient(135deg, transparent 40%, ${categoryConfig[product.category].accent}08 60%, transparent 80%)` }}
                         />
 
-                        {/* Main content — no box, just open space */}
-                        <div className="relative pl-8 pr-4 py-8 md:py-10">
-                          {/* Category label — raw, uppercase, mono */}
-                          <div className="flex items-center gap-3 mb-5">
-                            <CategoryIcon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                            <span className="mono text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] group-hover:text-foreground transition-colors">
-                              {categoryConfig[product.category].label}
-                            </span>
+                        {/* Accent glow behind card */}
+                        <div
+                          className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"
+                          style={{ background: `radial-gradient(ellipse at 30% 50%, ${categoryConfig[product.category].accent}15, transparent 70%)` }}
+                        />
+
+                        {/* Main content */}
+                        <div className="relative p-8 md:p-10">
+                          {/* Top row: category + logo */}
+                          <div className="flex items-center justify-between mb-8">
+                            <div className="flex items-center gap-3">
+                              <div 
+                                className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                                style={{ backgroundColor: `${categoryConfig[product.category].accent}15` }}
+                              >
+                                <CategoryIcon className="w-4 h-4 transition-colors duration-300" style={{ color: categoryConfig[product.category].accent }} />
+                              </div>
+                              <span className="mono text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] group-hover:text-foreground transition-colors duration-300">
+                                {categoryConfig[product.category].label}
+                              </span>
+                            </div>
                             {product.logo && (
                               <img
                                 src={product.logo}
                                 alt={`${product.name} logo`}
-                                className="w-8 h-8 rounded-lg object-contain bg-white/80 p-1 shadow-sm ml-auto opacity-60 group-hover:opacity-100 transition-opacity"
-                                width={32}
-                                height={32}
+                                className="w-9 h-9 rounded-xl object-contain bg-background/80 p-1.5 ring-1 ring-border/50 opacity-50 group-hover:opacity-100 group-hover:ring-primary/20 transition-all duration-300"
+                                width={36}
+                                height={36}
                                 loading="lazy"
                                 decoding="async"
                               />
                             )}
                           </div>
 
-                          {/* Product name — big, bold, dramatic */}
-                          <h3 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4 leading-[1.1] group-hover:translate-x-2 transition-transform duration-300">
+                          {/* Product name */}
+                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground tracking-tight mb-5 leading-[1.05] group-hover:translate-x-1 transition-transform duration-500 ease-out">
                             {product.name}
                             <span
-                              className="inline-block ml-3 text-lg opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300"
+                              className="inline-block ml-3 text-xl opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-0 transition-all duration-500 ease-out"
                               style={{ color: categoryConfig[product.category].accent }}
                             >
                               ↗
@@ -236,11 +253,11 @@ const Products = () => {
                             {product.description}
                           </p>
 
-                          {/* Bottom accent line that expands on hover */}
-                          <div className="mt-6 h-px bg-border relative overflow-hidden">
+                          {/* Bottom accent line */}
+                          <div className="mt-8 h-[2px] rounded-full bg-border/50 relative overflow-hidden">
                             <div
-                              className="absolute inset-y-0 left-0 w-0 group-hover:w-full transition-all duration-700 ease-out"
-                              style={{ backgroundColor: categoryConfig[product.category].accent }}
+                              className="absolute inset-y-0 left-0 w-0 group-hover:w-full rounded-full transition-all duration-700 ease-out"
+                              style={{ background: `linear-gradient(90deg, ${categoryConfig[product.category].accent}, ${categoryConfig[product.category].accent}60)` }}
                             />
                           </div>
                         </div>

@@ -15,7 +15,6 @@ const photos = [
 
 const MeetupGallery = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  // Only trigger once the section is 100px into the viewport
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -36,10 +35,12 @@ const MeetupGallery = () => {
 
   const resetAutoplay = useCallback(() => {
     clearInterval(autoplayRef.current);
-    autoplayRef.current = setInterval(() => emblaApi?.scrollNext(), 5000);
+    autoplayRef.current = setInterval(() => {
+      if (emblaApi) emblaApi.scrollNext();
+    }, 5000);
   }, [emblaApi]);
 
-  // --- NAVIGATION (WITH AUTOPLAY RESET) ---
+  // --- NAVIGATION ---
   const scrollPrev = useCallback(() => {
     if (!emblaApi) return;
     emblaApi.scrollPrev();
@@ -58,7 +59,6 @@ const MeetupGallery = () => {
     resetAutoplay();
   }, [emblaApi, resetAutoplay]);
 
-  // --- LIGHTBOX NAVIGATION ---
   const goNextPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null), []);
   const goPrevPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null), []);
 
@@ -73,7 +73,6 @@ const MeetupGallery = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, [selectedPhoto, goNextPhoto, goPrevPhoto]);
 
-  // --- CAROUSEL EVENTS ---
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
@@ -93,11 +92,13 @@ const MeetupGallery = () => {
     };
   }, [emblaApi, onSelect]);
 
-  // --- VIEW-TRIGGERED AUTOPLAY ---
+  // --- SYNCED VIEW-TRIGGERED AUTOPLAY ---
   useEffect(() => {
     if (!emblaApi || !isInView) return;
 
+    // Start the first move exactly 5 seconds after the user arrives
     initialDelayRef.current = setTimeout(() => {
+      emblaApi.scrollNext();
       resetAutoplay();
     }, 5000);
 
@@ -216,7 +217,6 @@ const MeetupGallery = () => {
                   }`}
                   aria-label={`Go to photo ${index + 1}`}
                 >
-                  {/* TWEAK: Progress bar only exists when slide is active AND section is in view */}
                   {index === selectedIndex && isInView && (
                     <motion.div
                       key={progressKey}

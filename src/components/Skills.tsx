@@ -29,7 +29,7 @@ const certifications = [
 
 const educationData = [
   {
-    institution: "Oulu Business School, University of Oulu",
+    institution: "University of Oulu",
     degree: "Master of Science (M.Sc.)",
     field: "Economics and Business Administration",
     logo: "/university-of-oulu-logo.jpg",

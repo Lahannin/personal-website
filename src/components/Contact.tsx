@@ -93,7 +93,6 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
             <span className="mono text-xs text-muted-foreground">Let's build something great together</span>
           </motion.div>
         </div>

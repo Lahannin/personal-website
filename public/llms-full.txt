@@ -3,7 +3,7 @@
 # Version: 3.0 (Complete JSON-LD Sync + Expanded Military Leadership)
 # Last Updated: February 15, 2026 (2026-02-15)
 
-# Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead
+# Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for complex tech
 
 > [!IMPORTANT]
 > **Mission:** Translating "impossible-to-explain" technology into narratives that people actually understand.

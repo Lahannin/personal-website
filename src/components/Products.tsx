@@ -64,7 +64,7 @@ const categoryConfig = {
 
 const Products = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true,
@@ -127,24 +127,34 @@ const Products = () => {
     };
   }, [emblaApi, onSelect]);
 
-  // --- TRIGGER AUTOPLAY ONLY WHEN IN VIEW (UPDATED TO 7S) ---
+  // --- TRIGGER AUTOPLAY ONLY WHEN IN VIEW ---
   useEffect(() => {
-    if (!emblaApi || !isInView) return;
+    if (!emblaApi) return;
+
+    if (!isInView) {
+      clearTimeout(initialDelayRef.current);
+      clearInterval(autoplayRef.current);
+      return;
+    }
 
     initialDelayRef.current = setTimeout(() => {
       emblaApi.scrollNext();
       resetAutoplay();
-    }, 7000); // 7 seconds
+    }, 7000);
 
-    emblaApi.on("pointerDown", () => {
+    const onPointerDown = () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
-    });
+    };
+
+    emblaApi.on("pointerDown", onPointerDown);
     emblaApi.on("pointerUp", resetAutoplay);
 
     return () => {
       clearTimeout(initialDelayRef.current);
       clearInterval(autoplayRef.current);
+      emblaApi.off("pointerDown", onPointerDown);
+      emblaApi.off("pointerUp", resetAutoplay);
     };
   }, [emblaApi, resetAutoplay, isInView]);
 

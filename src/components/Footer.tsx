@@ -13,14 +13,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-8 border-t border-border" role="contentinfo">
+    <footer className="py-8 border-t border-border/50" role="contentinfo">
       <div className="container px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <p className="mono text-sm text-muted-foreground text-center md:text-left">
+            <p className="font-mono text-xs text-muted-foreground text-center md:text-left tracking-wide">
               © {currentYear} Lauri Hänninen
-              <br /> {/* <--- This must be self-closing in React */}
-              <span className="opacity-70 text-xs">It's not much, but it's honest work</span>
+              <br />
+              <span className="opacity-60 text-[10px]">It's not much, but it's honest work</span>
             </p>
           </div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2 min-h-[44px] flex items-center"
+                    className="text-xs font-mono text-muted-foreground hover:text-highlight transition-colors py-2 min-h-[44px] flex items-center tracking-wide"
                   >
                     {link.label}
                   </a>
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
           </nav>
 
-          <p className="mono text-xs text-muted-foreground">
+          <p className="font-mono text-[10px] text-muted-foreground tracking-wider">
             Prague 🇨🇿 • Finland 🇫🇮
           </p>
         </div>

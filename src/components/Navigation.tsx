@@ -33,7 +33,7 @@ const Navigation = () => {
           role="navigation"
           aria-label="Main navigation"
           className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-            isScrolled ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm" : "bg-background/80 backdrop-blur-lg md:bg-transparent md:backdrop-blur-none"
+            isScrolled ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
           }`}
         >
           <div className="container px-6">
@@ -43,7 +43,7 @@ const Navigation = () => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
+                    className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md transition-colors font-mono"
                   >
                     {link.label}
                   </a>
@@ -80,7 +80,7 @@ const Navigation = () => {
                           <a
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-highlight py-3 px-4 rounded-lg min-h-[44px] flex items-center"
+                            className="block text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-highlight py-3 px-4 rounded-md min-h-[44px] flex items-center font-mono"
                           >
                             {link.label}
                           </a>

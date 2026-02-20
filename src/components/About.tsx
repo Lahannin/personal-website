@@ -33,8 +33,8 @@ const About = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">ABOUT</span>
-            <h2 id="about-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-tight">
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// ABOUT</span>
+            <h2 id="about-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Product marketer for things <span className="hidden md:inline"><br /></span><span className="text-gradient">that are hard to describe</span>
             </h2>
           </motion.div>
@@ -79,7 +79,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.3, delay: index * 0.08 }}
-                className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group"
+                className="card-gradient border border-border/60 rounded-lg p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-6 h-6 text-primary" />

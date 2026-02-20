@@ -178,8 +178,8 @@ const Products = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">PRODUCT LAUNCHES</span>
-            <h2 id="products-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-tight">
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// PRODUCT LAUNCHES</span>
+            <h2 id="products-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Products I've <span className="text-gradient">Launched</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">

@@ -44,21 +44,23 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background noise-overlay">
+      {/* Grid pattern background */}
+      <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
+      
       {/* Background Gradients */}
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20 pointer-events-none"
       />
       
-      {/* Glow Blobs - Accelerated with translateZ */}
+      {/* Glow Blobs */}
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 overflow-hidden pointer-events-none"
       >
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/5 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-highlight/3 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
       </motion.div>
 
       <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
@@ -92,7 +94,7 @@ const Hero = () => {
           <motion.h1
             id="hero-heading"
             variants={itemVariants}
-            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 leading-[0.9]"
+            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
           >
             Lauri <span className="text-gradient">Hänninen</span>
           </motion.h1>
@@ -111,9 +113,9 @@ const Hero = () => {
             className="flex items-center justify-center gap-2 text-muted-foreground mb-14"
           >
             <MapPin className="w-4 h-4" aria-hidden="true" />
-            <span className="mono text-sm">Prague, Czechia 🇨🇿</span>
+            <span className="font-mono text-xs tracking-wider">Prague, Czechia 🇨🇿</span>
             <span className="mx-2 text-border">•</span>
-            <span className="mono text-sm">Finnish origins 🇫🇮</span>
+            <span className="font-mono text-xs tracking-wider">Finnish origins 🇫🇮</span>
           </motion.div>
 
           {/* All CTA buttons restored */}
@@ -123,14 +125,14 @@ const Hero = () => {
           >
             <a
               href="#about"
-              className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-primary text-primary-foreground font-bold rounded-xl shadow-lg hover:shadow-highlight/20 hover:scale-105 transition-all duration-300 text-base sm:text-lg"
+              className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-foreground text-background font-bold rounded-lg shadow-lg hover:shadow-highlight/20 hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
             >
               Learn More
               <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
             </a>
             <a
               href="#contact"
-              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-secondary text-secondary-foreground font-bold rounded-xl border-2 border-border hover:border-highlight/50 hover:bg-highlight/5 hover:scale-105 transition-all duration-300 text-base sm:text-lg"
+              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-transparent text-foreground font-bold rounded-lg border-2 border-foreground/20 hover:border-highlight hover:text-highlight hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
             >
               Get in Touch
             </a>

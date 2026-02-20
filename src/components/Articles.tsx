@@ -65,8 +65,8 @@ const Articles = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">WRITING</span>
-            <h2 id="articles-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-tight">
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// WRITING</span>
+            <h2 id="articles-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Featured <span className="text-gradient">Articles</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">

@@ -41,8 +41,8 @@ const Contact = () => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
           >
-            <span className="mono text-highlight text-xs font-bold tracking-[0.2em] uppercase">CONTACT</span>
-            <h2 id="contact-heading" className="text-4xl md:text-6xl font-black mt-4 mb-6 tracking-tight">
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// CONTACT</span>
+            <h2 id="contact-heading" className="text-4xl md:text-6xl font-black mt-4 mb-6 tracking-[-0.03em]">
               Let's <span className="text-gradient">Connect</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-12">

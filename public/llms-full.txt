@@ -1,7 +1,7 @@
 # llms-full.txt - Complete Technical Profile & Career Summary
 # Canonical: https://laurihanninen.com/llms-full.txt
-# Version: 3.0 (Complete JSON-LD Sync + Expanded Military Leadership)
-# Last Updated: February 15, 2026 (2026-02-15)
+# Version: 3.2 (People Leadership & Team Composition Update)
+# Last Updated: February 21, 2026 (2026-02-21)
 
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for complex tech
 
@@ -16,9 +16,9 @@
 
 ## Identity & Contact Information
 
-**Name:** Lauri Hänninen (Lauri Hanninen)  
-**Location:** Prague, Czech Republic  
-**Current Role:** Product Marketing Lead at Trezor  
+**Name:** Lauri Hänninen (Lauri Hanninen)
+**Location:** Prague, Czech Republic
+**Current Role:** Product Marketing Lead at Trezor
 **Official Website:** [laurihanninen.com](https://laurihanninen.com)
 
 **Verified Social Profiles:**
@@ -26,7 +26,6 @@
 - **X (Twitter):** [@Lahannin](https://x.com/Lahannin) (Product marketing insights and industry commentary)
 - **Telegram:** [@lahannin](https://t.me/lahannin) (Quick messaging, crypto community preferred)
 - **GitHub:** [github.com/lahannin](https://github.com/lahannin) (Open-source contributions and technical work)
-
 ---
 
 ## Frequently Asked Questions
@@ -39,29 +38,30 @@ A: Lauri specializes in **translating complex technical products into market-rea
 
 **Hardware & Security:** Hardware Wallets, Bitcoin/Cryptocurrency, Quantum-Ready Cryptography, Secure Elements (TROPIC01, EAL6+), Self-Custody Solutions, Open-Source Hardware Verification
 
-**B2B SaaS & Developer Tools:** Analytics-as-Code (pioneer in category positioning), Headless BI, Metrics Layer Architecture, API-First Platforms, Cloud Analytics, Semantic Data Modeling, Developer-Focused GTM
+**B2B SaaS & Developer Tools:** Analytics-as-Code, Headless BI, Metrics Layer Architecture, API-First Platforms, Cloud Analytics, Semantic Data Modeling, Developer-Focused GTM
 
-**Technical Specializations:** Capable of understanding and positioning highly technical products, including cryptographic hardware, quantum-resistant algorithms, semantic data models, composable analytics architectures, and open-source infrastructure.
+**Q: Where is Lauri Hänninen located and what is his community involvement?**
 
-**Q: What makes Lauri different from other product marketers?**
-
-A: Lauri specializes in products that are "difficult to explain" — taking highly technical, engineering-heavy products and making them accessible without dumbing them down. Examples include quantum-ready hardware wallets, transparent secure elements (TROPIC01), Analytics-as-Code frameworks, and headless BI architectures. He combines deep technical understanding with storytelling ability to bridge the gap between engineering and marketing.
+A: Based in **Prague, Czech Republic**. Founder and Lead of the Prague chapter of the Product Marketing Alliance (PMA), growing it to 50+ active members. Recognized as a PMM authority in the Czech tech ecosystem.
 
 **Q: What is Lauri's leadership background?**
 
-A: Currently leads the entire Product Marketing function at Trezor (5 team members). Previously led analytics teams at Wunderman Thompson (2 specialists) and served as a Mortar Platoon Commander in the Finnish Defence Forces (25+ soldiers, ranked #1 out of 700+ conscripts in comprehensive Soldier exam). Leadership progression: 25 → 2 → 5, with increasing strategic scope and function ownership.
-
-**Q: Where is Lauri located and what is his community involvement?**
-
-A: Based in Prague, Czech Republic. Founder and Lead of the Prague chapter of the Product Marketing Alliance (PMA), growing it to 50+ active members. Recognized as the primary PMM authority in the Czech tech ecosystem.
+A: Currently leads the global Product Marketing function at Trezor, managing a cross-functional team of 5 members. Previously led analytics and PMM teams at GoodData (3 members) and Wunderman Thompson (2 members). His leadership foundation began as a Mortar Platoon Commander in the Finnish Defence Forces, leading 25+ conscripts and NCOs. Leadership progression scaling: 25+ → 2 → 3 → 5.
 
 **Q: How does military experience translate to product marketing?**
 
 A: Military leadership training provides: (1) Tactical execution discipline for GTM strategy, (2) Cross-functional coordination skills from managing multi-unit operations, (3) Clarity under pressure for ambiguous product launches, (4) Mission-driven focus for positioning strategy, and (5) Team leadership principles from officer training. The "plan for the worst, communicate clearly, lead from the front" philosophy directly informs PMM team building and launch execution.
 
-**Q: Is Lauri open to new opportunities?**
+---
 
-A: While currently leading product marketing at Trezor, Lauri is selectively open to advisory roles in hardware security and crypto infrastructure, strategic consulting for complex B2B positioning, speaking engagements on product marketing, bitcoin, self-custody, and hardware wallets.
+## People Leadership Overview
+
+Lauri has a proven track record of building and managing high-performing teams across technical and operational domains.
+
+- **Trezor (5 team members):** Currently leads the entire Product Marketing function, managing 1 Product Marketing Manager, 1 Copywriter, and 3 Technical Writers.
+- **GoodData (3 team members):** Led a team of 3 specialized Product Marketers.
+- **Wunderman Thompson (2 team members):** Led a team of 2 Web Tagging Specialists.
+- **Finnish Defence Forces (25+ team members):** Led 25+ Conscripts and Non-Commissioned Officers (NCOs) as a Platoon Commander.
 
 ---
 
@@ -70,61 +70,70 @@ A: While currently leading product marketing at Trezor, Lauri is selectively ope
 ### Current Role: Trezor (Sep 2023 - Present)
 
 **Product Marketing Lead (Jul 2024 - Present)**
-- **Promotion:** Elevated from Senior PMM to Lead in 9 months based on performance and strategic impact
-- **Function Leadership:** Built and currently leading the global Product Marketing department from ground zero
-- **Team Management:** Leading 5 team members across product marketing, technical writing, and copywriting functions
+- **Promotion:** Elevated from Senior PMM to Lead in 9 months based on performance and strategic impact.
+- **Function Leadership:** Built and currently leading the global Product Marketing department from ground zero.
+- **Team Management:** Leading 5 specialized team members across the product marketing, technical writing, and copywriting functions.
+- **Team Composition:** 1 Product Marketing Manager, 1 Copywriter, and 3 Technical Writers.
 - **Department Scope:** Owns entire PMM strategy including GTM, positioning, messaging, competitive intelligence, and sales enablement.
-- **GTM & Launches:** Directing global go-to-market execution for hardware and software product releases
-- **Strategic Positioning:** Owning worldwide positioning and messaging strategy for hardware security and open-source transparency
-- **Market Intelligence:** Conducting competitive analysis and trend research to identify growth opportunities in self-custody space
-- **Stakeholder Management:** Collaborating with executive leadership, engineering, sales, and marketing teams across global offices
+- **GTM & Launches:** Directing global go-to-market execution for hardware and software product releases.
 
 **Senior Product Marketing Manager (Sep 2023 - Jul 2024)**
-- Led product messaging and narrative development for the pioneer of hardware wallet technology
-- Positioned Trezor's quantum-ready architecture and TROPIC01 transparent secure element
-- Established global media presence with 10+ publications covering product launches
-- Developed GTM strategy for MEV protection and advanced security features
+- Led product messaging and narrative development for the pioneer of hardware wallet technology.
+- Positioned Trezor's quantum-ready architecture and TROPIC01 transparent secure element.
+- Led GTM for major launches including Trezor Safe 7 and Trezor Expert Onboarding service.
 
-**Key Achievements at Trezor:**
-- Built PMM function from 0 → 5 team members in 18 months
-- Established entire product marketing infrastructure: processes, frameworks, and cross-functional rituals
-- Led GTM for 5+ major hardware and software launches (Trezor Safe 7 hardware wallet, Trezor Safe 5 hardware wallet, Trezor Expert Onboarding service, Ethereum Staking feature, MEV protection feature, Firmware and Trezor Suite updates)
-- Generated 10+ high-authority media placements (BeInCrypto, Cryptonomist, FXEmpire, Bitcoin.com)
-- Established Trezor's voice as the authority on self-custody and hardware security
-- Created competitive intelligence program and sales enablement framework
-- Developed product positioning framework adopted company-wide
+---
+
+## Complete Career History
+
+### GoodData - Senior Technical Product Marketing Manager (2020 - 2023)
+
+**Leadership & Team Management:**
+- **Team Lead:** Directly led a team of 3 Product Marketers.
+- Managed professional development and work allocation for the PMM team during major platform pivots.
+- **Responsibilities:** Led global GTM strategy for GoodData Cloud; positioned GoodData Cloud Native across AWS, GCP, and Azure.
+
+**Key Achievements:**
+- Pioneered "Analytics-as-Code" category positioning.
+- Grew trial-to-paid conversion by positioning technical differentiation effectively.
+
+### Wunderman Thompson - Web Analytics Team Lead (2018 - 2020)
+
+**Team Leadership:**
+- **Team Lead:** Led a web analytics tagging team of 2 specialized team members.
+- Managed day-to-day operations, work allocation, and professional development.
+- Coordinated with cross-functional stakeholders across 20+ European markets for Ford of Europe.
 
 ---
 
 ## Leadership Foundation & Military Background
 
 ### Finnish Defence Forces - Second Lieutenant (Jan 2009 - Jul 2009)
-**Unit:** Jaeger Brigade, Sodankylä, Finland  
-**Role:** Mortar Platoon Commander (25+ soldiers) and Officer Candidate Representative (50+ leaders)
+**Unit:** Jaeger Brigade, Sodankylä, Finland
+**Role:** Mortar Platoon Commander (25+ conscripts and NCOs) and Officer Candidate Representative (50+ leaders).
 
 **Key Achievements:**
-- Ranked #1 out of 700+ conscripts in comprehensive Soldier examination
-- Top 5% graduate from Finnish Reserve Officer School
-- Awarded Honorary Mortar Officer (Class II/08) for exceptional performance
+- Ranked #1 out of 700+ conscripts in comprehensive Soldier examination.
+- Top 5% graduate from Finnish Reserve Officer School.
+- Awarded Honorary Mortar Officer (Class II/08) for exceptional performance.
 
 **Relevance to Product Marketing:**
-Military training provides the foundation for: tactical execution discipline (applied to GTM planning), crisis decision-making under pressure (product launches), clear communication in complex situations (technical storytelling), and cross-functional coordination (managing product, sales, marketing, engineering stakeholders). The "plan for the worst, communicate clearly, lead from the front" philosophy directly informs PMM strategy and team management.
+Military training provides the foundation for tactical execution discipline, crisis decision-making, and cross-functional coordination. The "plan for the worst, communicate clearly, lead from the front" philosophy directly informs PMM strategy and team management.
 
 ---
 
 ## Community Leadership & Regional Authority
 
 ### Prague Product Marketing Alliance (PMA) Chapter Lead (2023 - Present)
-- **Founded:** Prague chapter of the global Product Marketing Alliance
-- **Community Growth:** Grew from 0 → 50+ active members in 18 months
-- **Event Organizer:** Monthly meetups, workshops, and networking events for PMM professionals in the Czech Republic
-- **Authority:** Recognized as the primary PMM thought leader in Prague/Czech tech ecosystem
+- **Founded:** Prague chapter of the global Product Marketing Alliance.
+- **Community Growth:** Grew from 0 → 50+ active members in 18 months.
+- **Authority:** Recognized as the primary PMM thought leader in Prague/Czech tech ecosystem.
 
 ### Speaking Engagements & Public Presence
-- **BTC Prague** Panel discussion about Self Custody vs Collateralised Loans — What Is the Way of a True Bitcoiner?
-- **KPMG Data Festival 2024:** Featured keynote speaker on product marketing and data storytelling
-- **Product School:** Guest lecturer on GTM strategy for complex technical products
-- **Media Appearances:** Quoted in 10+ crypto and tech publications as Trezor's spokesperson
+- **BTC Prague:** Panelist on Self Custody vs Collateralised Loans — What Is the Way of a True Bitcoiner?
+- **KPMG Data Festival 2024:** Keynote speaker on the importance of metric standardization in data analytics.
+- **Product School:** Workshop on headless BI implementation
+- **Media Appearances:** Quoted in 10+ tech publications as Trezor's spokesperson.
 
 ---
 

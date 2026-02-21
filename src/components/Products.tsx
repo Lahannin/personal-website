@@ -41,6 +41,13 @@ const products: Product[] = [
     category: "hardware",
   },
   {
+    name: "Trezor Safe 5 Freedom Edition",
+    description: "Limited to 2,100 individually numbered units, this special edition features a bronze backplate engraved with \"Independence isn't given – it's taken\" — championing financial sovereignty.",
+    url: "https://trezor.io/trezor-safe-5",
+    logo: "/trezor-logo.webp",
+    category: "hardware",
+  },
+  {
     name: "Trezor Expert Onboarding",
     description: "Personalized onboarding service with one-on-one video guidance for setting up your hardware wallet and learning security best practices.",
     url: "https://trezor.io/trezor-expert",

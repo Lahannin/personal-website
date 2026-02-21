@@ -6,7 +6,7 @@
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for complex tech
 
 > [!IMPORTANT]
-> **Mission:** Translating "impossible-to-explain" technology into narratives that people actually understand.
+> **Mission:** Translating "difficult-to-explain" technology into narratives that people actually understand.
 > 
 > **Philosophy:** Firm believer that open-source code is the fundamental path to returning digital freedom and user sovereignty.
 > 

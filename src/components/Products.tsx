@@ -44,7 +44,7 @@ const products: Product[] = [
   {
     name: "Trezor Safe 5 Freedom Edition",
     description: "With just 2,100 individually serialized units, this limited edition was created for those who valued self-reliance and true ownership.",
-    url: "https://trezor.io/trezor-safe-5",
+    url: "https://satoshilabs.com/news/trezor-launches-limited-freedom-edition-wallet-as-part-of-its-financial-sovereignty-campaign",
     logo: "/trezor-logo.webp",
     category: "hardware",
     badge: "Limited Edition",
@@ -52,14 +52,14 @@ const products: Product[] = [
   {
     name: "Trezor Expert Onboarding",
     description: "Personalized onboarding service with one-on-one video guidance for setting up your hardware wallet and learning security best practices.",
-    url: "https://trezor.io/trezor-expert",
+    url: "https://trezor.io/trezor-expert-session",
     logo: "/trezor-logo.webp",
     category: "services",
   },
   {
     name: "Trezor Expert Consultation",
     description: "A premium, one-on-one support service that helps users master their Trezor, gain confidence in self-custody, and unlock the full potential of their hardware wallet.",
-    url: "https://trezor.io/trezor-expert",
+    url: "https://trezor.io/trezor-expert-consultation",
     logo: "/trezor-logo.webp",
     category: "services",
   },

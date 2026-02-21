@@ -58,7 +58,7 @@ const products: Product[] = [
   },
   {
     name: "Trezor Expert Consultation",
-    description: "Premium one-on-one support to help customers navigate Trezor, learn every feature, and manage their crypto securely.”,
+    description: "Premium one-on-one support to help customers navigate Trezor, learn every feature, and manage their crypto securely.",
     url: "https://trezor.io/trezor-expert-consultation",
     logo: "/trezor-logo.webp",
     category: "services",

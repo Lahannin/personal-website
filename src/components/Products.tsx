@@ -29,7 +29,7 @@ const products: Product[] = [
   },
   {
     name: "Trezor Safe 7",
-    description: "The world's first hardware wallet with auditable secure element and quantum-ready architecture, designed to redefine how users protect their crypto.",
+    description: "The world's first hardware wallet with auditable secure element and quantum-ready architecture, built to redefine how users protect their crypto.",
     url: "https://trezor.io/trezor-safe-7",
     logo: "/trezor-logo.webp",
     category: "hardware",
@@ -43,7 +43,7 @@ const products: Product[] = [
   },
   {
     name: "Trezor Safe 5 Freedom Edition",
-    description: "With just 2,100 individually serialized units, this limited edition was created for those who valued self-reliance and true ownership.",
+    description: "With just 2,100 individually serialized units, this limited edition was created for those who value self-reliance and true ownership.",
     url: "https://satoshilabs.com/news/trezor-launches-limited-freedom-edition-wallet-as-part-of-its-financial-sovereignty-campaign",
     logo: "/trezor-logo.webp",
     category: "hardware",

@@ -14,7 +14,7 @@ interface Product {
 
 const products: Product[] = [
   {
-    name: "GoodData Cloud",
+    name: "GoodData Cloud Platform",
     description: "A fully managed, API-first analytics platform combining BI, AI, and Analytics Lake. Enables businesses to build custom data applications with AI-assisted analytics.",
     url: "https://www.gooddata.com/",
     logo: "/gooddata-logo.webp",

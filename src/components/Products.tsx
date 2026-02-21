@@ -29,14 +29,14 @@ const products: Product[] = [
   },
   {
     name: "Trezor Safe 7",
-    description: "The hardware wallet that redefines crypto security forever — radically transparent, fully wireless, and quantum-ready.",
+    description: "The world's first hardware wallet with auditable secure element and quantum-ready architecture, designed to redefine how users protect their crypto.",
     url: "https://trezor.io/trezor-safe-7",
     logo: "/trezor-logo.webp",
     category: "hardware",
   },
   {
     name: "Trezor Safe 5",
-    description: "Hardware wallet with vibrant color touchscreen and haptic feedback for everyday crypto security.",
+    description: "Hardware wallet with an intuitive touchscreen, haptic feedback, and vibrant colors, designed to make everyday crypto management simple and secure.",
     url: "https://trezor.io/trezor-safe-5",
     logo: "/trezor-logo.webp",
     category: "hardware",

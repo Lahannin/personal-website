@@ -9,6 +9,7 @@ interface Role {
   summary?: string;
   highlights: string[];
   current?: boolean;
+  defaultExpanded?: boolean;
 }
 
 interface Company {
@@ -18,6 +19,48 @@ interface Company {
   logo: string;
   roles: Role[];
 }
+
+/** Parse "MM/YYYY" into a Date */
+const parseDate = (s: string): Date => {
+  if (s.toLowerCase().includes("present")) return new Date();
+  const [m, y] = s.split("/").map(Number);
+  return new Date(y, m - 1);
+};
+
+/** Compute total span from earliest role start to latest role end */
+const computeTotalSpan = (roles: Role[]): { start: string; end: string; label: string } => {
+  let earliest = Infinity;
+  let latest = -Infinity;
+  let hasPresent = false;
+
+  for (const role of roles) {
+    const [startStr, endStr] = role.period.split("–").map((s) => s.trim());
+    const startMs = parseDate(startStr).getTime();
+    const endMs = parseDate(endStr).getTime();
+    if (startMs < earliest) earliest = startMs;
+    if (endMs > latest) latest = endMs;
+    if (endStr.toLowerCase().includes("present")) hasPresent = true;
+  }
+
+  const startDate = new Date(earliest);
+  const endDate = new Date(latest);
+
+  let months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+  if (months < 1) months = 1;
+  const years = Math.floor(months / 12);
+  const remMonths = months % 12;
+
+  const fmt = (d: Date) => `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+  const startFmt = fmt(startDate);
+  const endFmt = hasPresent ? "Present" : fmt(endDate);
+
+  let label = "";
+  if (years > 0 && remMonths > 0) label = `${years} yr${years > 1 ? "s" : ""} ${remMonths} mo${remMonths > 1 ? "s" : ""}`;
+  else if (years > 0) label = `${years} yr${years > 1 ? "s" : ""}`;
+  else label = `${remMonths} mo${remMonths > 1 ? "s" : ""}`;
+
+  return { start: startFmt, end: endFmt, label };
+};
 
 const companies: Company[] = [
   {
@@ -32,6 +75,7 @@ const companies: Company[] = [
         period: "07/2024 – Present",
         description:
           "Leading the product marketing function and building the strategy to make crypto security understandable for everyone.",
+        defaultExpanded: true,
         highlights: [
           "Function Leadership: Built the Product marketing department from the ground up, now managing a team of product marketers, technical writers, and copywriters.",
           "GTM & Launches: Leading global go-to-market execution for hardware and software launches, ensuring alignment between product development and commercial release.",
@@ -173,7 +217,16 @@ const companies: Company[] = [
 ];
 
 const Experience = () => {
-  const [expandedRoles, setExpandedRoles] = useState<Record<string, boolean>>({});
+  // Build default expanded state from data
+  const [expandedRoles, setExpandedRoles] = useState<Record<string, boolean>>(() => {
+    const defaults: Record<string, boolean> = {};
+    companies.forEach((company, ci) => {
+      company.roles.forEach((role, ri) => {
+        if (role.defaultExpanded) defaults[`${ci}-${ri}`] = true;
+      });
+    });
+    return defaults;
+  });
   const hasCurrent = (company: Company) => company.roles.some((role) => role.current);
 
   const toggleRole = (companyIndex: number, roleIndex: number) => {
@@ -277,6 +330,14 @@ const Experience = () => {
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground">{company.location}</p>
+                        {company.roles.length > 1 && (() => {
+                          const span = computeTotalSpan(company.roles);
+                          return (
+                            <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">
+                              {span.start} – {span.end} ({span.label})
+                            </p>
+                          );
+                        })()}
                       </div>
                     </div>
 

@@ -51,14 +51,14 @@ const products: Product[] = [
   },
   {
     name: "Trezor Expert Onboarding",
-    description: "Personalized onboarding service with one-on-one video guidance for setting up your hardware wallet and learning security best practices.",
+    description: "Personalized, one-on-one onboarding that gives users expert guidance and confidence setting up their crypto hardware wallets.",
     url: "https://trezor.io/trezor-expert-session",
     logo: "/trezor-logo.webp",
     category: "services",
   },
   {
     name: "Trezor Expert Consultation",
-    description: "A premium, one-on-one support service that helps users master their Trezor, gain confidence in self-custody, and unlock the full potential of their hardware wallet.",
+    description: "Premium one-on-one support to help customers navigate Trezor, learn every feature, and manage their crypto securely.”,
     url: "https://trezor.io/trezor-expert-consultation",
     logo: "/trezor-logo.webp",
     category: "services",

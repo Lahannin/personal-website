@@ -43,7 +43,7 @@ const products: Product[] = [
   },
   {
     name: "Trezor Safe 5 Freedom Edition",
-    description: "Limited to 2,100 individually numbered units, this special edition features a bronze backplate engraved with \"Independence isn't given – it's taken\" — championing financial sovereignty.",
+    description: "With just 2,100 individually serialized units, this limited edition was created for those who valued self-reliance and true ownership.",
     url: "https://trezor.io/trezor-safe-5",
     logo: "/trezor-logo.webp",
     category: "hardware",

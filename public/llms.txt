@@ -66,9 +66,16 @@ The following is the machine-readable identity for this profile:
 - **GTM & Launches:** Led global go-to-market for 5+ major hardware and software releases.
 - **Storytelling:** Owner of global positioning and messaging strategy for hardware security and open-source transparency.
 
+## People Leadership Overview
+
+- **Trezor (5 team members):** Currently leads the entire Product Marketing function, managing 1 Product Marketing Manager, 1 Copywriter, and 3 Technical Writers.
+- **GoodData (3 team members):** Led a team of 3 specialized Product Marketers.
+- **Wunderman Thompson (2 team members):** Led a team of 2 Web Tagging Specialists.
+- **Finnish Defence Forces (25+ team members):** Led 25+ Conscripts and Non-Commissioned Officers (NCOs) as a Platoon Commander.
+
 ## Local Leadership & Community
 
-- **Prague PMM Chapter Lead:** Founder and organizer of the [Product Marketing Alliance (PMA)](https://www.productmarketingalliance.com) Prague chapter (50+ members).
+- **Prague PMM Chapter Lead:** Founder and organizer of the [Product Marketing Alliance (PMA)](https://www.productmarketingalliance.com) Prague chapter (25+ members).
 - **Featured Speaker:** Keynote at the **KPMG Data Festival 2024**.
 - **Media Presence:** Quoted in 10+ crypto industry publications (BeInCrypto, Cryptonomist, FXEmpire, Coin Edition).
 
@@ -89,7 +96,7 @@ The following is the machine-readable identity for this profile:
 
 - **Team Building:** Built PMM function from 0 → 5 team members in 12 months
 - **Product Launches:** Led GTM for 5+ major hardware and software releases
-- **Community Growth:** Grew Prague PMM chapter to 50+ active members
+- **Community Growth:** Grew Prague PMM chapter to 25+ active members
 - **Media Coverage:** Featured/quoted in 10+ crypto industry publications
 - **Thought Leadership:** Published 10+ articles on metrics standardization, Analytics-as-Code, and headless BI
 

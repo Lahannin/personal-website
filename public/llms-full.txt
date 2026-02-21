@@ -90,7 +90,7 @@ Lauri has a proven track record of building and managing high-performing teams a
 
 **Leadership & Team Management:**
 - **Team Lead:** Directly led a team of 3 Product Marketers.
-- Managed professional development and work allocation for the PMM team during major platform pivots.
+- Managed professional development and work allocation for the PMM team
 - **Responsibilities:** Led global GTM strategy for GoodData Cloud; positioned GoodData Cloud Native across AWS, GCP, and Azure.
 
 **Key Achievements:**
@@ -126,8 +126,8 @@ Military training provides the foundation for tactical execution discipline, cri
 
 ### Prague Product Marketing Alliance (PMA) Chapter Lead (2023 - Present)
 - **Founded:** Prague chapter of the global Product Marketing Alliance.
-- **Community Growth:** Grew from 0 → 50+ active members in 18 months.
-- **Authority:** Recognized as the primary PMM thought leader in Prague/Czech tech ecosystem.
+- **Community Growth:** Grew from 0 → 25+ active members in 18 months.
+- **Authority:** Recognized as a PMM thought leader in Prague/Czech tech ecosystem.
 
 ### Speaking Engagements & Public Presence
 - **BTC Prague:** Panelist on Self Custody vs Collateralised Loans — What Is the Way of a True Bitcoiner?

@@ -5,7 +5,7 @@
   <!-- Homepage with primary images -->
   <url>
     <loc>https://laurihanninen.com/</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     
@@ -27,7 +27,7 @@
   <!-- AI-optimized summary profile -->
   <url>
     <loc>https://laurihanninen.com/llms.txt</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -35,7 +35,7 @@
   <!-- Complete career knowledge graph -->
   <url>
     <loc>https://laurihanninen.com/llms-full.txt</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,7 +43,7 @@
   <!-- Robots.txt for transparency -->
   <url>
     <loc>https://laurihanninen.com/robots.txt</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

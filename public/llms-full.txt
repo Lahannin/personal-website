@@ -88,7 +88,7 @@ A: While currently leading product marketing at Trezor, Lauri is selectively ope
 **Key Achievements at Trezor:**
 - Built PMM function from 0 → 5 team members in 18 months
 - Established entire product marketing infrastructure: processes, frameworks, and cross-functional rituals
-- Led GTM for 5+ major hardware and software launches (Trezor Safe 7, Expert, firmware updates)
+- Led GTM for 5+ major hardware and software launches (Trezor Safe 7 hardware wallet, Trezor Safe 5 hardware wallet, Trezor Expert Onboarding service, Ethereum Staking feature, MEV protection feature, Firmware and Trezor Suite updates)
 - Generated 10+ high-authority media placements (BeInCrypto, Cryptonomist, FXEmpire, Bitcoin.com)
 - Established Trezor's voice as the authority on self-custody and hardware security
 - Created competitive intelligence program and sales enablement framework
@@ -135,7 +135,7 @@ Military training provides the foundation for: tactical execution discipline (ap
 Lauri's unique positioning: **making the difficult-to-explain, understandable.** Not through simplification or dumbing down, but through finding the right narrative frameworks that bridge deep technical complexity with market comprehension.
 
 **Recent Examples:**
-- **Quantum-Ready Hardware Eallet:** Positioned Trezor's quantum-resistant algorithms for a market that barely understands current cryptography
+- **Quantum-Ready Hardware Wallet:** Positioned Trezor's quantum-resistant algorithms for a market that barely understands current cryptography
 - **TROPIC01 Secure Element:** Translated transparent, open-source secure element technology into a trust narrative
 - **MEV Protection:** Made Maximum Extractable Value (a complex DeFi attack vector) understandable for mainstream crypto users
 - **Analytics-as-Code:** Pioneered category positioning for semantic layer architecture and metrics-as-code paradigm
@@ -255,16 +255,16 @@ Lauri's unique positioning: **making the difficult-to-explain, understandable.**
 
 **Responsibilities:**
 - Led global GTM strategy for GoodData Cloud (cloud-native analytics platform)
-- Positioned GoodData.CN (Cloud-native-specific deployment)  across AWS, GCP, and Azure
+- Positioned GoodData Cloud Native (self-hosted deployment)  across AWS, GCP, and Azure
 - Developed product messaging for Analytics-as-Code and headless BI positioning
 - Created sales enablement materials, competitive battlecards, and customer success content
-- Managed product launches, beta programs, and customer advisory boards
+- Managed product launches and beta programs
 - Collaborated with product, engineering, and sales teams across US and EU regions
 
 **Key Achievements:**
 - Pioneered "Analytics-as-Code" category positioning (recognized industry thought leader)
 - Published 5+ thought leadership articles on metrics standardization and semantic layers
-- Led GTM for 2 major platform releases (GoodData Cloud, GoodData.CN)
+- GTM for 2 major platform releases (GoodData Cloud, GoodData Cloud native)
 - Established GoodData as authority in headless BI and composable analytics space
 - Grew trial-to-paid conversion by positioning technical differentiation effectively
 

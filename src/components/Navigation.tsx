@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-// 1. Change how we import Framer Motion
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
+import { useDarkMode } from "@/hooks/use-dark-mode";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isDark, toggle: toggleDark } = useDarkMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,18 +49,34 @@ const Navigation = () => {
                     {link.label}
                   </a>
                 ))}
+                <button
+                  onClick={toggleDark}
+                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                  className="ml-2 p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-md text-muted-foreground hover:text-highlight border border-border/50 hover:border-highlight/40 transition-all duration-300 font-mono"
+                >
+                  {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                </button>
               </div>
 
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
+              <div className="md:hidden flex items-center gap-1">
+                <button
+                  onClick={toggleDark}
+                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                  className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-highlight rounded-lg transition-colors"
+                >
+                  {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                </button>
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {/* Use small SVG directly or specific icons */}
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+                  {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+              </div>
             </div>
 
             <AnimatePresence>

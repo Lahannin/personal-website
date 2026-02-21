@@ -21,7 +21,7 @@ const products: Product[] = [
     category: "software",
   },
   {
-    name: "GoodData.CN",
+    name: "GoodData Cloud Native",
     description: "Self-hosted version of GoodData Cloud. Scalable microservices architecture deployable in containers alongside data in public/private cloud or on-premises.",
     url: "https://www.gooddata.com/",
     logo: "/gooddata-logo.webp",

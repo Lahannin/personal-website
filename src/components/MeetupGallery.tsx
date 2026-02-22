@@ -248,26 +248,26 @@ const MeetupGallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-foreground/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
             onClick={() => setSelectedPhoto(null)}
           >
             <button
               onClick={() => setSelectedPhoto(null)}
-              className="absolute top-6 right-6 text-background hover:text-primary transition-colors z-10"
+              className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-10"
               aria-label="Close lightbox"
             >
               <X className="w-8 h-8" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); goPrevPhoto(); }}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/20 hover:bg-background/40 text-background transition-colors z-10"
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
               aria-label="Previous photo"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); goNextPhoto(); }}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/20 hover:bg-background/40 text-background transition-colors z-10"
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
               aria-label="Next photo"
             >
               <ChevronRight className="w-6 h-6" />

@@ -45,7 +45,7 @@ const computeTotalSpan = (roles: Role[]): { start: string; end: string; label: s
   const startDate = new Date(earliest);
   const endDate = new Date(latest);
 
-  let months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+  let months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth()) + 1;
   if (months < 1) months = 1;
   const years = Math.floor(months / 12);
   const remMonths = months % 12;
@@ -323,11 +323,6 @@ const Experience = () => {
                       <div>
                         <div className="flex flex-wrap items-center gap-3">
                           <h3 className="text-xl font-bold">{company.name}</h3>
-                          {hasCurrent(company) && (
-                            <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                              Current
-                            </span>
-                          )}
                         </div>
                         <p className="text-sm text-muted-foreground">{company.location}</p>
                         {company.roles.length > 1 && (() => {
@@ -364,7 +359,11 @@ const Experience = () => {
                               <div className="flex-1">
                                 <div className="flex flex-wrap items-center gap-2 mb-1">
                                   <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                                    {role.period}
+                                    {role.period.includes("Present") ? (
+                                      <>
+                                        {role.period.replace("Present", "")}<span className="text-highlight font-bold">Present</span>
+                                      </>
+                                    ) : role.period}
                                   </span>
                                 </div>
                                 <p className="text-primary font-semibold group-hover:text-primary/80 transition-colors">

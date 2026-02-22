@@ -192,7 +192,7 @@ const Products = () => {
               Products I've <span className="text-gradient">Launched</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Key products I've brought to market through strategic positioning, messaging, and go-to-market execution.
+              Key products I’ve helped bring to market through strategic positioning, messaging, and go-to-market execution.
             </p>
           </motion.div>
 

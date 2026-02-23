@@ -9,6 +9,7 @@ interface Product {
   url?: string;
   logo?: string;
   category: "software" | "hardware" | "services";
+  badge?: string;
 }
 
 const products: Product[] = [
@@ -176,7 +177,7 @@ const Products = () => {
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
-      
+
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -210,7 +211,7 @@ const Products = () => {
             >
               <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
-            
+
             <button
               onClick={scrollNext}
               disabled={!canScrollNext}
@@ -225,7 +226,7 @@ const Products = () => {
                 {products.map((product, index) => {
                   const CategoryIcon = categoryConfig[product.category].icon;
                   const isActive = index === selectedIndex;
-                  
+
                   return (
                     <div
                       key={product.name}
@@ -245,7 +246,7 @@ const Products = () => {
                         className="group block relative overflow-hidden will-change-transform rounded-2xl"
                       >
                         <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-colors duration-500" />
-                        
+
                         <div 
                           className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                           style={{ background: `linear-gradient(135deg, transparent 40%, ${categoryConfig[product.category].accent}08 60%, transparent 80%)` }}
@@ -263,6 +264,10 @@ const Products = () => {
                               <span className="mono text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] group-hover:text-foreground transition-colors duration-300">
                                 {categoryConfig[product.category].label}
                               </span>
+                              {product.badge && (
+                                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-highlight/15 text-highlight border border-highlight/25 animate-pulse">
+                                  {product.badge}
+                                </span>
                               )}
                             </div>
                             {product.logo && (

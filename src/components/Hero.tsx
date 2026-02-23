@@ -118,25 +118,6 @@ const Hero = () => {
             <span className="font-mono text-xs tracking-wider">Finnish origins 🇫🇮</span>
           </motion.div>
 
-          {/* All CTA buttons restored */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-row items-center justify-center gap-4 sm:gap-5"
-          >
-            <a
-              href="#about"
-              className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-foreground text-background font-bold rounded-lg shadow-lg hover:shadow-highlight/20 hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
-            >
-              Learn More
-              <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
-            </a>
-            <a
-              href="#contact"
-              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-transparent text-foreground font-bold rounded-lg border-2 border-foreground/20 hover:border-highlight hover:text-highlight hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
-            >
-              Get in Touch
-            </a>
-          </motion.div>
         </motion.div>
       </motion.div>
     </section>

@@ -9,7 +9,6 @@ interface Product {
   url?: string;
   logo?: string;
   category: "software" | "hardware" | "services";
-  badge?: string;
 }
 
 const products: Product[] = [
@@ -264,10 +263,6 @@ const Products = () => {
                               <span className="mono text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] group-hover:text-foreground transition-colors duration-300">
                                 {categoryConfig[product.category].label}
                               </span>
-                              {product.badge && (
-                                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-highlight/15 text-highlight border border-highlight/25 animate-pulse">
-                                  {product.badge}
-                                </span>
                               )}
                             </div>
                             {product.logo && (

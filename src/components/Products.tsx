@@ -47,7 +47,6 @@ const products: Product[] = [
     url: "https://satoshilabs.com/news/trezor-launches-limited-freedom-edition-wallet-as-part-of-its-financial-sovereignty-campaign",
     logo: "/trezor-logo.webp",
     category: "hardware",
-    badge: "Limited Edition",
   },
   {
     name: "Trezor Expert Onboarding",

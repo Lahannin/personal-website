@@ -71,7 +71,7 @@ const Hero = () => {
           className="max-w-5xl mx-auto text-center"
         >
           {/* Profile photo with all your hover effects preserved */}
-          <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-8">
+          <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
             <div className="relative group">
               <div className="absolute -inset-4 rounded-full bg-highlight/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-highlight/40 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

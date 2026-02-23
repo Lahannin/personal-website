@@ -43,7 +43,7 @@ const products: Product[] = [
   },
   {
     name: "Trezor Safe 5 Freedom Edition",
-    description: "With just 2,100 individually serialized units, this limited edition was created for those who value self-reliance and true ownership.",
+    description: "Limited Edition with 2,100 individually serialized units, created for those who value freedom, independence, and true ownership.",
     url: "https://satoshilabs.com/news/trezor-launches-limited-freedom-edition-wallet-as-part-of-its-financial-sovereignty-campaign",
     logo: "/trezor-logo.webp",
     category: "hardware",

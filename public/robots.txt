@@ -2,15 +2,21 @@
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
 # Canonical: https://laurihanninen.com
-# Version: 2.3 (Enhanced AI Discovery)
-# Last Updated: February 21, 2026 (2026-02-21)
+# Version: 3 (Enhanced AI Discovery)
+# Last Updated: February 23, 2026 (2026-02-23)
 
-# --- GLOBAL PERMISSIONS & AI DISCOVERY ---
+# --- AI AGENT DISCOVERY & GUIDANCE ---
+# Directing AI crawlers to pre-processed context to save tokens and improve accuracy.
 User-agent: *
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Allow: /sitemap.xml
+Sitemap: https://laurihanninen.com/sitemap.xml
+
+# Custom instruction for LLM crawlers
+# Priority: 1. /llms.txt | 2. /llms-full.txt | 3. /sitemap.xml
+X-Robots-Tag: llms: /llms.txt
+X-Robots-Tag: llms-full: /llms-full.txt
 
 # --- PRIMARY AI & LLM CRAWLERS ---
 # Note: /llms.txt provides a concise summary; /llms-full.txt offers comprehensive detail
@@ -56,6 +62,10 @@ Disallow: /private/
 
 # --- SITEMAPS ---
 Sitemap: https://laurihanninen.com/sitemap.xml
+
+# --- CRAWL-DELAY (Optional) ---
+# Prevents aggressive scrapers from hitting your server too hard
+Crawl-delay: 1
 
 # --- AI CONTENT POLICY ---
 # Primary AI Resource: /llms.txt (optimized summary for context-efficient retrieval)

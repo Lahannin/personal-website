@@ -92,10 +92,11 @@ const Products = () => {
   const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
 
   const resetAutoplay = useCallback(() => {
+    clearTimeout(initialDelayRef.current);
     clearInterval(autoplayRef.current);
     autoplayRef.current = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 7000); // 7 seconds
+    }, 7000);
   }, [emblaApi]);
 
   // --- NAVIGATION WRAPPERS ---

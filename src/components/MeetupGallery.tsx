@@ -34,6 +34,7 @@ const MeetupGallery = () => {
   const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
 
   const resetAutoplay = useCallback(() => {
+    clearTimeout(initialDelayRef.current);
     clearInterval(autoplayRef.current);
     autoplayRef.current = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();

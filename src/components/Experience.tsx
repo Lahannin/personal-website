@@ -329,7 +329,11 @@ const Experience = () => {
                           const span = computeTotalSpan(company.roles);
                           return (
                             <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">
-                              {span.start} – {span.end} ({span.label})
+                              {span.end === "Present" ? (
+                                <>{span.start} – <span className="text-primary font-bold">Present</span> ({span.label})</>
+                              ) : (
+                                <>{span.start} – {span.end} ({span.label})</>
+                              )}
                             </p>
                           );
                         })()}
@@ -359,11 +363,7 @@ const Experience = () => {
                               <div className="flex-1">
                                 <div className="flex flex-wrap items-center gap-2 mb-1">
                                   <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                                    {role.period.includes("Present") ? (
-                                      <>
-                                        {role.period.replace("Present", "")}<span className="text-highlight font-bold">Present</span>
-                                      </>
-                                    ) : role.period}
+                                    {role.period}
                                   </span>
                                 </div>
                                 <p className="text-primary font-semibold group-hover:text-primary/80 transition-colors">

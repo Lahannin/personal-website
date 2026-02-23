@@ -51,7 +51,7 @@ const Hero = () => {
       {/* Background Gradients */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20 pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-background via-background to-background pointer-events-none"
       />
       
       {/* Glow Blobs */}

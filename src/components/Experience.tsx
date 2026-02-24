@@ -27,6 +27,25 @@ const parseDate = (s: string): Date => {
   return new Date(y, m - 1);
 };
 
+/** Compute duration label from months */
+const durationLabel = (months: number): string => {
+  if (months < 1) months = 1;
+  const years = Math.floor(months / 12);
+  const rem = months % 12;
+  if (years > 0 && rem > 0) return `${years} yr${years > 1 ? "s" : ""} ${rem} mo${rem > 1 ? "s" : ""}`;
+  if (years > 0) return `${years} yr${years > 1 ? "s" : ""}`;
+  return `${rem} mo${rem > 1 ? "s" : ""}`;
+};
+
+/** Compute duration for a single role period string like "07/2024 – Present" */
+const computeRoleDuration = (period: string): string => {
+  const [startStr, endStr] = period.split("–").map((s) => s.trim());
+  const startDate = parseDate(startStr);
+  const endDate = parseDate(endStr);
+  const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth()) + 1;
+  return durationLabel(months);
+};
+
 /** Compute total span from earliest role start to latest role end */
 const computeTotalSpan = (roles: Role[]): { start: string; end: string; label: string } => {
   let earliest = Infinity;
@@ -44,22 +63,13 @@ const computeTotalSpan = (roles: Role[]): { start: string; end: string; label: s
 
   const startDate = new Date(earliest);
   const endDate = new Date(latest);
-
-  let months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth()) + 1;
-  if (months < 1) months = 1;
-  const years = Math.floor(months / 12);
-  const remMonths = months % 12;
+  const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth()) + 1;
 
   const fmt = (d: Date) => `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
   const startFmt = fmt(startDate);
   const endFmt = hasPresent ? "Present" : fmt(endDate);
 
-  let label = "";
-  if (years > 0 && remMonths > 0) label = `${years} yr${years > 1 ? "s" : ""} ${remMonths} mo${remMonths > 1 ? "s" : ""}`;
-  else if (years > 0) label = `${years} yr${years > 1 ? "s" : ""}`;
-  else label = `${remMonths} mo${remMonths > 1 ? "s" : ""}`;
-
-  return { start: startFmt, end: endFmt, label };
+  return { start: startFmt, end: endFmt, label: durationLabel(months) };
 };
 
 const companies: Company[] = [
@@ -307,7 +317,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className="card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                  <div className={`card-gradient border rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${hasCurrent(company) ? "border-highlight/40 ring-1 ring-highlight/20" : "border-border hover:border-highlight/40"}`}>
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img
@@ -330,9 +340,9 @@ const Experience = () => {
                           return (
                             <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">
                               {span.end === "Present" ? (
-                                <>{span.start} – <span className="text-primary font-bold">Present</span> ({span.label})</>
+                                <>{span.start} – <span className="text-highlight font-bold uppercase tracking-widest">Present</span> · {span.label}</>
                               ) : (
-                                <>{span.start} – {span.end} ({span.label})</>
+                                <>{span.start} – {span.end} · {span.label}</>
                               )}
                             </p>
                           );
@@ -364,6 +374,9 @@ const Experience = () => {
                                 <div className="flex flex-wrap items-center gap-2 mb-1">
                                   <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
                                     {role.period}
+                                  </span>
+                                  <span className="mono text-[10px] text-muted-foreground">
+                                    {computeRoleDuration(role.period)}
                                   </span>
                                 </div>
                                 <p className="text-primary font-semibold group-hover:text-primary/80 transition-colors">

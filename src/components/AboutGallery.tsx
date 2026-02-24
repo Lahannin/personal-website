@@ -58,12 +58,8 @@ const AboutGallery = () => {
         {columns.map((col, colIdx) => (
           <div key={colIdx} className="flex flex-col gap-2.5">
             {col.map(({ photoIdx, aspect }, i) => (
-              <motion.div
+              <div
                 key={photoIdx}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.3, delay: (colIdx * 0.06) + (i * 0.08) }}
                 className="rounded-xl overflow-hidden border border-border cursor-pointer hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                 onClick={() => setSelectedPhoto(photoIdx)}
               >
@@ -74,7 +70,7 @@ const AboutGallery = () => {
                   loading="lazy"
                   decoding="async"
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
         ))}

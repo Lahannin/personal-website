@@ -60,28 +60,20 @@ const Contact = () => {
             className="grid sm:grid-cols-3 gap-4 mb-12"
           >
             {links.map((link, index) => (
-              <motion.a
+              <a
                 key={index}
                 href={link.href}
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.08 }}
                 className="group p-6 min-h-[100px] border-gradient rounded-xl shadow-md hover:border-highlight/50 hover:-translate-y-2 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300"
                 aria-label={`Connect on ${link.value}`}
               >
-                <motion.div 
-                  className="flex items-center justify-center gap-2 mb-2"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+                <div className="flex items-center justify-center gap-2 mb-2 group-hover:scale-110 transition-transform">
                   <link.icon className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-semibold">{link.label}</span>
-                </motion.div>
+                </div>
                 <p className="mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">{link.value}</p>
-              </motion.a>
+              </a>
             ))}
           </motion.div>
           

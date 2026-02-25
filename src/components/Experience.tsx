@@ -372,10 +372,8 @@ const Experience = () => {
                             >
                               <div className="flex-1">
                                 <div className="flex flex-wrap items-center gap-2 mb-1">
-                                  <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded inline-flex items-center gap-2">
-                                    <span>{role.period}</span>
-                                    <span className="w-px h-3 bg-primary/30" />
-                                    <span>{computeRoleDuration(role.period)}</span>
+                                  <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
+                                    {role.period}
                                   </span>
                                 </div>
                                 <p className="text-primary font-semibold group-hover:text-primary/80 transition-colors">

@@ -83,6 +83,7 @@ const Articles = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
+                className={index >= 4 ? "hidden md:block" : ""}
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <a

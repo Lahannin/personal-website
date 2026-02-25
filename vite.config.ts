@@ -31,13 +31,18 @@ export default defineConfig(({ mode }) => ({
     copy404Plugin()
   ].filter(Boolean),
   build: {
-    // This handles the "Network Dependency Tree" automatically
     modulePreload: {
       polyfill: true,
     },
     rollupOptions: {
-      // Let Vite handle the names automatically (standard behavior)
       output: {
+        // --- DISABLE HASHING START ---
+        // This ensures files are named index.js and index.css every time
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`,
+        // --- DISABLE HASHING END ---
+        
         manualChunks: {
           vendor: ['react', 'react-dom'],
         },

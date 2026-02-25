@@ -18,7 +18,7 @@ const Hero = () => {
     setClickCount(next);
     if (next >= 5 && !spinTriggered) {
       setSpinTriggered(true);
-      setTimeout(() => navigate("/secret"), 800);
+      setTimeout(() => navigate("/secret"), 1500);
     }
   }, [clickCount, spinTriggered, navigate]);
   
@@ -90,8 +90,8 @@ const Hero = () => {
               <div className="absolute -inset-4 rounded-full bg-highlight/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-highlight/40 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <motion.div
-                animate={spinTriggered ? { rotate: 720, scale: 0 } : {}}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+                animate={spinTriggered ? { rotate: 1080, scale: 0 } : {}}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
                 className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500"
               >
                 <img 

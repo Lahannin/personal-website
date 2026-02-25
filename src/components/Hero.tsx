@@ -1,12 +1,26 @@
+import { useState, useCallback } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
+  const navigate = useNavigate();
+  const [clickCount, setClickCount] = useState(0);
+  const [spinTriggered, setSpinTriggered] = useState(false);
+
+  const handlePhotoClick = useCallback(() => {
+    const next = clickCount + 1;
+    setClickCount(next);
+    if (next >= 5 && !spinTriggered) {
+      setSpinTriggered(true);
+      setTimeout(() => navigate("/secret"), 800);
+    }
+  }, [clickCount, spinTriggered, navigate]);
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -72,10 +86,14 @@ const Hero = () => {
         >
           {/* Profile photo with all your hover effects preserved */}
           <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
-            <div className="relative group">
+              <div className="relative group cursor-pointer" onClick={handlePhotoClick}>
               <div className="absolute -inset-4 rounded-full bg-highlight/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-highlight/40 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500">
+              <motion.div
+                animate={spinTriggered ? { rotate: 720, scale: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500"
+              >
                 <img 
                   src="/lauri-hanninen-profile-photo.webp" 
                   alt="Lauri Hänninen — Product Marketing Lead at Trezor" 
@@ -86,7 +104,7 @@ const Hero = () => {
                   fetchPriority="high"
                   decoding="sync"
                 />
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 

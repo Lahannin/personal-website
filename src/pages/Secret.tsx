@@ -44,7 +44,7 @@ const Secret = () => {
         transition={{ delay: 0.5, duration: 0.6 }}
         className="text-5xl md:text-8xl font-black text-white mt-8 tracking-tight drop-shadow-lg"
       >
-        Buy Bitcoin.
+        Buy Bitcoin
       </motion.h1>
 
       <motion.p
@@ -53,7 +53,7 @@ const Secret = () => {
         transition={{ delay: 1, duration: 0.6 }}
         className="text-white/70 font-mono text-xs mt-6 tracking-widest uppercase"
       >
-        You found the secret page ₿
+        Bitcoin is a decentralized, permissionless, and censorship-resistant form of money that puts financial freedom back in our hands. ₿
       </motion.p>
     </div>
   );

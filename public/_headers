@@ -1,5 +1,14 @@
+# Force browsers to always check for the newest index.html
 /*
   Cache-Control: public, max-age=0, must-revalidate
 
+# Optimized caching for your non-hashed assets
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Keep AI files out of search results
+/llms.txt
+  X-Robots-Tag: noindex
+
+/llms-full.txt
+  X-Robots-Tag: noindex

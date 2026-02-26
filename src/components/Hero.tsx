@@ -16,7 +16,7 @@ const Hero = () => {
 
   const handlePhotoClick = useCallback(() => {
     clickCountRef.current += 1;
-    if (clickCountRef.current >= 5 && !spinTriggered) {
+    if (clickCountRef.current >= 1 && !spinTriggered) {
       setSpinTriggered(true);
       // Start fade-out after spin completes
       setTimeout(() => setFadeOut(true), 1200);

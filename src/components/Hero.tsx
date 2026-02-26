@@ -12,12 +12,16 @@ const Hero = () => {
   const navigate = useNavigate();
   const clickCountRef = useRef(0);
   const [spinTriggered, setSpinTriggered] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   const handlePhotoClick = useCallback(() => {
     clickCountRef.current += 1;
     if (clickCountRef.current >= 5 && !spinTriggered) {
       setSpinTriggered(true);
-      setTimeout(() => navigate("/secret"), 1500);
+      // Start fade-out after spin completes
+      setTimeout(() => setFadeOut(true), 1200);
+      // Navigate after fade-out finishes
+      setTimeout(() => navigate("/secret"), 2000);
     }
   }, [spinTriggered, navigate]);
   
@@ -156,6 +160,16 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Full-screen fade-out overlay */}
+      {fadeOut && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="fixed inset-0 z-50 bg-[#F7931A]"
+        />
+      )}
     </section>
   );
 };

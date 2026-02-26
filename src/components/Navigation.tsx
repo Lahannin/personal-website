@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
+import { Link } from "react-router-dom"; // Import Link for SPA routing
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,23 +13,23 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true }); // Better for performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // FIX: All hrefs now start with "/" to ensure they resolve from the root
   const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#meetups", label: "Meetups" },
-    { href: "#products", label: "Products" },
-    { href: "#experience", label: "Experience" },
-    { href: "#skills", label: "Skills" },
-    { href: "#articles", label: "Articles" },
-    { href: "#contact", label: "Contact" },
+    { href: "/#about", label: "About" },
+    { href: "/#meetups", label: "Meetups" },
+    { href: "/#products", label: "Products" },
+    { href: "/#experience", label: "Experience" },
+    { href: "/#skills", label: "Skills" },
+    { href: "/#articles", label: "Articles" },
+    { href: "/#contact", label: "Contact" },
   ];
 
   return (
     <header>
-      {/* 2. Wrap the nav in LazyMotion to defer the animation bundle */}
       <LazyMotion features={domAnimation}>
         <nav
           role="navigation"
@@ -41,6 +42,7 @@ const Navigation = () => {
             <div className="flex items-center justify-end h-16 md:h-20">
               <div className="hidden md:flex items-center gap-0.5">
                 {navLinks.map((link) => (
+                  /* Changed <a> to <Link> and href to 'to' for better SPA behavior */
                   <a
                     key={link.href}
                     href={link.href}
@@ -69,11 +71,10 @@ const Navigation = () => {
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className="p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
-                aria-expanded={isMobileMenuOpen}
-                aria-controls="mobile-menu"
-                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              >
-                {/* Use small SVG directly or specific icons */}
+                  aria-expanded={isMobileMenuOpen}
+                  aria-controls="mobile-menu"
+                  aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                >
                   {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
               </div>
@@ -81,7 +82,6 @@ const Navigation = () => {
 
             <AnimatePresence>
               {isMobileMenuOpen && (
-                /* 3. Use 'm.div' instead of 'motion.div' */
                 <m.div
                   id="mobile-menu"
                   initial={{ opacity: 0, height: 0 }}
@@ -94,6 +94,7 @@ const Navigation = () => {
                     <ul className="flex flex-col gap-1">
                       {navLinks.map((link) => (
                         <li key={link.href}>
+                          {/* Changed <a> to <Link> here as well */}
                           <a
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}

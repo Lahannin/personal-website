@@ -124,7 +124,7 @@ const Secret = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 1.8 }}
             className="text-xl md:text-2xl lg:text-3xl text-white/70 max-w-3xl mx-auto mb-4 font-medium"
           >
-            Bitcoin is the hardest money ever created. Because it is truly scarce and decentralized, no entity can control it or take it from you without your consent. It puts the power of money back in our hands. ₿
+            Bitcoin is the hardest money ever created. It is truly scarce, decentralized, and impossible to seize without your consent. It puts the power of money back in our hands. ₿
           </motion.p>
         </div>
       </motion.div>

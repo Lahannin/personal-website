@@ -44,9 +44,6 @@ const NotFound = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            {/* CRITICAL: Link to="/" ensures we go back to the base URL 
-              and don't append to the current error path.
-            */}
             <Link
               to="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors btn-modern"

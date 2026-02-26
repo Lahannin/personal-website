@@ -81,9 +81,9 @@ const Secret = () => {
         >
           {/* Bitcoin logo — starts small like profile pic, scales up */}
           <motion.div
-            initial={{ opacity: 1, scale: 0.35 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.22, 0.61, 0.36, 1], delay: 0.3 }}
+            initial={{ scale: 0.35, rotate: -1080 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 1.5, ease: [0.22, 0.61, 0.36, 1], delay: 0.3 }}
             className="flex justify-center mb-10 -mt-8 md:mt-20"
           >
             <div className="relative group">
@@ -109,9 +109,9 @@ const Secret = () => {
 
           {/* Title — fades in after logo scales up */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1], delay: 1.0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 1.5 }}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85] text-white"
           >
             Buy <span className="text-white/80">Bitcoin</span>
@@ -119,9 +119,9 @@ const Secret = () => {
 
           {/* Tagline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1], delay: 1.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 1.8 }}
             className="text-xl md:text-2xl lg:text-3xl text-white/70 max-w-3xl mx-auto mb-4 font-medium"
           >
             Bitcoin is the hardest money ever created. It is truly scarce, and no one can take it from you without your consent. It puts financial power back in our hands. ₿

@@ -44,11 +44,8 @@ const Secret = () => {
   };
 
   return (
-    <motion.section
+    <section
       ref={sectionRef}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F7931A] noise-overlay"
     >
       {/* Grid pattern background */}
@@ -79,19 +76,21 @@ const Secret = () => {
       </button>
 
       <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+        <div
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Bitcoin logo — same position as profile photo */}
-          <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
+          {/* Bitcoin logo — starts small like profile pic, scales up */}
+          <motion.div
+            initial={{ opacity: 1, scale: 0.35 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: [0.22, 0.61, 0.36, 1], delay: 0.3 }}
+            className="flex justify-center mb-10 -mt-8 md:mt-20"
+          >
             <div className="relative group">
               <div className="absolute -inset-4 rounded-full bg-white/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <motion.div
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-white border-4 border-white/30 shadow-lg overflow-hidden flex items-center justify-center group-hover:shadow-2xl group-hover:shadow-white/15 group-hover:border-white/60 transition-all duration-500"
               >
                 <svg
@@ -108,24 +107,28 @@ const Secret = () => {
             </div>
           </motion.div>
 
-          {/* Title — same style as hero name */}
+          {/* Title — fades in after logo scales up */}
           <motion.h1
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1], delay: 1.0 }}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85] text-white"
           >
             Buy <span className="text-white/80">Bitcoin</span>
           </motion.h1>
 
-          {/* Tagline — same style as hero tagline */}
+          {/* Tagline */}
           <motion.p
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1], delay: 1.3 }}
             className="text-xl md:text-2xl lg:text-3xl text-white/70 max-w-3xl mx-auto mb-4 font-medium"
           >
             Bitcoin is the hardest money ever created. It is truly scarce, and no one can take it from you without your consent. It puts financial power back in our hands. ₿
           </motion.p>
-        </motion.div>
+        </div>
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 

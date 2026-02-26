@@ -121,7 +121,7 @@ const Secret = () => {
             variants={itemVariants}
             className="text-xl md:text-2xl lg:text-3xl text-white/70 max-w-3xl mx-auto mb-4 font-medium"
           >
-            A decentralized, permissionless, and censorship-resistant form of money that puts financial freedom back in our hands. ₿
+            Bitcoin is the hardest money ever created. It is truly scarce, and no one can take it from you without your consent. It puts financial power back in our hands. ₿
           </motion.p>
         </motion.div>
       </motion.div>

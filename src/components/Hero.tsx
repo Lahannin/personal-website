@@ -10,17 +10,16 @@ const Hero = () => {
   const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
   const navigate = useNavigate();
-  const [clickCount, setClickCount] = useState(0);
+  const clickCountRef = useRef(0);
   const [spinTriggered, setSpinTriggered] = useState(false);
 
   const handlePhotoClick = useCallback(() => {
-    const next = clickCount + 1;
-    setClickCount(next);
-    if (next >= 5 && !spinTriggered) {
+    clickCountRef.current += 1;
+    if (clickCountRef.current >= 5 && !spinTriggered) {
       setSpinTriggered(true);
       setTimeout(() => navigate("/secret"), 1500);
     }
-  }, [clickCount, spinTriggered, navigate]);
+  }, [spinTriggered, navigate]);
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,

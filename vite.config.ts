@@ -34,20 +34,8 @@ export default defineConfig(({ mode }) => ({
     modulePreload: {
       polyfill: true,
     },
-    rollupOptions: {
-      output: {
-        // --- DISABLE HASHING START ---
-        // This ensures files are named index.js and index.css every time
-        entryFileNames: `assets/[name].js`,
-        chunkFileNames: `assets/[name].js`,
-        assetFileNames: `assets/[name].[ext]`,
-        // --- DISABLE HASHING END ---
-        
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-        },
-      },
-    },
+    // We removed the manual rollupOptions.output names 
+    // to let Vite handle the hashing automatically again.
   },
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },

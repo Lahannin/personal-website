@@ -81,9 +81,9 @@ const Secret = () => {
         >
           {/* Bitcoin logo — starts small like profile pic, scales up */}
           <motion.div
-            initial={{ scale: 0.35, rotate: -1080 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 1.5, ease: [0.22, 0.61, 0.36, 1], delay: 0.3 }}
+            initial={{ scale: 0.3, rotate: -360, opacity: 0 }}
+            animate={{ scale: 1, rotate: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: [0.22, 0.61, 0.36, 1], delay: 0.1 }}
             className="flex justify-center mb-10 -mt-8 md:mt-20"
           >
             <div className="relative group">
@@ -111,7 +111,7 @@ const Secret = () => {
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 1.5 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85] text-white"
           >
             Buy <span className="text-white/80">Bitcoin</span>
@@ -121,7 +121,7 @@ const Secret = () => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 1.8 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 1.0 }}
             className="text-xl md:text-2xl lg:text-3xl text-white/70 max-w-3xl mx-auto mb-4 font-medium"
           >
             Bitcoin is the hardest money ever created. Truly scarce, independent of any authority, and yours alone to control. It puts financial power back in your hands. ₿

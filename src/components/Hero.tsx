@@ -13,10 +13,21 @@ const Hero = () => {
   const clickCountRef = useRef(0);
   const [spinTriggered, setSpinTriggered] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const [cursorSize, setCursorSize] = useState(24);
+
+  const getBitcoinCursor = (size: number) =>
+    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><text y="${size * 0.75}" font-size="${size * 0.75}" fill="%23F7931A">₿</text></svg>') ${size / 2} ${size / 2}, pointer`;
 
   const handlePhotoClick = useCallback(() => {
     clickCountRef.current += 1;
-    if (clickCountRef.current >= 1 && !spinTriggered) {
+    const count = clickCountRef.current;
+
+    if (count < 5 && !spinTriggered) {
+      // Grow cursor: 24 → 32 → 40 → 48 → 56
+      setCursorSize(24 + count * 8);
+    }
+
+    if (count >= 5 && !spinTriggered) {
       setSpinTriggered(true);
       setTimeout(() => setFadeOut(true), 900);
       setTimeout(() => navigate("/secret"), 1600);
@@ -87,7 +98,7 @@ const Hero = () => {
         >
           {/* Profile photo with all your hover effects preserved */}
           <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
-              <div className="relative group cursor-pointer" onClick={handlePhotoClick} style={{ cursor: "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 32 32\"><text y=\"24\" font-size=\"24\" fill=\"%23F7931A\">₿</text></svg>') 16 16, pointer" }}>
+              <div className="relative group" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
               <div className="absolute -inset-4 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.15)' }} />
               <div className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.5), rgba(247, 147, 26, 0.2), transparent)' }} />
               <motion.div

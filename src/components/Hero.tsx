@@ -90,8 +90,8 @@ const Hero = () => {
           {/* Profile photo with all your hover effects preserved */}
           <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
               <div className="relative group cursor-pointer" onClick={handlePhotoClick} style={{ cursor: "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 32 32\"><text y=\"24\" font-size=\"24\" fill=\"%23F7931A\">₿</text></svg>') 16 16, pointer" }}>
-              <div className="absolute -inset-4 rounded-full bg-highlight/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-highlight/40 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -inset-4 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.15)' }} />
+              <div className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.5), rgba(247, 147, 26, 0.2), transparent)' }} />
               <motion.div
                 animate={spinTriggered ? { rotate: 1080, scale: 0 } : {}}
                 transition={{ duration: 1.5, ease: "easeInOut" }}

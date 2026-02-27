@@ -14,7 +14,6 @@ const Hero = () => {
   const [spinTriggered, setSpinTriggered] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [cursorSize, setCursorSize] = useState(24);
-  const [clickPulse, setClickPulse] = useState(0);
 
   const getBitcoinCursor = (size: number) =>
     `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><text y="${size * 0.75}" font-size="${size * 0.75}" fill="%23F7931A">₿</text></svg>') ${size / 2} ${size / 2}, pointer`;
@@ -24,8 +23,8 @@ const Hero = () => {
     const count = clickCountRef.current;
 
     if (count < 5 && !spinTriggered) {
+      // Grow cursor: 24 → 32 → 40 → 48 → 56
       setCursorSize(24 + count * 8);
-      setClickPulse(count);
     }
 
     if (count >= 5 && !spinTriggered) {
@@ -103,17 +102,8 @@ const Hero = () => {
               <div className="absolute -inset-4 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.15)' }} />
               <div className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.5), rgba(247, 147, 26, 0.2), transparent)' }} />
               <motion.div
-                key={clickPulse}
-                animate={spinTriggered 
-                  ? { rotate: 360, scale: 0.3, opacity: 0 } 
-                  : clickPulse > 0 
-                    ? { scale: [1, 1.08, 0.95, 1], rotate: [0, -3, 3, 0] }
-                    : {}
-                }
-                transition={spinTriggered 
-                  ? { duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }
-                  : { duration: 0.4, ease: "easeOut" }
-                }
+                animate={spinTriggered ? { rotate: 360, scale: 0.3, opacity: 0 } : {}}
+                transition={{ duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }}
                 className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500"
               >
                 <img 

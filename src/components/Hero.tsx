@@ -103,14 +103,14 @@ const Hero = () => {
               <div className="absolute -inset-4 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.35)' }} />
               <div className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.7), rgba(247, 147, 26, 0.4), transparent)' }} />
               <motion.div
-                key={shakeKey}
                 animate={spinTriggered 
                   ? { rotate: 360, scale: 0.3, opacity: 0 } 
-                  : shakeKey > 0 
-                    ? { x: [0, -6, 6, -4, 4, -2, 2, 0], transition: { duration: 0.4, ease: "easeOut" } }
-                    : {}
+                  : { x: shakeKey > 0 ? [0, -6, 6, -4, 4, -2, 2, 0] : 0 }
                 }
-                transition={{ duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }}
+                transition={spinTriggered 
+                  ? { duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }
+                  : { duration: 0.4, ease: "easeOut" }
+                }
                 className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500"
               >
                 <img 

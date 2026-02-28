@@ -1,6 +1,7 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import AboutGallery from "./AboutGallery";
+import BitcoinWord from "./BitcoinWord";
 
 const About = () => {
   const highlights = [
@@ -49,13 +50,13 @@ const About = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-              I love products that are difficult to explain, the kind that require a bit of thinking before they click. My skill is taking that complexity and turning it into something people actually understand.
+                I love products that are difficult to explain, the kind that require a bit of thinking before they click. My skill is taking that complexity and turning it into something people actually understand.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-               Currently, I lead product marketing at Trezor, the original Bitcoin hardware wallet company, focusing on the intersection of hardware and crypto security. Before Trezor, I spent years in the analytics space at GoodData, the  leading AI-powered cloud analytics platform, and helped build the product marketing community here in Prague, one of Europe’s rising tech hubs.
+                Currently, I lead product marketing at Trezor, the original <BitcoinWord /> hardware wallet company, focusing on the intersection of hardware and crypto security. Before Trezor, I spent years in the analytics space at GoodData, the leading AI-powered cloud analytics platform, and helped build the product marketing community here in Prague, one of Europe's rising tech hubs.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-             At my core, I'm a tech enthusiast who firmly believes that open-source code is how we take back control.
+                At my core, I'm a tech enthusiast who firmly believes that open-source code is how we take back control.
               </p>
             </motion.div>
 

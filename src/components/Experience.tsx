@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import BitcoinWord from "./BitcoinWord";
 
 interface Role {
   title: string;
@@ -70,6 +71,13 @@ const computeTotalSpan = (roles: Role[]): { start: string; end: string; label: s
   const endFmt = hasPresent ? "Present" : fmt(endDate);
 
   return { start: startFmt, end: endFmt, label: durationLabel(months) };
+};
+
+const renderWithBitcoin = (text: string) => {
+  const parts = text.split(/(Bitcoin)/g);
+  return parts.map((part, i) =>
+    part === "Bitcoin" ? <BitcoinWord key={i} /> : part
+  );
 };
 
 const companies: Company[] = [
@@ -353,7 +361,7 @@ const Experience = () => {
                     {/* Company description */}
                     {company.description && (
                       <p className="text-sm text-muted-foreground italic mb-5 pb-5 border-b border-border/50">
-                        {company.description}
+                        {renderWithBitcoin(company.description)}
                       </p>
                     )}
 

@@ -36,21 +36,5 @@ body {
   background-color: #f1f5f9; 
 }
 
-/* 5. HERO SHAKE ANIMATION */
-@keyframes hero-shake {
-  0%   { transform: translate(0, 0) rotate(0deg); }
-  10%  { transform: translate(-6px, -2px) rotate(-2deg); }
-  20%  { transform: translate(6px, 2px) rotate(2deg); }
-  30%  { transform: translate(-5px, 1px) rotate(-1.5deg); }
-  40%  { transform: translate(5px, -1px) rotate(1.5deg); }
-  50%  { transform: translate(-3px, 1px) rotate(-1deg); }
-  60%  { transform: translate(3px, -1px) rotate(1deg); }
-  70%  { transform: translate(-2px, 0) rotate(-0.5deg); }
-  80%  { transform: translate(2px, 0) rotate(0.5deg); }
-  90%  { transform: translate(-1px, 0) rotate(0deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
-}
-
-.hero-shake {
-  animation: hero-shake 0.4s ease-out;
-}
+/* Delete the .logo, @keyframes logo-spin, and .card classes 
+   unless you are specifically using them in your design. */

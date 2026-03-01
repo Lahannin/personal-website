@@ -20,7 +20,7 @@ const Hero = () => {
   const clickCountRef = useRef(0);
   const [spinTriggered, setSpinTriggered] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
-  const [cursorSize, setCursorSize] = useState(24);
+  const cursorSize = 24;
   const [shakeKey, setShakeKey] = useState(0);
   const [floatingBitcoins, setFloatingBitcoins] = useState<FloatingBitcoin[]>([]);
   const bitcoinIdRef = useRef(0);
@@ -33,21 +33,18 @@ const Hero = () => {
     const count = clickCountRef.current;
 
     if (count < 5 && !spinTriggered) {
-      setCursorSize(24 + count * 8);
       setShakeKey(prev => prev + 1);
 
-      // Spawn floating Bitcoin on mobile
-      if (isMobile) {
-        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const id = bitcoinIdRef.current++;
-        const size = 20 + count * 10;
-        setFloatingBitcoins(prev => [...prev, { id, x, y, size }]);
-        setTimeout(() => {
-          setFloatingBitcoins(prev => prev.filter(b => b.id !== id));
-        }, 1200);
-      }
+      // Spawn floating Bitcoin on click
+      const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const id = bitcoinIdRef.current++;
+      const size = 20 + count * 10;
+      setFloatingBitcoins(prev => [...prev, { id, x, y, size }]);
+      setTimeout(() => {
+        setFloatingBitcoins(prev => prev.filter(b => b.id !== id));
+      }, 1200);
     }
 
     if (count >= 5 && !spinTriggered) {

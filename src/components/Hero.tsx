@@ -130,29 +130,30 @@ const Hero = () => {
               <div className="relative group" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
               <div className="absolute -inset-4 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.35)' }} />
               <div className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.7), rgba(247, 147, 26, 0.4), transparent)' }} />
-              <motion.div
-                ref={photoRef}
-                animate={spinTriggered 
-                  ? { rotate: 360, scale: 0.3, opacity: 0 } 
-                  : {}
-                }
-                transition={spinTriggered 
-                  ? { duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }
-                  : {}
-                }
-                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500"
-              >
-                <img 
-                  src="/lauri-hanninen-profile-photo.webp" 
-                  alt="Lauri Hänninen — Product Marketing Lead at Trezor" 
-                  className="w-full h-full object-cover"
-                  width={208}
-                  height={208}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
-                />
-              </motion.div>
+              <div ref={photoRef}>
+                <motion.div
+                  animate={spinTriggered 
+                    ? { rotate: 360, scale: 0.3, opacity: 0 } 
+                    : {}
+                  }
+                  transition={spinTriggered 
+                    ? { duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }
+                    : {}
+                  }
+                  className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500"
+                >
+                  <img 
+                    src="/lauri-hanninen-profile-photo.webp" 
+                    alt="Lauri Hänninen — Product Marketing Lead at Trezor" 
+                    className="w-full h-full object-cover"
+                    width={208}
+                    height={208}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="sync"
+                  />
+                </motion.div>
+              </div>
               {/* Floating Bitcoin logos on mobile */}
               <AnimatePresence>
                 {floatingBitcoins.map(b => (

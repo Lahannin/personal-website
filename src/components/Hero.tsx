@@ -1,9 +1,16 @@
 import { useState, useCallback } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useNavigate } from "react-router-dom";
+
+interface FloatingBitcoin {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+}
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -15,17 +22,32 @@ const Hero = () => {
   const [fadeOut, setFadeOut] = useState(false);
   const [cursorSize, setCursorSize] = useState(24);
   const [shakeKey, setShakeKey] = useState(0);
+  const [floatingBitcoins, setFloatingBitcoins] = useState<FloatingBitcoin[]>([]);
+  const bitcoinIdRef = useRef(0);
 
   const getBitcoinCursor = (size: number) =>
     `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><text y="${size * 0.75}" font-size="${size * 0.75}" fill="%23F7931A">₿</text></svg>') ${size / 2} ${size / 2}, pointer`;
 
-  const handlePhotoClick = useCallback(() => {
+  const handlePhotoClick = useCallback((e: React.MouseEvent) => {
     clickCountRef.current += 1;
     const count = clickCountRef.current;
 
     if (count < 5 && !spinTriggered) {
       setCursorSize(24 + count * 8);
       setShakeKey(prev => prev + 1);
+
+      // Spawn floating Bitcoin on mobile
+      if (isMobile) {
+        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const id = bitcoinIdRef.current++;
+        const size = 20 + count * 10;
+        setFloatingBitcoins(prev => [...prev, { id, x, y, size }]);
+        setTimeout(() => {
+          setFloatingBitcoins(prev => prev.filter(b => b.id !== id));
+        }, 1200);
+      }
     }
 
     if (count >= 5 && !spinTriggered) {
@@ -33,7 +55,7 @@ const Hero = () => {
       setTimeout(() => setFadeOut(true), 900);
       setTimeout(() => navigate("/secret"), 1600);
     }
-  }, [spinTriggered, navigate]);
+  }, [spinTriggered, navigate, isMobile]);
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -124,6 +146,22 @@ const Hero = () => {
                   decoding="sync"
                 />
               </motion.div>
+              {/* Floating Bitcoin logos on mobile */}
+              <AnimatePresence>
+                {floatingBitcoins.map(b => (
+                  <motion.span
+                    key={b.id}
+                    initial={{ opacity: 1, y: 0, scale: 0.5 }}
+                    animate={{ opacity: 0, y: -120, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="absolute pointer-events-none select-none"
+                    style={{ left: b.x, top: b.y, fontSize: b.size, color: '#F7931A', zIndex: 20 }}
+                  >
+                    ₿
+                  </motion.span>
+                ))}
+              </AnimatePresence>
             </div>
           </motion.div>
 

@@ -1,6 +1,6 @@
-/* 1. RESET & BASE: Ensures the browser doesn't add unexpected spacing */
+/* 1. RESET & BASE */
 :root {
-  background-color: #ffffff; /* Or your dark-mode equivalent */
+  background-color: #ffffff;
 }
 
 body {
@@ -8,33 +8,14 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  /* 'swap' ensures system fonts fill the gap while Inter loads */
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 2. ROOT ALIGNMENT: Matches your Static Shell exactly to prevent 'jumps' */
+/* 2. ROOT ALIGNMENT */
 #root {
   width: 100%;
   margin: 0 auto;
-  /* If your Shell has text-align: left, make sure this matches! */
   text-align: left; 
 }
-
-/* 3. PERFORMANCE OPTIMIZATION: Hardware accelerate only what is needed */
-.main-content {
-  will-change: transform, opacity;
-}
-
-/* 4. UTILITY: Responsive Image containment for your profile photo */
-.profile-photo {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
-  /* Ensures no layout shift before the image arrives */
-  background-color: #f1f5f9; 
-}
-
-/* Delete the .logo, @keyframes logo-spin, and .card classes 
-   unless you are specifically using them in your design. */

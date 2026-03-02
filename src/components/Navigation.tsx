@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
-import { Link } from "react-router-dom"; // Import Link for SPA routing
+
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +42,6 @@ const Navigation = () => {
             <div className="flex items-center justify-end h-16 md:h-20">
               <div className="hidden md:flex items-center gap-0.5">
                 {navLinks.map((link) => (
-                  /* Changed <a> to <Link> and href to 'to' for better SPA behavior */
                   <a
                     key={link.href}
                     href={link.href}
@@ -94,7 +93,6 @@ const Navigation = () => {
                     <ul className="flex flex-col gap-1">
                       {navLinks.map((link) => (
                         <li key={link.href}>
-                          {/* Changed <a> to <Link> here as well */}
                           <a
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}

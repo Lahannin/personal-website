@@ -102,11 +102,6 @@
     }
   }
 
-  .hero-animate {
-    will-change: transform, opacity;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
 
   body {
     @apply bg-background text-foreground antialiased;
@@ -127,9 +122,6 @@
     background-image: var(--gradient-primary);
   }
 
-  .glow-effect {
-    box-shadow: var(--shadow-glow);
-  }
 
   .card-gradient {
     background: var(--gradient-card);
@@ -169,20 +161,6 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  .glow-pulse {
-    animation: glowPulse 2s ease-in-out infinite;
-  }
-
-  .shimmer {
-    background: linear-gradient(
-      90deg,
-      hsl(var(--secondary)) 0%,
-      hsl(var(--background)) 50%,
-      hsl(var(--secondary)) 100%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.5s ease-in-out infinite;
-  }
 
   /* Grid background pattern for sections */
   .grid-bg {
@@ -233,22 +211,5 @@
     }
   }
 
-  @keyframes glowPulse {
-    0%, 100% { box-shadow: 0 0 0 0 hsl(220 60% 15% / 0.2); }
-    50% { box-shadow: 0 0 0 8px hsl(220 60% 15% / 0); }
-  }
 
-  @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-
-  .animate-scroll-indicator {
-    animation: scrollIndicator 2s ease-in-out infinite;
-  }
-  
-  @keyframes scrollIndicator {
-    0%, 100% { opacity: 1; transform: translateY(0); }
-    50% { opacity: 0.5; transform: translateY(6px); }
-  }
 }

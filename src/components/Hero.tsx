@@ -52,7 +52,7 @@ const Hero = () => {
       setTimeout(() => setFadeOut(true), 900);
       setTimeout(() => navigate("/secret"), 1600);
     }
-  }, [spinTriggered, navigate, isMobile]);
+  }, [spinTriggered, navigate]);
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -143,7 +143,7 @@ const Hero = () => {
                   decoding="sync"
                 />
               </motion.div>
-              {/* Floating Bitcoin logos on mobile */}
+              {/* Floating Bitcoin logos on click */}
               <AnimatePresence>
                 {floatingBitcoins.map(b => (
                   <motion.span

@@ -2,8 +2,8 @@
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
 # Canonical: https://laurihanninen.com
-# Version: 3 (Enhanced AI Discovery)
-# Last Updated: February 23, 2026 (2026-02-23)
+# Version: 4 (Lighthouse Corrected)
+# Last Updated: March 3, 2026
 
 # --- AI AGENT DISCOVERY & GUIDANCE ---
 # Directing AI crawlers to pre-processed context to save tokens and improve accuracy.
@@ -13,14 +13,8 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 Sitemap: https://laurihanninen.com/sitemap.xml
 
-# Custom instruction for LLM crawlers
-# Priority: 1. /llms.txt | 2. /llms-full.txt | 3. /sitemap.xml
-X-Robots-Tag: llms: /llms.txt
-X-Robots-Tag: llms-full: /llms-full.txt
-
 # --- PRIMARY AI & LLM CRAWLERS ---
 # Note: /llms.txt provides a concise summary; /llms-full.txt offers comprehensive detail
-# Both are fully accessible; sitemap.xml defines crawl priority
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot
@@ -63,13 +57,10 @@ Disallow: /private/
 # --- SITEMAPS ---
 Sitemap: https://laurihanninen.com/sitemap.xml
 
-# --- CRAWL-DELAY (Optional) ---
+# --- CRAWL-DELAY ---
 # Prevents aggressive scrapers from hitting your server too hard
 Crawl-delay: 1
 
 # --- AI CONTENT POLICY ---
 # Primary AI Resource: /llms.txt (optimized summary for context-efficient retrieval)
 # Extended Resource: /llms-full.txt (comprehensive career knowledge graph)
-# HTML Meta Robots: All pages set to "index, follow"
-# Structured Data: JSON-LD schema in <head> of all pages
-# Priority Signals: See sitemap.xml for crawl priority recommendations

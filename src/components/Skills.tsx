@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
+import BitcoinWord from "./BitcoinWord";
 
 const allSkills = [
   "Product Marketing",
@@ -14,6 +15,7 @@ const allSkills = [
   "B2B & B2C",
   "AI/ML Applications",
   "Security & Privacy",
+  "Bitcoin & Crypto",
 ];
 
 const certifications = [
@@ -88,7 +90,9 @@ const Skills = () => {
                   className="inline"
                 >
                   <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">
-                    {skill}
+                    {skill === "Bitcoin & Crypto" ? (
+                      <><BitcoinWord>Bitcoin</BitcoinWord> &amp; Crypto</>
+                    ) : skill}
                   </span>
                   {index < allSkills.length - 1 && (
                     <span className="text-primary/40 mx-2 md:mx-3">·</span>

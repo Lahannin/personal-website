@@ -1,12 +1,10 @@
 # Robots.txt - AI Agent & LLM Optimized
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
-# Canonical: https://laurihanninen.com
-# Version: 4 (Lighthouse Corrected)
+# Version: 5 (Final Search & AI Sync)
 # Last Updated: March 3, 2026
 
 # --- AI AGENT DISCOVERY & GUIDANCE ---
-# Directing AI crawlers to pre-processed context to save tokens and improve accuracy.
 User-agent: *
 Allow: /
 Allow: /llms.txt
@@ -14,7 +12,6 @@ Allow: /llms-full.txt
 Sitemap: https://laurihanninen.com/sitemap.xml
 
 # --- PRIMARY AI & LLM CRAWLERS ---
-# Note: /llms.txt provides a concise summary; /llms-full.txt offers comprehensive detail
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot
@@ -41,7 +38,14 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 
 # --- SEARCH ENGINE CRAWLERS ---
+# We allow crawling of the site but specifically exclude AI/system files from search indexing
 User-agent: Googlebot
+Allow: /
+Disallow: /llms.txt
+Disallow: /llms-full.txt
+Disallow: /sitemap.xml
+Disallow: /robots.txt
+
 User-agent: Bingbot
 User-agent: Slurp
 User-agent: DuckDuckBot
@@ -49,6 +53,7 @@ User-agent: Twitterbot
 Allow: /
 
 # --- SPECIFIC DISALLOWS ---
+User-agent: *
 Disallow: /dist/
 Disallow: /node_modules/
 Disallow: /.git/
@@ -58,9 +63,8 @@ Disallow: /private/
 Sitemap: https://laurihanninen.com/sitemap.xml
 
 # --- CRAWL-DELAY ---
-# Prevents aggressive scrapers from hitting your server too hard
 Crawl-delay: 1
 
 # --- AI CONTENT POLICY ---
-# Primary AI Resource: /llms.txt (optimized summary for context-efficient retrieval)
-# Extended Resource: /llms-full.txt (comprehensive career knowledge graph)
+# Primary AI Resource: /llms.txt (optimized summary)
+# Extended Resource: /llms-full.txt (comprehensive context)

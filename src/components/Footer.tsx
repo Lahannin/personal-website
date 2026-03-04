@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="font-mono text-xs text-muted-foreground text-center md:text-left tracking-wide">
               © {currentYear} Lauri Hänninen
               <br />
-              <span className="opacity-60 text-[10px]">It's not much, but it's honest work</span>
+              <span className="text-[10px]">It's not much, but it's honest work</span>
             </p>
           </div>
 

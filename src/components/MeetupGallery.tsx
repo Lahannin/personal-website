@@ -207,6 +207,9 @@ const MeetupGallery = () => {
                           className="w-full aspect-[4/3] object-cover"
                           loading="lazy"
                           decoding="async"
+                          width={967}
+                          height={725}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
                         />
                       </motion.div>
                     </div>
@@ -230,10 +233,11 @@ const MeetupGallery = () => {
                   {index === selectedIndex && isInView && (
                     <motion.div
                       key={progressKey}
-                      className="absolute inset-y-0 left-0 bg-primary rounded-full"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
+                      className="absolute inset-y-0 left-0 w-full bg-primary rounded-full origin-left"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
                       transition={{ duration: 5, ease: "linear" }}
+                      style={{ willChange: 'transform' }}
                     />
                   )}
                 </button>

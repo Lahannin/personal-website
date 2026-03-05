@@ -33,8 +33,6 @@
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
     --gradient-grid: linear-gradient(hsl(220 15% 87% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(220 15% 87% / 0.3) 1px, transparent 1px);
 
-    --shadow-card: 0 4px 24px hsl(220 60% 15% / 0.06);
-    --shadow-card-hover: 0 16px 48px hsl(220 60% 15% / 0.12);
   }
 
   .dark {
@@ -64,8 +62,6 @@
     --gradient-card: linear-gradient(145deg, hsl(220 18% 10%) 0%, hsl(220 18% 12%) 100%);
     --gradient-grid: linear-gradient(hsl(220 15% 18% / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(220 15% 18% / 0.5) 1px, transparent 1px);
 
-    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.3);
-    --shadow-card-hover: 0 16px 48px hsl(0 0% 0% / 0.4);
   }
 }
 

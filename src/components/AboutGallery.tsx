@@ -69,6 +69,9 @@ const AboutGallery = () => {
                   className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
                   loading="lazy"
                   decoding="async"
+                  width={400}
+                  height={400}
+                  sizes="(max-width: 768px) 33vw, 256px"
                 />
               </div>
             ))}

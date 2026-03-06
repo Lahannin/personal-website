@@ -1,6 +1,7 @@
 # Force browsers to always check for the newest index.html
 /*
   Cache-Control: public, max-age=0, must-revalidate
+  X-Frame-Options: DENY
 
 # Optimized caching for your non-hashed assets
 /assets/*

@@ -12,13 +12,13 @@ const NotFound = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 80, damping: 14 }}
+          transition={{ duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
           className="text-center max-w-md"
         >
           <motion.h1
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, type: "spring", stiffness: 100, damping: 12 }}
+            transition={{ delay: 0.1, duration: 0.35, ease: [0.22, 0.61, 0.36, 1] }}
             className="text-[8rem] md:text-[10rem] font-bold leading-none mono text-gradient"
           >
             404

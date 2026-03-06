@@ -114,7 +114,7 @@ const Articles = () => {
                     <motion.div
                       className="flex-shrink-0 mt-1"
                       whileHover={{ rotate: -45 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                     >
                       <ExternalLink 
                         className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 

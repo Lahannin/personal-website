@@ -327,10 +327,11 @@ const Products = () => {
                   {index === selectedIndex && isInView && (
                     <motion.div
                       key={progressKey}
-                      className="absolute inset-y-0 left-0 bg-primary rounded-full"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
-                      transition={{ duration: 7, ease: "linear" }} // 7 seconds
+                      className="absolute inset-y-0 left-0 right-0 bg-primary rounded-full origin-left"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 7, ease: "linear" }}
+                      style={{ willChange: 'transform' }}
                     />
                   )}
                 </button>

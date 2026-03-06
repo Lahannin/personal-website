@@ -66,14 +66,24 @@ const Hero = () => {
   const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "10%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  // No stagger — render all items simultaneously to minimize LCP delay
-  const appearVariants = {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.04,
+        delayChildren: 0,
+      },
+    },
+  };
+
+  const itemVariants = {
     hidden: { opacity: 0, y: 12 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.35,
         ease: [0.22, 0.61, 0.36, 1] as const,
       },
     },
@@ -101,13 +111,13 @@ const Hero = () => {
 
       <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
         <motion.div
+          variants={containerVariants}
           initial="hidden"
           animate="visible"
-          variants={appearVariants}
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Profile photo */}
-          <div className="flex justify-center mb-10 -mt-8 md:mt-20">
+          {/* Profile photo with all your hover effects preserved */}
+          <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
               <div className="relative group" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
               <div className="absolute -inset-4 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.35)' }} />
               <div className="absolute -inset-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.7), rgba(247, 147, 26, 0.4), transparent)' }} />
@@ -150,35 +160,39 @@ const Hero = () => {
                 ))}
               </AnimatePresence>
             </div>
-          </div>
+          </motion.div>
 
           {/* Name */}
-          <h1
+          <motion.h1
             id="hero-heading"
+            variants={itemVariants}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
           >
             Lauri <span className="text-gradient">Hänninen</span>
-          </h1>
+          </motion.h1>
 
           {/* Tagline */}
-          <p
+          <motion.p
+            variants={itemVariants}
             className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto mb-4 font-medium"
           >
             Product Marketing Lead turning complex tech into stories people actually understand.
-          </p>
+          </motion.p>
           
           {/* Location details */}
-          <div
+          <motion.div
+            variants={itemVariants}
             className="flex items-center justify-center gap-2 text-muted-foreground mb-14"
           >
             <MapPin className="w-4 h-4" aria-hidden="true" />
             <span className="font-mono text-xs tracking-wider">Prague, Czechia 🇨🇿</span>
             <span className="mx-2 text-border">•</span>
             <span className="font-mono text-xs tracking-wider">Finnish origins 🇫🇮</span>
-          </div>
+          </motion.div>
 
-          {/* CTA buttons */}
-          <div
+          {/* All CTA buttons restored */}
+          <motion.div
+            variants={itemVariants}
             className="flex flex-row items-center justify-center gap-4 sm:gap-5"
           >
             <a
@@ -194,7 +208,7 @@ const Hero = () => {
             >
               Get in Touch
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
 

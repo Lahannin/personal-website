@@ -1,4 +1,4 @@
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 interface Article {
@@ -54,89 +54,100 @@ const articles: Article[] = [
 
 const Articles = () => {
   return (
-    <LazyMotion features={domAnimation}>
-      <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background">
-        <div className="container px-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Section header */}
-            <m.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4 }}
-              className="text-center mb-16"
-            >
-              <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// WRITING</span>
-              <h2 id="articles-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
-                Featured <span className="text-gradient">Articles</span>
-              </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Thoughts on product marketing, analytics, and technical topics published on Medium.
-              </p>
-            </m.div>
+    <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background">
+      <div className="container px-6">
+        <div className="max-w-4xl mx-auto">
+          {/* Section header */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
+            className="text-center mb-16"
+          >
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// WRITING</span>
+            <h2 id="articles-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
+              Featured <span className="text-gradient">Articles</span>
+            </h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              Thoughts on product marketing, analytics, and technical topics published on Medium.
+            </p>
+          </motion.div>
 
-            {/* Articles grid — CSS animations instead of per-item motion */}
-            <div className="grid gap-6 md:grid-cols-2">
-              {articles.map((article, index) => (
-                <article
-                  key={index}
-                  className={`animate-fade-in ${index >= 4 ? "hidden md:block" : ""}`}
-                  style={{ animationDelay: `${index * 60}ms`, animationFillMode: 'both' }}
-                  data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
-                >
-                  <a
-                    href={article.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-2 mb-3">
-                          <time className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded" dateTime={article.date}>
-                            {article.date}
-                          </time>
-                          {article.publication && (
-                            <span className="text-xs text-muted-foreground">
-                              {article.publication}
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
-                          {article.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground line-clamp-2">
-                          {article.description}
-                        </p>
-                      </div>
-                      <div className="flex-shrink-0 mt-1">
-                        <ExternalLink 
-                          className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:-rotate-45 transition-all duration-200" 
-                          aria-hidden="true" 
-                        />
-                      </div>
-                    </div>
-                  </a>
-                </article>
-              ))}
-            </div>
-
-            {/* View all link */}
-            <div className="text-center mt-10">
-              <a
-                href="https://lahannin.medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+          {/* Articles grid */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {articles.map((article, index) => (
+              <motion.article
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className={index >= 4 ? "hidden md:block" : ""}
+                data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
-                View all articles on Medium
-                <ExternalLink className="w-4 h-4" aria-hidden="true" />
-              </a>
-            </div>
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <time className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded" dateTime={article.date}>
+                          {article.date}
+                        </time>
+                        {article.publication && (
+                          <span className="text-xs text-muted-foreground">
+                            {article.publication}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2">
+                        {article.description}
+                      </p>
+                    </div>
+                    <motion.div
+                      className="flex-shrink-0 mt-1"
+                      whileHover={{ rotate: -45 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                    >
+                      <ExternalLink 
+                        className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
+                        aria-hidden="true" 
+                      />
+                    </motion.div>
+                  </div>
+                </a>
+              </motion.article>
+            ))}
           </div>
+
+          {/* View all link */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mt-10"
+          >
+            <a
+              href="https://lahannin.medium.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              View all articles on Medium
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
+            </a>
+          </motion.div>
         </div>
-      </section>
-    </LazyMotion>
+      </div>
+    </section>
   );
 };
 

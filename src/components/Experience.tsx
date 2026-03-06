@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LazyMotion, domAnimation, m, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
 
@@ -283,165 +283,163 @@ const Experience = () => {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
-      <section id="experience" aria-labelledby="experience-heading" className="py-28 md:py-36 relative bg-background">
-        <div className="container px-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Section header */}
-            <m.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4 }}
-              className="text-center mb-16"
-            >
-              <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
-              <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
-                Career <span className="text-gradient">Journey</span>
-              </h2>
-            </m.div>
+    <section id="experience" aria-labelledby="experience-heading" className="py-28 md:py-36 relative bg-background">
+      <div className="container px-6">
+        <div className="max-w-4xl mx-auto">
+          {/* Section header */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
+            className="text-center mb-16"
+          >
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
+            <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
+              Career <span className="text-gradient">Journey</span>
+            </h2>
+          </motion.div>
 
-            {/* Timeline */}
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="hidden md:block absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+          {/* Timeline */}
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="hidden md:block absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
-              {companies.map((company, index) => (
-                <m.div
-                  key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.3, delay: index * 0.03 }}
-                  className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Timeline dot */}
-                  <div className="hidden md:block absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
-                    {hasCurrent(company) && (
-                      <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-25" />
-                    )}
-                  </div>
+            {companies.map((company, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
+                className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Timeline dot */}
+                <div className="hidden md:block absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1 md:-translate-x-1.5 mt-6 z-10">
+                  {hasCurrent(company) && (
+                    <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-25" />
+                  )}
+                </div>
 
-                  {/* Content */}
-                  <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                    <div className={`card-gradient border rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${hasCurrent(company) ? "border-highlight/40 ring-1 ring-highlight/20" : "border-border hover:border-highlight/40"}`}>
-                      {/* Company header */}
-                      <div className="flex items-center gap-4 mb-4">
-                        <img
-                          src={company.logo}
-                          alt={`${company.name} logo`}
-                          className="w-12 h-12 rounded-lg object-contain bg-white p-1"
-                          width={48}
-                          height={48}
-                          loading={index < 1 ? "eager" : "lazy"}
-                          {...(index < 1 ? { fetchpriority: "high" } : {})}
-                          decoding="async"
-                        />
-                        <div>
-                          <div className="flex flex-wrap items-center gap-3">
-                            <h3 className="text-xl font-bold">{company.name}</h3>
-                          </div>
-                          <p className="text-sm text-muted-foreground">{company.location}</p>
-                          {company.roles.length > 1 && (() => {
-                            const span = computeTotalSpan(company.roles);
-                            return (
-                              <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">
-                                {span.end === "Present" ? (
-                                  <>{span.start} – <span className="text-highlight font-bold uppercase tracking-widest">Present</span> · {span.label}</>
-                                ) : (
-                                  <>{span.start} – {span.end} · {span.label}</>
-                                )}
-                              </p>
-                            );
-                          })()}
+                {/* Content */}
+                <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
+                  <div className={`card-gradient border rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${hasCurrent(company) ? "border-highlight/40 ring-1 ring-highlight/20" : "border-border hover:border-highlight/40"}`}>
+                    {/* Company header */}
+                    <div className="flex items-center gap-4 mb-4">
+                      <img
+                        src={company.logo}
+                        alt={`${company.name} logo`}
+                        className="w-12 h-12 rounded-lg object-contain bg-white p-1"
+                        width={48}
+                        height={48}
+                        loading={index < 1 ? "eager" : "lazy"}
+                        {...(index < 1 ? { fetchpriority: "high" } : {})}
+                        decoding="async"
+                      />
+                      <div>
+                        <div className="flex flex-wrap items-center gap-3">
+                          <h3 className="text-xl font-bold">{company.name}</h3>
                         </div>
-                      </div>
-
-                      {/* Company description */}
-                      {company.description && (
-                        <p className="text-sm text-muted-foreground italic mb-5 pb-5 border-b border-border/50">
-                          {renderWithBitcoin(company.description)}
-                        </p>
-                      )}
-
-                      {/* Roles */}
-                      <div className="space-y-3">
-                        {company.roles.map((role, roleIndex) => {
-                          const isExpanded = isRoleExpanded(index, roleIndex);
+                        <p className="text-sm text-muted-foreground">{company.location}</p>
+                        {company.roles.length > 1 && (() => {
+                          const span = computeTotalSpan(company.roles);
                           return (
-                            <div
-                              key={roleIndex}
-                              className={`${roleIndex > 0 ? "pt-3 border-t border-border/50" : ""}`}
-                            >
-                              <button
-                                onClick={() => toggleRole(index, roleIndex)}
-                                className="w-full text-left flex items-center justify-between gap-2 group"
-                              >
-                                <div className="flex-1">
-                                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                                    <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                                      {role.period}
-                                    </span>
-                                  </div>
-                                  <p className="text-primary font-semibold group-hover:text-primary/80 transition-colors">
-                                    {role.title}
-                                  </p>
-                                </div>
-                                <m.div
-                                  animate={{ rotate: isExpanded ? 180 : 0 }}
-                                  transition={{ duration: 0.2 }}
-                                >
-                                  <ChevronDown className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
-                                </m.div>
-                              </button>
-                              
-                              <AnimatePresence>
-                                {isExpanded && (
-                                  <m.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    transition={{ duration: 0.2 }}
-                                    className="overflow-hidden"
-                                  >
-                                    <div className="pt-3">
-                                      {role.summary && (
-                                        <p className="text-sm text-muted-foreground mb-3 italic">
-                                          {role.summary}
-                                        </p>
-                                      )}
-                                      {role.description && (
-                                        <p className="text-sm text-muted-foreground mb-3">
-                                          {role.description}
-                                        </p>
-                                      )}
-                                      {role.highlights.length > 0 && (
-                                        <ul className="space-y-1.5">
-                                          {role.highlights.map(renderHighlight)}
-                                        </ul>
-                                      )}
-                                    </div>
-                                  </m.div>
-                                )}
-                              </AnimatePresence>
-                            </div>
+                            <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">
+                              {span.end === "Present" ? (
+                                <>{span.start} – <span className="text-highlight font-bold uppercase tracking-widest">Present</span> · {span.label}</>
+                              ) : (
+                                <>{span.start} – {span.end} · {span.label}</>
+                              )}
+                            </p>
                           );
-                        })}
+                        })()}
                       </div>
                     </div>
-                  </div>
 
-                  {/* Spacer for alternating layout */}
-                  <div className="hidden md:block flex-1" />
-                </m.div>
-              ))}
-            </div>
+                    {/* Company description */}
+                    {company.description && (
+                      <p className="text-sm text-muted-foreground italic mb-5 pb-5 border-b border-border/50">
+                        {renderWithBitcoin(company.description)}
+                      </p>
+                    )}
+
+                    {/* Roles */}
+                    <div className="space-y-3">
+                      {company.roles.map((role, roleIndex) => {
+                        const isExpanded = isRoleExpanded(index, roleIndex);
+                        return (
+                          <div
+                            key={roleIndex}
+                            className={`${roleIndex > 0 ? "pt-3 border-t border-border/50" : ""}`}
+                          >
+                            <button
+                              onClick={() => toggleRole(index, roleIndex)}
+                              className="w-full text-left flex items-center justify-between gap-2 group"
+                            >
+                              <div className="flex-1">
+                                <div className="flex flex-wrap items-center gap-2 mb-1">
+                                  <span className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
+                                    {role.period}
+                                  </span>
+                                </div>
+                                <p className="text-primary font-semibold group-hover:text-primary/80 transition-colors">
+                                  {role.title}
+                                </p>
+                              </div>
+                              <motion.div
+                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                              >
+                                <ChevronDown className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
+                              </motion.div>
+                            </button>
+                            
+                            <AnimatePresence>
+                              {isExpanded && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="pt-3">
+                                    {role.summary && (
+                                      <p className="text-sm text-muted-foreground mb-3 italic">
+                                        {role.summary}
+                                      </p>
+                                    )}
+                                    {role.description && (
+                                      <p className="text-sm text-muted-foreground mb-3">
+                                        {role.description}
+                                      </p>
+                                    )}
+                                    {role.highlights.length > 0 && (
+                                      <ul className="space-y-1.5">
+                                        {role.highlights.map(renderHighlight)}
+                                      </ul>
+                                    )}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Spacer for alternating layout */}
+                <div className="hidden md:block flex-1" />
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
-    </LazyMotion>
+      </div>
+    </section>
   );
 };
 

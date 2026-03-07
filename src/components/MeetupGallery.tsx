@@ -201,16 +201,19 @@ const MeetupGallery = () => {
                         }`}
                         onClick={() => setSelectedPhoto(index)}
                       >
-                        <img
-                          src={photo.src}
-                          alt={photo.alt}
-                          className="w-full aspect-[4/3] object-cover"
-                          loading="lazy"
-                          decoding="async"
-                          width={967}
-                          height={725}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
-                        />
+                        <picture>
+                          <source media="(max-width: 767px)" srcSet={photo.mobileSrc} />
+                          <img
+                            src={photo.src}
+                            alt={photo.alt}
+                            className="w-full aspect-[4/3] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                            width={967}
+                            height={725}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
+                          />
+                        </picture>
                       </motion.div>
                     </div>
                   );

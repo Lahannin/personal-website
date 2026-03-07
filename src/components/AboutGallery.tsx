@@ -3,17 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const photos = [
-  { src: "/about-gallery/podcast-trezor.avif", alt: "Lauri Hänninen podcast about Trezor and hardware wallets" },
-  { src: "/about-gallery/trezor-safe-7-quiz.avif", alt: "Lauri Hänninen at Trezor Safe 7 quiz" },
-  { src: "/about-gallery/btc-prague-panel.avif", alt: "Lauri Hänninen panel discussion at BTC Prague" },
-  { src: "/about-gallery/ethcc-conference.avif", alt: "Lauri Hänninen showcasing products at ETHCC conference" },
-  { src: "/about-gallery/gooddata.avif", alt: "Lauri Hänninen at GoodData" },
-  { src: "/about-gallery/ethcc-8.avif", alt: "Lauri Hänninen at ETHCC 8 conference" },
-  { src: "/about-gallery/btc-prague-satoshilabs.avif", alt: "Lauri Hänninen with SatoshiLabs at BTC Prague" },
-  { src: "/about-gallery/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
-  { src: "/about-gallery/eth-milan.avif", alt: "Lauri Hänninen at ETH Milan conference" },
-  
-  
+  { src: "/about-gallery/podcast-trezor.avif", mobileSrc: "/about-gallery/mobile/podcast-trezor.avif", alt: "Lauri Hänninen podcast about Trezor and hardware wallets" },
+  { src: "/about-gallery/trezor-safe-7-quiz.avif", mobileSrc: "/about-gallery/mobile/trezor-safe-7-quiz.avif", alt: "Lauri Hänninen at Trezor Safe 7 quiz" },
+  { src: "/about-gallery/btc-prague-panel.avif", mobileSrc: "/about-gallery/mobile/btc-prague-panel.avif", alt: "Lauri Hänninen panel discussion at BTC Prague" },
+  { src: "/about-gallery/ethcc-conference.avif", mobileSrc: "/about-gallery/mobile/ethcc-conference.avif", alt: "Lauri Hänninen showcasing products at ETHCC conference" },
+  { src: "/about-gallery/gooddata.avif", mobileSrc: "/about-gallery/mobile/gooddata.avif", alt: "Lauri Hänninen at GoodData" },
+  { src: "/about-gallery/ethcc-8.avif", mobileSrc: "/about-gallery/mobile/ethcc-8.avif", alt: "Lauri Hänninen at ETHCC 8 conference" },
+  { src: "/about-gallery/btc-prague-satoshilabs.avif", mobileSrc: "/about-gallery/mobile/btc-prague-satoshilabs.avif", alt: "Lauri Hänninen with SatoshiLabs at BTC Prague" },
+  { src: "/about-gallery/trezor-safe-7-launch.avif", mobileSrc: "/about-gallery/mobile/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
+  { src: "/about-gallery/eth-milan.avif", mobileSrc: "/about-gallery/mobile/eth-milan.avif", alt: "Lauri Hänninen at ETH Milan conference" },
 ];
 
 // Balanced masonry: each column sums to ~same height ratio
@@ -63,16 +61,19 @@ const AboutGallery = () => {
                 className="rounded-xl overflow-hidden border border-border cursor-pointer hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                 onClick={() => setSelectedPhoto(photoIdx)}
               >
-                <img
-                  src={photos[photoIdx].src}
-                  alt={photos[photoIdx].alt}
-                  className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
-                  loading="lazy"
-                  decoding="async"
-                  width={400}
-                  height={400}
-                  sizes="(max-width: 768px) 33vw, 256px"
-                />
+                <picture>
+                  <source media="(max-width: 767px)" srcSet={photos[photoIdx].mobileSrc} />
+                  <img
+                    src={photos[photoIdx].src}
+                    alt={photos[photoIdx].alt}
+                    className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
+                    loading="lazy"
+                    decoding="async"
+                    width={400}
+                    height={400}
+                    sizes="(max-width: 768px) 33vw, 256px"
+                  />
+                </picture>
               </div>
             ))}
           </div>
@@ -109,16 +110,20 @@ const AboutGallery = () => {
             >
               <ChevronRight className="w-6 h-6" />
             </button>
-            <motion.img
+            <motion.picture
               key={selectedPhoto}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              src={photos[selectedPhoto].src}
-              alt={photos[selectedPhoto].alt}
-              className="max-w-full max-h-[90vh] rounded-xl object-contain"
               onClick={() => setSelectedPhoto(null)}
-            />
+            >
+              <source media="(max-width: 767px)" srcSet={photos[selectedPhoto].mobileSrc} />
+              <img
+                src={photos[selectedPhoto].src}
+                alt={photos[selectedPhoto].alt}
+                className="max-w-full max-h-[90vh] rounded-xl object-contain"
+              />
+            </motion.picture>
           </motion.div>
         )}
       </AnimatePresence>

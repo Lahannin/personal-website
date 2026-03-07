@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const photos = [
-  { src: "/product-marketing-meetup-1.avif", alt: "Lauri Hänninen at Product Marketing Alliance Prague meetup dinner" },
-  { src: "/product-marketing-meetup-2.avif", alt: "Lauri Hänninen hosting PMA Prague Christmas meetup" },
-  { src: "/product-marketing-meetup-3.avif", alt: "Lauri Hänninen at product marketing community gathering in Prague" },
-  { src: "/product-marketing-meetup-4.avif", alt: "Lauri Hänninen's Product Marketing Alliance Prague meetup group photo" },
-  { src: "/product-marketing-meetup-5.avif", alt: "Lauri Hänninen at product marketing dinner meetup in Prague" },
-  { src: "/product-marketing-meetup-6.avif", alt: "Lauri Hänninen's PMA Prague community dinner event" },
-  { src: "/product-marketing-meetup-7.avif", alt: "Lauri Hänninen's Product Marketing Prague meetup at a café" },
+  { src: "/meetup-gallery/desktop/product-marketing-meetup-1.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-1.avif", alt: "Lauri Hänninen at Product Marketing Alliance Prague meetup dinner" },
+  { src: "/meetup-gallery/desktop/product-marketing-meetup-2.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-2.avif", alt: "Lauri Hänninen hosting PMA Prague Christmas meetup" },
+  { src: "/meetup-gallery/desktop/product-marketing-meetup-3.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-3.avif", alt: "Lauri Hänninen at product marketing community gathering in Prague" },
+  { src: "/meetup-gallery/desktop/product-marketing-meetup-4.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-4.avif", alt: "Lauri Hänninen's Product Marketing Alliance Prague meetup group photo" },
+  { src: "/meetup-gallery/desktop/product-marketing-meetup-5.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-5.avif", alt: "Lauri Hänninen at product marketing dinner meetup in Prague" },
+  { src: "/meetup-gallery/desktop/product-marketing-meetup-6.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-6.avif", alt: "Lauri Hänninen's PMA Prague community dinner event" },
+  { src: "/meetup-gallery/desktop/product-marketing-meetup-7.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-7.avif", alt: "Lauri Hänninen's Product Marketing Prague meetup at a café" },
 ];
 
 const MeetupGallery = () => {
@@ -201,16 +201,19 @@ const MeetupGallery = () => {
                         }`}
                         onClick={() => setSelectedPhoto(index)}
                       >
-                        <img
-                          src={photo.src}
-                          alt={photo.alt}
-                          className="w-full aspect-[4/3] object-cover"
-                          loading="lazy"
-                          decoding="async"
-                          width={967}
-                          height={725}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
-                        />
+                        <picture>
+                          <source media="(max-width: 767px)" srcSet={photo.mobileSrc} />
+                          <img
+                            src={photo.src}
+                            alt={photo.alt}
+                            className="w-full aspect-[4/3] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                            width={967}
+                            height={725}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
+                          />
+                        </picture>
                       </motion.div>
                     </div>
                   );
@@ -277,16 +280,20 @@ const MeetupGallery = () => {
             >
               <ChevronRight className="w-6 h-6" />
             </button>
-            <motion.img
+            <motion.picture
               key={selectedPhoto}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              src={photos[selectedPhoto].src}
-              alt={photos[selectedPhoto].alt}
-              className="max-w-full max-h-[90vh] rounded-xl object-contain"
               onClick={() => setSelectedPhoto(null)}
-            />
+            >
+              <source media="(max-width: 767px)" srcSet={photos[selectedPhoto].mobileSrc} />
+              <img
+                src={photos[selectedPhoto].src}
+                alt={photos[selectedPhoto].alt}
+                className="max-w-full max-h-[90vh] rounded-xl object-contain"
+              />
+            </motion.picture>
           </motion.div>
         )}
       </AnimatePresence>

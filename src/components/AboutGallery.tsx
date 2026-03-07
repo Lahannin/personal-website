@@ -61,16 +61,19 @@ const AboutGallery = () => {
                 className="rounded-xl overflow-hidden border border-border cursor-pointer hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
                 onClick={() => setSelectedPhoto(photoIdx)}
               >
-                <img
-                  src={photos[photoIdx].src}
-                  alt={photos[photoIdx].alt}
-                  className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
-                  loading="lazy"
-                  decoding="async"
-                  width={400}
-                  height={400}
-                  sizes="(max-width: 768px) 33vw, 256px"
-                />
+                <picture>
+                  <source media="(max-width: 767px)" srcSet={photos[photoIdx].mobileSrc} />
+                  <img
+                    src={photos[photoIdx].src}
+                    alt={photos[photoIdx].alt}
+                    className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
+                    loading="lazy"
+                    decoding="async"
+                    width={400}
+                    height={400}
+                    sizes="(max-width: 768px) 33vw, 256px"
+                  />
+                </picture>
               </div>
             ))}
           </div>

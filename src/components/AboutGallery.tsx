@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const photos = [
-  { src: "/about-gallery/podcast-trezor.avif", mobileSrc: "/about-gallery/mobile/podcast-trezor.avif", alt: "Lauri Hänninen podcast about Trezor and hardware wallets" },
-  { src: "/about-gallery/trezor-safe-7-quiz.avif", mobileSrc: "/about-gallery/mobile/trezor-safe-7-quiz.avif", alt: "Lauri Hänninen at Trezor Safe 7 quiz" },
-  { src: "/about-gallery/btc-prague-panel.avif", mobileSrc: "/about-gallery/mobile/btc-prague-panel.avif", alt: "Lauri Hänninen panel discussion at BTC Prague" },
-  { src: "/about-gallery/ethcc-conference.avif", mobileSrc: "/about-gallery/mobile/ethcc-conference.avif", alt: "Lauri Hänninen showcasing products at ETHCC conference" },
-  { src: "/about-gallery/gooddata.avif", mobileSrc: "/about-gallery/mobile/gooddata.avif", alt: "Lauri Hänninen at GoodData" },
-  { src: "/about-gallery/ethcc-8.avif", mobileSrc: "/about-gallery/mobile/ethcc-8.avif", alt: "Lauri Hänninen at ETHCC 8 conference" },
-  { src: "/about-gallery/btc-prague-satoshilabs.avif", mobileSrc: "/about-gallery/mobile/btc-prague-satoshilabs.avif", alt: "Lauri Hänninen with SatoshiLabs at BTC Prague" },
-  { src: "/about-gallery/trezor-safe-7-launch.avif", mobileSrc: "/about-gallery/mobile/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
-  { src: "/about-gallery/eth-milan.avif", mobileSrc: "/about-gallery/mobile/eth-milan.avif", alt: "Lauri Hänninen at ETH Milan conference" },
+  { src: "/about-gallery/desktop/podcast-trezor.avif", mobileSrc: "/about-gallery/mobile/podcast-trezor.avif", alt: "Lauri Hänninen podcast about Trezor and hardware wallets" },
+  { src: "/about-gallery/desktop/trezor-safe-7-quiz.avif", mobileSrc: "/about-gallery/mobile/trezor-safe-7-quiz.avif", alt: "Lauri Hänninen at Trezor Safe 7 quiz" },
+  { src: "/about-gallery/desktop/btc-prague-panel.avif", mobileSrc: "/about-gallery/mobile/btc-prague-panel.avif", alt: "Lauri Hänninen panel discussion at BTC Prague" },
+  { src: "/about-gallery/desktop/ethcc-conference.avif", mobileSrc: "/about-gallery/mobile/ethcc-conference.avif", alt: "Lauri Hänninen showcasing products at ETHCC conference" },
+  { src: "/about-gallery/desktop/gooddata.avif", mobileSrc: "/about-gallery/mobile/gooddata.avif", alt: "Lauri Hänninen at GoodData" },
+  { src: "/about-gallery/desktop/ethcc-8.avif", mobileSrc: "/about-gallery/mobile/ethcc-8.avif", alt: "Lauri Hänninen at ETHCC 8 conference" },
+  { src: "/about-gallery/desktop/btc-prague-satoshilabs.avif", mobileSrc: "/about-gallery/mobile/btc-prague-satoshilabs.avif", alt: "Lauri Hänninen with SatoshiLabs at BTC Prague" },
+  { src: "/about-gallery/desktop/trezor-safe-7-launch.avif", mobileSrc: "/about-gallery/mobile/trezor-safe-7-launch.avif", alt: "Lauri Hänninen at Trezor Safe 7 launch event" },
+  { src: "/about-gallery/desktop/eth-milan.avif", mobileSrc: "/about-gallery/mobile/eth-milan.avif", alt: "Lauri Hänninen at ETH Milan conference" },
 ];
 
 // Balanced masonry: each column sums to ~same height ratio

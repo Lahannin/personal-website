@@ -280,16 +280,20 @@ const MeetupGallery = () => {
             >
               <ChevronRight className="w-6 h-6" />
             </button>
-            <motion.img
+            <motion.picture
               key={selectedPhoto}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              src={photos[selectedPhoto].src}
-              alt={photos[selectedPhoto].alt}
-              className="max-w-full max-h-[90vh] rounded-xl object-contain"
               onClick={() => setSelectedPhoto(null)}
-            />
+            >
+              <source media="(max-width: 767px)" srcSet={photos[selectedPhoto].mobileSrc} />
+              <img
+                src={photos[selectedPhoto].src}
+                alt={photos[selectedPhoto].alt}
+                className="max-w-full max-h-[90vh] rounded-xl object-contain"
+              />
+            </motion.picture>
           </motion.div>
         )}
       </AnimatePresence>

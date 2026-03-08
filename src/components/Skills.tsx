@@ -22,7 +22,7 @@ const certifications = [
   { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.avif" },
   { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.avif" },
   { name: "Product-Led Growth", org: "ProductLed", logo: "/productled-logo.avif" },
-  { name: "B2B Messaging", org: "Wynter", logo: "/wynter-logo.avif" },
+  { name: "B2B Messaging", org: "Wynter", logo: "/wynter-logo.avif", invertInDark: true },
   { name: "Product Management Certified", org: "Pendo", logo: "/pendo-logo.avif" },
   { name: "Product-Led Certified", org: "Pendo", logo: "/pendo-logo.avif" },
   { name: "Elements of AI", org: "University of Helsinki", logo: "/university-of-helsinki-logo.avif" },
@@ -129,7 +129,11 @@ const Skills = () => {
                   <img
                     src={cert.logo}
                     alt={`${cert.org} logo`}
-                    className="w-10 h-10 object-contain mb-2 grayscale group-hover:grayscale-0 dark:brightness-[10] dark:group-hover:brightness-100 dark:group-hover:grayscale-0 transition-all duration-300"
+                    className={`w-10 h-10 object-contain mb-2 grayscale group-hover:grayscale-0 transition-all duration-300 ${
+                      cert.invertInDark
+                        ? "dark:invert dark:group-hover:invert-0 dark:group-hover:grayscale-0"
+                        : "dark:brightness-[10] dark:group-hover:brightness-100 dark:group-hover:grayscale-0"
+                    }`}
                     width={40}
                     height={40}
                     loading="lazy"

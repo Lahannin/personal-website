@@ -35,6 +35,7 @@ const educationData = [
     degree: "Master of Science (M.Sc.)",
     field: "Economics and Business Administration",
     logo: "/university-of-oulu-logo.jpg",
+    invertInDark: true,
   },
   {
     institution: "University of Helsinki",

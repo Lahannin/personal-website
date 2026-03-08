@@ -126,6 +126,17 @@ const Skills = () => {
                   transition={{ duration: 0.2, delay: index * 0.02 }}
                   className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
                 >
+                  {cert.badge && (
+                    <img
+                      src={cert.badge}
+                      alt={`${cert.name} certification badge`}
+                      className="w-10 h-10 object-contain rounded mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
                     {cert.name}
                   </p>

@@ -1,8 +1,7 @@
 import { useState, useCallback } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
-import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useNavigate } from "react-router-dom";
 
 interface FloatingBitcoin {

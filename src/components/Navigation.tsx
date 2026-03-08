@@ -95,7 +95,7 @@ const Navigation = () => {
                           <a
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-highlight py-3 px-4 rounded-md min-h-[44px] flex items-center font-mono"
+                            className="block text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary dark:hover:text-highlight py-3 px-4 rounded-md min-h-[44px] flex items-center font-mono"
                           >
                             {link.label}
                           </a>

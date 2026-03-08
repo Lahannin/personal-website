@@ -74,6 +74,7 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     scrollbar-gutter: stable;
+    overflow-anchor: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

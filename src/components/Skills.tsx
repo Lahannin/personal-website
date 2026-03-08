@@ -19,13 +19,13 @@ const allSkills = [
 ];
 
 const certifications = [
-  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.webp" },
-  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.webp" },
-  { name: "Product-Led Growth", org: "ProductLed", logo: "/productled-logo.png" },
-  { name: "B2B Messaging", org: "Wynter", logo: "/wynter-logo.webp" },
-  { name: "Product Management Certified", org: "Pendo", logo: "/pendo-logo.webp" },
-  { name: "Product-Led Certified", org: "Pendo", logo: "/pendo-logo.webp" },
-  { name: "Elements of AI", org: "University of Helsinki", logo: "/university-of-helsinki-logo.jpg" },
+  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.avif" },
+  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.avif" },
+  { name: "Product-Led Growth", org: "ProductLed", logo: "/productled-logo.avif" },
+  { name: "B2B Messaging", org: "Wynter", logo: "/wynter-logo.avif" },
+  { name: "Product Management Certified", org: "Pendo", logo: "/pendo-logo.avif" },
+  { name: "Product-Led Certified", org: "Pendo", logo: "/pendo-logo.avif" },
+  { name: "Elements of AI", org: "University of Helsinki", logo: "/university-of-helsinki-logo.avif" },
   { name: "PRINCE2", org: "TAYLLOR & COX", logo: "/tayllorcox-logo.avif" },
 ];
 

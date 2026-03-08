@@ -19,14 +19,14 @@ const allSkills = [
 ];
 
 const certifications = [
-  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance" },
-  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance" },
-  { name: "Product-Led Growth", org: "ProductLed" },
-  { name: "B2B Messaging", org: "Wynter" },
-  { name: "Product Management Certified", org: "Pendo" },
-  { name: "Product-Led Certified", org: "Pendo" },
-  { name: "Elements of AI", org: "University of Helsinki" },
-  { name: "PRINCE2", org: "TAYLLOR & COX" },
+  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", badge: "/product-marketing-certified.avif" },
+  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", badge: "/product-marketing-certified.avif" },
+  { name: "Product-Led Growth", org: "ProductLed", badge: "/product-led-fundamentals-certified.avif" },
+  { name: "B2B Messaging", org: "Wynter", badge: null },
+  { name: "Product Management Certified", org: "Pendo", badge: null },
+  { name: "Product-Led Certified", org: "Pendo", badge: "/product-led-certified.avif" },
+  { name: "Elements of AI", org: "University of Helsinki", badge: null },
+  { name: "PRINCE2", org: "TAYLLOR & COX", badge: null },
 ];
 
 const educationData = [

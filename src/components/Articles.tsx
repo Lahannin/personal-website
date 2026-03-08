@@ -1,13 +1,23 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
+type ArticleCategory = "marketing" | "analytics" | "technical";
+
 interface Article {
   title: string;
   description: string;
   url: string;
   date: string;
   publication?: string;
+  category: ArticleCategory;
+  readMin: number;
 }
+
+const categoryConfig: Record<ArticleCategory, { label: string; colorClass: string }> = {
+  marketing: { label: "Marketing", colorClass: "bg-highlight" },
+  analytics: { label: "Analytics", colorClass: "bg-accent" },
+  technical: { label: "Technical", colorClass: "bg-primary" },
+};
 
 const articles: Article[] = [
   {
@@ -15,6 +25,8 @@ const articles: Article[] = [
     description: "Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!",
     url: "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
     date: "Apr 2023",
+    category: "marketing",
+    readMin: 8,
   },
   {
     title: "What Is Analytics as Code?",
@@ -22,6 +34,8 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49",
     date: "Aug 2023",
     publication: "GoodData Developers",
+    category: "analytics",
+    readMin: 6,
   },
   {
     title: "Headless BI: Metric Standardization in Action",
@@ -29,6 +43,8 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/headless-bi-metric-standardization-in-action-afb2ac7e89b6",
     date: "Mar 2022",
     publication: "Better Programming",
+    category: "technical",
+    readMin: 7,
   },
   {
     title: "Analytics as Code: Managing Analytics Solutions Like Any Other Software",
@@ -36,12 +52,16 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61",
     date: "Feb 2022",
     publication: "GoodData Developers",
+    category: "analytics",
+    readMin: 5,
   },
   {
     title: "Danger Zone: Inconsistent Metrics at Work",
     description: "If we can't trust our metrics, we can't trust our data. Metric standardization ensures we avoid the danger zone of inconsistent metrics.",
     url: "https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4",
     date: "Feb 2022",
+    category: "marketing",
+    readMin: 4,
   },
   {
     title: "Headless BI x Data Lakehouse",
@@ -49,6 +69,8 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159",
     date: "Jan 2022",
     publication: "GoodData Developers",
+    category: "technical",
+    readMin: 6,
   },
 ];
 

@@ -296,7 +296,7 @@ const Experience = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
+            <span className="font-mono text-primary dark:text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
             <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Career <span className="text-gradient">Journey</span>
             </h2>

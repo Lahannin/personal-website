@@ -31,7 +31,9 @@ const Index = () => {
 
           <Suspense fallback={<div className="h-40" />}>
             <About />
-            <MeetupGallery />
+            <LazySection minHeight="500px">
+              <MeetupGallery />
+            </LazySection>
             <Products />
             <Experience />
             <Skills />

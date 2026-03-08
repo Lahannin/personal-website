@@ -73,7 +73,7 @@ const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
@@ -93,6 +93,12 @@ const Hero = () => {
         ease: [0.22, 0.61, 0.36, 1] as const,
       },
     },
+  };
+
+  // LCP-safe variant: starts visible so the browser can paint immediately
+  const lcpVariants = {
+    hidden: { opacity: 1, y: 0 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -171,6 +177,7 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                   width={208}
                   height={208}
+                  sizes="176px"
                   loading="eager"
                   fetchPriority="high"
                   decoding="sync"
@@ -202,10 +209,10 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Name */}
+          {/* Name — LCP element: no opacity:0 to avoid render delay */}
           <motion.h1
             id="hero-heading"
-            variants={itemVariants}
+            variants={lcpVariants}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
           >
             Lauri <span className="text-gradient">Hänninen</span>

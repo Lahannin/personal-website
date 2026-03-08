@@ -116,7 +116,7 @@ const Skills = () => {
             <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8">
               CERTIFICATIONS
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl mx-auto">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
@@ -124,8 +124,23 @@ const Skills = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: index * 0.02 }}
-                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
+                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex flex-col items-start"
                 >
+                  {cert.badge ? (
+                    <img
+                      src={cert.badge}
+                      alt={`${cert.name} badge`}
+                      className="w-7 h-7 object-contain rounded mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                      width={28}
+                      height={28}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div className="w-7 h-7 rounded bg-muted flex items-center justify-center mb-2 group-hover:bg-highlight/10 transition-colors duration-300">
+                      <span className="text-[10px] font-bold text-muted-foreground group-hover:text-highlight transition-colors">✓</span>
+                    </div>
+                  )}
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
                     {cert.name}
                   </p>

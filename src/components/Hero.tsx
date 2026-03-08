@@ -177,6 +177,7 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                   width={208}
                   height={208}
+                  sizes="176px"
                   loading="eager"
                   fetchPriority="high"
                   decoding="sync"

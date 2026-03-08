@@ -24,7 +24,6 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49",
     date: "Aug 2023",
     publication: "GoodData Developers",
-    category: "analytics",
     readMin: 6,
   },
   {

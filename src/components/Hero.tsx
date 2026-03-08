@@ -72,10 +72,9 @@ const Hero = () => {
   const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "10%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  // Stagger orchestration only — no opacity animation on container itself
   const containerVariants = {
-    hidden: { opacity: 1 },
     visible: {
-      opacity: 1,
       transition: {
         staggerChildren: 0.04,
         delayChildren: 0,
@@ -93,12 +92,6 @@ const Hero = () => {
         ease: [0.22, 0.61, 0.36, 1] as const,
       },
     },
-  };
-
-  // LCP-safe variant: starts visible so the browser can paint immediately
-  const lcpVariants = {
-    hidden: { opacity: 1, y: 0 },
-    visible: { opacity: 1, y: 0 },
   };
 
   return (

@@ -120,9 +120,36 @@ const Hero = () => {
         >
           {/* Profile photo with all your hover effects preserved */}
           <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
-              <div className="relative group" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
-              <div className="absolute rounded-full blur-2xl transition-all duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.35)', inset: `${-4 - haloScale * 8}px`, opacity: haloScale > 0 ? 1 : 0, borderRadius: '9999px' }} />
-              <div className="absolute rounded-full transition-all duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.7), rgba(247, 147, 26, 0.4), transparent)', inset: `${-1 - haloScale * 4}px`, opacity: haloScale > 0 ? 1 : 0, borderRadius: '9999px' }} />
+              <div className="relative group flex items-center justify-center" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
+              {/* Outer soft glow — scales up with clicks */}
+              <motion.div
+                className="absolute w-44 h-44 md:w-52 md:h-52 rounded-full pointer-events-none"
+                animate={{
+                  scale: haloScale > 0 ? 1 + haloScale * 0.25 : 0,
+                  opacity: haloScale > 0 ? [0.4, 0.7, 0.4] : 0,
+                }}
+                transition={{
+                  scale: { duration: 0.5, ease: "easeOut" },
+                  opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                }}
+                style={{
+                  background: 'radial-gradient(circle, rgba(247,147,26,0.35) 0%, rgba(247,147,26,0.15) 40%, rgba(247,147,26,0.05) 70%, transparent 100%)',
+                  filter: 'blur(20px)',
+                }}
+              />
+              {/* Inner ring glow — tighter, brighter */}
+              <motion.div
+                className="absolute w-44 h-44 md:w-52 md:h-52 rounded-full pointer-events-none"
+                animate={{
+                  scale: haloScale > 0 ? 1 + haloScale * 0.12 : 0,
+                  opacity: haloScale > 0 ? 0.8 : 0,
+                }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                style={{
+                  background: 'radial-gradient(circle, transparent 45%, rgba(247,147,26,0.5) 65%, rgba(247,147,26,0.2) 80%, transparent 100%)',
+                  filter: 'blur(6px)',
+                }}
+              />
               <motion.div
                 animate={spinTriggered 
                   ? { rotate: 360, scale: 0.3, opacity: 0 } 

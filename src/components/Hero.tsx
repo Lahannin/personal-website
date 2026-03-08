@@ -1,8 +1,7 @@
 import { useState, useCallback } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
-import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useNavigate } from "react-router-dom";
 
 interface FloatingBitcoin {
@@ -14,8 +13,6 @@ interface FloatingBitcoin {
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isMobile = useIsMobile();
-  const prefersReducedMotion = useReducedMotion();
   const navigate = useNavigate();
   const clickCountRef = useRef(0);
   const [spinTriggered, setSpinTriggered] = useState(false);
@@ -65,12 +62,7 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
 
-  const disableParallax = isMobile || prefersReducedMotion;
-  
-  // Parallax settings optimized for "smooth" over "dramatic"
-  const backgroundY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "20%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "10%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   // Stagger orchestration only — no opacity animation on container itself
   const containerVariants = {
@@ -100,21 +92,15 @@ const Hero = () => {
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       
       {/* Background Gradients */}
-      <motion.div 
-        style={{ y: backgroundY }}
-        className="absolute inset-0 bg-gradient-to-b from-background via-background to-background pointer-events-none"
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background pointer-events-none" />
       
       {/* Glow Blobs */}
-      <motion.div 
-        style={{ y: backgroundY }}
-        className="absolute inset-0 overflow-hidden pointer-events-none"
-      >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
-      </motion.div>
+      </div>
 
-      <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
+      <motion.div style={{ opacity }} className="container relative z-10 px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"

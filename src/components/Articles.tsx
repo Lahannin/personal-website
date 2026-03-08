@@ -40,7 +40,6 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61",
     date: "Feb 2022",
     publication: "GoodData Developers",
-    category: "analytics",
     readMin: 5,
   },
   {

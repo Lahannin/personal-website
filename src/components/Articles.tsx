@@ -1,23 +1,14 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
-type ArticleCategory = "marketing" | "analytics" | "technical";
-
 interface Article {
   title: string;
   description: string;
   url: string;
   date: string;
   publication?: string;
-  category: ArticleCategory;
   readMin: number;
 }
-
-const categoryConfig: Record<ArticleCategory, { label: string; colorClass: string }> = {
-  marketing: { label: "Marketing", colorClass: "bg-highlight" },
-  analytics: { label: "Analytics", colorClass: "bg-accent" },
-  technical: { label: "Technical", colorClass: "bg-primary" },
-};
 
 const articles: Article[] = [
   {

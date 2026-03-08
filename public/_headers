@@ -7,9 +7,12 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Keep AI files out of search results
+# Keep system/AI files out of search results but accessible to crawlers
 /llms.txt
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
 
 /llms-full.txt
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
+
+/robots.txt
+  X-Robots-Tag: noindex, nofollow

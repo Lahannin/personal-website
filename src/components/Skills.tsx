@@ -1,21 +1,23 @@
 import { motion } from "framer-motion";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Target, Cpu, TrendingUp } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
 
-const allSkills = [
-  "Product Marketing",
-  "Go-to-Market Strategy",
-  "Product Positioning",
-  "Messaging Frameworks",
-  "Product Launches",
-  "Product-Led Growth",
-  "SaaS & Cloud Platforms",
-  "Hardware Products",
-  "Analytics & Data",
-  "B2B & B2C",
-  "AI/ML Applications",
-  "Security & Privacy",
-  "Bitcoin & Crypto",
+const skillCategories = [
+  {
+    label: "Marketing",
+    icon: Target,
+    skills: ["Product Marketing", "Go-to-Market Strategy", "Product Positioning", "Messaging Frameworks", "Product Launches", "Product-Led Growth", "B2B & B2C"],
+  },
+  {
+    label: "Technical",
+    icon: Cpu,
+    skills: ["SaaS & Cloud Platforms", "Hardware Products", "Analytics & Data", "AI/ML Applications", "Security & Privacy"],
+  },
+  {
+    label: "Industry",
+    icon: TrendingUp,
+    skills: ["Bitcoin & Crypto", "Open Source", "Developer Tools", "Enterprise Software"],
+  },
 ];
 
 const certifications = [

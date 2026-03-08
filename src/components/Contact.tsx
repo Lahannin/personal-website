@@ -30,7 +30,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden bg-secondary/30" data-description="Contact Lauri Hänninen via X (@Lahannin), LinkedIn (/in/laurihanninen), or Telegram (@lahannin)">
+    <section id="contact" aria-labelledby="contact-heading" className="py-20 md:py-28 relative overflow-hidden bg-secondary/30" data-description="Contact Lauri Hänninen via X (@Lahannin), LinkedIn (/in/laurihanninen), or Telegram (@lahannin)">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
@@ -42,10 +42,14 @@ const Contact = () => {
             transition={{ duration: 0.4 }}
           >
             <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// CONTACT</span>
-            <h2 id="contact-heading" className="text-4xl md:text-6xl font-black mt-4 mb-6 tracking-[-0.03em]">
+            <h2 id="contact-heading" className="text-4xl md:text-6xl font-black mt-4 mb-4 tracking-[-0.03em]">
               Let's <span className="text-gradient">Connect</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-12">
+            <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="mono text-xs text-green-600 dark:text-green-400 font-medium">Open to opportunities</span>
+            </div>
+            <p className="text-lg text-muted-foreground mb-10">
               Looking to collaborate on product marketing or just want to say hello? 
               I'm always happy to connect with fellow product enthusiasts.
             </p>

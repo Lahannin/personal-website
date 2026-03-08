@@ -29,7 +29,7 @@ const Index = () => {
           {/* Hero stays outside Suspense for maximum LCP performance */}
           <Hero />
 
-          <Suspense fallback={<div className="h-40" />}>
+          <Suspense fallback={<div style={{ minHeight: '400vh' }} />}>
             <About />
             <LazySection minHeight="500px">
               <MeetupGallery />
@@ -39,7 +39,6 @@ const Index = () => {
             <Skills />
             <Articles />
             <Contact />
-            {/* 2. Move Footer inside Suspense so it doesn't block the main thread */}
             <Footer />
           </Suspense>
         </main>

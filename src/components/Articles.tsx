@@ -112,37 +112,44 @@ const Articles = () => {
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block card-gradient border border-border rounded-xl p-6 shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full"
+                  className="group block card-gradient border border-border rounded-xl overflow-hidden shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full relative"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center gap-2 mb-3">
-                        <time className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded" dateTime={article.date}>
-                          {article.date}
-                        </time>
-                        {article.publication && (
-                          <span className="text-xs text-muted-foreground">
-                            {article.publication}
+                  {/* Category accent bar */}
+                  <div className={`absolute top-0 left-0 w-1 h-full ${categoryConfig[article.category].colorClass} opacity-60 group-hover:opacity-100 transition-opacity`} />
+                  <div className="p-6 pl-5">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-center gap-2 mb-3">
+                          <time className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded" dateTime={article.date}>
+                            {article.date}
+                          </time>
+                          {article.publication && (
+                            <span className="text-xs text-muted-foreground">
+                              {article.publication}
+                            </span>
+                          )}
+                          <span className="mono text-[10px] text-muted-foreground ml-auto">
+                            {article.readMin} min read
                           </span>
-                        )}
+                        </div>
+                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
+                          {article.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {article.description}
+                        </p>
                       </div>
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
-                        {article.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
-                        {article.description}
-                      </p>
+                      <motion.div
+                        className="flex-shrink-0 mt-1"
+                        whileHover={{ rotate: -45 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                      >
+                        <ExternalLink 
+                          className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
+                          aria-hidden="true" 
+                        />
+                      </motion.div>
                     </div>
-                    <motion.div
-                      className="flex-shrink-0 mt-1"
-                      whileHover={{ rotate: -45 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                    >
-                      <ExternalLink 
-                        className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
-                        aria-hidden="true" 
-                      />
-                    </motion.div>
                   </div>
                 </a>
               </motion.article>

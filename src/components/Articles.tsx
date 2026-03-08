@@ -32,7 +32,6 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/headless-bi-metric-standardization-in-action-afb2ac7e89b6",
     date: "Mar 2022",
     publication: "Better Programming",
-    category: "technical",
     readMin: 7,
   },
   {

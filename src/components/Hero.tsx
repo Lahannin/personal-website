@@ -52,8 +52,11 @@ const Hero = () => {
     if (count >= 5 && !spinTriggered) {
       setSpinTriggered(true);
       setHaloScale(0);
-      setTimeout(() => setFadeOut(true), 400);
-      setTimeout(() => navigate("/secret"), 1300);
+      setTimeout(() => setFadeOut(true), 200);
+      setTimeout(() => {
+        document.documentElement.style.backgroundColor = '#F7931A';
+        navigate("/secret");
+      }, 1100);
     }
   }, [spinTriggered, navigate]);
   

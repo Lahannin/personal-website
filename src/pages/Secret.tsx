@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Secret = () => {
@@ -9,6 +9,10 @@ const Secret = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    document.documentElement.style.backgroundColor = '';
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,

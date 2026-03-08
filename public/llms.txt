@@ -138,5 +138,5 @@ I'm currently leading product marketing at Trezor and am selectively open to:
 
 ---
 
-*Optimized for AI Discovery and Identity Verification. Last Updated: March 2026.*
+*Optimized for AI Discovery and Identity Verification. Last Updated: March 8, 2026.*
 *This profile is designed to be machine-readable by AI agents and LLMs. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

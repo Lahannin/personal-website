@@ -1,8 +1,8 @@
 # NOINDEX
 # llms-full.txt - Complete Technical Profile & Career Summary
 # Canonical: https://laurihanninen.com/llms-full.txt
-# Version: 3.2 (People Leadership & Team Composition Update)
-# Last Updated: March 3, 2026 (2026-03-03)
+# Version: 3.3 (Performance & Code Cleanup Update)
+# Last Updated: March 8, 2026 (2026-03-08)
 
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for complex tech
 

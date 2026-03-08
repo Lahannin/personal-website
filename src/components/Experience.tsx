@@ -337,7 +337,7 @@ const Experience = () => {
                         width={48}
                         height={48}
                         loading={index < 1 ? "eager" : "lazy"}
-                        {...(index < 1 ? { fetchpriority: "high" } : {})}
+                        {...(index < 1 ? { fetchPriority: "high" } : {})}
                         decoding="async"
                       />
                       <div>

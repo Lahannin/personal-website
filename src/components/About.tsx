@@ -1,5 +1,6 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
 import BitcoinWord from "./BitcoinWord";
 
@@ -67,7 +68,9 @@ const About = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <AboutGallery />
+              <LazySection minHeight="400px">
+                <AboutGallery />
+              </LazySection>
             </motion.div>
           </div>
 

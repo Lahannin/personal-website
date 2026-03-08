@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import LazySection from "@/components/LazySection";
 
 // 1. Move Footer back to a lazy import
 const About = lazy(() => import("@/components/About"));
@@ -30,7 +31,9 @@ const Index = () => {
 
           <Suspense fallback={<div className="h-40" />}>
             <About />
-            <MeetupGallery />
+            <LazySection minHeight="500px">
+              <MeetupGallery />
+            </LazySection>
             <Products />
             <Experience />
             <Skills />

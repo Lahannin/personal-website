@@ -1,5 +1,6 @@
 import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
+import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
 import BitcoinWord from "./BitcoinWord";
 

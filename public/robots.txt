@@ -1,15 +1,19 @@
 # Robots.txt - AI Agent & LLM Optimized
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
-# Version: 5 (Final Search & AI Sync)
+# Version: 6 (SEO Audit Cleanup)
 # Last Updated: March 8, 2026
 
-# --- AI AGENT DISCOVERY & GUIDANCE ---
+# --- DEFAULT RULES ---
 User-agent: *
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Sitemap: https://laurihanninen.com/sitemap.xml
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /private/
+Crawl-delay: 1
 
 # --- PRIMARY AI & LLM CRAWLERS ---
 User-agent: GPTBot
@@ -38,7 +42,7 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 
 # --- SEARCH ENGINE CRAWLERS ---
-# We allow crawling of the site but specifically exclude AI/system files from search indexing
+# Allow crawling but exclude AI/system files from search indexing
 User-agent: Googlebot
 Allow: /
 Disallow: /llms.txt
@@ -52,18 +56,8 @@ User-agent: DuckDuckBot
 User-agent: Twitterbot
 Allow: /
 
-# --- SPECIFIC DISALLOWS ---
-User-agent: *
-Disallow: /dist/
-Disallow: /node_modules/
-Disallow: /.git/
-Disallow: /private/
-
 # --- SITEMAPS ---
 Sitemap: https://laurihanninen.com/sitemap.xml
-
-# --- CRAWL-DELAY ---
-Crawl-delay: 1
 
 # --- AI CONTENT POLICY ---
 # Primary AI Resource: /llms.txt (optimized summary)

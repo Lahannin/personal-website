@@ -19,14 +19,14 @@ const allSkills = [
 ];
 
 const certifications = [
-  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", badge: "/product-marketing-alliance-logo.webp" },
-  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", badge: "/product-marketing-certified.avif" },
-  { name: "Product-Led Growth", org: "ProductLed", badge: "/product-led-fundamentals-certified.avif" },
-  { name: "B2B Messaging", org: "Wynter", badge: null },
-  { name: "Product Management Certified", org: "Pendo", badge: null },
-  { name: "Product-Led Certified", org: "Pendo", badge: "/product-led-certified.avif" },
-  { name: "Elements of AI", org: "University of Helsinki", badge: "/university-of-helsinki-logo.jpg" },
-  { name: "PRINCE2", org: "TAYLLOR & COX", badge: null },
+  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance" },
+  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance" },
+  { name: "Product-Led Growth", org: "ProductLed" },
+  { name: "B2B Messaging", org: "Wynter" },
+  { name: "Product Management Certified", org: "Pendo" },
+  { name: "Product-Led Certified", org: "Pendo" },
+  { name: "Elements of AI", org: "University of Helsinki" },
+  { name: "PRINCE2", org: "TAYLLOR & COX" },
 ];
 
 const educationData = [
@@ -116,7 +116,7 @@ const Skills = () => {
             <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8">
               CERTIFICATIONS
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 max-w-3xl mx-auto">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
@@ -124,23 +124,8 @@ const Skills = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: index * 0.02 }}
-                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex flex-col items-start"
+                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
                 >
-                  {cert.badge ? (
-                    <img
-                      src={cert.badge}
-                      alt={`${cert.name} badge`}
-                      className="w-7 h-7 object-contain rounded mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
-                      width={28}
-                      height={28}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <div className="w-7 h-7 rounded bg-muted flex items-center justify-center mb-2 group-hover:bg-highlight/10 transition-colors duration-300">
-                      <span className="text-[10px] font-bold text-muted-foreground group-hover:text-highlight transition-colors">✓</span>
-                    </div>
-                  )}
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
                     {cert.name}
                   </p>

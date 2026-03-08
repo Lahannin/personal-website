@@ -148,7 +148,7 @@ const Hero = () => {
                   ? { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }
                   : { duration: 0.4, ease: "easeOut" }
                 }
-                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/40 dark:border-border shadow-lg shadow-foreground/10 overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500 dark:shadow-lg dark:shadow-black/20"
+                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/40 dark:border-border shadow-lg shadow-foreground/10 overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/15 dark:group-hover:shadow-highlight/15 group-hover:border-primary/40 dark:group-hover:border-highlight/40 transition-all duration-500 dark:shadow-lg dark:shadow-black/20"
               >
                 <img 
                   src="/lauri-hanninen-profile-photo.webp" 

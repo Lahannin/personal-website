@@ -138,7 +138,7 @@ const Hero = () => {
                   filter: 'blur(20px)',
                 }}
               />
-              {/* Inner ring glow — tighter, brighter */}
+              {/* Inner ring glow — hugs the photo edge */}
               <motion.div
                 className="absolute w-44 h-44 md:w-52 md:h-52 rounded-full pointer-events-none"
                 animate={{
@@ -147,8 +147,8 @@ const Hero = () => {
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 style={{
-                  background: 'radial-gradient(circle, transparent 45%, rgba(247,147,26,0.5) 65%, rgba(247,147,26,0.2) 80%, transparent 100%)',
-                  filter: 'blur(6px)',
+                  background: 'radial-gradient(circle, transparent 42%, rgba(247,147,26,0.6) 50%, rgba(247,147,26,0.4) 60%, rgba(247,147,26,0.15) 75%, transparent 100%)',
+                  filter: 'blur(4px)',
                 }}
               />
               <motion.div

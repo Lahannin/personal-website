@@ -66,7 +66,7 @@ const Contact = () => {
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
                 className="group p-6 min-h-[100px] border-gradient rounded-xl shadow-md border border-border/40 hover:border-highlight/50 hover:-translate-y-2 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300"
-                aria-label={`Connect on ${link.value}`}
+                aria-label={`Connect on ${link.platform}`}
               >
                 <div className="flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
                   <link.icon className="w-6 h-6 text-primary" aria-hidden="true" />

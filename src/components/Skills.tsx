@@ -116,7 +116,7 @@ const Skills = () => {
             <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8">
               CERTIFICATIONS
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl mx-auto">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
@@ -124,25 +124,23 @@ const Skills = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: index * 0.02 }}
-                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex items-start gap-3"
+                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex flex-col items-center text-center"
                 >
                   <img
                     src={cert.logo}
                     alt={`${cert.org} logo`}
-                    className="w-8 h-8 object-contain rounded shrink-0 grayscale group-hover:grayscale-0 transition-all duration-300"
-                    width={32}
-                    height={32}
+                    className="w-10 h-10 object-contain rounded mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                    width={40}
+                    height={40}
                     loading="lazy"
                     decoding="async"
                   />
-                  <div>
-                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
-                      {cert.name}
-                    </p>
-                    <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
-                      {cert.org}
-                    </p>
-                  </div>
+                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
+                    {cert.name}
+                  </p>
+                  <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
+                    {cert.org}
+                  </p>
                 </motion.div>
               ))}
             </div>

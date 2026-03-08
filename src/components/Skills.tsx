@@ -66,7 +66,7 @@ const Skills = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-primary dark:text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// SKILLS</span>
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// SKILLS</span>
             <h2 id="skills-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Expertise & <span className="text-gradient">Education</span>
             </h2>

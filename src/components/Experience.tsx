@@ -296,7 +296,7 @@ const Experience = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-primary dark:text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
             <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Career <span className="text-gradient">Journey</span>
             </h2>
@@ -327,7 +327,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className={`card-gradient border rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${hasCurrent(company) ? "border-primary/40 ring-1 ring-primary/20 dark:border-highlight/40 dark:ring-highlight/20" : "border-border hover:border-primary/40 dark:hover:border-highlight/40"}`}>
+                  <div className={`card-gradient border rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${hasCurrent(company) ? "border-highlight/40 ring-1 ring-highlight/20" : "border-border hover:border-highlight/40"}`}>
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img
@@ -350,7 +350,7 @@ const Experience = () => {
                           return (
                             <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">
                               {span.end === "Present" ? (
-                                <>{span.start} – <span className="text-primary dark:text-highlight font-bold uppercase tracking-widest">Present</span> · {span.label}</>
+                                <>{span.start} – <span className="text-highlight font-bold uppercase tracking-widest">Present</span> · {span.label}</>
                               ) : (
                                 <>{span.start} – {span.end} · {span.label}</>
                               )}

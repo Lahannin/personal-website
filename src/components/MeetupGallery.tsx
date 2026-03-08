@@ -144,7 +144,7 @@ const MeetupGallery = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// COMMUNITY</span>
+            <span className="font-mono text-primary dark:text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// COMMUNITY</span>
             <h2 id="meetups-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Meetups I've <span className="text-gradient">Organized</span>
             </h2>

@@ -185,7 +185,7 @@ const Products = () => {
             transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// PRODUCT LAUNCHES</span>
+            <span className="font-mono text-primary dark:text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// PRODUCT LAUNCHES</span>
             <h2 id="products-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Products I've <span className="text-gradient">Launched</span>
             </h2>
@@ -260,7 +260,7 @@ const Products = () => {
                                 {categoryConfig[product.category].label}
                               </span>
                               {product.badge && (
-                                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-highlight/15 text-highlight border border-highlight/25 animate-pulse">
+                                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-primary/15 text-primary border border-primary/25 dark:bg-highlight/15 dark:text-highlight dark:border-highlight/25 animate-pulse">
                                   {product.badge}
                                 </span>
                               )}

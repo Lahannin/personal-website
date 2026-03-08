@@ -96,7 +96,7 @@ const Hero = () => {
       
       {/* Glow Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/4 dark:bg-highlight/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
       </div>
 
@@ -148,7 +148,7 @@ const Hero = () => {
                   ? { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }
                   : { duration: 0.4, ease: "easeOut" }
                 }
-                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/40 dark:border-border shadow-lg shadow-foreground/10 overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500 dark:shadow-lg dark:shadow-black/20"
+                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/40 dark:border-border shadow-lg shadow-foreground/10 overflow-hidden group-hover:shadow-2xl group-hover:shadow-primary/15 dark:group-hover:shadow-highlight/15 group-hover:border-primary/40 dark:group-hover:border-highlight/40 transition-all duration-500 dark:shadow-lg dark:shadow-black/20"
               >
                 <img 
                   src="/lauri-hanninen-profile-photo.webp" 
@@ -221,14 +221,14 @@ const Hero = () => {
           >
             <a
               href="#about"
-              className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-foreground text-background font-bold rounded-lg shadow-lg hover:shadow-highlight/20 hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
+              className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-foreground text-background font-bold rounded-lg shadow-lg hover:shadow-primary/20 dark:hover:shadow-highlight/20 hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
             >
               About Me
               <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
             </a>
             <a
               href="#contact"
-              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-transparent text-foreground font-bold rounded-lg border-2 border-foreground/20 hover:border-highlight hover:text-highlight hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
+              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-transparent text-foreground font-bold rounded-lg border-2 border-foreground/20 hover:border-primary hover:text-primary dark:hover:border-highlight dark:hover:text-highlight hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
             >
               Get in Touch
             </a>

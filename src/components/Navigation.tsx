@@ -32,7 +32,6 @@ const Navigation = () => {
     <header>
       <LazyMotion features={domAnimation}>
         <nav
-          role="navigation"
           aria-label="Main navigation"
           className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
             isScrolled || isMobileMenuOpen ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
@@ -89,7 +88,7 @@ const Navigation = () => {
                   transition={{ duration: 0.2 }}
                   className="md:hidden overflow-hidden border-t border-border"
                 >
-                  <nav className="py-4" aria-label="Mobile navigation">
+                  <div className="py-4" role="group" aria-label="Mobile navigation">
                     <ul className="flex flex-col gap-1">
                       {navLinks.map((link) => (
                         <li key={link.href}>
@@ -103,7 +102,7 @@ const Navigation = () => {
                         </li>
                       ))}
                     </ul>
-                  </nav>
+                  </div>
                 </m.div>
               )}
             </AnimatePresence>

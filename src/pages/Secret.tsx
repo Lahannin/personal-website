@@ -10,6 +10,10 @@ const Secret = () => {
   const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
 
+  useEffect(() => {
+    document.documentElement.style.backgroundColor = '';
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],

@@ -16,7 +16,6 @@ const articles: Article[] = [
     description: "Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!",
     url: "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
     date: "Apr 2023",
-    category: "marketing",
     readMin: 8,
   },
   {

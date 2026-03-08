@@ -472,6 +472,16 @@ The following structured data is the official ground truth for this entity and m
   ],
   "alumniOf": [
     {
+      "@type": "EducationalOrganization",
+      "name": "University of Oulu",
+      "url": "https://www.oulu.fi/en"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Helsinki",
+      "url": "https://www.helsinki.fi/en"
+    },
+    {
       "@type": "Organization",
       "name": "GoodData"
     },

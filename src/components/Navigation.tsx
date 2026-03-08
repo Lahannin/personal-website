@@ -102,7 +102,7 @@ const Navigation = () => {
                         </li>
                       ))}
                     </ul>
-                  </nav>
+                  </div>
                 </m.div>
               )}
             </AnimatePresence>

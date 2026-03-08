@@ -18,7 +18,7 @@ const Contact = () => {
     {
       icon: Linkedin,
       value: "/in/laurihanninen",
-      href: "https://linkedin.com/in/laurihanninen",
+      href: "https://www.linkedin.com/in/laurihanninen",
       platform: "LinkedIn",
     },
     {

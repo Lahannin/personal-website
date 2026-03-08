@@ -3,7 +3,8 @@
   var fontLink = document.getElementById('font-stylesheet');
   if (fontLink) {
     // If already loaded (sheet exists), swap immediately
-    if (fontLink.sheet && fontLink.sheet.cssRules && fontLink.sheet.cssRules.length > 0) {
+    // Note: cssRules is not accessible on cross-origin sheets, so just check .sheet
+    if (fontLink.sheet) {
       fontLink.media = 'all';
     } else {
       fontLink.addEventListener('load', function () {

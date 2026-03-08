@@ -74,20 +74,23 @@ const Skills = () => {
 
           {/* Skills as flowing inline text */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.02 } },
+            }}
             className="mb-16 text-center"
           >
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
               {allSkills.map((skill, index) => (
                 <motion.span
                   key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.2, delay: index * 0.02 }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { duration: 0.2 } },
+                  }}
                   className="inline"
                 >
                   <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">

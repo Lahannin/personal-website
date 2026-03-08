@@ -299,7 +299,7 @@ const Products = () => {
                             />
                           </div>
                         </div>
-                      </motion.a>
+                      </a>
                     </div>
                   );
                 })}

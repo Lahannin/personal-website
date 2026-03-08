@@ -62,7 +62,7 @@ const Navigation = () => {
                 <button
                   onClick={toggleDark}
                   aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                  className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-highlight rounded-lg transition-colors"
+                  className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-primary dark:hover:text-highlight rounded-lg transition-colors"
                 >
                   {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                 </button>

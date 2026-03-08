@@ -51,8 +51,9 @@ const Hero = () => {
 
     if (count >= 5 && !spinTriggered) {
       setSpinTriggered(true);
-      setTimeout(() => setFadeOut(true), 900);
-      setTimeout(() => navigate("/secret"), 1600);
+      setHaloScale(0);
+      setTimeout(() => setFadeOut(true), 400);
+      setTimeout(() => navigate("/secret"), 1300);
     }
   }, [spinTriggered, navigate]);
   

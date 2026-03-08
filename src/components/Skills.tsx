@@ -124,14 +124,25 @@ const Skills = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: index * 0.02 }}
-                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
+                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex items-start gap-3"
                 >
-                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
-                    {cert.name}
-                  </p>
-                  <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
-                    {cert.org}
-                  </p>
+                  <img
+                    src={cert.logo}
+                    alt={`${cert.org} logo`}
+                    className="w-8 h-8 object-contain rounded shrink-0 grayscale group-hover:grayscale-0 transition-all duration-300"
+                    width={32}
+                    height={32}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div>
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
+                      {cert.name}
+                    </p>
+                    <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
+                      {cert.org}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>

@@ -72,10 +72,9 @@ const Hero = () => {
   const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "10%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  // Stagger orchestration only — no opacity animation on container itself
   const containerVariants = {
-    hidden: { opacity: 1 },
     visible: {
-      opacity: 1,
       transition: {
         staggerChildren: 0.04,
         delayChildren: 0,
@@ -93,12 +92,6 @@ const Hero = () => {
         ease: [0.22, 0.61, 0.36, 1] as const,
       },
     },
-  };
-
-  // LCP-safe variant: starts visible so the browser can paint immediately
-  const lcpVariants = {
-    hidden: { opacity: 1, y: 0 },
-    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -209,22 +202,20 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Name — LCP element: no opacity:0 to avoid render delay */}
-          <motion.h1
+          {/* Name — no framer-motion animation to avoid non-composited paint */}
+          <h1
             id="hero-heading"
-            variants={lcpVariants}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
           >
             Lauri <span className="text-gradient">Hänninen</span>
-          </motion.h1>
+          </h1>
 
-          {/* Tagline */}
-          <motion.p
-            variants={itemVariants}
+          {/* Tagline — LCP element: starts visible, no opacity:0 */}
+          <p
             className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto mb-4 font-medium"
           >
             Product Marketing Lead turning complex tech into stories people actually understand.
-          </motion.p>
+          </p>
           
           {/* Location details */}
           <motion.div

@@ -215,7 +215,7 @@ const Hero = () => {
             className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto mb-4 font-medium"
           >
             Product Marketing Lead turning complex tech into stories people actually understand.
-          </motion.p>
+          </p>
           
           {/* Location details */}
           <motion.div

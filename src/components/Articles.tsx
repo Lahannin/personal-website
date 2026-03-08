@@ -47,7 +47,6 @@ const articles: Article[] = [
     description: "If we can't trust our metrics, we can't trust our data. Metric standardization ensures we avoid the danger zone of inconsistent metrics.",
     url: "https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4",
     date: "Feb 2022",
-    category: "marketing",
     readMin: 4,
   },
   {

@@ -35,6 +35,7 @@ const Hero = () => {
 
     if (count < 5 && !spinTriggered) {
       setShakeKey(prev => prev + 1);
+      setHaloScale(count);
 
       // Spawn floating Bitcoin on click
       const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();

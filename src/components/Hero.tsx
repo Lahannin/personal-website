@@ -65,12 +65,7 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
 
-  const disableParallax = isMobile || prefersReducedMotion;
-  
-  // Parallax settings optimized for "smooth" over "dramatic"
-  const backgroundY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "20%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], disableParallax ? ["0%", "0%"] : ["0%", "10%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   // Stagger orchestration only — no opacity animation on container itself
   const containerVariants = {

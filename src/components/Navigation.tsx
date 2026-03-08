@@ -88,7 +88,7 @@ const Navigation = () => {
                   transition={{ duration: 0.2 }}
                   className="md:hidden overflow-hidden border-t border-border"
                 >
-                  <nav className="py-4" aria-label="Mobile navigation">
+                  <div className="py-4" role="group" aria-label="Mobile navigation">
                     <ul className="flex flex-col gap-1">
                       {navLinks.map((link) => (
                         <li key={link.href}>

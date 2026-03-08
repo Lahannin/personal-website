@@ -23,6 +23,7 @@ const Hero = () => {
   const cursorSize = 24;
   const [shakeKey, setShakeKey] = useState(0);
   const [floatingBitcoins, setFloatingBitcoins] = useState<FloatingBitcoin[]>([]);
+  const [haloScale, setHaloScale] = useState(0);
   const bitcoinIdRef = useRef(0);
 
   const getBitcoinCursor = (size: number) =>

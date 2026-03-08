@@ -219,17 +219,7 @@
     <div id="root"></div>
 
     <script type="module" src="/src/main.tsx"></script>
-
-    <script>
-      const observer = new MutationObserver(() => {
-        const root = document.getElementById('root');
-        if (root.children.length > 0) {
-          root.style.opacity = '1';
-          observer.disconnect();
-        }
-      });
-      observer.observe(document.getElementById('root'), { childList: true });
-    </script>
+    <script src="/js/init.js"></script>
 
     <noscript>
       <main style="max-width:800px;margin:0 auto;padding:2rem;font-family:system-ui,sans-serif;line-height:1.6;color:#1e2d4a;">

@@ -19,14 +19,21 @@ const allSkills = [
 ];
 
 const certifications = [
-  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", badge: "/product-marketing-certified.avif" },
-  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", badge: "/product-marketing-certified.avif" },
-  { name: "Product-Led Growth", org: "ProductLed", badge: "/product-led-fundamentals-certified.avif" },
-  { name: "B2B Messaging", org: "Wynter", badge: null },
-  { name: "Product Management Certified", org: "Pendo", badge: null },
-  { name: "Product-Led Certified", org: "Pendo", badge: "/product-led-certified.avif" },
-  { name: "Elements of AI", org: "University of Helsinki", badge: null },
-  { name: "PRINCE2", org: "TAYLLOR & COX", badge: null },
+  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance" },
+  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance" },
+  { name: "Product-Led Growth", org: "ProductLed" },
+  { name: "B2B Messaging", org: "Wynter" },
+  { name: "Product Management Certified", org: "Pendo" },
+  { name: "Product-Led Certified", org: "Pendo" },
+  { name: "Elements of AI", org: "University of Helsinki" },
+  { name: "PRINCE2", org: "TAYLLOR & COX" },
+];
+
+const certBadges = [
+  { src: "/product-marketing-certified.avif", alt: "Product Marketing Certified badge" },
+  { src: "/product-led-certified.avif", alt: "Product-Led Certified badge" },
+  { src: "/product-led-fundamentals-certified.avif", alt: "Product-Led Fundamentals Certified badge" },
+  { src: "/product-marketing-ambassador.avif", alt: "Product Marketing Ambassador badge" },
 ];
 
 const educationData = [
@@ -126,17 +133,6 @@ const Skills = () => {
                   transition={{ duration: 0.2, delay: index * 0.02 }}
                   className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
                 >
-                  {cert.badge && (
-                    <img
-                      src={cert.badge}
-                      alt={`${cert.name} certification badge`}
-                      className="w-10 h-10 object-contain rounded mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
-                      width={40}
-                      height={40}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  )}
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
                     {cert.name}
                   </p>
@@ -146,6 +142,27 @@ const Skills = () => {
                 </motion.div>
               ))}
             </div>
+            {/* Certification badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="flex items-center justify-center gap-6 mt-8"
+            >
+              {certBadges.map((badge, index) => (
+                <img
+                  key={index}
+                  src={badge.src}
+                  alt={badge.alt}
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg grayscale hover:grayscale-0 transition-all duration-300"
+                  width={80}
+                  height={80}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ))}
+            </motion.div>
           </motion.div>
 
           {/* Divider */}

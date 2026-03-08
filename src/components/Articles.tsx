@@ -55,7 +55,6 @@ const articles: Article[] = [
     url: "https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159",
     date: "Jan 2022",
     publication: "GoodData Developers",
-    category: "technical",
     readMin: 6,
   },
 ];

@@ -11,19 +11,16 @@ const Contact = () => {
   const links = [
     {
       icon: XIcon,
-      label: "",
       value: "@Lahannin",
       href: "https://x.com/Lahannin"
     },
     {
       icon: Linkedin,
-      label: "",
       value: "/in/laurihanninen",
       href: "https://linkedin.com/in/laurihanninen"
     },
     {
       icon: Send,
-      label: "",
       value: "@lahannin",
       href: "https://t.me/lahannin"
     }

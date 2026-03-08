@@ -97,7 +97,7 @@ const Articles = () => {
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block card-gradient border border-border rounded-xl overflow-hidden shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full relative"
+                  className="group block card-gradient border border-border rounded-xl overflow-hidden shadow-md hover:border-primary/40 dark:hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full relative"
                 >
                   {/* Category accent bar */}
                   <div className="absolute top-0 left-0 w-1 h-full bg-primary dark:bg-highlight opacity-60 group-hover:opacity-100 transition-opacity" />

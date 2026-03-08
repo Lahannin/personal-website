@@ -260,7 +260,7 @@ const Products = () => {
                                 {categoryConfig[product.category].label}
                               </span>
                               {product.badge && (
-                                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-highlight/15 text-highlight border border-highlight/25 animate-pulse">
+                                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 rounded-md bg-primary/15 text-primary border border-primary/25 dark:bg-highlight/15 dark:text-highlight dark:border-highlight/25 animate-pulse">
                                   {product.badge}
                                 </span>
                               )}

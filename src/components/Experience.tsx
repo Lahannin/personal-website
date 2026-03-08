@@ -350,7 +350,7 @@ const Experience = () => {
                           return (
                             <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">
                               {span.end === "Present" ? (
-                                <>{span.start} – <span className="text-highlight font-bold uppercase tracking-widest">Present</span> · {span.label}</>
+                                <>{span.start} – <span className="text-primary dark:text-highlight font-bold uppercase tracking-widest">Present</span> · {span.label}</>
                               ) : (
                                 <>{span.start} – {span.end} · {span.label}</>
                               )}

@@ -68,7 +68,9 @@ const About = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <AboutGallery />
+              <LazySection minHeight="400px">
+                <AboutGallery />
+              </LazySection>
             </motion.div>
           </div>
 

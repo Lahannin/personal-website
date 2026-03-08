@@ -1,23 +1,21 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Target, Cpu, TrendingUp } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
 
-const skillCategories = [
-  {
-    label: "Marketing",
-    icon: Target,
-    skills: ["Product Marketing", "Go-to-Market Strategy", "Product Positioning", "Messaging Frameworks", "Product Launches", "Product-Led Growth", "B2B & B2C"],
-  },
-  {
-    label: "Technical",
-    icon: Cpu,
-    skills: ["SaaS & Cloud Platforms", "Hardware Products", "Analytics & Data", "AI/ML Applications", "Security & Privacy"],
-  },
-  {
-    label: "Industry",
-    icon: TrendingUp,
-    skills: ["Bitcoin & Crypto", "Open Source", "Developer Tools", "Enterprise Software"],
-  },
+const allSkills = [
+  "Product Marketing",
+  "Go-to-Market Strategy",
+  "Product Positioning",
+  "Messaging Frameworks",
+  "Product Launches",
+  "Product-Led Growth",
+  "SaaS & Cloud Platforms",
+  "Hardware Products",
+  "Analytics & Data",
+  "B2B & B2C",
+  "AI/ML Applications",
+  "Security & Privacy",
+  "Bitcoin & Crypto",
 ];
 
 const certifications = [
@@ -73,40 +71,35 @@ const Skills = () => {
             </h2>
           </motion.div>
 
-          {/* Skills grouped by category with pill/tag chips */}
+          {/* Skills as flowing inline text */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
-            className="mb-16 space-y-10 max-w-3xl mx-auto"
+            className="mb-16 text-center"
           >
-            {skillCategories.map((category, catIdx) => (
-              <div key={catIdx}>
-                <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
-                  <category.icon className="w-4 h-4 text-highlight" aria-hidden="true" />
-                  <span className="font-mono text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground">
-                    {category.label}
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+              {allSkills.map((skill, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.2, delay: index * 0.02 }}
+                  className="inline"
+                >
+                  <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">
+                    {skill === "Bitcoin & Crypto" ? (
+                      <><BitcoinWord>Bitcoin</BitcoinWord> &amp; Crypto</>
+                    ) : skill}
                   </span>
-                </div>
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                  {category.skills.map((skill, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.2, delay: index * 0.03 }}
-                      className="px-3.5 py-1.5 text-sm font-medium rounded-full border border-border bg-card text-foreground hover:border-highlight/40 hover:text-highlight hover:-translate-y-0.5 transition-all duration-300 cursor-default"
-                    >
-                      {skill === "Bitcoin & Crypto" ? (
-                        <><BitcoinWord>Bitcoin</BitcoinWord> &amp; Crypto</>
-                      ) : skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            ))}
+                  {index < allSkills.length - 1 && (
+                    <span className="text-primary/40 mx-2 md:mx-3">·</span>
+                  )}
+                </motion.span>
+              ))}
+            </p>
           </motion.div>
 
           {/* Divider */}

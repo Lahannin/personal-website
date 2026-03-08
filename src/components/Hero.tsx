@@ -121,8 +121,8 @@ const Hero = () => {
           {/* Profile photo with all your hover effects preserved */}
           <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
               <div className="relative group" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
-              <div className="absolute rounded-full blur-2xl transition-all duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.35)', inset: `${-4 - haloScale * 8}px`, opacity: haloScale > 0 ? 1 : 0 }} />
-              <div className="absolute rounded-full transition-all duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.7), rgba(247, 147, 26, 0.4), transparent)', inset: `${-1 - haloScale * 4}px`, opacity: haloScale > 0 ? 1 : 0 }} />
+              <div className="absolute rounded-full blur-2xl transition-all duration-500" style={{ backgroundColor: 'rgba(247, 147, 26, 0.35)', inset: `${-4 - haloScale * 8}px`, opacity: haloScale > 0 ? 1 : 0, borderRadius: '9999px' }} />
+              <div className="absolute rounded-full transition-all duration-500" style={{ background: 'linear-gradient(to bottom right, rgba(247, 147, 26, 0.7), rgba(247, 147, 26, 0.4), transparent)', inset: `${-1 - haloScale * 4}px`, opacity: haloScale > 0 ? 1 : 0, borderRadius: '9999px' }} />
               <motion.div
                 animate={spinTriggered 
                   ? { rotate: 360, scale: 0.3, opacity: 0 } 

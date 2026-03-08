@@ -202,18 +202,16 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Name — LCP element: no opacity:0 to avoid render delay */}
-          <motion.h1
+          {/* Name — no framer-motion animation to avoid non-composited paint */}
+          <h1
             id="hero-heading"
-            variants={lcpVariants}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
           >
             Lauri <span className="text-gradient">Hänninen</span>
-          </motion.h1>
+          </h1>
 
-          {/* Tagline */}
-          <motion.p
-            variants={itemVariants}
+          {/* Tagline — LCP element: starts visible, no opacity:0 */}
+          <p
             className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto mb-4 font-medium"
           >
             Product Marketing Lead turning complex tech into stories people actually understand.

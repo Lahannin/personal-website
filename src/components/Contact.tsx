@@ -12,17 +12,20 @@ const Contact = () => {
     {
       icon: XIcon,
       value: "@Lahannin",
-      href: "https://x.com/Lahannin"
+      href: "https://x.com/Lahannin",
+      platform: "X (Twitter)",
     },
     {
       icon: Linkedin,
       value: "/in/laurihanninen",
-      href: "https://linkedin.com/in/laurihanninen"
+      href: "https://linkedin.com/in/laurihanninen",
+      platform: "LinkedIn",
     },
     {
       icon: Send,
       value: "@lahannin",
-      href: "https://t.me/lahannin"
+      href: "https://t.me/lahannin",
+      platform: "Telegram",
     }
   ];
 

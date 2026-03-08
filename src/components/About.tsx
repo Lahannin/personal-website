@@ -64,34 +64,41 @@ const About = () => {
             </motion.div>
 
             {/* Partner logos */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
+            <div>
               <LazySection minHeight="400px">
                 <AboutGallery />
               </LazySection>
-            </motion.div>
+            </div>
           </div>
 
           {/* Highlights */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.08 } },
+            }}
+            className="grid md:grid-cols-3 gap-6"
+          >
             {highlights.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="card-gradient border border-border/60 rounded-lg p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group animate-fade-in"
-                style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'both' }}
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+                }}
+                className="card-gradient border border-border/60 rounded-lg p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -230,18 +230,15 @@ const Products = () => {
                       key={product.name}
                       className="flex-[0_0_100%] min-w-0 md:flex-[0_0_80%] lg:flex-[0_0_60%] px-4"
                     >
-                      <motion.a
+                      <a
                         href={product.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        initial={{ opacity: 0.4, scale: 0.88, y: 10 }}
-                        animate={{
+                        className="group block relative overflow-hidden will-change-[transform,opacity] rounded-2xl transition-all duration-500 ease-out"
+                        style={{
                           opacity: isActive ? 1 : 0.4,
-                          scale: isActive ? 1 : 0.88,
-                          y: isActive ? 0 : 10,
+                          transform: isActive ? 'scale(1) translateY(0)' : 'scale(0.88) translateY(10px)',
                         }}
-                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="group block relative overflow-hidden will-change-transform rounded-2xl"
                       >
                         <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-colors duration-500" />
 

@@ -19,14 +19,14 @@ const allSkills = [
 ];
 
 const certifications = [
-  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance" },
-  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance" },
-  { name: "Product-Led Growth", org: "ProductLed" },
-  { name: "B2B Messaging", org: "Wynter" },
-  { name: "Product Management Certified", org: "Pendo" },
-  { name: "Product-Led Certified", org: "Pendo" },
-  { name: "Elements of AI", org: "University of Helsinki" },
-  { name: "PRINCE2", org: "TAYLLOR & COX" },
+  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", badge: "/product-marketing-certified.avif" },
+  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", badge: "/product-marketing-certified.avif" },
+  { name: "Product-Led Growth", org: "ProductLed", badge: "/product-led-fundamentals-certified.avif" },
+  { name: "B2B Messaging", org: "Wynter", badge: null },
+  { name: "Product Management Certified", org: "Pendo", badge: null },
+  { name: "Product-Led Certified", org: "Pendo", badge: "/product-led-certified.avif" },
+  { name: "Elements of AI", org: "University of Helsinki", badge: null },
+  { name: "PRINCE2", org: "TAYLLOR & COX", badge: null },
 ];
 
 const educationData = [
@@ -126,6 +126,17 @@ const Skills = () => {
                   transition={{ duration: 0.2, delay: index * 0.02 }}
                   className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300"
                 >
+                  {cert.badge && (
+                    <img
+                      src={cert.badge}
+                      alt={`${cert.name} certification badge`}
+                      className="w-10 h-10 object-contain rounded mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
                     {cert.name}
                   </p>

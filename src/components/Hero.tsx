@@ -95,21 +95,15 @@ const Hero = () => {
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       
       {/* Background Gradients */}
-      <motion.div 
-        style={{ y: backgroundY }}
-        className="absolute inset-0 bg-gradient-to-b from-background via-background to-background pointer-events-none"
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background pointer-events-none" />
       
       {/* Glow Blobs */}
-      <motion.div 
-        style={{ y: backgroundY }}
-        className="absolute inset-0 overflow-hidden pointer-events-none"
-      >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
-      </motion.div>
+      </div>
 
-      <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
+      <motion.div style={{ opacity }} className="container relative z-10 px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"

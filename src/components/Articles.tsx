@@ -105,9 +105,6 @@ const Articles = () => {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 mb-3">
-                          <time className="mono text-xs text-primary bg-primary/10 px-2 py-1 rounded" dateTime={article.date}>
-                            {new Date(article.date + '-01').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                          </time>
                           {article.publication && (
                             <span className="text-xs text-muted-foreground">
                               {article.publication}

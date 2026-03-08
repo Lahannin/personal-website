@@ -29,13 +29,6 @@ const certifications = [
   { name: "PRINCE2", org: "TAYLLOR & COX" },
 ];
 
-const certBadges = [
-  { src: "/product-marketing-certified.avif", alt: "Product Marketing Certified badge" },
-  { src: "/product-led-certified.avif", alt: "Product-Led Certified badge" },
-  { src: "/product-led-fundamentals-certified.avif", alt: "Product-Led Fundamentals Certified badge" },
-  { src: "/product-marketing-ambassador.avif", alt: "Product Marketing Ambassador badge" },
-];
-
 const educationData = [
   {
     institution: "University of Oulu",
@@ -142,27 +135,6 @@ const Skills = () => {
                 </motion.div>
               ))}
             </div>
-            {/* Certification badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="flex items-center justify-center gap-6 mt-8"
-            >
-              {certBadges.map((badge, index) => (
-                <img
-                  key={index}
-                  src={badge.src}
-                  alt={badge.alt}
-                  className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg grayscale hover:grayscale-0 transition-all duration-300"
-                  width={80}
-                  height={80}
-                  loading="lazy"
-                  decoding="async"
-                />
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* Divider */}

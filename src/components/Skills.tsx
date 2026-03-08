@@ -129,7 +129,7 @@ const Skills = () => {
                   <img
                     src={cert.logo}
                     alt={`${cert.org} logo`}
-                    className="w-10 h-10 object-contain mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-10 h-10 object-contain mb-2 grayscale group-hover:grayscale-0 dark:brightness-[10] dark:group-hover:brightness-100 dark:group-hover:grayscale-0 transition-all duration-300"
                     width={40}
                     height={40}
                     loading="lazy"

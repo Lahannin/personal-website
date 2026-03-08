@@ -32,7 +32,6 @@ const Navigation = () => {
     <header>
       <LazyMotion features={domAnimation}>
         <nav
-          role="navigation"
           aria-label="Main navigation"
           className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
             isScrolled || isMobileMenuOpen ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"

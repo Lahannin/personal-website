@@ -208,10 +208,10 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Name */}
+          {/* Name — LCP element: no opacity:0 to avoid render delay */}
           <motion.h1
             id="hero-heading"
-            variants={itemVariants}
+            variants={lcpVariants}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
           >
             Lauri <span className="text-gradient">Hänninen</span>

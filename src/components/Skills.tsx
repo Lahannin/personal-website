@@ -40,7 +40,7 @@ const educationData = [
     institution: "University of Helsinki",
     degree: "Non-Degree Studies",
     field: "Computer Science",
-    logo: "/university-of-helsinki-logo.jpg",
+    logo: "/university-of-helsinki-logo.avif",
   },
   {
     institution: "University of Eastern Finland",

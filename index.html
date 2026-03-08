@@ -19,7 +19,7 @@
     <link rel="llms-full" href="https://laurihanninen.com/llms-full.txt" type="text/markdown" title="Full AI Context">  
     
     <link rel="preload" as="image" href="/lauri-hanninen-profile-photo.webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="/trezor-logo.webp" />
+    <link rel="preload" as="image" href="/trezor-logo.webp" fetchpriority="low" />
 
     <script type="application/ld+json">
     {
@@ -212,14 +212,14 @@
     <meta name="theme-color" content="#1e2d4a" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNQXQMRQ1V"></script>
-    <script src="/js/gtag.js"></script>
+    <script defer src="/js/gtag.js"></script>
     <meta name="google-site-verification" content="tDljFGEfs3Kz2E5zUgoVprFmMX16zWkSAPLlnshAu9w" />
   </head>
   <body>
     <div id="root"></div>
 
     <script type="module" src="/src/main.tsx"></script>
-    <script src="/js/init.js"></script>
+    <script defer src="/js/init.js"></script>
 
     <noscript>
       <main style="max-width:800px;margin:0 auto;padding:2rem;font-family:system-ui,sans-serif;line-height:1.6;color:#1e2d4a;">

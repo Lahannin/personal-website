@@ -178,12 +178,19 @@ const Hero = () => {
                 {floatingBitcoins.map(b => (
                   <motion.span
                     key={b.id}
-                    initial={{ opacity: 1, y: 0, scale: 0.5 }}
-                    animate={{ opacity: 0, y: -200, scale: 1 }}
+                    initial={{ opacity: 1, y: 0, scale: 0.7 }}
+                    animate={{ opacity: 0, y: -260, scale: 1.4 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="absolute pointer-events-none select-none"
-                    style={{ left: b.x, top: b.y, fontSize: b.size, color: '#F7931A', zIndex: 20 }}
+                    transition={{ duration: 1.4, ease: "easeOut" }}
+                    className="absolute pointer-events-none select-none font-black"
+                    style={{
+                      left: b.x,
+                      top: b.y,
+                      fontSize: Math.max(b.size * 1.5, 36),
+                      color: '#F7931A',
+                      zIndex: 20,
+                      textShadow: '0 0 12px rgba(247,147,26,0.7), 0 0 24px rgba(247,147,26,0.4)',
+                    }}
                   >
                     ₿
                   </motion.span>

@@ -73,7 +73,7 @@ const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
@@ -93,6 +93,12 @@ const Hero = () => {
         ease: [0.22, 0.61, 0.36, 1] as const,
       },
     },
+  };
+
+  // LCP-safe variant: starts visible so the browser can paint immediately
+  const lcpVariants = {
+    hidden: { opacity: 1, y: 0 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (

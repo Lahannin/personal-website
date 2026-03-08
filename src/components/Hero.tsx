@@ -13,8 +13,6 @@ interface FloatingBitcoin {
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isMobile = useIsMobile();
-  const prefersReducedMotion = useReducedMotion();
   const navigate = useNavigate();
   const clickCountRef = useRef(0);
   const [spinTriggered, setSpinTriggered] = useState(false);

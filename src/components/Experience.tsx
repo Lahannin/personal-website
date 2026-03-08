@@ -327,7 +327,7 @@ const Experience = () => {
 
                 {/* Content */}
                 <div className={`flex-1 pl-0 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                  <div className={`card-gradient border rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${hasCurrent(company) ? "border-highlight/40 ring-1 ring-highlight/20" : "border-border hover:border-highlight/40"}`}>
+                  <div className={`card-gradient border rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${hasCurrent(company) ? "border-primary/40 ring-1 ring-primary/20 dark:border-highlight/40 dark:ring-highlight/20" : "border-border hover:border-primary/40 dark:hover:border-highlight/40"}`}>
                     {/* Company header */}
                     <div className="flex items-center gap-4 mb-4">
                       <img

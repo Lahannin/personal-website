@@ -115,7 +115,7 @@ const Articles = () => {
                   className="group block card-gradient border border-border rounded-xl overflow-hidden shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full relative"
                 >
                   {/* Category accent bar */}
-                  <div className={`absolute top-0 left-0 w-1 h-full ${categoryConfig[article.category].colorClass} opacity-60 group-hover:opacity-100 transition-opacity`} />
+                  <div className="absolute top-0 left-0 w-1 h-full bg-highlight opacity-60 group-hover:opacity-100 transition-opacity" />
                   <div className="p-6 pl-5">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">

@@ -51,8 +51,9 @@ const Hero = () => {
 
     if (count >= 5 && !spinTriggered) {
       setSpinTriggered(true);
-      setTimeout(() => setFadeOut(true), 900);
-      setTimeout(() => navigate("/secret"), 1600);
+      setHaloScale(0);
+      setTimeout(() => setFadeOut(true), 400);
+      setTimeout(() => navigate("/secret"), 1300);
     }
   }, [spinTriggered, navigate]);
   
@@ -152,14 +153,14 @@ const Hero = () => {
               />
               <motion.div
                 animate={spinTriggered 
-                  ? { rotate: 360, scale: 0.3, opacity: 0 } 
+                  ? { rotate: 360, scale: 0, opacity: 0 } 
                   : { x: shakeKey > 0 ? [0, -6, 6, -4, 4, -2, 2, 0] : 0 }
                 }
                 transition={spinTriggered 
-                  ? { duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }
+                  ? { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }
                   : { duration: 0.4, ease: "easeOut" }
                 }
-                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary border-4 border-border shadow-lg shadow-foreground/10 overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500 dark:shadow-lg dark:shadow-black/20"
+                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-transparent border-4 border-border shadow-lg shadow-foreground/10 overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-all duration-500 dark:shadow-lg dark:shadow-black/20"
               >
                 <img 
                   src="/lauri-hanninen-profile-photo.webp" 

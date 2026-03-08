@@ -19,13 +19,13 @@ const allSkills = [
 ];
 
 const certifications = [
-  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.webp" },
-  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.webp" },
-  { name: "Product-Led Growth", org: "ProductLed", logo: "/productled-logo.png" },
-  { name: "B2B Messaging", org: "Wynter", logo: "/wynter-logo.webp" },
-  { name: "Product Management Certified", org: "Pendo", logo: "/pendo-logo.webp" },
-  { name: "Product-Led Certified", org: "Pendo", logo: "/pendo-logo.webp" },
-  { name: "Elements of AI", org: "University of Helsinki", logo: "/university-of-helsinki-logo.jpg" },
+  { name: "Go-to-Market Certified | Masters", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.avif" },
+  { name: "Product Marketing Certified | Core", org: "Product Marketing Alliance", logo: "/product-marketing-alliance-logo.avif" },
+  { name: "Product-Led Growth", org: "ProductLed", logo: "/productled-logo.avif" },
+  { name: "B2B Messaging", org: "Wynter", logo: "/wynter-logo.avif" },
+  { name: "Product Management Certified", org: "Pendo", logo: "/pendo-logo.avif" },
+  { name: "Product-Led Certified", org: "Pendo", logo: "/pendo-logo.avif" },
+  { name: "Elements of AI", org: "University of Helsinki", logo: "/university-of-helsinki-logo.avif" },
   { name: "PRINCE2", org: "TAYLLOR & COX", logo: "/tayllorcox-logo.avif" },
 ];
 
@@ -116,7 +116,7 @@ const Skills = () => {
             <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8">
               CERTIFICATIONS
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl mx-auto">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
@@ -124,25 +124,23 @@ const Skills = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: index * 0.02 }}
-                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex items-start gap-3"
+                  className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex flex-col items-center text-center"
                 >
                   <img
                     src={cert.logo}
                     alt={`${cert.org} logo`}
-                    className="w-8 h-8 object-contain rounded shrink-0 grayscale group-hover:grayscale-0 transition-all duration-300"
-                    width={32}
-                    height={32}
+                    className="w-10 h-10 object-contain rounded mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                    width={40}
+                    height={40}
                     loading="lazy"
                     decoding="async"
                   />
-                  <div>
-                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
-                      {cert.name}
-                    </p>
-                    <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
-                      {cert.org}
-                    </p>
-                  </div>
+                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
+                    {cert.name}
+                  </p>
+                  <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
+                    {cert.org}
+                  </p>
                 </motion.div>
               ))}
             </div>

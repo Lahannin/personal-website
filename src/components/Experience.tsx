@@ -345,7 +345,7 @@ const Experience = () => {
                           <h3 className="text-xl font-bold">{company.name}</h3>
                         </div>
                         <p className="text-sm text-muted-foreground">{company.location}</p>
-                        {company.roles.length > 1 && (() => {
+                        {(() => {
                           const span = computeTotalSpan(company.roles);
                           return (
                             <p className="font-mono text-[10px] text-muted-foreground tracking-wider mt-0.5">

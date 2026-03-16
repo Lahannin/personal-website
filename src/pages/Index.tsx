@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import LazySection from "@/components/LazySection";
 
 // 1. Move Footer back to a lazy import
 const About = lazy(() => import("@/components/About"));
@@ -29,11 +28,9 @@ const Index = () => {
           {/* Hero stays outside Suspense for maximum LCP performance */}
           <Hero />
 
-          <Suspense fallback={<div style={{ minHeight: '400vh' }} />}>
+          <Suspense fallback={null}>
             <About />
-            <LazySection minHeight="500px">
-              <MeetupGallery />
-            </LazySection>
+            <MeetupGallery />
             <Products />
             <Experience />
             <Skills />

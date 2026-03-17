@@ -3,6 +3,7 @@ import { MapPin, ArrowDown } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import chicagoTrumpTower from "@/assets/chicago-trump-tower.png";
 
 interface FloatingBitcoin {
   id: number;

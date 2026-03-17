@@ -3,7 +3,6 @@ import { MapPin, ArrowDown } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import chicagoTrumpTower from "@/assets/chicago-trump-tower.png";
 
 interface FloatingBitcoin {
   id: number;
@@ -99,13 +98,6 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
-        <img
-          src={chicagoTrumpTower}
-          alt=""
-          aria-hidden="true"
-          className="absolute bottom-0 right-0 h-[60%] md:h-[80%] opacity-[0.06] dark:opacity-[0.04] object-contain select-none"
-          style={{ transform: 'translateZ(0)' }}
-        />
       </div>
 
       <motion.div style={{ opacity }} className="container relative z-10 px-6">

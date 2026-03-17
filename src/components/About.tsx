@@ -7,28 +7,28 @@ const About = () => {
   const highlights = [
     {
       title: "10+ years experience",
-      description: "Across SaaS, hardware, crypto, marketing agencies, and startups.",
+      description: "Across SaaS, hardware, crypto, marketing agencies, and startups."
     },
     {
-      title: "Built PMM from zero",
-      description: "Built and scaled Product Marketing function from 0 → 5 at Trezor.",
+      title: "Founded & scaled PMM",
+      description: "Founded Trezor’s Product Marketing function and grew the team from 0 → 5."
     },
     {
-      title: "Led major product launches",
-      description: "Led positioning, messaging, and launches across software, hardware, and services.",
+      title: "Leads major product launches",
+      description: "Leads positioning, messaging, and launches across SW, HW, and services."
     },
     {
       title: "5+ years in leadership",
-      description: "Led 10+ experts in tech and 25+ soldiers in the Finnish army.",
+      description: "Manages teams in tech and led 25+ soldiers in the Finnish army."
     },
     {
       title: "Career pivot into tech",
-      description: "Studied CS for 2 years while working full-time to break into tech.",
+      description: "Completed 2 years of CS studies while working full-time to break into tech."
     },
     {
-      title: "Built the PMM community",
-      description: "Founded the first Product Marketing Alliance chapter in Prague.",
-    },
+      title: "Builds the PMM community",
+      description: "Founded and leads the first Product Marketing Alliance chapter in Prague."
+    }
   ];
 
   return (

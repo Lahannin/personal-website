@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { motion } from "framer-motion";
 import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
 import BitcoinWord from "./BitcoinWord";
@@ -7,27 +6,22 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
     {
-      icon: Zap,
       title: "Built PMM from zero",
       description: "Built and scaled Product Marketing from 0 → 5 at Trezor.",
     },
     {
-      icon: Target,
       title: "Launched flagships",
       description: "Positioned and launched Trezor's 2 latest flagship hardware wallets.",
     },
     {
-      icon: Lightbulb,
       title: "Led people",
       description: "Led 10+ experts at work & 25+ soldiers in the Finnish army.",
     },
     {
-      icon: Target,
       title: "Career pivot",
       description: "Studied Computer Science for 2 years in the evenings to break into tech. Did it.",
     },
     {
-      icon: Zap,
       title: "Built the community",
       description: "Founded and grew the first Product Marketing Alliance chapter in the Czech Republic.",
     },

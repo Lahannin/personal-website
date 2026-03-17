@@ -82,18 +82,17 @@ const About = () => {
           </div>
 
           {/* Highlights */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="card-gradient border border-border/60 rounded-lg p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group animate-fade-in"
+                className={`card-gradient border border-border/60 rounded-lg p-5 md:p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group animate-fade-in ${
+                  index >= 4 ? "col-span-2 md:col-span-1" : ""
+                }`}
                 style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'both' }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <h3 className="text-sm md:text-lg font-semibold mb-1.5">{item.title}</h3>
+                <p className="text-muted-foreground text-xs md:text-sm">{item.description}</p>
               </div>
             ))}
           </div>

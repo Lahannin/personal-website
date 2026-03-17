@@ -6,6 +6,10 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
     {
+      title: "10+ years in tech",
+      description: "Experience across SaaS, hardware, crypto, marketing agency, and startup sectors.",
+    },
+    {
       title: "Built PMM from zero",
       description: "Built and scaled Product Marketing from 0 → 5 at Trezor.",
     },
@@ -80,9 +84,7 @@ const About = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className={`card-gradient border border-border/60 rounded-lg p-5 md:p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group animate-fade-in ${
-                  index >= 4 ? "col-span-2 md:col-span-1" : ""
-                }`}
+                className="card-gradient border border-border/60 rounded-lg p-5 md:p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group animate-fade-in"
                 style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'both' }}
               >
                 <h3 className="text-sm md:text-lg font-semibold mb-1.5">{item.title}</h3>

@@ -7,19 +7,29 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
     {
-      icon: Lightbulb,
-      title: "Open-Source Advocate",
-      description: "Passionate about open-source technology and building tools that give people freedom.",
+      icon: Zap,
+      title: "Built PMM from zero",
+      description: "Built and scaled Product Marketing from 0 → 5 at Trezor.",
     },
     {
       icon: Target,
-      title: "Product & Marketing Expert",
-      description: "10+ years of experience across SaaS, hardware, marketing agency, and startup sectors.",
+      title: "Launched flagships",
+      description: "Positioned and launched Trezor's 2 latest flagship hardware wallets.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Led people",
+      description: "Led 10+ experts at work & 25+ soldiers in the Finnish army.",
+    },
+    {
+      icon: Target,
+      title: "Career pivot",
+      description: "Studied Computer Science for 2 years in the evenings to break into tech. Did it.",
     },
     {
       icon: Zap,
-      title: "Community Builder",
-      description: "Founded and led the first Product Marketing Alliance chapter in the Czech Republic.",
+      title: "Built the community",
+      description: "Founded and grew the first Product Marketing Alliance chapter in the Czech Republic.",
     },
   ];
 

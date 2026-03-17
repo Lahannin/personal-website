@@ -15,7 +15,7 @@ const About = () => {
     },
     {
       title: "Launched flagship products",
-      description: "Positioned and launched Trezor’s two latest flagship hardware wallets.",
+      description: "Led positioning, messaging, and launch of Trezor’s two latest hardware wallets.",
     },
     {
       title: "5+ years in leadership",

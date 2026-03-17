@@ -6,6 +6,10 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
     {
+      title: "10+ years in tech",
+      description: "Experience across SaaS, hardware, crypto, marketing agency, and startup sectors.",
+    },
+    {
       title: "Built PMM from zero",
       description: "Built and scaled Product Marketing from 0 → 5 at Trezor.",
     },

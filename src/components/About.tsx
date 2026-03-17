@@ -7,7 +7,7 @@ const About = () => {
   const highlights = [
     {
       title: "10+ years experience",
-      description: "Across SaaS, hardware, crypto, marketing agencies, and startups",
+      description: "Across SaaS, hardware, crypto, analytics, marketing agencies, and startups.",
     },
     {
       title: "Built PMM from zero",

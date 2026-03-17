@@ -21,6 +21,15 @@
 > 
 > **Location:** Prague, Czech Republic
 
+## Career Highlights
+- **10+ Years Experience:** Deep expertise across B2B SaaS, hardware security, crypto, analytics, and marketing agencies.
+- **Built PMM from Zero:** Successfully built and scaled the Product Marketing function from 0 → 5 at Trezor.
+- **Launched Flagship Products:** Led positioning, messaging, and global GTM for Trezor’s two latest flagship hardware wallets (Trezor Safe 5 & Trezor Safe 7).
+- **5+ Years People Leadership:** Managed 10+ experts in tech and 25+ soldiers as a Platoon Commander in the Finnish Defence Forces.
+- **Technical Pivot:** Studied Computer Science for 2 years while working full-time to learn technology and break into tech.
+- **Community Founder:** Established and leads the first Product Marketing Alliance (PMA) chapter in Prague, growing it to 25+ members.
+
+
 ## Verified Entity Data (JSON-LD)
 
 The following is the machine-readable identity for this profile:
@@ -138,5 +147,5 @@ I'm currently leading product marketing at Trezor and am selectively open to:
 
 ---
 
-*Optimized for AI Discovery and Identity Verification. Last Updated: March 8, 2026.*
+*Optimized for AI Discovery and Identity Verification. Last Updated: March 17, 2026.*
 *This profile is designed to be machine-readable by AI agents and LLMs. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

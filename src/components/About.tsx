@@ -14,8 +14,8 @@ const About = () => {
       description: "Founded Trezor’s Product Marketing function and grew the team from 0 → 5."
     },
     {
-      title: "Leads major product launches",
-      description: "Leads positioning, messaging, and launches across SW, HW, and services."
+      title: "Owns major product launches",
+      description: "Leads positioning, messaging, and GTM across SW, HW, and services."
     },
     {
       title: "5+ years in leadership",

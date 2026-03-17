@@ -7,7 +7,7 @@ const About = () => {
   const highlights = [
     {
       title: "10+ years experience",
-      description: "Across SaaS, hardware, crypto, analytics, marketing agencies, and startups.",
+      description: "Across SaaS, hardware, crypto, marketing agencies, and startups.",
     },
     {
       title: "Built PMM from zero",
@@ -26,8 +26,8 @@ const About = () => {
       description: "Studied CS for 2 years while working full-time to break into tech.",
     },
     {
-      title: "Built the community",
-      description: "Founded and grew the first Product Marketing Alliance chapter in Prague.",
+      title: "Built the PMM community",
+      description: "Founded the first Product Marketing Alliance chapter in Prague.",
     },
   ];
 

@@ -27,7 +27,7 @@ const About = () => {
     },
     {
       title: "Built the community",
-      description: "Founded and led the first Product Marketing Alliance chapter in Prague.",
+      description: "Founded and grew the first Product Marketing Alliance chapter in Prague.",
     },
   ];
 

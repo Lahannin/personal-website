@@ -14,8 +14,8 @@ const About = () => {
       description: "Built and scaled Product Marketing function from 0 → 5 at Trezor.",
     },
     {
-      title: "Launched flagship products",
-      description: "Led positioning, messaging, and launch of Trezor’s two latest hardware wallets.",
+      title: "Led major product launches",
+      description: "Led positioning, messaging, and launches across software, hardware, and services.",
     },
     {
       title: "5+ years in leadership",

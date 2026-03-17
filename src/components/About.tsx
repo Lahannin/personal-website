@@ -6,28 +6,28 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
     {
-      title: "10+ years in tech",
+      title: "10+ years experience",
       description: "Experience across SaaS, hardware, crypto, marketing agency, and startup sectors.",
     },
     {
       title: "Built PMM from zero",
-      description: "Built and scaled Product Marketing from 0 → 5 at Trezor.",
+      description: "Built and scaled Product Marketing function from 0 → 5 at Trezor.",
     },
     {
-      title: "Launched flagships",
-      description: "Positioned and launched Trezor's 2 latest flagship hardware wallets.",
+      title: "Launched flagship products",
+      description: "Positioned and launched Trezor’s two latest flagship hardware wallets.",
     },
     {
-      title: "Led people",
-      description: "Led 10+ experts at work & 25+ soldiers in the Finnish army.",
+      title: "5+ years in leadership",
+      description: "Led 10+ experts across multiple roles and 25+ soldiers in the Finnish army.",
     },
     {
-      title: "Career pivot",
-      description: "Studied Computer Science for 2 years in the evenings to break into tech. Did it.",
+      title: "Career pivot into tech",
+      description: "Studied Computer Science for 2 years alongside full-time work to transition into tech.",
     },
     {
       title: "Built the community",
-      description: "Founded and grew the first Product Marketing Alliance chapter in the Czech Republic.",
+      description: "Founded and grew the first Product Marketing Alliance chapter in Prague.",
     },
   ];
 

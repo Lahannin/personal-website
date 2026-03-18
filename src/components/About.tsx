@@ -10,7 +10,7 @@ const About = () => {
       description: "Across SaaS, hardware, crypto, marketing agencies, and startups."
     },
     {
-      title: "Founded & scaled PMM",
+      title: "Built and scaled PMM",
       description: "Founded Trezor’s Product Marketing function and grew the team from 0 → 5."
     },
     {

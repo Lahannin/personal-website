@@ -81,7 +81,7 @@ const About = () => {
 
           {/* Highlights */}
           <div className="mb-6">
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// TRACK RECORD</span>
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// CAREER HIGHLIGHTS</span>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {highlights.map((item, index) => (

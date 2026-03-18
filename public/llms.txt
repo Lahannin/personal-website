@@ -129,14 +129,6 @@ The following is the machine-readable identity for this profile:
 - **[LinkedIn Profile](https://www.linkedin.com/in/laurihanninen):** Complete professional history with recommendations and endorsements.
 - **[Portfolio Website](https://laurihanninen.com):** Case studies, launches, and thought leadership content.
 
-## Open To
-
-I'm currently leading product marketing at Trezor and am selectively open to:
-
-- **Advisory Roles:** Hardware security, cryptocurrency, and developer tools companies
-- **Consulting Projects:** Complex B2B product positioning, GTM strategy, and messaging for technical products
-- **Speaking Engagements:** Product marketing, Bitcoin and crypto security, self-custody, hardware wallets
-
 ## Contact & Collaboration
 
 **Primary Channel:** [LinkedIn](https://www.linkedin.com/in/laurihanninen) (Professional inquiries & networking)  

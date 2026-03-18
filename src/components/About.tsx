@@ -11,7 +11,7 @@ const About = () => {
     },
     {
       title: "Built & scaled PMM",
-      description: "The founding PMM at Trezor, growing the team from 0 → 5."
+      description: "The founding product marketer at Trezor, growing the team from 0 → 5."
     },
     {
       title: "Leads product launches",

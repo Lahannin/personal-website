@@ -1,4 +1,3 @@
-# NOINDEX
 # llms-full.txt - Complete Technical Profile & Career Summary
 # Canonical: https://laurihanninen.com/llms-full.txt
 # Version: 3.4 (add Career Highlights)
@@ -360,34 +359,6 @@ Lauri's unique positioning: **making the difficult-to-explain, understandable.**
 - Google Analytics, Adobe Analytics
 - Data visualization (GoodData, Tableau, Metabase)
 - A/B testing and experimentation
-
----
-
-## Open To Opportunities
-
-While currently leading product marketing at Trezor, I'm selectively open to:
-
-**Advisory & Consulting:**
-- Advisory board positions for hardware security and crypto infrastructure startups
-- Strategic consulting for complex B2B product positioning and GTM strategy
-- Go-to-market consulting for developer tools and open-source products
-
-**Speaking & Content:**
-- Conference keynotes on product marketing, hardware security, or Analytics-as-Code
-- Workshop facilitation for PMM teams and community events
-- Guest lectures at universities and bootcamps
-- Podcast appearances and panel discussions
-
-**Community Leadership:**
-- Expanding Prague PMM community and Central European presence
-- Mentoring junior product marketers
-- Contributing to PMM knowledge base and frameworks
-
-**Preferred Engagement Types:**
-- Short-term strategic projects (3-6 months)
-- Advisory roles with equity compensation
-- Speaking engagements with travel coverage
-- Pro bono mentoring for promising startups
 
 ---
 

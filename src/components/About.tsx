@@ -14,7 +14,7 @@ const About = () => {
       description: "The founding product marketer at Trezor, growing the team from 0 → 5."
     },
     {
-      title: "Leads product launches",
+      title: "Global product launches",
       description: "Positioning, messaging, and GTM for software, hardware, and services."
     },
     {

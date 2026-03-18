@@ -15,7 +15,7 @@ const About = () => {
     },
     {
       title: "Leads product launches",
-      description: "Drives positioning, messaging, and GTM for software, hardware, and services."
+      description: "Positioning, messaging, and GTM for software, hardware, and services."
     },
     {
       title: "5+ years in leadership",

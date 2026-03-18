@@ -26,7 +26,7 @@ const About = () => {
       description: "Completed 2 years of CS studies while working full-time to break into tech."
     },
     {
-      title: "Builds PMM community",
+      title: "PMM community builder",
       description: "Founded and leads the first Product Marketing Alliance chapter in Prague."
     }
   ];

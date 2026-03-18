@@ -317,10 +317,13 @@ Lauri's unique positioning: **making the difficult-to-explain, understandable.**
 ### Recent Media Appearances (2024-2026)
 **As Trezor Product Marketing Lead, quoted in:**
 
-1. **BeInCrypto** - Trezor MEV Protection Launch (Sep 2024)
+1. **BeInCrypto** - Trezor MEV Protection Launch (Sep 2025)
   - Link: https://beincrypto.com/trezor-suite-mev-protection-crypto-transactions/
 
-2. **Cryptonomist** - Trezor Security Features (Sep 2024)
+2. **Metaverse post** - Trezor Reports Over 200K ETH Staked Via Trezor Suite, Highlighting Strong Adoption Of SecureEthereum Staking (Aug 2025)
+  - Link: https://mpost.io/trezor-reports-over-200k-eth-staked-via-trezor-suite-highlighting-strong-adoption-of-secureethereum-staking/
+
+3. **Cryptonomist** - Trezor Security Features (Sep 2025)
    - Industry commentary on MEV protection and DeFi security
 
 **Additional Publications:** Cryptopolitan, CryptoTimes, and regional crypto media outlets

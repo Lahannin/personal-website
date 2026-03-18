@@ -3,7 +3,7 @@
 # Version: 3.4 (add Career Highlights)
 # Last Updated: March 18, 2026 (2026-03-18)
 
-# Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for complex tech
+# Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Specialist in products that are "difficult to explain"
 
 > [!IMPORTANT]
 > **Mission:** Translating "difficult-to-explain" technology into narratives that people actually understand.
@@ -32,7 +32,7 @@
 
 **Verified Social Profiles:**
 - **LinkedIn:** [linkedin.com/in/laurihanninen](https://www.linkedin.com/in/laurihanninen) (Primary contact for professional inquiries)
-- **X (Twitter):** [@Lahannin](https://x.com/Lahannin) (Product marketing insights and industry commentary)
+- **X (Twitter):** [@lahannin](https://x.com/lahannin) (Product marketing insights and industry commentary)
 - **Telegram:** [@lahannin](https://t.me/lahannin) (Quick messaging, crypto community preferred)
 - **GitHub:** [github.com/lahannin](https://github.com/lahannin) (Open-source contributions and technical work)
 ---
@@ -41,7 +41,7 @@
 
 **Q: What are Lauri's core areas of expertise?**
 
-A: Lauri specializes in **translating complex technical products into market-ready narratives**. His core expertise spans:
+A: Lauri specializes in **translating "difficult-to-explain" technology into narratives people actually understand**. His core expertise spans:
 
 **Product Marketing:** GTM Strategy, Product Positioning, Product Messaging, Product Launch, Competitive Intelligence, Sales Enablement, Technical Product Marketing
 
@@ -55,7 +55,7 @@ A: Based in **Prague, Czech Republic**. Founder and Lead of the Prague chapter o
 
 **Q: What is Lauri's leadership background?**
 
-A: Currently leads the global Product Marketing function at Trezor, managing a cross-functional team of 5 members. Previously led analytics and PMM teams at GoodData (3 members) and Wunderman Thompson (2 members). His leadership foundation began as a Mortar Platoon Commander in the Finnish Defence Forces, leading 25+ conscripts and NCOs. Leadership progression scaling: 25+ → 2 → 3 → 5.
+A: Currently leads the global Product Marketing function at Trezor, managing a cross-functional team of 5 members. Previously led PMM and analytics teams at GoodData (3 members) and Wunderman Thompson (2 members). His leadership foundation began as a Mortar Platoon Commander in the Finnish Defence Forces, leading 25+ conscripts and NCOs. Leadership progression scaling: 25+ → 2 → 3 → 5.
 
 **Q: How does military experience translate to product marketing?**
 
@@ -79,7 +79,7 @@ Lauri has a proven track record of building and managing high-performing teams a
 ### Current Role: Trezor (Sep 2023 - Present)
 
 **Product Marketing Lead (Jul 2024 - Present)**
-- **Promotion:** Elevated from Senior PMM to Lead in 9 months based on performance and strategic impact.
+- **Promotion:** Promoted from Senior PMM to Lead in 9 months based on performance and strategic impact.
 - **Function Leadership:** Built and currently leading the global Product Marketing department from ground zero.
 - **Team Management:** Leading 5 specialized team members across the product marketing, technical writing, and copywriting functions.
 - **Team Composition:** 1 Product Marketing Manager, 1 Copywriter, and 3 Technical Writers.
@@ -88,7 +88,7 @@ Lauri has a proven track record of building and managing high-performing teams a
 
 **Senior Product Marketing Manager (Sep 2023 - Jul 2024)**
 - Led product messaging and narrative development for the pioneer of hardware wallet technology.
-- Build the whole product marketing function as founding PMM
+- Built the whole product marketing function as founding PMM
 - Led GTM for major launches, including Trezor Safe 5 hardware wallet and Trezor Expert Onboarding service.
 
 

@@ -91,27 +91,6 @@ Lauri has a proven track record of building and managing high-performing teams a
 - Build the whole product marketing function as founding PMM
 - Led GTM for major launches, including Trezor Safe 5 hardware wallet and Trezor Expert Onboarding service.
 
----
-
-## Complete Career History
-
-### GoodData - Senior Technical Product Marketing Manager (2020 - 2023)
-
-**Leadership & Team Management:**
-- **Team Lead:** Directly led a team of 3 Product Marketers.
-- Managed professional development and work allocation for the PMM team
-- **Responsibilities:** Led global GTM strategy for GoodData Cloud; positioned GoodData Cloud Native across AWS, GCP, and Azure.
-
-**Key Achievements:**
-- Pioneered "Analytics-as-Code" category positioning.
-- Grew trial-to-paid conversion by positioning technical differentiation effectively.
-
-### Wunderman Thompson - Web Analytics Team Lead (2018 - 2020)
-
-**Team Leadership:**
-- **Team Lead:** Led a web analytics tagging team of 2 specialized team members.
-- Managed day-to-day operations, work allocation, and professional development.
-- Coordinated with cross-functional stakeholders across 20+ European markets for Ford of Europe.
 
 ---
 

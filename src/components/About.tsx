@@ -5,17 +5,17 @@ import BitcoinWord from "./BitcoinWord";
 
 const About = () => {
   const highlights = [
-    {
+     {
       title: "10+ years experience",
-      description: "Across SaaS, hardware, crypto, marketing agencies, and startups."
+      description: "Product marketer across SaaS, hardware, crypto, and startups."
     },
     {
-      title: "Built and scaled PMM",
-      description: "Founded Trezor’s Product Marketing function and grew the team from 0 → 5."
+      title: "Built & scaled PMM",
+      description: "The founding PMM at Trezor, growing the team from 0 → 5."
     },
     {
-      title: "Leads key product launches",
-      description: "Positioning, messaging, and GTM for software, hardware, and services."
+      title: "Leads product launches",
+      description: "Drives positioning, messaging, and GTM for software, hardware, and services."
     },
     {
       title: "5+ years in leadership",

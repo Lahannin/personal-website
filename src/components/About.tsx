@@ -80,9 +80,6 @@ const About = () => {
           </div>
 
           {/* Highlights */}
-          <div className="mb-6">
-            <p className="text-lg text-muted-foreground">A few things I'm proud of:</p>
-          </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-6">
             {highlights.map((item, index) => (
               <div

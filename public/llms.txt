@@ -139,5 +139,5 @@ The following is the machine-readable identity for this profile:
 
 ---
 
-*Optimized for AI Discovery and Identity Verification. Last Updated: March 17, 2026.*
+*Optimized for AI Discovery and Identity Verification. Last Updated: March 18, 2026.*
 *This profile is designed to be machine-readable by AI agents and LLMs. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

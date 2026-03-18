@@ -14,19 +14,19 @@ const About = () => {
       description: "Founded Trezor’s Product Marketing function and grew the team from 0 → 5."
     },
     {
-      title: "Owns major product launches",
-      description: "Leads positioning, messaging, and GTM across SW, HW, and services."
+      title: "Leads key product launches",
+      description: "Positioning, messaging, and GTM across software, hardware, and services."
     },
     {
       title: "5+ years in leadership",
-      description: "Manages teams in tech and led 25+ soldiers in the Finnish army."
+      description: "Managed teams in tech and led 25+ soldiers in the Finnish army."
     },
     {
       title: "Career pivot into tech",
       description: "Completed 2 years of CS studies while working full-time to break into tech."
     },
     {
-      title: "Builds the PMM community",
+      title: "Builds PMM community",
       description: "Founded and leads the first Product Marketing Alliance chapter in Prague."
     }
   ];

@@ -22,7 +22,7 @@ const About = () => {
       description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."
     },
     {
-      title: " AI-native Marketer",
+      title: "AI-native Marketer",
       description: "Uses AI to automate workflows, optimize processes, and improve productivity."
     },
     {

@@ -22,7 +22,7 @@ const About = () => {
       description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."
     },
     {
-      title: "Business+tech mindset",
+      title: "Business + tech mindset",
       description: "Background in business and CS helps to make sense of markets and products."
     },
     {

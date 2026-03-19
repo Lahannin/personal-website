@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { MapPin, ArrowDown } from "lucide-react";
+import { MapPin, ArrowDown, Briefcase } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";

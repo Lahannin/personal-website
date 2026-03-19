@@ -10,13 +10,14 @@ const About = () => {
       description: "Built Trezor’s Product Marketing function from scratch and scaled it 0 → 5."
     }, 
     {
-    title: "AI-native Marketer",
-    description: "Fluent in AI to automate workflows, optimize processes, and boost productivity."
-    },
-    {
       title: "Global launch owner",
       description: "Positioning, messaging, and GTM for software, hardware, and services."
     },
+    {
+    title: "AI-native marketer",
+    description: "Fluent in AI to automate workflows, optimize processes, and boost productivity."
+    },
+  
     {
       title: "5+ years in leadership",
       description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."

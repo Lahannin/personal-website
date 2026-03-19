@@ -19,7 +19,7 @@ const About = () => {
     },
     {
       title: "People leader",
-      description: "Experienced in managing tech teams and leading 25+ conscripts in the Finnish army."
+      description: "Experienced in leading tech teams and 25+ conscripts in the Finnish army."
     },
     {
       title: "Biz + tech mindset",

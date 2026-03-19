@@ -22,8 +22,8 @@ const About = () => {
       description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."
     },
     {
-      title: "Biz + tech mindset",
-      description: "Background in business and CS helps to make sense of markets and products."
+      title: " AI-native PMM",
+      description: "Uses AI to automate workflows, optimize processes, and improve productivity."
     },
     {
       title: "PMM community builder",

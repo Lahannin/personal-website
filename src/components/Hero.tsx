@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { MapPin, ArrowDown } from "lucide-react";
+import { MapPin, ArrowDown, Briefcase } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -208,6 +208,7 @@ const Hero = () => {
             variants={itemVariants}
             className="flex items-center justify-center gap-2 text-muted-foreground mb-14 flex-wrap"
           >
+            <Briefcase className="w-4 h-4" aria-hidden="true" />
             <span className="font-mono text-xs tracking-wider">10+ years in tech</span>
             <span className="mx-2 text-border">•</span>
             <MapPin className="w-4 h-4" aria-hidden="true" />

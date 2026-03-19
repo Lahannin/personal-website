@@ -15,14 +15,14 @@ const About = () => {
     },
     {
       title: "Global launch owner",
-      description: "Leads positioning, messaging, and GTM for software, hardware & services."
+      description: "Positioning, messaging, and GTM for software, hardware, and services."
     },
     {
       title: "5+ years in leadership",
       description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."
     },
     {
-      title: "Business + tech mindset",
+      title: "Biz + tech mindset",
       description: "Background in business and CS helps to make sense of markets and products."
     },
     {

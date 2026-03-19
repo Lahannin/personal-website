@@ -5,13 +5,13 @@ import BitcoinWord from "./BitcoinWord";
 
 const About = () => {
   const highlights = [
-     {
-    title: "10+ years experience",
-    description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups."
-    },
     {
       title: "Founding PMM",
       description: "Built Trezor’s Product Marketing function from scratch and scaled it 0 → 5."
+    }, 
+    {
+    title: "AI-native Marketer",
+    description: "Fluent in AI to automate workflows, optimize processes, and boost productivity."
     },
     {
       title: "Global launch owner",

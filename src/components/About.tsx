@@ -82,17 +82,14 @@ const About = () => {
           {/* Highlights */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-6">
             {highlights.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="group pl-4 border-l-2 border-highlight/40 hover:border-highlight transition-colors duration-300"
+                className="border-l-2 border-highlight/50 pl-4 py-1 animate-fade-in"
+                style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'both' }}
               >
-                <h3 className="text-sm md:text-base font-bold mb-1 group-hover:text-highlight transition-colors duration-300">{item.title}</h3>
-                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{item.description}</p>
-              </motion.div>
+                <h3 className="text-sm md:text-lg font-semibold mb-1">{item.title}</h3>
+                <p className="text-muted-foreground text-xs md:text-sm">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>

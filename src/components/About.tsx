@@ -22,8 +22,8 @@ const About = () => {
       description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."
     },
     {
-      title: "Business + tech mindset",
-      description: "Studied business and computer science to understand markets and products."
+      title: "Business+tech mindset",
+      description: "Background in business and CS helps to make sense of markets and products."
     },
     {
       title: "PMM community builder",

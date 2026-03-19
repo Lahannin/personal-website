@@ -208,13 +208,11 @@ const Hero = () => {
             variants={itemVariants}
             className="flex items-center justify-center gap-2 text-muted-foreground mb-14 flex-wrap"
           >
-            <Briefcase className="w-4 h-4" aria-hidden="true" />
+            <Briefcase className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span className="font-mono text-xs tracking-wider">10+ years in tech</span>
             <span className="mx-2 text-border">•</span>
-            <MapPin className="w-4 h-4" aria-hidden="true" />
-            <span className="font-mono text-xs tracking-wider">Prague, Czechia 🇨🇿</span>
-            <span className="mx-2 text-border">•</span>
-            <span className="font-mono text-xs tracking-wider">Finnish origins 🇫🇮</span>
+            <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
+            <span className="font-mono text-xs tracking-wider">Prague 🇨🇿 · Finnish origins 🇫🇮</span>
           </motion.div>
 
           {/* All CTA buttons restored */}

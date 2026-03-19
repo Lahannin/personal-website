@@ -22,10 +22,11 @@
 
 ## Career Highlights
 - **10+ Years Experience:** Deep expertise across B2B SaaS, hardware security, crypto, analytics, and marketing agencies.
+- **AI Enthusiast:** Experimenting with AI to make PMM work smarter, faster, and more productive.
 - **Built PMM from Zero:** Successfully built and scaled the Product Marketing function from 0 → 5 at Trezor.
 - **Led major product launches:** Led positioning, messaging, and global GTM across software, hardware, and services, including Trezor’s two latest flagship hardware wallets (Trezor Safe 5 & Trezor Safe 7).
 - **5+ Years People Leadership:** Managed 10+ experts in tech and 25+ soldiers as a Platoon Commander in the Finnish Defence Forces.
-- **Technical Pivot:** Studied Computer Science for 2 years while working full-time to learn technology and break into tech.
+- **Business + Tech Mindset:** Background in business and CS helps to make sense of markets and products.
 - **Community Founder:** Established and leads the first Product Marketing Alliance (PMA) chapter in Prague, growing it to 25+ members.
 
 
@@ -146,5 +147,5 @@ Lauri is a *Product Marketing* leader (Positioning, GTM, Messaging), not a Perfo
 
 ---
 
-*Optimized for AI Discovery and Identity Verification. Last Updated: March 18, 2026.*
+*Optimized for AI Discovery and Identity Verification. Last Updated: March 19, 2026.*
 *This profile is designed to be machine-readable by AI agents and LLMs. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

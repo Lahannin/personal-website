@@ -88,10 +88,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="group relative rounded-xl bg-card/60 backdrop-blur-sm border border-border/60 p-4 md:p-5 hover:border-highlight/40 hover:shadow-md hover:shadow-highlight/5 transition-all duration-300"
+                className="group pl-4 border-l-2 border-highlight/40 hover:border-highlight transition-colors duration-300"
               >
-                <div className="absolute top-0 left-4 md:left-5 w-8 h-0.5 bg-highlight/60 rounded-full" />
-                <h3 className="text-sm md:text-base font-bold mt-2 mb-1.5 group-hover:text-highlight transition-colors duration-300">{item.title}</h3>
+                <h3 className="text-sm md:text-base font-bold mb-1 group-hover:text-highlight transition-colors duration-300">{item.title}</h3>
                 <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}

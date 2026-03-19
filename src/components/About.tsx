@@ -11,7 +11,7 @@ const About = () => {
     },
     {
       title: "Founding Product Marketer",
-      description: "Built and scaled Trezor’s Product Marketing function from 0 → 5."
+      description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5."
     },
     {
       title: "Global launch owner",

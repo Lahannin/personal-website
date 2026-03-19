@@ -14,13 +14,12 @@ const About = () => {
       description: "Positioning, messaging, and GTM for software, hardware, and services."
     },
     {
-    title: "AI-native marketer",
-    description: "Fluent in AI to automate workflows, optimize processes, and boost productivity."
+    title: "AI enthusiast",
+    description: "Experimenting with AI to make work smarter, faster, and more productive."
     },
-  
     {
-      title: "5+ years in leadership",
-      description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."
+      title: "People leader",
+      description: "Experienced in managing tech teams and leading 25+ conscripts in the Finnish army."
     },
     {
       title: "Biz + tech mindset",

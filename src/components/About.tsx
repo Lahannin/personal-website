@@ -6,24 +6,24 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
      {
-      title: "10+ years experience",
-      description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups."
+    title: "10+ years experience",
+    description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups."
     },
     {
-      title: "Founded PMM at Trezor",
-      description: "Built and scaled the Product Marketing function from 0 → 5."
+      title: "Founding PMM",
+      description: "Built and scaled Trezor’s Product Marketing function from 0 → 5."
     },
     {
-      title: "Global product launches",
-      description: "Positioning, messaging, and GTM for software, hardware, and services."
+      title: "Global launch owner",
+      description: "Leading positioning, messaging, and GTM for software, hardware, and services."
     },
     {
       title: "5+ years in leadership",
-      description: "Managed teams in tech and led 25+ soldiers in the Finnish army."
+      description: "Managed multiple teams in tech and led 25+ conscripts in the Finnish army."
     },
     {
-      title: "Career pivot into tech",
-      description: "Completed 2 years of CS studies while working full-time to break into tech."
+      title: "Business + tech mindset",
+      description: "Studied business and computer science to understand markets and products."
     },
     {
       title: "PMM community builder",

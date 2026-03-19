@@ -15,7 +15,7 @@ const About = () => {
     },
     {
     title: "AI enthusiast",
-    description: "Experimenting with AI to make work smarter, faster, and more productive."
+    description: "Experimenting with AI to make PMM work smarter, faster, and more productive."
     },
     {
       title: "People leader",

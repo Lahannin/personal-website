@@ -206,7 +206,7 @@ const Hero = () => {
           {/* Location details */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-muted-foreground mb-14"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2 text-muted-foreground mb-14"
           >
             <span className="flex items-center gap-2">
               <Briefcase className="w-4 h-4 shrink-0" aria-hidden="true" />

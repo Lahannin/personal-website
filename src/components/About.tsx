@@ -10,12 +10,12 @@ const About = () => {
     description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups."
     },
     {
-      title: "Founding Product Marketer",
-      description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5."
+      title: "Founding PMM",
+      description: "Built Trezor’s Product Marketing function from scratch and scaled it 0 → 5."
     },
     {
       title: "Global launch owner",
-      description: "Leading positioning, messaging, and GTM for software, hardware, and services."
+      description: "Leads positioning, messaging, and GTM for software, hardware & services."
     },
     {
       title: "5+ years in leadership",

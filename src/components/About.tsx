@@ -8,12 +8,12 @@ const About = () => {
   const highlights = [
        {
       icon: Clock,
-      title: "10+ years experience",
+      title: "10+ Years Experience",
       description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups.",
          },
     {
       icon: Rocket,
-      title: "Founding Product marketer",
+      title: "Founding Product Marketer",
       description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5.",
       },
     {

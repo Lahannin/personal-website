@@ -1,4 +1,4 @@
-import { Lightbulb, Zap, Target } from "lucide-react";
+import { Clock, Rocket, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
@@ -7,17 +7,17 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
        {
-      icon: Lightbulb,
+      icon: Clock,
       title: "10+ years experience",
       description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups.",
          },
     {
-      icon: Target,
+      icon: Rocket,
       title: "Founding PMM",
       description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5.",
       },
     {
-      icon: Zap,
+      icon: Users,
       title: "Community Builder",
       description: "Founded and leads the first Product Marketing Alliance chapter in Prague, Czechia.",
       },

@@ -8,18 +8,18 @@ const About = () => {
   const highlights = [
        {
       icon: Lightbulb,
-      title: "Open-Source Advocate",
-      description: "Passionate about open-source technology and building tools that give people freedom.",
+      title: "10+ years experience",
+      description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups.",
          },
     {
       icon: Target,
-      title: "Product & Marketing Expert",
-      description: "10+ years of experience across SaaS, hardware, marketing agency, and startup sectors.",
+      title: "Founding PMM",
+      description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5.",
       },
     {
       icon: Zap,
       title: "Community Builder",
-      description: "Founded and led the first Product Marketing Alliance chapter in the Czech Republic.",
+      description: "Founded and leads the first Product Marketing Alliance chapter in the Czech Republic.",
       },
   ];
 

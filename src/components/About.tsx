@@ -17,7 +17,7 @@ const About = () => {
       description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5.",
       },
     {
-      icon: Zap,
+      icon: Users,
       title: "Community Builder",
       description: "Founded and leads the first Product Marketing Alliance chapter in Prague, Czechia.",
       },

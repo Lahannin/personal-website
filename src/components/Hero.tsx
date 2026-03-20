@@ -208,6 +208,10 @@ const Hero = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2 text-muted-foreground mb-14"
           >
+            <span className="flex items-center gap-2">
+              <Briefcase className="w-4 h-4 shrink-0" aria-hidden="true" />
+              <span className="font-mono text-xs tracking-wider">10+ years in tech</span>
+            </span>
             <span className="hidden sm:inline mx-2 text-border">•</span>
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />

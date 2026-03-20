@@ -1,3 +1,4 @@
+import { Lightbulb, Zap, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
@@ -5,18 +6,21 @@ import BitcoinWord from "./BitcoinWord";
 
 const About = () => {
   const highlights = [
+       {
+      icon: Lightbulb,
+      title: "Open-Source Advocate",
+      description: "Passionate about open-source technology and building tools that give people freedom.",
+         },
     {
-      title: "Founding PMM",
-      description: "Built Trezor's Product Marketing function from scratch and scaled it 0 → 5."
-    },
+      icon: Target,
+      title: "Product & Marketing Expert",
+      description: "10+ years of experience across SaaS, hardware, marketing agency, and startup sectors.",
+      },
     {
-      title: "People leader",
-      description: "Led multiple tech teams and commanded a platoon of 25+ in the Finnish army."
-    },
-    {
-      title: "PMM community builder",
-      description: "Founded and leads the first Product Marketing Alliance chapter in Prague."
-    }
+      icon: Zap,
+      title: "Community Builder",
+      description: "Founded and led the first Product Marketing Alliance chapter in the Czech Republic.",
+      },
   ];
 
   return (
@@ -68,15 +72,18 @@ const About = () => {
           </div>
 
           {/* Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="border-l-2 border-highlight/50 pl-4 py-1 animate-fade-in"
+                className="card-gradient border border-border/60 rounded-lg p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group animate-fade-in"
                 style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'both' }}
               >
-                <h3 className="text-sm md:text-lg font-semibold mb-1">{item.title}</h3>
-                <p className="text-muted-foreground text-xs md:text-sm">{item.description}</p>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
             ))}
           </div>

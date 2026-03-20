@@ -7,7 +7,7 @@ import BitcoinWord from "./BitcoinWord";
 const About = () => {
   const highlights = [
        {
-      icon: Lightbulb,
+      icon: Clock,
       title: "10+ years experience",
       description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups.",
          },

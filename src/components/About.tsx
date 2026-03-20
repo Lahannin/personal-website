@@ -19,7 +19,7 @@ const About = () => {
     {
       icon: Zap,
       title: "Community Builder",
-      description: "Founded and leads the first Product Marketing Alliance chapter in the Czech Republic.",
+      description: "Founded and leads the first Product Marketing Alliance chapter in Prague.",
       },
   ];
 

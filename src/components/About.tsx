@@ -7,23 +7,11 @@ const About = () => {
   const highlights = [
     {
       title: "Founding PMM",
-      description: "Built Trezor’s Product Marketing function from scratch and scaled it 0 → 5."
-    }, 
-    {
-      title: "Global launch owner",
-      description: "Positioning, messaging, and GTM for software, hardware, and services."
-    },
-    {
-    title: "AI enthusiast",
-    description: "Experimenting with AI to make PMM work smarter, faster, and more productive."
+      description: "Built Trezor's Product Marketing function from scratch and scaled it 0 → 5."
     },
     {
       title: "People leader",
       description: "Led multiple tech teams and commanded a platoon of 25+ in the Finnish army."
-    },
-    {
-      title: "Biz + tech mindset",
-      description: "Background in business and CS helps to make sense of markets and products."
     },
     {
       title: "PMM community builder",

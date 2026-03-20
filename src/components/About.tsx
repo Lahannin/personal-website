@@ -12,7 +12,7 @@ const About = () => {
       description: "Across B2B SaaS, B2C hardware, crypto, marketing agencies, and startups.",
          },
     {
-      icon: Target,
+      icon: Rocket,
       title: "Founding PMM",
       description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5.",
       },

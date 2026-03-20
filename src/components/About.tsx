@@ -13,7 +13,7 @@ const About = () => {
          },
     {
       icon: Rocket,
-      title: "Founding PMM",
+      title: "Founding Product marketer",
       description: "Built Trezor’s Product Marketing function from scratch and scaled the team 0 → 5.",
       },
     {

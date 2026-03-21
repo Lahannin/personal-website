@@ -252,7 +252,9 @@ const Experience = () => {
                     className="w-full text-left py-5 flex items-center gap-5 group transition-colors duration-200 hover:bg-secondary/30 -mx-4 px-4 rounded-lg"
                   >
                     {/* Date */}
-                    <span className="font-mono text-xs text-muted-foreground w-[140px] shrink-0 hidden sm:block">
+                    <span className={`font-mono text-xs w-[140px] shrink-0 hidden sm:block ${
+                      hasCurrent(company) ? "text-highlight font-medium" : "text-muted-foreground"
+                    }`}>
                       {company.dateRange}
                     </span>
 
@@ -280,13 +282,8 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    {/* Badge + chevron */}
-                    <div className="flex items-center gap-3 shrink-0">
-                      {hasCurrent(company) && (
-                        <span className="font-mono text-[10px] tracking-widest uppercase text-highlight bg-highlight/10 px-2 py-0.5 rounded hidden sm:block">
-                          Current
-                        </span>
-                      )}
+                    {/* Chevron */}
+                    <div className="shrink-0">
                       <motion.div
                         animate={{ rotate: isExpanded ? 180 : 0 }}
                         transition={{ duration: 0.2 }}

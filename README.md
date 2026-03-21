@@ -56,4 +56,4 @@ The site includes files optimized for AI crawlers and LLM retrieval:
 
 ## License
 
-Personal project. Not open for reuse.
+MIT — see [LICENSE](LICENSE). Use it, fork it, make it yours.

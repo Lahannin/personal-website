@@ -1,8 +1,8 @@
 # Robots.txt - AI Agent & LLM Optimized
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
-# Version: 6 (SEO Audit Cleanup)
-# Last Updated: March 8, 2026
+# Version: 7 (SEO + Performance Optimization)
+# Last Updated: March 21, 2026
 
 # --- DEFAULT RULES ---
 User-agent: *

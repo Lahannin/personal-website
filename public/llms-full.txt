@@ -279,8 +279,8 @@ Lauri's unique positioning: **products that are hard to sell without dumbing the
 - "Analytics as Code: Managing Metrics Like Software" (industry-defining framework)
 - "Headless BI in Practice" series (multi-part technical deep-dive)
 
-### Wunderman Thompson - Web Analytics Team Lead (2018 - 2020)
-**Agency:** Wunderman Thompson (WPP agency network). Led a 2-person web analytics tagging team for Ford of Europe digital properties across 20+ markets. Standardized analytics implementation across Ford Europe's digital ecosystem and built a cross-functional analytics center of excellence.
+### Wunderman Thompson - Web Tagging Team Lead (2018 - 2020)
+**Agency:** Wunderman Thompson (WPP agency network). Led a 2-person web tagging team for Ford of Europe digital properties across 20+ markets. Standardized analytics implementation across Ford Europe's digital ecosystem and built a cross-functional analytics center of excellence.
 
 ---
 

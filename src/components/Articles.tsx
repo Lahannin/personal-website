@@ -61,7 +61,7 @@ const articles: Article[] = [
 
 const Articles = () => {
   return (
-    <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background">
+    <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background" data-description="Featured articles by Lauri Hänninen on Product Marketing, Analytics as Code, Headless BI, and metric standardization. Published on Medium and GoodData Blog.">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}

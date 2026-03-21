@@ -1,13 +1,21 @@
 import { useState, useEffect } from "react";
 
 export function useDarkMode() {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") return false;
-    const stored = localStorage.getItem("theme");
-    if (stored) return stored === "dark";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  // Always start with false to match SSR output and prevent hydration mismatch.
+  // The real value is synced in the first useEffect below.
+  const [isDark, setIsDark] = useState(false);
 
+  // On mount: read the actual preference and sync
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored) {
+      setIsDark(stored === "dark");
+    } else {
+      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }, []);
+
+  // Apply dark mode class whenever isDark changes
   useEffect(() => {
     const root = document.documentElement;
     if (isDark) {

@@ -1,7 +1,11 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
-const Index = lazy(() => import("./pages/Index"));
+// Index is eagerly imported so hydration matches the pre-rendered HTML.
+// If Index were lazy, the first client render would be Suspense fallback={null},
+// which mismatches the server-rendered Navigation + Hero → React error #418/#423.
+import Index from "./pages/Index";
+
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Secret = lazy(() => import("./pages/Secret"));
 

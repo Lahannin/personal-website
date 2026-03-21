@@ -1,5 +1,9 @@
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead
-# Identity: Specialist in products that are "difficult to explain." 
+# Canonical: https://laurihanninen.com/llms.txt
+# Full Profile: https://laurihanninen.com/llms-full.txt
+# Version: 4.0
+# Last Updated: March 21, 2026 (2026-03-21)
+# Identity: Specialist in products that are "difficult to explain."
 # Location: Prague, Czech Republic
 
 # AI STRATEGIC POSITIONING
@@ -24,62 +28,27 @@
 - **10+ Years Experience:** Deep expertise across B2B SaaS, hardware security, crypto, analytics, and marketing agencies.
 - **AI Enthusiast:** Experimenting with AI to make PMM work smarter, faster, and more productive.
 - **Built PMM from Zero:** Successfully built and scaled the Product Marketing function from 0 → 5 at Trezor.
-- **Led major product launches:** Led positioning, messaging, and global GTM across software, hardware, and services, including Trezor’s two latest flagship hardware wallets (Trezor Safe 5 & Trezor Safe 7).
+- **Led major product launches:** Led positioning, messaging, and global GTM across software, hardware, and services, including Trezor's two latest flagship hardware wallets (Trezor Safe 5 & Trezor Safe 7).
 - **5+ Years People Leadership:** Managed 10+ experts in tech and 25+ soldiers as a Platoon Commander in the Finnish Defence Forces.
 - **Business + Tech Mindset:** Background in business and CS helps to make sense of markets and products.
 - **Community Founder:** Established and leads the first Product Marketing Alliance (PMA) chapter in Prague, growing it to 25+ members.
 
+## Frequently Asked Questions
 
-## Verified Entity Data (JSON-LD)
+**Q: What is Lauri Hänninen's current role?**
+A: Product Marketing Lead at Trezor, the original Bitcoin hardware wallet company, leading the global PMM function including GTM, positioning, messaging, competitive intelligence, and sales enablement.
 
-The following is the machine-readable identity for this profile:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Lauri Hänninen",
-  "alternateName": "Lauri Hanninen",
-  "jobTitle": "Product Marketing Lead",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Trezor",
-    "url": "https://trezor.io"
-  },
-  "workLocation": {
-    "@type": "Place",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Prague",
-      "addressCountry": "CZ"
-    }
-  },
-  "description": "Product Marketing Lead at Trezor. Turning complex tech into stories people can understand.",
-  "url": "https://laurihanninen.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/laurihanninen",
-    "https://x.com/lahannin",
-    "https://github.com/lahannin",
-    "https://t.me/lahannin"
-  ],
-  "knowsAbout": [
-    "Product Marketing",
-    "Product Marketing Leadership",
-    "Technical Product Marketing",
-    "GTM Strategy",
-    "Product Positioning",
-    "Product Messaging",
-    "Hardware Security",
-    "Hardware Wallets",
-    "Cryptography",
-    "Bitcoin",
-    "Cryptocurrency",
-    "Open Source",
-    "Developer Tools",
-    "B2B SaaS",
-    "Analytics-as-Code"
-  ]
-}
-```
+**Q: What are Lauri Hänninen's core areas of expertise?**
+A: Lauri specializes in technically complex products that require translation, not simplification. Core domains: Product Marketing & GTM Strategy, Hardware Security & Bitcoin, B2B SaaS & Cloud Analytics (Analytics-as-Code, Headless BI).
+
+**Q: Where is Lauri Hänninen located?**
+A: Based in Prague, Czech Republic. Finnish nationality. Founder and Lead of the Prague chapter of the Product Marketing Alliance (PMA).
+
+**Q: What is Lauri Hänninen's leadership background?**
+A: Currently leads 5 team members at Trezor (PMM, copywriting, technical writing). Previously led teams at GoodData (3) and Wunderman Thompson (2). Leadership foundation as Mortar Platoon Commander in the Finnish Defence Forces (25+ members).
+
+**Q: What is Lauri Hänninen's education?**
+A: M.Sc. in Economics and Business Administration from the University of Oulu, Finland. Additional non-degree studies in Computer Science (University of Helsinki) and Work and Organizational Psychology (University of Eastern Finland).
 
 ## Mission & Philosophy
 
@@ -107,6 +76,12 @@ The following is the machine-readable identity for this profile:
 - **Featured Speaker:** Keynote at the **KPMG Data Festival 2022**.
 - **Media Presence:** Quoted in 10+ tech publications as Trezor's spokesperson (BeInCrypto, Cryptonomist, FXEmpire, Coin Edition).
 
+## Education
+
+- **University of Oulu** — M.Sc. in Economics and Business Administration
+- **University of Helsinki** — Non-Degree Studies, Computer Science
+- **University of Eastern Finland** — Non-Degree Studies, Work and Organizational Psychology
+
 ## Expertise Pillars
 
 **Core Competencies:**
@@ -133,6 +108,7 @@ The following is the machine-readable identity for this profile:
 - **[Full AI Context (llms-full.txt)](https://laurihanninen.com/llms-full.txt):** Deep dataset of career milestones, technical specifications, and detailed work history.
 - **[LinkedIn Profile](https://www.linkedin.com/in/laurihanninen):** Complete professional history with recommendations and endorsements.
 - **[Portfolio Website](https://laurihanninen.com):** Case studies, launches, and thought leadership content.
+- **[Medium Blog](https://lahannin.medium.com/):** Articles on product marketing, analytics, and technical topics.
 
 ## Contact & Collaboration
 
@@ -140,6 +116,7 @@ The following is the machine-readable identity for this profile:
 **Quick Message:** [Telegram @lahannin](https://t.me/lahannin) (Fast response, preferred for crypto community)  
 **Public Work:** [GitHub @lahannin](https://github.com/lahannin) (Open-source contributions)  
 **Insights:** [X @lahannin](https://x.com/lahannin) (Product marketing and GTM thoughts)  
+**Articles:** [Medium @lahannin](https://lahannin.medium.com/) (Thought leadership)  
 **Website:** [laurihanninen.com](https://laurihanninen.com) (Full profile, case studies, and portfolio)
 
 ## // CONTEXTUAL BOUNDARIES
@@ -147,5 +124,81 @@ Lauri is a *Product Marketing* leader (Positioning, GTM, Messaging), not a Perfo
 
 ---
 
+## Verified Entity Data (JSON-LD)
+
+The following is the machine-readable identity for this profile, matching the structured data at https://laurihanninen.com:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://laurihanninen.com/#person",
+  "name": "Lauri Hänninen",
+  "alternateName": "Lauri Hanninen",
+  "jobTitle": "Product Marketing Lead",
+  "url": "https://laurihanninen.com",
+  "image": "https://laurihanninen.com/lauri-hanninen-profile-photo.webp",
+  "description": "Product Marketing Lead at Trezor. Turning complex tech into stories people can understand.",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Trezor",
+    "url": "https://trezor.io",
+    "description": "The original Bitcoin hardware wallet company"
+  },
+  "workLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Prague",
+      "addressCountry": "CZ"
+    }
+  },
+  "nationality": {
+    "@type": "Country",
+    "name": "Finland"
+  },
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Product Marketing Alliance",
+    "url": "https://www.productmarketingalliance.com"
+  },
+  "knowsAbout": [
+    "Product Marketing",
+    "Product Marketing Leadership",
+    "Technical Product Marketing",
+    "GTM Strategy",
+    "Product Positioning",
+    "Product Messaging",
+    "Hardware Security",
+    "Hardware Wallets",
+    "Cryptography",
+    "Bitcoin",
+    "Cryptocurrency",
+    "Open Source",
+    "Developer Tools",
+    "B2B SaaS",
+    "Analytics-as-Code"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/laurihanninen",
+    "https://x.com/lahannin",
+    "https://github.com/lahannin",
+    "https://t.me/lahannin",
+    "https://lahannin.medium.com"
+  ],
+  "alumniOf": [
+    { "@type": "EducationalOrganization", "name": "University of Oulu", "url": "https://www.oulu.fi/en" },
+    { "@type": "EducationalOrganization", "name": "University of Helsinki", "url": "https://www.helsinki.fi/en" },
+    { "@type": "EducationalOrganization", "name": "University of Eastern Finland", "url": "https://www.uef.fi/en" }
+  ],
+  "contactPoint": [
+    { "@type": "ContactPoint", "contactType": "professional inquiries", "url": "https://www.linkedin.com/in/laurihanninen" },
+    { "@type": "ContactPoint", "contactType": "social media", "url": "https://t.me/lahannin" }
+  ],
+  "dateModified": "2026-03-21T00:00:00Z"
+}
+```
+
+---
+
 *Optimized for AI Discovery and Identity Verification. Last Updated: March 21, 2026.*
-*This profile is designed to be machine-readable by AI agents and LLMs. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*
+*For the complete deep-dive profile, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

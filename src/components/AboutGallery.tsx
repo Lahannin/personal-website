@@ -39,8 +39,9 @@ const columns: { photoIdx: number; aspect: string }[][] = [
 
 const AboutGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
-  const goNext = useCallback(() => setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null), []);
-  const goPrev = useCallback(() => setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null), []);
+  const [swipeDirection, setSwipeDirection] = useState(0);
+  const goNext = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
+  const goPrev = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
   useEffect(() => {
     if (selectedPhoto === null) return;
@@ -116,10 +117,22 @@ const AboutGallery = () => {
               </button>
               <motion.picture
                 key={selectedPhoto}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, x: swipeDirection * 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: swipeDirection * -100 }}
                 transition={{ duration: 0.2 }}
-                onClick={() => setSelectedPhoto(null)}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(_e, info) => {
+                  if (info.offset.x < -50 || info.velocity.x < -300) goNext();
+                  else if (info.offset.x > 50 || info.velocity.x > 300) goPrev();
+                }}
+                onClick={(e) => {
+                  // Only close if it wasn't a drag
+                  if (Math.abs(e.movementX || 0) < 5) setSelectedPhoto(null);
+                }}
+                style={{ touchAction: "pan-y" }}
               >
                 <source media="(max-width: 767px)" srcSet={photos[selectedPhoto].mobileSrc} />
                 <img

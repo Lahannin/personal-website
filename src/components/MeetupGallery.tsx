@@ -28,6 +28,10 @@ const MeetupGallery = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
+  const [swipeDirection, setSwipeDirection] = useState(0);
+
+  const goNextPhoto = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
+  const goPrevPhoto = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
   // --- AUTOPLAY LOGIC ---
   const autoplayRef = useRef<ReturnType<typeof setInterval>>();
@@ -59,9 +63,6 @@ const MeetupGallery = () => {
     emblaApi.scrollTo(index);
     resetAutoplay();
   }, [emblaApi, resetAutoplay]);
-
-  const goNextPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null), []);
-  const goPrevPhoto = useCallback(() => setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null), []);
 
   useEffect(() => {
     if (selectedPhoto === null) return;
@@ -281,10 +282,21 @@ const MeetupGallery = () => {
             </button>
             <motion.picture
               key={selectedPhoto}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: swipeDirection * 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: swipeDirection * -100 }}
               transition={{ duration: 0.2 }}
-              onClick={() => setSelectedPhoto(null)}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_e, info) => {
+                if (info.offset.x < -50 || info.velocity.x < -300) goNextPhoto();
+                else if (info.offset.x > 50 || info.velocity.x > 300) goPrevPhoto();
+              }}
+              onClick={(e) => {
+                if (Math.abs(e.movementX || 0) < 5) setSelectedPhoto(null);
+              }}
+              style={{ touchAction: "pan-y" }}
             >
               <source media="(max-width: 767px)" srcSet={photos[selectedPhoto].mobileSrc} />
               <img

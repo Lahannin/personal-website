@@ -1,34 +1,59 @@
-# laurihanninen.com — Technical Portfolio
+# laurihanninen.com
 
-This repository contains the source code for my personal website and AI-optimized professional footprint. It serves as the authoritative hub for my work in Product Marketing, Hardware Security, and Open-Source advocacy.
+Personal website and professional profile for Lauri Hänninen, Product Marketing Lead at Trezor. Built with React, Vite, and Tailwind CSS. Deployed to GitHub Pages.
 
-## The Philosophy
-I specialize in products that are difficult to explain. This site demonstrates how complex technical infrastructure—from Trezor's hardware security to GoodData's analytics platforms—can be translated into clear, compelling narratives.
+## Stack
 
-## Technology Stack
-The project is built with a modern, type-safe frontend stack optimized for performance and SEO:
+- **React 18** + TypeScript + Vite
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Embla Carousel** for image/product carousels
+- **SSR prerender** at build time for fast first paint and crawler visibility
+- **GitHub Pages** with custom domain
 
-- Framework: React with TypeScript
-- Build Tool: Vite
-- Styling: Tailwind CSS & shadcn/ui
-- Deployment: Custom Domain (laurihanninen.com)
+## Project structure
 
-## AI & LLM Optimization
-This repository includes specialized files designed for modern AI crawlers (ChatGPT, Claude, Perplexity):
-- llms.txt: A concise, machine-readable summary of my professional background.
-- llms-full.txt: A comprehensive technical dataset for RAG and deep context.
-- robots.txt: Optimized permissions for agentic AI crawlers.
+```
+src/
+├── components/     # All page sections (Hero, About, Experience, etc.)
+├── hooks/          # useDarkMode, useIsMobile
+├── pages/          # Index, NotFound, Secret
+├── entry-server.tsx  # SSR entry point for prerender
+├── main.tsx        # Client entry point
+└── index.css       # Tailwind config + custom utilities
+public/
+├── llms.txt        # AI-readable profile summary
+├── llms-full.txt   # Full career context for LLM crawlers
+├── robots.txt      # Crawler permissions (AI + search engines)
+├── sitemap.xml     # Search engine sitemap
+├── humans.txt      # humans.txt standard
+└── .well-known/    # security.txt
+```
 
-## Local Development
-
-To run the project locally, ensure you have Node.js installed.
+## Development
 
 ```sh
-# 1. Clone the repository
-git clone [https://github.com/lahannin/laurihanninen.git](https://github.com/lahannin/laurihanninen.git)
-
-# 2. Install dependencies
 npm install
-
-# 3. Start the development server
 npm run dev
+```
+
+## Build
+
+```sh
+npm run build
+```
+
+This runs `vite build` followed by `node prerender.mjs`, which renders the homepage to static HTML and injects it into `dist/index.html`. The CSS is also inlined at build time to eliminate render-blocking requests.
+
+## AI / LLM files
+
+The site includes files optimized for AI crawlers and LLM retrieval:
+
+- `/llms.txt` — concise professional summary with JSON-LD entity data
+- `/llms-full.txt` — full career history, technical depth, FAQ, structured data
+- `robots.txt` — allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, etc.), blocks llms files from Google search indexing
+- `index.html` — contains Person, FAQPage, WebSite, WebPage, and BreadcrumbList JSON-LD schemas
+
+## License
+
+Personal project. Not open for reuse.

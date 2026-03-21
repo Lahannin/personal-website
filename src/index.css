@@ -90,7 +90,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Space Grotesk', 'Space Grotesk Fallback', system-ui, -apple-system, sans-serif;
     background-color: hsl(var(--background));
     text-rendering: optimizeLegibility;
     letter-spacing: -0.01em;

@@ -1,23 +1,29 @@
 /**
- * SSR entry point — uses eager imports (no lazy()) so renderToString
- * can fully render all components without Suspense boundaries.
+ * SSR entry point — must match what the client renders on first hydration pass.
+ *
+ * The client (Index.tsx) eagerly imports Navigation + Hero, and wraps everything
+ * else in <Suspense fallback={null}>. On first render, React shows Navigation + Hero
+ * and null for the lazy sections. The server HTML must match this exactly, or React
+ * throws hydration errors #418 and #423.
+ *
+ * For LLM crawlers and SEO bots that don't execute JS, the noscript block in
+ * index.html already provides full content. The data-description attributes on
+ * each section also provide structured summaries for crawler discoverability.
  */
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 
-// Eager imports — bypass lazy() for SSR
+// Only import what the client renders eagerly (outside Suspense)
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import MeetupGallery from "./components/MeetupGallery";
-import Products from "./components/Products";
-import Experience from "./components/Experience";
-import Skills from "./components/Skills";
-import Articles from "./components/Articles";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
+/**
+ * This must structurally match Index.tsx's first render:
+ * - Skip link
+ * - div.min-h-screen > Navigation + main#main-content > Hero
+ * - The Suspense fallback is null, so nothing else renders initially
+ */
 const IndexSSR = () => (
   <>
     <a
@@ -30,14 +36,6 @@ const IndexSSR = () => (
       <Navigation />
       <main id="main-content">
         <Hero />
-        <About />
-        <MeetupGallery />
-        <Products />
-        <Experience />
-        <Skills />
-        <Articles />
-        <Contact />
-        <Footer />
       </main>
     </div>
   </>

@@ -74,7 +74,7 @@ const About = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="card-gradient border border-border/30 rounded-lg p-6 shadow-sm hover:border-highlight/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 group animate-fade-up"
+                className="bg-secondary/30 rounded-2xl p-6 hover:-translate-y-1 hover:bg-secondary/50 transition-all duration-300 group animate-fade-up"
                 style={{ animationDelay: `${index * 120}ms` }}
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">

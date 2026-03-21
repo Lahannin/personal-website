@@ -97,7 +97,7 @@ const Articles = () => {
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block card-gradient border border-border/30 rounded-xl overflow-hidden shadow-sm hover:border-highlight/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-md h-full relative"
+                  className="group block bg-secondary/20 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-all duration-300 hover:-translate-y-1 h-full relative"
                 >
                   {/* Category accent bar — grows in from top on view */}
                   <motion.div

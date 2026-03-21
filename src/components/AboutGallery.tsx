@@ -92,7 +92,7 @@ const AboutGallery = () => {
             {col.map(({ photoIdx, aspect }, i) => (
               <div
                 key={photoIdx}
-                className="rounded-xl overflow-hidden border border-border/30 cursor-pointer hover:border-primary/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
+                className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
                 onClick={() => setSelectedPhoto(photoIdx)}
               >
                 <picture>

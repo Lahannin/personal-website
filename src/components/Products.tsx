@@ -245,7 +245,7 @@ const Products = () => {
                           transform: isActive ? 'scale(1) translateY(0)' : 'scale(0.88) translateY(10px)',
                         }}
                       >
-                        <div className="absolute inset-0 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 group-hover:border-primary/30 group-hover:bg-card/80 transition-colors duration-500" />
+                        <div className="absolute inset-0 rounded-2xl bg-secondary/30 backdrop-blur-xl group-hover:bg-secondary/50 transition-colors duration-500" />
 
                         <div 
                           className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"

@@ -16,7 +16,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
-            className="bg-secondary/40 border border-border/50 rounded-2xl p-10 md:p-14 text-center"
+            className="bg-secondary/30 rounded-2xl p-10 md:p-14 text-center"
           >
             <h2 id="contact-heading" className="text-4xl md:text-5xl font-black tracking-[-0.03em] mb-4">
               Let's <span className="text-gradient italic font-bold">talk</span>
@@ -31,7 +31,7 @@ const Contact = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs tracking-wide text-foreground px-5 py-2.5 rounded-full border border-border/60 bg-background/80 hover:border-highlight/60 hover:text-highlight hover:bg-highlight/5 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors duration-200"
+                  className="font-mono text-xs tracking-wide text-foreground px-5 py-2.5 rounded-full bg-background/60 hover:text-highlight hover:bg-highlight/5 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors duration-200"
                   aria-label={`Connect on ${link.label}`}
                 >
                   {link.label}

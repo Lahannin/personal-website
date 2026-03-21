@@ -126,10 +126,10 @@ const AboutGallery = () => {
               </button>
               <motion.picture
                 key={selectedPhoto}
-                initial={{ opacity: 0, x: swipeDirection * 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: swipeDirection * -100 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0, x: swipeDirection * 100, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: swipeDirection * -100, scale: 0.95 }}
+                transition={{ duration: 0.25, ease: [0.22, 0.61, 0.36, 1] }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}

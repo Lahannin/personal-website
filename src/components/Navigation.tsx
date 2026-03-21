@@ -9,12 +9,18 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const { isDark, toggle: toggleDark } = useDarkMode();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Calculate scroll progress
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight > 0) {
+        setScrollProgress(Math.min(window.scrollY / scrollHeight, 1));
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -66,6 +72,12 @@ const Navigation = () => {
             isScrolled || isMobileMenuOpen ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
           }`}
         >
+          {/* Scroll progress bar */}
+          <m.div
+            className="absolute top-0 left-0 h-[2px] bg-highlight origin-left z-10"
+            style={{ scaleX: scrollProgress, width: "100%" }}
+            transition={{ duration: 0 }}
+          />
           <div className="container px-6">
             <div className="flex items-center justify-end h-16 md:h-20">
               <div className="hidden md:flex items-center gap-0.5">
@@ -89,7 +101,16 @@ const Navigation = () => {
                   aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
                   className="ml-2 p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-muted-foreground hover:text-highlight border border-border/50 hover:border-highlight/40 transition-all duration-300 font-mono"
                 >
-                  {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  <m.span
+                    key={isDark ? "sun" : "moon"}
+                    initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                    exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="flex items-center justify-center"
+                  >
+                    {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  </m.span>
                 </button>
               </div>
 
@@ -99,7 +120,15 @@ const Navigation = () => {
                   aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
                   className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-highlight rounded-lg transition-colors"
                 >
-                  {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                  <m.span
+                    key={isDark ? "m-sun" : "m-moon"}
+                    initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="flex items-center justify-center"
+                  >
+                    {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                  </m.span>
                 </button>
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

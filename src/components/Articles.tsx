@@ -99,8 +99,15 @@ const Articles = () => {
                   rel="noopener noreferrer"
                   className="group block card-gradient border border-border rounded-xl overflow-hidden shadow-md hover:border-highlight/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full relative"
                 >
-                  {/* Category accent bar */}
-                  <div className="absolute top-0 left-0 w-1 h-full bg-primary dark:bg-highlight opacity-60 group-hover:opacity-100 transition-opacity" />
+                  {/* Category accent bar — grows in from top on view */}
+                  <motion.div
+                    className="absolute top-0 left-0 w-1 bg-primary dark:bg-highlight opacity-60 group-hover:opacity-100 transition-opacity origin-top"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.05 + 0.2, ease: [0.22, 0.61, 0.36, 1] }}
+                    style={{ height: "100%" }}
+                  />
                   <div className="p-6 pl-5">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">

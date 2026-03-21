@@ -404,7 +404,10 @@ const Experience = () => {
                                   initial={{ height: 0, opacity: 0 }}
                                   animate={{ height: "auto", opacity: 1 }}
                                   exit={{ height: 0, opacity: 0 }}
-                                  transition={{ duration: 0.2 }}
+                                  transition={{
+                                    height: { duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] },
+                                    opacity: { duration: 0.2, delay: 0.05 },
+                                  }}
                                   className="overflow-hidden"
                                 >
                                   <div className="pt-3">

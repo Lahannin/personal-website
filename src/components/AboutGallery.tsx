@@ -44,12 +44,43 @@ const AboutGallery = () => {
   const goNext = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
   const goPrev = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
-  // Lock body scroll when lightbox is open
+  const scrollYRef = useRef(0);
+  const isLockedRef = useRef(false);
+
+  // Lock body scroll when lightbox is open — works on iOS Safari + all browsers
   useEffect(() => {
-    if (selectedPhoto !== null) {
+    if (selectedPhoto !== null && !isLockedRef.current) {
+      // Opening: capture scroll and lock
+      scrollYRef.current = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollYRef.current}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
-      return () => { document.body.style.overflow = ""; };
+      isLockedRef.current = true;
+    } else if (selectedPhoto === null && isLockedRef.current) {
+      // Closing: restore scroll
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+      window.scrollTo(0, scrollYRef.current);
+      isLockedRef.current = false;
     }
+
+    // Cleanup on unmount while lightbox is open
+    return () => {
+      if (isLockedRef.current) {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflow = "";
+        window.scrollTo(0, scrollYRef.current);
+        isLockedRef.current = false;
+      }
+    };
   }, [selectedPhoto]);
 
   useEffect(() => {

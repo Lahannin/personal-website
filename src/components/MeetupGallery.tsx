@@ -159,12 +159,9 @@ const MeetupGallery = () => {
       ref={sectionRef} 
       id="meetups" 
       aria-labelledby="meetups-heading" 
-      className="py-28 md:py-36 relative overflow-hidden bg-secondary/30"
+      className="py-28 md:py-36 relative overflow-hidden"
       data-description="Product marketing meetups organized by Lauri Hänninen in Prague as Chapter Lead of Product Marketing Alliance Czech Republic."
     >
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">

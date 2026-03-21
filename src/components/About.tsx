@@ -24,9 +24,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 relative bg-secondary/30" data-description="About Lauri Hänninen: Product Marketing Lead with 10+ years experience across SaaS, hardware, crypto, and open-source. Open-source advocate and community builder based in Prague.">
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background via-background/60 to-transparent pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 relative" data-description="About Lauri Hänninen: Product Marketing Lead with 10+ years experience across SaaS, hardware, crypto, and open-source. Open-source advocate and community builder based in Prague.">
       <div className="container px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
@@ -76,7 +74,7 @@ const About = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="card-gradient border border-border/60 rounded-lg p-6 shadow-md hover:border-highlight/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group animate-fade-up"
+                className="card-gradient border border-border/30 rounded-lg p-6 shadow-sm hover:border-highlight/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 group animate-fade-up"
                 style={{ animationDelay: `${index * 120}ms` }}
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">

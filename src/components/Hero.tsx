@@ -85,12 +85,9 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background noise-overlay" data-description="Lauri Hänninen — Product Marketing Lead at Trezor, based in Prague. Turning complex tech into stories people actually understand.">
+    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background" data-description="Lauri Hänninen — Product Marketing Lead at Trezor, based in Prague. Turning complex tech into stories people actually understand.">
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
-      
-      {/* Background Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background pointer-events-none" />
       
       {/* Glow Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -147,7 +144,7 @@ const Hero = () => {
                   ? { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }
                   : { duration: 0.4, ease: "easeOut" }
                 }
-                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/40 dark:border-border shadow-lg shadow-foreground/10 overflow-hidden group-hover:shadow-2xl group-hover:shadow-highlight/15 group-hover:border-highlight/40 transition-[shadow,border-color] duration-500 dark:shadow-lg dark:shadow-black/20"
+                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/20 dark:border-border/40 shadow-sm overflow-hidden group-hover:shadow-lg group-hover:shadow-highlight/10 group-hover:border-highlight/30 transition-[shadow,border-color] duration-500"
               >
                 <img 
                   src="/lauri-hanninen-profile-photo.webp" 

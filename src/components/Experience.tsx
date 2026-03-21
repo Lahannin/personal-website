@@ -234,7 +234,7 @@ const Experience = () => {
           </motion.div>
 
           {/* Company list */}
-          <div className="border-t border-border/60">
+          <div className="border-t border-border/30">
             {companies.map((company, index) => {
               const isExpanded = expandedCompanies.has(index);
               return (
@@ -245,7 +245,7 @@ const Experience = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-20px" }}
                   transition={{ duration: 0.3, delay: index * 0.03 }}
-                  className="border-b border-border/60"
+                  className="border-b border-border/30"
                 >
                   <button
                     onClick={() => toggleCompany(index)}

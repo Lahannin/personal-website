@@ -18,8 +18,9 @@ const Contact = () => {
             transition={{ duration: 0.4 }}
             className="bg-secondary/30 rounded-2xl p-10 md:p-14 text-center"
           >
-            <h2 id="contact-heading" className="text-4xl md:text-5xl font-black tracking-[-0.03em] mb-4">
-              Let's <span className="text-gradient italic font-bold">talk</span>
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// CONTACT</span>
+            <h2 id="contact-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em] mb-4">
+              Let's <span className="text-gradient">talk</span>
             </h2>
             <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-md mx-auto leading-relaxed">
               Open to conversations about product marketing, open source, and products that need better stories.

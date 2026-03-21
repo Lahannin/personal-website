@@ -159,7 +159,8 @@ The following is the machine-readable identity for this profile, matching the st
   "memberOf": {
     "@type": "Organization",
     "name": "Product Marketing Alliance",
-    "url": "https://www.productmarketingalliance.com"
+    "url": "https://www.productmarketingalliance.com",
+    "description": "The world's largest product marketing community"
   },
   "knowsAbout": [
     "Product Marketing",

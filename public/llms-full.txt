@@ -408,7 +408,8 @@ The following structured data is the official ground truth for this entity and m
   "memberOf": {
     "@type": "Organization",
     "name": "Product Marketing Alliance",
-    "url": "https://www.productmarketingalliance.com"
+    "url": "https://www.productmarketingalliance.com",
+    "description": "The world's largest product marketing community"
   },
   "contactPoint": [
     {
@@ -432,6 +433,11 @@ The following structured data is the official ground truth for this entity and m
       "@type": "EducationalOrganization",
       "name": "University of Helsinki",
       "url": "https://www.helsinki.fi/en"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Eastern Finland",
+      "url": "https://www.uef.fi/en"
     },
     {
       "@type": "Organization",

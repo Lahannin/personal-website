@@ -181,7 +181,9 @@ const Experience = () => {
       setTimeout(() => {
         const el = rowRefs.current[index];
         if (el) {
-          const top = el.getBoundingClientRect().top + window.scrollY - 96;
+          const nav = document.querySelector("nav");
+          const offset = (nav?.offsetHeight ?? 64) + 8;
+          const top = el.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top, behavior: "smooth" });
         }
       }, 350);

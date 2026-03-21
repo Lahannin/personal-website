@@ -1,5 +1,4 @@
-// Font swap is now handled by onload="this.media='all'" on the link tag itself.
-// This fires earlier than waiting for init.js to execute.
+// Fonts loaded normally via <link> in <head>. GTM deferred to interaction.
 (function () {
   // Fade-in root once React mounts (or immediately if pre-rendered)
   var root = document.getElementById('root');
@@ -14,21 +13,6 @@
         }
       });
       observer.observe(root, { childList: true });
-    }
-  }
-
-  // Font swap: swap media from print to all as soon as the CSS file loads.
-  // Using addEventListener instead of onload attribute for CSP compliance.
-  var fontLink = document.getElementById('font-stylesheet');
-  if (fontLink) {
-    if (fontLink.sheet) {
-      fontLink.media = 'all';
-    } else {
-      fontLink.addEventListener('load', function () { this.media = 'all'; });
-      // Fallback in case load event was missed
-      setTimeout(function () {
-        if (fontLink.media === 'print') fontLink.media = 'all';
-      }, 3000);
     }
   }
 

@@ -30,7 +30,7 @@
     --radius: 0.5rem;
 
     --gradient-primary: linear-gradient(135deg, hsl(220 60% 15%) 0%, hsl(220 50% 25%) 40%, hsl(10 95% 55%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
+
     --gradient-grid: linear-gradient(hsl(220 15% 87% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(220 15% 87% / 0.3) 1px, transparent 1px);
 
   }
@@ -59,7 +59,7 @@
     --ring: 10 95% 58%;
 
     --gradient-primary: linear-gradient(135deg, hsl(220 15% 85%) 0%, hsl(220 30% 60%) 40%, hsl(10 95% 58%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 18% 10%) 0%, hsl(220 18% 12%) 100%);
+
     --gradient-grid: linear-gradient(hsl(220 15% 18% / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(220 15% 18% / 0.5) 1px, transparent 1px);
 
   }
@@ -86,8 +86,6 @@
       scroll-behavior: auto !important;
     }
   }
-
-
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Space Grotesk', 'Space Grotesk Fallback', system-ui, -apple-system, sans-serif;
@@ -107,37 +105,10 @@
     background-image: var(--gradient-primary);
   }
 
-
-  .card-gradient {
-    background: var(--gradient-card);
-  }
-
-  .border-gradient {
-    position: relative;
-    background: var(--gradient-card);
-    border: 1px solid hsl(220 60% 15% / 0.1);
-  }
-
-  .border-gradient::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    padding: 1px;
-    border-radius: inherit;
-    background: linear-gradient(135deg, hsl(10 95% 55% / 0.25) 0%, hsl(220 60% 15% / 0.15) 40%, transparent 70%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
   .btn-modern {
     @apply relative overflow-hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-
-
   /* Grid background pattern for sections */
   .grid-bg {
     background-image: var(--gradient-grid);
@@ -165,19 +136,5 @@
   .animate-fade-up {
     opacity: 0;
     animation: fadeUp 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0) scale(1.1); }
-    50% { transform: translateY(-4px) scale(1.1); }
-  }
-  .animate-float {
-    animation: float 1.5s ease-in-out infinite;
-  }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-  .animate-blink {
-    animation: blink 1s step-end infinite;
   }
 }

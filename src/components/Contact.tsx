@@ -31,7 +31,7 @@ const Contact = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs tracking-wide text-foreground px-5 py-2.5 rounded-full bg-background border border-border/40 hover:text-highlight hover:border-highlight/40 hover:bg-highlight/5 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors duration-200"
+                  className="font-mono text-xs tracking-wide text-foreground px-5 py-3 rounded-full bg-background border border-border/40 hover:text-highlight hover:border-highlight/40 hover:bg-highlight/5 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors duration-200"
                   aria-label={`Connect on ${link.label}`}
                 >
                   {link.label}

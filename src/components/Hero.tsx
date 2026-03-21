@@ -87,7 +87,7 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background noise-overlay">
+    <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background noise-overlay" data-description="Lauri Hänninen — Product Marketing Lead at Trezor, based in Prague. Turning complex tech into stories people actually understand.">
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       

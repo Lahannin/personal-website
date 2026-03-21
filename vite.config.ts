@@ -34,10 +34,11 @@ export default defineConfig(({ mode }) => ({
     modulePreload: {
       polyfill: true,
     },
-    // We removed the manual rollupOptions.output names 
-    // to let Vite handle the hashing automatically again.
   },
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
+  },
+  ssr: {
+    noExternal: ["framer-motion", "lucide-react", "embla-carousel-react"],
   },
 }));

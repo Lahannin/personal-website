@@ -7,9 +7,12 @@ interface LazySectionProps {
   minHeight?: string;
 }
 
+const isServer = typeof window === "undefined";
+
 const LazySection = ({ children, rootMargin = "200px", className, minHeight = "200px" }: LazySectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // On server: always render children so crawlers get content
+  const [isVisible, setIsVisible] = useState(isServer);
 
   useEffect(() => {
     const el = ref.current;

@@ -1,0 +1,17 @@
+/* TEAM */
+Name: Lauri Hänninen
+Role: Product Marketing Lead
+Location: Prague, Czech Republic
+Site: https://laurihanninen.com
+X: @Lahannin
+LinkedIn: /in/laurihanninen
+
+/* SITE */
+Built with: React, Vite, Tailwind CSS, Framer Motion
+Hosting: GitHub Pages
+Standards: HTML5, CSS3, ES2022
+Components: shadcn/ui, Embla Carousel, Lucide Icons
+AI: llms.txt, llms-full.txt, JSON-LD structured data
+
+/* NOTE */
+It's not much, but it's honest work.

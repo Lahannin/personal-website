@@ -3,6 +3,8 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
+const isClient = typeof window !== "undefined";
+
 const photos = [
   { src: "/about-gallery/desktop/podcast-trezor.avif", mobileSrc: "/about-gallery/mobile/podcast-trezor.avif", alt: "Lauri Hänninen podcast about Trezor and hardware wallets" },
   { src: "/about-gallery/desktop/trezor-safe-7-quiz.avif", mobileSrc: "/about-gallery/mobile/trezor-safe-7-quiz.avif", alt: "Lauri Hänninen at Trezor Safe 7 quiz" },
@@ -81,7 +83,7 @@ const AboutGallery = () => {
         ))}
       </div>
 
-      {createPortal(
+      {isClient && createPortal(
         <AnimatePresence>
           {selectedPhoto !== null && (
             <motion.div

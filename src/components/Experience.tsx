@@ -283,7 +283,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="py-28 md:py-36 relative bg-secondary/30">
+    <section id="experience" aria-labelledby="experience-heading" className="py-28 md:py-36 relative bg-secondary/30" data-description="Lauri Hänninen's career journey: Product Marketing Lead at Trezor, PMA Chapter Lead in Prague, Senior Technical PMM at GoodData, Web Tagging Team Lead at Wunderman Thompson, and Client Delivery at SQN.">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       <div className="container px-6 relative z-10">
@@ -332,7 +332,7 @@ const Experience = () => {
                     <div className="flex items-center gap-4 mb-4">
                       <img
                         src={company.logo}
-                        alt={`${company.name} logo`}
+                        alt={`${company.name} logo${company.description ? ` — ${company.description}` : ''}`}
                         className="w-12 h-12 rounded-lg object-contain bg-white p-1"
                         width={48}
                         height={48}

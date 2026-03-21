@@ -130,6 +130,7 @@ const MeetupGallery = () => {
       id="meetups" 
       aria-labelledby="meetups-heading" 
       className="py-28 md:py-36 relative overflow-hidden bg-secondary/30"
+      data-description="Product marketing meetups organized by Lauri Hänninen in Prague as Chapter Lead of Product Marketing Alliance Czech Republic."
     >
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
@@ -187,18 +188,16 @@ const MeetupGallery = () => {
                       key={index}
                       className="flex-[0_0_100%] min-w-0 md:flex-[0_0_70%] lg:flex-[0_0_55%] px-4"
                     >
-                      <motion.div
-                        initial={{ opacity: 0.5, scale: 0.95 }}
-                        animate={{
-                          opacity: isActive ? 1 : 0.5,
-                          scale: isActive ? 1 : 0.95,
-                        }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className={`rounded-2xl overflow-hidden border cursor-pointer will-change-transform ${
+                      <div
+                        className={`rounded-2xl overflow-hidden border cursor-pointer will-change-[transform,opacity] transition-all duration-300 ease-in-out ${
                           isActive
                             ? "border-primary/30 shadow-2xl shadow-primary/10"
                             : "border-border/50 shadow-md"
                         }`}
+                        style={{
+                          opacity: isActive ? 1 : 0.5,
+                          transform: isActive ? 'scale(1)' : 'scale(0.95)',
+                        }}
                         onClick={() => setSelectedPhoto(index)}
                       >
                         <picture>
@@ -214,7 +213,7 @@ const MeetupGallery = () => {
                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
                           />
                         </picture>
-                      </motion.div>
+                      </div>
                     </div>
                   );
                 })}

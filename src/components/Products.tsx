@@ -3,6 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
+const isServer = typeof window === "undefined";
+
 interface Product {
   name: string;
   description: string;
@@ -72,7 +74,9 @@ const categoryConfig = {
 
 const Products = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  // On server, treat as in-view so content renders for crawlers
+  const isInViewRaw = useInView(sectionRef, { once: false, amount: 0.2 });
+  const isInView = isServer ? true : isInViewRaw;
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true,
@@ -173,6 +177,7 @@ const Products = () => {
       id="products" 
       aria-labelledby="products-heading" 
       className="py-28 md:py-36 relative overflow-hidden bg-background"
+      data-description="Products launched by Lauri Hänninen: Trezor Safe 7, Trezor Safe 5, Trezor Safe 5 Freedom Edition, Trezor Expert Onboarding, Trezor Expert Consultation, GoodData Cloud Platform, and GoodData Cloud Native."
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 

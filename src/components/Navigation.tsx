@@ -87,11 +87,14 @@ const Navigation = () => {
                     <a
                       key={link.href}
                       href={link.href}
-                      className={`px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md transition-colors font-mono ${
+                      className={`relative px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md transition-colors font-mono group ${
                         isActive ? "text-highlight" : "text-muted-foreground"
                       }`}
                     >
                       {link.label}
+                      <span className={`absolute bottom-0.5 left-4 right-4 h-[1.5px] bg-highlight rounded-full transition-transform duration-300 origin-left ${
+                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      }`} />
                     </a>
                   );
                 })}

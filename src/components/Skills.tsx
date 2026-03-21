@@ -99,7 +99,13 @@ const Skills = () => {
                     ) : skill}
                   </span>
                   {index < allSkills.length - 1 && (
-                    <span className="text-primary/40 mx-2 md:mx-3">·</span>
+                    <motion.span
+                      className="text-primary/40 mx-2 md:mx-3 inline-block"
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.5 },
+                        visible: { opacity: 1, scale: [1.4, 1], transition: { duration: 0.3 } },
+                      }}
+                    >·</motion.span>
                   )}
                 </motion.span>
               ))}

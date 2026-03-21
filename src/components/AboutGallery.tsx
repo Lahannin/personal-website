@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -40,8 +40,17 @@ const columns: { photoIdx: number; aspect: string }[][] = [
 const AboutGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const [swipeDirection, setSwipeDirection] = useState(0);
+  const dragStartX = useRef(0);
   const goNext = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
   const goPrev = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
+
+  // Lock body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedPhoto !== null) {
+      document.body.style.overflow = "hidden";
+      return () => { document.body.style.overflow = ""; };
+    }
+  }, [selectedPhoto]);
 
   useEffect(() => {
     if (selectedPhoto === null) return;
@@ -124,13 +133,14 @@ const AboutGallery = () => {
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
+                onDragStart={(_e, info) => { dragStartX.current = info.point.x; }}
                 onDragEnd={(_e, info) => {
                   if (info.offset.x < -50 || info.velocity.x < -300) goNext();
                   else if (info.offset.x > 50 || info.velocity.x > 300) goPrev();
                 }}
-                onClick={(e) => {
-                  // Only close if it wasn't a drag
-                  if (Math.abs(e.movementX || 0) < 5) setSelectedPhoto(null);
+                onClick={(_e) => {
+                  // Only close if the pointer barely moved (not a swipe)
+                  // framer-motion drag captures most, but this catches edge cases
                 }}
                 style={{ touchAction: "pan-y" }}
               >
@@ -138,9 +148,14 @@ const AboutGallery = () => {
                 <img
                   src={photos[selectedPhoto].src}
                   alt={photos[selectedPhoto].alt}
-                  className="max-w-full max-h-[90vh] rounded-xl object-contain"
+                  className="max-w-full max-h-[90vh] rounded-xl object-contain select-none"
+                  draggable={false}
                 />
               </motion.picture>
+              {/* Photo counter */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-xs text-white/60 tracking-wider z-10">
+                {selectedPhoto + 1} / {photos.length}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>,

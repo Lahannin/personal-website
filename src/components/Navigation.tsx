@@ -3,10 +3,12 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
 
+const sectionIds = ["about", "meetups", "products", "experience", "skills", "articles", "contact"];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const { isDark, toggle: toggleDark } = useDarkMode();
 
   useEffect(() => {
@@ -16,6 +18,32 @@ const Navigation = () => {
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Track which section is currently in view
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the entry that is most visible
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          // Pick the one closest to the top of the viewport
+          visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+          const id = visible[0].target.id;
+          if (id) setActiveSection(id);
+        }
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   // FIX: All hrefs now start with "/" to ensure they resolve from the root
@@ -41,15 +69,21 @@ const Navigation = () => {
           <div className="container px-6">
             <div className="flex items-center justify-end h-16 md:h-20">
               <div className="hidden md:flex items-center gap-0.5">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-muted-foreground hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md transition-colors font-mono"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const sectionId = link.href.replace("/#", "");
+                  const isActive = activeSection === sectionId;
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className={`px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md transition-colors font-mono ${
+                        isActive ? "text-highlight" : "text-muted-foreground"
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                })}
                 <button
                   onClick={toggleDark}
                   aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
@@ -91,17 +125,23 @@ const Navigation = () => {
                 >
                   <div className="py-4" role="group" aria-label="Mobile navigation">
                     <ul className="flex flex-col gap-1">
-                      {navLinks.map((link) => (
-                        <li key={link.href}>
-                          <a
-                            href={link.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-highlight py-3 px-4 rounded-md min-h-[44px] flex items-center font-mono"
-                          >
-                            {link.label}
-                          </a>
-                        </li>
-                      ))}
+                      {navLinks.map((link) => {
+                        const sectionId = link.href.replace("/#", "");
+                        const isActive = activeSection === sectionId;
+                        return (
+                          <li key={link.href}>
+                            <a
+                              href={link.href}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className={`block text-sm font-bold uppercase tracking-widest hover:text-highlight py-3 px-4 rounded-md min-h-[44px] flex items-center font-mono ${
+                                isActive ? "text-highlight" : "text-muted-foreground"
+                              }`}
+                            >
+                              {link.label}
+                            </a>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </m.div>

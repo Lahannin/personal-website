@@ -72,7 +72,7 @@ const Secret = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-white border-4 border-white/30 shadow-lg overflow-hidden flex items-center justify-center group-hover:shadow-2xl group-hover:shadow-white/15 group-hover:border-white/60 transition-all duration-500"
+                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-white border-4 border-white/30 shadow-lg overflow-hidden flex items-center justify-center group-hover:shadow-2xl group-hover:shadow-white/15 group-hover:border-white/60 transition-[shadow,border-color] duration-500"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

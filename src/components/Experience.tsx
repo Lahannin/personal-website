@@ -212,12 +212,12 @@ const Experience = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
-            className="flex justify-between items-baseline mb-12"
+            className="text-center mb-16"
           >
-            <h2 id="experience-heading" className="text-3xl md:text-4xl font-black tracking-[-0.02em]">
-              Experience
+            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
+            <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
+              Career <span className="text-gradient">Journey</span>
             </h2>
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// Career</span>
           </motion.div>
 
           {/* Company list */}

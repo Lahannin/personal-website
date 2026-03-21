@@ -47,8 +47,6 @@ User-agent: Googlebot
 Allow: /
 Disallow: /llms.txt
 Disallow: /llms-full.txt
-Disallow: /sitemap.xml
-Disallow: /robots.txt
 
 User-agent: Bingbot
 User-agent: Slurp

@@ -181,9 +181,13 @@ const Experience = () => {
         next.delete(index);
       } else {
         next.add(index);
-        // Scroll the row into view after expand animation settles
+        // Scroll the row into view after expand animation, offset for fixed nav
         setTimeout(() => {
-          rowRefs.current[index]?.scrollIntoView({ behavior: "smooth", block: "start" });
+          const el = rowRefs.current[index];
+          if (el) {
+            const top = el.getBoundingClientRect().top + window.scrollY - 96;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
         }, 350);
       }
       return next;
@@ -279,6 +283,11 @@ const Experience = () => {
                             <span className="text-muted-foreground/60"> +{company.roles.length - 1} more</span>
                           )}
                         </p>
+                        <span className={`font-mono text-[11px] sm:hidden ${
+                          hasCurrent(company) ? "text-highlight" : "text-muted-foreground/60"
+                        }`}>
+                          {company.dateRange}
+                        </span>
                       </div>
                     </div>
 

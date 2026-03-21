@@ -171,26 +171,21 @@ const companies: Company[] = [
 ];
 
 const Experience = () => {
-  const [expandedCompanies, setExpandedCompanies] = useState<Set<number>>(new Set([0]));
+  const [expandedCompany, setExpandedCompany] = useState<number | null>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const toggleCompany = useCallback((index: number) => {
-    setExpandedCompanies(prev => {
-      const next = new Set(prev);
-      if (next.has(index)) {
-        next.delete(index);
-      } else {
-        next.add(index);
-        // Scroll the row into view after expand animation, offset for fixed nav
-        setTimeout(() => {
-          const el = rowRefs.current[index];
-          if (el) {
-            const top = el.getBoundingClientRect().top + window.scrollY - 96;
-            window.scrollTo({ top, behavior: "smooth" });
-          }
-        }, 350);
-      }
-      return next;
+    setExpandedCompany(prev => {
+      if (prev === index) return null;
+      // Scroll into view after expand animation settles
+      setTimeout(() => {
+        const el = rowRefs.current[index];
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 96;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 350);
+      return index;
     });
   }, []);
 
@@ -240,7 +235,7 @@ const Experience = () => {
           {/* Company list */}
           <div>
             {companies.map((company, index) => {
-              const isExpanded = expandedCompanies.has(index);
+              const isExpanded = expandedCompany === index;
               return (
                 <motion.div
                   key={index}
@@ -324,9 +319,14 @@ const Experience = () => {
                           )}
 
                           {/* Roles */}
-                          <div className="space-y-5">
+                          {company.roles.length > 1 && (
+                            <p className="font-mono text-[10px] text-muted-foreground/50 uppercase tracking-widest mb-4">
+                              {company.roles.length} roles
+                            </p>
+                          )}
+                          <div className="space-y-3">
                             {company.roles.map((role, ri) => (
-                              <div key={ri} className={ri > 0 ? "pt-5 border-t border-border/40" : ""}>
+                              <div key={ri} className="bg-secondary/20 rounded-xl p-4">
                                 <div className="flex flex-wrap items-center gap-2 mb-1">
                                   <span className="font-semibold text-sm text-foreground">{role.title}</span>
                                   {role.current && (

@@ -74,13 +74,12 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 12 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.35,
-        ease: [0.22, 0.61, 0.36, 1] as const,
+        duration: 0.4,
+        ease: "easeOut" as const,
       },
     },
   };

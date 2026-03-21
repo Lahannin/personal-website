@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 
-// 1. Move Footer back to a lazy import
 const About = lazy(() => import("@/components/About"));
 const MeetupGallery = lazy(() => import("@/components/MeetupGallery"));
 const Experience = lazy(() => import("@/components/Experience"));

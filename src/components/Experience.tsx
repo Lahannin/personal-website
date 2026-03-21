@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
@@ -33,7 +33,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description: "The original hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
     logo: "/trezor-logo.webp",
-    dateRange: "2023 - Present",
+    dateRange: "09/2023 - Present",
     roles: [
       {
         title: "Product Marketing Lead",
@@ -62,7 +62,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description: "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
     logo: "/product-marketing-alliance-logo.webp",
-    dateRange: "2023 - Present",
+    dateRange: "03/2023 - Present",
     roles: [
       {
         title: "Chapter Lead",
@@ -88,7 +88,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description: "A leading analytics platform enabling businesses to build and embed customizable BI dashboards at scale.",
     logo: "/gooddata-logo.webp",
-    dateRange: "2021 - 2023",
+    dateRange: "01/2021 - 09/2023",
     roles: [
       {
         title: "Senior Technical Product Marketing Manager",
@@ -116,7 +116,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description: "A global creative agency combining creativity and technology to deliver marketing solutions for top brands.",
     logo: "/wunderman-thompson-logo.webp",
-    dateRange: "2017 - 2020",
+    dateRange: "05/2017 - 12/2020",
     roles: [
       {
         title: "Web Tagging Team Lead",
@@ -153,7 +153,7 @@ const companies: Company[] = [
     location: "Prague, Czechia",
     description: "Swiss-based PeopleTech startup transforming workplace culture with AI- and data-powered solutions.",
     logo: "/sqn-sinequanon-logo.webp",
-    dateRange: "2016 - 2017",
+    dateRange: "04/2016 - 05/2017",
     roles: [
       {
         title: "Client Delivery Specialist",
@@ -171,11 +171,24 @@ const companies: Company[] = [
 ];
 
 const Experience = () => {
-  const [expandedCompany, setExpandedCompany] = useState<number | null>(0);
+  const [expandedCompanies, setExpandedCompanies] = useState<Set<number>>(new Set([0]));
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const toggleCompany = (index: number) => {
-    setExpandedCompany(prev => prev === index ? null : index);
-  };
+  const toggleCompany = useCallback((index: number) => {
+    setExpandedCompanies(prev => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+        // Scroll the row into view after expand animation settles
+        setTimeout(() => {
+          rowRefs.current[index]?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 350);
+      }
+      return next;
+    });
+  }, []);
 
   const hasCurrent = (company: Company) => company.roles.some(r => r.current);
 
@@ -223,10 +236,11 @@ const Experience = () => {
           {/* Company list */}
           <div className="border-t border-border/60">
             {companies.map((company, index) => {
-              const isExpanded = expandedCompany === index;
+              const isExpanded = expandedCompanies.has(index);
               return (
                 <motion.div
                   key={index}
+                  ref={(el: HTMLDivElement | null) => { rowRefs.current[index] = el; }}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-20px" }}
@@ -238,7 +252,7 @@ const Experience = () => {
                     className="w-full text-left py-5 flex items-center gap-5 group transition-colors duration-200 hover:bg-secondary/30 -mx-4 px-4 rounded-lg"
                   >
                     {/* Date */}
-                    <span className="font-mono text-xs text-muted-foreground w-[110px] shrink-0 hidden sm:block">
+                    <span className="font-mono text-xs text-muted-foreground w-[140px] shrink-0 hidden sm:block">
                       {company.dateRange}
                     </span>
 
@@ -295,7 +309,7 @@ const Experience = () => {
                         }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-6 pl-4 sm:pl-[130px]">
+                        <div className="pb-6 pl-4 sm:pl-[160px]">
                           {/* Company description */}
                           {company.description && (
                             <p className="text-sm text-muted-foreground italic mb-5">

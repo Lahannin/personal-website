@@ -5,7 +5,6 @@ const Contact = () => {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/laurihanninen" },
     { label: "X / Twitter", href: "https://x.com/Lahannin" },
     { label: "Telegram", href: "https://t.me/lahannin" },
-    { label: "Medium", href: "https://lahannin.medium.com" },
   ];
 
   return (

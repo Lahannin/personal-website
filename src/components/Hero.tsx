@@ -138,9 +138,10 @@ const Hero = () => {
                 }}
               />
               <motion.div
+                key={spinTriggered ? "spin" : shakeKey}
                 animate={spinTriggered 
                   ? { rotate: 360, scale: 0, opacity: 0 } 
-                  : { x: shakeKey > 0 ? [0, -6, 6, -4, 4, -2, 2, 0] : 0 }
+                  : shakeKey > 0 ? { x: [0, -6, 6, -4, 4, -2, 2, 0] } : {}
                 }
                 transition={spinTriggered 
                   ? { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }

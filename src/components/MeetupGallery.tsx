@@ -37,34 +37,26 @@ const MeetupGallery = () => {
   const scrollYRef = useRef(0);
   const isLockedRef = useRef(false);
 
-  // Lock body scroll when lightbox is open — works on iOS Safari + all browsers
+  // Lock body scroll when lightbox is open
   useEffect(() => {
     if (selectedPhoto !== null && !isLockedRef.current) {
       scrollYRef.current = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollYRef.current}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
       isLockedRef.current = true;
     } else if (selectedPhoto === null && isLockedRef.current) {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
-      window.scrollTo(0, scrollYRef.current);
+      document.body.style.touchAction = "";
       isLockedRef.current = false;
     }
 
     return () => {
       if (isLockedRef.current) {
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.left = "";
-        document.body.style.right = "";
+        document.documentElement.style.overflow = "";
         document.body.style.overflow = "";
-        window.scrollTo(0, scrollYRef.current);
+        document.body.style.touchAction = "";
         isLockedRef.current = false;
       }
     };

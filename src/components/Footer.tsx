@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="font-mono text-xs text-muted-foreground text-center md:text-left tracking-wide">
               © {currentYear} Lauri Hänninen
               <br />
-              <span className="text-[10px]">It's not much, but it's honest work<span className="animate-blink ml-0.5 text-highlight/60">▌</span></span>
+              <span className="text-[10px]">It's not much, but it's honest work</span>
             </p>
           </div>
 

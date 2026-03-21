@@ -8,7 +8,7 @@ const About = () => {
   const highlights = [
        {
       icon: Clock,
-      title: "10+ Years in Complex Products",
+      title: "10+ Years Across Tech",
       description: "B2B SaaS, hardware, crypto, analytics, agencies, and startups.",
          },
     {

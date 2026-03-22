@@ -1,6 +1,6 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
-import { m, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 interface FloatingBitcoin {
@@ -56,14 +56,6 @@ const Hero = () => {
     }
   }, [spinTriggered, navigate]);
   
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const scrollOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
 
   return (
     <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background" data-description="Lauri Hänninen — Product Marketing Lead at Trezor, based in Prague. Turning complex tech into stories people actually understand.">
@@ -76,7 +68,7 @@ const Hero = () => {
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
       </div>
 
-      <m.div style={{ opacity: mounted ? scrollOpacity : 1 }} className="container relative z-10 px-6">
+      <div className="container relative z-10 px-6">
         <div className="max-w-5xl mx-auto text-center">
           {/* Profile photo with all your hover effects preserved */}
           <div className="flex justify-center mb-10 -mt-8 md:mt-20">
@@ -209,7 +201,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </m.div>
+      </div>
 
       {/* Full-screen fade-out overlay */}
       {fadeOut && (

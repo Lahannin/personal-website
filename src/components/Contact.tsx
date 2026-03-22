@@ -22,7 +22,7 @@ const Contact = memo(() => {
             <h2 id="contact-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em] mb-4">
               Let's <span className="text-gradient">talk</span>
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed">
+            <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed">
               Happy to chat about product marketing, self-custody, open source, or any products that could use a better story.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

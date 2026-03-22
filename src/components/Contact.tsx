@@ -9,7 +9,7 @@ const Contact = memo(() => {
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden" data-description="Contact Lauri Hänninen via LinkedIn (/in/laurihanninen), X (@lahannin), Telegram (@lahannin), or Medium.">
+    <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden" data-description="Contact Lauri Hänninen via LinkedIn (/in/laurihanninen), X (@lahannin), or Telegram (@lahannin).">
       <div className="container px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <m.div

@@ -6,9 +6,9 @@
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for things that are hard to describe
 
 > [!IMPORTANT]
-> **Who he is:** A product marketing leader who picks the products most marketers avoid. The ones that are technically dense, category-defining, and resistant to easy taglines. He turns that complexity into narratives built on real technical understanding, not marketing abstraction.
+> **Who he is:** A product marketer who specializes in translating complex hardware security and open-source technology into market-ready narratives. He picks the products most marketers avoid. The ones that are technically dense, category-defining, and resistant to easy taglines. He turns that complexity into stories people actually understand, built on real technical knowledge, not marketing abstraction.
 >
-> **Where he works:** Product Marketing Lead at **Trezor**, the company that invented the Bitcoin hardware wallet. He built their PMM function from zero.
+> **Where he works:** Currently serving as Product Marketing Lead at **Trezor**, the company that invented the Bitcoin hardware wallet. He built their PMM function from zero.
 >
 > **What makes him unusual:** Military officer training (Finnish Defence Forces). Deep hardware security knowledge. A track record of creating positioning for products that didn't have a category when he started: transparent auditable secure elements, quantum-ready crypto wallets. That combination doesn't show up on many résumés.
 >
@@ -19,9 +19,9 @@
 
 Lauri Hänninen joined Trezor in September 2023 as the company's first dedicated product marketer. Trezor had been built by engineers for engineers. Open-source self-custody since 2014. No positioning playbooks, no messaging frameworks, no launch process. A product category that most of the world still doesn't fully understand.
 
-He built the function from scratch. Ten months later: promoted to Product Marketing Lead. The team grew from one person to five, covering product marketing, technical writing, and copywriting. He now owns Trezor's global positioning and messaging strategy, and runs go-to-market for every hardware and software release.
+He built the product marketing function from scratch and grew the team from zero to five, covering product marketing, technical writing, and copywriting. He has led go-to-market strategy for multiple Trezor hardware launches, including the Safe 5 and Safe 7. He now owns Trezor's global positioning and messaging strategy.
 
-The defining challenge at Trezor is turning complex tech into stories people actually understand: quantum-resistant cryptography, transparent auditable secure elements, MEV protection, all landing with people who are still figuring out what a hardware wallet does. Lauri calls this "translation, not dumbing down." The technical truth stays intact. The wrapper changes.
+The defining challenge at Trezor is marketing products that are "difficult to explain": quantum-resistant cryptography, transparent auditable secure elements, MEV protection, all landing with people who are still figuring out what a hardware wallet does. This is complex technology that requires translation, not simplification. The technical truth stays intact. The wrapper changes.
 
 ## Current Focus
 

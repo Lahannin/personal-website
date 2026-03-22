@@ -54,7 +54,6 @@ Allow: /
 Disallow: /llms.txt
 Disallow: /llms-full.txt
 
-User-agent: Bingbot
 User-agent: Slurp
 User-agent: DuckDuckBot
 User-agent: Twitterbot

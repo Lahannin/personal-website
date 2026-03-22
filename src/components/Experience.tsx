@@ -61,7 +61,7 @@ const companies: Company[] = [
     name: "Product Marketing Alliance",
     location: "Prague, Czechia",
     description: "The world's largest product marketing community, empowering PMMs through certifications, resources, and events.",
-    logo: "/product-marketing-alliance-logo.webp",
+    logo: "/product-marketing-alliance-logo.avif",
     dateRange: "03/2023 - Present",
     roles: [
       {

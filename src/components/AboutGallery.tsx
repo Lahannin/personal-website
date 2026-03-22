@@ -17,21 +17,22 @@ const photos = [
 
 // Balanced masonry: each column sums to ~same height ratio
 // Col 1: 4/5 + 1/1 + 3/4 ≈ 2.55   Col 2: 1/1 + 4/5 + 1/1 ≈ 2.8   Col 3: 3/4 + 1/1 + 4/5 ≈ 2.55
-const columns: { photoIdx: number; aspect: string }[][] = [
+// w/h hints match CSS aspect ratio to prevent CLS and avoid distortion warnings
+const columns: { photoIdx: number; aspect: string; imgW: number; imgH: number }[][] = [
   [
-    { photoIdx: 0, aspect: "aspect-[5/4]" },
-    { photoIdx: 3, aspect: "aspect-square" },
-    { photoIdx: 6, aspect: "aspect-[4/3]" },
+    { photoIdx: 0, aspect: "aspect-[5/4]", imgW: 400, imgH: 320 },
+    { photoIdx: 3, aspect: "aspect-square", imgW: 400, imgH: 400 },
+    { photoIdx: 6, aspect: "aspect-[4/3]", imgW: 400, imgH: 300 },
   ],
   [
-    { photoIdx: 1, aspect: "aspect-square" },
-    { photoIdx: 4, aspect: "aspect-[5/4]" },
-    { photoIdx: 7, aspect: "aspect-square" },
+    { photoIdx: 1, aspect: "aspect-square", imgW: 400, imgH: 400 },
+    { photoIdx: 4, aspect: "aspect-[5/4]", imgW: 400, imgH: 320 },
+    { photoIdx: 7, aspect: "aspect-square", imgW: 400, imgH: 400 },
   ],
   [
-    { photoIdx: 2, aspect: "aspect-[4/3]" },
-    { photoIdx: 5, aspect: "aspect-square" },
-    { photoIdx: 8, aspect: "aspect-[5/4]" },
+    { photoIdx: 2, aspect: "aspect-[4/3]", imgW: 400, imgH: 300 },
+    { photoIdx: 5, aspect: "aspect-square", imgW: 400, imgH: 400 },
+    { photoIdx: 8, aspect: "aspect-[5/4]", imgW: 400, imgH: 320 },
   ],
 ];
 
@@ -59,7 +60,7 @@ const AboutGallery = () => {
       <div className="grid grid-cols-3 gap-2.5">
         {columns.map((col, colIdx) => (
           <div key={colIdx} className="flex flex-col gap-2.5">
-            {col.map(({ photoIdx, aspect }) => (
+            {col.map(({ photoIdx, aspect, imgW, imgH }) => (
               <div
                 key={photoIdx}
                 className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
@@ -73,8 +74,8 @@ const AboutGallery = () => {
                     className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
                     loading={photoIdx === 0 ? "eager" : "lazy"}
                     decoding="async"
-                    width={400}
-                    height={400}
+                    width={imgW}
+                    height={imgH}
                     sizes="(max-width: 768px) 33vw, 256px"
                   />
                 </picture>

@@ -1,10 +1,11 @@
+import { memo } from "react";
 import { Clock, Rocket, Users } from "lucide-react";
 import { m } from "framer-motion";
 import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
 import BitcoinWord from "./BitcoinWord";
 
-const About = () => {
+const About = memo(() => {
   const highlights = [
        {
       icon: Clock,
@@ -89,6 +90,8 @@ const About = () => {
       </div>
     </section>
   );
-};
+});
+
+About.displayName = "About";
 
 export default About;

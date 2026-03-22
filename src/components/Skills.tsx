@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { m } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
@@ -51,7 +52,7 @@ const educationData = [
   },
 ];
 
-const Skills = () => {
+const Skills = memo(() => {
   return (
     <section id="skills" aria-labelledby="skills-heading" className="py-28 md:py-36 relative" data-description="Lauri Hänninen's professional skills, certifications from Product Marketing Alliance and others, and education from University of Oulu and University of Helsinki">
       <div className="container px-6">
@@ -208,6 +209,8 @@ const Skills = () => {
       </div>
     </section>
   );
-};
+});
+
+Skills.displayName = "Skills";
 
 export default Skills;

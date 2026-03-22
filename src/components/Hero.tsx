@@ -10,6 +10,30 @@ interface FloatingBitcoin {
   size: number;
 }
 
+// Static animation variants — defined outside component to avoid recreation each render
+const containerVariants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.04,
+      delayChildren: 0,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
+const getBitcoinCursor = (size: number) =>
+  `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><text y="${size * 0.75}" font-size="${size * 0.75}" fill="%23F7931A">₿</text></svg>') ${size / 2} ${size / 2}, pointer`;
+
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
@@ -21,9 +45,6 @@ const Hero = () => {
   const [floatingBitcoins, setFloatingBitcoins] = useState<FloatingBitcoin[]>([]);
   const [haloScale, setHaloScale] = useState(0);
   const bitcoinIdRef = useRef(0);
-
-  const getBitcoinCursor = (size: number) =>
-    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><text y="${size * 0.75}" font-size="${size * 0.75}" fill="%23F7931A">₿</text></svg>') ${size / 2} ${size / 2}, pointer`;
 
   const handlePhotoClick = useCallback((e: React.MouseEvent) => {
     clickCountRef.current += 1;
@@ -62,27 +83,6 @@ const Hero = () => {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-
-  // Stagger orchestration only — no opacity animation on container itself
-  const containerVariants = {
-    visible: {
-      transition: {
-        staggerChildren: 0.04,
-        delayChildren: 0,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut" as const,
-      },
-    },
-  };
 
   return (
     <section ref={sectionRef} aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background" data-description="Lauri Hänninen — Product Marketing Lead at Trezor, based in Prague. Turning complex tech into stories people actually understand.">

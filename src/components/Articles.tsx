@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { m } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
@@ -59,7 +60,7 @@ const articles: Article[] = [
   },
 ];
 
-const Articles = () => {
+const Articles = memo(() => {
   return (
     <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background" data-description="Featured articles by Lauri Hänninen on Product Marketing, Analytics as Code, Headless BI, and metric standardization. Published on Medium and GoodData Blog.">
       <div className="container px-6">
@@ -167,6 +168,8 @@ const Articles = () => {
       </div>
     </section>
   );
-};
+});
+
+Articles.displayName = "Articles";
 
 export default Articles;

@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselNavButtons from "./CarouselNavButtons";
@@ -187,7 +187,7 @@ const Products = () => {
 
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -201,9 +201,9 @@ const Products = () => {
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               Key products I’ve helped bring to market through strategic positioning, messaging, and go-to-market execution.
             </p>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
@@ -316,9 +316,9 @@ const Products = () => {
               onDotClick={scrollTo}
               itemLabel="product"
             />
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
@@ -331,7 +331,7 @@ const Products = () => {
                 Plus <span className="font-semibold text-foreground">countless other feature launches</span> across software and hardware
               </span>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { m, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useRef, useEffect } from "react";
@@ -33,19 +33,19 @@ const Secret = () => {
       <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       {/* Background Gradients */}
-      <motion.div
+      <m.div
         style={{ y: backgroundY }}
         className="absolute inset-0 pointer-events-none"
       />
 
       {/* Glow Blobs */}
-      <motion.div
+      <m.div
         style={{ y: backgroundY }}
         className="absolute inset-0 overflow-hidden pointer-events-none"
       >
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
-      </motion.div>
+      </m.div>
 
       {/* Back button */}
       <button
@@ -64,12 +64,12 @@ const Secret = () => {
         Back
       </button>
 
-      <motion.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
+      <m.div style={{ y: contentY, opacity }} className="container relative z-10 px-6">
         <div
           className="max-w-5xl mx-auto text-center"
         >
           {/* Bitcoin logo — starts small like profile pic, scales up */}
-          <motion.div
+          <m.div
             initial={{ scale: 0.3, rotate: -360, opacity: 0 }}
             animate={{ scale: 1, rotate: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.22, 0.61, 0.36, 1], delay: 0.1 }}
@@ -77,7 +77,7 @@ const Secret = () => {
           >
             <div className="relative group">
               <div className="absolute -inset-4 rounded-full bg-white/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <motion.div
+              <m.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-white border-4 border-white/30 shadow-lg overflow-hidden flex items-center justify-center group-hover:shadow-2xl group-hover:shadow-white/15 group-hover:border-white/60 transition-[shadow,border-color] duration-500"
@@ -92,31 +92,31 @@ const Secret = () => {
                     fill="#F7931A"
                   />
                 </svg>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Title — fades in after logo scales up */}
-          <motion.h1
+          <m.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85] text-white"
           >
             Buy <span className="text-white/80">Bitcoin</span>
-          </motion.h1>
+          </m.h1>
 
           {/* Tagline */}
-          <motion.p
+          <m.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 1.0 }}
             className="text-xl md:text-2xl lg:text-3xl text-white/70 max-w-3xl mx-auto mb-4 font-medium"
           >
             Bitcoin is the best money ever created. Truly scarce, independent of any authority, and yours alone to control. It puts financial power back in our hands. ₿
-          </motion.p>
+          </m.p>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
 
@@ -221,7 +221,7 @@ const Experience = () => {
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -232,14 +232,14 @@ const Experience = () => {
             <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Career <span className="text-gradient">Journey</span>
             </h2>
-          </motion.div>
+          </m.div>
 
           {/* Company list */}
           <div>
             {companies.map((company, index) => {
               const isExpanded = expandedCompany === index;
               return (
-                <motion.div
+                <m.div
                   key={company.name}
                   ref={(el: HTMLDivElement | null) => { rowRefs.current[index] = el; }}
                   initial={{ opacity: 0, y: 10 }}
@@ -292,19 +292,19 @@ const Experience = () => {
 
                     {/* Chevron */}
                     <div className="shrink-0">
-                      <motion.div
+                      <m.div
                         animate={{ rotate: isExpanded ? 180 : 0 }}
                         transition={{ duration: 0.2 }}
                       >
                         <ChevronDown className="w-4 h-4 text-muted-foreground" />
-                      </motion.div>
+                      </m.div>
                     </div>
                   </button>
 
                   {/* Expanded content */}
                   <AnimatePresence>
                     {isExpanded && (
-                      <motion.div
+                      <m.div
                         id={`experience-panel-${index}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
@@ -353,10 +353,10 @@ const Experience = () => {
                             ))}
                           </div>
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>

@@ -1,5 +1,5 @@
 import { Clock, Rocket, Users } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
 import BitcoinWord from "./BitcoinWord";
@@ -28,7 +28,7 @@ const About = () => {
       <div className="container px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -39,11 +39,11 @@ const About = () => {
             <h2 id="about-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Product marketer for things <span className="hidden md:inline"><br /></span><span className="text-gradient">that are hard to describe</span>
             </h2>
-          </motion.div>
+          </m.div>
 
           {/* Bio */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -59,7 +59,7 @@ const About = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 At my core, I'm a tech enthusiast who firmly believes that open-source code is how we take back control.
               </p>
-            </motion.div>
+            </m.div>
 
             {/* Partner logos */}
             <div>

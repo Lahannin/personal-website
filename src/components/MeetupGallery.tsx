@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselNavButtons from "./CarouselNavButtons";
 import CarouselProgressDots from "./CarouselProgressDots";
@@ -142,7 +142,7 @@ const MeetupGallery = () => {
 
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -156,9 +156,9 @@ const MeetupGallery = () => {
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               Building the product marketing community in Prague, one meetup at a time.
             </p>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
@@ -224,7 +224,7 @@ const MeetupGallery = () => {
               onDotClick={scrollTo}
               itemLabel="photo"
             />
-          </motion.div>
+          </m.div>
         </div>
       </div>
 

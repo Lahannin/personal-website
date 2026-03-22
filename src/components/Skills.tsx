@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
 
@@ -57,7 +57,7 @@ const Skills = () => {
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -68,10 +68,10 @@ const Skills = () => {
             <h2 id="skills-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
               Expertise & <span className="text-gradient">Education</span>
             </h2>
-          </motion.div>
+          </m.div>
 
           {/* Skills as flowing inline text */}
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -83,7 +83,7 @@ const Skills = () => {
           >
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
               {allSkills.map((skill, index) => (
-                <motion.span
+                <m.span
                   key={skill}
                   variants={{
                     hidden: { opacity: 0 },
@@ -97,24 +97,24 @@ const Skills = () => {
                     ) : skill}
                   </span>
                   {index < allSkills.length - 1 && (
-                    <motion.span
+                    <m.span
                       className="text-primary/40 mx-2 md:mx-3 inline-block"
                       variants={{
                         hidden: { opacity: 0, scale: 0.5 },
                         visible: { opacity: 1, scale: [1.4, 1], transition: { duration: 0.3 } },
                       }}
-                    >·</motion.span>
+                    >·</m.span>
                   )}
-                </motion.span>
+                </m.span>
               ))}
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Divider */}
           <div className="w-12 h-px bg-border mx-auto mb-16" aria-hidden="true" />
 
           {/* Certifications as a clean list */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -126,7 +126,7 @@ const Skills = () => {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl mx-auto">
               {certifications.map((cert, index) => (
-                <motion.div
+                <m.div
                   key={cert.name}
                   initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -153,16 +153,16 @@ const Skills = () => {
                   <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
                     {cert.org}
                   </p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Divider */}
           <div className="w-12 h-px bg-border mx-auto mb-16" aria-hidden="true" />
 
           {/* Education */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -174,7 +174,7 @@ const Skills = () => {
             </h3>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
               {educationData.map((edu, index) => (
-                <motion.div
+                <m.div
                   key={edu.institution}
                   initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -200,10 +200,10 @@ const Skills = () => {
                   </h4>
                   <p className="text-primary text-sm font-medium">{edu.degree}</p>
                   <p className="text-muted-foreground text-xs">{edu.field}</p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface CarouselProgressDotsProps {
   count: number;
@@ -33,7 +33,7 @@ const CarouselProgressDots = memo(({
         aria-label={`Go to ${itemLabel} ${index + 1}`}
       >
         {index === selectedIndex && isInView && (
-          <motion.div
+          <m.div
             key={progressKey}
             className="absolute inset-y-0 left-0 right-0 bg-primary rounded-full origin-left"
             initial={{ scaleX: 0 }}

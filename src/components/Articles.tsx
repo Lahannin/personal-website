@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 interface Article {
@@ -65,7 +65,7 @@ const Articles = () => {
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -79,12 +79,12 @@ const Articles = () => {
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               Thoughts on product marketing, analytics, and technical topics published on Medium.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Articles grid */}
           <div className="grid gap-6 md:grid-cols-2">
             {articles.map((article, index) => (
-              <motion.article
+              <m.article
                 key={article.url}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ const Articles = () => {
                   className="group block bg-secondary/20 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-all duration-300 hover:-translate-y-1 h-full relative"
                 >
                   {/* Category accent bar — grows in from top on view */}
-                  <motion.div
+                  <m.div
                     className="absolute top-0 left-0 w-1 bg-primary dark:bg-highlight opacity-60 group-hover:opacity-100 transition-opacity origin-top"
                     initial={{ scaleY: 0 }}
                     whileInView={{ scaleY: 1 }}
@@ -128,7 +128,7 @@ const Articles = () => {
                           {article.description}
                         </p>
                       </div>
-                      <motion.div
+                      <m.div
                         className="flex-shrink-0 mt-1"
                         whileHover={{ rotate: -45 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
@@ -137,16 +137,16 @@ const Articles = () => {
                           className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
                           aria-hidden="true" 
                         />
-                      </motion.div>
+                      </m.div>
                     </div>
                   </div>
                 </a>
-              </motion.article>
+              </m.article>
             ))}
           </div>
 
           {/* View all link */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -162,7 +162,7 @@ const Articles = () => {
               View all articles on Medium
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
             </a>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

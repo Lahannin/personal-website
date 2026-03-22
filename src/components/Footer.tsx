@@ -1,4 +1,6 @@
-const Footer = () => {
+import { memo } from "react";
+
+const Footer = memo(() => {
   const currentYear = new Date().getFullYear();
 
   const links = [
@@ -52,5 +54,9 @@ const Footer = () => {
     </footer>
   );
 };
+
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;

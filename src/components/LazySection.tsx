@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, type ReactNode } from "react";
+import { memo, useRef, useState, useEffect, type ReactNode } from "react";
 
 interface LazySectionProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface LazySectionProps {
 
 const isServer = typeof window === "undefined";
 
-const LazySection = ({ children, rootMargin = "200px", className, minHeight = "200px" }: LazySectionProps) => {
+const LazySection = memo(({ children, rootMargin = "200px", className, minHeight = "200px" }: LazySectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   // On server: always render children so crawlers get content
   const [isVisible, setIsVisible] = useState(isServer);
@@ -38,5 +38,9 @@ const LazySection = ({ children, rootMargin = "200px", className, minHeight = "2
     </div>
   );
 };
+
+});
+
+LazySection.displayName = "LazySection";
 
 export default LazySection;

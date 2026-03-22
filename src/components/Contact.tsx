@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 
-const Contact = () => {
+const Contact = memo(() => {
   const links = [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/laurihanninen" },
     { label: "X / Twitter", href: "https://x.com/Lahannin" },
@@ -45,5 +46,9 @@ const Contact = () => {
     </section>
   );
 };
+
+});
+
+Contact.displayName = "Contact";
 
 export default Contact;

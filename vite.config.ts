@@ -74,6 +74,7 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           'framer': ['framer-motion'],
+          'embla': ['embla-carousel-react'],
         },
       },
     },

@@ -1,10 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
-import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
-
-const isClient = typeof window !== "undefined";
+import PhotoLightbox from "./PhotoLightbox";
 
 const photos = [
   { src: "/about-gallery/desktop/podcast-trezor.avif", mobileSrc: "/about-gallery/mobile/podcast-trezor.avif", alt: "Lauri Hänninen podcast about Trezor and hardware wallets" },
@@ -62,7 +59,7 @@ const AboutGallery = () => {
       <div className="grid grid-cols-3 gap-2.5">
         {columns.map((col, colIdx) => (
           <div key={colIdx} className="flex flex-col gap-2.5">
-            {col.map(({ photoIdx, aspect }, i) => (
+            {col.map(({ photoIdx, aspect }) => (
               <div
                 key={photoIdx}
                 className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
@@ -87,69 +84,14 @@ const AboutGallery = () => {
         ))}
       </div>
 
-      {isClient && createPortal(
-        <AnimatePresence>
-          {selectedPhoto !== null && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
-              onClick={() => setSelectedPhoto(null)}
-            >
-              <button
-                onClick={() => setSelectedPhoto(null)}
-                className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-10"
-                aria-label="Close lightbox"
-              >
-                <X className="w-8 h-8" />
-              </button>
-              <button
-                onClick={(e) => { e.stopPropagation(); goPrev(); }}
-                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
-                aria-label="Previous photo"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={(e) => { e.stopPropagation(); goNext(); }}
-                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
-                aria-label="Next photo"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-              <motion.picture
-                key={selectedPhoto}
-                initial={{ opacity: 0, x: swipeDirection * 100, scale: 0.95 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: swipeDirection * -100, scale: 0.95 }}
-                transition={{ duration: 0.25, ease: [0.22, 0.61, 0.36, 1] }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(_e, info) => {
-                  if (info.offset.x < -50 || info.velocity.x < -300) goNext();
-                  else if (info.offset.x > 50 || info.velocity.x > 300) goPrev();
-                }}
-                style={{ touchAction: "pan-y" }}
-              >
-                <source media="(max-width: 767px)" srcSet={photos[selectedPhoto].mobileSrc} />
-                <img
-                  src={photos[selectedPhoto].src}
-                  alt={photos[selectedPhoto].alt}
-                  className="max-w-full max-h-[90vh] rounded-xl object-contain select-none"
-                  draggable={false}
-                />
-              </motion.picture>
-              {/* Photo counter */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-xs text-white/60 tracking-wider z-10">
-                {selectedPhoto + 1} / {photos.length}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>,
-        document.body
-      )}
+      <PhotoLightbox
+        photos={photos}
+        selectedIndex={selectedPhoto}
+        swipeDirection={swipeDirection}
+        onClose={() => setSelectedPhoto(null)}
+        onNext={goNext}
+        onPrev={goPrev}
+      />
     </>
   );
 };

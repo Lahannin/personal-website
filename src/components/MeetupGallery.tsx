@@ -1,8 +1,12 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
-import { motion, AnimatePresence, useInView } from "framer-motion";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
+import CarouselNavButtons from "./CarouselNavButtons";
+import CarouselProgressDots from "./CarouselProgressDots";
+import PhotoLightbox from "./PhotoLightbox";
+
+const AUTOPLAY_DURATION_MS = 5000;
 
 const photos = [
   { src: "/meetup-gallery/desktop/product-marketing-meetup-1.avif", mobileSrc: "/meetup-gallery/mobile/product-marketing-meetup-1.avif", alt: "Lauri Hänninen at Product Marketing Alliance Prague meetup dinner" },
@@ -44,7 +48,7 @@ const MeetupGallery = () => {
     clearInterval(autoplayRef.current);
     autoplayRef.current = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 5000);
+    }, AUTOPLAY_DURATION_MS);
   }, [emblaApi]);
 
   // --- NAVIGATION ---
@@ -109,7 +113,7 @@ const MeetupGallery = () => {
     initialDelayRef.current = setTimeout(() => {
       emblaApi.scrollNext();
       resetAutoplay();
-    }, 5000);
+    }, AUTOPLAY_DURATION_MS);
 
     const onPointerDown = () => {
       clearTimeout(initialDelayRef.current);
@@ -128,10 +132,10 @@ const MeetupGallery = () => {
   }, [emblaApi, resetAutoplay, isInView]);
 
   return (
-    <section 
-      ref={sectionRef} 
-      id="meetups" 
-      aria-labelledby="meetups-heading" 
+    <section
+      ref={sectionRef}
+      id="meetups"
+      aria-labelledby="meetups-heading"
       className="py-28 md:py-36 relative overflow-hidden"
       data-description="Product marketing meetups organized by Lauri Hänninen in Prague as Chapter Lead of Product Marketing Alliance Czech Republic."
     >
@@ -161,23 +165,14 @@ const MeetupGallery = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
-            <button
-              onClick={scrollPrev}
-              disabled={!canScrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:border-primary/50 hover:bg-primary/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed -translate-x-1/2 md:translate-x-0"
-              aria-label="Previous photo"
-            >
-              <ChevronLeft className="w-5 h-5 text-foreground" />
-            </button>
-
-            <button
-              onClick={scrollNext}
-              disabled={!canScrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:border-primary/50 hover:bg-primary/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed translate-x-1/2 md:translate-x-0"
-              aria-label="Next photo"
-            >
-              <ChevronRight className="w-5 h-5 text-foreground" />
-            </button>
+            <CarouselNavButtons
+              onPrev={scrollPrev}
+              onNext={scrollNext}
+              canScrollPrev={canScrollPrev}
+              canScrollNext={canScrollNext}
+              prevLabel="Previous photo"
+              nextLabel="Next photo"
+            />
 
             <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
               <div className="flex">
@@ -185,7 +180,7 @@ const MeetupGallery = () => {
                   const isActive = index === selectedIndex;
                   return (
                     <div
-                      key={index}
+                      key={photo.src}
                       className="flex-[0_0_100%] min-w-0 md:flex-[0_0_70%] lg:flex-[0_0_55%] px-4"
                     >
                       <div
@@ -220,95 +215,27 @@ const MeetupGallery = () => {
               </div>
             </div>
 
-            <div className="flex justify-center items-center gap-2 mt-8">
-              {photos.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => scrollTo(index)}
-                  className={`relative h-2 rounded-full transition-all duration-300 overflow-hidden ${
-                    index === selectedIndex
-                      ? "w-8 bg-primary/20"
-                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                  }`}
-                  aria-label={`Go to photo ${index + 1}`}
-                >
-                  {index === selectedIndex && isInView && (
-                    <motion.div
-                      key={progressKey}
-                      className="absolute inset-y-0 left-0 w-full bg-primary rounded-full origin-left"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ duration: 5, ease: "linear" }}
-                      style={{ willChange: 'transform' }}
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
+            <CarouselProgressDots
+              count={photos.length}
+              selectedIndex={selectedIndex}
+              progressKey={progressKey}
+              isInView={isInView}
+              autoplayDurationMs={AUTOPLAY_DURATION_MS}
+              onDotClick={scrollTo}
+              itemLabel="photo"
+            />
           </motion.div>
         </div>
       </div>
 
-      <AnimatePresence>
-        {selectedPhoto !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
-            onClick={() => setSelectedPhoto(null)}
-          >
-            <button
-              onClick={() => setSelectedPhoto(null)}
-              className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-10"
-              aria-label="Close lightbox"
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); goPrevPhoto(); }}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
-              aria-label="Previous photo"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); goNextPhoto(); }}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
-              aria-label="Next photo"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-            <motion.picture
-              key={selectedPhoto}
-              initial={{ opacity: 0, x: swipeDirection * 100, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: swipeDirection * -100, scale: 0.95 }}
-              transition={{ duration: 0.25, ease: [0.22, 0.61, 0.36, 1] }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
-              onDragEnd={(_e, info) => {
-                if (info.offset.x < -50 || info.velocity.x < -300) goNextPhoto();
-                else if (info.offset.x > 50 || info.velocity.x > 300) goPrevPhoto();
-              }}
-              style={{ touchAction: "pan-y" }}
-            >
-              <source media="(max-width: 767px)" srcSet={photos[selectedPhoto].mobileSrc} />
-              <img
-                src={photos[selectedPhoto].src}
-                alt={photos[selectedPhoto].alt}
-                className="max-w-full max-h-[90vh] rounded-xl object-contain select-none"
-                draggable={false}
-              />
-            </motion.picture>
-            {/* Photo counter */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-xs text-white/60 tracking-wider z-10">
-              {selectedPhoto + 1} / {photos.length}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <PhotoLightbox
+        photos={photos}
+        selectedIndex={selectedPhoto}
+        swipeDirection={swipeDirection}
+        onClose={() => setSelectedPhoto(null)}
+        onNext={goNextPhoto}
+        onPrev={goPrevPhoto}
+      />
     </section>
   );
 };

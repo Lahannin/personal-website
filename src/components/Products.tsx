@@ -1,7 +1,11 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Monitor, Cpu, Headset, Rocket, ChevronLeft, ChevronRight } from "lucide-react";
+import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import CarouselNavButtons from "./CarouselNavButtons";
+import CarouselProgressDots from "./CarouselProgressDots";
+
+const AUTOPLAY_DURATION_MS = 7000;
 
 const isServer = typeof window === "undefined";
 
@@ -99,7 +103,7 @@ const Products = () => {
     clearInterval(autoplayRef.current);
     autoplayRef.current = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 7000);
+    }, AUTOPLAY_DURATION_MS);
   }, [emblaApi]);
 
   // --- NAVIGATION WRAPPERS ---
@@ -153,7 +157,7 @@ const Products = () => {
     initialDelayRef.current = setTimeout(() => {
       emblaApi.scrollNext();
       resetAutoplay();
-    }, 7000);
+    }, AUTOPLAY_DURATION_MS);
 
     const onPointerDown = () => {
       clearTimeout(initialDelayRef.current);
@@ -206,23 +210,14 @@ const Products = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="relative"
           >
-            <button
-              onClick={scrollPrev}
-              disabled={!canScrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:border-primary/50 hover:bg-primary/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed -translate-x-1/2 md:translate-x-0"
-              aria-label="Previous product"
-            >
-              <ChevronLeft className="w-5 h-5 text-foreground" />
-            </button>
-
-            <button
-              onClick={scrollNext}
-              disabled={!canScrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:border-primary/50 hover:bg-primary/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed translate-x-1/2 md:translate-x-0"
-              aria-label="Next product"
-            >
-              <ChevronRight className="w-5 h-5 text-foreground" />
-            </button>
+            <CarouselNavButtons
+              onPrev={scrollPrev}
+              onNext={scrollNext}
+              canScrollPrev={canScrollPrev}
+              canScrollNext={canScrollNext}
+              prevLabel="Previous product"
+              nextLabel="Next product"
+            />
 
             <div ref={emblaRef} className="overflow-hidden mx-8 md:mx-16">
               <div className="flex">
@@ -239,6 +234,7 @@ const Products = () => {
                         href={product.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={product.name}
                         className="group block relative overflow-hidden will-change-[transform,opacity] rounded-2xl transition-all duration-500 ease-out"
                         style={{
                           opacity: isActive ? 1 : 0.4,
@@ -311,32 +307,15 @@ const Products = () => {
               </div>
             </div>
 
-            {/* SYNCED DOTS (UPDATED TO 7S) */}
-            <div className="flex justify-center items-center gap-2 mt-8">
-              {products.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => scrollTo(index)}
-                  className={`relative h-2 rounded-full transition-all duration-300 overflow-hidden ${
-                    index === selectedIndex
-                      ? "w-8 bg-primary/20"
-                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                  }`}
-                  aria-label={`Go to product ${index + 1}`}
-                >
-                  {index === selectedIndex && isInView && (
-                    <motion.div
-                      key={progressKey}
-                      className="absolute inset-y-0 left-0 right-0 bg-primary rounded-full origin-left"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ duration: 7, ease: "linear" }}
-                      style={{ willChange: 'transform' }}
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
+            <CarouselProgressDots
+              count={products.length}
+              selectedIndex={selectedIndex}
+              progressKey={progressKey}
+              isInView={isInView}
+              autoplayDurationMs={AUTOPLAY_DURATION_MS}
+              onDotClick={scrollTo}
+              itemLabel="product"
+            />
           </motion.div>
 
           <motion.div

@@ -4,6 +4,7 @@ export function useScrollLock(isLocked: boolean) {
   const isLockedRef = useRef(false);
 
   useEffect(() => {
+    if (typeof document === "undefined") return;
     if (isLocked && !isLockedRef.current) {
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";

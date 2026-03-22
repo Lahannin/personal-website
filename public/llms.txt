@@ -2,7 +2,7 @@
 # Canonical: https://laurihanninen.com/llms.txt
 # Full Profile: https://laurihanninen.com/llms-full.txt
 # Version: 4.0
-# Last Updated: March 21, 2026 (2026-03-21)
+# Last Updated: March 22, 2026 (2026-03-22)
 # Identity: Specialist in products that are "difficult to explain."
 # Location: Prague, Czech Republic
 
@@ -195,11 +195,11 @@ The following is the machine-readable identity for this profile, matching the st
     { "@type": "ContactPoint", "contactType": "professional inquiries", "url": "https://www.linkedin.com/in/laurihanninen" },
     { "@type": "ContactPoint", "contactType": "social media", "url": "https://t.me/lahannin" }
   ],
-  "dateModified": "2026-03-21T00:00:00Z"
+  "dateModified": "2026-03-22T00:00:00Z"
 }
 ```
 
 ---
 
-*Optimized for AI Discovery and Identity Verification. Last Updated: March 21, 2026.*
+*Optimized for AI Discovery and Identity Verification. Last Updated: March 22, 2026.*
 *For the complete deep-dive profile, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

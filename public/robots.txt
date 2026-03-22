@@ -2,7 +2,7 @@
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
 # Version: 7 (SEO + Performance Optimization)
-# Last Updated: March 21, 2026
+# Last Updated: March 22, 2026
 
 # --- DEFAULT RULES ---
 User-agent: *

@@ -171,39 +171,30 @@ const companies: Company[] = [
 ];
 
 const Experience = memo(() => {
-  const [expandedCompany, setExpandedCompany] = useState<number | null>(null);
+  const [expandedCompanies, setExpandedCompanies] = useState<Set<number>>(new Set());
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const toggleCompany = useCallback((index: number) => {
-    // Closing the currently open company — just close, no scroll
-    if (expandedCompany === index) {
-      setExpandedCompany(null);
-      return;
-    }
-
-    const scrollThenOpen = (delay: number) => {
-      setTimeout(() => {
-        const el = rowRefs.current[index];
-        if (el) {
-          const nav = document.querySelector("nav");
-          const offset = (nav?.offsetHeight ?? 64) + 8;
-          const top = el.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top, behavior: "smooth" });
-        }
-        // Open after scroll has started
-        setTimeout(() => setExpandedCompany(index), 120);
-      }, delay);
-    };
-
-    if (expandedCompany !== null) {
-      // Another company is open — close it first, wait for collapse, then scroll & open
-      setExpandedCompany(null);
-      scrollThenOpen(320);
-    } else {
-      // Nothing open — scroll to target then open
-      scrollThenOpen(0);
-    }
-  }, [expandedCompany]);
+    setExpandedCompanies(prev => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+        // Scroll to the clicked row after it opens
+        setTimeout(() => {
+          const el = rowRefs.current[index];
+          if (el) {
+            const nav = document.querySelector("nav");
+            const offset = (nav?.offsetHeight ?? 64) + 8;
+            const top = el.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        }, 50);
+      }
+      return next;
+    });
+  }, []);
 
   const hasCurrent = (company: Company) => company.roles.some(r => r.current);
 
@@ -251,7 +242,7 @@ const Experience = memo(() => {
           {/* Company list */}
           <div>
             {companies.map((company, index) => {
-              const isExpanded = expandedCompany === index;
+              const isExpanded = expandedCompanies.has(index);
               return (
                 <m.div
                   key={company.name}

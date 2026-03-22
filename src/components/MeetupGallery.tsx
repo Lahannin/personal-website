@@ -201,7 +201,7 @@ const MeetupGallery = () => {
                             src={photo.src}
                             alt={photo.alt}
                             className="w-full aspect-[4/3] object-cover"
-                            loading={index === 0 ? "eager" : "lazy"}
+                            loading="lazy"
                             decoding="async"
                             width={967}
                             height={725}

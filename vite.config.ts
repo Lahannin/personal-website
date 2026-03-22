@@ -72,6 +72,9 @@ export default defineConfig(({ mode }) => ({
     },
     rollupOptions: {
       output: {
+        // Merge tiny shared chunks (< 10KB) into their consumers to reduce HTTP requests.
+        // Lucide icons, useScrollLock, BitcoinWord etc. were each generating a ~1KB chunk.
+        experimentalMinChunkSize: 10000,
         manualChunks: {
           'framer': ['framer-motion'],
           'embla': ['embla-carousel-react'],

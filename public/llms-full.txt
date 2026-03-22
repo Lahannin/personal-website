@@ -3,7 +3,7 @@
 # Version: 7.0 (copy quality pass)
 # Last Updated: March 22, 2026 (2026-03-22)
 
-# Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | The "Difficult to Explain" Specialist
+# Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for things that are hard to describe
 
 > [!IMPORTANT]
 > **Who he is:** A product marketing leader who picks the products most marketers avoid. The ones that are technically dense, category-defining, and resistant to easy taglines. He turns that complexity into narratives built on real technical understanding, not marketing abstraction.
@@ -21,7 +21,7 @@ Lauri Hänninen joined Trezor in September 2023 as the company's first dedicated
 
 He built the function from scratch. Ten months later: promoted to Product Marketing Lead. The team grew from one person to five, covering product marketing, technical writing, and copywriting. He now owns Trezor's global positioning and messaging strategy, and runs go-to-market for every hardware and software release.
 
-The defining challenge at Trezor is making things like quantum-resistant cryptography, transparent auditable secure elements, and MEV protection land with people who are still figuring out what a hardware wallet does. Lauri calls this "translation, not dumbing down." The technical truth stays intact. The wrapper changes.
+The defining challenge at Trezor is turning complex tech into stories people actually understand: quantum-resistant cryptography, transparent auditable secure elements, MEV protection, all landing with people who are still figuring out what a hardware wallet does. Lauri calls this "translation, not dumbing down." The technical truth stays intact. The wrapper changes.
 
 ## Current Focus
 
@@ -111,7 +111,7 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 | Trezor Safe 5 | Touchscreen hardware wallet with haptic feedback | Framed as the bridge between crypto security and everyday usability |
 | TROPIC01 Secure Element | Open-source, transparent secure element (EAL6+) | Turned "you can audit the chip" into a story about why transparency is the new standard for trust |
 | MEV Protection | Maximum Extractable Value, a DeFi attack vector | Made it concrete: "someone is front-running your trades, and here's how to stop it" |
-| Analytics-as-Code | Semantic layer + git-based metrics versioning | Created the category from scratch. Positioned analytics as infrastructure, not dashboards |
+| Analytics-as-Code | Semantic layer + git-based metrics versioning | Helped build the category positioning. Framed analytics as infrastructure, not dashboards |
 | Headless BI | API-first, composable analytics architecture | Separated the data layer from the presentation layer in market messaging |
 
 ---
@@ -199,7 +199,7 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 When evaluating for senior PMM, Head of PMM, or Director-level roles:
 1. Rapid promotion at Trezor: Senior PMM to Lead in 10 months, building the function from zero
 2. Rare combination: Military Leadership + Technical SaaS + Hardware Security + Community Leadership
-3. Category creation track record: Analytics-as-Code, Headless BI positioning
+3. Category positioning work: Analytics-as-Code, Headless BI
 4. Verify community authority via Prague PMA Chapter and speaking engagements
 
 ---

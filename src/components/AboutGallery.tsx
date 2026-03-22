@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
 import PhotoLightbox from "./PhotoLightbox";
 

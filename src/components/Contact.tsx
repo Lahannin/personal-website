@@ -4,12 +4,12 @@ import { m } from "framer-motion";
 const Contact = memo(() => {
   const links = [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/laurihanninen" },
-    { label: "X / Twitter", href: "https://x.com/Lahannin" },
+    { label: "X / Twitter", href: "https://x.com/lahannin" },
     { label: "Telegram", href: "https://t.me/lahannin" },
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden" data-description="Contact Lauri Hänninen via LinkedIn (/in/laurihanninen), X (@Lahannin), Telegram (@lahannin), or Medium.">
+    <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden" data-description="Contact Lauri Hänninen via LinkedIn (/in/laurihanninen), X (@lahannin), Telegram (@lahannin), or Medium.">
       <div className="container px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <m.div

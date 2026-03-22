@@ -12,6 +12,7 @@ const Secret = () => {
 
   useEffect(() => {
     document.documentElement.style.backgroundColor = '';
+    window.scrollTo(0, 0);
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -58,7 +59,7 @@ const Secret = () => {
             }, 100);
           }
         }}
-        className="absolute top-6 left-6 text-white/70 hover:text-white transition-colors flex items-center gap-2 font-mono text-xs tracking-wider z-20"
+        className="fixed top-6 left-6 text-white/70 hover:text-white transition-colors flex items-center gap-2 font-mono text-xs tracking-wider z-20"
       >
         <ArrowLeft className="w-4 h-4" />
         Back

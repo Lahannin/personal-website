@@ -462,15 +462,11 @@ The following structured data is the official ground truth for this entity and m
       "@type": "EducationalOrganization",
       "name": "University of Eastern Finland",
       "url": "https://www.uef.fi/en"
-    },
-    {
-      "@type": "Organization",
-      "name": "GoodData"
-    },
-    {
-      "@type": "Organization",
-      "name": "Wunderman Thompson"
     }
+  ],
+  "knowsLanguage": [
+    { "@type": "Language", "name": "Finnish" },
+    { "@type": "Language", "name": "English" }
   ],
   "dateModified": "2026-03-22T00:00:00Z"
 }

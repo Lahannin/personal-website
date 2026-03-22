@@ -1,11 +1,13 @@
 {
   "name": "Lauri Hänninen",
-  "short_name": "Lauri H",
+  "short_name": "Lauri Hänninen",
   "description": "Product Marketer turning complex tech into stories people actually understand.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f5f6f8",
   "theme_color": "#1e2d4a",
+  "lang": "en",
+  "categories": ["business", "education"],
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

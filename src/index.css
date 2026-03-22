@@ -1,5 +1,15 @@
 /* Fonts loaded via index.html link tags with display=swap */
 
+/* Metric-matched fallback to prevent layout shift while Space Grotesk loads */
+@font-face {
+  font-family: 'Space Grotesk Fallback';
+  src: local('Arial');
+  size-adjust: 108.2%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

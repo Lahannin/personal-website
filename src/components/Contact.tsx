@@ -4,7 +4,7 @@ import { m } from "framer-motion";
 const Contact = memo(() => {
   const links = [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/laurihanninen" },
-    { label: "X / Twitter", href: "https://x.com/lahannin" },
+    { label: "Twitter", href: "https://x.com/lahannin" },
     { label: "Telegram", href: "https://t.me/lahannin" },
   ];
 

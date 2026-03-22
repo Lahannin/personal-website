@@ -48,6 +48,7 @@ const Hero = () => {
     if (count >= 5 && !spinTriggered) {
       setSpinTriggered(true);
       setHaloScale(0);
+      sessionStorage.setItem("secretReturnSection", "hero-heading");
       setTimeout(() => setFadeOut(true), 200);
       setTimeout(() => {
         document.documentElement.style.backgroundColor = '#F7931A';

@@ -14,11 +14,15 @@ const BitcoinWord = forwardRef<HTMLSpanElement, { children?: string }>(
         tabIndex={0}
         onClick={(e) => {
           e.stopPropagation();
+          const section = (e.currentTarget as HTMLElement).closest("section");
+          if (section?.id) sessionStorage.setItem("secretReturnSection", section.id);
           navigate("/secret");
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
+            const section = (e.currentTarget as HTMLElement).closest("section");
+            if (section?.id) sessionStorage.setItem("secretReturnSection", section.id);
             navigate("/secret");
           }
         }}

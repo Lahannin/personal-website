@@ -175,9 +175,13 @@ const Experience = memo(() => {
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const toggleCompany = useCallback((index: number) => {
-    setExpandedCompany(prev => {
-      if (prev === index) return null;
-      // Scroll into view after expand animation settles
+    // Closing the currently open company — just close, no scroll
+    if (expandedCompany === index) {
+      setExpandedCompany(null);
+      return;
+    }
+
+    const scrollThenOpen = (delay: number) => {
       setTimeout(() => {
         const el = rowRefs.current[index];
         if (el) {
@@ -186,10 +190,20 @@ const Experience = memo(() => {
           const top = el.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top, behavior: "smooth" });
         }
-      }, 350);
-      return index;
-    });
-  }, []);
+        // Open after scroll has started
+        setTimeout(() => setExpandedCompany(index), 120);
+      }, delay);
+    };
+
+    if (expandedCompany !== null) {
+      // Another company is open — close it first, wait for collapse, then scroll & open
+      setExpandedCompany(null);
+      scrollThenOpen(320);
+    } else {
+      // Nothing open — scroll to target then open
+      scrollThenOpen(0);
+    }
+  }, [expandedCompany]);
 
   const hasCurrent = (company: Company) => company.roles.some(r => r.current);
 

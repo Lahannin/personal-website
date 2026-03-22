@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { m, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 interface FloatingBitcoin {
@@ -95,18 +95,18 @@ const Hero = () => {
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
       </div>
 
-      <motion.div style={{ opacity }} className="container relative z-10 px-6">
-        <motion.div
+      <m.div style={{ opacity }} className="container relative z-10 px-6">
+        <m.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="max-w-5xl mx-auto text-center"
         >
           {/* Profile photo with all your hover effects preserved */}
-          <motion.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
+          <m.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
               <div className="relative group flex items-center justify-center" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
               {/* Outer soft glow — scales up with clicks */}
-              <motion.div
+              <m.div
                 className="absolute w-44 h-44 md:w-52 md:h-52 rounded-full pointer-events-none"
                 animate={{
                   scale: haloScale > 0 ? 1 + haloScale * 0.25 : 0,
@@ -122,7 +122,7 @@ const Hero = () => {
                 }}
               />
               {/* Inner ring glow — hugs the photo edge */}
-              <motion.div
+              <m.div
                 className="absolute w-44 h-44 md:w-52 md:h-52 rounded-full pointer-events-none"
                 animate={{
                   scale: haloScale > 0 ? 1 + haloScale * 0.12 : 0,
@@ -134,7 +134,7 @@ const Hero = () => {
                   filter: 'blur(4px)',
                 }}
               />
-              <motion.div
+              <m.div
                 key={spinTriggered ? "spin" : shakeKey}
                 animate={spinTriggered 
                   ? { rotate: 360, scale: 0, opacity: 0 } 
@@ -157,11 +157,11 @@ const Hero = () => {
                   fetchPriority="high"
                   decoding="sync"
                 />
-              </motion.div>
+              </m.div>
               {/* Floating Bitcoin logos on click */}
               <AnimatePresence>
                 {floatingBitcoins.map(b => (
-                  <motion.span
+                  <m.span
                     key={b.id}
                     initial={{ opacity: 1, y: 0, scale: 0.7 }}
                     animate={{ opacity: 0, y: -260, scale: 1.4 }}
@@ -179,11 +179,11 @@ const Hero = () => {
                     }}
                   >
                     ₿
-                  </motion.span>
+                  </m.span>
                 ))}
               </AnimatePresence>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Name — no framer-motion animation to avoid non-composited paint */}
           <h1
@@ -201,16 +201,16 @@ const Hero = () => {
           </p>
           
           {/* Location details */}
-          <motion.div
+          <m.div
             variants={itemVariants}
             className="flex items-center justify-center gap-2 text-muted-foreground mb-14"
           >
             <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span className="font-mono text-xs tracking-wider">Prague 🇨🇿 · Finnish origins 🇫🇮</span>
-          </motion.div>
+          </m.div>
 
           {/* All CTA buttons restored */}
-          <motion.div
+          <m.div
             variants={itemVariants}
             className="flex flex-row items-center justify-center gap-4 sm:gap-5"
           >
@@ -219,13 +219,13 @@ const Hero = () => {
               className="group px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-foreground text-background font-bold rounded-lg shadow-lg hover:shadow-highlight/20 hover:scale-[1.03] transition-all duration-300 text-base sm:text-lg tracking-tight"
             >
               About Me
-              <motion.span
+              <m.span
                 animate={{ y: [0, 3, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                 className="ml-2 inline-flex"
               >
                 <ArrowDown className="w-4 h-4" />
-              </motion.span>
+              </m.span>
             </a>
             <a
               href="#contact"
@@ -233,13 +233,13 @@ const Hero = () => {
             >
               Get in Touch
             </a>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
 
       {/* Full-screen fade-out overlay */}
       {fadeOut && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}

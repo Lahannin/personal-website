@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
 
 const sectionIds = ["about", "meetups", "products", "experience", "skills", "articles", "contact"];
@@ -70,13 +70,12 @@ const Navigation = () => {
 
   return (
     <header>
-      <LazyMotion features={domAnimation}>
-        <nav
-          aria-label="Main navigation"
-          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-            isScrolled || isMobileMenuOpen ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
-          }`}
-        >
+      <nav
+        aria-label="Main navigation"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || isMobileMenuOpen ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
+        }`}
+      >
           {/* Scroll progress bar */}
           <m.div
             className="absolute top-0 left-0 h-[2px] bg-highlight origin-left z-10"
@@ -190,8 +189,7 @@ const Navigation = () => {
               )}
             </AnimatePresence>
           </div>
-        </nav>
-      </LazyMotion>
+      </nav>
     </header>
   );
 };

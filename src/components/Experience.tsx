@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { memo, useState, useRef, useCallback } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
@@ -170,7 +170,7 @@ const companies: Company[] = [
   },
 ];
 
-const Experience = () => {
+const Experience = memo(() => {
   const [expandedCompany, setExpandedCompany] = useState<number | null>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -364,6 +364,8 @@ const Experience = () => {
       </div>
     </section>
   );
-};
+});
+
+Experience.displayName = "Experience";
 
 export default Experience;

@@ -68,7 +68,7 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   build: {
     modulePreload: {
-      polyfill: true,
+      polyfill: false,
     },
     rollupOptions: {
       output: {

@@ -29,10 +29,16 @@ const Index = () => {
 
           <Suspense fallback={null}>
             <About />
+          </Suspense>
+          <Suspense fallback={null}>
             <MeetupGallery />
             <Products />
+          </Suspense>
+          <Suspense fallback={null}>
             <Experience />
             <Skills />
+          </Suspense>
+          <Suspense fallback={null}>
             <Articles />
             <Contact />
             <Footer />

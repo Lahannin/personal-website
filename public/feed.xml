@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lauri Hänninen — Articles</title>
+    <link>https://laurihanninen.com</link>
+    <description>Articles on product marketing, Analytics as Code, Headless BI, and metric standardization by Lauri Hänninen.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Mar 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://laurihanninen.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>ABC of Product Marketing: Positioning, Messaging, and Copy Explained</title>
+      <link>https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4</link>
+      <description>Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!</description>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 GMT</pubDate>
+      <guid>https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4</guid>
+    </item>
+    <item>
+      <title>What Is Analytics as Code?</title>
+      <link>https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49</link>
+      <description>Use software engineering best practices for agile, efficient, and scalable analytics processes with analytics as code.</description>
+      <pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate>
+      <guid>https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49</guid>
+    </item>
+    <item>
+      <title>Headless BI: Metric Standardization in Action</title>
+      <link>https://lahannin.medium.com/headless-bi-metric-standardization-in-action-afb2ac7e89b6</link>
+      <description>Read how various data tools can access a headless BI platform, consume the same metrics, and achieve consistent results.</description>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 GMT</pubDate>
+      <guid>https://lahannin.medium.com/headless-bi-metric-standardization-in-action-afb2ac7e89b6</guid>
+    </item>
+    <item>
+      <title>Analytics as Code: Managing Analytics Solutions Like Any Other Software</title>
+      <link>https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61</link>
+      <description>It's time to turn our analytics into an easy-to-manage, reusable piece of code while leveraging software development best practices.</description>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
+      <guid>https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61</guid>
+    </item>
+    <item>
+      <title>Danger Zone: Inconsistent Metrics at Work</title>
+      <link>https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4</link>
+      <description>If we can't trust our metrics, we can't trust our data. Metric standardization ensures we avoid the danger zone of inconsistent metrics.</description>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
+      <guid>https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4</guid>
+    </item>
+    <item>
+      <title>Headless BI x Data Lakehouse</title>
+      <link>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</link>
+      <description>Replace cumbersome data pipelines and decouple analytics from the presentation layer to provide consistent metrics to all data consumers.</description>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
+      <guid>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</guid>
+    </item>
+  </channel>
+</rss>

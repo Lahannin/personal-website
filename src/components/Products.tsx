@@ -1,9 +1,10 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { memo, useRef } from "react";
 import { m, useInView } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselNavButtons from "./CarouselNavButtons";
 import CarouselProgressDots from "./CarouselProgressDots";
+import { useCarouselAutoplay } from "@/hooks/use-carousel-autoplay";
 
 const AUTOPLAY_DURATION_MS = 7000;
 
@@ -76,7 +77,7 @@ const categoryConfig = {
   services: { icon: Headset, label: "Services", accent: "hsl(var(--primary))" },
 };
 
-const Products = () => {
+const Products = memo(() => {
   const sectionRef = useRef<HTMLElement>(null);
   // On server, treat as in-view so content renders for crawlers
   const isInViewRaw = useInView(sectionRef, { once: false, amount: 0.2 });
@@ -89,91 +90,10 @@ const Products = () => {
     startIndex: 0,
   });
 
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [progressKey, setProgressKey] = useState(0);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-
-  // --- AUTOPLAY LOGIC (UPDATED TO 7S) ---
-  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
-  const initialDelayRef = useRef<ReturnType<typeof setTimeout>>();
-
-  const resetAutoplay = useCallback(() => {
-    clearTimeout(initialDelayRef.current);
-    clearInterval(autoplayRef.current);
-    autoplayRef.current = setInterval(() => {
-      if (emblaApi) emblaApi.scrollNext();
-    }, AUTOPLAY_DURATION_MS);
-  }, [emblaApi]);
-
-  // --- NAVIGATION WRAPPERS ---
-  const scrollPrev = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollPrev();
-    resetAutoplay();
-  }, [emblaApi, resetAutoplay]);
-
-  const scrollNext = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollNext();
-    resetAutoplay();
-  }, [emblaApi, resetAutoplay]);
-
-  const scrollTo = useCallback((index: number) => {
-    if (!emblaApi) return;
-    emblaApi.scrollTo(index);
-    resetAutoplay();
-  }, [emblaApi, resetAutoplay]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setProgressKey((k) => k + 1);
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
-
-  // --- TRIGGER AUTOPLAY ONLY WHEN IN VIEW ---
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    if (!isInView) {
-      clearTimeout(initialDelayRef.current);
-      clearInterval(autoplayRef.current);
-      return;
-    }
-
-    initialDelayRef.current = setTimeout(() => {
-      emblaApi.scrollNext();
-      resetAutoplay();
-    }, AUTOPLAY_DURATION_MS);
-
-    const onPointerDown = () => {
-      clearTimeout(initialDelayRef.current);
-      clearInterval(autoplayRef.current);
-    };
-
-    emblaApi.on("pointerDown", onPointerDown);
-    emblaApi.on("pointerUp", resetAutoplay);
-
-    return () => {
-      clearTimeout(initialDelayRef.current);
-      clearInterval(autoplayRef.current);
-      emblaApi.off("pointerDown", onPointerDown);
-      emblaApi.off("pointerUp", resetAutoplay);
-    };
-  }, [emblaApi, resetAutoplay, isInView]);
+  const {
+    selectedIndex, progressKey, canScrollPrev, canScrollNext,
+    scrollPrev, scrollNext, scrollTo,
+  } = useCarouselAutoplay(emblaApi, { duration: AUTOPLAY_DURATION_MS, isInView });
 
   return (
     <section 
@@ -336,6 +256,8 @@ const Products = () => {
       </div>
     </section>
   );
-};
+});
+
+Products.displayName = "Products";
 
 export default Products;

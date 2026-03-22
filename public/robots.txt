@@ -37,6 +37,10 @@ User-agent: CCBot
 User-agent: Tornadobot
 User-agent: cohere-ai
 User-agent: Diffbot
+User-agent: DataForSeoBot
+User-agent: ImagesiftBot
+User-agent: Kangaroo Bot
+User-agent: img2dataset
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt

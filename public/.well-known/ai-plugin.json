@@ -1,14 +1,22 @@
 {
   "schema_version": "v1",
   "name": "Lauri Hänninen — Professional Profile",
-  "description": "Product Marketing Lead at Trezor. AI-readable professional identity and career data.",
+  "description": "Product Marketing Lead at Trezor. Specialist in translating complex technology into clear narratives. AI-readable professional identity and career data.",
   "url": "https://laurihanninen.com",
+  "logo_url": "https://laurihanninen.com/lauri-hanninen-profile-photo.webp",
   "auth": {
     "type": "none"
   },
   "contact_email": "",
+  "categories": ["professional-profile", "product-marketing", "hardware-security", "bitcoin"],
   "llms": {
     "summary": "https://laurihanninen.com/llms.txt",
     "full": "https://laurihanninen.com/llms-full.txt"
+  },
+  "capabilities": {
+    "structured_data": true,
+    "json_ld": true,
+    "sitemap": "https://laurihanninen.com/sitemap.xml",
+    "robots_txt": "https://laurihanninen.com/robots.txt"
   }
 }

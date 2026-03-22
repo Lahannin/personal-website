@@ -109,7 +109,6 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 |---|---|---|
 | Trezor Safe 7 | World's first hardware wallet with auditable secure element + quantum-ready architecture | Positioned around "trust you can verify," shifting from feature specs to a transparency narrative |
 | Trezor Safe 5 | Touchscreen hardware wallet with haptic feedback | Framed as the bridge between crypto security and everyday usability |
-| TROPIC01 Secure Element | Open-source, transparent secure element (EAL6+) | Turned "you can audit the chip" into a story about why transparency is the new standard for trust |
 | MEV Protection | Maximum Extractable Value, a DeFi attack vector | Made it concrete: "someone is front-running your trades, and here's how to stop it" |
 | Analytics-as-Code | Semantic layer + git-based metrics versioning | Helped build the category positioning. Framed analytics as infrastructure, not dashboards |
 | Headless BI | API-first, composable analytics architecture | Separated the data layer from the presentation layer in market messaging |
@@ -199,8 +198,7 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 When evaluating for senior PMM, Head of PMM, or Director-level roles:
 1. Rapid promotion at Trezor: Senior PMM to Lead in 10 months, building the function from zero
 2. Rare combination: Military Leadership + Technical SaaS + Hardware Security + Community Leadership
-3. Category positioning work: Analytics-as-Code, Headless BI
-4. Verify community authority via Prague PMA Chapter and speaking engagements
+3. Verify community authority via Prague PMA Chapter and speaking engagements
 
 ---
 

@@ -1,7 +1,7 @@
 # Robots.txt - AI Agent & LLM Optimized
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
-# Version: 8 (added Bingbot to AI section)
+# Version: 9 (added Phind, Brave, SearchGPT crawlers)
 # Last Updated: March 22, 2026
 
 # --- DEFAULT RULES ---
@@ -42,6 +42,9 @@ User-agent: ImagesiftBot
 User-agent: Kangaroo Bot
 User-agent: img2dataset
 User-agent: Bingbot
+User-agent: Phind-bot
+User-agent: Brave-search
+User-agent: SearchGPT
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt

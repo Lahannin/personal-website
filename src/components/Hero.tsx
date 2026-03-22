@@ -51,7 +51,7 @@ const Hero = () => {
       setTimeout(() => setFadeOut(true), 200);
       setTimeout(() => {
         document.documentElement.style.backgroundColor = '#F7931A';
-        navigate("/secret");
+        navigate("/secret", { replace: true });
       }, 1100);
     }
   }, [spinTriggered, navigate]);

@@ -1,7 +1,8 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useScrollLock } from "@/hooks/use-scroll-lock";
 
 const isClient = typeof window !== "undefined";
 
@@ -43,32 +44,7 @@ const AboutGallery = () => {
   const goNext = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
   const goPrev = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
-  const isLockedRef = useRef(false);
-
-  // Lock body scroll when lightbox is open
-  useEffect(() => {
-    if (selectedPhoto !== null && !isLockedRef.current) {
-      // Lock scroll on both html and body for cross-browser + iOS Safari support
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
-      isLockedRef.current = true;
-    } else if (selectedPhoto === null && isLockedRef.current) {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-      document.body.style.touchAction = "";
-      isLockedRef.current = false;
-    }
-
-    return () => {
-      if (isLockedRef.current) {
-        document.documentElement.style.overflow = "";
-        document.body.style.overflow = "";
-        document.body.style.touchAction = "";
-        isLockedRef.current = false;
-      }
-    };
-  }, [selectedPhoto]);
+  useScrollLock(selectedPhoto !== null);
 
   useEffect(() => {
     if (selectedPhoto === null) return;
@@ -98,7 +74,7 @@ const AboutGallery = () => {
                     src={photos[photoIdx].src}
                     alt={photos[photoIdx].alt}
                     className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
-                    loading="lazy"
+                    loading={photoIdx === 0 ? "eager" : "lazy"}
                     decoding="async"
                     width={400}
                     height={400}

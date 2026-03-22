@@ -73,7 +73,7 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {highlights.map((item, index) => (
               <div
-                key={index}
+                key={item.title}
                 className="bg-secondary/30 rounded-2xl p-6 hover:-translate-y-1 hover:bg-secondary/50 transition-all duration-300 group animate-fade-up"
                 style={{ animationDelay: `${index * 120}ms` }}
               >

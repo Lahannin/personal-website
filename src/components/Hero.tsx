@@ -152,7 +152,7 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                   width={208}
                   height={208}
-                  sizes="176px"
+                  sizes="(max-width: 768px) 176px, 208px"
                   loading="eager"
                   fetchPriority="high"
                   decoding="sync"
@@ -168,6 +168,7 @@ const Hero = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.4, ease: "easeOut" }}
                     className="absolute pointer-events-none select-none font-black"
+                    aria-hidden="true"
                     style={{
                       left: b.x,
                       top: b.y,

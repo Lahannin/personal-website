@@ -85,7 +85,7 @@ const Articles = () => {
           <div className="grid gap-6 md:grid-cols-2">
             {articles.map((article, index) => (
               <motion.article
-                key={index}
+                key={article.url}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}

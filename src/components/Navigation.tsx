@@ -14,16 +14,22 @@ const Navigation = () => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    let rafId: number;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      // Calculate scroll progress
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollHeight > 0) {
-        setScrollProgress(Math.min(window.scrollY / scrollHeight, 1));
-      }
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50);
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollHeight > 0) {
+          setScrollProgress(Math.min(window.scrollY / scrollHeight, 1));
+        }
+      });
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   // Track which section is currently in view

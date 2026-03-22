@@ -84,7 +84,7 @@ const Skills = () => {
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
               {allSkills.map((skill, index) => (
                 <motion.span
-                  key={index}
+                  key={skill}
                   variants={{
                     hidden: { opacity: 0 },
                     visible: { opacity: 1, transition: { duration: 0.2 } },
@@ -111,7 +111,7 @@ const Skills = () => {
           </motion.div>
 
           {/* Divider */}
-          <div className="w-12 h-px bg-border mx-auto mb-16" />
+          <div className="w-12 h-px bg-border mx-auto mb-16" aria-hidden="true" />
 
           {/* Certifications as a clean list */}
           <motion.div
@@ -127,7 +127,7 @@ const Skills = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl mx-auto">
               {certifications.map((cert, index) => (
                 <motion.div
-                  key={index}
+                  key={cert.name}
                   initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -159,7 +159,7 @@ const Skills = () => {
           </motion.div>
 
           {/* Divider */}
-          <div className="w-12 h-px bg-border mx-auto mb-16" />
+          <div className="w-12 h-px bg-border mx-auto mb-16" aria-hidden="true" />
 
           {/* Education */}
           <motion.div
@@ -175,7 +175,7 @@ const Skills = () => {
             <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
               {educationData.map((edu, index) => (
                 <motion.div
-                  key={index}
+                  key={edu.institution}
                   initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

@@ -240,7 +240,7 @@ const Experience = () => {
               const isExpanded = expandedCompany === index;
               return (
                 <motion.div
-                  key={index}
+                  key={company.name}
                   ref={(el: HTMLDivElement | null) => { rowRefs.current[index] = el; }}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -251,6 +251,8 @@ const Experience = () => {
                   <button
                     onClick={() => toggleCompany(index)}
                     className="w-full text-left py-5 flex items-center gap-5 group transition-colors duration-200 hover:bg-secondary/30 -mx-4 px-4 rounded-lg"
+                    aria-expanded={isExpanded}
+                    aria-controls={`experience-panel-${index}`}
                   >
                     {/* Date */}
                     <span className={`font-mono text-xs w-[140px] shrink-0 hidden sm:block ${
@@ -303,6 +305,7 @@ const Experience = () => {
                   <AnimatePresence>
                     {isExpanded && (
                       <motion.div
+                        id={`experience-panel-${index}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -328,7 +331,7 @@ const Experience = () => {
                           )}
                           <div className="space-y-3">
                             {company.roles.map((role, ri) => (
-                              <div key={ri} className="bg-secondary/20 rounded-xl p-4">
+                              <div key={role.title} className="bg-secondary/20 rounded-xl p-4">
                                 <div className="flex flex-wrap items-center gap-2 mb-1">
                                   <span className="font-semibold text-sm text-foreground">{role.title}</span>
                                   {role.current && (

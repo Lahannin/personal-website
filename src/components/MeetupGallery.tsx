@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import { useScrollLock } from "@/hooks/use-scroll-lock";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -32,31 +33,7 @@ const MeetupGallery = () => {
   const goNextPhoto = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
   const goPrevPhoto = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
-  const isLockedRef = useRef(false);
-
-  // Lock body scroll when lightbox is open
-  useEffect(() => {
-    if (selectedPhoto !== null && !isLockedRef.current) {
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
-      isLockedRef.current = true;
-    } else if (selectedPhoto === null && isLockedRef.current) {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-      document.body.style.touchAction = "";
-      isLockedRef.current = false;
-    }
-
-    return () => {
-      if (isLockedRef.current) {
-        document.documentElement.style.overflow = "";
-        document.body.style.overflow = "";
-        document.body.style.touchAction = "";
-        isLockedRef.current = false;
-      }
-    };
-  }, [selectedPhoto]);
+  useScrollLock(selectedPhoto !== null);
 
   // --- AUTOPLAY LOGIC ---
   const autoplayRef = useRef<ReturnType<typeof setInterval>>();
@@ -229,7 +206,7 @@ const MeetupGallery = () => {
                             src={photo.src}
                             alt={photo.alt}
                             className="w-full aspect-[4/3] object-cover"
-                            loading="lazy"
+                            loading={index === 0 ? "eager" : "lazy"}
                             decoding="async"
                             width={967}
                             height={725}

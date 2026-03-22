@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const bitcoinCursor = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="18" font-size="18" fill="%23F7931A">₿</text></svg>') 12 12, pointer`;
@@ -7,6 +7,12 @@ const BitcoinWord = forwardRef<HTMLSpanElement, { children?: string }>(
   ({ children = "Bitcoin" }, ref) => {
     const navigate = useNavigate();
 
+    const goToSecret = useCallback((el: HTMLElement) => {
+      const section = el.closest("section");
+      if (section?.id) sessionStorage.setItem("secretReturnSection", section.id);
+      navigate("/secret");
+    }, [navigate]);
+
     return (
       <span
         ref={ref}
@@ -14,16 +20,12 @@ const BitcoinWord = forwardRef<HTMLSpanElement, { children?: string }>(
         tabIndex={0}
         onClick={(e) => {
           e.stopPropagation();
-          const section = (e.currentTarget as HTMLElement).closest("section");
-          if (section?.id) sessionStorage.setItem("secretReturnSection", section.id);
-          navigate("/secret");
+          goToSecret(e.currentTarget as HTMLElement);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            const section = (e.currentTarget as HTMLElement).closest("section");
-            if (section?.id) sessionStorage.setItem("secretReturnSection", section.id);
-            navigate("/secret");
+            goToSecret(e.currentTarget as HTMLElement);
           }
         }}
         style={{ cursor: bitcoinCursor }}

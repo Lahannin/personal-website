@@ -10,27 +10,6 @@ interface FloatingBitcoin {
   size: number;
 }
 
-// Static animation variants — defined outside component to avoid recreation each render
-const containerVariants = {
-  visible: {
-    transition: {
-      staggerChildren: 0.04,
-      delayChildren: 0,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
 const getBitcoinCursor = (size: number) =>
   `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><text y="${size * 0.75}" font-size="${size * 0.75}" fill="%23F7931A">₿</text></svg>') ${size / 2} ${size / 2}, pointer`;
 
@@ -96,14 +75,9 @@ const Hero = () => {
       </div>
 
       <m.div style={{ opacity }} className="container relative z-10 px-6">
-        <m.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-5xl mx-auto text-center"
-        >
+        <div className="max-w-5xl mx-auto text-center">
           {/* Profile photo with all your hover effects preserved */}
-          <m.div variants={itemVariants} className="flex justify-center mb-10 -mt-8 md:mt-20">
+          <div className="flex justify-center mb-10 -mt-8 md:mt-20">
               <div className="relative group flex items-center justify-center" onClick={handlePhotoClick} style={{ cursor: getBitcoinCursor(cursorSize) }}>
               {/* Outer soft glow — scales up with clicks */}
               <m.div
@@ -183,7 +157,7 @@ const Hero = () => {
                 ))}
               </AnimatePresence>
             </div>
-          </m.div>
+          </div>
 
           {/* Name — no framer-motion animation to avoid non-composited paint */}
           <h1
@@ -201,17 +175,15 @@ const Hero = () => {
           </p>
           
           {/* Location details */}
-          <m.div
-            variants={itemVariants}
+          <div
             className="flex items-center justify-center gap-2 text-muted-foreground mb-14"
           >
             <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span className="font-mono text-xs tracking-wider">Prague 🇨🇿 · Finnish origins 🇫🇮</span>
-          </m.div>
+          </div>
 
           {/* All CTA buttons restored */}
-          <m.div
-            variants={itemVariants}
+          <div
             className="flex flex-row items-center justify-center gap-4 sm:gap-5"
           >
             <a
@@ -233,8 +205,8 @@ const Hero = () => {
             >
               Get in Touch
             </a>
-          </m.div>
-        </m.div>
+          </div>
+        </div>
       </m.div>
 
       {/* Full-screen fade-out overlay */}

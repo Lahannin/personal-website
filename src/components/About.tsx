@@ -8,8 +8,8 @@ const About = () => {
   const highlights = [
        {
       icon: Clock,
-      title: "10+ Years Across Tech",
-      description: "B2B SaaS, hardware, crypto, analytics, agencies, and startups.",
+      title: "10+ years in tech",
+      description: "Across B2B SaaS, B2C hardware, crypto, analytics, and startups.",
          },
     {
       icon: Rocket,
@@ -18,7 +18,7 @@ const About = () => {
       },
     {
       icon: Users,
-      title: "PMM Community Builder",
+      title: "PMM community builder",
       description: "Founded the first Product Marketing Alliance chapter in Prague.",
       },
   ];

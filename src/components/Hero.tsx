@@ -144,7 +144,7 @@ const Hero = () => {
                   ? { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }
                   : { duration: 0.4, ease: "easeOut" }
                 }
-                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/20 dark:border-border/40 shadow-sm overflow-hidden group-hover:shadow-lg group-hover:shadow-highlight/10 group-hover:border-highlight/30 transition-[box-shadow,border-color] duration-500"
+                className="relative w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary dark:bg-transparent border-4 border-border/20 dark:border-border/40 shadow-sm overflow-hidden group-hover:shadow-lg group-hover:shadow-highlight/10 group-hover:border-highlight/30 transition-shadow duration-500"
               >
                 <img 
                   src="/lauri-hanninen-profile-photo.webp" 
@@ -229,7 +229,7 @@ const Hero = () => {
             </a>
             <a
               href="#contact"
-              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-transparent text-foreground font-bold rounded-lg border-2 border-foreground/20 hover:border-highlight hover:text-highlight hover:scale-[1.03] transition-[transform,color,border-color] duration-300 text-base sm:text-lg tracking-tight"
+              className="px-8 sm:px-10 py-4 sm:py-5 min-h-[52px] flex items-center justify-center bg-transparent text-foreground font-bold rounded-lg border-2 border-foreground/20 hover:border-highlight hover:text-highlight hover:scale-[1.03] transition-transform duration-300 text-base sm:text-lg tracking-tight"
             >
               Get in Touch
             </a>

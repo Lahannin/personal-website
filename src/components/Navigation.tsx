@@ -77,7 +77,7 @@ const Navigation = () => {
     <header>
       <nav
         aria-label="Main navigation"
-        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,box-shadow,border-color] duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,box-shadow] duration-300 ${
           isScrolled || isMobileMenuOpen ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
         }`}
       >
@@ -132,7 +132,7 @@ const Navigation = () => {
                 <button
                   onClick={toggleDark}
                   aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                  className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-highlight rounded-lg transition-colors"
+                  className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-highlight rounded-lg"
                 >
                   <AnimatePresence mode="wait" initial={false}>
                     <m.span
@@ -149,7 +149,7 @@ const Navigation = () => {
                 </button>
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg transition-colors"
+                  className="p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
                   aria-expanded={isMobileMenuOpen}
                   aria-controls="mobile-menu"
                   aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}

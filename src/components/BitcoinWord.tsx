@@ -11,7 +11,6 @@ const BitcoinWord = forwardRef<HTMLSpanElement, { children?: string }>(
       <span
         ref={ref}
         onClick={(e) => {
-          e.preventDefault();
           e.stopPropagation();
           navigate("/secret");
         }}

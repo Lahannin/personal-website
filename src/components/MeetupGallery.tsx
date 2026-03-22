@@ -29,18 +29,14 @@ const MeetupGallery = () => {
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const [swipeDirection, setSwipeDirection] = useState(0);
-  const dragStartX = useRef(0);
-
   const goNextPhoto = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
   const goPrevPhoto = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
-  const scrollYRef = useRef(0);
   const isLockedRef = useRef(false);
 
   // Lock body scroll when lightbox is open
   useEffect(() => {
     if (selectedPhoto !== null && !isLockedRef.current) {
-      scrollYRef.current = window.scrollY;
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
@@ -315,7 +311,6 @@ const MeetupGallery = () => {
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.2}
-              onDragStart={(_e, info) => { dragStartX.current = info.point.x; }}
               onDragEnd={(_e, info) => {
                 if (info.offset.x < -50 || info.velocity.x < -300) goNextPhoto();
                 else if (info.offset.x > 50 || info.velocity.x > 300) goPrevPhoto();

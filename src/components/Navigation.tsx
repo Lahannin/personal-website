@@ -32,6 +32,11 @@ const Navigation = () => {
     };
   }, []);
 
+  // Persist the last visible section so the secret page can return here
+  useEffect(() => {
+    if (activeSection) sessionStorage.setItem('secretReturnSection', activeSection);
+  }, [activeSection]);
+
   // Track which section is currently in view
   useEffect(() => {
     if (typeof window === "undefined") return;

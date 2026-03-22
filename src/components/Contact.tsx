@@ -45,8 +45,6 @@ const Contact = memo(() => {
       </div>
     </section>
   );
-};
-
 });
 
 Contact.displayName = "Contact";

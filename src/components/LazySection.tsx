@@ -37,8 +37,6 @@ const LazySection = memo(({ children, rootMargin = "200px", className, minHeight
       {isVisible ? children : null}
     </div>
   );
-};
-
 });
 
 LazySection.displayName = "LazySection";

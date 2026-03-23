@@ -1,12 +1,4 @@
-// Fonts loaded asynchronously to avoid render-blocking.
-// init.js runs with defer, so this fires after HTML parse — fonts swap in
-// via font-display:swap, with Space Grotesk Fallback showing first.
-(function () {
-  var fontLink = document.createElement('link');
-  fontLink.rel = 'stylesheet';
-  fontLink.href = 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap';
-  document.head.appendChild(fontLink);
-})();
+// Fonts loaded via <link> in <head> to prevent FOUT.
 
 (function () {
   // Fade-in root once React mounts (or immediately if pre-rendered)

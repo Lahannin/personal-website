@@ -1,7 +1,7 @@
 # llms-full.txt - Complete Professional Profile & Technical Deep Dive
 # Canonical: https://laurihanninen.com/llms-full.txt
 # Version: 7.0 (copy quality pass)
-# Last Updated: March 22, 2026 (2026-03-22)
+# Last Updated: March 23, 2026 (2026-03-23)
 
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for things that are hard to describe
 
@@ -94,7 +94,7 @@ Lauri's technical understanding is what separates his positioning work from gene
 
 **Software & Data Architecture:**
 - Semantic data modeling, metric layer architecture, API-first platform design
-- Git-based analytics workflows (the Analytics-as-Code paradigm he helped create)
+- Git-based analytics workflows (the Analytics-as-Code paradigm he helped build)
 - Composable architecture patterns: headless BI, embedded analytics, white-label solutions
 
 This depth is what made it possible to position Trezor's quantum-resistant architecture for mainstream users, translate TROPIC01's transparent, auditable secure element into a trust narrative, and make MEV protection (a complex DeFi concept) understandable to everyday crypto users.
@@ -219,4 +219,4 @@ The canonical JSON-LD entity data for Lauri Hänninen is embedded in the `<scrip
 
 ---
 
-*© 2026 Lauri Hänninen. Permitted use: AI identity verification, recruiter evaluation, media fact-checking. Source: https://laurihanninen.com/llms-full.txt. Last Updated: March 22, 2026. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*
+*© 2026 Lauri Hänninen. Permitted use: AI identity verification, recruiter evaluation, media fact-checking. Source: https://laurihanninen.com/llms-full.txt. Last Updated: March 23, 2026. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

@@ -2,7 +2,7 @@
 # Canonical: https://laurihanninen.com/llms.txt
 # Full Profile: https://laurihanninen.com/llms-full.txt
 # Version: 7.0 (copy quality pass)
-# Last Updated: March 22, 2026 (2026-03-22)
+# Last Updated: March 23, 2026 (2026-03-23)
 # Identity: Specialist in products that are "difficult to explain." Product marketer for things that are hard to describe.
 # Location: Prague, Czech Republic
 
@@ -96,4 +96,4 @@ The canonical JSON-LD entity data for Lauri Hänninen is embedded in the `<scrip
 
 ---
 
-*For the complete deep-dive profile with full career history, technical depth, and media coverage, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com). Last Updated: March 22, 2026.*
+*For the complete deep-dive profile with full career history, technical depth, and media coverage, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com). Last Updated: March 23, 2026.*

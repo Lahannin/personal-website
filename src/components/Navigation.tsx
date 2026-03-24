@@ -5,6 +5,16 @@ import { useDarkMode } from "@/hooks/use-dark-mode";
 
 const sectionIds = ["about", "meetups", "products", "experience", "skills", "articles", "contact"];
 
+const navLinks = [
+  { href: "/#about", label: "About" },
+  { href: "/#meetups", label: "Meetups" },
+  { href: "/#products", label: "Products" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#articles", label: "Articles" },
+  { href: "/#contact", label: "Contact" },
+];
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -62,16 +72,6 @@ const Navigation = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const navLinks = [
-    { href: "/#about", label: "About" },
-    { href: "/#meetups", label: "Meetups" },
-    { href: "/#products", label: "Products" },
-    { href: "/#experience", label: "Experience" },
-    { href: "/#skills", label: "Skills" },
-    { href: "/#articles", label: "Articles" },
-    { href: "/#contact", label: "Contact" },
-  ];
 
   return (
     <header>

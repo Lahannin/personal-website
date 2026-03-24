@@ -1,13 +1,13 @@
 import { memo } from "react";
 import { m } from "framer-motion";
 
-const Contact = memo(() => {
-  const links = [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/laurihanninen" },
-    { label: "Twitter", href: "https://x.com/lahannin" },
-    { label: "Telegram", href: "https://t.me/lahannin" },
-  ];
+const contactLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/laurihanninen" },
+  { label: "Twitter", href: "https://x.com/lahannin" },
+  { label: "Telegram", href: "https://t.me/lahannin" },
+];
 
+const Contact = memo(() => {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="py-28 md:py-36 relative overflow-hidden" data-description="Contact Lauri Hänninen via LinkedIn (/in/laurihanninen), X (@lahannin), or Telegram (@lahannin).">
       <div className="container px-6 relative z-10">
@@ -26,7 +26,7 @@ const Contact = memo(() => {
               Happy to chat about product marketing, self-custody, open source, or any products that could use a better story.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {links.map((link) => (
+              {contactLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}

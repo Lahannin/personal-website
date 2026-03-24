@@ -51,13 +51,10 @@ const Secret = () => {
       {/* Back button */}
       <button
         onClick={() => {
-          const section = sessionStorage.getItem('secretReturnSection');
           navigate('/');
-          if (section) {
-            setTimeout(() => {
-              document.getElementById(section)?.scrollIntoView({ behavior: 'instant' });
-            }, 100);
-          }
+          setTimeout(() => {
+            window.scrollTo(0, 0);
+          }, 100);
         }}
         className="fixed top-6 left-6 text-white/70 hover:text-white transition-colors flex items-center gap-2 font-mono text-xs tracking-wider z-20"
       >

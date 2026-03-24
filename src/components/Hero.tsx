@@ -123,7 +123,6 @@ const Hero = () => {
                   height={208}
                   sizes="(max-width: 768px) 176px, 208px"
                   loading="eager"
-                  fetchPriority="high"
                   decoding="sync"
                 />
               </m.div>

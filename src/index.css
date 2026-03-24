@@ -1,4 +1,4 @@
-/* Fonts loaded via index.html link tags with display=swap */
+/* Fonts self-hosted in /public/fonts/ with inline @font-face in index.html */
 
 @tailwind base;
 @tailwind components;

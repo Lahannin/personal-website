@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Clock, Rocket, Users } from "lucide-react";
+
 import { m } from "framer-motion";
 import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";
@@ -7,21 +7,18 @@ import BitcoinWord from "./BitcoinWord";
 
 const About = memo(() => {
   const highlights = [
-       {
-      icon: Clock,
+    {
       title: "10+ years in tech",
       description: "Across B2B SaaS, B2C hardware, crypto, analytics, and startups.",
-         },
+    },
     {
-      icon: Rocket,
       title: "Founding Product Marketer",
-      description: "Built and scaled Trezor’s Product Marketing function from 0 → 5.",
-      },
+      description: "Built and scaled Trezor's Product Marketing function from 0 → 5.",
+    },
     {
-      icon: Users,
       title: "PMM community builder",
       description: "Founded the first Product Marketing Alliance chapter in Prague.",
-      },
+    },
   ];
 
   return (
@@ -43,7 +40,7 @@ const About = memo(() => {
           </m.div>
 
           {/* Bio */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-12 md:mb-20">
             <m.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +61,7 @@ const About = memo(() => {
 
             {/* Partner logos */}
             <div>
-              <LazySection minHeight="400px">
+              <LazySection minHeight="400px" className="max-md:!min-h-0">
                 <AboutGallery />
               </LazySection>
             </div>
@@ -78,9 +75,6 @@ const About = memo(() => {
                 className="bg-secondary/30 rounded-2xl p-6 hover:-translate-y-1 hover:bg-secondary/50 transition-all duration-300 group animate-fade-up"
                 style={{ animationDelay: `${index * 120}ms` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>

@@ -158,7 +158,7 @@ const Hero = () => {
             id="hero-heading"
             className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
           >
-            Jiri <span className="text-gradient">Kroulik</span>
+            Lauri <span className="text-gradient">Hänninen</span>
           </h1>
 
           {/* Tagline — LCP element: starts visible, no opacity:0 */}

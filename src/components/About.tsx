@@ -1,5 +1,4 @@
 import { memo } from "react";
-
 import { m } from "framer-motion";
 import LazySection from "./LazySection";
 import AboutGallery from "./AboutGallery";

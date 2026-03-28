@@ -51,10 +51,24 @@ const Secret = () => {
       {/* Back button */}
       <button
         onClick={() => {
-          navigate('/');
-          setTimeout(() => {
-            window.scrollTo(0, 0);
-          }, 100);
+          const returnSection = sessionStorage.getItem("secretReturnSection");
+          navigate("/");
+          if (!returnSection) {
+            setTimeout(() => window.scrollTo(0, 0), 100);
+            return;
+          }
+          // Lazy sections may not be in the DOM yet — poll until the element appears
+          let attempts = 0;
+          const tryScroll = () => {
+            const el = document.getElementById(returnSection);
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" });
+            } else if (attempts < 20) {
+              attempts++;
+              setTimeout(tryScroll, 100);
+            }
+          };
+          setTimeout(tryScroll, 100);
         }}
         className="fixed top-6 left-6 text-white/70 hover:text-white transition-colors flex items-center gap-2 font-mono text-xs tracking-wider z-20"
       >

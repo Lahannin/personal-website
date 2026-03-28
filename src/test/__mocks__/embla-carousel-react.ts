@@ -15,7 +15,7 @@ const createMockEmblaApi = () => ({
 
 export const mockEmblaApi = createMockEmblaApi();
 
-const useEmblaCarousel = (_options?: any) => {
+const useEmblaCarousel = (_options?: Record<string, unknown>) => {
   const ref = useRef<HTMLDivElement>(null);
   return [ref, mockEmblaApi] as const;
 };

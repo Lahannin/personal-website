@@ -11,7 +11,7 @@ function createMockEmblaApi() {
     canScrollNext: vi.fn(() => true),
     on: vi.fn(),
     off: vi.fn(),
-  } as any;
+  } as unknown as ReturnType<typeof import("embla-carousel-react").default>[1];
 }
 
 describe("useCarouselAutoplay", () => {

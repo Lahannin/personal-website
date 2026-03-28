@@ -28,7 +28,11 @@ interface MockIOInstance {
 }
 
 // Global list so tests can access observer instances
-(globalThis as any).__intersectionObserverInstances = [] as MockIOInstance[];
+declare global {
+  // eslint-disable-next-line no-var
+  var __intersectionObserverInstances: MockIOInstance[];
+}
+globalThis.__intersectionObserverInstances = [];
 
 class MockIntersectionObserver {
   private instance: MockIOInstance;
@@ -56,7 +60,7 @@ class MockIntersectionObserver {
         if (entries.length > 0) callback(entries);
       },
     };
-    (globalThis as any).__intersectionObserverInstances.push(this.instance);
+    globalThis.__intersectionObserverInstances.push(this.instance);
   }
 
   observe(el: Element) { this.instance.observe(el); }
@@ -65,17 +69,17 @@ class MockIntersectionObserver {
   takeRecords() { return []; }
 }
 
-globalThis.IntersectionObserver = MockIntersectionObserver as any;
+globalThis.IntersectionObserver = MockIntersectionObserver as unknown as typeof IntersectionObserver;
 
 // --- ResizeObserver mock ---
 globalThis.ResizeObserver = class {
   observe() {}
   unobserve() {}
   disconnect() {}
-} as any;
+} as unknown as typeof ResizeObserver;
 
 // --- scrollTo mock ---
-window.scrollTo = vi.fn() as any;
+window.scrollTo = vi.fn() as unknown as typeof window.scrollTo;
 
 // --- localStorage / sessionStorage polyfill for jsdom ---
 function createStorageMock(): Storage {
@@ -101,5 +105,5 @@ afterEach(() => {
   document.documentElement.style.overflow = "";
   document.body.style.overflow = "";
   document.body.style.touchAction = "";
-  (globalThis as any).__intersectionObserverInstances = [];
+  globalThis.__intersectionObserverInstances = [];
 });

@@ -12,7 +12,7 @@ describe("useInViewOnce", () => {
       useInViewOnce(ref);
     });
 
-    const instances = (globalThis as any).__intersectionObserverInstances;
+    const instances = globalThis.__intersectionObserverInstances;
     expect(instances.length).toBeGreaterThan(0);
 
     // Trigger intersection
@@ -33,7 +33,7 @@ describe("useInViewOnce", () => {
       useInViewOnce(ref);
     });
 
-    const instances = (globalThis as any).__intersectionObserverInstances;
+    const instances = globalThis.__intersectionObserverInstances;
     const observer = instances[instances.length - 1];
     observer.trigger(true);
 
@@ -51,7 +51,7 @@ describe("useInViewOnce", () => {
       useInViewOnce(ref);
     });
 
-    const instances = (globalThis as any).__intersectionObserverInstances;
+    const instances = globalThis.__intersectionObserverInstances;
     const observer = instances[instances.length - 1];
     observer.trigger(false);
 

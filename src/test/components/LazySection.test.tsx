@@ -19,7 +19,7 @@ describe("LazySection", () => {
       </LazySection>,
     );
 
-    const instances = (globalThis as any).__intersectionObserverInstances;
+    const instances = globalThis.__intersectionObserverInstances;
     const observer = instances[instances.length - 1];
 
     act(() => observer.trigger(true));
@@ -34,7 +34,7 @@ describe("LazySection", () => {
       </LazySection>,
     );
 
-    const instances = (globalThis as any).__intersectionObserverInstances;
+    const instances = globalThis.__intersectionObserverInstances;
     const observer = instances[instances.length - 1];
 
     act(() => observer.trigger(true));

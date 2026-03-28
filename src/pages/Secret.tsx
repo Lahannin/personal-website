@@ -54,27 +54,44 @@ const Secret = () => {
           const returnSection = sessionStorage.getItem("secretReturnSection");
           navigate("/");
 
-          if (!returnSection) {
+          if (!returnSection || returnSection === "hero") {
             setTimeout(() => window.scrollTo(0, 0), 100);
             return;
           }
 
           // Scroll to the section with nav offset.
-          // Lazy sections may not be in the DOM yet — poll until the element appears,
-          // then wait a frame for layout to settle before calculating position.
+          // Lazy sections may not be in the DOM yet — poll until the element appears.
+          // After finding it, we re-check position after a delay because lazy content
+          // above the target may still be loading and shifting layout.
           let attempts = 0;
+          const getTargetTop = (el: HTMLElement) => {
+            const nav = document.querySelector("nav");
+            const navHeight = nav?.offsetHeight ?? 64;
+            return el.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+          };
+
           const scrollToSection = () => {
             const el = document.getElementById(returnSection);
             if (el) {
-              // Wait for layout to fully settle (images, lazy content)
-              requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                  const nav = document.querySelector("nav");
-                  const navHeight = nav?.offsetHeight ?? 64;
-                  const top = el.getBoundingClientRect().top + window.scrollY - navHeight - 8;
-                  window.scrollTo({ top, behavior: "smooth" });
-                });
-              });
+              // First scroll to approximate position
+              window.scrollTo({ top: getTargetTop(el), behavior: "instant" as ScrollBehavior });
+              // Then re-verify after lazy content settles — layout may shift
+              // as sections above load images/content
+              let stabilizeAttempts = 0;
+              let lastTop = -1;
+              const stabilize = () => {
+                const currentTop = getTargetTop(el);
+                if (Math.abs(currentTop - lastTop) < 2 || stabilizeAttempts >= 10) {
+                  // Position is stable, do final smooth scroll
+                  window.scrollTo({ top: currentTop, behavior: "smooth" });
+                } else {
+                  lastTop = currentTop;
+                  window.scrollTo({ top: currentTop, behavior: "instant" as ScrollBehavior });
+                  stabilizeAttempts++;
+                  setTimeout(stabilize, 200);
+                }
+              };
+              setTimeout(stabilize, 300);
             } else if (attempts < 30) {
               attempts++;
               setTimeout(scrollToSection, 150);

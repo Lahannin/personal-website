@@ -54,7 +54,7 @@ const educationData = [
 ];
 
 // Hoisted motion variants to avoid re-creating objects on every render
-const staggerContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.02 } } };
+const staggerContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.04 } } };
 const fadeInVariant = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.2 } } };
 const dotVariant = { hidden: { opacity: 0, scale: 0.5 }, visible: { opacity: 1, scale: [1.4, 1], transition: { duration: 0.3 } } };
 
@@ -119,7 +119,7 @@ const Skills = memo(() => {
                   initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.2, delay: index * 0.02 }}
+                  transition={{ duration: 0.2, delay: index * 0.04 }}
                   className="group cursor-default hover:-translate-y-0.5 transition-transform duration-300 flex flex-col items-center text-center"
                 >
                   <img

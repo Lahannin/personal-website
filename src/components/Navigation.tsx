@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
+import { useScrollLock } from "@/hooks/use-scroll-lock";
+import ThemeToggle from "./ThemeToggle";
 
 const sectionIds = ["about", "meetups", "products", "experience", "skills", "articles", "contact"];
 
@@ -24,6 +26,7 @@ const Navigation = () => {
   const { isDark, toggle: toggleDark } = useDarkMode();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   useFocusTrap(mobileMenuRef, isMobileMenuOpen);
+  useScrollLock(isMobileMenuOpen);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -111,45 +114,11 @@ const Navigation = () => {
                     </a>
                   );
                 })}
-                <button
-                  onClick={toggleDark}
-                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                  className="ml-2 p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-muted-foreground hover:text-highlight border border-border/50 hover:border-highlight/40 transition-all duration-300 font-mono"
-                >
-                  <AnimatePresence mode="wait" initial={false}>
-                    <m.span
-                      key={isDark ? "sun" : "moon"}
-                      initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
-                      animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                      exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="flex items-center justify-center"
-                    >
-                      {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-                    </m.span>
-                  </AnimatePresence>
-                </button>
+                <ThemeToggle isDark={isDark} onToggle={toggleDark} />
               </div>
 
               <div className="md:hidden flex items-center gap-1">
-                <button
-                  onClick={toggleDark}
-                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                  className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-highlight rounded-lg"
-                >
-                  <AnimatePresence mode="wait" initial={false}>
-                    <m.span
-                      key={isDark ? "m-sun" : "m-moon"}
-                      initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
-                      animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                      exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="flex items-center justify-center"
-                    >
-                      {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                    </m.span>
-                  </AnimatePresence>
-                </button>
+                <ThemeToggle isDark={isDark} onToggle={toggleDark} mobile />
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className="p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"

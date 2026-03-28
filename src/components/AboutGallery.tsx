@@ -1,5 +1,6 @@
-import { useState, useCallback, useEffect } from "react";
+import { memo, useState, useCallback } from "react";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
+import { useLightboxKeyboard } from "@/hooks/use-lightbox-keyboard";
 import PhotoLightbox from "./PhotoLightbox";
 
 const photos = [
@@ -35,24 +36,14 @@ const columns: { photoIdx: number; aspect: string; imgW: number; imgH: number }[
   ],
 ];
 
-const AboutGallery = () => {
+const AboutGallery = memo(() => {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const [swipeDirection, setSwipeDirection] = useState(0);
   const goNext = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
   const goPrev = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
   useScrollLock(selectedPhoto !== null);
-
-  useEffect(() => {
-    if (selectedPhoto === null) return;
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") goNext();
-      else if (e.key === "ArrowLeft") goPrev();
-      else if (e.key === "Escape") setSelectedPhoto(null);
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedPhoto, goNext, goPrev]);
+  useLightboxKeyboard(selectedPhoto !== null, goNext, goPrev, () => setSelectedPhoto(null));
 
   return (
     <>
@@ -98,6 +89,8 @@ const AboutGallery = () => {
       />
     </>
   );
-};
+});
+
+AboutGallery.displayName = "AboutGallery";
 
 export default AboutGallery;

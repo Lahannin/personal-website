@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { m } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
@@ -5,6 +6,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const NotFound = () => {
+  useEffect(() => {
+    document.title = "Page Not Found | Lauri Hänninen";
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => { document.head.removeChild(meta); };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navigation />

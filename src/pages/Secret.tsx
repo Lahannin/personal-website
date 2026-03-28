@@ -1,11 +1,11 @@
 import { m, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useViewTransitionNavigate } from "@/hooks/use-view-transition";
 import { useRef, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Secret = () => {
-  const navigate = useNavigate();
+  const navigate = useViewTransitionNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
@@ -28,7 +28,7 @@ const Secret = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F7931A] noise-overlay"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[hsl(var(--bitcoin-orange))] noise-overlay"
     >
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

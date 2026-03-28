@@ -1,4 +1,4 @@
-import { memo, useState, useRef, useCallback } from "react";
+import { memo, useState, useRef, useCallback, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
@@ -174,6 +174,7 @@ const companies: Company[] = [
 const Experience = memo(() => {
   const [expandedCompanies, setExpandedCompanies] = useState<Set<number>>(new Set());
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const toggleCompany = useCallback((index: number) => {
     setExpandedCompanies(prev => {
@@ -183,7 +184,7 @@ const Experience = memo(() => {
       } else {
         next.add(index);
         // Scroll to the clicked row after it opens
-        setTimeout(() => {
+        scrollTimeoutRef.current = setTimeout(() => {
           const el = rowRefs.current[index];
           if (el) {
             const nav = document.querySelector("nav");
@@ -195,6 +196,13 @@ const Experience = memo(() => {
       }
       return next;
     });
+  }, []);
+
+  // Clean up scroll timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
   }, []);
 
   const hasCurrent = (company: Company) => company.roles.some(r => r.current);
@@ -241,7 +249,7 @@ const Experience = memo(() => {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.3, delay: index * 0.03 }}
+                  transition={{ duration: 0.3, delay: index * 0.04 }}
                   className="border-b border-border/20"
                 >
                   <button

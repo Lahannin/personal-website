@@ -8,8 +8,9 @@ describe("useDarkMode", () => {
     expect(result.current.isDark).toBe(false);
   });
 
-  it("reads dark from localStorage", () => {
-    localStorage.setItem("theme", "dark");
+  it("reads dark from DOM class (set by blocking script)", () => {
+    // The blocking script in index.html adds the 'dark' class before React hydrates
+    document.documentElement.classList.add("dark");
     const { result } = renderHook(() => useDarkMode());
     expect(result.current.isDark).toBe(true);
     expect(document.documentElement.classList.contains("dark")).toBe(true);
@@ -30,7 +31,7 @@ describe("useDarkMode", () => {
   });
 
   it("toggle switches back from dark to light", () => {
-    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
     const { result } = renderHook(() => useDarkMode());
     act(() => result.current.toggle());
     expect(result.current.isDark).toBe(false);

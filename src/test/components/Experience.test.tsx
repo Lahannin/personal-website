@@ -26,7 +26,7 @@ describe("Experience", () => {
   it("renders company buttons with aria-expanded", () => {
     renderWithProviders(<Experience />);
     const buttons = screen.getAllByRole("button");
-    const companyButtons = buttons.filter((b) => b.hasAttribute("aria-expanded"));
+    const companyButtons = buttons.filter((b: HTMLElement) => b.hasAttribute("aria-expanded"));
     expect(companyButtons.length).toBeGreaterThanOrEqual(1);
   });
 });

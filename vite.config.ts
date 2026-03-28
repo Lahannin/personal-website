@@ -83,6 +83,16 @@ export default defineConfig(() => ({
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },
+  test: {
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.ts",
+    coverage: {
+      provider: "v8",
+      reporter: ["text", "lcov"],
+      include: ["src/**/*.{ts,tsx}"],
+      exclude: ["src/test/**", "src/**/*.d.ts"],
+    },
+  },
   ssr: {
     noExternal: ["framer-motion", "lucide-react", "embla-carousel-react"],
   },

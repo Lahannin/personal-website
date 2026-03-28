@@ -1,19 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export function useDarkMode() {
-  // Always start with false to match SSR output and prevent hydration mismatch.
-  // The real value is synced in the first useEffect below.
-  const [isDark, setIsDark] = useState(false);
-
-  // On mount: read the actual preference and sync
-  useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    if (stored) {
-      setIsDark(stored === "dark");
-    } else {
-      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    }
-  }, []);
+  // Initialize from the DOM class set by the blocking script in index.html,
+  // so there's no flash of wrong theme.
+  const [isDark, setIsDark] = useState(
+    () => document.documentElement.classList.contains("dark"),
+  );
 
   // Apply dark mode class whenever isDark changes
   useEffect(() => {
@@ -27,5 +19,7 @@ export function useDarkMode() {
     }
   }, [isDark]);
 
-  return { isDark, toggle: () => setIsDark((prev) => !prev) };
+  const toggle = useCallback(() => setIsDark((prev) => !prev), []);
+
+  return { isDark, toggle };
 }

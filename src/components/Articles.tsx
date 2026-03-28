@@ -108,7 +108,7 @@ const Articles = memo(() => {
                             </span>
                           )}
                           <span className="font-mono text-[10px] text-muted-foreground ml-auto">
-                            {article.readMin} min read
+                            {new Date(article.date + "-01").toLocaleDateString("en-US", { month: "short", year: "numeric" })} · {article.readMin} min read
                           </span>
                         </div>
                         <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">

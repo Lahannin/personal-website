@@ -1,5 +1,6 @@
-import { memo, useState, useCallback, useEffect, useRef } from "react";
+import { memo, useState, useCallback, useRef, useEffect } from "react";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
+import { useLightboxKeyboard } from "@/hooks/use-lightbox-keyboard";
 import { m, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselNavButtons from "./CarouselNavButtons";
@@ -41,17 +42,23 @@ const MeetupGallery = memo(() => {
   const goPrevPhoto = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
 
   useScrollLock(selectedPhoto !== null);
+  useLightboxKeyboard(selectedPhoto !== null, goNextPhoto, goPrevPhoto, () => setSelectedPhoto(null));
 
+  // Swipe protection: prevent photo open during drag
+  const didDragRef = useRef(false);
   useEffect(() => {
-    if (selectedPhoto === null) return;
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") goNextPhoto();
-      else if (e.key === "ArrowLeft") goPrevPhoto();
-      else if (e.key === "Escape") setSelectedPhoto(null);
+    if (!emblaApi) return;
+    const onPointerDown = () => { didDragRef.current = false; };
+    const onPointerUp = () => {
+      didDragRef.current = emblaApi.selectedScrollSnap() !== emblaApi.previousScrollSnap();
     };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedPhoto, goNextPhoto, goPrevPhoto]);
+    emblaApi.on("pointerDown", onPointerDown);
+    emblaApi.on("pointerUp", onPointerUp);
+    return () => {
+      emblaApi.off("pointerDown", onPointerDown);
+      emblaApi.off("pointerUp", onPointerUp);
+    };
+  }, [emblaApi]);
 
   return (
     <section
@@ -107,10 +114,10 @@ const MeetupGallery = memo(() => {
                             : "border-border/50 shadow-md"
                         }`}
                         style={{
-                          opacity: isActive ? 1 : 0.5,
+                          opacity: isActive ? 1 : 0.6,
                           transform: isActive ? 'scale(1)' : 'scale(0.95)',
                         }}
-                        onClick={() => setSelectedPhoto(index)}
+                        onClick={() => { if (didDragRef.current) { didDragRef.current = false; return; } setSelectedPhoto(index); }}
                         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPhoto(index); } }}
                       >
                         <picture>

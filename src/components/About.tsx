@@ -60,14 +60,17 @@ const About = memo(() => {
           {/* Highlights */}
           <div className="grid md:grid-cols-3 gap-6">
             {highlights.map((item, index) => (
-              <div
+              <m.div
                 key={item.title}
-                className="bg-secondary/30 rounded-2xl p-6 hover:-translate-y-1 hover:bg-secondary/50 transition-all duration-300 group animate-fade-up"
-                style={{ animationDelay: `${index * 120}ms` }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1], delay: index * 0.08 }}
+                className="bg-secondary/30 rounded-2xl p-6 hover:-translate-y-1 hover:bg-secondary/50 transition-all duration-300 group"
               >
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
+              </m.div>
             ))}
           </div>
         </div>

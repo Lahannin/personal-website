@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useViewTransitionNavigate } from "@/hooks/use-view-transition";
 
 interface FloatingBitcoin {
   id: number;
@@ -13,9 +13,20 @@ interface FloatingBitcoin {
 const getBitcoinCursor = (size: number) =>
   `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><text y="${size * 0.75}" font-size="${size * 0.75}" fill="%23F7931A">₿</text></svg>') ${size / 2} ${size / 2}, pointer`;
 
+// Hoisted style objects to avoid re-creating on every render
+const glowBlobStyle = { transform: 'translateZ(0)' } as const;
+const haloOuterStyle = {
+  background: 'radial-gradient(circle, rgba(247,147,26,0.35) 0%, rgba(247,147,26,0.15) 40%, rgba(247,147,26,0.05) 70%, transparent 100%)',
+  filter: 'blur(20px)',
+} as const;
+const haloInnerStyle = {
+  background: 'radial-gradient(circle, transparent 42%, rgba(247,147,26,0.6) 50%, rgba(247,147,26,0.4) 60%, rgba(247,147,26,0.15) 75%, transparent 100%)',
+  filter: 'blur(4px)',
+} as const;
+
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const navigate = useNavigate();
+  const navigate = useViewTransitionNavigate();
   const clickCountRef = useRef(0);
   const [spinTriggered, setSpinTriggered] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
@@ -78,8 +89,8 @@ const Hero = () => {
       
       {/* Glow Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={{ transform: 'translateZ(0)' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/4 rounded-full blur-3xl" style={glowBlobStyle} />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/4 rounded-full blur-3xl" style={glowBlobStyle} />
       </div>
 
       <div className="container relative z-10 px-6">
@@ -106,10 +117,7 @@ const Hero = () => {
                   scale: { duration: 0.5, ease: "easeOut" },
                   opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
                 }}
-                style={{
-                  background: 'radial-gradient(circle, rgba(247,147,26,0.35) 0%, rgba(247,147,26,0.15) 40%, rgba(247,147,26,0.05) 70%, transparent 100%)',
-                  filter: 'blur(20px)',
-                }}
+                style={haloOuterStyle}
               />
               {/* Inner ring glow — hugs the photo edge */}
               <m.div
@@ -119,10 +127,7 @@ const Hero = () => {
                   opacity: haloScale > 0 ? 0.8 : 0,
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                style={{
-                  background: 'radial-gradient(circle, transparent 42%, rgba(247,147,26,0.6) 50%, rgba(247,147,26,0.4) 60%, rgba(247,147,26,0.15) 75%, transparent 100%)',
-                  filter: 'blur(4px)',
-                }}
+                style={haloInnerStyle}
               />
               <m.div
                 key={spinTriggered ? "spin" : shakeKey}
@@ -177,7 +182,8 @@ const Hero = () => {
           {/* Name — no framer-motion animation to avoid non-composited paint */}
           <h1
             id="hero-heading"
-            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] mb-6 leading-[0.85]"
+            className="font-black tracking-[-0.04em] mb-6 leading-[0.85]"
+            style={{ fontSize: 'clamp(3.75rem, 8vw, 8rem)' }}
           >
             Lauri <span className="text-gradient">Hänninen</span>
           </h1>
@@ -207,7 +213,8 @@ const Hero = () => {
             >
               About Me
               <m.span
-                animate={{ y: [0, 3, 0] }}
+                whileInView={{ y: [0, 3, 0] }}
+                viewport={{ once: false }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                 className="ml-2 inline-flex"
               >
@@ -230,7 +237,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 bg-[#F7931A]"
+          className="fixed inset-0 z-50 bg-[hsl(var(--bitcoin-orange))]"
         />
       )}
     </section>

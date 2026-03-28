@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
-      script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
       style-src 'self' 'unsafe-inline';
       font-src 'self';
       img-src 'self' data: https:;
@@ -25,6 +25,11 @@
     <link rel="alternate" type="text/html" title="Analytics as Code: Managing Analytics Solutions Like Any Other Software" href="https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61" />
     <link rel="alternate" type="text/html" title="Danger Zone: Inconsistent Metrics at Work" href="https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4" />
     <link rel="alternate" type="text/html" title="Headless BI x Data Lakehouse" href="https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159" />
+
+    <!-- Blocking script to prevent dark mode flash (FOUC) -->
+    <script>
+      (function(){var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches);if(d)document.documentElement.classList.add('dark')})()
+    </script>
 
     <link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-latin.woff2" crossorigin />
 
@@ -372,7 +377,6 @@
           "startDate": "2022-10-01",
           "endDate": "2022-10-01",
           "image": "https://laurihanninen.com/lauri-hanninen-profile-photo.webp",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK", "availability": "https://schema.org/InStock", "url": "https://laurihanninen.com/" },
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": { "@type": "Place", "name": "Prague", "address": { "@type": "PostalAddress", "addressLocality": "Prague", "addressCountry": "CZ" } },
@@ -386,7 +390,6 @@
           "startDate": "2025-06-19",
           "endDate": "2025-06-21",
           "image": "https://laurihanninen.com/lauri-hanninen-profile-photo.webp",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK", "availability": "https://schema.org/InStock", "url": "https://www.btcprague.com" },
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": { "@type": "Place", "name": "PVA EXPO PRAGUE", "address": { "@type": "PostalAddress", "addressLocality": "Prague", "addressCountry": "CZ" } },
@@ -680,6 +683,7 @@
 
     <link rel="dns-prefetch" href="https://region1.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://lahannin.medium.com">
 
     <style>
       /* Critical CSS: paint the hero without waiting for external stylesheet */

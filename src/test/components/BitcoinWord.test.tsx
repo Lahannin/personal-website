@@ -30,19 +30,19 @@ describe("BitcoinWord", () => {
   it("navigates to /secret on click", () => {
     renderWithProviders(<BitcoinWord />);
     fireEvent.click(screen.getByRole("button", { name: "Bitcoin" }));
-    expect(mockNavigate).toHaveBeenCalledWith("/secret");
+    expect(mockNavigate).toHaveBeenCalledWith("/secret", undefined);
   });
 
   it("navigates on Enter key", () => {
     renderWithProviders(<BitcoinWord />);
     fireEvent.keyDown(screen.getByRole("button", { name: "Bitcoin" }), { key: "Enter" });
-    expect(mockNavigate).toHaveBeenCalledWith("/secret");
+    expect(mockNavigate).toHaveBeenCalledWith("/secret", undefined);
   });
 
   it("navigates on Space key", () => {
     renderWithProviders(<BitcoinWord />);
     fireEvent.keyDown(screen.getByRole("button", { name: "Bitcoin" }), { key: " " });
-    expect(mockNavigate).toHaveBeenCalledWith("/secret");
+    expect(mockNavigate).toHaveBeenCalledWith("/secret", undefined);
   });
 
   it("stores section id in sessionStorage when inside a section", () => {

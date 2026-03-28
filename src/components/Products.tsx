@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { memo, useRef, useEffect, useCallback } from "react";
 import { m, useInView } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -96,6 +96,27 @@ const Products = memo(() => {
     scrollPrev, scrollNext, scrollTo,
   } = useCarouselAutoplay(emblaApi, { duration: AUTOPLAY_DURATION_MS, isInView });
 
+  // Swipe protection: prevent link clicks during drag
+  const didDragRef = useRef(false);
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onPointerDown = () => { didDragRef.current = false; };
+    const onPointerUp = () => {
+      // If Embla settled on a different snap, it was a drag
+      didDragRef.current = emblaApi.selectedScrollSnap() !== emblaApi.previousScrollSnap();
+    };
+    emblaApi.on("pointerDown", onPointerDown);
+    emblaApi.on("pointerUp", onPointerUp);
+    return () => {
+      emblaApi.off("pointerDown", onPointerDown);
+      emblaApi.off("pointerUp", onPointerUp);
+    };
+  }, [emblaApi]);
+
+  const handleCardClick = useCallback((e: React.MouseEvent) => {
+    if (didDragRef.current) { e.preventDefault(); didDragRef.current = false; }
+  }, []);
+
   return (
     <section 
       ref={sectionRef} 
@@ -147,9 +168,10 @@ const Products = memo(() => {
                         href={product.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={handleCardClick}
                         className="group block relative overflow-hidden rounded-2xl transition-[opacity,transform] duration-500 ease-out"
                         style={{
-                          opacity: isActive ? 1 : 0.4,
+                          opacity: isActive ? 1 : 0.6,
                           transform: isActive ? 'scale(1) translateY(0)' : 'scale(0.88) translateY(10px)',
                         }}
                       >

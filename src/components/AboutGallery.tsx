@@ -63,8 +63,11 @@ const AboutGallery = () => {
             {col.map(({ photoIdx, aspect, imgW, imgH }) => (
               <div
                 key={photoIdx}
+                role="button"
+                tabIndex={0}
                 className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
                 onClick={() => setSelectedPhoto(photoIdx)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPhoto(photoIdx); } }}
               >
                 <picture>
                   <source media="(max-width: 767px)" srcSet={photos[photoIdx].mobileSrc} />

@@ -52,6 +52,11 @@ const educationData = [
   },
 ];
 
+// Hoisted motion variants to avoid re-creating objects on every render
+const staggerContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.02 } } };
+const fadeInVariant = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.2 } } };
+const dotVariant = { hidden: { opacity: 0, scale: 0.5 }, visible: { opacity: 1, scale: [1.4, 1], transition: { duration: 0.3 } } };
+
 const Skills = memo(() => {
   return (
     <section id="skills" aria-labelledby="skills-heading" className="py-28 md:py-36 relative" data-description="Lauri Hänninen's professional skills, certifications from Product Marketing Alliance and others, and education from University of Oulu and University of Helsinki">
@@ -76,20 +81,14 @@ const Skills = memo(() => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.02 } },
-            }}
+            variants={staggerContainer}
             className="mb-16 text-center"
           >
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
               {allSkills.map((skill, index) => (
                 <m.span
                   key={skill}
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: { opacity: 1, transition: { duration: 0.2 } },
-                  }}
+                  variants={fadeInVariant}
                   className="inline"
                 >
                   <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">
@@ -100,10 +99,7 @@ const Skills = memo(() => {
                   {index < allSkills.length - 1 && (
                     <m.span
                       className="text-primary/40 mx-2 md:mx-3 inline-block"
-                      variants={{
-                        hidden: { opacity: 0, scale: 0.5 },
-                        visible: { opacity: 1, scale: [1.4, 1], transition: { duration: 0.3 } },
-                      }}
+                      variants={dotVariant}
                     >·</m.span>
                   )}
                 </m.span>

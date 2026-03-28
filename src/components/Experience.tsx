@@ -282,7 +282,7 @@ const Experience = memo(() => {
                           {company.name}
                         </h3>
                         <p className="text-sm text-muted-foreground truncate">
-                          {company.roles[0].title}
+                          {company.roles[0]?.title}
                           {company.roles.length > 1 && (
                             <span className="text-muted-foreground/60"> +{company.roles.length - 1} more</span>
                           )}

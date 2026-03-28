@@ -105,6 +105,8 @@ const MeetupGallery = memo(() => {
                       className="flex-[0_0_100%] min-w-0 md:flex-[0_0_70%] lg:flex-[0_0_55%] px-4"
                     >
                       <div
+                        role="button"
+                        tabIndex={0}
                         className={`rounded-2xl overflow-hidden border cursor-pointer will-change-[transform,opacity] transition-all duration-300 ease-in-out ${
                           isActive
                             ? "border-primary/30 shadow-2xl shadow-primary/10"
@@ -115,6 +117,7 @@ const MeetupGallery = memo(() => {
                           transform: isActive ? 'scale(1)' : 'scale(0.95)',
                         }}
                         onClick={() => setSelectedPhoto(index)}
+                        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPhoto(index); } }}
                       >
                         <picture>
                           <source media="(max-width: 767px)" srcSet={photo.mobileSrc} />

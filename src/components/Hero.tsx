@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { MapPin, ArrowDown } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -24,6 +24,19 @@ const Hero = () => {
   const [floatingBitcoins, setFloatingBitcoins] = useState<FloatingBitcoin[]>([]);
   const [haloScale, setHaloScale] = useState(0);
   const bitcoinIdRef = useRef(0);
+  const timeoutRefs = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  // Cleanup all timeouts on unmount
+  useEffect(() => {
+    return () => {
+      timeoutRefs.current.forEach(clearTimeout);
+    };
+  }, []);
+
+  const trackTimeout = (id: ReturnType<typeof setTimeout>) => {
+    timeoutRefs.current.push(id);
+    return id;
+  };
 
   const handlePhotoClick = useCallback((e: React.MouseEvent) => {
     clickCountRef.current += 1;
@@ -40,20 +53,20 @@ const Hero = () => {
       const id = bitcoinIdRef.current++;
       const size = 20 + count * 10;
       setFloatingBitcoins(prev => [...prev, { id, x, y, size }]);
-      setTimeout(() => {
+      trackTimeout(setTimeout(() => {
         setFloatingBitcoins(prev => prev.filter(b => b.id !== id));
-      }, 1200);
+      }, 1200));
     }
 
     if (count >= 5 && !spinTriggered) {
       setSpinTriggered(true);
       setHaloScale(0);
       sessionStorage.setItem("secretReturnSection", "hero-heading");
-      setTimeout(() => setFadeOut(true), 200);
-      setTimeout(() => {
+      trackTimeout(setTimeout(() => setFadeOut(true), 200));
+      trackTimeout(setTimeout(() => {
         document.documentElement.style.backgroundColor = '#F7931A';
         navigate("/secret", { replace: true });
-      }, 1100);
+      }, 1100));
     }
   }, [spinTriggered, navigate]);
   

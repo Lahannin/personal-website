@@ -2,6 +2,7 @@ import { memo } from "react";
 import { m } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
+import SectionHeader from "./SectionHeader";
 
 const allSkills = [
   "Product Marketing",
@@ -62,19 +63,9 @@ const Skills = memo(() => {
     <section id="skills" aria-labelledby="skills-heading" className="py-28 md:py-36 relative" data-description="Lauri Hänninen's professional skills, certifications from Product Marketing Alliance and others, and education from University of Oulu and University of Helsinki">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
-          {/* Section header */}
-          <m.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
-          >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// SKILLS</span>
-            <h2 id="skills-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
-              Expertise & <span className="text-gradient">Education</span>
-            </h2>
-          </m.div>
+          <SectionHeader label="SKILLS" id="skills-heading">
+            Expertise & <span className="text-gradient">Education</span>
+          </SectionHeader>
 
           {/* Skills as flowing inline text */}
           <m.div
@@ -118,7 +109,7 @@ const Skills = memo(() => {
             transition={{ duration: 0.4 }}
             className="mb-16"
           >
-            <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8">
+            <h3 className="font-mono text-xs tracking-wider text-muted-foreground text-center mb-8">
               CERTIFICATIONS
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-3xl mx-auto">
@@ -147,7 +138,7 @@ const Skills = memo(() => {
                   <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-snug">
                     {cert.name}
                   </p>
-                  <p className="mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
+                  <p className="font-mono text-[10px] md:text-xs text-muted-foreground mt-0.5">
                     {cert.org}
                   </p>
                 </m.div>
@@ -165,7 +156,7 @@ const Skills = memo(() => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
           >
-            <h3 className="mono text-xs tracking-wider text-muted-foreground text-center mb-8 flex items-center justify-center gap-2">
+            <h3 className="font-mono text-xs tracking-wider text-muted-foreground text-center mb-8 flex items-center justify-center gap-2">
               <GraduationCap className="w-4 h-4" aria-hidden="true" />
               EDUCATION
             </h3>

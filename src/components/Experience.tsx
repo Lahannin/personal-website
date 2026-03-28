@@ -2,6 +2,7 @@ import { memo, useState, useRef, useCallback } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import BitcoinWord from "./BitcoinWord";
+import SectionHeader from "./SectionHeader";
 
 interface Role {
   title: string;
@@ -225,19 +226,9 @@ const Experience = memo(() => {
     <section id="experience" aria-labelledby="experience-heading" className="py-28 md:py-36 relative" data-description="Lauri Hänninen's career journey: Product Marketing Lead at Trezor, PMA Chapter Lead in Prague, Senior Technical PMM at GoodData, Web Tagging Team Lead at Wunderman Thompson, and Client Delivery at SQN.">
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
-          {/* Section header */}
-          <m.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
-          >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// EXPERIENCE</span>
-            <h2 id="experience-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
-              Career <span className="text-gradient">Journey</span>
-            </h2>
-          </m.div>
+          <SectionHeader label="EXPERIENCE" id="experience-heading">
+            Career <span className="text-gradient">Journey</span>
+          </SectionHeader>
 
           {/* Company list */}
           <div>
@@ -335,7 +326,7 @@ const Experience = memo(() => {
                             </p>
                           )}
                           <div className="space-y-3">
-                            {company.roles.map((role, ri) => (
+                            {company.roles.map((role) => (
                               <div key={role.title} className="bg-secondary/20 rounded-xl p-4">
                                 <div className="flex flex-wrap items-center gap-2 mb-1">
                                   <span className="font-semibold text-sm text-foreground">{role.title}</span>

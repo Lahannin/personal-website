@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import CarouselNavButtons from "./CarouselNavButtons";
 import CarouselProgressDots from "./CarouselProgressDots";
 import PhotoLightbox from "./PhotoLightbox";
+import SectionHeader from "./SectionHeader";
 import { useCarouselAutoplay } from "@/hooks/use-carousel-autoplay";
 
 const AUTOPLAY_DURATION_MS = 5000;
@@ -63,21 +64,13 @@ const MeetupGallery = memo(() => {
 
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
-          <m.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
+          <SectionHeader
+            label="COMMUNITY"
+            id="meetups-heading"
+            subtitle="Building the product marketing community in Prague, one meetup at a time."
           >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// COMMUNITY</span>
-            <h2 id="meetups-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
-              Meetups I've <span className="text-gradient">Organized</span>
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Building the product marketing community in Prague, one meetup at a time.
-            </p>
-          </m.div>
+            Meetups I've <span className="text-gradient">Organized</span>
+          </SectionHeader>
 
           <m.div
             initial={{ opacity: 0, y: 15 }}
@@ -107,7 +100,8 @@ const MeetupGallery = memo(() => {
                       <div
                         role="button"
                         tabIndex={0}
-                        className={`rounded-2xl overflow-hidden border cursor-pointer will-change-[transform,opacity] transition-all duration-300 ease-in-out ${
+                        aria-label={`View photo: ${photo.alt}`}
+                        className={`rounded-2xl overflow-hidden border cursor-pointer transition-[opacity,transform,border-color,box-shadow] duration-300 ease-in-out ${
                           isActive
                             ? "border-primary/30 shadow-2xl shadow-primary/10"
                             : "border-border/50 shadow-md"
@@ -148,6 +142,10 @@ const MeetupGallery = memo(() => {
               onDotClick={scrollTo}
               itemLabel="photo"
             />
+
+            <div className="sr-only" aria-live="polite" aria-atomic="true">
+              Photo {selectedIndex + 1} of {photos.length}: {photos[selectedIndex]?.alt}
+            </div>
           </m.div>
         </div>
       </div>

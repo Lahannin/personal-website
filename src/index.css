@@ -27,8 +27,6 @@
 
     --gradient-primary: linear-gradient(135deg, hsl(220 60% 15%) 0%, hsl(220 50% 25%) 40%, hsl(10 95% 55%) 100%);
 
-    --gradient-grid: linear-gradient(transparent 1px, transparent 1px), linear-gradient(90deg, transparent 1px, transparent 1px);
-
   }
 
   .dark {
@@ -51,8 +49,6 @@
     --ring: 10 95% 58%;
 
     --gradient-primary: linear-gradient(135deg, hsl(220 15% 85%) 0%, hsl(220 30% 60%) 40%, hsl(10 95% 58%) 100%);
-
-    --gradient-grid: linear-gradient(transparent 1px, transparent 1px), linear-gradient(90deg, transparent 1px, transparent 1px);
 
   }
 }
@@ -97,13 +93,19 @@
     background-image: var(--gradient-primary);
   }
 
-  .btn-modern {
-    @apply relative overflow-hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  @media (forced-colors: active) {
+    .text-gradient {
+      background-image: none;
+      -webkit-text-fill-color: CanvasText;
+      color: CanvasText;
+    }
   }
+
   /* Grid background pattern for sections */
   .grid-bg {
-    background-image: var(--gradient-grid);
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 

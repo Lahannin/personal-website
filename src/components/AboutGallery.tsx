@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from "react";
-import { m } from "framer-motion";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
 import PhotoLightbox from "./PhotoLightbox";
 
@@ -65,6 +64,7 @@ const AboutGallery = () => {
                 key={photoIdx}
                 role="button"
                 tabIndex={0}
+                aria-label={`View photo: ${photos[photoIdx].alt}`}
                 className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
                 onClick={() => setSelectedPhoto(photoIdx)}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPhoto(photoIdx); } }}

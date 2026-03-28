@@ -1,6 +1,7 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { m } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 interface Article {
   title: string;
@@ -61,26 +62,19 @@ const articles: Article[] = [
 ];
 
 const Articles = memo(() => {
+  const [showAll, setShowAll] = useState(false);
+
   return (
     <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background" data-description="Featured articles by Lauri Hänninen on Product Marketing, Analytics as Code, Headless BI, and metric standardization. Published on Medium and GoodData Blog.">
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Section header */}
-          <m.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
+          <SectionHeader
+            label="WRITING"
+            id="articles-heading"
+            subtitle="Thoughts on product marketing, analytics, and technical topics published on Medium."
           >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// WRITING</span>
-            <h2 id="articles-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
-              Featured <span className="text-gradient">Articles</span>
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Thoughts on product marketing, analytics, and technical topics published on Medium.
-            </p>
-          </m.div>
+            Featured <span className="text-gradient">Articles</span>
+          </SectionHeader>
 
           {/* Articles grid */}
           <div className="grid gap-6 md:grid-cols-2">
@@ -91,7 +85,7 @@ const Articles = memo(() => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={index >= 4 ? "hidden md:block" : ""}
+                className={index >= 4 && !showAll ? "hidden md:block" : ""}
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <a
@@ -113,7 +107,7 @@ const Articles = memo(() => {
                               {article.publication}
                             </span>
                           )}
-                          <span className="mono text-[10px] text-muted-foreground ml-auto">
+                          <span className="font-mono text-[10px] text-muted-foreground ml-auto">
                             {article.readMin} min read
                           </span>
                         </div>
@@ -140,6 +134,17 @@ const Articles = memo(() => {
               </m.article>
             ))}
           </div>
+
+          {!showAll && (
+            <div className="md:hidden text-center mt-6">
+              <button
+                onClick={() => setShowAll(true)}
+                className="font-mono text-xs tracking-wide text-primary hover:text-primary/80 transition-colors"
+              >
+                Show {articles.length - 4} more
+              </button>
+            </div>
+          )}
 
           {/* View all link */}
           <m.div

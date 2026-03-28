@@ -9,7 +9,7 @@ interface LazySectionProps {
 
 const isServer = typeof window === "undefined";
 
-const LazySection = memo(({ children, rootMargin = "200px", className, minHeight = "200px" }: LazySectionProps) => {
+const LazySection = memo(({ children, rootMargin = "400px", className, minHeight = "200px" }: LazySectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   // On server: always render children so crawlers get content
   const [isVisible, setIsVisible] = useState(isServer);

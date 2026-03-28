@@ -1,13 +1,15 @@
 import { BrowserRouter } from "react-router-dom";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 import AppRoutes from "./AppRoutes";
 
 const App = () => (
-  <LazyMotion features={domAnimation}>
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
-  </LazyMotion>
+  <MotionConfig reducedMotion="user">
+    <LazyMotion features={domAnimation}>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </LazyMotion>
+  </MotionConfig>
 );
 
 export default App;

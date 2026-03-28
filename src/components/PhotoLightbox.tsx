@@ -1,7 +1,8 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 interface Photo {
   src: string;
@@ -21,6 +22,8 @@ interface PhotoLightboxProps {
 const DRAG_OFFSET_THRESHOLD = 50;
 const DRAG_VELOCITY_THRESHOLD = 300;
 
+const focusRing = "focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50";
+
 const PhotoLightbox = memo(({
   photos,
   selectedIndex,
@@ -29,12 +32,19 @@ const PhotoLightbox = memo(({
   onNext,
   onPrev,
 }: PhotoLightboxProps) => {
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(lightboxRef, selectedIndex !== null);
+
   if (typeof document === "undefined") return null;
 
   const content = (
     <AnimatePresence>
       {selectedIndex !== null && (
-        <motion.div
+        <m.div
+          ref={lightboxRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Photo lightbox"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -43,26 +53,26 @@ const PhotoLightbox = memo(({
         >
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-10"
+            className={`absolute top-6 right-6 text-white hover:text-highlight transition-colors z-10 rounded-full ${focusRing}`}
             aria-label="Close lightbox"
           >
             <X className="w-8 h-8" />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); onPrev(); }}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
+            className={`absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10 ${focusRing}`}
             aria-label="Previous photo"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); onNext(); }}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10"
+            className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-colors z-10 ${focusRing}`}
             aria-label="Next photo"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
-          <motion.picture
+          <m.picture
             key={selectedIndex}
             initial={{ opacity: 0, x: swipeDirection * 100, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -84,11 +94,11 @@ const PhotoLightbox = memo(({
               className="max-w-full max-h-[90vh] rounded-xl object-contain select-none"
               draggable={false}
             />
-          </motion.picture>
+          </m.picture>
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-xs text-white/60 tracking-wider z-10" aria-live="polite">
             {selectedIndex + 1} / {photos.length}
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

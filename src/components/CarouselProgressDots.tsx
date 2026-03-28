@@ -25,7 +25,7 @@ const CarouselProgressDots = memo(({
       <button
         key={`dot-${index}`}
         onClick={() => onDotClick(index)}
-        className={`relative h-2 rounded-full transition-all duration-300 overflow-hidden ${
+        className={`relative h-2 rounded-full transition-all duration-300 overflow-hidden focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2 ${
           index === selectedIndex
             ? "w-8 bg-primary/20"
             : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"

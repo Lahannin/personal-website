@@ -4,6 +4,7 @@ import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselNavButtons from "./CarouselNavButtons";
 import CarouselProgressDots from "./CarouselProgressDots";
+import SectionHeader from "./SectionHeader";
 import { useCarouselAutoplay } from "@/hooks/use-carousel-autoplay";
 
 const AUTOPLAY_DURATION_MS = 7000;
@@ -107,21 +108,13 @@ const Products = memo(() => {
 
       <div className="container px-6">
         <div className="max-w-6xl mx-auto">
-          <m.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
+          <SectionHeader
+            label="PRODUCT LAUNCHES"
+            id="products-heading"
+            subtitle="Key products I’ve helped bring to market through strategic positioning, messaging, and go-to-market execution."
           >
-            <span className="font-mono text-highlight text-[10px] font-bold tracking-[0.25em] uppercase">// PRODUCT LAUNCHES</span>
-            <h2 id="products-heading" className="text-3xl md:text-6xl font-black mt-4 tracking-[-0.03em]">
-              Products I've <span className="text-gradient">Launched</span>
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Key products I’ve helped bring to market through strategic positioning, messaging, and go-to-market execution.
-            </p>
-          </m.div>
+            Products I’ve <span className="text-gradient">Launched</span>
+          </SectionHeader>
 
           <m.div
             initial={{ opacity: 0, y: 15 }}
@@ -154,8 +147,7 @@ const Products = memo(() => {
                         href={product.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={product.name}
-                        className="group block relative overflow-hidden will-change-[transform,opacity] rounded-2xl transition-all duration-500 ease-out"
+                        className="group block relative overflow-hidden rounded-2xl transition-[opacity,transform] duration-500 ease-out"
                         style={{
                           opacity: isActive ? 1 : 0.4,
                           transform: isActive ? 'scale(1) translateY(0)' : 'scale(0.88) translateY(10px)',
@@ -177,7 +169,7 @@ const Products = memo(() => {
                               >
                                 <CategoryIcon className="w-4 h-4 transition-colors duration-300" style={{ color: categoryConfig[product.category].accent }} />
                               </div>
-                              <span className="mono text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] group-hover:text-foreground transition-colors duration-300">
+                              <span className="font-mono text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] group-hover:text-foreground transition-colors duration-300">
                                 {categoryConfig[product.category].label}
                               </span>
                               {product.badge && (
@@ -236,6 +228,10 @@ const Products = memo(() => {
               onDotClick={scrollTo}
               itemLabel="product"
             />
+
+            <div className="sr-only" aria-live="polite" aria-atomic="true">
+              Product {selectedIndex + 1} of {products.length}: {products[selectedIndex]?.name}
+            </div>
           </m.div>
 
           <m.div

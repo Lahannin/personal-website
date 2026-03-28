@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 const sectionIds = ["about", "meetups", "products", "experience", "skills", "articles", "contact"];
 
@@ -21,6 +22,8 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
   const { isDark, toggle: toggleDark } = useDarkMode();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  useFocusTrap(mobileMenuRef, isMobileMenuOpen);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -88,7 +91,15 @@ const Navigation = () => {
             transition={{ duration: 0 }}
           />
           <div className="container px-6">
-            <div className="flex items-center justify-end h-16 md:h-20">
+            <div className="flex items-center justify-between h-16 md:h-20">
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                className="font-black text-lg tracking-tight text-foreground hover:text-highlight transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md px-1"
+                aria-label="Scroll to top"
+              >
+                L<span className="text-gradient">H</span>
+              </a>
               <div className="hidden md:flex items-center gap-0.5">
                 {navLinks.map((link) => {
                   const sectionId = link.href.replace("/#", "");
@@ -162,6 +173,7 @@ const Navigation = () => {
             <AnimatePresence>
               {isMobileMenuOpen && (
                 <m.div
+                  ref={mobileMenuRef}
                   id="mobile-menu"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}

@@ -1,6 +1,8 @@
 import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const About = lazy(() => import("@/components/About"));
 const MeetupGallery = lazy(() => import("@/components/MeetupGallery"));
@@ -9,41 +11,50 @@ const Products = lazy(() => import("@/components/Products"));
 const Skills = lazy(() => import("@/components/Skills"));
 const Articles = lazy(() => import("@/components/Articles"));
 const Contact = lazy(() => import("@/components/Contact"));
-const Footer = lazy(() => import("@/components/Footer")); 
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
     <>
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg"
       >
         Skip to main content
       </a>
-      
+
       <div className="min-h-screen bg-background">
         <Navigation />
         <main id="main-content">
           {/* Hero stays outside Suspense for maximum LCP performance */}
           <Hero />
 
-          <Suspense fallback={null}>
-            <About />
-          </Suspense>
-          <Suspense fallback={null}>
-            <MeetupGallery />
-            <Products />
-          </Suspense>
-          <Suspense fallback={null}>
-            <Experience />
-            <Skills />
-          </Suspense>
-          <Suspense fallback={null}>
-            <Articles />
-            <Contact />
-            <Footer />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="min-h-[60vh]" />}>
+              <About />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="min-h-[60vh]" />}>
+              <MeetupGallery />
+              <Products />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="min-h-[60vh]" />}>
+              <Experience />
+              <Skills />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="min-h-[60vh]" />}>
+              <Articles />
+              <Contact />
+              <Footer />
+            </Suspense>
+          </ErrorBoundary>
         </main>
+        <ScrollToTop />
       </div>
     </>
   );

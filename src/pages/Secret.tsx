@@ -53,22 +53,34 @@ const Secret = () => {
         onClick={() => {
           const returnSection = sessionStorage.getItem("secretReturnSection");
           navigate("/");
+
           if (!returnSection) {
             setTimeout(() => window.scrollTo(0, 0), 100);
             return;
           }
-          // Lazy sections may not be in the DOM yet — poll until the element appears
+
+          // Scroll to the section with nav offset.
+          // Lazy sections may not be in the DOM yet — poll until the element appears,
+          // then wait a frame for layout to settle before calculating position.
           let attempts = 0;
-          const tryScroll = () => {
+          const scrollToSection = () => {
             const el = document.getElementById(returnSection);
             if (el) {
-              el.scrollIntoView({ behavior: "smooth" });
-            } else if (attempts < 20) {
+              // Wait for layout to fully settle (images, lazy content)
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  const nav = document.querySelector("nav");
+                  const navHeight = nav?.offsetHeight ?? 64;
+                  const top = el.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+                  window.scrollTo({ top, behavior: "smooth" });
+                });
+              });
+            } else if (attempts < 30) {
               attempts++;
-              setTimeout(tryScroll, 100);
+              setTimeout(scrollToSection, 150);
             }
           };
-          setTimeout(tryScroll, 100);
+          setTimeout(scrollToSection, 150);
         }}
         className="fixed top-6 left-6 text-white/70 hover:text-white transition-colors flex items-center gap-2 font-mono text-xs tracking-wider z-20"
       >

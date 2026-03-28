@@ -72,7 +72,8 @@ const Hero = () => {
     if (count >= 5 && !spinTriggered) {
       setSpinTriggered(true);
       setHaloScale(0);
-      sessionStorage.setItem("secretReturnSection", "hero-heading");
+      // Don't store a return section — hero should scroll to top
+      sessionStorage.removeItem("secretReturnSection");
       trackTimeout(setTimeout(() => setFadeOut(true), 200));
       trackTimeout(setTimeout(() => {
         document.documentElement.style.backgroundColor = '#F7931A';

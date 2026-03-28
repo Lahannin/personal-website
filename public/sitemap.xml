@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <url>
     <loc>https://laurihanninen.com/</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    
+
     <image:image>
       <image:loc>https://laurihanninen.com/og-image.png</image:loc>
       <image:title>Lauri Hänninen | Product Marketing Lead at Trezor, Prague</image:title>
       <image:caption>Lauri Hänninen — Product Marketing Lead at Trezor. Turning complex tech into stories people understand.</image:caption>
     </image:image>
-    
+
     <image:image>
       <image:loc>https://laurihanninen.com/lauri-hanninen-profile-photo.webp</image:loc>
       <image:title>Lauri Hänninen Professional Headshot</image:title>
       <image:caption>Professional photo of Lauri Hänninen, Product Marketing Lead specializing in hardware security.</image:caption>
     </image:image>
   </url>
-  
+
+  <url>
+    <loc>https://laurihanninen.com/llms.txt</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/llms-full.txt</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/feed.xml</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
 </urlset>

@@ -39,6 +39,19 @@ async function prerender() {
     fs.writeFileSync(indexHtmlPath, indexHtml);
     fs.writeFileSync(path.join(distPath, "404.html"), indexHtml);
 
+    // Auto-update sitemap lastmod dates to current build date
+    const sitemapPath = path.join(distPath, "sitemap.xml");
+    if (fs.existsSync(sitemapPath)) {
+      const today = new Date().toISOString().slice(0, 10);
+      let sitemap = fs.readFileSync(sitemapPath, "utf-8");
+      sitemap = sitemap.replace(
+        /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g,
+        `<lastmod>${today}</lastmod>`
+      );
+      fs.writeFileSync(sitemapPath, sitemap);
+      console.log(`Sitemap lastmod updated to ${today}.`);
+    }
+
     console.log("Prerender complete — crawlers will now see real HTML.");
   } catch (err) {
     console.error("Prerender failed:", err.message);

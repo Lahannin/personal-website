@@ -5,12 +5,27 @@
     <link>https://laurihanninen.com</link>
     <description>Articles on product marketing, Analytics as Code, Headless BI, and metric standardization by Lauri Hänninen.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Mar 2026 00:00:00 GMT</lastBuildDate>
+    <copyright>© 2026 Lauri Hänninen</copyright>
+    <managingEditor>lahannin (Lauri Hänninen)</managingEditor>
+    <lastBuildDate>Sat, 28 Mar 2026 00:00:00 GMT</lastBuildDate>
+    <image>
+      <url>https://laurihanninen.com/lauri-hanninen-profile-photo.webp</url>
+      <title>Lauri Hänninen — Articles</title>
+      <link>https://laurihanninen.com</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
     <atom:link href="https://laurihanninen.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>ABC of Product Marketing: Positioning, Messaging, and Copy Explained</title>
       <link>https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4</link>
       <description>Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Product Marketing</category>
+      <category>Positioning</category>
+      <category>Messaging</category>
+      <category>Copywriting</category>
+      <source url="https://lahannin.medium.com">Medium</source>
       <pubDate>Sat, 01 Apr 2023 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4</guid>
     </item>
@@ -18,6 +33,11 @@
       <title>What Is Analytics as Code?</title>
       <link>https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49</link>
       <description>Use software engineering best practices for agile, efficient, and scalable analytics processes with analytics as code.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Analytics as Code</category>
+      <category>Data Analytics</category>
+      <category>Software Engineering</category>
+      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
       <pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49</guid>
     </item>
@@ -25,6 +45,11 @@
       <title>Headless BI: Metric Standardization in Action</title>
       <link>https://lahannin.medium.com/headless-bi-metric-standardization-in-action-afb2ac7e89b6</link>
       <description>Read how various data tools can access a headless BI platform, consume the same metrics, and achieve consistent results.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Headless BI</category>
+      <category>Metric Standardization</category>
+      <category>Business Intelligence</category>
+      <source url="https://medium.com/better-programming">Better Programming</source>
       <pubDate>Tue, 01 Mar 2022 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/headless-bi-metric-standardization-in-action-afb2ac7e89b6</guid>
     </item>
@@ -32,6 +57,11 @@
       <title>Analytics as Code: Managing Analytics Solutions Like Any Other Software</title>
       <link>https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61</link>
       <description>It's time to turn our analytics into an easy-to-manage, reusable piece of code while leveraging software development best practices.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Analytics as Code</category>
+      <category>Software Development</category>
+      <category>Data Management</category>
+      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
       <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61</guid>
     </item>
@@ -39,6 +69,11 @@
       <title>Danger Zone: Inconsistent Metrics at Work</title>
       <link>https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4</link>
       <description>If we can't trust our metrics, we can't trust our data. Metric standardization ensures we avoid the danger zone of inconsistent metrics.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Metric Standardization</category>
+      <category>Data Trust</category>
+      <category>Business Metrics</category>
+      <source url="https://lahannin.medium.com">Medium</source>
       <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4</guid>
     </item>
@@ -46,6 +81,11 @@
       <title>Headless BI x Data Lakehouse</title>
       <link>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</link>
       <description>Replace cumbersome data pipelines and decouple analytics from the presentation layer to provide consistent metrics to all data consumers.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Headless BI</category>
+      <category>Data Lakehouse</category>
+      <category>Composable Analytics</category>
+      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
       <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</guid>
     </item>

@@ -17,6 +17,7 @@
     "structured_data": true,
     "json_ld": true,
     "sitemap": "https://laurihanninen.com/sitemap.xml",
-    "robots_txt": "https://laurihanninen.com/robots.txt"
+    "robots_txt": "https://laurihanninen.com/robots.txt",
+    "ai_txt": "https://laurihanninen.com/ai.txt"
   }
 }

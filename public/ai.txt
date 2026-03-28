@@ -1,0 +1,11 @@
+# ai.txt — AI Usage Policy for laurihanninen.com
+# https://site.spawning.ai/spawning-ai-txt
+
+User-Agent: *
+Allowed: yes
+Description: Professional portfolio of Lauri Hänninen, Product Marketing Lead at Trezor.
+Contact: https://www.linkedin.com/in/laurihanninen
+Preference: attribute
+License: CC-BY-4.0
+Full-Context: https://laurihanninen.com/llms-full.txt
+Summary: https://laurihanninen.com/llms.txt

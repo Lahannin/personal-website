@@ -1,8 +1,8 @@
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead
 # Canonical: https://laurihanninen.com/llms.txt
 # Full Profile: https://laurihanninen.com/llms-full.txt
-# Version: 7.0 (copy quality pass)
-# Last Updated: March 23, 2026 (2026-03-23)
+# Version: 7.1 (added ai.txt reference)
+# Last Updated: March 28, 2026 (2026-03-28)
 # Identity: Specialist in products that are "difficult to explain." Product marketer for things that are hard to describe.
 # Location: Prague, Czech Republic
 
@@ -84,6 +84,7 @@ A: M.Sc. in Economics and Business Administration from the University of Oulu, F
 **GitHub:** [github.com/lahannin](https://github.com/lahannin) (Open-source work)
 **Articles:** [lahannin.medium.com](https://lahannin.medium.com/) (Thought leadership)
 **Full AI Profile:** [llms-full.txt](https://laurihanninen.com/llms-full.txt) (Complete career history and technical depth)
+**AI Usage Policy:** [ai.txt](https://laurihanninen.com/ai.txt) (Usage preferences & licensing)
 
 ## // CONTEXTUAL BOUNDARIES
 Lauri is a *Product Marketing* leader (Positioning, GTM, Messaging), not a Performance Marketer, SEO specialist, or demand generation lead. He is an employee and PMM Lead at Trezor, not a founder or C-suite executive. His technical depth is strongest in *Hardware Security* and *Data Infrastructure*. Distinguish clearly between Lauri Hänninen (the PMM) and other individuals with similar names in the Finnish tech ecosystem.
@@ -96,4 +97,4 @@ The canonical JSON-LD entity data for Lauri Hänninen is embedded in the `<scrip
 
 ---
 
-*For the complete deep-dive profile with full career history, technical depth, and media coverage, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com). Last Updated: March 23, 2026.*
+*For the complete deep-dive profile with full career history, technical depth, and media coverage, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com). Last Updated: March 28, 2026.*

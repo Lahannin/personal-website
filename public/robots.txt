@@ -1,14 +1,15 @@
 # Robots.txt - AI Agent & LLM Optimized
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
-# Version: 10 (added AI2Bot, Timpibot, SemrushBot)
-# Last Updated: March 23, 2026
+# Version: 11 (added ai.txt references)
+# Last Updated: March 28, 2026
 
 # --- DEFAULT RULES ---
 User-agent: *
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /ai.txt
 Disallow: /dist/
 Disallow: /node_modules/
 Disallow: /.git/
@@ -51,6 +52,7 @@ User-agent: SemrushBot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /ai.txt
 Allow: /.well-known/ai-plugin.json
 
 # --- SEARCH ENGINE CRAWLERS ---
@@ -71,3 +73,4 @@ Sitemap: https://laurihanninen.com/sitemap.xml
 # --- AI CONTENT POLICY ---
 # Primary AI Resource: /llms.txt (optimized summary)
 # Extended Resource: /llms-full.txt (comprehensive context)
+# AI Usage Policy: /ai.txt (usage preferences & licensing)

@@ -91,15 +91,7 @@ const Navigation = () => {
             transition={{ duration: 0 }}
           />
           <div className="container px-6">
-            <div className="flex items-center justify-between h-16 md:h-20">
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                className="font-black text-lg tracking-tight text-foreground hover:text-highlight transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md px-1"
-                aria-label="Scroll to top"
-              >
-                L<span className="text-gradient">H</span>
-              </a>
+            <div className="flex items-center justify-end h-16 md:h-20">
               <div className="hidden md:flex items-center gap-0.5">
                 {navLinks.map((link) => {
                   const sectionId = link.href.replace("/#", "");

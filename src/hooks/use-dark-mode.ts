@@ -4,7 +4,7 @@ export function useDarkMode() {
   // Initialize from the DOM class set by the blocking script in index.html,
   // so there's no flash of wrong theme.
   const [isDark, setIsDark] = useState(
-    () => document.documentElement.classList.contains("dark"),
+    () => typeof document !== "undefined" && document.documentElement.classList.contains("dark"),
   );
 
   // Apply dark mode class whenever isDark changes

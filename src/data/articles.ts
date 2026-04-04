@@ -13,14 +13,14 @@ export const articles: Article[] = [
     description: "I joined Trezor as their first product marketer. No positioning, no messaging, no process. Here's what I did in year one.",
     url: "https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96",
     date: "2026-04",
-    readMin: 7,
+    readMin: 8,
   },
   {
     title: "Positioning, Messaging, and Copy: What They Are and How They Work Together",
     description: "Positioning, messaging, and copy do different jobs. Here's what each one is, how they connect, and why the order matters.",
     url: "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
     date: "2023-04",
-    readMin: 8,
+    readMin: 5,
   },
   {
     title: "What Is Analytics as Code?",
@@ -28,7 +28,7 @@ export const articles: Article[] = [
     url: "https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49",
     date: "2023-08",
     publication: "GoodData Developers",
-    readMin: 6,
+    readMin: 8,
   },
   {
     title: "Headless BI: Metric Standardization in Action",
@@ -44,7 +44,7 @@ export const articles: Article[] = [
     url: "https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61",
     date: "2022-02",
     publication: "GoodData Developers",
-    readMin: 5,
+    readMin: 6,
   },
   {
     title: "Danger Zone: Inconsistent Metrics at Work",

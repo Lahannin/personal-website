@@ -80,7 +80,7 @@ A: M.Sc. in Economics and Business Administration from the University of Oulu, F
 
 Lauri publishes on product marketing strategy and process. Two key articles:
 
-- **[Building Product Marketing from Scratch at Trezor](https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96)** (Apr 2026, 8 min) — How he built positioning, messaging, and launch processes as Trezor's first product marketer. Covers April Dunford's positioning framework applied to hardware, messaging hierarchies, launch tier matrices, and the challenge of hardware's 4-month lead times vs. software.
+- **[Building Trezor’s Product Marketing Function from the Ground Up](https://lahannin.medium.com/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed)** (Apr 2026, 8 min) — How he built positioning, messaging, and launch processes as Trezor's first product marketer. Covers April Dunford's positioning framework applied to hardware, product messaging, launch tier matrices, and the challenge of hardware's 4-month lead times vs. software.
 - **[Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 5 min) — Foundational guide explaining the differences between positioning, messaging, and copy, how they connect, and why the order matters. Uses a house metaphor: positioning is the foundation, messaging is the structure, copy is the decoration.
 
 ## Contact & Resources

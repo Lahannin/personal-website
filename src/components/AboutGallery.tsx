@@ -66,7 +66,7 @@ const AboutGallery = memo(() => {
                     src={photos[photoIdx].src}
                     alt={photos[photoIdx].alt}
                     className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
-                    loading={photoIdx === 0 ? "eager" : "lazy"}
+                    loading="lazy"
                     decoding="async"
                     width={imgW}
                     height={imgH}

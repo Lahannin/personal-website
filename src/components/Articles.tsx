@@ -101,13 +101,8 @@ const Articles = memo(() => {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 mb-3">
-                          {article.publication && (
-                            <span className="text-xs text-muted-foreground">
-                              {article.publication}
-                            </span>
-                          )}
                           <span className="font-mono text-[10px] text-muted-foreground ml-auto">
-                            {new Date(article.date + "-01").toLocaleDateString("en-US", { month: "short", year: "numeric" })} · {article.readMin} min read
+                            {article.readMin} min read
                           </span>
                         </div>
                         <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">

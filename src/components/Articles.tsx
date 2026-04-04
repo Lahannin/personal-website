@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import { m } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import SectionHeader from "./SectionHeader";
@@ -61,7 +61,6 @@ const articles: Article[] = [
 ];
 
 const Articles = memo(() => {
-  const [showAll, setShowAll] = useState(false);
 
   return (
     <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background" data-description="Featured articles by Lauri Hänninen on Product Marketing, Analytics as Code, Headless BI, and metric standardization. Published on Medium and GoodData Blog.">
@@ -84,7 +83,7 @@ const Articles = memo(() => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={index >= 4 && !showAll ? "hidden md:block" : ""}
+                className=""
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <a
@@ -125,17 +124,6 @@ const Articles = memo(() => {
               </m.article>
             ))}
           </div>
-
-          {!showAll && (
-            <div className="md:hidden text-center mt-6">
-              <button
-                onClick={() => setShowAll(true)}
-                className="font-mono text-xs tracking-wide text-primary hover:text-primary/80 transition-colors"
-              >
-                Show {articles.length - 4} more
-              </button>
-            </div>
-          )}
 
           {/* View all link */}
           <m.div

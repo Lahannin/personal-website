@@ -11,8 +11,8 @@
   "categories": ["professional-profile", "product-marketing", "hardware-security", "bitcoin"],
   "featured_articles": [
     {
-      "title": "Building Product Marketing from Scratch at Trezor",
-      "url": "https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96",
+      "title": "Building Trezor's Product Marketing Function from the Ground Up",
+      "url": "https://medium.com/@lahannin/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed",
       "topic": "Building PMM function from zero at a hardware company",
       "date": "2026-04"
     },

@@ -9,6 +9,13 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    title: "Building Product Marketing from Scratch at Trezor",
+    description: "I joined Trezor as their first product marketer. No positioning, no messaging, no process. Here's what I did in year one.",
+    url: "https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96",
+    date: "2026-04",
+    readMin: 7,
+  },
+  {
     title: "ABC of Product Marketing: Positioning, Messaging, and Copy Explained",
     description: "Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!",
     url: "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",

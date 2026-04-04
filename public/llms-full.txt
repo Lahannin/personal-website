@@ -166,7 +166,6 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 | Headless BI: Metric Standardization in Action | Better Programming | Composable analytics architecture |
 | Analytics as Code: Managing Analytics Solutions Like Any Other Software | GoodData Developers | Git-based analytics workflows |
 | Danger Zone: Inconsistent Metrics at Work | Medium | Why metric standardization matters |
-| Headless BI x Data Lakehouse | GoodData Developers | Combining data lakehouse with headless BI |
 | Build a Headless BI Stack on Top of PostgreSQL | Dev.to | Technical implementation guide |
 
 **Developer content:** [Dev.to @lahannin](https://dev.to/lahannin), technical tutorials for developer audiences

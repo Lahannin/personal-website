@@ -89,17 +89,5 @@
       <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4</guid>
     </item>
-    <item>
-      <title>Headless BI x Data Lakehouse</title>
-      <link>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</link>
-      <description>Replace cumbersome data pipelines and decouple analytics from the presentation layer to provide consistent metrics to all data consumers.</description>
-      <author>lahannin (Lauri Hänninen)</author>
-      <category>Headless BI</category>
-      <category>Data Lakehouse</category>
-      <category>Composable Analytics</category>
-      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
-      <guid>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</guid>
-    </item>
   </channel>
 </rss>

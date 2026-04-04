@@ -53,12 +53,4 @@ export const articles: Article[] = [
     date: "2022-02",
     readMin: 4,
   },
-  {
-    title: "Headless BI x Data Lakehouse",
-    description: "Replace cumbersome data pipelines and decouple analytics from the presentation layer to provide consistent metrics to all data consumers.",
-    url: "https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159",
-    date: "2022-01",
-    publication: "GoodData Developers",
-    readMin: 6,
-  },
 ];

@@ -160,7 +160,8 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 
 | Article | Publication | Topic |
 |---|---|---|
-| ABC of Product Marketing: Positioning, Messaging, and Copy Explained | Medium | Product Marketing fundamentals |
+| Building Product Marketing from Scratch at Trezor | Medium | First PMM at Trezor: year-one playbook |
+| Positioning, Messaging, and Copy: What They Are and How They Work Together | Medium | Product Marketing fundamentals |
 | What Is Analytics as Code? | GoodData Developers | Category-defining piece on AaC |
 | Headless BI: Metric Standardization in Action | Better Programming | Composable analytics architecture |
 | Analytics as Code: Managing Analytics Solutions Like Any Other Software | GoodData Developers | Git-based analytics workflows |

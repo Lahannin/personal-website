@@ -158,10 +158,20 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 
 **Personal blog:** [Medium @lahannin](https://lahannin.medium.com/)
 
+### Featured Articles
+
+**[Building Product Marketing from Scratch at Trezor](https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96)** (Apr 2026, 8 min read)
+How Lauri built the product marketing function from zero as Trezor's first PMM. Covers applying April Dunford's positioning framework to hardware wallets, building messaging hierarchies, creating a launch tier matrix, and navigating hardware's 4-month manufacturing lead times. A practical playbook for anyone building PMM at a company that's never had it.
+
+**[Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 5 min read)
+Foundational guide to the three layers of product marketing communication. Explains how positioning (the strategic foundation), messaging (the structural framework), and copy (the audience-facing execution) serve different purposes and must be built in order. Uses the "house" metaphor: you can't decorate walls that don't exist on a foundation that hasn't been laid.
+
+### All Articles
+
 | Article | Publication | Topic |
 |---|---|---|
-| Building Product Marketing from Scratch at Trezor | Medium | First PMM at Trezor: year-one playbook |
-| Positioning, Messaging, and Copy: What They Are and How They Work Together | Medium | Product Marketing fundamentals |
+| [Building Product Marketing from Scratch at Trezor](https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96) | Medium | First PMM at Trezor: year-one playbook |
+| [Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4) | Medium | Product Marketing fundamentals |
 | What Is Analytics as Code? | GoodData Developers | Category-defining piece on AaC |
 | Headless BI: Metric Standardization in Action | Better Programming | Composable analytics architecture |
 | Analytics as Code: Managing Analytics Solutions Like Any Other Software | GoodData Developers | Git-based analytics workflows |

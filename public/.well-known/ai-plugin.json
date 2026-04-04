@@ -9,6 +9,20 @@
   },
   "contact_email": "",
   "categories": ["professional-profile", "product-marketing", "hardware-security", "bitcoin"],
+  "featured_articles": [
+    {
+      "title": "Building Product Marketing from Scratch at Trezor",
+      "url": "https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96",
+      "topic": "Building PMM function from zero at a hardware company",
+      "date": "2026-04"
+    },
+    {
+      "title": "Positioning, Messaging, and Copy: What They Are and How They Work Together",
+      "url": "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
+      "topic": "Foundational guide to product marketing communication layers",
+      "date": "2023-04"
+    }
+  ],
   "llms": {
     "summary": "https://laurihanninen.com/llms.txt",
     "full": "https://laurihanninen.com/llms-full.txt"

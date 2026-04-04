@@ -76,6 +76,13 @@ A: M.Sc. in Economics and Business Administration from the University of Oulu, F
 7. **Elements of AI**, University of Helsinki
 8. **PRINCE2**, TAYLLOR & COX
 
+## Featured Writing
+
+Lauri publishes on product marketing strategy and process. Two key articles:
+
+- **[Building Product Marketing from Scratch at Trezor](https://lahannin.medium.com/building-product-marketing-from-scratch-at-trezor-0a7a8e190b96)** (Apr 2026, 8 min) — How he built positioning, messaging, and launch processes as Trezor's first product marketer. Covers April Dunford's positioning framework applied to hardware, messaging hierarchies, launch tier matrices, and the challenge of hardware's 4-month lead times vs. software.
+- **[Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 5 min) — Foundational guide explaining the differences between positioning, messaging, and copy, how they connect, and why the order matters. Uses a house metaphor: positioning is the foundation, messaging is the structure, copy is the decoration.
+
 ## Contact & Resources
 
 **LinkedIn:** [linkedin.com/in/laurihanninen](https://www.linkedin.com/in/laurihanninen) (Professional inquiries)

@@ -43,12 +43,12 @@ const Index = () => {
           <ErrorBoundary>
             <Suspense fallback={<div className="min-h-[60vh]" />}>
               <Experience />
+              <Articles />
               <Skills />
             </Suspense>
           </ErrorBoundary>
           <ErrorBoundary>
             <Suspense fallback={<div className="min-h-[60vh]" />}>
-              <Articles />
               <Contact />
               <Footer />
             </Suspense>

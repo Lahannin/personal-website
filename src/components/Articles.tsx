@@ -113,8 +113,10 @@ const Articles = memo(() => {
                         <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
                           {article.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground line-clamp-2">
-                          {article.description}
+                        <p className="text-sm text-muted-foreground">
+                          {article.description.length > 140
+                            ? article.description.slice(0, 140) + "…"
+                            : article.description}
                         </p>
                       </div>
                       <m.div

@@ -6,15 +6,15 @@ import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
 import ThemeToggle from "./ThemeToggle";
 
-const sectionIds = ["about", "meetups", "products", "experience", "skills", "articles", "contact"];
+const sectionIds = ["about", "meetups", "products", "experience", "articles", "skills", "contact"];
 
 const navLinks = [
   { href: "/#about", label: "About" },
   { href: "/#meetups", label: "Meetups" },
   { href: "/#products", label: "Products" },
   { href: "/#experience", label: "Experience" },
-  { href: "/#skills", label: "Skills" },
   { href: "/#articles", label: "Articles" },
+  { href: "/#skills", label: "Skills" },
   { href: "/#contact", label: "Contact" },
 ];
 

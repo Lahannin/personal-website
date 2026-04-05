@@ -49,7 +49,7 @@ const ArticlesIndex = () => {
             <SectionHeader
               label="WRITING"
               id="articles-heading"
-              subtitle="Thoughts on product marketing, analytics, and technical topics — with unique 2026 perspectives."
+              subtitle="Every article includes a summary, key takeaways, and a 2026 perspective on how the ideas have held up."
             >
               All <span className="text-gradient">Articles</span>
             </SectionHeader>

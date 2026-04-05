@@ -32,21 +32,21 @@ export const articleEntries: ArticleEntry[] = [
     date: "2026-04",
     category: "Product Marketing",
     intro:
-      "This is the story of building a product marketing function from zero at Trezor, a company that had been shipping world-class hardware for over a decade without a dedicated PMM. I wrote it because the 'founding PMM' journey is rarely documented, and the lessons apply far beyond crypto.",
+      "I joined Trezor in September 2023 as their first product marketing manager. The company had shipped hardware wallets for a decade without a positioning framework, messaging hierarchy, or launch playbook. Two weeks in, we launched the Safe 3 at Bitcoin Amsterdam. This article is about what happened next: building the entire PMM function from zero, one framework at a time.",
     summary:
-      "What does it actually look like to build product marketing from scratch at a company that already has product-market fit? This article walks through the real challenges: earning trust without a track record, choosing what to systematize first, hiring your initial team, and proving value when the org has survived just fine without you.",
+      "The article walks through what it actually looks like to be a founding PMM at a hardware company. First 60 days were cross-company meetings discovering that launches ran on instinct, not process. Before building any frameworks, I had to sell the function itself, using a house metaphor (positioning is the foundation, messaging is the house, copy is the decoration). Year one produced a positioning framework adapted from April Dunford's methodology, a messaging hierarchy, and a launch tier matrix. The Safe 5 launch at BTC Prague in June 2024 was the first real proof it worked: every team operated from the same strategic story.",
     takeaways: [
-      "Start with launches, not frameworks: your first wins need to be visible and tied to revenue, not strategy decks.",
-      "Hire for ambiguity tolerance: founding PMM team members need to operate without playbooks and build them as they go.",
-      "Document everything from day one: the processes you create become the institutional knowledge that scales the function.",
+      "Sell the function before you sell the product: nobody will use your frameworks if they don't understand what product marketing actually does. The house metaphor (positioning, messaging, copy) made it click.",
+      "Hardware forces you to get it right early: packaging messaging gets locked months before launch. Unlike SaaS, you can't iterate your way out of a bad positioning call once production starts.",
+      "Trust is the real deliverable, not documents: earning engineers' time by demonstrating product knowledge and speaking their language matters more than any framework. Future PMM hires inherit whatever trust level you establish.",
     ],
     perspective2026:
-      "Writing this in real-time as it happens gives it an authenticity that retrospective 'how we built it' pieces lack. The PMM discipline is maturing rapidly, and more companies are recognizing that product marketing is the connective tissue between product, sales, and the market. The founding PMM role is becoming a recognized career path in its own right.",
+      "The same positioning process that started with Safe 3 has now been applied to Safe 5, Safe 7, Expert Onboarding services, limited editions, and dozens of feature launches over 2.5 years. The framework held up across hardware, software, and services, which I didn't expect when I first adapted April Dunford's B2B SaaS methodology for consumer hardware. The biggest lesson is that building from zero lets you define what product marketing means at your company. That's rare, and it carries real responsibility.",
     originalUrl:
       "https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6",
-    tags: ["Product Marketing", "Trezor", "Founding PMM"],
+    tags: ["Product Marketing", "Trezor", "Positioning", "Hardware"],
     description:
-      "What it actually looks like to build product marketing from zero at a company that's been shipping products for a decade without it.",
+      "How I built the PMM function from zero at Trezor: positioning framework, messaging hierarchy, launch tiers, and earning engineer trust at a hardware company.",
     readMin: 8,
   },
   {

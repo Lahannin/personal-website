@@ -14,9 +14,9 @@ interface Article {
 
 const articles: Article[] = [
   {
-    title: "Building Trezor’s Product Marketing Function from the Ground Up",
-    description: "What it was like to build Trezor's product marketing function from scratch with positioning, messaging, and launch frameworks.",
-    url: "https://medium.com/@lahannin/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed",
+    title: "Building Product Marketing From Scratch at Trezor",
+    description: "What it actually looks like to build product marketing from zero at a company that's been shipping products for a decade without it.",
+    url: "https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6",
     date: "2026-04",
     readMin: 8,
   },

@@ -52,6 +52,11 @@ async function prerender() {
           url: "https://laurihanninen.com/articles",
           type: "website",
         },
+        twitter: {
+          card: "summary",
+          title: "Articles | Lauri Hänninen",
+          description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
+        },
         jsonLd: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
@@ -83,6 +88,16 @@ async function prerender() {
                 description: article.description,
                 url: `https://laurihanninen.com/articles/${slug}`,
                 type: "article",
+                ...(article.coverImage
+                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  : {}),
+              }
+            : undefined,
+          twitter: article
+            ? {
+                card: article.coverImage ? "summary_large_image" : "summary",
+                title: `${article.title} | Lauri Hänninen`,
+                description: article.description,
                 ...(article.coverImage
                   ? { image: `https://laurihanninen.com${article.coverImage}` }
                   : {}),
@@ -157,21 +172,52 @@ async function prerender() {
         }
       }
 
-      // Inject per-page Open Graph tags
+      // Replace per-page Open Graph tags
       if (route.og) {
-        const ogTags = [
-          `<meta property="og:title" content="${route.og.title.replace(/"/g, "&quot;")}" />`,
-          `<meta property="og:description" content="${route.og.description.replace(/"/g, "&quot;")}" />`,
-          `<meta property="og:url" content="${route.og.url}" />`,
-          `<meta property="og:type" content="${route.og.type}" />`,
-          `<meta property="og:site_name" content="Lauri Hänninen" />`,
-        ];
+        html = html.replace(
+          /<meta property="og:title" content="[^"]*" \/>/,
+          `<meta property="og:title" content="${route.og.title.replace(/"/g, "&quot;")}" />`
+        );
+        html = html.replace(
+          /<meta property="og:description" content="[^"]*" \/>/,
+          `<meta property="og:description" content="${route.og.description.replace(/"/g, "&quot;")}" />`
+        );
+        html = html.replace(
+          /<meta property="og:url" content="[^"]*" \/>/,
+          `<meta property="og:url" content="${route.og.url}" />`
+        );
+        html = html.replace(
+          /<meta property="og:type" content="[^"]*" \/>/,
+          `<meta property="og:type" content="${route.og.type}" />`
+        );
         if (route.og.image) {
-          ogTags.push(`<meta property="og:image" content="${route.og.image}" />`);
-          ogTags.push(`<meta property="og:image:width" content="1200" />`);
-          ogTags.push(`<meta property="og:image:height" content="630" />`);
+          html = html.replace(
+            /<meta property="og:image" content="[^"]*" \/>/,
+            `<meta property="og:image" content="${route.og.image}" />`
+          );
         }
-        html = html.replace("</head>", `    ${ogTags.join("\n    ")}\n  </head>`);
+      }
+
+      // Replace per-page Twitter Card tags
+      if (route.twitter) {
+        html = html.replace(
+          /<meta name="twitter:card" content="[^"]*" \/>/,
+          `<meta name="twitter:card" content="${route.twitter.card}" />`
+        );
+        html = html.replace(
+          /<meta name="twitter:title" content="[^"]*" \/>/,
+          `<meta name="twitter:title" content="${route.twitter.title.replace(/"/g, "&quot;")}" />`
+        );
+        html = html.replace(
+          /<meta name="twitter:description" content="[^"]*" \/>/,
+          `<meta name="twitter:description" content="${route.twitter.description.replace(/"/g, "&quot;")}" />`
+        );
+        if (route.twitter.image) {
+          html = html.replace(
+            /<meta name="twitter:image" content="[^"]*" \/>/,
+            `<meta name="twitter:image" content="${route.twitter.image}" />`
+          );
+        }
       }
 
       // Inject per-page JSON-LD for articles

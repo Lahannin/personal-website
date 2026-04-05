@@ -66,6 +66,46 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
       ogImageEls.push(ogImageH);
     }
 
+    // Twitter Card tags
+    const twitterEls: HTMLMetaElement[] = [];
+    const twitterCard = document.createElement("meta");
+    twitterCard.name = "twitter:card";
+    twitterCard.content = article.coverImage ? "summary_large_image" : "summary";
+    document.head.appendChild(twitterCard);
+    twitterEls.push(twitterCard);
+
+    const twitterTitle = document.createElement("meta");
+    twitterTitle.name = "twitter:title";
+    twitterTitle.content = `${article.title} | Lauri Hänninen`;
+    document.head.appendChild(twitterTitle);
+    twitterEls.push(twitterTitle);
+
+    const twitterDesc = document.createElement("meta");
+    twitterDesc.name = "twitter:description";
+    twitterDesc.content = article.description;
+    document.head.appendChild(twitterDesc);
+    twitterEls.push(twitterDesc);
+
+    const twitterSite = document.createElement("meta");
+    twitterSite.name = "twitter:site";
+    twitterSite.content = "@lahannin";
+    document.head.appendChild(twitterSite);
+    twitterEls.push(twitterSite);
+
+    const twitterCreator = document.createElement("meta");
+    twitterCreator.name = "twitter:creator";
+    twitterCreator.content = "@lahannin";
+    document.head.appendChild(twitterCreator);
+    twitterEls.push(twitterCreator);
+
+    if (article.coverImage) {
+      const twitterImage = document.createElement("meta");
+      twitterImage.name = "twitter:image";
+      twitterImage.content = `https://laurihanninen.com${article.coverImage}`;
+      document.head.appendChild(twitterImage);
+      twitterEls.push(twitterImage);
+    }
+
     const jsonLd = document.createElement("script");
     jsonLd.type = "application/ld+json";
     jsonLd.textContent = JSON.stringify({
@@ -103,6 +143,7 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
       document.head.removeChild(ogType);
       document.head.removeChild(ogSiteName);
       ogImageEls.forEach((el) => document.head.removeChild(el));
+      twitterEls.forEach((el) => document.head.removeChild(el));
       document.head.removeChild(jsonLd);
     };
   }, [article]);

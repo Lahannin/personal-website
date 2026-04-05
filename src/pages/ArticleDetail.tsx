@@ -107,6 +107,10 @@ const ArticleDetail = () => {
                   {article.category}
                 </span>
                 <span className="font-mono text-xs text-muted-foreground">
+                  Lauri Hänninen
+                </span>
+                <span className="text-border">·</span>
+                <span className="font-mono text-xs text-muted-foreground">
                   {formattedDate}
                 </span>
                 <span className="text-border">·</span>

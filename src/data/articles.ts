@@ -31,6 +31,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "Medium",
     date: "2026-04",
     category: "Product Marketing",
+    coverImage: "/images/articles/building-pmm-from-scratch-at-trezor.jpeg",
     intro:
       "I joined Trezor in September 2023 as their first product marketing manager. The company had shipped hardware wallets for a decade without a positioning framework, messaging hierarchy, or launch playbook. Two weeks in, we launched the Safe 3 at Bitcoin Amsterdam. This article is about what happened next: building the entire PMM function from zero, one framework at a time.",
     summary:
@@ -55,6 +56,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "GoodData Developers",
     date: "2023-08",
     category: "Data",
+    coverImage: "/images/articles/what-is-analytics-as-code.png",
     intro:
       "I wrote this piece to distill the emerging 'as Code' movement for data teams who were still stuck in drag-and-drop BI tools. The idea that analytics pipelines deserve the same engineering rigor as application code was still controversial in 2023, but the industry has since moved decisively in that direction.",
     summary:
@@ -80,6 +82,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "Medium",
     date: "2023-04",
     category: "Product Marketing",
+    coverImage: "/images/articles/abc-product-marketing.png",
     intro:
       "I kept seeing the terms 'positioning', 'messaging', and 'copy' used interchangeably, even by experienced marketers. This article was my attempt to create a definitive, practical guide that shows how these three layers build on each other. It remains my most-shared piece because the confusion it addresses is still everywhere.",
     summary:
@@ -104,6 +107,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "Better Programming",
     date: "2022-03",
     category: "Data",
+    coverImage: "/images/articles/headless-bi-metric-standardization.jpeg",
     intro:
       "This was the practical follow-up to the theoretical case for headless BI. I wanted to show, with concrete examples, how decoupling the metric layer from visualization tools solves the 'same question, different answers' problem that plagues every data-driven organization. Better Programming gave it a wide technical audience.",
     summary:
@@ -129,6 +133,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "GoodData Developers",
     date: "2022-02",
     category: "Data",
+    coverImage: "/images/articles/analytics-as-code.png",
     intro:
       "I wrote this piece for GoodData to bridge the gap between DevOps and Data Analytics. At the time, the concept of treating analytics artifacts as manageable code was still emerging. Since publishing, 'Data as Code' has exploded, but the fundamental principles (versioning, CI/CD, and reusability) remain the core of any scalable data stack.",
     summary:
@@ -153,6 +158,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "Medium",
     date: "2022-02",
     category: "Data",
+    coverImage: "/images/articles/danger-zone-inconsistent-metrics.jpeg",
     intro:
       "This was a short, punchy piece born from frustration. I'd seen too many meetings derailed by people arguing over numbers that should have been identical. The 'danger zone' framing was deliberate. Inconsistent metrics aren't just an inconvenience, they're a threat to organizational decision-making that compounds over time.",
     summary:
@@ -177,6 +183,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "GoodData Developers",
     date: "2022-01",
     category: "Data",
+    coverImage: "/images/articles/headless-bi-data-lakehouse.png",
     intro:
       "This was my earliest published piece on headless BI, written when the data lakehouse architecture was gaining momentum. I wanted to explore what happens when you combine the decoupled analytics layer (headless BI) with the unified storage layer (data lakehouse). The result is a stack that's both flexible and consistent, which was a rare combination at the time.",
     summary:
@@ -201,6 +208,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "GoodData Developers",
     date: "2021-06",
     category: "Data",
+    coverImage: "/images/articles/dashboardview-advanced-embedded-analytics.png",
     intro:
       "This was a hands-on guide written during my time at GoodData, walking through the DashboardView React component. I wanted to demonstrate that embedded analytics doesn't have to mean sacrificing interactivity or performance, and you can get both with the right architecture.",
     summary:
@@ -225,6 +233,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "GoodData Developers",
     date: "2021-06",
     category: "Data",
+    coverImage: "/images/articles/headless-bi-postgresql.png",
     intro:
       "PostgreSQL is the database most developers already know and love. I wrote this to show that you don't need a proprietary data warehouse to build a modern, headless BI stack. A well-configured PostgreSQL instance paired with a semantic layer gets you surprisingly far.",
     summary:
@@ -249,6 +258,7 @@ export const articleEntries: ArticleEntry[] = [
     publication: "GoodData Developers",
     date: "2021-04",
     category: "Data",
+    coverImage: "/images/articles/embedded-analytics-gdui-product-marketer.png",
     intro:
       "This was a bit of a meta-experiment: could a product marketer (me) build something meaningful with GoodData's developer SDK? I wanted to prove that the tool was accessible beyond the engineering team, and writing about the experience made for an honest, relatable developer-marketing piece.",
     summary:

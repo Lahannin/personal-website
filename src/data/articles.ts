@@ -96,7 +96,7 @@ export const articleEntries: ArticleEntry[] = [
     tags: ["Product Marketing", "Positioning", "Messaging"],
     description:
       "Understand the roles of positioning, messaging, and copy and how they connect to create clear and impactful product marketing.",
-    readMin: 5,
+    readMin: 4,
   },
   {
     slug: "headless-bi-metric-standardization",
@@ -120,7 +120,7 @@ export const articleEntries: ArticleEntry[] = [
     tags: ["Headless BI", "Metrics", "Data Architecture"],
     description:
       "Read how various data tools can access a headless BI platform, consume the same metrics, and achieve consistent results.",
-    readMin: 7,
+    readMin: 6,
   },
   {
     slug: "analytics-as-code",
@@ -169,7 +169,7 @@ export const articleEntries: ArticleEntry[] = [
     tags: ["Metrics", "Data Quality", "Decision Making"],
     description:
       "If we can't trust our metrics, we can't trust our data. Metric standardization ensures we avoid the danger zone of inconsistent metrics.",
-    readMin: 4,
+    readMin: 5,
   },
   {
     slug: "headless-bi-data-lakehouse",
@@ -193,7 +193,79 @@ export const articleEntries: ArticleEntry[] = [
     tags: ["Headless BI", "Data Lakehouse", "Architecture"],
     description:
       "Replace cumbersome data pipelines and decouple analytics from the presentation layer to provide consistent metrics to all data consumers.",
-    readMin: 6,
+    readMin: 4,
+  },
+  {
+    slug: "dashboardview-advanced-embedded-analytics",
+    title: "DashboardView: Advanced Embedded Analytics",
+    publication: "GoodData Developers",
+    date: "2021-06",
+    category: "Data",
+    intro:
+      "This was a hands-on guide written during my time at GoodData to showcase the DashboardView React component. I wanted to demonstrate that embedded analytics doesn't have to mean sacrificing interactivity or performance — you can have both with the right architecture.",
+    summary:
+      "The DashboardView React component provides a fast, flexible way to embed full dashboards into any web application. This article walks through setup, configuration, and real-world usage patterns, showing how developers can deliver interactive analytics experiences without building custom visualization code from scratch.",
+    takeaways: [
+      "Fast setup, full interactivity: embed complete dashboards with a single React component while retaining drill-down, filtering, and export capabilities.",
+      "Performance by default: the component handles lazy loading, caching, and efficient re-renders so developers don't have to optimize manually.",
+      "Seamless integration: works within any React application and inherits the host app's styling and routing.",
+    ],
+    perspective2026:
+      "Embedded analytics has gone from a premium feature to table stakes in 2026. Every SaaS product is expected to have native analytics. The component-based approach I demonstrated in 2021 anticipated the current wave of 'analytics as a feature' — where BI isn't a separate tool but a composable layer inside the products people already use. The React ecosystem has only made this easier since.",
+    originalUrl:
+      "https://medium.com/gooddata-developers/dashboardview-advanced-embedded-analytics-8778d224be46",
+    tags: ["Embedded Analytics", "React", "GoodData"],
+    description:
+      "Advance embedded analytics with the DashboardView React component — fast and easy setup, great performance, and seamless interactivity.",
+    readMin: 3,
+  },
+  {
+    slug: "headless-bi-postgresql",
+    title: "Build a Headless BI Stack on Top of PostgreSQL",
+    publication: "GoodData Developers",
+    date: "2021-06",
+    category: "Data",
+    intro:
+      "PostgreSQL is the database most developers already know and love. I wrote this to show that you don't need a proprietary data warehouse to build a modern, headless BI stack — a well-configured PostgreSQL instance paired with a semantic layer gets you surprisingly far.",
+    summary:
+      "This article demonstrates how to integrate PostgreSQL with GoodData to build a headless BI application. By connecting one of the most popular open-source databases to a semantic analytics layer, teams can deliver consistent metrics and self-service analytics without migrating away from their existing database infrastructure.",
+    takeaways: [
+      "Start with what you have: PostgreSQL is powerful enough to serve as the data layer for most analytics use cases without needing a dedicated warehouse.",
+      "The semantic layer adds the 'BI' to your database: it transforms raw tables into business metrics that non-technical users can explore safely.",
+      "Open-source foundation: building on PostgreSQL means no vendor lock-in at the storage layer, and the ecosystem of tools and extensions keeps growing.",
+    ],
+    perspective2026:
+      "PostgreSQL's dominance has only grown since 2021 — it's now the default choice for startups and increasingly for enterprises. The headless BI pattern I described has evolved into what the industry now calls the 'semantic layer,' and every major data platform offers one. The core insight — that you can build serious analytics on open-source foundations — has gone from contrarian to consensus.",
+    originalUrl:
+      "https://medium.com/gooddata-developers/build-a-headless-bi-stack-on-top-of-postgresql-1a297422f38c",
+    tags: ["PostgreSQL", "Headless BI", "Open Source"],
+    description:
+      "Integrating PostgreSQL, one of the most popular open-source databases, with GoodData allows you to build powerful headless BI applications.",
+    readMin: 5,
+  },
+  {
+    slug: "embedded-analytics-gdui-product-marketer",
+    title: "Embedded Analytics: GD.UI with a Product Marketer",
+    publication: "GoodData Developers",
+    date: "2021-04",
+    category: "Data",
+    intro:
+      "This was a bit of a meta-experiment: could a product marketer (me) build something meaningful with GoodData's developer SDK? I wanted to prove that the tool was accessible beyond the engineering team, and writing about the experience made for an honest, relatable developer-marketing piece.",
+    summary:
+      "GoodData.UI is a React-based SDK for building embedded analytics applications. This article documents a product marketer's hands-on experience using the SDK to build a functional analytics interface, demonstrating that modern embedded analytics tools have become accessible enough for non-engineers to prototype with.",
+    takeaways: [
+      "Developer tools should be marketer-testable: if a product marketer can build with your SDK, your developer experience is genuinely good.",
+      "Embedded analytics is a product feature, not a project: with the right SDK, adding analytics to an application is hours of work, not months.",
+      "Eating your own dog food matters: using your own product reveals friction points that documentation and QA alone never surface.",
+    ],
+    perspective2026:
+      "The 'non-developer builds with developer tools' genre has exploded since 2021, driven by low-code/no-code and now AI-assisted development. What was a novel angle in 2021 — a marketer using a React SDK — is now a standard demo pattern. But the underlying insight remains: the best developer tools are the ones that lower the barrier enough for adjacent roles to contribute, and that principle now extends to AI agents writing code on behalf of non-technical users.",
+    originalUrl:
+      "https://medium.com/gooddata-developers/embedded-analytics-gd-ui-with-a-product-marketer-bea7ed65cdaf",
+    tags: ["Embedded Analytics", "GoodData", "Developer Experience"],
+    description:
+      "GoodData.UI makes for a seamless and flexible embedded analytics experience. Even in the hands of a product marketer.",
+    readMin: 5,
   },
 ];
 

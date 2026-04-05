@@ -34,23 +34,67 @@ async function prerender() {
     );
 
     const slugs = getAllSlugs();
+    const allArticlesSorted = [...slugs]
+      .map((s) => getArticleBySlug(s))
+      .filter(Boolean)
+      .sort((a, b) => new Date(b.date + "-01").getTime() - new Date(a.date + "-01").getTime());
+
     const routes = [
       { url: "/", outFile: "index.html" },
-      { url: "/articles", outFile: "articles/index.html", title: "Articles | Lauri Hänninen (Hanninen)", description: "Professional articles by Lauri Hänninen (Lauri Hanninen) on product marketing, analytics as code, headless BI, and data architecture." },
+      {
+        url: "/articles",
+        outFile: "articles/index.html",
+        title: "Articles | Lauri Hänninen (Hanninen)",
+        description: "Professional articles by Lauri Hänninen (Lauri Hanninen) on product marketing, analytics as code, headless BI, and data architecture.",
+        og: {
+          title: "Articles | Lauri Hänninen",
+          description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
+          url: "https://laurihanninen.com/articles",
+          type: "website",
+        },
+        jsonLd: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Articles by Lauri Hänninen",
+          description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
+          url: "https://laurihanninen.com/articles",
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: allArticlesSorted.map((a, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `https://laurihanninen.com/articles/${a.slug}`,
+              name: a.title,
+            })),
+          },
+        }),
+      },
       ...slugs.map((slug) => {
         const article = getArticleBySlug(slug);
+        const dateISO = article ? article.date + "-01" : undefined;
         return {
           url: `/articles/${slug}`,
           outFile: `articles/${slug}/index.html`,
           title: article ? `${article.title} | Lauri Hänninen (Hanninen)` : undefined,
           description: article?.description,
+          og: article
+            ? {
+                title: `${article.title} | Lauri Hänninen`,
+                description: article.description,
+                url: `https://laurihanninen.com/articles/${slug}`,
+                type: "article",
+                ...(article.coverImage
+                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  : {}),
+              }
+            : undefined,
           jsonLd: article
             ? JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Article",
                 headline: article.title,
                 description: article.description,
-                datePublished: article.date,
+                datePublished: dateISO,
                 author: {
                   "@type": "Person",
                   "@id": "https://laurihanninen.com/#person",
@@ -61,6 +105,9 @@ async function prerender() {
                 publisher: { "@type": "Organization", name: article.publication },
                 url: `https://laurihanninen.com/articles/${slug}`,
                 mainEntityOfPage: `https://laurihanninen.com/articles/${slug}`,
+                ...(article.coverImage
+                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  : {}),
               })
             : undefined,
         };
@@ -108,6 +155,23 @@ async function prerender() {
         } else {
           html = html.replace("</head>", `    ${canonical}\n  </head>`);
         }
+      }
+
+      // Inject per-page Open Graph tags
+      if (route.og) {
+        const ogTags = [
+          `<meta property="og:title" content="${route.og.title.replace(/"/g, "&quot;")}" />`,
+          `<meta property="og:description" content="${route.og.description.replace(/"/g, "&quot;")}" />`,
+          `<meta property="og:url" content="${route.og.url}" />`,
+          `<meta property="og:type" content="${route.og.type}" />`,
+          `<meta property="og:site_name" content="Lauri Hänninen" />`,
+        ];
+        if (route.og.image) {
+          ogTags.push(`<meta property="og:image" content="${route.og.image}" />`);
+          ogTags.push(`<meta property="og:image:width" content="1200" />`);
+          ogTags.push(`<meta property="og:image:height" content="630" />`);
+        }
+        html = html.replace("</head>", `    ${ogTags.join("\n    ")}\n  </head>`);
       }
 
       // Inject per-page JSON-LD for articles

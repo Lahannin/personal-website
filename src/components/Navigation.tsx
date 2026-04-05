@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
@@ -18,6 +19,14 @@ const navLinks = [
   { href: "/#contact", label: "Contact" },
 ];
 
+const scrollToSection = (sectionId: string) => {
+  const el = document.getElementById(sectionId);
+  if (!el) return;
+  const nav = document.querySelector("nav");
+  const navHeight = nav?.offsetHeight ?? 64;
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - navHeight - 16, behavior: "smooth" });
+};
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,8 +34,28 @@ const Navigation = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const { isDark, toggle: toggleDark } = useDarkMode();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
   useFocusTrap(mobileMenuRef, isMobileMenuOpen);
   useScrollLock(isMobileMenuOpen);
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      navigate("/");
+      const poll = (attempts = 0) => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          scrollToSection(sectionId);
+        } else if (attempts < 30) {
+          setTimeout(() => poll(attempts + 1), 100);
+        }
+      };
+      setTimeout(() => poll(), 50);
+    }
+  }, [location.pathname, navigate]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -112,8 +141,9 @@ const Navigation = () => {
                     }`} />
                   );
 
+                  const sectionId = link.href.replace("/#", "");
                   return (
-                    <a key={link.href} href={link.href} className={className}>
+                    <a key={link.href} href={link.href} onClick={(e) => handleNavClick(e, sectionId)} className={className}>
                       {link.label}
                       {underline}
                     </a>
@@ -155,11 +185,12 @@ const Navigation = () => {
                           isActive ? "text-highlight" : "text-muted-foreground"
                         }`;
 
+                        const sectionId = link.href.replace("/#", "");
                         return (
                           <li key={link.href}>
                             <a
                               href={link.href}
-                              onClick={() => setIsMobileMenuOpen(false)}
+                              onClick={(e) => { setIsMobileMenuOpen(false); handleNavClick(e, sectionId); }}
                               className={className}
                             >
                               {link.label}

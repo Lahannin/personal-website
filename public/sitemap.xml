@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://laurihanninen.com/</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <priority>1.0</priority>
 
     <image:image>
@@ -18,6 +18,48 @@
       <image:title>Lauri Hänninen Professional Headshot</image:title>
       <image:caption>Professional photo of Lauri Hänninen, Product Marketing Lead specializing in hardware security.</image:caption>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/what-is-analytics-as-code</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/abc-product-marketing</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/headless-bi-metric-standardization</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/analytics-as-code</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/danger-zone-inconsistent-metrics</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/headless-bi-data-lakehouse</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

@@ -27,6 +27,8 @@ import Skills from "./components/Skills";
 import Articles from "./components/Articles";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ArticlesIndex from "./pages/ArticlesIndex";
+import ArticleDetail from "./pages/ArticleDetail";
 
 const IndexSSR = () => (
   <>
@@ -58,6 +60,8 @@ export function render(url: string) {
     <StaticRouter location={url}>
       <Routes>
         <Route path="/" element={<IndexSSR />} />
+        <Route path="/articles" element={<ArticlesIndex />} />
+        <Route path="/articles/:slug" element={<ArticleDetail />} />
         <Route path="*" element={<div />} />
       </Routes>
     </StaticRouter>

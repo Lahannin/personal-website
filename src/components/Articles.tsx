@@ -1,65 +1,13 @@
 import { memo, useState } from "react";
+import { Link } from "react-router-dom";
 import { m } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import { articleEntries } from "@/data/articles";
 
-interface Article {
-  title: string;
-  description: string;
-  url: string;
-  date: string;
-  publication?: string;
-  readMin: number;
-}
-
-const articles: Article[] = [
-  {
-    title: "ABC of Product Marketing: Positioning, Messaging, and Copy Explained",
-    description: "Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!",
-    url: "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
-    date: "2023-04",
-    readMin: 8,
-  },
-  {
-    title: "What Is Analytics as Code?",
-    description: "Use software engineering best practices for agile, efficient, and scalable analytics processes with analytics as code.",
-    url: "https://lahannin.medium.com/what-is-analytics-as-code-d321b9d42a49",
-    date: "2023-08",
-    publication: "GoodData Developers",
-    readMin: 6,
-  },
-  {
-    title: "Headless BI: Metric Standardization in Action",
-    description: "Read how various data tools can access a headless BI platform, consume the same metrics, and achieve consistent results.",
-    url: "https://lahannin.medium.com/headless-bi-metric-standardization-in-action-afb2ac7e89b6",
-    date: "2022-03",
-    publication: "Better Programming",
-    readMin: 7,
-  },
-  {
-    title: "Analytics as Code: Managing Analytics Solutions Like Any Other Software",
-    description: "It's time to turn our analytics into an easy-to-manage, reusable piece of code while leveraging software development best practices.",
-    url: "https://lahannin.medium.com/analytics-as-code-managing-analytics-solutions-like-any-other-software-504372ba6a61",
-    date: "2022-02",
-    publication: "GoodData Developers",
-    readMin: 5,
-  },
-  {
-    title: "Danger Zone: Inconsistent Metrics at Work",
-    description: "If we can't trust our metrics, we can't trust our data. Metric standardization ensures we avoid the danger zone of inconsistent metrics.",
-    url: "https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4",
-    date: "2022-02",
-    readMin: 4,
-  },
-  {
-    title: "Headless BI x Data Lakehouse",
-    description: "Replace cumbersome data pipelines and decouple analytics from the presentation layer to provide consistent metrics to all data consumers.",
-    url: "https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159",
-    date: "2022-01",
-    publication: "GoodData Developers",
-    readMin: 6,
-  },
-];
+const sorted = [...articleEntries].sort(
+  (a, b) => new Date(b.date + "-01").getTime() - new Date(a.date + "-01").getTime()
+);
 
 const Articles = memo(() => {
   const [showAll, setShowAll] = useState(false);
@@ -78,9 +26,9 @@ const Articles = memo(() => {
 
           {/* Articles grid */}
           <div className="grid gap-6 md:grid-cols-2">
-            {articles.map((article, index) => (
+            {sorted.map((article, index) => (
               <m.article
-                key={article.url}
+                key={article.slug}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
@@ -88,10 +36,8 @@ const Articles = memo(() => {
                 className={index >= 4 && !showAll ? "hidden md:block" : ""}
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={`/articles/${article.slug}`}
                   className="group block bg-secondary/20 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-all duration-300 hover:-translate-y-1 h-full relative"
                 >
                   {/* Category accent bar */}
@@ -102,7 +48,7 @@ const Articles = memo(() => {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 mb-3">
-                          {article.publication && (
+                          {article.publication !== "Medium" && (
                             <span className="text-xs text-muted-foreground">
                               {article.publication}
                             </span>
@@ -120,17 +66,17 @@ const Articles = memo(() => {
                       </div>
                       <m.div
                         className="flex-shrink-0 mt-1"
-                        whileHover={{ rotate: -45 }}
+                        whileHover={{ x: 3 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
                       >
-                        <ExternalLink 
-                          className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" 
-                          aria-hidden="true" 
+                        <ArrowRight
+                          className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors"
+                          aria-hidden="true"
                         />
                       </m.div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </m.article>
             ))}
           </div>
@@ -141,7 +87,7 @@ const Articles = memo(() => {
                 onClick={() => setShowAll(true)}
                 className="font-mono text-xs tracking-wide text-primary hover:text-primary/80 transition-colors"
               >
-                Show {articles.length - 4} more
+                Show {sorted.length - 4} more
               </button>
             </div>
           )}
@@ -154,15 +100,13 @@ const Articles = memo(() => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-center mt-10"
           >
-            <a
-              href="https://lahannin.medium.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/articles"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
             >
-              View all articles on Medium
-              <ExternalLink className="w-4 h-4" aria-hidden="true" />
-            </a>
+              View all articles
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </m.div>
         </div>
       </div>

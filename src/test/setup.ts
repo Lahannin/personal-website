@@ -29,7 +29,6 @@ interface MockIOInstance {
 
 // Global list so tests can access observer instances
 declare global {
-  // eslint-disable-next-line no-var
   var __intersectionObserverInstances: MockIOInstance[];
 }
 globalThis.__intersectionObserverInstances = [];
@@ -37,6 +36,7 @@ globalThis.__intersectionObserverInstances = [];
 class MockIntersectionObserver {
   private instance: MockIOInstance;
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   constructor(callback: IOCallback, _options?: IntersectionObserverInit) {
     this.instance = {
       callback,

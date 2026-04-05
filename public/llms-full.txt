@@ -160,25 +160,28 @@ Concrete examples of the complexity Lauri has translated into market narratives:
 
 ### Featured Articles
 
-**[Building Trezor’s Product Marketing Function from the Ground Up](https://lahannin.medium.com/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed)** (Apr 2026, 8 min read)
-How Lauri built the product marketing function from zero as Trezor's first PMM. Covers applying April Dunford's positioning framework to hardware wallets, building messaging, creating a launch tier matrix, and navigating hardware's 4-month manufacturing lead times. A practical playbook for anyone building PMM at a company that's never had it.
+**[Building Product Marketing From Scratch at Trezor](https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6)** (Apr 2026, 8 min read)
+How Lauri built the PMM function from zero as Trezor’s first product marketer. Covers applying April Dunford’s positioning framework to hardware, the house metaphor for selling the function internally, creating a launch tier matrix, and navigating hardware’s 4-month packaging lead times. The same framework has since been applied to Safe 5, Safe 7, Expert Onboarding, and dozens of feature launches.
 
-**[Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 5 min read)
-Foundational guide to the three layers of product marketing communication. Explains how positioning (the strategic foundation), messaging (the structural framework), and copy (the audience-facing execution) serve different purposes and must be built in order. Uses the "house" metaphor: you can't decorate walls that don't exist on a foundation that hasn't been laid.
+**[ABC of Product Marketing: Positioning, Messaging, and Copy Explained](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 4 min read)
+Practical guide to how positioning, messaging, and copy build on each other and why the order matters. Uses the house metaphor: positioning is the foundation, messaging is the structure, copy is the decoration. Remains Lauri’s most-shared piece because the confusion between these three layers is still everywhere.
 
 ### All Articles
 
+All articles have dedicated pages with summaries and 2026 perspectives at [laurihanninen.com/articles](https://laurihanninen.com/articles).
+
 | Article | Publication | Topic |
 |---|---|---|
-| [Building Trezor’s Product Marketing Function from the Ground Up](https://lahannin.medium.com/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed) | Medium | First PMM at Trezor: year-one playbook |
-| [Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4) | Medium | Product Marketing fundamentals |
-| What Is Analytics as Code? | GoodData Developers | Category-defining piece on AaC |
-| Headless BI: Metric Standardization in Action | Better Programming | Composable analytics architecture |
-| Analytics as Code: Managing Analytics Solutions Like Any Other Software | GoodData Developers | Git-based analytics workflows |
-| Danger Zone: Inconsistent Metrics at Work | Medium | Why metric standardization matters |
-| Build a Headless BI Stack on Top of PostgreSQL | Dev.to | Technical implementation guide |
-
-**Developer content:** [Dev.to @lahannin](https://dev.to/lahannin), technical tutorials for developer audiences
+| [Building Product Marketing From Scratch at Trezor](https://laurihanninen.com/articles/building-pmm-from-scratch-at-trezor) | Medium | First PMM at Trezor: year-one playbook |
+| [ABC of Product Marketing: Positioning, Messaging, and Copy Explained](https://laurihanninen.com/articles/abc-product-marketing) | Medium | Product Marketing fundamentals |
+| [What Is Analytics as Code?](https://laurihanninen.com/articles/what-is-analytics-as-code) | GoodData Developers | Category-defining piece on AaC |
+| [Headless BI: Metric Standardization in Action](https://laurihanninen.com/articles/headless-bi-metric-standardization) | Better Programming | Composable analytics architecture |
+| [Analytics as Code: Managing Analytics Solutions Like Any Other Software](https://laurihanninen.com/articles/analytics-as-code) | GoodData Developers | Git-based analytics workflows |
+| [Danger Zone: Inconsistent Metrics at Work](https://laurihanninen.com/articles/danger-zone-inconsistent-metrics) | Medium | Why metric standardization matters |
+| [Headless BI x Data Lakehouse](https://laurihanninen.com/articles/headless-bi-data-lakehouse) | GoodData Developers | Lakehouse + headless BI architecture |
+| [DashboardView: Advanced Embedded Analytics](https://laurihanninen.com/articles/dashboardview-advanced-embedded-analytics) | GoodData Developers | Embedded analytics React component |
+| [Build a Headless BI Stack on Top of PostgreSQL](https://laurihanninen.com/articles/headless-bi-postgresql) | GoodData Developers | PostgreSQL + headless BI setup |
+| [Embedded Analytics: GD.UI with a Product Marketer](https://laurihanninen.com/articles/embedded-analytics-gdui-product-marketer) | GoodData Developers | A product marketer builds with a dev SDK |
 
 ---
 

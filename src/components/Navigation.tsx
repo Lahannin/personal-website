@@ -45,7 +45,6 @@ const Navigation = () => {
       scrollToSection(sectionId);
     } else {
       navigate("/");
-      // Wait for homepage to render, then scroll
       const poll = (attempts = 0) => {
         const el = document.getElementById(sectionId);
         if (el) {

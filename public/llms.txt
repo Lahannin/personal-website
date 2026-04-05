@@ -78,10 +78,12 @@ A: M.Sc. in Economics and Business Administration from the University of Oulu, F
 
 ## Featured Writing
 
-Lauri publishes on product marketing strategy and process. Two key articles:
+Lauri publishes on product marketing strategy, analytics, and technical topics. Two key product marketing articles:
 
-- **[Building Trezor’s Product Marketing Function from the Ground Up](https://lahannin.medium.com/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed)** (Apr 2026, 8 min) — How he built positioning, messaging, and launch processes as Trezor's first product marketer. Covers April Dunford's positioning framework applied to hardware, product messaging, launch tier matrices, and the challenge of hardware's 4-month lead times vs. software.
-- **[Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 5 min) — Foundational guide explaining the differences between positioning, messaging, and copy, how they connect, and why the order matters. Uses a house metaphor: positioning is the foundation, messaging is the structure, copy is the decoration.
+- **[Building Product Marketing From Scratch at Trezor](https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6)** (Apr 2026, 8 min) — How he built the PMM function from zero as Trezor’s first product marketer. Covers applying April Dunford’s positioning framework to hardware, the house metaphor for selling the function internally, launch tier matrices, and navigating hardware’s 4-month packaging lead times.
+- **[ABC of Product Marketing: Positioning, Messaging, and Copy Explained](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 4 min) — Practical guide to how positioning, messaging, and copy build on each other and why the order matters. Uses the house metaphor: positioning is the foundation, messaging is the structure, copy is the decoration.
+
+Full list of all 10 articles with summaries and 2026 perspectives: [laurihanninen.com/articles](https://laurihanninen.com/articles)
 
 ## Contact & Resources
 

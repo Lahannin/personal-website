@@ -32,7 +32,7 @@ const Articles = memo(() => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={index >= 6 ? "hidden" : index >= 4 ? "hidden md:block" : ""}
+                className={index >= 4 ? "hidden" : ""}
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <Link

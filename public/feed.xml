@@ -17,19 +17,20 @@
     </image>
     <atom:link href="https://laurihanninen.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Building Trezor's Product Marketing Function from the Ground Up</title>
-      <link>https://medium.com/@lahannin/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed</link>
-      <description>What it was like to build Trezor's product marketing function from scratch with positioning, messaging, and launch frameworks.</description>
+      <title>Building Product Marketing From Scratch at Trezor</title>
+      <link>https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6</link>
+      <description>How I built the PMM function from zero at Trezor: positioning framework, messaging hierarchy, launch tiers, and earning engineer trust at a hardware company.</description>
       <author>lahannin (Lauri Hänninen)</author>
       <category>Product Marketing</category>
-      <category>B2C</category>
+      <category>Trezor</category>
+      <category>Positioning</category>
       <category>Hardware</category>
       <source url="https://lahannin.medium.com">Medium</source>
       <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>https://medium.com/@lahannin/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed</guid>
+      <guid>https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6</guid>
     </item>
     <item>
-      <title>Positioning, Messaging, and Copy: What They Are and How They Work Together</title>
+      <title>ABC of Product Marketing: Positioning, Messaging, and Copy Explained</title>
       <link>https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4</link>
       <description>Positioning, messaging, and copy do different jobs. Here's what each one is, how they connect, and why the order matters.</description>
       <author>lahannin (Lauri Hänninen)</author>
@@ -88,6 +89,54 @@
       <source url="https://lahannin.medium.com">Medium</source>
       <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
       <guid>https://lahannin.medium.com/danger-zone-inconsistent-metrics-at-work-306f09051a4</guid>
+    </item>
+    <item>
+      <title>Headless BI x Data Lakehouse</title>
+      <link>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</link>
+      <description>Replace cumbersome data pipelines and decouple analytics from the presentation layer to provide consistent metrics to all data consumers.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Headless BI</category>
+      <category>Data Lakehouse</category>
+      <category>Architecture</category>
+      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
+      <guid>https://lahannin.medium.com/headless-bi-x-data-lakehouse-ce7388ba5159</guid>
+    </item>
+    <item>
+      <title>DashboardView: Advanced Embedded Analytics</title>
+      <link>https://medium.com/gooddata-developers/dashboardview-advanced-embedded-analytics-8778d224be46</link>
+      <description>How the DashboardView React component enables embedded analytics with easy setup, good performance, and full interactivity.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Embedded Analytics</category>
+      <category>React</category>
+      <category>GoodData</category>
+      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 GMT</pubDate>
+      <guid>https://medium.com/gooddata-developers/dashboardview-advanced-embedded-analytics-8778d224be46</guid>
+    </item>
+    <item>
+      <title>Build a Headless BI Stack on Top of PostgreSQL</title>
+      <link>https://medium.com/gooddata-developers/build-a-headless-bi-stack-on-top-of-postgresql-1a297422f38c</link>
+      <description>Integrating PostgreSQL, one of the most popular open-source databases, with GoodData allows you to build powerful headless BI applications.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>PostgreSQL</category>
+      <category>Headless BI</category>
+      <category>Open Source</category>
+      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 GMT</pubDate>
+      <guid>https://medium.com/gooddata-developers/build-a-headless-bi-stack-on-top-of-postgresql-1a297422f38c</guid>
+    </item>
+    <item>
+      <title>Embedded Analytics: GD.UI with a Product Marketer</title>
+      <link>https://medium.com/gooddata-developers/embedded-analytics-gd-ui-with-a-product-marketer-bea7ed65cdaf</link>
+      <description>GoodData.UI makes for a seamless and flexible embedded analytics experience. Even in the hands of a product marketer.</description>
+      <author>lahannin (Lauri Hänninen)</author>
+      <category>Embedded Analytics</category>
+      <category>GoodData</category>
+      <category>Developer Experience</category>
+      <source url="https://medium.com/gooddata-developers">GoodData Developers</source>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 GMT</pubDate>
+      <guid>https://medium.com/gooddata-developers/embedded-analytics-gd-ui-with-a-product-marketer-bea7ed65cdaf</guid>
     </item>
   </channel>
 </rss>

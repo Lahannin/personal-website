@@ -22,6 +22,21 @@ const sorted = [...articleEntries].sort(
 const ArticlesIndex = () => {
   useEffect(() => {
     document.title = "Articles | Lauri Hänninen (Hanninen)";
+
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content = "Professional articles by Lauri Hänninen on product marketing, analytics as code, headless BI, and data architecture.";
+    document.head.appendChild(meta);
+
+    const canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    canonical.href = "https://laurihanninen.com/articles";
+    document.head.appendChild(canonical);
+
+    return () => {
+      document.head.removeChild(meta);
+      document.head.removeChild(canonical);
+    };
   }, []);
 
   return (

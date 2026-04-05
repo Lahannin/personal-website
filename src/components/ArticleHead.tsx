@@ -35,6 +35,37 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
     ogUrl.content = `https://laurihanninen.com/articles/${article.slug}`;
     document.head.appendChild(ogUrl);
 
+    const ogType = document.createElement("meta");
+    ogType.setAttribute("property", "og:type");
+    ogType.content = "article";
+    document.head.appendChild(ogType);
+
+    const ogSiteName = document.createElement("meta");
+    ogSiteName.setAttribute("property", "og:site_name");
+    ogSiteName.content = "Lauri Hänninen";
+    document.head.appendChild(ogSiteName);
+
+    const ogImageEls: HTMLMetaElement[] = [];
+    if (article.coverImage) {
+      const ogImage = document.createElement("meta");
+      ogImage.setAttribute("property", "og:image");
+      ogImage.content = `https://laurihanninen.com${article.coverImage}`;
+      document.head.appendChild(ogImage);
+      ogImageEls.push(ogImage);
+
+      const ogImageW = document.createElement("meta");
+      ogImageW.setAttribute("property", "og:image:width");
+      ogImageW.content = "1200";
+      document.head.appendChild(ogImageW);
+      ogImageEls.push(ogImageW);
+
+      const ogImageH = document.createElement("meta");
+      ogImageH.setAttribute("property", "og:image:height");
+      ogImageH.content = "630";
+      document.head.appendChild(ogImageH);
+      ogImageEls.push(ogImageH);
+    }
+
     const jsonLd = document.createElement("script");
     jsonLd.type = "application/ld+json";
     jsonLd.textContent = JSON.stringify({
@@ -42,7 +73,7 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
       "@type": "Article",
       headline: article.title,
       description: article.description,
-      datePublished: article.date,
+      datePublished: article.date + "-01",
       author: {
         "@type": "Person",
         "@id": "https://laurihanninen.com/#person",
@@ -69,6 +100,9 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
       document.head.removeChild(ogTitle);
       document.head.removeChild(ogDesc);
       document.head.removeChild(ogUrl);
+      document.head.removeChild(ogType);
+      document.head.removeChild(ogSiteName);
+      ogImageEls.forEach((el) => document.head.removeChild(el));
       document.head.removeChild(jsonLd);
     };
   }, [article]);

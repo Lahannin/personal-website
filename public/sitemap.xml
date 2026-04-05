@@ -68,4 +68,22 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://laurihanninen.com/articles/dashboardview-advanced-embedded-analytics</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/headless-bi-postgresql</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://laurihanninen.com/articles/embedded-analytics-gdui-product-marketer</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

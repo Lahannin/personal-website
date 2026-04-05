@@ -47,7 +47,7 @@ export const articleEntries: ArticleEntry[] = [
       "https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6",
     tags: ["Product Marketing", "Trezor", "Positioning", "Hardware"],
     description:
-      "How I built the PMM function from zero at Trezor: positioning framework, messaging hierarchy, launch tiers, and earning engineer trust at a hardware company.",
+      "What it actually looks like to build product marketing from zero at a company that's been shipping products for a decade without it.",
     readMin: 8,
   },
   {

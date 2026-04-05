@@ -306,6 +306,7 @@ const Experience = memo(() => {
                   </button>
 
                   {/* Expanded content */}
+                  <div aria-live="polite" aria-atomic="false">
                   <AnimatePresence>
                     {isExpanded && (
                       <m.div
@@ -360,6 +361,7 @@ const Experience = memo(() => {
                       </m.div>
                     )}
                   </AnimatePresence>
+                  </div>
                 </m.div>
               );
             })}

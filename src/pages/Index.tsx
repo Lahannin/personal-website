@@ -24,7 +24,9 @@ const Index = () => {
       </a>
 
       <div className="min-h-screen bg-background">
-        <Navigation />
+        <ErrorBoundary>
+          <Navigation />
+        </ErrorBoundary>
         <main id="main-content">
           {/* Hero stays outside Suspense for maximum LCP performance */}
           <Hero />

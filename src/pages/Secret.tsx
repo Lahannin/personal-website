@@ -74,7 +74,7 @@ const Secret = () => {
             const el = document.getElementById(returnSection);
             if (el) {
               // First scroll to approximate position
-              window.scrollTo({ top: getTargetTop(el), behavior: "instant" as ScrollBehavior });
+              window.scrollTo({ top: getTargetTop(el), behavior: "auto" });
               // Then re-verify after lazy content settles — layout may shift
               // as sections above load images/content
               let stabilizeAttempts = 0;
@@ -86,7 +86,7 @@ const Secret = () => {
                   window.scrollTo({ top: currentTop, behavior: "smooth" });
                 } else {
                   lastTop = currentTop;
-                  window.scrollTo({ top: currentTop, behavior: "instant" as ScrollBehavior });
+                  window.scrollTo({ top: currentTop, behavior: "auto" });
                   stabilizeAttempts++;
                   setTimeout(stabilize, 200);
                 }

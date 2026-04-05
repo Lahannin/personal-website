@@ -29,7 +29,7 @@ const ScrollToTop = memo(() => {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-foreground hover:border-highlight/40 transition-colors shadow-lg focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2"
+          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-secondary/80 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-foreground hover:border-highlight/40 transition-colors shadow-lg focus-ring"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-5 h-5" />

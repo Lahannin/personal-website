@@ -1,6 +1,6 @@
-import { memo, useState, useCallback, useRef, useEffect } from "react";
-import { useScrollLock } from "@/hooks/use-scroll-lock";
-import { useLightboxKeyboard } from "@/hooks/use-lightbox-keyboard";
+import { memo, useRef } from "react";
+import { useLightbox } from "@/hooks/use-lightbox";
+import { useCarouselDragProtection } from "@/hooks/use-carousel-drag-protection";
 import { m, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselNavButtons from "./CarouselNavButtons";
@@ -36,29 +36,9 @@ const MeetupGallery = memo(() => {
     scrollPrev, scrollNext, scrollTo,
   } = useCarouselAutoplay(emblaApi, { duration: AUTOPLAY_DURATION_MS, isInView });
 
-  const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
-  const [swipeDirection, setSwipeDirection] = useState(0);
-  const goNextPhoto = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
-  const goPrevPhoto = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
+  const { selectedPhoto, swipeDirection, goNext: goNextPhoto, goPrev: goPrevPhoto, close: closePhoto, open: openPhoto } = useLightbox(photos.length);
 
-  useScrollLock(selectedPhoto !== null);
-  useLightboxKeyboard(selectedPhoto !== null, goNextPhoto, goPrevPhoto, () => setSelectedPhoto(null));
-
-  // Swipe protection: prevent photo open during drag
-  const didDragRef = useRef(false);
-  useEffect(() => {
-    if (!emblaApi) return;
-    const onPointerDown = () => { didDragRef.current = false; };
-    const onPointerUp = () => {
-      didDragRef.current = emblaApi.selectedScrollSnap() !== emblaApi.previousScrollSnap();
-    };
-    emblaApi.on("pointerDown", onPointerDown);
-    emblaApi.on("pointerUp", onPointerUp);
-    return () => {
-      emblaApi.off("pointerDown", onPointerDown);
-      emblaApi.off("pointerUp", onPointerUp);
-    };
-  }, [emblaApi]);
+  const didDragRef = useCarouselDragProtection(emblaApi);
 
   return (
     <section
@@ -104,11 +84,10 @@ const MeetupGallery = memo(() => {
                       key={photo.src}
                       className="flex-[0_0_100%] min-w-0 md:flex-[0_0_70%] lg:flex-[0_0_55%] px-4"
                     >
-                      <div
-                        role="button"
-                        tabIndex={0}
+                      <button
+                        type="button"
                         aria-label={`View photo: ${photo.alt}`}
-                        className={`rounded-2xl overflow-hidden border cursor-pointer transition-[opacity,transform,border-color,box-shadow] duration-300 ease-in-out ${
+                        className={`rounded-2xl overflow-hidden border cursor-pointer transition-[opacity,transform,border-color,box-shadow] duration-300 ease-in-out bg-transparent p-0 text-left w-full ${
                           isActive
                             ? "border-primary/30 shadow-2xl shadow-primary/10"
                             : "border-border/50 shadow-md"
@@ -117,8 +96,7 @@ const MeetupGallery = memo(() => {
                           opacity: isActive ? 1 : 0.6,
                           transform: isActive ? 'scale(1)' : 'scale(0.95)',
                         }}
-                        onClick={() => { if (didDragRef.current) { didDragRef.current = false; return; } setSelectedPhoto(index); }}
-                        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPhoto(index); } }}
+                        onClick={() => { if (didDragRef.current) { didDragRef.current = false; return; } openPhoto(index); }}
                       >
                         <picture>
                           <source media="(max-width: 767px)" srcSet={photo.mobileSrc} />
@@ -133,7 +111,7 @@ const MeetupGallery = memo(() => {
                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
                           />
                         </picture>
-                      </div>
+                      </button>
                     </div>
                   );
                 })}
@@ -161,7 +139,7 @@ const MeetupGallery = memo(() => {
         photos={photos}
         selectedIndex={selectedPhoto}
         swipeDirection={swipeDirection}
-        onClose={() => setSelectedPhoto(null)}
+        onClose={closePhoto}
         onNext={goNextPhoto}
         onPrev={goPrevPhoto}
       />

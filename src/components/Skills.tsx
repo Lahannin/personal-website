@@ -128,7 +128,7 @@ const Skills = memo(() => {
                     className={`w-10 h-10 object-contain mb-2 grayscale group-hover:grayscale-0 transition-all duration-300 ${
                       cert.invertInDark
                         ? "dark:invert dark:group-hover:invert-0 dark:group-hover:grayscale-0"
-                        : "dark:brightness-[10] dark:group-hover:brightness-100 dark:group-hover:grayscale-0"
+                        : "dark:brightness-200 dark:group-hover:brightness-100 dark:group-hover:grayscale-0"
                     }`}
                     width={40}
                     height={40}
@@ -176,7 +176,7 @@ const Skills = memo(() => {
                     className={`w-10 h-10 object-contain rounded mx-auto mb-3 grayscale group-hover:grayscale-0 transition-all duration-300 ${
                       edu.invertInDark
                         ? "dark:invert dark:group-hover:invert-0 dark:group-hover:grayscale-0"
-                        : "dark:brightness-[10] dark:group-hover:brightness-100 dark:group-hover:grayscale-0"
+                        : "dark:brightness-200 dark:group-hover:brightness-100 dark:group-hover:grayscale-0"
                     }`}
                     width={40}
                     height={40}

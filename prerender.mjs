@@ -148,8 +148,7 @@ async function prerender() {
     console.log("Prerender complete — crawlers will now see real HTML.");
   } catch (err) {
     console.error("Prerender failed:", err.message);
-    // Non-fatal: fall back to SPA
-    process.exit(0);
+    process.exit(1);
   } finally {
     await vite.close();
   }

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
@@ -14,7 +13,7 @@ const navLinks = [
   { href: "/#meetups", label: "Meetups" },
   { href: "/#products", label: "Products" },
   { href: "/#experience", label: "Experience" },
-  { href: "/articles", label: "Articles" },
+  { href: "/#articles", label: "Articles" },
   { href: "/#skills", label: "Skills" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -26,12 +25,8 @@ const Navigation = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const { isDark, toggle: toggleDark } = useDarkMode();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const location = useLocation();
   useFocusTrap(mobileMenuRef, isMobileMenuOpen);
   useScrollLock(isMobileMenuOpen);
-
-  // Force active section for article pages
-  const isArticlePage = location.pathname.startsWith("/articles");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -85,12 +80,9 @@ const Navigation = () => {
   }, []);
 
   const getIsActive = (link: { href: string }) => {
-    if (link.href === "/articles") return isArticlePage;
     const sectionId = link.href.replace("/#", "");
-    return !isArticlePage && activeSection === sectionId;
+    return activeSection === sectionId;
   };
-
-  const isRouteLink = (href: string) => !href.startsWith("/#");
 
   return (
     <header>
@@ -120,12 +112,7 @@ const Navigation = () => {
                     }`} />
                   );
 
-                  return isRouteLink(link.href) ? (
-                    <Link key={link.href} to={link.href} className={className}>
-                      {link.label}
-                      {underline}
-                    </Link>
-                  ) : (
+                  return (
                     <a key={link.href} href={link.href} className={className}>
                       {link.label}
                       {underline}
@@ -170,23 +157,13 @@ const Navigation = () => {
 
                         return (
                           <li key={link.href}>
-                            {isRouteLink(link.href) ? (
-                              <Link
-                                to={link.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className={className}
-                              >
-                                {link.label}
-                              </Link>
-                            ) : (
-                              <a
-                                href={link.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className={className}
-                              >
-                                {link.label}
-                              </a>
-                            )}
+                            <a
+                              href={link.href}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className={className}
+                            >
+                              {link.label}
+                            </a>
                           </li>
                         );
                       })}

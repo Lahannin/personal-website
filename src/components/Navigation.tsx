@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "@/hooks/use-dark-mode";
@@ -13,7 +14,7 @@ const navLinks = [
   { href: "/#meetups", label: "Meetups" },
   { href: "/#products", label: "Products" },
   { href: "/#experience", label: "Experience" },
-  { href: "/#articles", label: "Articles" },
+  { href: "/articles", label: "Articles" },
   { href: "/#skills", label: "Skills" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -25,8 +26,12 @@ const Navigation = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const { isDark, toggle: toggleDark } = useDarkMode();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
   useFocusTrap(mobileMenuRef, isMobileMenuOpen);
   useScrollLock(isMobileMenuOpen);
+
+  // Force active section for article pages
+  const isArticlePage = location.pathname.startsWith("/articles");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -79,6 +84,14 @@ const Navigation = () => {
     return () => observer.disconnect();
   }, []);
 
+  const getIsActive = (link: { href: string }) => {
+    if (link.href === "/articles") return isArticlePage;
+    const sectionId = link.href.replace("/#", "");
+    return !isArticlePage && activeSection === sectionId;
+  };
+
+  const isRouteLink = (href: string) => !href.startsWith("/#");
+
   return (
     <header>
       <nav
@@ -97,20 +110,25 @@ const Navigation = () => {
             <div className="flex items-center justify-end h-16 md:h-20">
               <div className="hidden md:flex items-center gap-0.5">
                 {navLinks.map((link) => {
-                  const sectionId = link.href.replace("/#", "");
-                  const isActive = activeSection === sectionId;
-                  return (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className={`relative px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md transition-colors font-mono group ${
-                        isActive ? "text-highlight" : "text-muted-foreground"
-                      }`}
-                    >
+                  const isActive = getIsActive(link);
+                  const className = `relative px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] hover:text-highlight focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md transition-colors font-mono group ${
+                    isActive ? "text-highlight" : "text-muted-foreground"
+                  }`;
+                  const underline = (
+                    <span className={`absolute bottom-0.5 left-4 right-4 h-[1.5px] bg-highlight rounded-full transition-transform duration-300 origin-left ${
+                      isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`} />
+                  );
+
+                  return isRouteLink(link.href) ? (
+                    <Link key={link.href} to={link.href} className={className}>
                       {link.label}
-                      <span className={`absolute bottom-0.5 left-4 right-4 h-[1.5px] bg-highlight rounded-full transition-transform duration-300 origin-left ${
-                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                      }`} />
+                      {underline}
+                    </Link>
+                  ) : (
+                    <a key={link.href} href={link.href} className={className}>
+                      {link.label}
+                      {underline}
                     </a>
                   );
                 })}
@@ -145,19 +163,30 @@ const Navigation = () => {
                   <div className="py-4" role="group" aria-label="Mobile navigation">
                     <ul className="flex flex-col gap-1">
                       {navLinks.map((link) => {
-                        const sectionId = link.href.replace("/#", "");
-                        const isActive = activeSection === sectionId;
+                        const isActive = getIsActive(link);
+                        const className = `block text-sm font-bold uppercase tracking-widest hover:text-highlight py-3 px-4 rounded-md min-h-[44px] flex items-center font-mono ${
+                          isActive ? "text-highlight" : "text-muted-foreground"
+                        }`;
+
                         return (
                           <li key={link.href}>
-                            <a
-                              href={link.href}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className={`block text-sm font-bold uppercase tracking-widest hover:text-highlight py-3 px-4 rounded-md min-h-[44px] flex items-center font-mono ${
-                                isActive ? "text-highlight" : "text-muted-foreground"
-                              }`}
-                            >
-                              {link.label}
-                            </a>
+                            {isRouteLink(link.href) ? (
+                              <Link
+                                to={link.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={className}
+                              >
+                                {link.label}
+                              </Link>
+                            ) : (
+                              <a
+                                href={link.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={className}
+                              >
+                                {link.label}
+                              </a>
+                            )}
                           </li>
                         );
                       })}

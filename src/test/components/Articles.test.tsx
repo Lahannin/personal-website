@@ -13,22 +13,17 @@ describe("Articles", () => {
     expect(screen.getByRole("heading", { name: /Featured Articles/i })).toBeInTheDocument();
   });
 
-  it("renders article links", () => {
+  it("renders article links pointing to internal pages", () => {
     renderWithProviders(<Articles />);
-    const links = screen.getAllByRole("link");
-    // At least the articles + "View all" link
-    expect(links.length).toBeGreaterThanOrEqual(2);
+    const internalLinks = screen.getAllByRole("link").filter((l) =>
+      l.getAttribute("href")?.startsWith("/articles/")
+    );
+    expect(internalLinks.length).toBeGreaterThanOrEqual(1);
   });
 
-  it("renders 'View all articles on Medium' link", () => {
+  it("renders 'View all articles' link pointing to /articles", () => {
     renderWithProviders(<Articles />);
-    expect(screen.getByText(/View all articles on Medium/)).toBeInTheDocument();
-  });
-
-  it("article links open in new tab", () => {
-    renderWithProviders(<Articles />);
-    const mediumLink = screen.getByText(/View all articles on Medium/).closest("a");
-    expect(mediumLink).toHaveAttribute("target", "_blank");
-    expect(mediumLink).toHaveAttribute("rel", "noopener noreferrer");
+    const viewAll = screen.getByText(/View all articles/);
+    expect(viewAll.closest("a")).toHaveAttribute("href", "/articles");
   });
 });

@@ -76,7 +76,7 @@ export const articleEntries: ArticleEntry[] = [
   {
     slug: "abc-product-marketing",
     title:
-      "Positioning, Messaging, and Copy: What They Are and How They Work Together",
+      "ABC of Product Marketing: Positioning, Messaging, and Copy Explained",
     publication: "Medium",
     date: "2023-04",
     category: "Product Marketing",
@@ -95,7 +95,7 @@ export const articleEntries: ArticleEntry[] = [
       "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
     tags: ["Product Marketing", "Positioning", "Messaging"],
     description:
-      "Positioning, messaging, and copy do different jobs. Here's what each one is, how they connect, and why the order matters.",
+      "Understand the roles of positioning, messaging, and copy and how they connect to create clear and impactful product marketing.",
     readMin: 5,
   },
   {

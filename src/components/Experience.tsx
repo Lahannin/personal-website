@@ -134,7 +134,7 @@ const companies: Company[] = [
         period: "02/2019 – 10/2019",
         highlights: [
           "Performance Growth: Optimized lead management for over 450 dealerships, with top markets seeing growth exceed 105%.",
-          "System Rollout: Supported the European launch of a Microsoft Dynamics lead system, including training for over 1,200 users.",
+          "System Rollout: Supported the European launch of a Microsoft Dynamics lead system, including post-launch support for over 1,200 users.",
           "Data Analysis: Partnered with local markets to analyze performance and implement specific improvement plans.",
         ],
       },
@@ -306,6 +306,7 @@ const Experience = memo(() => {
                   </button>
 
                   {/* Expanded content */}
+                  <div aria-live="polite" aria-atomic="false">
                   <AnimatePresence>
                     {isExpanded && (
                       <m.div
@@ -360,6 +361,7 @@ const Experience = memo(() => {
                       </m.div>
                     )}
                   </AnimatePresence>
+                  </div>
                 </m.div>
               );
             })}

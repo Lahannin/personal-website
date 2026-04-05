@@ -98,13 +98,17 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Profile photo with all your hover effects preserved */}
           <div className="flex justify-center mb-10 -mt-8 md:mt-20">
-              <div
-                className="relative group flex items-center justify-center"
-                role="button"
-                tabIndex={0}
+              <button
+                type="button"
+                className="relative group flex items-center justify-center bg-transparent border-0 p-0"
                 aria-label="Click for a surprise"
                 onClick={handlePhotoClick}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handlePhotoClick(e as unknown as React.MouseEvent); } }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    e.currentTarget.click();
+                  }
+                }}
                 style={{ cursor: getBitcoinCursor(cursorSize) }}
               >
               {/* Outer soft glow — scales up with clicks */}
@@ -177,7 +181,7 @@ const Hero = () => {
                   </m.span>
                 ))}
               </AnimatePresence>
-            </div>
+            </button>
           </div>
 
           {/* Name — no framer-motion animation to avoid non-composited paint */}

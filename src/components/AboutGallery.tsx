@@ -1,6 +1,5 @@
-import { memo, useState, useCallback } from "react";
-import { useScrollLock } from "@/hooks/use-scroll-lock";
-import { useLightboxKeyboard } from "@/hooks/use-lightbox-keyboard";
+import { memo } from "react";
+import { useLightbox } from "@/hooks/use-lightbox";
 import PhotoLightbox from "./PhotoLightbox";
 
 const photos = [
@@ -37,13 +36,7 @@ const columns: { photoIdx: number; aspect: string; imgW: number; imgH: number }[
 ];
 
 const AboutGallery = memo(() => {
-  const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
-  const [swipeDirection, setSwipeDirection] = useState(0);
-  const goNext = useCallback(() => { setSwipeDirection(1); setSelectedPhoto((p) => p !== null ? (p + 1) % photos.length : null); }, []);
-  const goPrev = useCallback(() => { setSwipeDirection(-1); setSelectedPhoto((p) => p !== null ? (p - 1 + photos.length) % photos.length : null); }, []);
-
-  useScrollLock(selectedPhoto !== null);
-  useLightboxKeyboard(selectedPhoto !== null, goNext, goPrev, () => setSelectedPhoto(null));
+  const { selectedPhoto, swipeDirection, goNext, goPrev, close, open } = useLightbox(photos.length);
 
   return (
     <>
@@ -51,14 +44,12 @@ const AboutGallery = memo(() => {
         {columns.map((col, colIdx) => (
           <div key={colIdx} className="flex flex-col gap-2.5">
             {col.map(({ photoIdx, aspect, imgW, imgH }) => (
-              <div
+              <button
+                type="button"
                 key={photoIdx}
-                role="button"
-                tabIndex={0}
                 aria-label={`View photo: ${photos[photoIdx].alt}`}
-                className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
-                onClick={() => setSelectedPhoto(photoIdx)}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedPhoto(photoIdx); } }}
+                className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-300 group bg-transparent border-0 p-0 text-left w-full"
+                onClick={() => open(photoIdx)}
               >
                 <picture>
                   <source media="(max-width: 767px)" srcSet={photos[photoIdx].mobileSrc} />
@@ -66,14 +57,14 @@ const AboutGallery = memo(() => {
                     src={photos[photoIdx].src}
                     alt={photos[photoIdx].alt}
                     className={`w-full ${aspect} object-cover group-hover:scale-105 transition-transform duration-500`}
-                    loading={photoIdx === 0 ? "eager" : "lazy"}
+                    loading="lazy"
                     decoding="async"
                     width={imgW}
                     height={imgH}
                     sizes="(max-width: 768px) 33vw, 256px"
                   />
                 </picture>
-              </div>
+              </button>
             ))}
           </div>
         ))}
@@ -83,7 +74,7 @@ const AboutGallery = memo(() => {
         photos={photos}
         selectedIndex={selectedPhoto}
         swipeDirection={swipeDirection}
-        onClose={() => setSelectedPhoto(null)}
+        onClose={close}
         onNext={goNext}
         onPrev={goPrev}
       />

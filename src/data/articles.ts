@@ -26,6 +26,30 @@ export interface ArticleEntry {
 
 export const articleEntries: ArticleEntry[] = [
   {
+    slug: "building-pmm-from-scratch-at-trezor",
+    title: "Building Product Marketing From Scratch at Trezor",
+    publication: "Medium",
+    date: "2026-04",
+    category: "Product Marketing",
+    intro:
+      "This is the story of building a product marketing function from zero at Trezor — a company that had been shipping world-class hardware for over a decade without a dedicated PMM. I wrote it because the 'founding PMM' journey is rarely documented, and the lessons apply far beyond crypto.",
+    summary:
+      "What does it actually look like to build product marketing from scratch at a company that already has product-market fit? This article walks through the real challenges: earning trust without a track record, choosing what to systematize first, hiring your initial team, and proving value when the org has survived just fine without you.",
+    takeaways: [
+      "Start with launches, not frameworks: your first wins need to be visible and tied to revenue, not strategy decks.",
+      "Hire for ambiguity tolerance: founding PMM team members need to operate without playbooks and build them as they go.",
+      "Document everything from day one: the processes you create become the institutional knowledge that scales the function.",
+    ],
+    perspective2026:
+      "Writing this in real-time as it happens gives it an authenticity that retrospective 'how we built it' pieces lack. The PMM discipline is maturing rapidly, and more companies are recognizing that product marketing isn't a nice-to-have — it's the connective tissue between product, sales, and the market. The founding PMM role is becoming a recognized career path, not just a circumstance.",
+    originalUrl:
+      "https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6",
+    tags: ["Product Marketing", "Trezor", "Founding PMM"],
+    description:
+      "What it actually looks like to build product marketing from zero at a company that's been shipping products for a decade without it.",
+    readMin: 8,
+  },
+  {
     slug: "what-is-analytics-as-code",
     title: "What Is Analytics as Code?",
     publication: "GoodData Developers",
@@ -47,12 +71,12 @@ export const articleEntries: ArticleEntry[] = [
     tags: ["Analytics as Code", "DataOps", "BI Engineering"],
     description:
       "Use software engineering best practices for agile, efficient, and scalable analytics processes with analytics as code.",
-    readMin: 6,
+    readMin: 8,
   },
   {
     slug: "abc-product-marketing",
     title:
-      "ABC of Product Marketing: Positioning, Messaging, and Copy Explained",
+      "Positioning, Messaging, and Copy: What They Are and How They Work Together",
     publication: "Medium",
     date: "2023-04",
     category: "Product Marketing",
@@ -71,8 +95,8 @@ export const articleEntries: ArticleEntry[] = [
       "https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4",
     tags: ["Product Marketing", "Positioning", "Messaging"],
     description:
-      "Looking to deep dive into product marketing but finding the concepts of positioning, messaging, and copy confusing? Look no further!",
-    readMin: 8,
+      "Positioning, messaging, and copy do different jobs. Here's what each one is, how they connect, and why the order matters.",
+    readMin: 5,
   },
   {
     slug: "headless-bi-metric-standardization",
@@ -121,7 +145,7 @@ export const articleEntries: ArticleEntry[] = [
     tags: ["DataOps", "Analytics", "DevOps"],
     description:
       "It's time to turn our analytics into an easy-to-manage, reusable piece of code while leveraging software development best practices.",
-    readMin: 5,
+    readMin: 6,
   },
   {
     slug: "danger-zone-inconsistent-metrics",

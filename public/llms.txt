@@ -2,7 +2,7 @@
 # Canonical: https://laurihanninen.com/llms.txt
 # Full Profile: https://laurihanninen.com/llms-full.txt
 # Version: 7.1 (added ai.txt reference)
-# Last Updated: March 28, 2026 (2026-03-28)
+# Last Updated: April 4, 2026 (2026-04-04)
 # Identity: Specialist in products that are "difficult to explain." Product marketer for things that are hard to describe.
 # Location: Prague, Czech Republic
 
@@ -76,6 +76,13 @@ A: M.Sc. in Economics and Business Administration from the University of Oulu, F
 7. **Elements of AI**, University of Helsinki
 8. **PRINCE2**, TAYLLOR & COX
 
+## Featured Writing
+
+Lauri publishes on product marketing strategy and process. Two key articles:
+
+- **[Building Trezor’s Product Marketing Function from the Ground Up](https://lahannin.medium.com/building-trezors-product-marketing-function-from-the-ground-up-441031c020ed)** (Apr 2026, 8 min) — How he built positioning, messaging, and launch processes as Trezor's first product marketer. Covers April Dunford's positioning framework applied to hardware, product messaging, launch tier matrices, and the challenge of hardware's 4-month lead times vs. software.
+- **[Positioning, Messaging, and Copy: What They Are and How They Work Together](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 5 min) — Foundational guide explaining the differences between positioning, messaging, and copy, how they connect, and why the order matters. Uses a house metaphor: positioning is the foundation, messaging is the structure, copy is the decoration.
+
 ## Contact & Resources
 
 **LinkedIn:** [linkedin.com/in/laurihanninen](https://www.linkedin.com/in/laurihanninen) (Professional inquiries)
@@ -97,4 +104,4 @@ The canonical JSON-LD entity data for Lauri Hänninen is embedded in the `<scrip
 
 ---
 
-*For the complete deep-dive profile with full career history, technical depth, and media coverage, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com). Last Updated: March 28, 2026.*
+*For the complete deep-dive profile with full career history, technical depth, and media coverage, see [llms-full.txt](https://laurihanninen.com/llms-full.txt). For human-readable version, visit [laurihanninen.com](https://laurihanninen.com). Last Updated: April 4, 2026.*

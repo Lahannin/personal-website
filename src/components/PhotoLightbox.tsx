@@ -22,7 +22,7 @@ interface PhotoLightboxProps {
 const DRAG_OFFSET_THRESHOLD = 50;
 const DRAG_VELOCITY_THRESHOLD = 300;
 
-const focusRing = "focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50";
+const focusRing = "focus-ring-light";
 
 const PhotoLightbox = memo(({
   photos,

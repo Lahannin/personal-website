@@ -102,6 +102,14 @@
     }
   }
 
+  .focus-ring {
+    @apply focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2;
+  }
+
+  .focus-ring-light {
+    @apply focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50;
+  }
+
   /* Grid background pattern for sections */
   .grid-bg {
     background-image:

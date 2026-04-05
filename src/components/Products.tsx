@@ -1,4 +1,4 @@
-import { memo, useRef, useEffect, useCallback } from "react";
+import { memo, useRef, useCallback } from "react";
 import { m, useInView } from "framer-motion";
 import { Monitor, Cpu, Headset, Rocket } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -6,6 +6,7 @@ import CarouselNavButtons from "./CarouselNavButtons";
 import CarouselProgressDots from "./CarouselProgressDots";
 import SectionHeader from "./SectionHeader";
 import { useCarouselAutoplay } from "@/hooks/use-carousel-autoplay";
+import { useCarouselDragProtection } from "@/hooks/use-carousel-drag-protection";
 
 const AUTOPLAY_DURATION_MS = 7000;
 
@@ -96,22 +97,7 @@ const Products = memo(() => {
     scrollPrev, scrollNext, scrollTo,
   } = useCarouselAutoplay(emblaApi, { duration: AUTOPLAY_DURATION_MS, isInView });
 
-  // Swipe protection: prevent link clicks during drag
-  const didDragRef = useRef(false);
-  useEffect(() => {
-    if (!emblaApi) return;
-    const onPointerDown = () => { didDragRef.current = false; };
-    const onPointerUp = () => {
-      // If Embla settled on a different snap, it was a drag
-      didDragRef.current = emblaApi.selectedScrollSnap() !== emblaApi.previousScrollSnap();
-    };
-    emblaApi.on("pointerDown", onPointerDown);
-    emblaApi.on("pointerUp", onPointerUp);
-    return () => {
-      emblaApi.off("pointerDown", onPointerDown);
-      emblaApi.off("pointerUp", onPointerUp);
-    };
-  }, [emblaApi]);
+  const didDragRef = useCarouselDragProtection(emblaApi);
 
   const handleCardClick = useCallback((e: React.MouseEvent) => {
     if (didDragRef.current) { e.preventDefault(); didDragRef.current = false; }

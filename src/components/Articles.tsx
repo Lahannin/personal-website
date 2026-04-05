@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -10,7 +10,6 @@ const sorted = [...articleEntries].sort(
 );
 
 const Articles = memo(() => {
-  const [showAll, setShowAll] = useState(false);
 
   return (
     <section id="articles" aria-labelledby="articles-heading" className="py-28 md:py-36 bg-background" data-description="Featured articles by Lauri Hänninen on Product Marketing, Analytics as Code, Headless BI, and metric standardization. Published on Medium and GoodData Blog.">
@@ -33,7 +32,7 @@ const Articles = memo(() => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={index >= 4 && !showAll ? "hidden md:block" : ""}
+                className={index >= 4 ? "hidden md:block" : ""}
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <Link
@@ -47,21 +46,13 @@ const Articles = memo(() => {
                   <div className="p-6 pl-5">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-2 mb-3">
-                          {article.publication !== "Medium" && (
-                            <span className="text-xs text-muted-foreground">
-                              {article.publication}
-                            </span>
-                          )}
-                          <span className="font-mono text-[10px] text-muted-foreground ml-auto">
-                            {new Date(article.date + "-01").toLocaleDateString("en-US", { month: "short", year: "numeric" })} · {article.readMin} min read
-                          </span>
-                        </div>
                         <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
                           {article.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground line-clamp-2">
-                          {article.description}
+                        <p className="text-sm text-muted-foreground">
+                          {article.description.length > 140
+                            ? article.description.slice(0, 140) + "…"
+                            : article.description}
                         </p>
                       </div>
                       <m.div
@@ -80,17 +71,6 @@ const Articles = memo(() => {
               </m.article>
             ))}
           </div>
-
-          {!showAll && (
-            <div className="md:hidden text-center mt-6">
-              <button
-                onClick={() => setShowAll(true)}
-                className="font-mono text-xs tracking-wide text-primary hover:text-primary/80 transition-colors"
-              >
-                Show {sorted.length - 4} more
-              </button>
-            </div>
-          )}
 
           {/* View all link */}
           <m.div

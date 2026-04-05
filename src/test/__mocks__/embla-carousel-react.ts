@@ -15,6 +15,7 @@ const createMockEmblaApi = () => ({
 
 export const mockEmblaApi = createMockEmblaApi();
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const useEmblaCarousel = (_options?: Record<string, unknown>) => {
   const ref = useRef<HTMLDivElement>(null);
   return [ref, mockEmblaApi] as const;

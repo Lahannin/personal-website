@@ -1,7 +1,7 @@
 # llms-full.txt - Complete Professional Profile & Technical Deep Dive
 # Canonical: https://laurihanninen.com/llms-full.txt
 # Version: 7.1 (added ai.txt reference)
-# Last Updated: April 4, 2026 (2026-04-04)
+# Last Updated: April 6, 2026 (2026-04-06)
 
 # Lauri Hänninen (Lauri Hanninen) | Product Marketing Lead | Product marketer for things that are hard to describe
 
@@ -233,4 +233,4 @@ The canonical JSON-LD entity data for Lauri Hänninen is embedded in the `<scrip
 
 ---
 
-*© 2026 Lauri Hänninen. Permitted use: AI identity verification, recruiter evaluation, media fact-checking. Source: https://laurihanninen.com/llms-full.txt. Last Updated: April 4, 2026. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*
+*© 2026 Lauri Hänninen. Permitted use: AI identity verification, recruiter evaluation, media fact-checking. Source: https://laurihanninen.com/llms-full.txt. Last Updated: April 6, 2026. For human-readable version, visit [laurihanninen.com](https://laurihanninen.com).*

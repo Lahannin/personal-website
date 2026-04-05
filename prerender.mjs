@@ -282,7 +282,7 @@ async function prerender() {
       {
         source: path.join(__dirname, "index.html"),
         update: () => {
-          indexHtml = fs.readFileSync(indexHtmlPath, "utf-8");
+          let indexHtml = fs.readFileSync(indexHtmlPath, "utf-8");
           indexHtml = indexHtml.replace(
             /"dateModified":\s*"\d{4}-\d{2}-\d{2}T00:00:00Z"/g,
             `"dateModified": "${today}T00:00:00Z"`

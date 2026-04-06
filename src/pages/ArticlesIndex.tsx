@@ -72,7 +72,7 @@ const ArticlesIndex = () => {
               className="mb-8"
             >
               <Link
-                to={`/articles/${featured.slug}`}
+                to={`/articles/${featured.slug}/`}
                 className="group block bg-secondary/20 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="md:flex">
@@ -140,7 +140,7 @@ const ArticlesIndex = () => {
                     }}
                   >
                     <Link
-                      to={`/articles/${article.slug}`}
+                      to={`/articles/${article.slug}/`}
                       className="group block bg-secondary/20 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-all duration-300 hover:-translate-y-1 h-full"
                     >
                       {article.coverImage && (

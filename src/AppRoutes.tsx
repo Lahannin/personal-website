@@ -24,8 +24,8 @@ const AppRoutes = () => (
     <ResetScrollOnNav />
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/articles" element={<ArticlesIndex />} />
-      <Route path="/articles/:slug" element={<ArticleDetail />} />
+      <Route path="/articles/" element={<ArticlesIndex />} />
+      <Route path="/articles/:slug/" element={<ArticleDetail />} />
       <Route path="/secret" element={<Secret />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

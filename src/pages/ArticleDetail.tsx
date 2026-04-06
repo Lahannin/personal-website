@@ -263,7 +263,7 @@ const ArticleDetail = () => {
               >
                 {prev ? (
                   <Link
-                    to={`/articles/${prev.slug}`}
+                    to={`/articles/${prev.slug}/`}
                     rel="prev"
                     className="group block bg-secondary/20 hover:bg-secondary/40 rounded-2xl p-5 transition-colors"
                   >
@@ -280,7 +280,7 @@ const ArticleDetail = () => {
                 )}
                 {next ? (
                   <Link
-                    to={`/articles/${next.slug}`}
+                    to={`/articles/${next.slug}/`}
                     rel="next"
                     className="group block bg-secondary/20 hover:bg-secondary/40 rounded-2xl p-5 transition-colors sm:text-right"
                   >

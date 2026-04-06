@@ -119,7 +119,7 @@ async function prerender() {
                 },
                 publisher: { "@type": "Organization", name: article.publication },
                 url: `https://laurihanninen.com/articles/${slug}/`,
-                mainEntityOfPage: `https://laurihanninen.com/articles/${slug}`,
+                mainEntityOfPage: `https://laurihanninen.com/articles/${slug}/`,
                 ...(article.coverImage
                   ? { image: `https://laurihanninen.com${article.coverImage}` }
                   : {}),

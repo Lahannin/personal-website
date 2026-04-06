@@ -295,3 +295,20 @@ export function getArticleBySlug(slug: string): ArticleEntry | undefined {
 export function getAllSlugs(): string[] {
   return articleEntries.map((a) => a.slug);
 }
+
+/**
+ * Returns the previous and next articles relative to the given slug,
+ * sorted by publication date (newest first). Used for article-to-article
+ * internal linking at the bottom of detail pages.
+ */
+export function getAdjacentArticles(slug: string): {
+  prev?: ArticleEntry;
+  next?: ArticleEntry;
+} {
+  const sorted = [...articleEntries].sort(
+    (a, b) => new Date(b.date + "-01").getTime() - new Date(a.date + "-01").getTime()
+  );
+  const i = sorted.findIndex((a) => a.slug === slug);
+  if (i === -1) return {};
+  return { prev: sorted[i - 1], next: sorted[i + 1] };
+}

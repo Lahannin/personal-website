@@ -103,7 +103,10 @@ async function prerender() {
                 title: `${article.title} | Lauri Hänninen`,
                 description: article.description,
                 ...(article.coverImage
-                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  ? {
+                      image: `https://laurihanninen.com${article.coverImage}`,
+                      imageAlt: `Cover image for article: ${article.title}`,
+                    }
                   : {}),
               }
             : undefined,
@@ -263,6 +266,12 @@ async function prerender() {
           html = html.replace(
             /<meta name="twitter:image" content="[^"]*" \/>/,
             `<meta name="twitter:image" content="${route.twitter.image}" />`
+          );
+        }
+        if (route.twitter.imageAlt) {
+          html = html.replace(
+            /<meta name="twitter:image:alt" content="[^"]*" \/>/,
+            `<meta name="twitter:image:alt" content="${route.twitter.imageAlt.replace(/"/g, "&quot;")}" />`
           );
         }
       }

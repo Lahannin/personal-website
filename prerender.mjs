@@ -242,6 +242,16 @@ async function prerender() {
         );
       }
 
+      // For non-root routes, strip all homepage JSON-LD blocks before injecting
+      // the page-specific schema. Otherwise Person/FAQPage/ProfilePage/BreadcrumbList
+      // etc. from the base template leak into article pages.
+      if (route.url !== "/") {
+        html = html.replace(
+          /\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+          ""
+        );
+      }
+
       // Inject per-page JSON-LD for articles
       if (route.jsonLd) {
         html = html.replace(

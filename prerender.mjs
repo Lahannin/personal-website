@@ -51,6 +51,7 @@ async function prerender() {
           description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
           url: "https://laurihanninen.com/articles/",
           type: "website",
+          imageAlt: "Articles by Lauri Hänninen (Hanninen) — product marketing, analytics, and data",
         },
         twitter: {
           card: "summary",
@@ -89,7 +90,10 @@ async function prerender() {
                 url: `https://laurihanninen.com/articles/${slug}/`,
                 type: "article",
                 ...(article.coverImage
-                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  ? {
+                      image: `https://laurihanninen.com${article.coverImage}`,
+                      imageAlt: `${article.title} | Lauri Hänninen (Hanninen)`,
+                    }
                   : {}),
               }
             : undefined,
@@ -198,6 +202,12 @@ async function prerender() {
           html = html.replace(
             /<meta property="og:image" content="[^"]*" \/>/,
             `<meta property="og:image" content="${route.og.image}" />`
+          );
+        }
+        if (route.og.imageAlt) {
+          html = html.replace(
+            /<meta property="og:image:alt" content="[^"]*" \/>/,
+            `<meta property="og:image:alt" content="${route.og.imageAlt.replace(/"/g, "&quot;")}" />`
           );
         }
       }

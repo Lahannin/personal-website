@@ -22,7 +22,7 @@ const About = memo(() => {
   ];
 
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-28 md:py-36 relative" data-description="About Lauri Hänninen: Product Marketing Lead with 10+ years experience across SaaS, hardware, crypto, and open-source. Open-source advocate and community builder based in Prague.">
+    <section id="about" aria-labelledby="about-heading" className="pt-10 pb-28 md:pt-20 md:pb-36 relative" data-description="About Lauri Hänninen: Product Marketing Lead with 10+ years experience across SaaS, hardware, crypto, and open-source. Open-source advocate and community builder based in Prague.">
       <div className="container px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <SectionHeader label="ABOUT" id="about-heading">

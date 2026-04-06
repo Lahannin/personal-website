@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://laurihanninen.com/</loc>
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-06</lastmod>
     <priority>1.0</priority>
 
     <image:image>
@@ -21,68 +21,68 @@
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/building-pmm-from-scratch-at-trezor</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/building-pmm-from-scratch-at-trezor/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/what-is-analytics-as-code</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/what-is-analytics-as-code/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/abc-product-marketing</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/abc-product-marketing/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/headless-bi-metric-standardization</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/headless-bi-metric-standardization/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/analytics-as-code</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/analytics-as-code/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/danger-zone-inconsistent-metrics</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/danger-zone-inconsistent-metrics/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/headless-bi-data-lakehouse</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/headless-bi-data-lakehouse/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/dashboardview-advanced-embedded-analytics</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/dashboardview-advanced-embedded-analytics/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/headless-bi-postgresql</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/headless-bi-postgresql/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://laurihanninen.com/articles/embedded-analytics-gdui-product-marketer</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://laurihanninen.com/articles/embedded-analytics-gdui-product-marketer/</loc>
+    <lastmod>2026-04-06</lastmod>
     <priority>0.7</priority>
   </url>
 

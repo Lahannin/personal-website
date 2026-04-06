@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { m } from "framer-motion";
-import { ArrowLeft, ExternalLink, Lightbulb, BookOpen, List } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Lightbulb, BookOpen, List } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ArticleHead from "@/components/ArticleHead";
-import { getArticleBySlug } from "@/data/articles";
+import { getArticleBySlug, getAdjacentArticles } from "@/data/articles";
 
 const ease = [0.22, 0.61, 0.36, 1] as const;
 
@@ -36,7 +36,7 @@ const ArticleDetail = () => {
               This article doesn't exist.
             </p>
             <Link
-              to="/articles"
+              to="/articles/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -54,6 +54,8 @@ const ArticleDetail = () => {
     { month: "long", year: "numeric" }
   );
 
+  const { prev, next } = getAdjacentArticles(article.slug);
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
@@ -69,7 +71,7 @@ const ArticleDetail = () => {
               transition={{ duration: 0.3, ease }}
             >
               <Link
-                to="/articles"
+                to="/articles/"
                 className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -89,6 +91,10 @@ const ArticleDetail = () => {
                   src={article.coverImage}
                   alt={`${article.title} cover by Lauri Hänninen (Lauri Hanninen)`}
                   className="w-full h-auto"
+                  width={1200}
+                  height={630}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </m.div>
             )}
@@ -106,9 +112,20 @@ const ArticleDetail = () => {
                 >
                   {article.category}
                 </span>
-                <span className="font-mono text-xs text-muted-foreground">
+                <a
+                  href="/#about"
+                  rel="author"
+                  className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Lauri Hänninen
+                </a>
+                <span className="text-border">·</span>
+                <time
+                  dateTime={article.date + "-01"}
+                  className="font-mono text-xs text-muted-foreground"
+                >
                   {formattedDate}
-                </span>
+                </time>
                 <span className="text-border">·</span>
                 <span className="font-mono text-xs text-muted-foreground">
                   {article.publication}
@@ -235,6 +252,52 @@ const ArticleDetail = () => {
               </div>
             </m.section>
 
+            {/* Prev / Next article navigation */}
+            {(prev || next) && (
+              <m.nav
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.28, ease }}
+                aria-label="Article navigation"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 pt-8 border-t border-border/50"
+              >
+                {prev ? (
+                  <Link
+                    to={`/articles/${prev.slug}`}
+                    rel="prev"
+                    className="group block bg-secondary/20 hover:bg-secondary/40 rounded-2xl p-5 transition-colors"
+                  >
+                    <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wide text-muted-foreground mb-2">
+                      <ArrowLeft className="w-3 h-3" aria-hidden="true" />
+                      Previous
+                    </div>
+                    <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                      {prev.title}
+                    </div>
+                  </Link>
+                ) : (
+                  <div aria-hidden="true" />
+                )}
+                {next ? (
+                  <Link
+                    to={`/articles/${next.slug}`}
+                    rel="next"
+                    className="group block bg-secondary/20 hover:bg-secondary/40 rounded-2xl p-5 transition-colors sm:text-right"
+                  >
+                    <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wide text-muted-foreground mb-2 sm:justify-end">
+                      Next
+                      <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                    </div>
+                    <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                      {next.title}
+                    </div>
+                  </Link>
+                ) : (
+                  <div aria-hidden="true" />
+                )}
+              </m.nav>
+            )}
+
             {/* CTA */}
             <m.div
               initial={{ opacity: 0, y: 15 }}
@@ -252,7 +315,7 @@ const ArticleDetail = () => {
                 <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
               <Link
-                to="/articles"
+                to="/articles/"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Browse all articles

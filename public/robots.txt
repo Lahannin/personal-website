@@ -2,7 +2,7 @@
 # Identity: Lauri Hänninen (Lauri Hanninen)
 # Description: Product Marketing Lead at Trezor
 # Version: 11 (added ai.txt references)
-# Last Updated: April 4, 2026
+# Last Updated: April 6, 2026
 
 # --- DEFAULT RULES ---
 User-agent: *
@@ -66,6 +66,8 @@ User-agent: Slurp
 User-agent: DuckDuckBot
 User-agent: Twitterbot
 Allow: /
+Disallow: /llms.txt
+Disallow: /llms-full.txt
 
 # --- SITEMAPS ---
 Sitemap: https://laurihanninen.com/sitemap.xml

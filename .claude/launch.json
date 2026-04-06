@@ -3,14 +3,14 @@
   "configurations": [
     {
       "name": "vite-dev",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "--port", "8080"],
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["/opt/homebrew/lib/node_modules/npm/bin/npx-cli.js", "vite", "--port", "8080"],
       "port": 8080
     },
     {
       "name": "vite-preview",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "preview", "--port", "4173"],
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["/opt/homebrew/lib/node_modules/npm/bin/npx-cli.js", "vite", "preview", "--port", "4173"],
       "port": 4173
     }
   ]

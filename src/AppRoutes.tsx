@@ -1,5 +1,5 @@
-import { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // Index is eagerly imported so hydration matches the pre-rendered HTML.
 // If Index were lazy, the first client render would be Suspense fallback={null},
@@ -11,8 +11,17 @@ const ArticleDetail = lazy(() => import("./pages/ArticleDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Secret = lazy(() => import("./pages/Secret"));
 
+function ResetScrollOnNav() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 const AppRoutes = () => (
   <Suspense fallback={null}>
+    <ResetScrollOnNav />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/articles" element={<ArticlesIndex />} />

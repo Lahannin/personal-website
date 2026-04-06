@@ -42,12 +42,12 @@ export const articleEntries: ArticleEntry[] = [
       "Trust is the real deliverable, not documents: earning engineers' time by demonstrating product knowledge and speaking their language matters more than any framework. Future PMM hires inherit whatever trust level you establish.",
     ],
     perspective2026:
-      "The same positioning process that started with Safe 3 has now been applied to Safe 5, Safe 7, Expert Onboarding services, limited editions, and dozens of feature launches over 2.5 years. The framework held up across hardware, software, and services, which I didn't expect when I first adapted April Dunford's B2B SaaS methodology for consumer hardware. The biggest lesson is that building from zero lets you define what product marketing means at your company. That's rare, and it carries real responsibility.",
+      "The same product marketing process that I build after Safe 3 has now been applied to Safe 5, Safe 7, Expert Onboarding services, limited editions, and dozens of feature launches over 2.5 years. The frameworks held up across hardware, software, and services, which I didn't expect when I first adapted April Dunford's B2B SaaS methodology for consumer hardware. The biggest lesson is that building from zero lets you define what product marketing means at your company. That's rare, and it carries real responsibility.",
     originalUrl:
       "https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6",
     tags: ["Product Marketing", "Trezor", "Positioning", "Hardware"],
     description:
-      "How I built the PMM function from zero at Trezor: positioning framework, messaging hierarchy, launch tiers, and earning engineer trust at a hardware company.",
+      "What it actually looks like to build product marketing from zero at a company that's been shipping products for a decade without it.",
     readMin: 8,
   },
   {
@@ -294,4 +294,21 @@ export function getArticleBySlug(slug: string): ArticleEntry | undefined {
 
 export function getAllSlugs(): string[] {
   return articleEntries.map((a) => a.slug);
+}
+
+/**
+ * Returns the previous and next articles relative to the given slug,
+ * sorted by publication date (newest first). Used for article-to-article
+ * internal linking at the bottom of detail pages.
+ */
+export function getAdjacentArticles(slug: string): {
+  prev?: ArticleEntry;
+  next?: ArticleEntry;
+} {
+  const sorted = [...articleEntries].sort(
+    (a, b) => new Date(b.date + "-01").getTime() - new Date(a.date + "-01").getTime()
+  );
+  const i = sorted.findIndex((a) => a.slug === slug);
+  if (i === -1) return {};
+  return { prev: sorted[i - 1], next: sorted[i + 1] };
 }

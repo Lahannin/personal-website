@@ -49,21 +49,27 @@ async function prerender() {
         og: {
           title: "Articles | Lauri Hänninen",
           description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
-          url: "https://laurihanninen.com/articles",
+          url: "https://laurihanninen.com/articles/",
           type: "website",
+          imageAlt: "Articles by Lauri Hänninen (Hanninen) — product marketing, analytics, and data",
+        },
+        twitter: {
+          card: "summary",
+          title: "Articles | Lauri Hänninen",
+          description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
         },
         jsonLd: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Articles by Lauri Hänninen",
           description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
-          url: "https://laurihanninen.com/articles",
+          url: "https://laurihanninen.com/articles/",
           mainEntity: {
             "@type": "ItemList",
             itemListElement: allArticlesSorted.map((a, i) => ({
               "@type": "ListItem",
               position: i + 1,
-              url: `https://laurihanninen.com/articles/${a.slug}`,
+              url: `https://laurihanninen.com/articles/${a.slug}/`,
               name: a.title,
             })),
           },
@@ -81,34 +87,83 @@ async function prerender() {
             ? {
                 title: `${article.title} | Lauri Hänninen`,
                 description: article.description,
-                url: `https://laurihanninen.com/articles/${slug}`,
+                url: `https://laurihanninen.com/articles/${slug}/`,
                 type: "article",
                 ...(article.coverImage
-                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  ? {
+                      image: `https://laurihanninen.com${article.coverImage}`,
+                      imageAlt: `Cover image for article: ${article.title}`,
+                    }
+                  : {}),
+              }
+            : undefined,
+          twitter: article
+            ? {
+                card: article.coverImage ? "summary_large_image" : "summary",
+                title: `${article.title} | Lauri Hänninen`,
+                description: article.description,
+                ...(article.coverImage
+                  ? {
+                      image: `https://laurihanninen.com${article.coverImage}`,
+                      imageAlt: `Cover image for article: ${article.title}`,
+                    }
                   : {}),
               }
             : undefined,
           jsonLd: article
-            ? JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                headline: article.title,
-                description: article.description,
-                datePublished: dateISO,
-                author: {
-                  "@type": "Person",
-                  "@id": "https://laurihanninen.com/#person",
-                  name: "Lauri Hänninen",
-                  alternateName: ["Lauri Hanninen", "Lauri Haenninen"],
-                  url: "https://laurihanninen.com",
-                },
-                publisher: { "@type": "Organization", name: article.publication },
-                url: `https://laurihanninen.com/articles/${slug}`,
-                mainEntityOfPage: `https://laurihanninen.com/articles/${slug}`,
-                ...(article.coverImage
-                  ? { image: `https://laurihanninen.com${article.coverImage}` }
-                  : {}),
-              })
+            ? [
+                JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Article",
+                  headline: article.title,
+                  description: article.description,
+                  abstract: article.summary,
+                  datePublished: dateISO,
+                  dateModified: dateISO,
+                  inLanguage: "en",
+                  articleSection: article.category,
+                  keywords: article.tags.join(", "),
+                  timeRequired: `PT${article.readMin}M`,
+                  author: {
+                    "@type": "Person",
+                    "@id": "https://laurihanninen.com/#person",
+                    name: "Lauri Hänninen",
+                    alternateName: ["Lauri Hanninen", "Lauri Haenninen"],
+                    url: "https://laurihanninen.com",
+                  },
+                  publisher: { "@type": "Organization", name: article.publication },
+                  url: `https://laurihanninen.com/articles/${slug}/`,
+                  mainEntityOfPage: `https://laurihanninen.com/articles/${slug}/`,
+                  sameAs: article.originalUrl,
+                  ...(article.coverImage
+                    ? { image: `https://laurihanninen.com${article.coverImage}` }
+                    : {}),
+                }),
+                JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: "https://laurihanninen.com/",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Articles",
+                      item: "https://laurihanninen.com/articles/",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 3,
+                      name: article.title,
+                      item: `https://laurihanninen.com/articles/${slug}/`,
+                    },
+                  ],
+                }),
+              ]
             : undefined,
         };
       }),
@@ -133,23 +188,27 @@ async function prerender() {
         );
       }
 
-      // Inject per-page meta description
+      // Inject per-page meta description (replace all occurrences)
       if (route.description) {
         const descMeta = `<meta name="description" content="${route.description.replace(/"/g, "&quot;")}" />`;
-        // Replace existing description or inject before </head>
-        if (html.includes('name="description"')) {
-          html = html.replace(
-            /<meta\s+name="description"[^>]*\/?>/,
-            descMeta
-          );
-        } else {
+        // Replace first occurrence, remove any duplicates
+        let descFound = false;
+        html = html.replace(/<meta\s+name="description"[^>]*\/?>/g, (match) => {
+          if (!descFound) {
+            descFound = true;
+            return descMeta;
+          }
+          return ""; // remove duplicate
+        });
+        if (!descFound) {
           html = html.replace("</head>", `    ${descMeta}\n  </head>`);
         }
       }
 
-      // Update per-page canonical URL
+      // Update per-page canonical URL (with trailing slash for GitHub Pages)
       if (route.url !== "/") {
-        const canonical = `<link rel="canonical" href="https://laurihanninen.com${route.url}" />`;
+        const pageUrl = route.url.endsWith("/") ? route.url : route.url + "/";
+        const canonical = `<link rel="canonical" href="https://laurihanninen.com${pageUrl}" />`;
         if (html.includes('rel="canonical"')) {
           html = html.replace(/<link\s+rel="canonical"[^>]*\/>/, canonical);
         } else {
@@ -157,29 +216,101 @@ async function prerender() {
         }
       }
 
-      // Inject per-page Open Graph tags
+      // Replace per-page Open Graph tags
       if (route.og) {
-        const ogTags = [
-          `<meta property="og:title" content="${route.og.title.replace(/"/g, "&quot;")}" />`,
-          `<meta property="og:description" content="${route.og.description.replace(/"/g, "&quot;")}" />`,
-          `<meta property="og:url" content="${route.og.url}" />`,
-          `<meta property="og:type" content="${route.og.type}" />`,
-          `<meta property="og:site_name" content="Lauri Hänninen" />`,
-        ];
+        html = html.replace(
+          /<meta property="og:title" content="[^"]*" \/>/,
+          `<meta property="og:title" content="${route.og.title.replace(/"/g, "&quot;")}" />`
+        );
+        html = html.replace(
+          /<meta property="og:description" content="[^"]*" \/>/,
+          `<meta property="og:description" content="${route.og.description.replace(/"/g, "&quot;")}" />`
+        );
+        html = html.replace(
+          /<meta property="og:url" content="[^"]*" \/>/,
+          `<meta property="og:url" content="${route.og.url}" />`
+        );
+        html = html.replace(
+          /<meta property="og:type" content="[^"]*" \/>/,
+          `<meta property="og:type" content="${route.og.type}" />`
+        );
         if (route.og.image) {
-          ogTags.push(`<meta property="og:image" content="${route.og.image}" />`);
-          ogTags.push(`<meta property="og:image:width" content="1200" />`);
-          ogTags.push(`<meta property="og:image:height" content="630" />`);
+          html = html.replace(
+            /<meta property="og:image" content="[^"]*" \/>/,
+            `<meta property="og:image" content="${route.og.image}" />`
+          );
         }
-        html = html.replace("</head>", `    ${ogTags.join("\n    ")}\n  </head>`);
+        if (route.og.imageAlt) {
+          html = html.replace(
+            /<meta property="og:image:alt" content="[^"]*" \/>/,
+            `<meta property="og:image:alt" content="${route.og.imageAlt.replace(/"/g, "&quot;")}" />`
+          );
+        }
       }
 
-      // Inject per-page JSON-LD for articles
-      if (route.jsonLd) {
+      // Replace per-page Twitter Card tags
+      if (route.twitter) {
         html = html.replace(
-          "</head>",
-          `    <script type="application/ld+json">${route.jsonLd}</script>\n  </head>`
+          /<meta name="twitter:card" content="[^"]*" \/>/,
+          `<meta name="twitter:card" content="${route.twitter.card}" />`
         );
+        html = html.replace(
+          /<meta name="twitter:title" content="[^"]*" \/>/,
+          `<meta name="twitter:title" content="${route.twitter.title.replace(/"/g, "&quot;")}" />`
+        );
+        html = html.replace(
+          /<meta name="twitter:description" content="[^"]*" \/>/,
+          `<meta name="twitter:description" content="${route.twitter.description.replace(/"/g, "&quot;")}" />`
+        );
+        if (route.twitter.image) {
+          html = html.replace(
+            /<meta name="twitter:image" content="[^"]*" \/>/,
+            `<meta name="twitter:image" content="${route.twitter.image}" />`
+          );
+        }
+        if (route.twitter.imageAlt) {
+          html = html.replace(
+            /<meta name="twitter:image:alt" content="[^"]*" \/>/,
+            `<meta name="twitter:image:alt" content="${route.twitter.imageAlt.replace(/"/g, "&quot;")}" />`
+          );
+        }
+      }
+
+      // Update per-page twitter:url and hreflang (with trailing slash for GitHub Pages)
+      if (route.url !== "/") {
+        const pageUrl = route.url.endsWith("/") ? route.url : route.url + "/";
+        const fullUrl = `https://laurihanninen.com${pageUrl}`;
+        html = html.replace(
+          /<meta name="twitter:url" content="[^"]*" \/>/,
+          `<meta name="twitter:url" content="${fullUrl}" />`
+        );
+        html = html.replace(
+          /<link rel="alternate" hreflang="en" href="[^"]*" \/>/,
+          `<link rel="alternate" hreflang="en" href="${fullUrl}" />`
+        );
+        html = html.replace(
+          /<link rel="alternate" hreflang="x-default" href="[^"]*" \/>/,
+          `<link rel="alternate" hreflang="x-default" href="${fullUrl}" />`
+        );
+      }
+
+      // For non-root routes, strip all homepage JSON-LD blocks before injecting
+      // the page-specific schema. Otherwise Person/FAQPage/ProfilePage/BreadcrumbList
+      // etc. from the base template leak into article pages.
+      if (route.url !== "/") {
+        html = html.replace(
+          /\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+          ""
+        );
+      }
+
+      // Inject per-page JSON-LD for articles (accepts string or array of strings)
+      if (route.jsonLd) {
+        const blocks = Array.isArray(route.jsonLd) ? route.jsonLd : [route.jsonLd];
+        const scripts = blocks
+          .map((b) => `    <script type="application/ld+json">${b}</script>`)
+          .join("\n");
+        html = html.replace("</head>", `${scripts}\n  </head>`);
       }
 
       const outPath = path.join(distPath, route.outFile);
@@ -236,7 +367,7 @@ async function prerender() {
       {
         source: path.join(__dirname, "index.html"),
         update: () => {
-          indexHtml = fs.readFileSync(indexHtmlPath, "utf-8");
+          let indexHtml = fs.readFileSync(indexHtmlPath, "utf-8");
           indexHtml = indexHtml.replace(
             /"dateModified":\s*"\d{4}-\d{2}-\d{2}T00:00:00Z"/g,
             `"dateModified": "${today}T00:00:00Z"`

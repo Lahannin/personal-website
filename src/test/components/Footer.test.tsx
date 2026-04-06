@@ -2,19 +2,21 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Footer from "@/components/Footer";
 
+const renderFooter = () => render(<MemoryRouter><Footer /></MemoryRouter>);
+
 describe("Footer", () => {
   it("renders with contentinfo role", () => {
-    render(<MemoryRouter><Footer /></MemoryRouter>);
+    renderFooter();
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
   it("renders footer navigation", () => {
-    render(<MemoryRouter><Footer /></MemoryRouter>);
+    renderFooter();
     expect(screen.getByLabelText("Footer navigation")).toBeInTheDocument();
   });
 
   it("renders all visible nav links", () => {
-    render(<MemoryRouter><Footer /></MemoryRouter>);
+    renderFooter();
     const labels = ["About", "Meetups", "Products", "Experience", "Skills", "Articles", "Contact"];
     for (const label of labels) {
       expect(screen.getByRole("link", { name: label })).toBeInTheDocument();
@@ -22,7 +24,7 @@ describe("Footer", () => {
   });
 
   it("renders llms.txt link as sr-only", () => {
-    const { container } = render(<MemoryRouter><Footer /></MemoryRouter>);
+    const { container } = renderFooter();
     const llmsLink = container.querySelector('a[href="/llms.txt"]');
     expect(llmsLink).toBeInTheDocument();
     expect(llmsLink).toHaveClass("sr-only");
@@ -30,13 +32,13 @@ describe("Footer", () => {
   });
 
   it("renders current year in copyright", () => {
-    render(<MemoryRouter><Footer /></MemoryRouter>);
+    renderFooter();
     const year = new Date().getFullYear().toString();
     expect(screen.getByText(new RegExp(year))).toBeInTheDocument();
   });
 
   it("renders tagline", () => {
-    render(<MemoryRouter><Footer /></MemoryRouter>);
+    renderFooter();
     expect(screen.getByText(/honest work/)).toBeInTheDocument();
   });
 });

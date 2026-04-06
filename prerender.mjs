@@ -51,6 +51,7 @@ async function prerender() {
           description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
           url: "https://laurihanninen.com/articles/",
           type: "website",
+          imageAlt: "Articles by Lauri Hänninen (Hanninen) — product marketing, analytics, and data",
         },
         twitter: {
           card: "summary",
@@ -89,7 +90,10 @@ async function prerender() {
                 url: `https://laurihanninen.com/articles/${slug}/`,
                 type: "article",
                 ...(article.coverImage
-                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  ? {
+                      image: `https://laurihanninen.com${article.coverImage}`,
+                      imageAlt: `Cover image for article: ${article.title}`,
+                    }
                   : {}),
               }
             : undefined,
@@ -99,31 +103,67 @@ async function prerender() {
                 title: `${article.title} | Lauri Hänninen`,
                 description: article.description,
                 ...(article.coverImage
-                  ? { image: `https://laurihanninen.com${article.coverImage}` }
+                  ? {
+                      image: `https://laurihanninen.com${article.coverImage}`,
+                      imageAlt: `Cover image for article: ${article.title}`,
+                    }
                   : {}),
               }
             : undefined,
           jsonLd: article
-            ? JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                headline: article.title,
-                description: article.description,
-                datePublished: dateISO,
-                author: {
-                  "@type": "Person",
-                  "@id": "https://laurihanninen.com/#person",
-                  name: "Lauri Hänninen",
-                  alternateName: ["Lauri Hanninen", "Lauri Haenninen"],
-                  url: "https://laurihanninen.com",
-                },
-                publisher: { "@type": "Organization", name: article.publication },
-                url: `https://laurihanninen.com/articles/${slug}/`,
-                mainEntityOfPage: `https://laurihanninen.com/articles/${slug}/`,
-                ...(article.coverImage
-                  ? { image: `https://laurihanninen.com${article.coverImage}` }
-                  : {}),
-              })
+            ? [
+                JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Article",
+                  headline: article.title,
+                  description: article.description,
+                  abstract: article.summary,
+                  datePublished: dateISO,
+                  dateModified: dateISO,
+                  inLanguage: "en",
+                  articleSection: article.category,
+                  keywords: article.tags.join(", "),
+                  timeRequired: `PT${article.readMin}M`,
+                  author: {
+                    "@type": "Person",
+                    "@id": "https://laurihanninen.com/#person",
+                    name: "Lauri Hänninen",
+                    alternateName: ["Lauri Hanninen", "Lauri Haenninen"],
+                    url: "https://laurihanninen.com",
+                  },
+                  publisher: { "@type": "Organization", name: article.publication },
+                  url: `https://laurihanninen.com/articles/${slug}/`,
+                  mainEntityOfPage: `https://laurihanninen.com/articles/${slug}/`,
+                  sameAs: article.originalUrl,
+                  ...(article.coverImage
+                    ? { image: `https://laurihanninen.com${article.coverImage}` }
+                    : {}),
+                }),
+                JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: "https://laurihanninen.com/",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Articles",
+                      item: "https://laurihanninen.com/articles/",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 3,
+                      name: article.title,
+                      item: `https://laurihanninen.com/articles/${slug}/`,
+                    },
+                  ],
+                }),
+              ]
             : undefined,
         };
       }),
@@ -200,6 +240,12 @@ async function prerender() {
             `<meta property="og:image" content="${route.og.image}" />`
           );
         }
+        if (route.og.imageAlt) {
+          html = html.replace(
+            /<meta property="og:image:alt" content="[^"]*" \/>/,
+            `<meta property="og:image:alt" content="${route.og.imageAlt.replace(/"/g, "&quot;")}" />`
+          );
+        }
       }
 
       // Replace per-page Twitter Card tags
@@ -222,6 +268,12 @@ async function prerender() {
             `<meta name="twitter:image" content="${route.twitter.image}" />`
           );
         }
+        if (route.twitter.imageAlt) {
+          html = html.replace(
+            /<meta name="twitter:image:alt" content="[^"]*" \/>/,
+            `<meta name="twitter:image:alt" content="${route.twitter.imageAlt.replace(/"/g, "&quot;")}" />`
+          );
+        }
       }
 
       // Update per-page twitter:url and hreflang (with trailing slash for GitHub Pages)
@@ -242,12 +294,23 @@ async function prerender() {
         );
       }
 
-      // Inject per-page JSON-LD for articles
-      if (route.jsonLd) {
+      // For non-root routes, strip all homepage JSON-LD blocks before injecting
+      // the page-specific schema. Otherwise Person/FAQPage/ProfilePage/BreadcrumbList
+      // etc. from the base template leak into article pages.
+      if (route.url !== "/") {
         html = html.replace(
-          "</head>",
-          `    <script type="application/ld+json">${route.jsonLd}</script>\n  </head>`
+          /\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+          ""
         );
+      }
+
+      // Inject per-page JSON-LD for articles (accepts string or array of strings)
+      if (route.jsonLd) {
+        const blocks = Array.isArray(route.jsonLd) ? route.jsonLd : [route.jsonLd];
+        const scripts = blocks
+          .map((b) => `    <script type="application/ld+json">${b}</script>`)
+          .join("\n");
+        html = html.replace("</head>", `${scripts}\n  </head>`);
       }
 
       const outPath = path.join(distPath, route.outFile);

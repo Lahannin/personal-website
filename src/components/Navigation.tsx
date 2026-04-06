@@ -190,7 +190,7 @@ const Navigation = () => {
                           <li key={link.href}>
                             <a
                               href={link.href}
-                              onClick={(e) => { setIsMobileMenuOpen(false); handleNavClick(e, sectionId); }}
+                              onClick={(e) => { e.preventDefault(); const id = sectionId; setIsMobileMenuOpen(false); setTimeout(() => { if (location.pathname === "/") { scrollToSection(id); } else { navigate("/"); const poll = (attempts = 0) => { const el = document.getElementById(id); if (el) scrollToSection(id); else if (attempts < 30) setTimeout(() => poll(attempts + 1), 100); }; setTimeout(() => poll(), 50); } }, 350); }}
                               className={className}
                             >
                               {link.label}

@@ -110,9 +110,12 @@ const ArticleDetail = () => {
                   Lauri Hänninen
                 </span>
                 <span className="text-border">·</span>
-                <span className="font-mono text-xs text-muted-foreground">
+                <time
+                  dateTime={article.date + "-01"}
+                  className="font-mono text-xs text-muted-foreground"
+                >
                   {formattedDate}
-                </span>
+                </time>
                 <span className="text-border">·</span>
                 <span className="font-mono text-xs text-muted-foreground">
                   {article.publication}

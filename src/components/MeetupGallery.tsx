@@ -45,7 +45,7 @@ const MeetupGallery = memo(() => {
       ref={sectionRef}
       id="meetups"
       aria-labelledby="meetups-heading"
-      className="py-28 md:py-36 relative overflow-hidden"
+      className="pt-10 pb-28 md:pt-20 md:pb-36 relative overflow-hidden"
       data-description="Product marketing meetups organized by Lauri Hänninen in Prague as Chapter Lead of Product Marketing Alliance Czech Republic."
     >
 

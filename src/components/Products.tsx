@@ -108,7 +108,7 @@ const Products = memo(() => {
       ref={sectionRef} 
       id="products" 
       aria-labelledby="products-heading" 
-      className="py-28 md:py-36 relative overflow-hidden bg-background"
+      className="pt-10 pb-28 md:pt-20 md:pb-36 relative overflow-hidden bg-background"
       data-description="Products launched by Lauri Hänninen: Trezor Safe 7, Trezor Safe 5, Trezor Safe 5 Freedom Edition, Trezor Expert Onboarding, Trezor Expert Consultation, GoodData Cloud Platform, and GoodData Cloud Native."
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />

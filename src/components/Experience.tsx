@@ -231,7 +231,7 @@ const Experience = memo(() => {
   };
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="py-28 md:py-36 relative" data-description="Lauri Hänninen's career journey: Product Marketing Lead at Trezor, PMA Chapter Lead in Prague, Senior Technical PMM at GoodData, Web Tagging Team Lead at Wunderman Thompson, and Client Delivery at SQN.">
+    <section id="experience" aria-labelledby="experience-heading" className="pt-10 pb-28 md:pt-20 md:pb-36 relative" data-description="Lauri Hänninen's career journey: Product Marketing Lead at Trezor, PMA Chapter Lead in Prague, Senior Technical PMM at GoodData, Web Tagging Team Lead at Wunderman Thompson, and Client Delivery at SQN.">
       <div className="container px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <SectionHeader label="EXPERIENCE" id="experience-heading">

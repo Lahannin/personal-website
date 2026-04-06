@@ -60,7 +60,7 @@ const dotVariant = { hidden: { opacity: 0, scale: 0.5 }, visible: { opacity: 1, 
 
 const Skills = memo(() => {
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="py-28 md:py-36 relative" data-description="Lauri Hänninen's professional skills, certifications from Product Marketing Alliance and others, and education from University of Oulu and University of Helsinki">
+    <section id="skills" aria-labelledby="skills-heading" className="pt-10 pb-28 md:pt-20 md:pb-36 relative" data-description="Lauri Hänninen's professional skills, certifications from Product Marketing Alliance and others, and education from University of Oulu and University of Helsinki">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           <SectionHeader label="SKILLS" id="skills-heading">

@@ -12,6 +12,7 @@ export interface ArticleEntry {
   title: string;
   publication: string;
   date: string;
+  dateModified?: string;
   category: "Product Marketing" | "Data" | "Hardware";
   coverImage?: string;
   intro: string;
@@ -30,6 +31,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "Building Product Marketing From Scratch at Trezor",
     publication: "Medium",
     date: "2026-04",
+    dateModified: "2026-04",
     category: "Product Marketing",
     coverImage: "/images/articles/building-pmm-from-scratch-at-trezor.jpeg",
     intro:
@@ -55,6 +57,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "What Is Analytics as Code?",
     publication: "GoodData Developers",
     date: "2023-08",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/what-is-analytics-as-code.png",
     intro:
@@ -81,6 +84,7 @@ export const articleEntries: ArticleEntry[] = [
       "ABC of Product Marketing: Positioning, Messaging, and Copy Explained",
     publication: "Medium",
     date: "2023-04",
+    dateModified: "2026-04",
     category: "Product Marketing",
     coverImage: "/images/articles/abc-product-marketing.png",
     intro:
@@ -106,6 +110,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "Headless BI: Metric Standardization in Action",
     publication: "Better Programming",
     date: "2022-03",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/headless-bi-metric-standardization.jpeg",
     intro:
@@ -132,6 +137,7 @@ export const articleEntries: ArticleEntry[] = [
       "Analytics as Code: Managing Analytics Solutions Like Any Other Software",
     publication: "GoodData Developers",
     date: "2022-02",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/analytics-as-code.png",
     intro:
@@ -157,6 +163,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "Danger Zone: Inconsistent Metrics at Work",
     publication: "Medium",
     date: "2022-02",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/danger-zone-inconsistent-metrics.jpeg",
     intro:
@@ -182,6 +189,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "Headless BI x Data Lakehouse",
     publication: "GoodData Developers",
     date: "2022-01",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/headless-bi-data-lakehouse.png",
     intro:
@@ -207,6 +215,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "DashboardView: Advanced Embedded Analytics",
     publication: "GoodData Developers",
     date: "2021-06",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/dashboardview-advanced-embedded-analytics.png",
     intro:
@@ -232,6 +241,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "Build a Headless BI Stack on Top of PostgreSQL",
     publication: "GoodData Developers",
     date: "2021-06",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/headless-bi-postgresql.png",
     intro:
@@ -257,6 +267,7 @@ export const articleEntries: ArticleEntry[] = [
     title: "Embedded Analytics: GD.UI with a Product Marketer",
     publication: "GoodData Developers",
     date: "2021-04",
+    dateModified: "2026-04",
     category: "Data",
     coverImage: "/images/articles/embedded-analytics-gdui-product-marketer.png",
     intro:

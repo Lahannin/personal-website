@@ -110,10 +110,11 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
     jsonLd.type = "application/ld+json";
     jsonLd.textContent = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       headline: article.title,
       description: article.description,
       datePublished: article.date + "-01",
+      ...(article.dateModified ? { dateModified: article.dateModified + "-01" } : {}),
       author: {
         "@type": "Person",
         "@id": "https://laurihanninen.com/#person",
@@ -133,6 +134,19 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
     });
     document.head.appendChild(jsonLd);
 
+    const breadcrumbLd = document.createElement("script");
+    breadcrumbLd.type = "application/ld+json";
+    breadcrumbLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://laurihanninen.com" },
+        { "@type": "ListItem", position: 2, name: "Articles", item: "https://laurihanninen.com/articles" },
+        { "@type": "ListItem", position: 3, name: article.title, item: `https://laurihanninen.com/articles/${article.slug}` },
+      ],
+    });
+    document.head.appendChild(breadcrumbLd);
+
     return () => {
       document.title = prevTitle;
       document.head.removeChild(meta);
@@ -145,6 +159,7 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
       ogImageEls.forEach((el) => document.head.removeChild(el));
       twitterEls.forEach((el) => document.head.removeChild(el));
       document.head.removeChild(jsonLd);
+      document.head.removeChild(breadcrumbLd);
     };
   }, [article]);
 

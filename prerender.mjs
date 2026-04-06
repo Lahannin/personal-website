@@ -58,22 +58,32 @@ async function prerender() {
           title: "Articles | Lauri Hänninen",
           description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
         },
-        jsonLd: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: "Articles by Lauri Hänninen",
-          description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
-          url: "https://laurihanninen.com/articles/",
-          mainEntity: {
-            "@type": "ItemList",
-            itemListElement: allArticlesSorted.map((a, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              url: `https://laurihanninen.com/articles/${a.slug}/`,
-              name: a.title,
-            })),
-          },
-        }),
+        jsonLd: [
+            JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              name: "Articles by Lauri Hänninen",
+              description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
+              url: "https://laurihanninen.com/articles/",
+              mainEntity: {
+                "@type": "ItemList",
+                itemListElement: allArticlesSorted.map((a, i) => ({
+                  "@type": "ListItem",
+                  position: i + 1,
+                  url: `https://laurihanninen.com/articles/${a.slug}/`,
+                  name: a.title,
+                })),
+              },
+            }),
+            JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://laurihanninen.com/" },
+                { "@type": "ListItem", position: 2, name: "Articles", item: "https://laurihanninen.com/articles/" },
+              ],
+            }),
+          ],
       },
       ...slugs.map((slug) => {
         const article = getArticleBySlug(slug);
@@ -114,12 +124,12 @@ async function prerender() {
             ? [
                 JSON.stringify({
                   "@context": "https://schema.org",
-                  "@type": "Article",
+                  "@type": "BlogPosting",
                   headline: article.title,
                   description: article.description,
                   abstract: article.summary,
                   datePublished: dateISO,
-                  dateModified: dateISO,
+                  dateModified: article.dateModified ? article.dateModified + "-01" : dateISO,
                   inLanguage: "en",
                   articleSection: article.category,
                   keywords: article.tags.join(", "),

@@ -17,7 +17,7 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
 
     const canonical = document.createElement("link");
     canonical.rel = "canonical";
-    canonical.href = `https://laurihanninen.com/articles/${article.slug}`;
+    canonical.href = `https://laurihanninen.com/articles/${article.slug}/`;
     document.head.appendChild(canonical);
 
     const ogTitle = document.createElement("meta");
@@ -32,7 +32,7 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
 
     const ogUrl = document.createElement("meta");
     ogUrl.setAttribute("property", "og:url");
-    ogUrl.content = `https://laurihanninen.com/articles/${article.slug}`;
+    ogUrl.content = `https://laurihanninen.com/articles/${article.slug}/`;
     document.head.appendChild(ogUrl);
 
     const ogType = document.createElement("meta");
@@ -125,8 +125,8 @@ const ArticleHead = ({ article }: ArticleHeadProps) => {
         "@type": "Organization",
         name: article.publication,
       },
-      url: `https://laurihanninen.com/articles/${article.slug}`,
-      mainEntityOfPage: `https://laurihanninen.com/articles/${article.slug}`,
+      url: `https://laurihanninen.com/articles/${article.slug}/`,
+      mainEntityOfPage: `https://laurihanninen.com/articles/${article.slug}/`,
       ...(article.coverImage
         ? { image: `https://laurihanninen.com${article.coverImage}` }
         : {}),

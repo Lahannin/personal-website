@@ -49,7 +49,7 @@ async function prerender() {
         og: {
           title: "Articles | Lauri Hänninen",
           description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
-          url: "https://laurihanninen.com/articles",
+          url: "https://laurihanninen.com/articles/",
           type: "website",
         },
         twitter: {
@@ -62,13 +62,13 @@ async function prerender() {
           "@type": "CollectionPage",
           name: "Articles by Lauri Hänninen",
           description: "Professional articles on product marketing, analytics as code, headless BI, and data architecture.",
-          url: "https://laurihanninen.com/articles",
+          url: "https://laurihanninen.com/articles/",
           mainEntity: {
             "@type": "ItemList",
             itemListElement: allArticlesSorted.map((a, i) => ({
               "@type": "ListItem",
               position: i + 1,
-              url: `https://laurihanninen.com/articles/${a.slug}`,
+              url: `https://laurihanninen.com/articles/${a.slug}/`,
               name: a.title,
             })),
           },
@@ -86,7 +86,7 @@ async function prerender() {
             ? {
                 title: `${article.title} | Lauri Hänninen`,
                 description: article.description,
-                url: `https://laurihanninen.com/articles/${slug}`,
+                url: `https://laurihanninen.com/articles/${slug}/`,
                 type: "article",
                 ...(article.coverImage
                   ? { image: `https://laurihanninen.com${article.coverImage}` }
@@ -118,7 +118,7 @@ async function prerender() {
                   url: "https://laurihanninen.com",
                 },
                 publisher: { "@type": "Organization", name: article.publication },
-                url: `https://laurihanninen.com/articles/${slug}`,
+                url: `https://laurihanninen.com/articles/${slug}/`,
                 mainEntityOfPage: `https://laurihanninen.com/articles/${slug}`,
                 ...(article.coverImage
                   ? { image: `https://laurihanninen.com${article.coverImage}` }
@@ -165,9 +165,10 @@ async function prerender() {
         }
       }
 
-      // Update per-page canonical URL
+      // Update per-page canonical URL (with trailing slash for GitHub Pages)
       if (route.url !== "/") {
-        const canonical = `<link rel="canonical" href="https://laurihanninen.com${route.url}" />`;
+        const pageUrl = route.url.endsWith("/") ? route.url : route.url + "/";
+        const canonical = `<link rel="canonical" href="https://laurihanninen.com${pageUrl}" />`;
         if (html.includes('rel="canonical"')) {
           html = html.replace(/<link\s+rel="canonical"[^>]*\/>/, canonical);
         } else {
@@ -223,9 +224,10 @@ async function prerender() {
         }
       }
 
-      // Update per-page twitter:url and hreflang
+      // Update per-page twitter:url and hreflang (with trailing slash for GitHub Pages)
       if (route.url !== "/") {
-        const fullUrl = `https://laurihanninen.com${route.url}`;
+        const pageUrl = route.url.endsWith("/") ? route.url : route.url + "/";
+        const fullUrl = `https://laurihanninen.com${pageUrl}`;
         html = html.replace(
           /<meta name="twitter:url" content="[^"]*" \/>/,
           `<meta name="twitter:url" content="${fullUrl}" />`

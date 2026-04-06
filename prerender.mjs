@@ -148,16 +148,19 @@ async function prerender() {
         );
       }
 
-      // Inject per-page meta description
+      // Inject per-page meta description (replace all occurrences)
       if (route.description) {
         const descMeta = `<meta name="description" content="${route.description.replace(/"/g, "&quot;")}" />`;
-        // Replace existing description or inject before </head>
-        if (html.includes('name="description"')) {
-          html = html.replace(
-            /<meta\s+name="description"[^>]*\/?>/,
-            descMeta
-          );
-        } else {
+        // Replace first occurrence, remove any duplicates
+        let descFound = false;
+        html = html.replace(/<meta\s+name="description"[^>]*\/?>/g, (match) => {
+          if (!descFound) {
+            descFound = true;
+            return descMeta;
+          }
+          return ""; // remove duplicate
+        });
+        if (!descFound) {
           html = html.replace("</head>", `    ${descMeta}\n  </head>`);
         }
       }
@@ -218,6 +221,23 @@ async function prerender() {
             `<meta name="twitter:image" content="${route.twitter.image}" />`
           );
         }
+      }
+
+      // Update per-page twitter:url and hreflang
+      if (route.url !== "/") {
+        const fullUrl = `https://laurihanninen.com${route.url}`;
+        html = html.replace(
+          /<meta name="twitter:url" content="[^"]*" \/>/,
+          `<meta name="twitter:url" content="${fullUrl}" />`
+        );
+        html = html.replace(
+          /<link rel="alternate" hreflang="en" href="[^"]*" \/>/,
+          `<link rel="alternate" hreflang="en" href="${fullUrl}" />`
+        );
+        html = html.replace(
+          /<link rel="alternate" hreflang="x-default" href="[^"]*" \/>/,
+          `<link rel="alternate" hreflang="x-default" href="${fullUrl}" />`
+        );
       }
 
       // Inject per-page JSON-LD for articles

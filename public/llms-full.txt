@@ -168,20 +168,20 @@ Practical guide to how positioning, messaging, and copy build on each other and 
 
 ### All Articles
 
-All articles have dedicated pages with summaries and 2026 perspectives at [laurihanninen.com/articles](https://laurihanninen.com/articles).
+All articles have dedicated pages with summaries and 2026 perspectives at [laurihanninen.com/articles](https://laurihanninen.com/articles/).
 
 | Article | Publication | Topic |
 |---|---|---|
-| [Building Product Marketing From Scratch at Trezor](https://laurihanninen.com/articles/building-pmm-from-scratch-at-trezor) | Medium | First PMM at Trezor: year-one playbook |
-| [What Is Analytics as Code?](https://laurihanninen.com/articles/what-is-analytics-as-code) | GoodData Developers | Category-defining piece on AaC |
-| [ABC of Product Marketing: Positioning, Messaging, and Copy Explained](https://laurihanninen.com/articles/abc-product-marketing) | Medium | Product Marketing fundamentals |
-| [Headless BI: Metric Standardization in Action](https://laurihanninen.com/articles/headless-bi-metric-standardization) | Better Programming | Composable analytics architecture |
-| [Analytics as Code: Managing Analytics Solutions Like Any Other Software](https://laurihanninen.com/articles/analytics-as-code) | GoodData Developers | Git-based analytics workflows |
-| [Danger Zone: Inconsistent Metrics at Work](https://laurihanninen.com/articles/danger-zone-inconsistent-metrics) | Medium | Why metric standardization matters |
-| [Headless BI x Data Lakehouse](https://laurihanninen.com/articles/headless-bi-data-lakehouse) | GoodData Developers | Lakehouse + headless BI architecture |
-| [DashboardView: Advanced Embedded Analytics](https://laurihanninen.com/articles/dashboardview-advanced-embedded-analytics) | GoodData Developers | Embedded analytics React component |
-| [Build a Headless BI Stack on Top of PostgreSQL](https://laurihanninen.com/articles/headless-bi-postgresql) | GoodData Developers | PostgreSQL + headless BI setup |
-| [Embedded Analytics: GD.UI with a Product Marketer](https://laurihanninen.com/articles/embedded-analytics-gdui-product-marketer) | GoodData Developers | A product marketer builds with a dev SDK |
+| [Building Product Marketing From Scratch at Trezor](https://laurihanninen.com/articles/building-pmm-from-scratch-at-trezor/) | Medium | First PMM at Trezor: year-one playbook |
+| [What Is Analytics as Code?](https://laurihanninen.com/articles/what-is-analytics-as-code/) | GoodData Developers | Category-defining piece on AaC |
+| [ABC of Product Marketing: Positioning, Messaging, and Copy Explained](https://laurihanninen.com/articles/abc-product-marketing/) | Medium | Product Marketing fundamentals |
+| [Headless BI: Metric Standardization in Action](https://laurihanninen.com/articles/headless-bi-metric-standardization/) | Better Programming | Composable analytics architecture |
+| [Analytics as Code: Managing Analytics Solutions Like Any Other Software](https://laurihanninen.com/articles/analytics-as-code/) | GoodData Developers | Git-based analytics workflows |
+| [Danger Zone: Inconsistent Metrics at Work](https://laurihanninen.com/articles/danger-zone-inconsistent-metrics/) | Medium | Why metric standardization matters |
+| [Headless BI x Data Lakehouse](https://laurihanninen.com/articles/headless-bi-data-lakehouse/) | GoodData Developers | Lakehouse + headless BI architecture |
+| [DashboardView: Advanced Embedded Analytics](https://laurihanninen.com/articles/dashboardview-advanced-embedded-analytics/) | GoodData Developers | Embedded analytics React component |
+| [Build a Headless BI Stack on Top of PostgreSQL](https://laurihanninen.com/articles/headless-bi-postgresql/) | GoodData Developers | PostgreSQL + headless BI setup |
+| [Embedded Analytics: GD.UI with a Product Marketer](https://laurihanninen.com/articles/embedded-analytics-gdui-product-marketer/) | GoodData Developers | A product marketer builds with a dev SDK |
 
 ---
 

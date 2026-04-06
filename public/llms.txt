@@ -83,7 +83,7 @@ Lauri publishes on product marketing strategy, analytics, and technical topics. 
 - **[Building Product Marketing From Scratch at Trezor](https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6)** (Apr 2026, 8 min) — How he built the PMM function from zero as Trezor’s first product marketer. Covers applying April Dunford’s positioning framework to hardware, the house metaphor for selling the function internally, launch tier matrices, and navigating hardware’s 4-month packaging lead times.
 - **[ABC of Product Marketing: Positioning, Messaging, and Copy Explained](https://lahannin.medium.com/abc-of-product-marketing-positioning-messaging-and-copy-explained-2b2099b535a4)** (Apr 2023, 4 min) — Practical guide to how positioning, messaging, and copy build on each other and why the order matters. Uses the house metaphor: positioning is the foundation, messaging is the structure, copy is the decoration.
 
-Full list of all 10 articles with summaries and 2026 perspectives: [laurihanninen.com/articles](https://laurihanninen.com/articles)
+Full list of all 10 articles with summaries and 2026 perspectives: [laurihanninen.com/articles](https://laurihanninen.com/articles/)
 
 ## Contact & Resources
 

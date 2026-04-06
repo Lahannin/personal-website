@@ -32,7 +32,7 @@ const ArticlesIndex = () => {
 
     const canonical = document.createElement("link");
     canonical.rel = "canonical";
-    canonical.href = "https://laurihanninen.com/articles";
+    canonical.href = "https://laurihanninen.com/articles/";
     document.head.appendChild(canonical);
 
     return () => {

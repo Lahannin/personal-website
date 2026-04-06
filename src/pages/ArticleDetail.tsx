@@ -36,7 +36,7 @@ const ArticleDetail = () => {
               This article doesn't exist.
             </p>
             <Link
-              to="/articles"
+              to="/articles/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -71,7 +71,7 @@ const ArticleDetail = () => {
               transition={{ duration: 0.3, ease }}
             >
               <Link
-                to="/articles"
+                to="/articles/"
                 className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -315,7 +315,7 @@ const ArticleDetail = () => {
                 <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
               <Link
-                to="/articles"
+                to="/articles/"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Browse all articles

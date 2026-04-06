@@ -42,7 +42,7 @@ export const articleEntries: ArticleEntry[] = [
       "Trust is the real deliverable, not documents: earning engineers' time by demonstrating product knowledge and speaking their language matters more than any framework. Future PMM hires inherit whatever trust level you establish.",
     ],
     perspective2026:
-      "The same positioning process that started with Safe 3 has now been applied to Safe 5, Safe 7, Expert Onboarding services, limited editions, and dozens of feature launches over 2.5 years. The framework held up across hardware, software, and services, which I didn't expect when I first adapted April Dunford's B2B SaaS methodology for consumer hardware. The biggest lesson is that building from zero lets you define what product marketing means at your company. That's rare, and it carries real responsibility.",
+      "The same product marketing process that I build after Safe 3 has now been applied to Safe 5, Safe 7, Expert Onboarding services, limited editions, and dozens of feature launches over 2.5 years. The frameworks held up across hardware, software, and services, which I didn't expect when I first adapted April Dunford's B2B SaaS methodology for consumer hardware. The biggest lesson is that building from zero lets you define what product marketing means at your company. That's rare, and it carries real responsibility.",
     originalUrl:
       "https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6",
     tags: ["Product Marketing", "Trezor", "Positioning", "Hardware"],

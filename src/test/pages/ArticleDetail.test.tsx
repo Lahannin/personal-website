@@ -53,7 +53,7 @@ describe("ArticleDetail page", () => {
   it("renders back link to /articles", () => {
     renderArticle(validSlug);
     const backLinks = screen.getAllByRole("link", { name: /articles/i }).filter(
-      (l) => l.getAttribute("href") === "/articles"
+      (l) => l.getAttribute("href") === "/articles/"
     );
     expect(backLinks.length).toBeGreaterThanOrEqual(1);
   });

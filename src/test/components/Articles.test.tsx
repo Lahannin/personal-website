@@ -24,6 +24,6 @@ describe("Articles", () => {
   it("renders 'View all articles' link pointing to /articles", () => {
     renderWithProviders(<Articles />);
     const viewAll = screen.getByText(/View all articles/);
-    expect(viewAll.closest("a")).toHaveAttribute("href", "/articles");
+    expect(viewAll.closest("a")).toHaveAttribute("href", "/articles/");
   });
 });

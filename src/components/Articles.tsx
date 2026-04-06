@@ -36,7 +36,7 @@ const Articles = memo(() => {
                 data-description={`Article by Lauri Hänninen: ${article.title} — ${article.description}`}
               >
                 <Link
-                  to={`/articles/${article.slug}`}
+                  to={`/articles/${article.slug}/`}
                   className="group block bg-secondary/20 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-all duration-300 hover:-translate-y-1 h-full relative"
                 >
                   {/* Category accent bar */}
@@ -81,7 +81,7 @@ const Articles = memo(() => {
             className="text-center mt-10"
           >
             <Link
-              to="/articles"
+              to="/articles/"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
             >
               View all articles

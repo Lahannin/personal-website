@@ -32,7 +32,7 @@ const companies: Company[] = [
   {
     name: "Trezor",
     location: "Prague, Czechia",
-    description: "The original hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
+    description: "The original Bitcoin hardware wallet company. Pioneering secure, open-source self-custody for Bitcoin and crypto since 2014.",
     logo: "/trezor-logo.webp",
     dateRange: "09/2023 - Present",
     roles: [

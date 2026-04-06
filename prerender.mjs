@@ -92,7 +92,7 @@ async function prerender() {
                 ...(article.coverImage
                   ? {
                       image: `https://laurihanninen.com${article.coverImage}`,
-                      imageAlt: `${article.title} | Lauri Hänninen (Hanninen)`,
+                      imageAlt: `Cover image for article: ${article.title}`,
                     }
                   : {}),
               }

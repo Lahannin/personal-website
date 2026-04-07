@@ -35,21 +35,21 @@ export const articleEntries: ArticleEntry[] = [
     category: "Product Marketing",
     coverImage: "/images/articles/building-pmm-from-scratch-at-trezor.jpeg",
     intro:
-      "I joined Trezor in September 2023 as their first product marketing manager. The company had shipped hardware wallets for a decade without a positioning framework, messaging hierarchy, or launch playbook. Two weeks in, we launched the Safe 3 at Bitcoin Amsterdam. This article is about what happened next: building the entire PMM function from zero, one framework at a time.",
+      "I joined Trezor in September 2023 as the first product marketing manager the company had ever hired. The first thing I did was nothing. I didn't write a positioning doc, run a workshop, or open a Notion page called 'Q4 Marketing Strategy'. I made a list of every person I needed to talk to, and I started talking. This is the story of building the function from zero: the frameworks helped, but earning trust mattered more.",
     summary:
-      "The article walks through what it actually looks like to be a founding PMM at a hardware company. First 60 days were cross-company meetings discovering that launches ran on instinct, not process. Before building any frameworks, I had to sell the function itself, using a house metaphor (positioning is the foundation, messaging is the house, copy is the decoration). Year one produced a positioning framework adapted from April Dunford's methodology, a messaging hierarchy, and a launch tier matrix. The Safe 5 launch at BTC Prague in June 2024 was the first real proof it worked: every team operated from the same strategic story.",
+      "A founding PMM's first job isn't strategy, it's listening. My first sixty days at Trezor were spent meeting product, design, support, leadership, and the people who packed the boxes, asking 'how does this actually work here' until I understood why the company had gotten this far on instinct alone. Then came the harder work: selling the function before I could use it (the house metaphor — positioning is the foundation, messaging is the house, copy is the decoration), running the first positioning workshop ahead of Safe 5, and introducing a launch tier matrix so the company could stop doing too much for too little. The Safe 5 launch at BTC Prague in June 2024 was the proof: the packaging team pulled lines from the messaging doc themselves, and on Reddit and X the community fed back the exact narrative we'd built months earlier. Product marketing exists when the story works without you having to be in every room.",
     takeaways: [
-      "Sell the function before you sell the product: nobody will use your frameworks if they don't understand what product marketing actually does. The house metaphor (positioning, messaging, copy) made it click.",
-      "Hardware forces you to get it right early: packaging messaging gets locked months before launch. Unlike SaaS, you can't iterate your way out of a bad positioning call once production starts.",
-      "Trust is the real deliverable, not documents: earning engineers' time by demonstrating product knowledge and speaking their language matters more than any framework. Future PMM hires inherit whatever trust level you establish.",
+      "Sell the function before you use it: nobody will adopt your frameworks if they don't understand what product marketing does. The house metaphor (positioning, messaging, copy) gave people a mental model they could explain to each other when I wasn't in the room.",
+      "Frameworks are everywhere; earning the right to introduce one is the real work. April Dunford's positioning method and launch tiers exist in every PMM playbook on the internet. Getting a company to actually use them is a completely different problem.",
+      "Trust is the founding PMM's most important deliverable, not documents. You have to become the product expert on the marketing team and the marketing expert on the product team, in both directions at once. That's earned in small interactions, almost none of which feel like 'marketing work' at the time.",
     ],
     perspective2026:
-      "The same product marketing process that I build after Safe 3 has now been applied to Safe 5, Safe 7, Expert Onboarding services, limited editions, and dozens of feature launches over 2.5 years. The frameworks held up across hardware, software, and services, which I didn't expect when I first adapted April Dunford's B2B SaaS methodology for consumer hardware. The biggest lesson is that building from zero lets you define what product marketing means at your company. That's rare, and it carries real responsibility.",
+      "The same process that started with Safe 5 has now been applied to Safe 7, the Trezor Expert onboarding service, and dozens of feature launches in between. Same bones every time: positioning first, messaging on top, copy last, with the right people in the room early enough to catch the things only they can catch. Looking back, the frameworks were never the point. Building from zero lets you define what product marketing means at your company, and the first PMM sets the ceiling for the second one. The job is to make yourself useful enough that the function outlives the founder.",
     originalUrl:
       "https://medium.com/@lahannin/building-product-marketing-from-scratch-at-trezor-b66eb01a50b6",
     tags: ["Product Marketing", "Trezor", "Positioning", "Hardware"],
     description:
-      "What it actually looks like to build product marketing from zero at a company that's been shipping products for a decade without it.",
+      "How I built the product marketing function at Trezor as the first PMM. Frameworks help. Earning trust matters more.",
     readMin: 8,
   },
   {
